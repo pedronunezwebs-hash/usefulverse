@@ -1,0 +1,58 @@
+{
+  "verified_at_utc": "2026-10-24T11:44:00.645375+00:00",
+  "feature_head": "8050d4a9b2bf6268776fc343cc99a5d26ee76c69",
+  "main_head": "97ae8c93df557c307981803508d4c3edd56ae2b2",
+  "all_local_tracked_files_match_remote": 7594,
+  "critical_files_verified": 593,
+  "whole_remote_blob_mode_tree_sha256": "f468206dad25421a79c1c8e7b5e0f6a74d1bfaf78081863748ead449156b33b6",
+  "handoff_documents_identical": 6,
+  "main_changed_paths": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-24-piloto-v22.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md"
+  ],
+  "historical_evidence_files_unchanged": 229,
+  "previous_fixture_prefix": 930,
+  "previous_metric_groups": 104,
+  "metric_groups": 106,
+  "records": 14310,
+  "evaluations": 5817,
+  "fixtures": 967,
+  "memory_targets_preserved": 263,
+  "historical_addenda_unchanged": 9,
+  "src_public_unchanged": true,
+  "csv_rows": 1001,
+  "only_three_notes_updated": true,
+  "lfs_pointers": 0,
+  "post_ci_changes": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-24-piloto-v22.md",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/ci-v22-inflight.json",
+    "docs/quality/translation-pilot/ci-v22-verification.json",
+    "docs/quality/translation-pilot/cli-cache-v22-cleanup.json",
+    "docs/quality/translation-pilot/production-v22-check.json",
+    "docs/quality/translation-pilot/security-v22-check.json"
+  ],
+  "owned_bytes": 548710561,
+  "free_bytes": 40568258560,
+  "pr": {
+    "number": 136,
+    "open": true,
+    "draft": true,
+    "merged": false,
+    "mergeable_at_check": null
+  },
+  "successful_run_ids": [
+    40089099175,
+    40090517822
+  ],
+  "artifacts": 0,
+  "deployed": false,
+  "approved_locales": []
+}

@@ -15,5 +15,7 @@
   "actionlint_final_exit_code": 0,
   "after_ci_checked_at_utc": "2026-10-24T11:42:54.470496+00:00",
   "after_ci_findings": 0,
-  "after_ci_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  "after_ci_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "final_remote_proof_scan_at_utc": "2026-10-24T11:45:39.413000+00:00",
+  "final_remote_proof_findings": 0
 }
