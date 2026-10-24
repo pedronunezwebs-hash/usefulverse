@@ -16,5 +16,26 @@
 /tools/guitar-tuner/*
   Permissions-Policy: microphone=(self)
 
+/tools/password-breach-checker/*
+  Content-Security-Policy: connect-src 'self' https://api.pwnedpasswords.com
+
+/*/tools/password-breach-checker/*
+  Content-Security-Policy: connect-src 'self' https://api.pwnedpasswords.com
+
+/tools/local-ai-chat/*
+  Content-Security-Policy: connect-src 'self' https://huggingface.co https://*.hf.co https://raw.githubusercontent.com
+
+/*/tools/local-ai-chat/*
+  Content-Security-Policy: connect-src 'self' https://huggingface.co https://*.hf.co https://raw.githubusercontent.com
+
+/tools/paraphrasing-tool/*
+  Content-Security-Policy: connect-src 'self' https://huggingface.co https://*.hf.co https://raw.githubusercontent.com
+
+/*/tools/paraphrasing-tool/*
+  Content-Security-Policy: connect-src 'self' https://huggingface.co https://*.hf.co https://raw.githubusercontent.com
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/assets/pyodide-314.0.7/online-python-worker.mjs
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval'; connect-src 'self'; worker-src 'none'; object-src 'none'; base-uri 'none'

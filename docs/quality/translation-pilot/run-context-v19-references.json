@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "run_id": 40048103975,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40048103975",
+  "source_commit": "8e7ad90695d7b0c785588f17600c025fbe9c3fbb",
+  "policy": "context-v19",
+  "engine": "madlad",
+  "scope": "references",
+  "locales": [
+    "id"
+  ],
+  "status_at_capture": "in_progress",
+  "started_at": "2026-10-24T01:04:34Z",
+  "dispatches": 1,
+  "complete": true,
+  "checkpoint_before": 0,
+  "model_inference_local": false,
+  "job_id": 120734329923,
+  "conclusion": "success",
+  "final_status": "completed",
+  "checkpoint_after": 67,
+  "new_records": 67,
+  "checkpoint_sha256_at_collection": "c805435228e6cf0bf8d72fd00ae2eec7b8a93cfcf34b5f165476bb2fc71afa0e",
+  "log_sha256": "65a9bfdb7441a460009ff2b9c474f215e0324fa3714dcf78f727245050548b17",
+  "models": [
+    {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    }
+  ],
+  "model_hashes_same_v18": true,
+  "summary": [
+    {
+      "approved": 0,
+      "conversion_seconds": 103.954422573,
+      "counts": {
+        "legacy": 27,
+        "model": 40
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3634236,
+      "scope": "references",
+      "total_seconds": 141.49319240200003
+    }
+  ],
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "actual_python_test_lines": [
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-24T01:05:55.6281883Z Ran 122 tests in 43.723s"
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "conclusion": "success"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "conclusion": "success"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "collected_at_utc": "2026-10-24T01:08:51.139892+00:00"
+}

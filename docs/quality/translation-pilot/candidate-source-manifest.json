@@ -1,0 +1,1551 @@
+{
+  "schemaVersion": 1,
+  "sourceLocale": "en",
+  "destinationLocales": [
+    "es",
+    "fr",
+    "pt-BR",
+    "de",
+    "ja",
+    "ko",
+    "id",
+    "hi",
+    "ar",
+    "zh-CN",
+    "bn",
+    "ru",
+    "ur",
+    "tr",
+    "vi",
+    "it",
+    "zh-TW",
+    "bg",
+    "ca",
+    "nl",
+    "el",
+    "ms",
+    "pl",
+    "sv",
+    "th",
+    "uk",
+    "sw",
+    "mr",
+    "ha",
+    "fil",
+    "ta",
+    "fa",
+    "am",
+    "gu",
+    "nb-NO",
+    "te"
+  ],
+  "status": "source-extracted-not-approved",
+  "tools": 300,
+  "sourceUnits": 15815,
+  "uniqueSourceStrings": 7887,
+  "memoryUnitsWithContext": 9505,
+  "sourceCharacters": 681101,
+  "sourceDigest": "567dbea3d8cb3661df98ce9d2f52775fc58724831edfca746915391bc3faacb4",
+  "packages": [
+    {
+      "toolId": "3d-function-grapher",
+      "sourceUnits": 45,
+      "sourceDigest": "d92ea35b57781d4c92df6e521b2c310fe1fa49458824ef1ed0e0f7a551640d51"
+    },
+    {
+      "toolId": "3d-model-editor",
+      "sourceUnits": 59,
+      "sourceDigest": "54159ab755541483033bc9ec432abcc5aeaebbd75eb9e011e57214284171075b"
+    },
+    {
+      "toolId": "3d-print-slicer",
+      "sourceUnits": 48,
+      "sourceDigest": "9d16a3ce342d7e4767430e344e4966cd372648a3ff771c2fa4bb755ef3a3d722"
+    },
+    {
+      "toolId": "acronym-dictionary",
+      "sourceUnits": 42,
+      "sourceDigest": "c62ede73cb85c33ba2bc51c10b6003b795f271212460ad1482e7d7f0152acfde"
+    },
+    {
+      "toolId": "adult-adhd-screener",
+      "sourceUnits": 57,
+      "sourceDigest": "cc981661f142e32d102081b914c369423af52fcf6bf2323fbdb06bd31aca658d"
+    },
+    {
+      "toolId": "air-quality-dashboard",
+      "sourceUnits": 71,
+      "sourceDigest": "2cd320826679b4bffce4fc1ec682efd44b58f4d185e616970c1374e34819e350"
+    },
+    {
+      "toolId": "akari-puzzle",
+      "sourceUnits": 48,
+      "sourceDigest": "8287f950fd59c8bd5db7d46a0be1582f13242e36bb4f5aee373b381313920619"
+    },
+    {
+      "toolId": "amazons-game",
+      "sourceUnits": 56,
+      "sourceDigest": "3ec20a73fc735f5681f892dcfae7c7dece0dadb51013b45a734b863a1a9d52be"
+    },
+    {
+      "toolId": "api-mock-workbench",
+      "sourceUnits": 46,
+      "sourceDigest": "8db8694b0c62e863d6fadf0e9c4fa5fe70c965b9c92722fe69d211b79e7fcf91"
+    },
+    {
+      "toolId": "audio-denoiser",
+      "sourceUnits": 47,
+      "sourceDigest": "292da9cbb93555c459428a4e85821f4588c71857ec756c6f44fe300b8b2ac624"
+    },
+    {
+      "toolId": "audio-loudness-normalizer",
+      "sourceUnits": 51,
+      "sourceDigest": "dd6a88d0bbac0e14798de90fb9b369a26467afa846fbd6d6945167ae86f4c011"
+    },
+    {
+      "toolId": "australia-income-tax",
+      "sourceUnits": 50,
+      "sourceDigest": "5123e0b8c702ddf7a182013b07454f5dccc548056612e2eb51d245254fcd183b"
+    },
+    {
+      "toolId": "baccarat-practice",
+      "sourceUnits": 55,
+      "sourceDigest": "fb6264cd5bf5658d37701197028bbb27d462b0e0cc41e65e00ea781ca9ea8872"
+    },
+    {
+      "toolId": "baseball-game",
+      "sourceUnits": 73,
+      "sourceDigest": "130c62fa9bbf0f865d144d53689d72a1571e3666f897b7ca679b9ffbd34029bb"
+    },
+    {
+      "toolId": "basketball-shooting-game",
+      "sourceUnits": 46,
+      "sourceDigest": "2bb976dfdae3e890a7a668f9ce480690d8781732750a4360e1cb7ccb25e6b8a8"
+    },
+    {
+      "toolId": "belote",
+      "sourceUnits": 67,
+      "sourceDigest": "d3d7c8dc25bf0c95e638cccacd4b520d763fa8760029a768d50bbf85c5859340"
+    },
+    {
+      "toolId": "big-five-personality-test",
+      "sourceUnits": 99,
+      "sourceDigest": "253c55375c7ae1a5b89a9c1f2a253790982b2aad798cbd785aaa4e6b833efd46"
+    },
+    {
+      "toolId": "bird-sound-identifier",
+      "sourceUnits": 43,
+      "sourceDigest": "1c522195f04f00a07d1e8a44ee00bd83c21a4560d095a4a0e75d415bb5e232d0"
+    },
+    {
+      "toolId": "block-puzzle",
+      "sourceUnits": 64,
+      "sourceDigest": "a21cff9b7839f89245805ae3379c8d7b24d0a8ef6ac5eba8d5f588ecc6cb347d"
+    },
+    {
+      "toolId": "blood-pressure-log",
+      "sourceUnits": 39,
+      "sourceDigest": "747770c42e50c75402c9166f1049ef151583375e75cc2c05095de7200c374039"
+    },
+    {
+      "toolId": "bond-ladder-planner",
+      "sourceUnits": 57,
+      "sourceDigest": "2915d042d58f5e7c7f727cd77e465990b84531bbc7643e48095eaa1fbb6afce2"
+    },
+    {
+      "toolId": "bowling-game",
+      "sourceUnits": 51,
+      "sourceDigest": "08389ec3b3aeece349d347d71cc0e094e1ba5b7ed55d863b57d92b6bb1a8f9b8"
+    },
+    {
+      "toolId": "braille-translator",
+      "sourceUnits": 49,
+      "sourceDigest": "25857b2c319020d74ca4f97859dd940357c356143055df338e5998ea1ba2eedd"
+    },
+    {
+      "toolId": "brazil-fgts-calculator",
+      "sourceUnits": 43,
+      "sourceDigest": "cdf01c20fe4b1a7c9038b49997d6bee10662f2636072ced669a1ebbcc8045ebd"
+    },
+    {
+      "toolId": "brazil-inss-contribution",
+      "sourceUnits": 56,
+      "sourceDigest": "a55137cb1ace3833580593422a6dc0e422480a7088f9764907b315f6a1d7dcdd"
+    },
+    {
+      "toolId": "brazil-termination-calculator",
+      "sourceUnits": 56,
+      "sourceDigest": "21282d039f252c5179f4515776d4ecdbe6eefaf13d8263218f568914321c14e8"
+    },
+    {
+      "toolId": "brazil-thirteenth-salary",
+      "sourceUnits": 53,
+      "sourceDigest": "33a87773c561a2668e1ecf494b44ae99b1043bddb0b43e1cd4a6de5cd6448cde"
+    },
+    {
+      "toolId": "brazil-unemployment-benefit",
+      "sourceUnits": 42,
+      "sourceDigest": "b60debf35b9ca9c072b807e3808135de28d1d7bdcc2ffb3f599b6f942a53ee06"
+    },
+    {
+      "toolId": "brazil-vacation-pay-calculator",
+      "sourceUnits": 43,
+      "sourceDigest": "b68a9993def8d6cb577b2c793eacc51a289b2d56547ef3a4bfb0d8893532a243"
+    },
+    {
+      "toolId": "briscola",
+      "sourceUnits": 59,
+      "sourceDigest": "e1e8fedcd8dc246d0a0db266d164446b147eb71cb591ca1e4085cbcecad484ef"
+    },
+    {
+      "toolId": "broken-link-checker",
+      "sourceUnits": 53,
+      "sourceDigest": "b827f122655013dca3db4e7655f7cd3e727249a8e48e8735934a504133450d87"
+    },
+    {
+      "toolId": "bubble-level",
+      "sourceUnits": 47,
+      "sourceDigest": "05fcbdb35198555310ac12f8b488cf34963a769c90e01711fce341578091d0c1"
+    },
+    {
+      "toolId": "business-model-canvas",
+      "sourceUnits": 44,
+      "sourceDigest": "a2e06c0cb8ed85414da85d2d6a27cbff817eb0b7bb4a080ee1d19097ff736266"
+    },
+    {
+      "toolId": "calcudoku",
+      "sourceUnits": 52,
+      "sourceDigest": "a22c173122d247f1564f66603e957f4905de401912fb3428ac7814cf79e38c9c"
+    },
+    {
+      "toolId": "calligraphy-worksheet",
+      "sourceUnits": 42,
+      "sourceDigest": "90e64e07886659aaa48a179efbc32550b61b3f4c9ffcd706767c146e889a1d11"
+    },
+    {
+      "toolId": "canada-payroll",
+      "sourceUnits": 52,
+      "sourceDigest": "ac5f1ffe1273bda4e2b6f9efc9e51eb4764af374feb67f3bf634bc8781cfdc32"
+    },
+    {
+      "toolId": "capital-gains-tax-uk",
+      "sourceUnits": 48,
+      "sourceDigest": "be98a84ef7805d7c0f558827b53599282049c4cc6092438d7b3b6aff49498bf0"
+    },
+    {
+      "toolId": "car-parking-simulator",
+      "sourceUnits": 43,
+      "sourceDigest": "bcf532b60b15e0929118376250b4429312ed6052c2c8527893be52089b04320f"
+    },
+    {
+      "toolId": "carrom",
+      "sourceUnits": 50,
+      "sourceDigest": "fb89a5576ef6e67f103133f11b4c8ffa2fbc1dd38ebc6e6ec4b4428f1233efaf"
+    },
+    {
+      "toolId": "charades",
+      "sourceUnits": 39,
+      "sourceDigest": "ea2bb7fd910a30a0cb838e26b9d617bc7e00f6c188cc4dc08ee263dd3ab3354c"
+    },
+    {
+      "toolId": "chat-with-documents",
+      "sourceUnits": 46,
+      "sourceDigest": "9ade9677f89cff5f6b0730e23e15b1c3f2f4430dc8360b5acebcf9847354df72"
+    },
+    {
+      "toolId": "chemical-name-resolver",
+      "sourceUnits": 53,
+      "sourceDigest": "d13ca5ec5a600ade5c173391790cb5c02b4a63416a3ee8f4a64b010e025f2086"
+    },
+    {
+      "toolId": "chemical-structure-editor",
+      "sourceUnits": 74,
+      "sourceDigest": "3ac9143dc104063374d9cb09ab4c9676fc08062329599eb74b4b1e010ee176a9"
+    },
+    {
+      "toolId": "china-individual-income-tax",
+      "sourceUnits": 43,
+      "sourceDigest": "fcb4c33cfa9d38d9cf7a28bda52f189320c834fc71b943adda8e3f7efccd5ba2"
+    },
+    {
+      "toolId": "chinese-zodiac",
+      "sourceUnits": 50,
+      "sourceDigest": "2f93afee397467249ddfe18ec28a92e13c8e667361d91ded26eff61002d9909a"
+    },
+    {
+      "toolId": "chomp-game",
+      "sourceUnits": 45,
+      "sourceDigest": "1e1b202d9fbab1708859522971f2133f83b28a98dfc39e8908f0c9fdbb9b2019"
+    },
+    {
+      "toolId": "chord-progression-builder",
+      "sourceUnits": 66,
+      "sourceDigest": "dd59c92cbc82f4ced2bfd137dd0f8f931bcc5202b6672d6fbae035dc46d109e3"
+    },
+    {
+      "toolId": "chord-recognizer",
+      "sourceUnits": 47,
+      "sourceDigest": "11cf33022503223d5c0dc0d0f95c033cde15b33ac5e5bcf6bd8e0b5c1638f34b"
+    },
+    {
+      "toolId": "circuit-diagram-editor",
+      "sourceUnits": 56,
+      "sourceDigest": "80b25957a5764be6d10562e06763b4d52c20332b1c6cae1c55041395d984c643"
+    },
+    {
+      "toolId": "color-vision-check",
+      "sourceUnits": 47,
+      "sourceDigest": "19aefecd57661054d7c8dce8e910e82a11fcc60039cf9c297b18bfeb104e5740"
+    },
+    {
+      "toolId": "coloring-studio",
+      "sourceUnits": 43,
+      "sourceDigest": "90838d5bf924a9c6c3d63981cf09a7e0eccc5e96c67db29de0db749fdc1a4772"
+    },
+    {
+      "toolId": "comic-maker",
+      "sourceUnits": 48,
+      "sourceDigest": "983262fb4fc1955286ba5de4b93a89f45e4fba2bd052d6f7d081dee6913d58c0"
+    },
+    {
+      "toolId": "control-system-simulator",
+      "sourceUnits": 44,
+      "sourceDigest": "7717bb41999f11634e67d909a83a0175d471be8ab9e0e43fbb9c80b9f409f68f"
+    },
+    {
+      "toolId": "craps-practice",
+      "sourceUnits": 55,
+      "sourceDigest": "5037ecb1ed4f5c24cf4b73f74abf6cec59a7fd60c427627a1cbf651223912c2d"
+    },
+    {
+      "toolId": "creatinine-clearance-calculator",
+      "sourceUnits": 42,
+      "sourceDigest": "85e5eb46c7ee0feadf4cf1a9952d62e22d126d741cd9a811a225e80596b2a7c3"
+    },
+    {
+      "toolId": "cricket-game",
+      "sourceUnits": 62,
+      "sourceDigest": "2ab99c5964aed5448bb553259d597a2839d9c4e370e0c19dfd09a7da5f348aa2"
+    },
+    {
+      "toolId": "crochet-chart-maker",
+      "sourceUnits": 38,
+      "sourceDigest": "c95beedbdc3cfcf3e2e37e31806eff483144607aa92a09716bfd93a14191c530"
+    },
+    {
+      "toolId": "crokinole",
+      "sourceUnits": 50,
+      "sourceDigest": "fbf2565a83ec0185c801f2e691182a9281fe3a7e7efd8e87b6f317efbbc965dc"
+    },
+    {
+      "toolId": "css-specificity-calculator",
+      "sourceUnits": 44,
+      "sourceDigest": "bfe412417dd86284be2f4ea0bc1138a1ce8519c43985752d8312ad9703a0b946"
+    },
+    {
+      "toolId": "customer-journey-map",
+      "sourceUnits": 71,
+      "sourceDigest": "eb77354cf44958d272f81d71e07ba21c5c51e7d3b0f305170664c2b0a7e6e0ab"
+    },
+    {
+      "toolId": "darts-scoreboard",
+      "sourceUnits": 58,
+      "sourceDigest": "f6f95536763ca166883a40e84e28e3e4a5d989089a270ff8c990eb72cb6283a7"
+    },
+    {
+      "toolId": "database-migration-converter",
+      "sourceUnits": 42,
+      "sourceDigest": "628dfa12fd0b832fde57e63c61777cdb5729956bc38740a4d6464c95186c2768"
+    },
+    {
+      "toolId": "database-schema-designer",
+      "sourceUnits": 54,
+      "sourceDigest": "f323e3c0708b812a7ad6937b1240887ad9a0f6f2fbb277db18fed784dea784ee"
+    },
+    {
+      "toolId": "dataset-anonymizer",
+      "sourceUnits": 50,
+      "sourceDigest": "72ecc07306c22fdc757338aa19c5cf7de2220573b8b424d1762865dded3bd343"
+    },
+    {
+      "toolId": "dictionary",
+      "sourceUnits": 82,
+      "sourceDigest": "73b48c5f8b3137c81a7cee3d7a54abead7c4a05991d7898224ef4a5d4dccc83d"
+    },
+    {
+      "toolId": "digital-signature-verifier",
+      "sourceUnits": 54,
+      "sourceDigest": "3c11ec7c2a9f58fad56cacee91708a9f6f6d7404cacd091a316ae463660f6913"
+    },
+    {
+      "toolId": "dna-sequence-tool",
+      "sourceUnits": 55,
+      "sourceDigest": "b0ceb2dddcd8554b1404af68f54475827305c761a7ea2b0e5ca3df8072445f31"
+    },
+    {
+      "toolId": "dns-lookup",
+      "sourceUnits": 61,
+      "sourceDigest": "41dde7133826d6fd507471e1992ed573492c75d822c33e00065959a7a2144c11"
+    },
+    {
+      "toolId": "document-mail-merge",
+      "sourceUnits": 47,
+      "sourceDigest": "5833c0bbe25644584a5f2b5dc7ac1803005cf8892a2a7f7d5738e391573b809e"
+    },
+    {
+      "toolId": "document-redline-merger",
+      "sourceUnits": 43,
+      "sourceDigest": "a36bf52ff9284b710377eb5029260bcffe22190f6c4bdc32b7678c3d2f976c5f"
+    },
+    {
+      "toolId": "draw-and-guess",
+      "sourceUnits": 57,
+      "sourceDigest": "f2c8173d88db1ed85b532be6aecc9ef8ac2b24d7e3b9e21c0753265b45ea3c7b"
+    },
+    {
+      "toolId": "durak",
+      "sourceUnits": 56,
+      "sourceDigest": "ceb2160dbdee6e3a09ed71d5a41ad76837d7d12bd995f7798efedac763bc0541"
+    },
+    {
+      "toolId": "earthquake-map",
+      "sourceUnits": 67,
+      "sourceDigest": "a7e9b6db13a20a2046c02b5a87796627019dd543df9fd18a26c3a46ef503dedc"
+    },
+    {
+      "toolId": "ebook-creator",
+      "sourceUnits": 50,
+      "sourceDigest": "948b1b787a06f560ba59a233a048a00c049b25d24adbd4f8c603bce48c94c7e3"
+    },
+    {
+      "toolId": "economic-calendar",
+      "sourceUnits": 49,
+      "sourceDigest": "3ec6b5a05d69aa1b240e0a2aba81c65e2b52a391dff1fb17eeda7d9c4750f064"
+    },
+    {
+      "toolId": "egfr-calculator",
+      "sourceUnits": 49,
+      "sourceDigest": "3a2abb7d4b9ffd76ed1eaee36b549266585823b6e3c2008f07d549f920424282"
+    },
+    {
+      "toolId": "email-address-validator",
+      "sourceUnits": 44,
+      "sourceDigest": "198e55b3706312b7694eb10204cb9c3824e7be5e1bd9e0fb35f04b39d3d6052f"
+    },
+    {
+      "toolId": "email-authentication-checker",
+      "sourceUnits": 54,
+      "sourceDigest": "bbfa86d6ee5fba3410ab0bb6f2e41ca79cfd8cd1e61eaf6b03232ed1caf19850"
+    },
+    {
+      "toolId": "email-header-analyzer",
+      "sourceUnits": 41,
+      "sourceDigest": "efcb1321199179ea713b2011826275677b18adf8f8e68142be9362f245f62fae"
+    },
+    {
+      "toolId": "embroidery-digitizer",
+      "sourceUnits": 44,
+      "sourceDigest": "9a3d7e6cb011ea56f13297b29a4f0196dfc23876fc8e9df1cf46534daa15f875"
+    },
+    {
+      "toolId": "emoji-search",
+      "sourceUnits": 49,
+      "sourceDigest": "878c3f53a24bdb4221a35c9401b1a168e028e4f5ba9e219c07811f53083f8b3e"
+    },
+    {
+      "toolId": "endless-runner",
+      "sourceUnits": 50,
+      "sourceDigest": "d276c96f39417e57c01688646e9968d37571b235fb8ffa2ebe6a8229c6090657"
+    },
+    {
+      "toolId": "enneagram-questionnaire",
+      "sourceUnits": 93,
+      "sourceDigest": "67fee41c2c498dadcedd4c840aea3bb106ab463a815107d545d835be7ebd7827"
+    },
+    {
+      "toolId": "enzyme-kinetics-calculator",
+      "sourceUnits": 43,
+      "sourceDigest": "43afa56c80a059b0873b9a6b02873a6cda54c018961ce454b2fde97b2ee4a275"
+    },
+    {
+      "toolId": "equation-photo-reader",
+      "sourceUnits": 36,
+      "sourceDigest": "000799e8a2990d05afdb4c67b16bc1144aad70c2663afc49ead23080d57b8f38"
+    },
+    {
+      "toolId": "face-shape-analyzer",
+      "sourceUnits": 49,
+      "sourceDigest": "7be692e3303b1a1a49fedfade60abbf4833fb79ed19167ae6cd8a98ebc040dac"
+    },
+    {
+      "toolId": "fancy-text-generator",
+      "sourceUnits": 49,
+      "sourceDigest": "52c2bc3b5c15761da221d5dfcf1fdee6fc765f3b24e370a9b9e0d421559c932b"
+    },
+    {
+      "toolId": "fanorona",
+      "sourceUnits": 65,
+      "sourceDigest": "e013b2ccef89b1e71a06e56cec1e18ebfa640be06e70059ac3807a9ab49140ea"
+    },
+    {
+      "toolId": "fishing-game",
+      "sourceUnits": 49,
+      "sourceDigest": "966e029799609291c54fbc25a4326382c0f824ec2c9e72230d0cbe1de4d6fe06"
+    },
+    {
+      "toolId": "flipbook-animator",
+      "sourceUnits": 56,
+      "sourceDigest": "4aa8db38ac255ce3af4e8071107b7d5232d7372b5d8e9e65ce04d3dece3786fd"
+    },
+    {
+      "toolId": "focus-stacker",
+      "sourceUnits": 46,
+      "sourceDigest": "fd0b70f89d12fffa746b56bd6773f5896985e63031595908b12c5c0d880e1e71"
+    },
+    {
+      "toolId": "font-editor",
+      "sourceUnits": 49,
+      "sourceDigest": "47995d90da2f2fde8a87b2c0b4d8b6e384410f4d4a0e519b7a318da9128fe619"
+    },
+    {
+      "toolId": "font-identifier",
+      "sourceUnits": 48,
+      "sourceDigest": "f5f561b1672ba2f2bb185682f05c33cc9825648248faee9148c6826a00c84649"
+    },
+    {
+      "toolId": "formal-proof-checker",
+      "sourceUnits": 60,
+      "sourceDigest": "9f9a4c8375830ed5fb3711a2c23ed869a403b8d73795d568bb090b06247cf47c"
+    },
+    {
+      "toolId": "france-housing-benefit",
+      "sourceUnits": 60,
+      "sourceDigest": "d41f628f263889de62cc82f0cb5cfc9b2f32f93479f8900077e6d4c87f8f82e9"
+    },
+    {
+      "toolId": "france-income-tax",
+      "sourceUnits": 43,
+      "sourceDigest": "13b28422b3055f1ac671155497268a9755fecd3a8d05780526ed59f0aa10d81b"
+    },
+    {
+      "toolId": "france-unemployment-benefit",
+      "sourceUnits": 45,
+      "sourceDigest": "e262a9e0181e7984be936cd68bd0e76fb24ec9391dd2bb5c6b17e3677610895e"
+    },
+    {
+      "toolId": "futures-position-calculator",
+      "sourceUnits": 49,
+      "sourceDigest": "f28289d604a5ec3a8457c0babbe2814353cc14b002ba74d1be1ad29b6cd93238"
+    },
+    {
+      "toolId": "gad7-questionnaire",
+      "sourceUnits": 61,
+      "sourceDigest": "c5afc2b11dcdece92377a5164a7c1640c4df945da696f763db0c0f77ab17b0a3"
+    },
+    {
+      "toolId": "galaxies-puzzle",
+      "sourceUnits": 48,
+      "sourceDigest": "b4d0ae5ccfcfa35d61d05563082642a45b5f4e5fcc84187009f4b4bab5a9e689"
+    },
+    {
+      "toolId": "gamepad-tester",
+      "sourceUnits": 48,
+      "sourceDigest": "93fb742d74f5107e984ec750ed45528027f9bfae68caac2686bd16d5ea0537d5"
+    },
+    {
+      "toolId": "garden-planner",
+      "sourceUnits": 55,
+      "sourceDigest": "7233c1f7e0ee56645a93a7f5ff397d5a51ad19be63cc615483a80c7835c6c1ed"
+    },
+    {
+      "toolId": "genetic-cross-calculator",
+      "sourceUnits": 42,
+      "sourceDigest": "6ce638031872c0ab0d0e2280b04abcf2a0b0d8d5d91d88cc94a618fbf29b5c72"
+    },
+    {
+      "toolId": "geographic-distance-calculator",
+      "sourceUnits": 48,
+      "sourceDigest": "5567cb0c3dc928b0d37998f82e11372e42e894d6e5fe169a65aa6ff341f61575"
+    },
+    {
+      "toolId": "geometry-construction",
+      "sourceUnits": 56,
+      "sourceDigest": "dabc14cca5a29d6c31e985986c216676d54a934ec42ecd4940dccdf7185f5b76"
+    },
+    {
+      "toolId": "geometry-net-generator",
+      "sourceUnits": 46,
+      "sourceDigest": "eda828267ff78077c1a565dd719a1c9a54f1d4420b03ba52466fb2c508af22b6"
+    },
+    {
+      "toolId": "germany-net-salary",
+      "sourceUnits": 65,
+      "sourceDigest": "04efcfdb960f7a7494d26bed722d46d7cb64c4eb00ecea5f255a93ddcfe68dc0"
+    },
+    {
+      "toolId": "germany-unemployment-benefit",
+      "sourceUnits": 45,
+      "sourceDigest": "b0178dca351bbef184e58e1ef480bfffd10b92dae8ea55a7142d3ddb82d18f4a"
+    },
+    {
+      "toolId": "gitignore-generator",
+      "sourceUnits": 58,
+      "sourceDigest": "4e57fd8a288dc613faa3d0e853fec0c031a88bf041936c194369a6c4bb30f096"
+    },
+    {
+      "toolId": "gpx-track-editor",
+      "sourceUnits": 53,
+      "sourceDigest": "1a7c5f955f96a4c47b72e4f5ec09ef55c9f15a65feeb2aa57dbe2d337e794147"
+    },
+    {
+      "toolId": "grammar-checker",
+      "sourceUnits": 45,
+      "sourceDigest": "4dcf1ae76adfc4fb7385f804a1f23ec52a02849ef54bcf4d8191425dad19481c"
+    },
+    {
+      "toolId": "handwriting-input",
+      "sourceUnits": 41,
+      "sourceDigest": "8f9d0be634ae42ef060b877c914152909ea2d57ece1675e1743f4040c5a3b69b"
+    },
+    {
+      "toolId": "hanoi-tower",
+      "sourceUnits": 47,
+      "sourceDigest": "a32a76c415d12e7774ccce4bc311131711b8b20a7e49866972a0a465d25e08ad"
+    },
+    {
+      "toolId": "hardy-weinberg-calculator",
+      "sourceUnits": 50,
+      "sourceDigest": "58d9bca9920f7b917ad0b2b0620eb77a91ff4e55984c019ae832f47a41451244"
+    },
+    {
+      "toolId": "hba1c-eag-calculator",
+      "sourceUnits": 46,
+      "sourceDigest": "ec11de82f49b8d5fed02e8e5b6ada715429e67646d12a8b01597b1bcfdf53df0"
+    },
+    {
+      "toolId": "hdr-merger",
+      "sourceUnits": 39,
+      "sourceDigest": "89287b758088150535a4527593ea88168164718f62b1ab99d2bbc05685b8c5f2"
+    },
+    {
+      "toolId": "hearing-self-check",
+      "sourceUnits": 42,
+      "sourceDigest": "f1e79fa01dbafa25a0f0a1aa787d93de3223280ca7c90f7837201b2652b18ac3"
+    },
+    {
+      "toolId": "hex-game",
+      "sourceUnits": 43,
+      "sourceDigest": "cbce9730ca733ec4b5cfed0354c461dc02517efe967c34e532b15d5eefb9e994"
+    },
+    {
+      "toolId": "heyawake-puzzle",
+      "sourceUnits": 49,
+      "sourceDigest": "101c57c01df49789256d34d1155a691de31b9f1f8d9896e38f52825ea5cfa455"
+    },
+    {
+      "toolId": "hnefatafl",
+      "sourceUnits": 47,
+      "sourceDigest": "d9d0820fb70b32de16a9477234006e47b7901fe1ef1dc07f7fcc15a62d733aff"
+    },
+    {
+      "toolId": "html-accessibility-auditor",
+      "sourceUnits": 50,
+      "sourceDigest": "4978f359f0af0d56f5f7adaf1cbf7227abad710fdbfe0c5bdac79513a7c3c87a"
+    },
+    {
+      "toolId": "html-sanitizer",
+      "sourceUnits": 38,
+      "sourceDigest": "e32a0cdf704d8fb5742a34179fce2e094a1e01e3dd1eb856d1608166bebdb24e"
+    },
+    {
+      "toolId": "http-response-checker",
+      "sourceUnits": 49,
+      "sourceDigest": "1857801c1529b0b2f1fbd517b385e152a29f1639a5fdc56e606663a2b69883a2"
+    },
+    {
+      "toolId": "i-ching-oracle",
+      "sourceUnits": 63,
+      "sourceDigest": "99f0f1a19f392964a937593624bbc01639b8f1a5129afa21ac5e5608d2bd5261"
+    },
+    {
+      "toolId": "image-search-open",
+      "sourceUnits": 44,
+      "sourceDigest": "431760b436b540b8825e2a19a8ff3fc21456ae78602135f3e24cc9e592e5fa13"
+    },
+    {
+      "toolId": "india-apy-calculator",
+      "sourceUnits": 77,
+      "sourceDigest": "765817a2a45f0f152f0e9d963f10dfe88c932c8a66597aa89569877accc7eaa5"
+    },
+    {
+      "toolId": "india-epf-calculator",
+      "sourceUnits": 44,
+      "sourceDigest": "f5d80df97c4a20c771dac1c2e30667d7660ac88d2acf6ef73711e963376f42a0"
+    },
+    {
+      "toolId": "india-gratuity-calculator",
+      "sourceUnits": 67,
+      "sourceDigest": "e5141ba0231034b81b1aeef86e6bd81dc8eac196c9817497bdf394dc37669841"
+    },
+    {
+      "toolId": "india-hra-exemption",
+      "sourceUnits": 51,
+      "sourceDigest": "93f0dcc9a08562f47ccf8579538947efc1bb262ae1c56e611458b1c970b762ef"
+    },
+    {
+      "toolId": "india-income-tax-calculator",
+      "sourceUnits": 48,
+      "sourceDigest": "14f55f6b7de488566788a7e001661c7e143c7f0dc51638c31a3a59d7e076a410"
+    },
+    {
+      "toolId": "india-nps-calculator",
+      "sourceUnits": 53,
+      "sourceDigest": "6abefb981dd4a63fbb9ad48350bbc0bcb7d9d792644fccc4ea10b128af1cd1ea"
+    },
+    {
+      "toolId": "india-ppf-calculator",
+      "sourceUnits": 46,
+      "sourceDigest": "2c44dd392f7dad81260b094ead798eebf542a777430e8bd3cefcb92171409fb8"
+    },
+    {
+      "toolId": "indian-rummy",
+      "sourceUnits": 56,
+      "sourceDigest": "cb5d01397ffd8942929ec3636827fa8c9f4143163b7b4d72e0cf7dafcb26901a"
+    },
+    {
+      "toolId": "indonesia-pph21",
+      "sourceUnits": 64,
+      "sourceDigest": "e7c27a6f8d93dcc9f28dfb178d0e3507c20902fbd04180f2eab583dc761dfe30"
+    },
+    {
+      "toolId": "inheritance-shares-calculator",
+      "sourceUnits": 41,
+      "sourceDigest": "f8f11e0b9671f66fbf8ec28e074025b62d11d39afe2c48491bb918f60731d6bc"
+    },
+    {
+      "toolId": "insurance-needs-calculator",
+      "sourceUnits": 49,
+      "sourceDigest": "e85b2e7a60282dfa875901bd51a1ab86b94292feb7f7fd903d69d841a8c58a6c"
+    },
+    {
+      "toolId": "internet-speed-test",
+      "sourceUnits": 45,
+      "sourceDigest": "55128f1ff3007179798aae0d3729eeb5f69821cd0c2c315f601916d6147b0704"
+    },
+    {
+      "toolId": "ip-geolocation-lookup",
+      "sourceUnits": 55,
+      "sourceDigest": "8655f0258e842267ad7f3a754983d3808e0ae711182858794d15173f7c0a9271"
+    },
+    {
+      "toolId": "ipa-transcriber",
+      "sourceUnits": 46,
+      "sourceDigest": "a7df4c917bd3286e813a6f1cad02e9eb7688259289181db6dd45b43604c7ed9a"
+    },
+    {
+      "toolId": "janggi",
+      "sourceUnits": 70,
+      "sourceDigest": "b1a6512781c632f5cf403d6e3df480d8a26aa360c56445441d735ee28c2139be"
+    },
+    {
+      "toolId": "japan-income-tax",
+      "sourceUnits": 45,
+      "sourceDigest": "0cb406125d3b929faa20e35e5d3691e4544ccdca1b99bed6e9d218f21271c6c4"
+    },
+    {
+      "toolId": "japanese-name-strokes",
+      "sourceUnits": 46,
+      "sourceDigest": "3e06df8445e470aa41f6938ebaeba0fa12faa61291f7f6c229853a7fb49f137f"
+    },
+    {
+      "toolId": "karaoke-lyrics-editor",
+      "sourceUnits": 40,
+      "sourceDigest": "c0e6ce9a660751ca6bf80a2bcebd15265789ce04a692e9e0c4fbaccfad53e71b"
+    },
+    {
+      "toolId": "korea-net-salary",
+      "sourceUnits": 55,
+      "sourceDigest": "377f00b1d71a63576ae5b3d9247b25d1a3d5c95093b0cf201b4ebad97cef0afc"
+    },
+    {
+      "toolId": "language-detector",
+      "sourceUnits": 93,
+      "sourceDigest": "3eb968782c95a3232966d763286ff0ff1aaa3fe89e68d983763bbe3f7b88ce1a"
+    },
+    {
+      "toolId": "laser-box-designer",
+      "sourceUnits": 47,
+      "sourceDigest": "b7b0dd8cf5c97347650e9d9504214168acc3ad7d2f27e6985443b44009633c21"
+    },
+    {
+      "toolId": "lights-out",
+      "sourceUnits": 49,
+      "sourceDigest": "2b8aeccdada8634303e64bb90e9daac9768e23fae9335e2abaa4fbf9c398a042"
+    },
+    {
+      "toolId": "linear-algebra-visualizer",
+      "sourceUnits": 45,
+      "sourceDigest": "b89fd6b181bbb9efcb005730718da5ff80bfde9f2807c9c026ec171ae9ec7264"
+    },
+    {
+      "toolId": "lines-of-action",
+      "sourceUnits": 67,
+      "sourceDigest": "7ad009dbeb2d05f3e732e49b1cc95a40ac0388b7238a5160c5ba734464f81d6d"
+    },
+    {
+      "toolId": "lithophane-generator",
+      "sourceUnits": 43,
+      "sourceDigest": "396addf1356ea89dbf8bedf4071bd4ad50590e9cfe2184976474f48083c25bb0"
+    },
+    {
+      "toolId": "local-ai-chat",
+      "sourceUnits": 56,
+      "sourceDigest": "841f3b68fd6f852d13a5c65f13196f27aaac765163accbf417af0bcc9fd84d9f"
+    },
+    {
+      "toolId": "local-image-generator",
+      "sourceUnits": 46,
+      "sourceDigest": "4ccb1271151dd06d08e65355314321a0a2145309008b8e4e86971aae2160855f"
+    },
+    {
+      "toolId": "local-music-generator",
+      "sourceUnits": 66,
+      "sourceDigest": "7118a1a122e4ed6b3eb6559f08cfc3516d2a68aa1a42bd5a11890f3ed4b95651"
+    },
+    {
+      "toolId": "love-calculator",
+      "sourceUnits": 40,
+      "sourceDigest": "7a58439005bdb91ef100222831e652683f3db29116907a9a37de58143693be9c"
+    },
+    {
+      "toolId": "mahjong-four-player",
+      "sourceUnits": 52,
+      "sourceDigest": "48c9a7a646b7a6ebafa6098c2278016ae05960af76758c24ebbeff3700f217bf"
+    },
+    {
+      "toolId": "makruk",
+      "sourceUnits": 62,
+      "sourceDigest": "cfb63501ff453d5422cf3c816b641dcdee4543823ca47d7991b2cd6fabd3f85e"
+    },
+    {
+      "toolId": "malaysia-epf",
+      "sourceUnits": 42,
+      "sourceDigest": "553429e0275162b4e006ee93f7c1825fe4b4c6382beeabe52f6c42eceda7381c"
+    },
+    {
+      "toolId": "masyu-puzzle",
+      "sourceUnits": 48,
+      "sourceDigest": "f50e0edda924cda5a75801e05300b6e05e846831f615384b4f7a1cb57f86ccca"
+    },
+    {
+      "toolId": "medication-schedule",
+      "sourceUnits": 40,
+      "sourceDigest": "c62e1c4ee427cd5f598d6e5375619e1343efaf3ef2dab36d8f199342d08d579a"
+    },
+    {
+      "toolId": "meeting-retrospective",
+      "sourceUnits": 47,
+      "sourceDigest": "4df85587493f673df711d85d3fae32e1a4656b7a79768a72516fb79d14dc22d2"
+    },
+    {
+      "toolId": "mexico-aguinaldo",
+      "sourceUnits": 46,
+      "sourceDigest": "828c6e06c4243be3f98f11a3555b76658627b4bf8670154a6d1580598b207a83"
+    },
+    {
+      "toolId": "mexico-income-tax",
+      "sourceUnits": 43,
+      "sourceDigest": "b6e9affbf7a49cb7ba4ab4e83a1ae5bdece59ce941e849d1630d48d52ea57deb"
+    },
+    {
+      "toolId": "monte-carlo-simulator",
+      "sourceUnits": 50,
+      "sourceDigest": "7b416c2ff42abd95ce61b82815af02e0ec4a36350e6cd5c827a59defc59984a5"
+    },
+    {
+      "toolId": "moving-planner",
+      "sourceUnits": 45,
+      "sourceDigest": "03c0c743ee151f682a051cfc7b0157794b2c3dc4fac50eac075939af9bf621be"
+    },
+    {
+      "toolId": "mus",
+      "sourceUnits": 109,
+      "sourceDigest": "139cdc921ffae17d4ff4c9f3d40172f4f8c0f1371b44da528e9cc1fa1d997689"
+    },
+    {
+      "toolId": "music-identifier",
+      "sourceUnits": 46,
+      "sourceDigest": "5d46b9c61acfafe60a4b8f713e78658ab27600ac465799c68c7677d5dca0680f"
+    },
+    {
+      "toolId": "music-interval-calculator",
+      "sourceUnits": 51,
+      "sourceDigest": "f31bca30b56984ddee31026bb779d82170f80dd92bade50e66c18b3d27ab9ea6"
+    },
+    {
+      "toolId": "music-transposition",
+      "sourceUnits": 40,
+      "sourceDigest": "ea5c5940ce9bb8ce2d34041a298fbdb32cff6eca84848e600965ba85561996f9"
+    },
+    {
+      "toolId": "never-have-i-ever",
+      "sourceUnits": 42,
+      "sourceDigest": "f892cd1d316e07f30ea97fdf91099d1401bd7d367d42e7c2171bd46b4fe47658"
+    },
+    {
+      "toolId": "nim-game",
+      "sourceUnits": 46,
+      "sourceDigest": "770463caefd1bcddb71467428e72245c397e8f30969cb07fee28f10020ed00a2"
+    },
+    {
+      "toolId": "norinori-puzzle",
+      "sourceUnits": 47,
+      "sourceDigest": "9526b9b3b3e3a9b6c542431ef81072c7708bbd4c03c26fcd18372d1498ff21fb"
+    },
+    {
+      "toolId": "object-remover",
+      "sourceUnits": 45,
+      "sourceDigest": "d80fa4a9234cc14d48a5dcbb1190f99751f8815de1cf55883067f0a1a10474da"
+    },
+    {
+      "toolId": "online-compiler",
+      "sourceUnits": 48,
+      "sourceDigest": "ac69874d4fa97a511a5741a8a7a4ba0a94016307d8e38098b1722f31b3a3bf51"
+    },
+    {
+      "toolId": "online-paint",
+      "sourceUnits": 50,
+      "sourceDigest": "4010889e7ab6908e4011adffd3fc8444b07422551a57cbfc522b7d9127a75d6c"
+    },
+    {
+      "toolId": "online-whiteboard",
+      "sourceUnits": 60,
+      "sourceDigest": "068d0bc986b57850c75f218bd61e1110fba462e8594e3daf2a5bdb08bc1b370d"
+    },
+    {
+      "toolId": "open-radio-player",
+      "sourceUnits": 58,
+      "sourceDigest": "71a0342063c358e725b74855ffd4ec9065c79120975420822f590716a2a26981"
+    },
+    {
+      "toolId": "optics-ray-tracer",
+      "sourceUnits": 43,
+      "sourceDigest": "e58ae6c8bf61bdc174d1634acd1ba1e456c50e38fcd01dd4b9bfaf9b9a379095"
+    },
+    {
+      "toolId": "option-strategy-builder",
+      "sourceUnits": 48,
+      "sourceDigest": "2bd6bb1dc5a867146b3129183994a1727f4e3d9876a9dca626627a87bdc22485"
+    },
+    {
+      "toolId": "orbital-visualizer",
+      "sourceUnits": 78,
+      "sourceDigest": "51504a38f963a5bc250f553de34e921213e11de64d0e35922897b10c390ac34e"
+    },
+    {
+      "toolId": "origami-simulator",
+      "sourceUnits": 46,
+      "sourceDigest": "27c29a2c6ac21bc559d375a731da5bc5d7fc44919b39e78c1a8d3a633e2471d5"
+    },
+    {
+      "toolId": "panchang-calendar",
+      "sourceUnits": 52,
+      "sourceDigest": "d5b10462000d3f163855761c8b23d212ca4ff7269c95050e829fd85a3ef35a07"
+    },
+    {
+      "toolId": "panorama-stitcher",
+      "sourceUnits": 59,
+      "sourceDigest": "06511b5674379c5a9604446580075d35b4c3ea57eca64fe6adf31387169ebefb"
+    },
+    {
+      "toolId": "paraphrasing-tool",
+      "sourceUnits": 61,
+      "sourceDigest": "a98d2fc2382b5eecff47fb21e8f1d7765a6b765e862b2f5a3e3ad280cdc0d38e"
+    },
+    {
+      "toolId": "password-breach-checker",
+      "sourceUnits": 41,
+      "sourceDigest": "1a74539d278d2cdbcfba51c7d8f9a1f90a6e2fe5caa8bee99bb45decb57a79d7"
+    },
+    {
+      "toolId": "password-strength-checker",
+      "sourceUnits": 53,
+      "sourceDigest": "899a85adccdc6494eb2b68896f9b8eff3cb956982fa728c0dc47d19910671ec2"
+    },
+    {
+      "toolId": "pcb-layout-editor",
+      "sourceUnits": 84,
+      "sourceDigest": "4eaf2265a415e56ec9b43f4726177ece6bf6fd9849fbb68e89422b03ed1a8409"
+    },
+    {
+      "toolId": "pdf-digital-signature-validator",
+      "sourceUnits": 52,
+      "sourceDigest": "63b368b1038f7e2ce5e16899d22003d16bc4e0a92e6231a55a22058535afd0f9"
+    },
+    {
+      "toolId": "pdf-imposition",
+      "sourceUnits": 47,
+      "sourceDigest": "c0e148c9133dd109a9aa9ae2795988ba46762aeaa9cb370a149ec1a837cffcf1"
+    },
+    {
+      "toolId": "perceived-stress-questionnaire",
+      "sourceUnits": 44,
+      "sourceDigest": "2223b6df962e1f4e7cd0f3e31f411a3d5fa05002849c862cd7f779b757450eb5"
+    },
+    {
+      "toolId": "personal-color-analysis",
+      "sourceUnits": 61,
+      "sourceDigest": "2f46af59c76201824e085ede491141748258b28693119303bfcc31ad02dfec99"
+    },
+    {
+      "toolId": "pet-feeding-calculator",
+      "sourceUnits": 42,
+      "sourceDigest": "1113ddfc2a03e9ddaa489204f241b25c5089bc6be0ed2942f11c83a63902166b"
+    },
+    {
+      "toolId": "philippines-sss",
+      "sourceUnits": 48,
+      "sourceDigest": "01c4bb24d1624847107add66347d8326a0db90c24f137d864c4619ef2e686005"
+    },
+    {
+      "toolId": "photo-background-changer",
+      "sourceUnits": 64,
+      "sourceDigest": "ca3b3782b164ea4b390ce480626e062aa5614f155ef97ae707bba3bcdf03417e"
+    },
+    {
+      "toolId": "photo-restoration",
+      "sourceUnits": 54,
+      "sourceDigest": "3495bc2c459d4c4670f47fae61c6aea343e3a7c1aad6e772e78cca31842409a5"
+    },
+    {
+      "toolId": "photosphere-viewer",
+      "sourceUnits": 49,
+      "sourceDigest": "6c8a90c03b958cd405dfdd09dbd1763cafc5729d500c2d3d0dbc098a48dad4bc"
+    },
+    {
+      "toolId": "phq9-questionnaire",
+      "sourceUnits": 67,
+      "sourceDigest": "c45971331bd70f0039d42bac4430564b8edd0ca6ce3bf78de714695a45653d01"
+    },
+    {
+      "toolId": "pinochle",
+      "sourceUnits": 93,
+      "sourceDigest": "0095599aff65b8775283c26992fa8abf986dc39f17bed10dbf6f91141381763b"
+    },
+    {
+      "toolId": "plant-identifier",
+      "sourceUnits": 43,
+      "sourceDigest": "74f0bc042ef1ceff198470ebce9ae3d8bcde589de9d2d0def4dc3c8f6303ef02"
+    },
+    {
+      "toolId": "platform-game",
+      "sourceUnits": 40,
+      "sourceDigest": "8747daf97b26d3de5d311663ecd10f1373d500cb95b7b5d1d2aaf81cbb41715f"
+    },
+    {
+      "toolId": "pool-game",
+      "sourceUnits": 60,
+      "sourceDigest": "f2a00d60f9a8a75ec1488861d18f5455cb488adb696827699785ca2ae741c96f"
+    },
+    {
+      "toolId": "portfolio-backtester",
+      "sourceUnits": 47,
+      "sourceDigest": "44a4eb69254bd42f7f1a39cff6abc2df5d70c5d6e7a434dcebb057fc1c25506b"
+    },
+    {
+      "toolId": "portugal-net-salary",
+      "sourceUnits": 43,
+      "sourceDigest": "40dc6ac8cd666254600ce59df39f8ddb242d816e89ec14ea5cf198497a7dbfdd"
+    },
+    {
+      "toolId": "prayer-beads-counter",
+      "sourceUnits": 50,
+      "sourceDigest": "4532b1b784cd96c3c2045b3a79dbfd2f98fa753d1322483b10270067601e5d26"
+    },
+    {
+      "toolId": "preferans",
+      "sourceUnits": 95,
+      "sourceDigest": "9f505fbd54670f3c3558a3b538cf1a6de66e1b13c1f93ccba971c9d2b73aa041"
+    },
+    {
+      "toolId": "pregnancy-weight-gain",
+      "sourceUnits": 55,
+      "sourceDigest": "ee56c92e2547ea6bbd42d5a708e02465b9dc5e3effd2d61d382031a8d45640e0"
+    },
+    {
+      "toolId": "presentation-maker",
+      "sourceUnits": 46,
+      "sourceDigest": "752efb3b08532b1123b7ad1c159d1610ae7321918225113d0b23b572130c7b92"
+    },
+    {
+      "toolId": "project-pert-estimator",
+      "sourceUnits": 64,
+      "sourceDigest": "3cd058139a15f90d7f026ecc42c7d440f8f32552a8e6e40af86aef68bb9d2b24"
+    },
+    {
+      "toolId": "pronunciation-dictionary",
+      "sourceUnits": 91,
+      "sourceDigest": "6d8b97ed81340df1f505f6356495c6762475e20a548d2f4513341f843965a5e8"
+    },
+    {
+      "toolId": "ptsd-questionnaire",
+      "sourceUnits": 44,
+      "sourceDigest": "ae11f58c790c176df5ebbb7b606399c965dd487f5cf2f871fe556fa72af22521"
+    },
+    {
+      "toolId": "public-transit-planner",
+      "sourceUnits": 68,
+      "sourceDigest": "c62f0600776b7e854c6389a50867a5adfb67650e46dbc9c49bed31deea4381a7"
+    },
+    {
+      "toolId": "qibla-compass",
+      "sourceUnits": 40,
+      "sourceDigest": "2c651f2d5965db79eb714673ec4739658675f59854d23ade3aa03787f1cc1420"
+    },
+    {
+      "toolId": "qtc-calculator",
+      "sourceUnits": 53,
+      "sourceDigest": "6098827e69dae096d88eb5db7d3d2d0ff1ef4e54345742e5ff93aca0bd2ab584"
+    },
+    {
+      "toolId": "raci-matrix-builder",
+      "sourceUnits": 51,
+      "sourceDigest": "a3f3e3d4a489d890174c62506b806e1a87d4db23c5d457d41cf7ba9374a10833"
+    },
+    {
+      "toolId": "racing-game",
+      "sourceUnits": 48,
+      "sourceDigest": "74ac21fdf1033a3bc3d8331c51f4e3fb7f76c63accc482598ce5ff021fc1b8a8"
+    },
+    {
+      "toolId": "rdap-domain-lookup",
+      "sourceUnits": 54,
+      "sourceDigest": "3a5d4118280f4e0487e5e4cee2270be6d51e0bc7c11c27392d31ba898e8fb79f"
+    },
+    {
+      "toolId": "reaction-mechanism-editor",
+      "sourceUnits": 69,
+      "sourceDigest": "7c7d398e83ad0245c8a2f233ef82b418bd326df0eabf344bcd5345376351d768"
+    },
+    {
+      "toolId": "recipe-nutrition-analyzer",
+      "sourceUnits": 45,
+      "sourceDigest": "a8c46cb8a190afe386444202176ad1124b396a895cb7ec50274439a3de3e1419"
+    },
+    {
+      "toolId": "regex-pattern-builder",
+      "sourceUnits": 54,
+      "sourceDigest": "8a0beffc47c34fd563bfdf1304f8d2842e7ed6cdd5de6e0469fc337eeaa33a60"
+    },
+    {
+      "toolId": "rent-split-calculator",
+      "sourceUnits": 60,
+      "sourceDigest": "9abd685adc7a08a4273a59ea8cfe2be8c9d9c92b726ad041b4459c12b89212f4"
+    },
+    {
+      "toolId": "rhythm-trainer",
+      "sourceUnits": 52,
+      "sourceDigest": "8d14519881f223171227ecbe904555d6bdb3cd48418db7fa9543af73a5096c13"
+    },
+    {
+      "toolId": "roc-curve-calculator",
+      "sourceUnits": 46,
+      "sourceDigest": "ad5b49a55329b1b1470f7ab579dfdec4b15615f5afb1af84d95eeb80aa94b121"
+    },
+    {
+      "toolId": "rock-paper-scissors",
+      "sourceUnits": 47,
+      "sourceDigest": "a9e2d0144a3d24778e3fd2964cb5dda5a0ddd9f6be9b1ab89077f2fd22330a12"
+    },
+    {
+      "toolId": "roulette-practice",
+      "sourceUnits": 53,
+      "sourceDigest": "e65b83140a9dfa9d068ec03052e53c4af5fdf5a496d11abdecb2dfe80b60d4a0"
+    },
+    {
+      "toolId": "rubiks-cube-solver",
+      "sourceUnits": 55,
+      "sourceDigest": "497dee764a26b4eb9890e5147ca5354a796155c70ad20b0bf921b67d0f63d958"
+    },
+    {
+      "toolId": "scopa",
+      "sourceUnits": 74,
+      "sourceDigest": "1128959ba52de956e2b180ac2c9552355299744639d96a256a40606adff76b6a"
+    },
+    {
+      "toolId": "screen-mirroring",
+      "sourceUnits": 51,
+      "sourceDigest": "e96910e11ab0a36a10bc0bb5e0f4f7be9268daad6f1ab4df01ef766f16512b44"
+    },
+    {
+      "toolId": "sentence-diagrammer",
+      "sourceUnits": 39,
+      "sourceDigest": "b77562e1bac26f3a5eaa822de08d6c19e8fb0d84b82cf191e5227332e54fe2cc"
+    },
+    {
+      "toolId": "sequence-alignment",
+      "sourceUnits": 50,
+      "sourceDigest": "d0cbff6513fac94fd36a9ce9b904c3805b92bfdeed14a6165990f259d1a9b584"
+    },
+    {
+      "toolId": "sewing-pattern-drafter",
+      "sourceUnits": 44,
+      "sourceDigest": "d599695d0bddfddcd5070e6dcbab4fdbaf8b0ba3ca4bf30c08ffac467ba514b5"
+    },
+    {
+      "toolId": "sheet-music-scanner",
+      "sourceUnits": 41,
+      "sourceDigest": "82e24ad63bb831fc35497775f4d1b9a705acd99c50994403ed7d6703fe983791"
+    },
+    {
+      "toolId": "shogi",
+      "sourceUnits": 79,
+      "sourceDigest": "270a97fd2b13377b076e7aa49689f1178b69c64d65e2c981e6effbfe602a4553"
+    },
+    {
+      "toolId": "singapore-cpf",
+      "sourceUnits": 48,
+      "sourceDigest": "a3f5217dafcf68941c0f71e5b5084531c4a23cf35096a8553206db02bbac98a9"
+    },
+    {
+      "toolId": "sky-map",
+      "sourceUnits": 58,
+      "sourceDigest": "43e72d537615d2662422db358024c462c2ee271e160db7341a57cc9f36261d9f"
+    },
+    {
+      "toolId": "skyscrapers-puzzle",
+      "sourceUnits": 56,
+      "sourceDigest": "04e9b4d25143a3299ac0d57df54b17e216720d890403aa4083a800a68bf7a05a"
+    },
+    {
+      "toolId": "sleepiness-questionnaire",
+      "sourceUnits": 51,
+      "sourceDigest": "9b40dbc389da5398a687c2f6ba3f6e835419f5f7c436b4bd7360db2c30232c38"
+    },
+    {
+      "toolId": "soccer-penalty-game",
+      "sourceUnits": 48,
+      "sourceDigest": "e0ed1c1574ff850d1b3be045a68476f407cc3e09050769e2cb64b9af6f71f87f"
+    },
+    {
+      "toolId": "song-structure-planner",
+      "sourceUnits": 43,
+      "sourceDigest": "2c9e1a4e56611f5a2a455998c3d89ca5e04c6a2200848ce04e8ccea273878764"
+    },
+    {
+      "toolId": "soundboard",
+      "sourceUnits": 40,
+      "sourceDigest": "26d0c96343b8a0e0d721fd18ec122a52760f69752d6b69f120ab55d595654b8d"
+    },
+    {
+      "toolId": "sourdough-calculator",
+      "sourceUnits": 45,
+      "sourceDigest": "1ac485b504c413533737b7d1b76a16afa0853cb20d7813e93021d733aa3c52aa"
+    },
+    {
+      "toolId": "space-shooter",
+      "sourceUnits": 42,
+      "sourceDigest": "ba866ea2dce3114dc6fee8cc7b611f9ab4cb0c760830b93d16f127113dbc70ac"
+    },
+    {
+      "toolId": "spain-income-tax",
+      "sourceUnits": 42,
+      "sourceDigest": "63c935d259b3058efe04554d7ff99d8ee0607226fbdfa0cab50eb9392fbf84be"
+    },
+    {
+      "toolId": "spain-termination-pay",
+      "sourceUnits": 46,
+      "sourceDigest": "faf8b2398c50c577c18d510c18d9b37af948658eed0b90c009bd47ec9239c1da"
+    },
+    {
+      "toolId": "spain-unemployment-benefit",
+      "sourceUnits": 48,
+      "sourceDigest": "ba93593ac9a5fdc9d431d5033c770ffe2af279133a2fe3396f812babd31287f7"
+    },
+    {
+      "toolId": "spreadsheet-diff",
+      "sourceUnits": 55,
+      "sourceDigest": "52b90bd0a47c7007c701bf7e0b5bb4573b1e6ddb52f1c32845b032d44966a829"
+    },
+    {
+      "toolId": "spreadsheet-formula-explainer",
+      "sourceUnits": 54,
+      "sourceDigest": "80348161b4249f99f5a30b72970016714a6d941930b36d953444391a73cea4ff"
+    },
+    {
+      "toolId": "sql-query-explainer",
+      "sourceUnits": 67,
+      "sourceDigest": "60530cb0679cba111bbfd79fc1cfede2af183c13d7f534fa80e80b2682bc0302"
+    },
+    {
+      "toolId": "star-battle",
+      "sourceUnits": 47,
+      "sourceDigest": "771c48d257cf83e4a59b48caed3c611d38b2140dc082280299948756e1242094"
+    },
+    {
+      "toolId": "static-website-builder",
+      "sourceUnits": 50,
+      "sourceDigest": "f02d3174c974652f51828ca7cfc8b9efdcd6c4f342613c18d40a6accf318a2fe"
+    },
+    {
+      "toolId": "sticker-pack-maker",
+      "sourceUnits": 42,
+      "sourceDigest": "dc9eaec32a6df63c1fcfe6206941e8ddfb5d38404d4c21aa16ef060c2617d273"
+    },
+    {
+      "toolId": "storyboard-maker",
+      "sourceUnits": 40,
+      "sourceDigest": "29fb4e4f2237f07a73246e5f5581cc139c5fbf11fc305a3df25c523cb787dd0c"
+    },
+    {
+      "toolId": "survey-builder",
+      "sourceUnits": 46,
+      "sourceDigest": "24b6b2275fc4d4635bed305e3b78f8292c568be1ce0d0559446cce63e8f8649e"
+    },
+    {
+      "toolId": "survival-analysis",
+      "sourceUnits": 46,
+      "sourceDigest": "e9f5be8ac92fc42c94999828ebf99fd8377c364b61ee9d7944062df29bab0985"
+    },
+    {
+      "toolId": "swot-analysis-builder",
+      "sourceUnits": 41,
+      "sourceDigest": "9f40b8e7da917d9fba0eeaf09015999a952aafc74a25016e0926b411b9455d4b"
+    },
+    {
+      "toolId": "table-tennis-game",
+      "sourceUnits": 43,
+      "sourceDigest": "6f6facc35e94d2284e3140b041898223b0510cfbeef782b4e4603614632b2892"
+    },
+    {
+      "toolId": "taiwan-income-tax",
+      "sourceUnits": 42,
+      "sourceDigest": "2be29722fcc5d37495a78c56b1d44521a220656161ee80f740602c208f17c0d0"
+    },
+    {
+      "toolId": "tank-game",
+      "sourceUnits": 53,
+      "sourceDigest": "d0fa6f49fb72fb14890b21115b56a0915e5fdadbeaca2c8dc7e4d97dc448988a"
+    },
+    {
+      "toolId": "teen-patti",
+      "sourceUnits": 67,
+      "sourceDigest": "d035f1587d66feae071e1928b103f07a4a51f4343c77ad3cf628c6421031bcf1"
+    },
+    {
+      "toolId": "territory-game",
+      "sourceUnits": 54,
+      "sourceDigest": "19665792269fe20667799f5c58f777d43f958510600b21c4e87fac2e975fcc5a"
+    },
+    {
+      "toolId": "texas-holdem",
+      "sourceUnits": 74,
+      "sourceDigest": "b854205acc2c2bd8fef64ff444e6fd7a72e0f13cd4cdf49700517309aa85b715"
+    },
+    {
+      "toolId": "text-to-handwriting",
+      "sourceUnits": 54,
+      "sourceDigest": "eaaf5dce4df4d2913c5f9967f1f1e9c805157875d745ff6f74b3f2a0eab047f1"
+    },
+    {
+      "toolId": "text-translator",
+      "sourceUnits": 58,
+      "sourceDigest": "30e735f46cd9f051756ebced760f5d0705b831cc956e850d4921bf0bc12f9c7f"
+    },
+    {
+      "toolId": "thesaurus",
+      "sourceUnits": 84,
+      "sourceDigest": "5964210ca6154dac61d0c5cf67350b395b3cfbf9f2e5de7dd5ef2b1393f1a1e7"
+    },
+    {
+      "toolId": "tide-times",
+      "sourceUnits": 47,
+      "sourceDigest": "f65c36987ad40d4dcd23f28f52a4339d029decb3be500abea2002b2cd87c5261"
+    },
+    {
+      "toolId": "time-series-forecast",
+      "sourceUnits": 43,
+      "sourceDigest": "8b1bd18c48cb8b7eab0029ad41ab30e09300fbf2b2f5886ce4080f530fbaf182"
+    },
+    {
+      "toolId": "tls-site-checker",
+      "sourceUnits": 49,
+      "sourceDigest": "64475e17eb592321cc5ce51a2f4ebb674809a47cf3d638d79ddeaaacf1770557"
+    },
+    {
+      "toolId": "totp-authenticator",
+      "sourceUnits": 52,
+      "sourceDigest": "f02303aa8554ffee7fc2fea953350412f34b7b249261635825c5a1f082e166c0"
+    },
+    {
+      "toolId": "touchscreen-tester",
+      "sourceUnits": 43,
+      "sourceDigest": "7b9c030a65de11d0316f75672f491ae5f73ab077c69f5dd4890fc109d19562db"
+    },
+    {
+      "toolId": "tower-defense",
+      "sourceUnits": 54,
+      "sourceDigest": "e7011dffa26eb33a29ed25c2f83d52a5d73b1ca9df5e8729df7987c81499ed9b"
+    },
+    {
+      "toolId": "transliteration-tool",
+      "sourceUnits": 44,
+      "sourceDigest": "f91fc0c9c327b688b66725f623f2b07691475cebbcaaf4215a2fe87370b53b76"
+    },
+    {
+      "toolId": "travel-route-optimizer",
+      "sourceUnits": 40,
+      "sourceDigest": "82e5257bb4279e672dbfa9110c3f20e442bcb29c97002eb337d044fed138ac63"
+    },
+    {
+      "toolId": "truco",
+      "sourceUnits": 116,
+      "sourceDigest": "026f3ca14008b63dbe1326ce10de312916b932d388a97eec326ece9fdc0feb1d"
+    },
+    {
+      "toolId": "truth-or-dare",
+      "sourceUnits": 88,
+      "sourceDigest": "a06d1f9cfc6807160b8f4232d47ec528c29d3e16e35a8ffc96f8aa8faeccc811"
+    },
+    {
+      "toolId": "tute",
+      "sourceUnits": 89,
+      "sourceDigest": "aba56acb87b9539a350087d1cb04409d76d32637cddc48357694f1dd63226857"
+    },
+    {
+      "toolId": "uk-pay-calculator",
+      "sourceUnits": 52,
+      "sourceDigest": "727c0e04f07346f9f80a2dcf8586e11c541f07c7676c149149f9498de05916b8"
+    },
+    {
+      "toolId": "uk-stamp-duty",
+      "sourceUnits": 56,
+      "sourceDigest": "24d7a9b89b6e031c7ec819b2948a92e23893f6d0c2875d916cae13706b207402"
+    },
+    {
+      "toolId": "uk-student-loan",
+      "sourceUnits": 59,
+      "sourceDigest": "100eac96ec4349baf5e75d5e419abad8fa4b51de4bc461e2d2d47449a3158764"
+    },
+    {
+      "toolId": "uk-universal-credit",
+      "sourceUnits": 47,
+      "sourceDigest": "a923dc3e6b9f7fcb32e09661bda6f6972bcca20035dc875547a5df0c36017b65"
+    },
+    {
+      "toolId": "us-aca-subsidy",
+      "sourceUnits": 61,
+      "sourceDigest": "ec3f77054de4ff91ecd2cfb4d309d7dcb65dbc03bee6433e9cb405f10cc972d6"
+    },
+    {
+      "toolId": "us-paycheck-calculator",
+      "sourceUnits": 54,
+      "sourceDigest": "26dab9334a905a9515d76cf8cf94ea419ed190fb346282df3ef375ee2a1e5dfc"
+    },
+    {
+      "toolId": "us-roth-conversion",
+      "sourceUnits": 45,
+      "sourceDigest": "ceef8b2e19ba87ee95dad62f2e78c9627f5b37e5d2bec16170777b08833990c4"
+    },
+    {
+      "toolId": "us-self-employment-tax",
+      "sourceUnits": 50,
+      "sourceDigest": "f2302616a00faab880ca142f0f255e1f7ce9d5c17ed44da2ba422b97212d5f31"
+    },
+    {
+      "toolId": "us-w4-withholding",
+      "sourceUnits": 58,
+      "sourceDigest": "7e6cbf3b913854c96ae558fca054dab359566e1a009dbaec69eed01351bcf60d"
+    },
+    {
+      "toolId": "vaccination-schedule",
+      "sourceUnits": 46,
+      "sourceDigest": "05c2f0c8a6e894bdf523992b46bdc9b11e6ade0f5dfdcde9e9f8d9bfde657440"
+    },
+    {
+      "toolId": "value-proposition-canvas",
+      "sourceUnits": 44,
+      "sourceDigest": "446a7d6b64f7d4714eba62a7344bc07a5a30c0e23c5ad013287c32b3a9dbbd77"
+    },
+    {
+      "toolId": "venn-diagram-maker",
+      "sourceUnits": 52,
+      "sourceDigest": "6d3f5110b4f23281ecb592c1d07cae55fdcaf72847937a5988571a4b121b08aa"
+    },
+    {
+      "toolId": "verb-conjugator",
+      "sourceUnits": 47,
+      "sourceDigest": "5f367615efc4988722f9b4d78460f46d1b3aee1493d8c36c3c06b5f2d1fd4abd"
+    },
+    {
+      "toolId": "video-editor",
+      "sourceUnits": 61,
+      "sourceDigest": "65ae424c72064e8b5fed087c72db1258793046cb5955e616600ba097732a61f8"
+    },
+    {
+      "toolId": "virtual-drum-kit",
+      "sourceUnits": 60,
+      "sourceDigest": "f0e54a9fd7cb6c994ca5e43a1f40b28b734c26be31bc872a9b9fefc5e5180057"
+    },
+    {
+      "toolId": "virtual-keyboard",
+      "sourceUnits": 40,
+      "sourceDigest": "58a43ad7f6aacb87ef7882e36b4a9e997ea7248026ecf634480ed9a0bd4e8f98"
+    },
+    {
+      "toolId": "virtual-try-on",
+      "sourceUnits": 45,
+      "sourceDigest": "b6473d9f4e23bb77551645a54e39f6c99dd46fbb86569af1590b3ac6ebe4e94a"
+    },
+    {
+      "toolId": "visual-acuity-check",
+      "sourceUnits": 53,
+      "sourceDigest": "5b0344ece03ceee411d2cd5e518c1a5b9c192ddf15bc90ee99d3b6ce59ddac09"
+    },
+    {
+      "toolId": "weather-dashboard",
+      "sourceUnits": 73,
+      "sourceDigest": "f8c90d9b5c489deda9fc7f66eafef68cbdecf1f1c28ffb3b379404d83773007b"
+    },
+    {
+      "toolId": "webfont-subsetter",
+      "sourceUnits": 45,
+      "sourceDigest": "7a92add81dc77de38807a95e046458532a55e69ee56fb94d4725e0183f737cb8"
+    },
+    {
+      "toolId": "wedding-planner",
+      "sourceUnits": 75,
+      "sourceDigest": "1031cee72ec2e7d466fdf7a610aa55ba53ceda2c2c561d037677180a8cad5bb2"
+    },
+    {
+      "toolId": "whist",
+      "sourceUnits": 67,
+      "sourceDigest": "feb45ee7356647b08e2c47cf7f679171dbb13459f21e9049142b6418fb10877a"
+    },
+    {
+      "toolId": "word-cloud-generator",
+      "sourceUnits": 40,
+      "sourceDigest": "b45b5754405bf4f97b3b03b27fa44a463225a0fe42ebcefb5a85d65229814020"
+    },
+    {
+      "toolId": "word-stress-finder",
+      "sourceUnits": 47,
+      "sourceDigest": "c325539c6aa45e9d47afe6ee4f097e8a72f20e16cf03f7059ff49866f8611e3c"
+    },
+    {
+      "toolId": "would-you-rather",
+      "sourceUnits": 43,
+      "sourceDigest": "f8f612aea4e066f0528476e06e738db961f43548b74428ac067c3335ee39cbef"
+    },
+    {
+      "toolId": "xiangqi",
+      "sourceUnits": 60,
+      "sourceDigest": "fbbcc16bae7ddf0666a56a68afdec9d54bf3cb4b4a9796f44cd598e7aeaf13e3"
+    },
+    {
+      "toolId": "zakat-calculator",
+      "sourceUnits": 59,
+      "sourceDigest": "7a123ea9466b6d779f278e96b98c352bdb189edc277b1cec49f14de83d2e897a"
+    }
+  ]
+}

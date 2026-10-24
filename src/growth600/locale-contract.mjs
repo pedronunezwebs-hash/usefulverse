@@ -510,8 +510,9 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'], overlap: ['{first}', '{second}', '{minutes}'], shortConnection: ['{first}', '{second}', '{minutes}', '{needed}'], invalidValue: ['{size}'] });
 const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }), 'chess-opening-trainer': Object.freeze({ ready: ['{opening}', '{move}'], progress: ['{played}', '{total}'], wrong: ['{expected}'], opponentMove: ['{moves}'] }), 'logic-grid-puzzle': Object.freeze({ hintSame: ['{left}', '{right}'], hintDifferent: ['{left}', '{right}'] }), 'hearts-game': Object.freeze({ selectThree: ['{count}'] }), 'typing-practice': Object.freeze({ inputProgress: ['{correct}', '{total}', '{accuracy}'], lessonComplete: ['{accuracy}'], savedProgress: ['{count}'] }), sokoban: Object.freeze({ moved: ['{moves}', '{pushes}'], levelComplete: ['{level}', '{moves}', '{pushes}'] }), 'maze-generator': Object.freeze({ moved: ['{moves}'], solved: ['{moves}'] }), 'sleep-calculator': Object.freeze({ calculated: ['{time}'], result: ['{duration}', '{latency}', '{day}'] }), 'lean-body-mass-calculator': Object.freeze({ result: ['{fatMass}', '{leanPercent}', '{unit}'] }), 'sudoku-solver': Object.freeze({ multiple: ['{count}'], step: ['{row}', '{column}', '{digit}', '{technique}'] }) });
 
-export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, { titleMax = 60, descriptionMax = 160 } = {}) {
+export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, { titleMax = 60, descriptionMax = 160, allowUnapprovedToolIds = [] } = {}) {
   const errors = [];
+  const unapprovedAllowed = new Set(allowUnapprovedToolIds);
   for (const locale of localeEntries) {
     const languageCopy = copyByLocale?.[locale.key];
     if (!languageCopy) { errors.push(`${locale.key}: locale copy is missing`); continue; }
@@ -528,7 +529,12 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
       const ownerAcceptedMachineCopy = copy.localizationStatus === 'machine-accepted'
         && copy.localizationAcceptedBy === 'site-owner'
         && /^\d{4}-\d{2}-\d{2}$/u.test(copy.localizationAcceptedAt ?? '');
-      if (copy.localizationStatus && copy.localizationStatus !== 'approved' && !ownerAcceptedMachineCopy) errors.push(`${locale.key}/${tool.id}: localization is not approved for release`);
+      const humanReviewedCopy = copy.localizationStatus === 'human-reviewed'
+        && Array.isArray(copy.localizationReviewers) && copy.localizationReviewers.length > 0
+        && copy.localizationReviewers.every((reviewer) => typeof reviewer === 'string' && reviewer.trim())
+        && /^\d{4}-\d{2}-\d{2}$/u.test(copy.localizationLastReviewedAt ?? '');
+      const canonicalEnglishCopy = locale.key === 'en' && copy.localizationStatus === 'source-english';
+      if (!unapprovedAllowed.has(tool.id) && copy.localizationStatus && copy.localizationStatus !== 'approved' && !ownerAcceptedMachineCopy && !humanReviewedCopy && !canonicalEnglishCopy) errors.push(`${locale.key}/${tool.id}: localization is not approved for release`);
       for (const key of REQUIRED_GROWTH_COPY) {
         if (typeof copy[key] !== 'string' || !copy[key].trim()) errors.push(`${locale.key}/${tool.id}: ${key} is missing`);
       }

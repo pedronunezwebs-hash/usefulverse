@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sourceLocale": "en",
+  "translationPolicy": "draft-until-reviewed",
+  "models": {
+    "default": {
+      "repository": "facebook/m2m100_418M",
+      "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636",
+      "license": "MIT",
+      "runtime": "CTranslate2 CPU int8",
+      "inputLocales": ["en"],
+      "sourceLocales": ["es", "fr", "pt-BR", "de", "ja", "ko", "id", "hi", "ar", "zh-CN", "bn", "ru", "ur", "tr", "vi", "it", "zh-TW", "bg", "ca", "nl", "el", "ms", "pl", "sv", "th", "uk", "sw", "mr", "ha", "fil", "ta", "fa", "am", "gu", "nb-NO"],
+      "modelCodes": {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "no"}
+    },
+    "telugu": {
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094",
+      "license": "Apache-2.0",
+      "runtime": "CTranslate2 CPU int8",
+      "sourceLocales": ["te"],
+      "modelPromptPrefix": "<2te>",
+      "status": "pending-pilot"
+    }
+  },
+  "postProcessing": {
+    "zh-TW": {"tool": "OpenCC s2twp", "meaning": "script conversion only; regional terminology still needs review"}
+  }
+}

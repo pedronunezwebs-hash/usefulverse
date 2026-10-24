@@ -1,0 +1,212 @@
+{
+  "runs": [
+    {
+      "run_id": 39736862405,
+      "job_id": 119684478190,
+      "source_commit": "717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff",
+      "event": "pull_request",
+      "conclusion": "success",
+      "log_sha256": "8674ac133c91e5ba5c891df11dd11f4c9190e6e0d93be1707f48cf72811ad8e3",
+      "artifacts": 0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate all pages",
+          "conclusion": "success"
+        },
+        {
+          "name": "Require linguistic approval for expanded locales",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate the isolated tools hub",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate the 300 staged tools without publishing",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish to the existing Cloudflare Pages project",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Publish the separate static tools hub",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "evidence_lines": [
+        "2026-10-22T06:54:30.9649451Z ✔ a repeated position is moved by one fret and answers are checked exactly (1.70536ms)",
+        "2026-10-22T06:54:58.2853540Z ✔ all 300 imported candidates are explicitly non-indexable; all 217 existing hub tools retain indexability (1.87171ms)",
+        "2026-10-22T06:54:58.2859926Z ✔ unapproved copy exemption cannot be used on an indexable tool (2.520926ms)",
+        "2026-10-22T06:54:58.2994669Z ✔ binary input is type-checked and bounded before encoding (0.618779ms)",
+        "2026-10-22T06:54:58.3533176Z ✔ word bank, difficulty, random source and multi-grapheme guesses are validated (0.91325ms)",
+        "2026-10-22T06:54:58.4074418Z ✔ dates, mood scale, tags and note length are validated (0.652742ms)",
+        "2026-10-22T06:54:58.4523407Z ✔ inputs, target URLs, agents and complexity are bounded and validated (12.624479ms)",
+        "2026-10-22T06:54:58.4629539Z ✔ generation is fresh, bounded, and every supported size has one checked loop solution (31.46343ms)",
+        "2026-10-22T06:54:58.4631824Z ✔ inputs and budgets are range checked (0.711091ms)",
+        "2026-10-22T06:54:58.4704875Z ✔ JSON backup round-trips validated itinerary data and rejects unsupported/corrupt structures (0.78506ms)",
+        "2026-10-22T06:54:58.4769363Z ✔ Arabic digits, decimal punctuation, boundaries and malformed pairs are checked (1.4739ms)",
+        "2026-10-22T06:54:58.4773867Z ✔ uses the supplied local issue date and preserves checked task state when rebuilding (1.646923ms)",
+        "2026-10-22T06:55:24.5911066Z ✔ validated exported plans round-trip and reject duplicate IDs or excess capacity (0.702465ms)",
+        "2026-10-22T06:56:14.1785764Z ✔ PWA manifest uses validated same-origin paths and standard display/color values (0.707365ms)",
+        "2026-10-22T06:56:14.1787414Z ℹ tests 3045",
+        "2026-10-22T06:56:14.1787858Z ℹ pass 3045",
+        "2026-10-22T06:56:14.1788065Z ℹ fail 0",
+        "2026-10-22T06:56:14.1788676Z ℹ skipped 0",
+        "2026-10-22T06:56:35.9004630Z Ran 85 tests in 21.370s",
+        "2026-10-22T06:56:35.9005088Z OK (skipped=2)",
+        "2026-10-22T06:58:52.7903518Z Built 0 Growth600 pages for 300 tools in 36 locales (11293 files, 241869934 bytes).",
+        "2026-10-22T06:58:54.7824729Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs."
+      ],
+      "at_utc": "2026-10-22T07:00:00.508374+00:00"
+    },
+    {
+      "run_id": 39740313985,
+      "job_id": 119695680857,
+      "source_commit": "d6d4019fa0ef79b7c399c4130c10c376d90d3904",
+      "event": "pull_request",
+      "conclusion": "success",
+      "log_sha256": "8082652ff6a2e14f20da1f9e2210817a82cff4b098f24ffce8a8961a3f066b8b",
+      "artifacts": 0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate all pages",
+          "conclusion": "success"
+        },
+        {
+          "name": "Require linguistic approval for expanded locales",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate the isolated tools hub",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate the 300 staged tools without publishing",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish to the existing Cloudflare Pages project",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Publish the separate static tools hub",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "evidence_lines": [
+        "2026-10-22T07:25:13.6611386Z ✔ a repeated position is moved by one fret and answers are checked exactly (3.682998ms)",
+        "2026-10-22T07:25:29.5640214Z ✔ all 300 imported candidates are explicitly non-indexable; all 217 existing hub tools retain indexability (0.77548ms)",
+        "2026-10-22T07:25:29.5642642Z ✔ unapproved copy exemption cannot be used on an indexable tool (1.455317ms)",
+        "2026-10-22T07:25:29.5700856Z ✔ binary input is type-checked and bounded before encoding (0.378957ms)",
+        "2026-10-22T07:25:29.5967238Z ✔ word bank, difficulty, random source and multi-grapheme guesses are validated (0.530403ms)",
+        "2026-10-22T07:25:29.6106449Z ✔ dates, mood scale, tags and note length are validated (0.481645ms)",
+        "2026-10-22T07:25:29.6228897Z ✔ inputs, target URLs, agents and complexity are bounded and validated (7.585944ms)",
+        "2026-10-22T07:25:29.6260332Z ✔ generation is fresh, bounded, and every supported size has one checked loop solution (12.203717ms)",
+        "2026-10-22T07:25:29.6261318Z ✔ inputs and budgets are range checked (0.270437ms)",
+        "2026-10-22T07:25:29.6297228Z ✔ JSON backup round-trips validated itinerary data and rejects unsupported/corrupt structures (0.344278ms)",
+        "2026-10-22T07:25:29.6327714Z ✔ Arabic digits, decimal punctuation, boundaries and malformed pairs are checked (0.755176ms)",
+        "2026-10-22T07:25:29.6329965Z ✔ uses the supplied local issue date and preserves checked task state when rebuilding (1.152534ms)",
+        "2026-10-22T07:25:45.7061947Z ✔ validated exported plans round-trip and reject duplicate IDs or excess capacity (0.522178ms)",
+        "2026-10-22T07:26:12.2019713Z ✔ PWA manifest uses validated same-origin paths and standard display/color values (0.333503ms)",
+        "2026-10-22T07:26:12.2020410Z ℹ tests 3045",
+        "2026-10-22T07:26:12.2020657Z ℹ pass 3045",
+        "2026-10-22T07:26:12.2020772Z ℹ fail 0",
+        "2026-10-22T07:26:12.2021013Z ℹ skipped 0",
+        "2026-10-22T07:26:26.5067583Z Ran 85 tests in 14.065s",
+        "2026-10-22T07:26:26.5067793Z OK (skipped=2)",
+        "2026-10-22T07:27:01.6258610Z Built 10260 pages (277 tools × 36 languages, 36 localized home pages, and 7 guide routes × 36 languages) in /home/runner/work/usefulverse/usefulverse/dist",
+        "2026-10-22T07:27:11.5217614Z Build check passed: 9972 localized tool pages + 36 home pages; 10260 URLs in sitemap.",
+        "2026-10-22T07:27:12.0147120Z Release locale review passed for 20 expanded locales.",
+        "2026-10-22T07:27:17.3646758Z Built 7848 Growth600 pages for 217 tools in 36 locales (8253 files, 272873628 bytes).",
+        "2026-10-22T07:27:36.3759846Z Assembled additive release with 217 Growth tools, 100 market tools, and 106 editable recovered tools; publishing directory: /home/runner/work/usefulverse/usefulverse/dist-growth600.",
+        "2026-10-22T07:27:42.3013644Z Built 0 Growth600 pages for 300 tools in 36 locales (11293 files, 241869934 bytes).",
+        "2026-10-22T07:27:43.2324228Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs."
+      ],
+      "at_utc": "2026-10-22T07:28:40.437991+00:00",
+      "verified_counts": {
+        "node_tests": 3045,
+        "node_pass": 3045,
+        "python_tests": 85,
+        "python_pass": 83,
+        "python_dependency_skips": 2,
+        "main_pages_sitemap_urls": 10260,
+        "expanded_existing_locales": 20,
+        "hub_tools": [
+          217,
+          100,
+          106
+        ],
+        "preview_files": 11293,
+        "preview_tool_pages_noindex": 10800,
+        "preview_homepages_noindex": true,
+        "preview_sitemap_indexable_urls": 0,
+        "deployment": "skipped"
+      }
+    }
+  ]
+}

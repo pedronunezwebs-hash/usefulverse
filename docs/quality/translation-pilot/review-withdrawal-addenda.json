@@ -1,0 +1,46 @@
+[
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v12-full.json",
+    "review_file_sha256": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632",
+    "review_digest": "8fae13ba4b6c93e7e7a43328092655a4b6a4fc04303410f6c646734653fb9d7b",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado.",
+    "entries": [
+      {
+        "record_id": "5ebcda48a74c6135c1f56ad9550cc47cc3e8aa99604d3053ce9279d6b01b2dac",
+        "key": "voice-changer.fields.device",
+        "locale": "es",
+        "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+        "context": "fields.device",
+        "inference_policy": "context-v12",
+        "translation_hash": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+        "back_translation_hash": "fdfd5a01fc3bd740c2141593cb22b499963458c30120967851686669e0cea5c2",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado."
+          }
+        }
+      }
+    ]
+  }
+]

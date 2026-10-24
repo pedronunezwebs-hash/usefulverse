@@ -1,0 +1,70 @@
+{
+  "policy": "context-v21",
+  "run_id": 40070361820,
+  "source_commit": "b7979a85517024ac173ba19720811b60991bfe9e",
+  "current_outputs_read": 333,
+  "new_outputs_read": 266,
+  "fixed_sample": {
+    "rows": 88,
+    "sample": 88,
+    "points": 792,
+    "maximum": 792,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+  },
+  "expanded_model": {
+    "rows": 174,
+    "sample": 174,
+    "points": 1566,
+    "maximum": 1566,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+  },
+  "expanded_legacy": {
+    "rows": 92,
+    "sample": 92,
+    "points": 799,
+    "maximum": 828,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 10,
+    "minor_rows": 1,
+    "passed": false,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+  },
+  "matched_legacy_comparison": {
+    "keys": 92,
+    "model_points": 828,
+    "legacy_points": 799,
+    "maximum": 828,
+    "frozen_engine": false
+  },
+  "hash_comparison_to_v20": {
+    "model": {
+      "forward_same_v20": 105,
+      "back_same_v20": 109
+    },
+    "legacy": {
+      "forward_same_v20": 92,
+      "back_same_v20": 83
+    }
+  },
+  "approved_locales": [],
+  "frozen_engine": false,
+  "source_forward_back_direct_read": true,
+  "forward_defects_outside_fixed_sample": [],
+  "reference_gate_preserved": true,
+  "known_memory_nonreference_outputs": 51,
+  "nonmemory_nonreference_outputs": 123
+}

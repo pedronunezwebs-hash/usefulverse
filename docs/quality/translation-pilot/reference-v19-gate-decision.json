@@ -1,0 +1,50 @@
+{
+  "policy": "context-v19",
+  "run_id": 40048103975,
+  "reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 348,
+    "maximum": 360,
+    "button_errors": 3,
+    "number_negation_errors": 1,
+    "major_rows": 5,
+    "minor_rows": 2,
+    "passed": false,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent review; defects block. No native/unseen-text or language approval."
+  },
+  "legacy_gate": {
+    "rows": 27,
+    "sample": 27,
+    "points": 233,
+    "maximum": 243,
+    "button_errors": 2,
+    "number_negation_errors": 2,
+    "major_rows": 5,
+    "minor_rows": 0,
+    "passed": false,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent review; defects block. No native/unseen-text or language approval."
+  },
+  "full_dispatched": false,
+  "approved_locales": [],
+  "forward_defect_keys": [
+    "dxf-viewer.faq.2.a",
+    "voice-changer.fields.loaded",
+    "dxf-viewer.fields.resetView",
+    "dxf-viewer.fields.cancel",
+    "dxf-viewer.fields.unsupported",
+    "voice-changer.fields.faq2a",
+    "dxf-viewer.fields.measurement"
+  ],
+  "next_policy": "New independent v20: reproduce exact v19 callbacks/traces, then source/hash/context-bound correction of all7 observed model forward defects; preserve v19 policy and parser. Read references/warnings first. Full only after reference gate passes.",
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 239,
+    "legacy_points": 233,
+    "maximum": 243,
+    "frozen_engine": false,
+    "note": "Same27 keys only; neither candidate passes its gate. Known-sample agent review, not native approval."
+  }
+}

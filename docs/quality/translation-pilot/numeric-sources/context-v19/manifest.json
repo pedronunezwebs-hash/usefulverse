@@ -1,0 +1,42 @@
+{
+  "cldr_json_revision": "91c267402229a59e3ef2774544f001bf959e8809",
+  "cldr_revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+  "files": [
+    {
+      "path": "id-numbers.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/id/numbers.json",
+      "sha256": "987609412c51e5cc6f11a70ecad5038fa46254b098e66e3d1689c2668f051b7a",
+      "bytes": 5338
+    },
+    {
+      "path": "numberingSystems.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-core/supplemental/numberingSystems.json",
+      "sha256": "0efb69a00dbae5950195b077e0cc6c7f319d3a1e8a81401083ec4f42c14b0014",
+      "bytes": 10695
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "bytes": 2033
+    },
+    {
+      "path": "id-rbnf.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/rbnf/id.xml",
+      "sha256": "af936324a45b8d930f78d3ea58b1d5155c83edfc622de8978806f9378501212f",
+      "bytes": 1419,
+      "revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588"
+    }
+  ],
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-24T01:01:07.720888+00:00",
+  "locale": "id",
+  "numbering_system": "latn",
+  "digits": "0123456789",
+  "group": ".",
+  "decimal": ",",
+  "primary_group_size": 3,
+  "secondary_group_size": 3,
+  "standard_pattern": "#,##0.###",
+  "scope": "Versioned context-v19 Indonesian decimal subset only. CLDR latn dot grouping/comma decimal, exact values/multiplicity. Coordinates/version/code stay separate. No compact, RBNF, scientific, currency, skipped signs or unknown digits. U+2212 audit normalization only; no output rewriting. Historical global parser stays unchanged."
+}

@@ -1,0 +1,44 @@
+{
+  "at_utc": "2026-10-22T07:17:52.713491+00:00",
+  "method": "Only exact run-log ZIP caches for six own v12/v13 runs. Metadata/log hashes and source/checkpoints already verified remote at 129e949aa9b988600294d037cbcd02a1ec1cad3a. Each run completed successfully and original logs remain on GitHub. No other cache/account data touched.",
+  "removed": [
+    {
+      "run_id": 39730074541,
+      "cache_name": "run-log-39730074541-1792648073.zip",
+      "bytes": 242330,
+      "sha256": "c9569cd8bc25bd6c345e6467a2d86af7d8803268ee2fdb037d42bd65a7f6c01a"
+    },
+    {
+      "run_id": 39730087914,
+      "cache_name": "run-log-39730087914-1792648082.zip",
+      "bytes": 183575,
+      "sha256": "5dcc3a0c2a37b5c85d49f39c0ccdd3c687d0f802596b205a43edf87b64fc89b2"
+    },
+    {
+      "run_id": 39730859028,
+      "cache_name": "run-log-39730859028-1792648562.zip",
+      "bytes": 710826,
+      "sha256": "0f1afde0d5ef110b887cda3fd876b838869c21160337a99ca9b7bbeacf29fc57"
+    },
+    {
+      "run_id": 39734259820,
+      "cache_name": "run-log-39734259820-1792650573.zip",
+      "bytes": 242087,
+      "sha256": "8ed8d75b05ef0f8ea19057ccaa4f04b9bbcdd2a6cda3bea8eeef04d5ca5aa8c9"
+    },
+    {
+      "run_id": 39736862405,
+      "cache_name": "run-log-39736862405-1792652043.zip",
+      "bytes": 242229,
+      "sha256": "2d1f6209cb3faaa9dc57563f3ccd37e795f12e3e9da8ab7a72f4b77c809de986"
+    },
+    {
+      "run_id": 39736865789,
+      "cache_name": "run-log-39736865789-1792652044.zip",
+      "bytes": 183885,
+      "sha256": "7a2a4fd1cc364bf778d20c154e514aca093eb980b2cb720f628999338d0c665b"
+    }
+  ],
+  "bytes_removed": 1804932,
+  "prior_v12_cleanup_correction": true
+}

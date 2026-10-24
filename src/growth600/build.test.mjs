@@ -1080,7 +1080,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
-    ...pendingToolsCopies[locale.key],
+    // This packaging test supplies synthetic approved locale metadata; the real copies remain drafts.
+    ...Object.fromEntries(Object.entries(pendingToolsCopies[locale.key]).map(([id, copy]) => [id, {
+      ...copy,
+      localizationStatus: locale.key === 'en' ? 'source-english' : 'approved',
+    }])),
   };
   const result = await buildGrowthStaticSite({
     outputDir,
@@ -1095,10 +1099,10 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     faviconSvg: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
     currentTools,
   });
-  assert.equal(result.pages, smallLocales.length * (growthPilotTools.length + 1));
+  assert.equal(result.pages, smallLocales.length * (growthPilotTools.filter((tool) => tool.indexable !== false).length + 1));
   assert.equal(result.sitemapUrls, result.pages);
   assert.equal(await readFile(join(outputDir, 'favicon.svg'), 'utf8'), '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
-  assert.ok(result.files <= 18_500);
+  assert.ok(result.files <= 19_500);
   assert.ok(result.assetFiles.length === growthPilotTools.length + 1 + Object.keys(toolStyles).length + Object.keys(workerBundles).length + Object.keys(extraAssets).length);
   const sitemap = await readFile(join(outputDir, 'sitemap.xml'), 'utf8');
   assert.ok(sitemap.includes('https://tools.usefulverse.com/es/tools/gravel-calculator/'));

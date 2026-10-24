@@ -1,0 +1,27 @@
+{
+  "feature": "b9774a85b3d1493a196d870d8c69669ec9720d24",
+  "main": "dd53bb4108a8fa5d433e39f6c2223a0009e4b7bc",
+  "tracked_files": 7568,
+  "critical_files": 561,
+  "historical_files_unchanged": 209,
+  "historical_back_addenda_prefix": 6,
+  "appended_back_warning_addenda": 3,
+  "historical_fixture_prefix": 891,
+  "historical_metric_groups": 100,
+  "main_changed_only_six_handoff_documents": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-24-piloto-v21.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md"
+  ],
+  "source_and_public_unchanged": true,
+  "progress_states_slugs_layers_unchanged": true,
+  "no_lfs_pointers": true,
+  "ci_source": "212760583100753802a3528d4ef21c66c4aad061",
+  "current_diff_from_ci_only_metadata": true,
+  "root_bytes": 551037491,
+  "free_gib": 37.189510345458984,
+  "at_utc": "2026-10-24T06:52:03.546653+00:00"
+}

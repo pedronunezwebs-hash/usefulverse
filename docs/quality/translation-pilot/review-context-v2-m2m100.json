@@ -1,0 +1,1453 @@
+{
+  "schema_version": 1,
+  "inference_policy": "context-v2",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-20T14:00:52.112104+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "40 referencias del modelo M2M100 por destino es/nb, con original y retrotraducción leídos.",
+  "decision": "rejected-do-not-expand",
+  "approved_locales": [],
+  "rows": [
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "9ac136e1e4a7da2d9ffdf75828b1c2dd3f0db8b32b0d23c8f9e1a0d3de715802",
+      "record_ids": [
+        "06daaedf5602a9ea967e5258ba41eb577bcfca1eacf312c96c2f8c4c54e66f6e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La segmentación pega «DXFSólo» y pierde la separación entre frases."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "8e4d2f1aeb93daa5bd10cf6a908c813c951b11a97d2bc30f0920af41e905c86d",
+      "record_ids": [
+        "ba08008b4fff84a066a86c87d2d1b90360a4b424757f0c2ef2c6f547601aa533"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 0
+      },
+      "notes": [
+        "Desaparece la condición de milímetros; queda «Sólo cuando el DXF» sin completar."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "563969fb48807970b1eb091dd6f08cb8637746a91ddc95c9b7643eb5d1088fee",
+      "record_ids": [
+        "4db84d8e3db641c64d8a39473650e5fa6e86233e3694dab742aa52d809cfcb18"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "«no se apoya.Save» es traducción incorrecta e incluye inglés."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "record_ids": [
+        "1f05fc963b4b87a79547bd8e9eb06888a16d7ec2f0ff4ae9a41a6c02e747a4b2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "c2f23209c653a5500c7fa7dab34775a503acfef5c96f441189e5b0334529b6a0",
+      "record_ids": [
+        "7d735902b3cf00f287e2eb2c5973785a0c8d7ea9d30e889c1dc97651a900d595"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "fb7d4a97ee49d58e4a27bd93441ebeb609282bde4fd162a30b3b932ebfa598ce",
+      "record_ids": [
+        "e771128fe7d873d35071700c8003208bbccde755e8fa2e411bf96b97e097af0e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "dc25d6b9e7430a09d7b6a94c5f1c606d824ed2d43019d3da0e4874fbeba499e3",
+      "record_ids": [
+        "c6f7be3cb8897ab2e75e14259bb122d7f3f6c1028d173ef63df80ceb50e6fda9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Elegir una ASCII DXF Archivo» no respeta el orden ni el género."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "aba88629833be7907e464ee555026db3db7893e355fbf4ffcee776ff2246409b",
+      "record_ids": [
+        "83068857772107d4e55a80dd4f04b2f2d28ec03e2bd221ff0481d2746f91edf1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "3a4b1eeb31b6330bd8fa232c5dba44fb6b0f2a74228d82fc3b04b6f57af8e23a",
+      "record_ids": [
+        "811ec09992b28f0020bf5fbab95146225bf10bf126606fdb77f5e1b56724505a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "d3212386a579c86d095749d9e842b3c06cea2d544a897891d4d9bfc39b8d07fa",
+      "record_ids": [
+        "5a812870d16e1305dc00f2a2e425ee2a307353904cd0cf2e47341d1b233534a9"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Conexión del dibujo» no significa ajustar la vista."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "3e4353e79cf92d140a0f893787af9adaad16f4037379c4057067284681d3abfe",
+      "record_ids": [
+        "8d87f7ba63849774cda9340d36a18c21a530c70b00b06820342a589098e738ae"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "Mezcla «Ficheiro» con español y forma «.dxf El archivo». "
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "897d0d062c50d67f6552b638b372047490aa0fe5c053a4c5f6cd15b2e5fdd67b",
+      "record_ids": [
+        "d1907fd8a414e42aebd650b616fbbf689aa15448263d20abdea898bd285ef7b7"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«El zoom en» es una etiqueta incompleta."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "1ff6acb382072f8d79c848d62a1be9a69fd427fa839dd3bba37c8690c1c8040f",
+      "record_ids": [
+        "5e8e4b74ec633cdf7f59b02901d6661b559bae91490451cefa1bb1545590f87c"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«¡Zoom fuera!» es un calco poco claro para alejar."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "d2bbea992b8444841893e1093fa537cfe79997bd1b839d255ae1103041216ef1",
+      "record_ids": [
+        "e50a263113266bc0546abd7508210eb0c1d38f601e8adb5b6c164d3540278020"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "488571759b32b8e875bc09217a183a0ac991c7c115ceae08df8381fe0fc5113f",
+      "record_ids": [
+        "ad9c0b0e08c7e2fdff0bb933999e4740a419f253186a93b2aaf85526f94569c0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "b71067657944429d4e6531c3fdc58fc14134666573f5560e67172f6e57773faf",
+      "record_ids": [
+        "bf353f4837effac3835720bb561de753cf6b3b597f4ae5ee61a5b48e0b45cb4d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Removemos» habla de lo que hacemos, en vez de dar la acción de borrar."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "9f3fdabc52c58ea0a5119628831ff420ba8d6a5abecc0a697874a0d84bead88b",
+      "record_ids": [
+        "dd70e2b723ec0cd6879a1e5efda0138fe153e5e261cc7c4bd7cfd0a204eeaa09"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "4ec0d63b7edbefa1620dd867010bc9d6eba9d12d73f149c97b32c55168109d9c",
+      "record_ids": [
+        "e73f4eab8ead5a47a9cde1c820e6a28480cfab29b8afce0f462a752669e89222"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«juego salvado» confunde el término de interfaz partida guardada."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "00d6f81cdee3f36d6d469dce79bba26dff6f105edc5a0cfca348316191a1dffc",
+      "record_ids": [
+        "976dd10f1155496a5742aef12961f34125a8b6692b4685cae8913a4736942981"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«una pistas de números» tiene concordancia incorrecta."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "524755185defb6f741288851f6b2dfcaf66ff8456d8e999ec59d83a245c372cb",
+      "record_ids": [
+        "9e18b1ff490e4398d695f48e56ba21207ee0bdb9087397f42c0a0a44e79a35d3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "fbb044d518f0195a69ed8d12cc75da59a0186e64e1078eef65c36cf17cd22cff",
+      "record_ids": [
+        "b119b6470e42bd7b6134898f0894aaa2111e05158a3fb0b771cb6f8c638cac92"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "a8897cd1781a5dd390b943081caa08eb8ac9b72f832a4924f4cd7ccfd49c8ba3",
+      "record_ids": [
+        "01e5e5a118be355c41f6a29826e7dcfdc7f3297e5fc619f1b3b415c0b64110bd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«juego salvado» es un calco para partida guardada."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "130a0104d0d3143d7cda34511c6315d70f0d7512b2832fed6c542df93c1685b9",
+      "record_ids": [
+        "aff7a89bd6503c9e9a924ebb5cd155bbe5400a6b71fffc2c6da06f8256928ea8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "482972bde7bbc7f166c194e7c312274b8b25186ed4ac1cb571126f4f8e851b6b",
+      "record_ids": [
+        "84977990e5373056cb4618c385f68d00d0407250b4920ffc71725f242c52843d"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«ángulo opuesto» es menos preciso que la casilla de la esquina opuesta."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "1308d66798ad705432d4482a893fa45c19fdb531cc90fd4376c3da7b08ad7cf2",
+      "record_ids": [
+        "dfd4fd4c5f64494373093e781480fa262df577a978d010a394970924d2f229b0"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«cuarto de inicio» significa habitación; debe ser casilla inicial."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "c9d3def442f8e8f0b2062f77f7bced316a7a4557927c0b611490df0f19192af0",
+      "record_ids": [
+        "db7340b115f5fd7ce7add31aeb7cde3ff3a9df288fe9d861c22e9cc826378b2f"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«El último rectángulo» omite deshacer."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "42e3dae4d4db22e1cd48c0e481099c8f53a1ec673d8b43a7a7d863d3227c02ad",
+      "record_ids": [
+        "0aca381e0d3a9de037d3a2544f233952b4335e576742748856d085091b6cebc4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "a31c96b5a91b0736d5feacb6510b32c0099c8ed406c57687704de8fa167aabf5",
+      "record_ids": [
+        "507b8ae33c47152fd0af7e9a4ac6c8f607186751a0f129d7ca91aa380de65a00"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "559bd8e9ac5df7867597446c34c7b9be9297a87e10b44852969004d35eba3a94",
+      "record_ids": [
+        "828684d9f0d95810c302b26d77419d4e83fb8314b9d7a7ee39554d43876a5708"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Traduce eliminar como «Descarga», la acción contraria para el usuario."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "3d49e1e21aadb1d031bc746e6a42e790ce81b417bea813fb5927338034994058",
+      "record_ids": [
+        "a15f8a441ddca2863a2bfcb2beb23908303b20e79acf2905b3a925a02445afaf"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Omite la instrucción de probar; queda el fragmento «WAV o MP3». "
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "2f88edf9488db04680d7cf324487925221b55e07fbab88f87b926742bbc31519",
+      "record_ids": [
+        "5b2a42604236ca3894925136b1609c66b91caad4ec35c3e5bf81adf082f09dc8"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Exportación procesada» no expresa exportar el audio procesado."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "9f16ca95b905591cf17fef3b61abbb268f0dc1dc372810971cee094c1d2c0868",
+      "record_ids": [
+        "f696358385a53d6b32f315f786aa6693eef1b43ac652048b535c1aa1a2a4c725"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Mayúscula suelta en «UsefulVerse No recibe» por separar el sujeto literal."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "414c0198bb7da7b3b2d4020914a344a8a63928b77d893824fde2ba685dfd4391",
+      "record_ids": [
+        "fec162bff0b970154a296791105cd23a0fe62ba0908d1c430ae4763df467d08c"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«pista inferior/superior» no expresa tono; pierde el sentido del control."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "8bc837e326f328b6d098293bfbb561fdffcb9745a09bd3a6fa7f7371b6efb259",
+      "record_ids": [
+        "0f0391a52368a9ce734e3221e9f9b6d6c6594bfc4f98367f2e8b1fbc83d7541e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Carga de audio local» nombra una carga en vez de indicar cargar."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "22e6437bf275c35ad87ae575262e2ceb3387a02a9fbbd603cacacf7bf8d21630",
+      "record_ids": [
+        "b75ba916f9f54752e8c383acded44d57363623ed4e8f4188edb180b217886cc7"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "«El audio se desciende» y «Durante» no significan audio decodificado y duración."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "bbe2ea9713376414bcdb7e9f68e3d819d6d06d3a1920d7e368ceff36aa8ee4ce",
+      "record_ids": [
+        "cb6adf9e77d1504b150340b2b76c253ce8a221bd8e7c27ef9bf9109135287205"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Juega» trata play como jugar, no reproducir audio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "50bdbf78b52fccfe23c3c28e6f66ca99ce1bbb1fa41db4b498571f34a675da2b",
+      "record_ids": [
+        "bb8f3f748e999676aeb656fda9807a1ef9b8673e88c14c994510341ba30b274d"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«se salva» no es guardar datos; la redacción de privacidad resulta confusa."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "c9df13ae3049f47272f6ceae7fa146d0b81d43722e751ae85a43de55aaa9ba02",
+      "record_ids": [
+        "df14a498c4a7c112c54c9e102d3f6408b392c839cd563e9250def9171c87ad10"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Deja de jugar» no significa detener audio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "40d11dedcccb8f965af4f56490163ff8f4fc3caedaad54c691f83beea24cb9f8",
+      "record_ids": [
+        "292db44d8cef9e246110a9528889c1b1bbccb3a235f7dfb0968459932928c964"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "b167efd3fafccd5a7d1dd28c8521cf46873b3d1fad675060f8f6e7900f3dcdee",
+      "record_ids": [
+        "8eb89cee1b1f0c417001e255dc63c759bdb1f7b51690b6e16b5ab7c8bb177ab8"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 1
+      },
+      "notes": [
+        "Inventa «30 2 segundos» y traduce recortar como «remate». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "57341de69fd4ec167d5001b429e34755a85215c50ce1d66314080d3c4ca5078a",
+      "record_ids": [
+        "e09a2b78c9c7387dc6e026ed68406460962c56ae1e0324ca7e61f12fd902ca79"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«verktøyet kan ikke åpnes» cambia qué no se puede abrir; además pega «DXFDet». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "73fd90573017f754d6e7e281aff7b9a3f4a7d171f1ab03b37c87b11a18277762",
+      "record_ids": [
+        "c20d6fcbf3424c7707f5b86af3dd3d8e610f0eb85db090824d0fcb9494648451"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 0
+      },
+      "notes": [
+        "Pierde milímetros y mezcla «Annars» con bokmål; condición incompleta."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "181a95bc06a64b998e5694bf69369141b220c787f51309848ae3e478bc55cb01",
+      "record_ids": [
+        "a8fab5e213ac84b1a6385554b6d5e285cee9199a61cc46045bfdeea1f6c47e02"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fragmentos sin verbo auxiliar y concordancia defectuosa en «Binære DXF». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "9517bfd1a9454c94d4fcf16f76b3daebfa0eb83dd8d291313c2a8c0ccc0e1312",
+      "record_ids": [
+        "414be2eb6dcd06a80c069a4272b9f84c52051b4cc14ccfce104509eab959a520"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Avbestill» suena a cancelar una reserva, no a detener la carga."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "5a25871e4e5f3cb3b11d600630177fda7598f5271065c361bbe2f6ae7a9c82ba",
+      "record_ids": [
+        "2f00ef238bb8a1f2573a930ce93a23108a4708e45db464c8cc555dbb0726d376"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Nedlasting» es el sustantivo descarga, no la acción «Last ned». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "3bacb0e8bb89d6e8000f5fe43054d80ce353ceec0eb75b7a78473382f2da1fc4",
+      "record_ids": [
+        "eb26ada155cf7f3a04fb7c37a1d55521d122345c6c35ae65f453e9662a689f76"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Nedlasting» es el sustantivo descarga, no la acción «Last ned». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "1ff7679e76a8d943f538defc4cb97c2e348ce79f9edce317d0221c7b40c04b3f",
+      "record_ids": [
+        "0d13eab49647847b28d4595016237402433337bebc0cc03c405bd5d452971122"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«en ... Filer» mezcla singular y plural."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "fa2ab2bf8905b2fb4e5ade53150ff1ce1fdcd94d233a0ab3db328ac19ee42aaa",
+      "record_ids": [
+        "b8dc939c7faf23cd1cea2217a24505291905e13e25b49c4c8ee73b4b2eb08e42"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "94fcdd5768932d61954299124d4f90d7e1898bff1528627c11e7a82932eb8a50",
+      "record_ids": [
+        "734d809a7712e475a2adc07086520f10b9ae77080a1841a53ffe2a1e9d3ab5c1"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Etiqueta nominal «Måling av avstand» en vez de indicar medir."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "e80cc9674c0665d76157816c36d917841a79243f05d97a91c2368ddf276556cd",
+      "record_ids": [
+        "908d227b9d421a6a89380d26cc14665aaf2a40236f059165ab69d84eaff289ee"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Fikk tegningen» significa obtuvo el dibujo, no ajustar vista."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "45e208d126091e758084d2ba660753d3a4675653012dd804929305b131a88845",
+      "record_ids": [
+        "a88f3e3d0b212d761f03b3663de168c3a08906c75338575b52926b6fbfbb11cb"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Añade «og filer» al final y rompe la instrucción de archivo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "289555430842e0354c1a38aae2863ce9a48176bcbb49a865b8c574fe754c0a04",
+      "record_ids": [
+        "88bcd3cdbde1e42a6e36acfcb8d6dbe1e933e772b8a9eecb3e98064536688bb5"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Zoom i» no es la acción bokmål «Zoom inn». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "58a3a638fb92cd4d17db395ddac5c5c6204e857931dd1a1e67378a5b8a901ccd",
+      "record_ids": [
+        "23915a06ed007b8442c75e6d22f804378c75e526320d0f642f94a210cac84763"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "b636e2269ee51e6d8788fc416085a22c2619199327767ad324115a183788497c",
+      "record_ids": [
+        "58805a8460886725c602bd08d3f6f73a0f3bc4a9dcc64d95466cbb7aeaae5417"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "«rettangle» no es rektangel; gramática y término de pista defectuosos."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "ee3b0bc2a3b8c2570c6cccab35cd8509042eac7dd1125af7216dd76aa6e75e8a",
+      "record_ids": [
+        "121c0b59fb418186b93be34cacb654c1c0718f9edcc3be26dffdbdcdff641dd9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«pussel» poco natural frente a puslespill en bokmål."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "416926ab38e377ee189c06d08e53e0b8b546e071607c31f47cbb291be38d05d9",
+      "record_ids": [
+        "864bb9aabd0ceac9393da1fb34ef88f3626f6500bdf33e6e8184e87329bce960"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "c92961ff827c17e31b1bb95b7c2ef1c1dca2432f69d602e2317dd6962d4923e4",
+      "record_ids": [
+        "cb619a4c67f8a8a710970030f78b44952312b458bf95ac1aa16034ba2a7f0343"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«pussel» poco natural frente a puslespill en bokmål."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "6d705ed02dc9abf015e055a6714c804466e09632a0cedd499ffdde60df5d2a74",
+      "record_ids": [
+        "4c24b65c69a58f875b6a4b1f5ecfafe17057d34ca42c93c0447943577570dcee"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«redde spill» significa rescatar juegos, no borrar partida guardada."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "1c072ca6845a130a8e5d4c201e80ec454c7aba7fffa0a41e86e67ca68c3c6bec",
+      "record_ids": [
+        "dfbcec4cb441743557545f885e867ae328a6e9de2a70aaf23e307b6fc29db5c8"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "«rektangle» y «tallsignal» no son los términos naturales del juego; concordancia rota."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "b8581e24c9dc387fdb0e04b66f7a7d96a3790f634ce34c3e9c46b548dbb81ecf",
+      "record_ids": [
+        "7661a2b5fb00153c4c4ef1f31471950895d45318f563a3f33d6a57df306d180d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«innsikt» significa comprensión, no una pista de juego."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "ffa824ba46275844ecb524abba50f449774b3a850ba3970d5cec762f7ea2da64",
+      "record_ids": [
+        "2e9906c525b00ef679b75c6ff45a1d8523aa786dec44c88ed08d9d5e1eeaed2d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«pussel» poco natural frente a puslespill en bokmål."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "3a1edef647d8f4e848599f77beabde46d9ec8ebd0a46d6543f1b56af85e01244",
+      "record_ids": [
+        "299498e23950f946921ad24f0fe820bad9de9d95bfd8d1a08e1303c6e1042475"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«spillet reddet» alude al rescate del juego; no a la partida guardada."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "97f881c4db41b7e07aa529a5a0d1a7629c6db9e6a99372beab5d6cd915d2ec20",
+      "record_ids": [
+        "a705b62c444cec394c35d09b1f6f3b32e3f9f7318667a1ce8220e37455ed1587"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "60859f6cbf8bb331a6015606db0de6442efd44b49c7b2c85cbd541bc1e348c67",
+      "record_ids": [
+        "434bb7c23ff07181604c2bb99aeca01c97b6c344620f7979fce0a3b792dc8ba8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "2025914978766906bdf55627cf49c38d174b27443bb56c572a7642469ce4c206",
+      "record_ids": [
+        "2571d34b49bd7cc6c7b3be93d8845d884050e10fde84d5c14c3efd8142cb4e1e"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«startkvarter» no es una casilla inicial."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "92f960a8930c2af86b2c78f64618bd59fbee87ba7b283b1c38926cbf6dd409ca",
+      "record_ids": [
+        "825f42141e171bc35a308668f4ce80f6de50944a18c530d5d6a089669a12f93f"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 0
+      },
+      "notes": [
+        "«I siste rettangle» pierde por completo deshacer y usa un término incorrecto."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "45a33637567598f608beae81bab0c713af16227bc6c7f50d421876f530075c48",
+      "record_ids": [
+        "2ed258a847ef53767444c88401aaf4aebb6734801d769c985e3a7f570f6effe3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "9cf0870788c44ab17c08c01ca027eb91ecfc699269c619328e67e3422d59a858",
+      "record_ids": [
+        "be6de59a2d5872c6b7ebef49c45a6df82894492464c38095e5cca831466f2577"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "7d3599caa8f8be913f1e31811b208b47beae6a61f929117e601abc8cdabdc67c",
+      "record_ids": [
+        "6e31fdb5c35213371b20103f7b51695711c7152a07c4ce40b1d7dd310b79dd4c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«audioen» es menos natural que lyd/lydfil; conserva eliminar."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "e67c756b49c27d67d27355e67dd79fe2f3458a2bd9ff3139fe46e3e0993060ce",
+      "record_ids": [
+        "be62cb79d1b3528977102610ad61f53d20a39b6cbf6ab76391c1d666d060a93c"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Omite el verbo probar antes de WAV o MP3."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "bf08bca3fe30792e8031be449afab2f85c63ea4d1178f12a7c658c747c5c9ff9",
+      "record_ids": [
+        "229c408c0a10aad2e78b33d288b11b3c1b7db2125a180eb4defbcf19e50c54e1"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Eksport behandlet» no es la instrucción natural «Eksporter». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "02d67cda08345e9ed4d4012bc72c8a963a2950ced385bb46954057c1fc40dfe0",
+      "record_ids": [
+        "ad50d8273c4785972394670c525f478f405cc2ff2128c1e9646189a5800d12e7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Concordancia errónea «det valgte lyd» y sujeto fragmentado."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "ef83536df9b7d3995b16cd8b3aaa743f9d460d3c256d35031606f8e15c5ee4f9",
+      "record_ids": [
+        "1abe00fcf62ce2aff2f3060b33ca4efcad370894add97425e010f1958dc51ea7"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«spillets hastighet» cambia la velocidad de reproducción por velocidad del juego."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "7319298770e8f98dab5bcb493c040ac5d65ad9fcf388e87807462500fd752ed3",
+      "record_ids": [
+        "9c28d1a0a4c2144f6cf66bf185bff2cdd04e1ce9ae02125141ee0bdceb4ddc99"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Ladd» no es el imperativo bokmål «Last». "
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "5d7373838c1f4292dc913a7d073551488e6ab6bc62b97bbd420b6cc913df0075",
+      "record_ids": [
+        "383dae34fa5910d77bbdc004e5ebc97d3b3b1fb1f6f133fefb25b3e3035b7eb7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«Sekunder av» añade una preposición sin sentido."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "c0dd0e236f93f168ed54ee49d9be58fd215f91297d307f9c7e4f907eac957800",
+      "record_ids": [
+        "8838a477555106981471ca22cc86be10fd5d76b96126230b0b261fa3af81ec1b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Spille» es infinitivo; usar imperativo en el botón."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "9ff81be5a9259276c29f0c88987b4dd0fe47867d67f3d2f0e6cf8bb324fa7b97",
+      "record_ids": [
+        "e678a9b621be8c523b4dbac764cd96b54af9c040f8004f4c24ae1920c2bff8c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "14723e0a894a3ed8e340e964e2ad71b190478545562343e8cfea50ed1d9d4300",
+      "record_ids": [
+        "fd1f9f4414caac36277cb29119e0b2903dd9f7c1871bbd07f1a78254ef03660c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«audio-effekten» es menos natural que lydeffekten."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "d6663a56e5034576fd7e0cf4b4e54c6e5f318a97b453df44df734d4089147c93",
+      "record_ids": [
+        "fc126d64ed8bdb317f45db89231954a61ac1b129d86df3df8184a657971c9e6c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "edebadcb1c5183682eb416f4b596ba3fd124296935943875b22700e666cc5ff1",
+      "record_ids": [
+        "76568688ad0bf826be79a0667ee8187af39627aef470e4c6d57c4c30faa5a17c"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 1
+      },
+      "notes": [
+        "Inventa «30 2 sekunder»; la cifra deja de ser exacta."
+      ]
+    }
+  ]
+}

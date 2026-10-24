@@ -1,0 +1,138 @@
+{
+  "method": "Actual GET and XML parsing only; no browser/device/visual/performance audit. No deployment.",
+  "snapshots": [
+    {
+      "at_utc": "2026-10-22T06:53:37.581035+00:00",
+      "responses": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "bytes": 786404,
+          "content_type": "application/xml",
+          "urls": 10260,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "bytes": 1431497,
+          "content_type": "application/xml",
+          "urls": 15365,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-10-22T07:22:48.852160+00:00",
+      "responses": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "bytes": 786404,
+          "content_type": "application/xml",
+          "urls": 10260,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "bytes": 1431497,
+          "content_type": "application/xml",
+          "urls": 15365,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "at_utc": "2026-10-22T10:53:22.518247+00:00",
+      "phase": "recovered-closure",
+      "responses": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "bytes": 786404,
+          "content_type": "application/xml",
+          "urls": 10260,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "status": 200,
+          "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "bytes": 1431497,
+          "content_type": "application/xml",
+          "urls": 15365,
+          "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+        },
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "status": 200,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "bytes": 98535,
+          "content_type": "text/html; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}

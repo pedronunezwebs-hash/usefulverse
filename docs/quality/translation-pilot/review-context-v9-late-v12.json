@@ -1,0 +1,1098 @@
+{
+  "schema_version": 1,
+  "expected_rows": 29,
+  "inference_policy": "context-v9",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-22T06:24:18.460011+00:00",
+  "native_review": false,
+  "scope": "Later v12 direct reading discovers matching old raw text outside the original sample. All29 old source/forward/back records read. Current v12 forward scores reused only after exact source/forward hash verification. No new inference, historical rubric replacement or gate override.",
+  "decision": "historical-extra-errors-no-approval",
+  "approved_locales": [],
+  "full_gate": {
+    "es": {
+      "passed": false
+    },
+    "nb-NO": {
+      "passed": false
+    }
+  },
+  "rows": [
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.height",
+      "source_hash": "bfe2eca401797325bc268f93c7397554551de4274d5d73ed421ee36fe9cd3ae0",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "196624f8ac3693f51167cfa6f44d2b20e9024f4595bef74d90a6ea590365023d",
+      "record_ids": [
+        "cc8556f3cef939b4accd893dba03ee8893a262610f282b1547d3c9a99ec9d9a3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.licenseHeading",
+      "source_hash": "6c247259a264f1575045a3e12ef54cf80de7e7a8d47b0dafe87a748396531d44",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "a04f43a22f6ba3284debe06255a142678b31ea83d3f1f881ac3ac06f118c2667",
+      "record_ids": [
+        "fb5e06282bfb50469c1c8599ed3fd31d782ada6f209a1a6f8e7007fb194933cb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.unsupportedEntities",
+      "source_hash": "2e7b68ffd5fff7d8322f1177f8a7c0429321faa89151761a2f991d224e559e54",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "f145956bb87acecab61917a5615953e394ed53d27fe8911a11845f2e7a8b1e8d",
+      "record_ids": [
+        "44f10b4b7d7ca50d6850125524e590b57d06e7331b9048a5de7ea60f6b6b3a27"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Entidades no apoyadas usa el sentido de apoyo en lugar de compatibilidad técnica; debe indicar entidades no compatibles."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.home",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "record_ids": [
+        "23a58d32ac26e562e0b2d514b1951aec98340561e9cb447bcb5e0733c8ae11b4"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio."
+      ],
+      "critical_control": true,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.covered",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "c0eaf0b8cd5c76551ddfbe35b80359cc6c73fbd64903cb57b6bf2c245d0c911e",
+      "record_ids": [
+        "8828cc9444043b5741909c408cd37bbc01335471ca369240a1fd6d88071ac18b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Plazas cubiertas confunde casillas del tablero con plazas urbanas; etiqueta de recuento de casillas."
+      ],
+      "critical_control": true,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.statusDeleted",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "112167491b2ce3ac756ebc832213963f6a931321945d197eeae2f098cb0ac745",
+      "record_ids": [
+        "cccf72cd7004e0ea37d02eee893e7ac5188eac8693d0478d6dba461d5c46b751"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Se elimina expresa proceso/presente, no confirma que el progreso guardado ya se ha eliminado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.statusWrong",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "1eb3fa6c816086ca2c966144a72d3e9f36c274522ebe1665e82a9915813611dc",
+      "record_ids": [
+        "4b9ec4b1649cb8bf492cdffbb18f380fb9335ab72f7b26ad5b8a6450d66a2042"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Las áreas de rectángulo y pistas tiene coordinación y determinantes defectuosos; deben revisarse las áreas de los rectángulos y las pistas."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.home",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "record_ids": [
+        "079fd979b03cda05d9bec627174cea5c2e367b28cb3fdaa0dc1952db509bd126"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio."
+      ],
+      "critical_control": true,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.name",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "21c6b4ddb63e593190c1ecd6bf197da546c81f2480d1bbfd9f03bd1781f80591",
+      "record_ids": [
+        "603b18dbfd1eda768f75785efec94be63cf6da1df2757da65ab536bff2086087"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Shikaku Rectángulo rompecabezas conserva un orden nominal impropio del español."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.title",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "701838dec1bfb522c8468b8e03ed459a6e3795cf31984a8aa9bfcb0dd1b08bdf",
+      "record_ids": [
+        "18864f0d447402b7a6f8dea4bc23391a49467c626360f7090ea6361d603854d8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; Shikaku es el nombre propio que debe conservarse."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.volume",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "6de5d795908356a75077024ef1a075566ba0df7a5901e2cbac4b9ed2338e5ee3",
+      "record_ids": [
+        "6e8830836aeb2d7a88df928c36cc5f7077f99ebf75f918806a5daad3c09b4bb6"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Output level es nivel de salida de audio; Nivel de producción cambia el sentido del control de volumen."
+      ],
+      "critical_control": true,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "ae692e0850b0760d892d3722462e13a6c271a4222ba97669b544cbf890f6ed91",
+      "record_ids": [
+        "14d152dd1e37315dbe2be7bb80fdf3431ef250daa2fe3e8f0124d6515e68626f"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Efecto más bajo, más alto, radio, brillante o eco es una coordinación poco natural que no explicita bien el tono; ajuste carece de su objeto en la segunda instrucción."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.title",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "183e6ef83097c9749680a36fcf4043da20a47ffe64f52c9dceca47fcc5210898",
+      "record_ids": [
+        "937687851fc9ede4930e6e89d2e5c3bb6327d5e1a91bedf7f0f030a94c93c4fb"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Voice Changer Online deja sin traducir la intención principal del título; no es una marca propia."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.0.q",
+      "source_hash": "dfd386c937a742c687f0e2b52e71e759124b113a4820c3e94926f0b98cc1c05f",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "21defdd0209fcf65bd15bdd3b7d600a1ff41b6b499f084ac8cbd515f0a5b4988",
+      "record_ids": [
+        "1e69ee1d081130f9a13c764cb6e55cd9e4e14461608f247dbf059b9809247e72"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Denne visningsprogrammet no concuerda con el neutro visningsprogrammet; corresponde dette."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.1.q",
+      "source_hash": "4d39dff72762b680ad873ba1dd0a29651ad241a48899d3de9bab5eb8b60a8893",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "1ae1770ecdfca596ca0d8d97703296589e818dd52d7e51c6be009d2f0005a18c",
+      "record_ids": [
+        "520aeb12142008c3ffb5a16138dfc0c3a38773314a563089fd117f10431d22fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.geometryTooLarge",
+      "source_hash": "ddf09306b4cbde74345304dd855890c2dbcbe4ff352f4b374b797df1e7c1bbc7",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "dc71c2af18e469561464d9169e99759af3a0d9cc8b32fe0df98e06a7a38f016b",
+      "record_ids": [
+        "e5090b8276f551c7c81bd13c2b811f6dedf6bfe79b2f6dd842e05d77d09ef15b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.licenseMit",
+      "source_hash": "dda6e5f49978b2355b302632860f2c0b8a7eeeb36426dcced89530e24477663e",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "ecad38728121591cedb1b10af07c07afc917f7762d94165065c05ddaa1a16c1e",
+      "record_ids": [
+        "e35444c66e21dc38bcddfc731c165f02b409d1cc479cf387526f8d7df22ddebb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "MIT- lisens rompe el compuesto con espacio tras el guion; corresponde MIT-lisens."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.supportedEntities",
+      "source_hash": "94cb4aa3b62ab6eb8ef71f959ede71a3e5707fdc1481084cc90efbf984584656",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "ed2d089206499001695ebc45ff2b5dc98d0bdb054219848955c28b7f6c52530c",
+      "record_ids": [
+        "887df37b8f5609878a1048edb7631f494c462f9bb3a9c9516d93e2328aa661e9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.unsupportedEntities",
+      "source_hash": "2e7b68ffd5fff7d8322f1177f8a7c0429321faa89151761a2f991d224e559e54",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "bb5d168055e88e394cc6ded05c67af4bf916d68b69334071308f8daeaf7397ca",
+      "record_ids": [
+        "618d9413de8bff26154be0ccecf42558109e71afc0e1e5f1b6ca677829485e1f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.title",
+      "source_hash": "b9f732a48868897b52ad34a6a03c092acfcaf4ae2f9c3b9449a9500391affba7",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "68217e73ec5db34c1f8efe91aae5e198e070a5a46afded675e2e994d6410a4f1",
+      "record_ids": [
+        "98e8eb1f566d52508ddd7d879323a2a4a6dc84ead2a4fce1a93648a8fb0aab6c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Vis lag, måle og eksportere mezcla imperativo con infinitivos y deja Viewer genérico en inglés."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.covered",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "9f64c23cc165874624bd8f808f6b74ec5fe5fd731c61acb05b05de77bc06e28d",
+      "record_ids": [
+        "e003d62b2cd9961a0c640ac204f12cc7fbb9bd124ed3dd1699a85115cb175cdc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.statusGenerated",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "f7a91993818c4af5e628a3e002cba6123063a3af2217f588e80196b7765af532",
+      "record_ids": [
+        "84288873fca3e152e572f4b851039439b2eea8305c25b91ec954a36758831301"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Et nytt puslespill er klar no concuerda en neutro; corresponde klart."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.statusIncomplete",
+      "source_hash": "8d10609ff52aae309bf7e11e35149f7740322a671da31f8b3ecbea7f891a8955",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "96dd0346432b89d2dfe52097ba0e2a2fbe15bd8a3967ba7e4917ddd8da25d2b9",
+      "record_ids": [
+        "fa2f3fd9b9a74547a47257ad599090651035458b6b83f4d22762160ee79c0a36"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.statusWrong",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "def9b8911ebabebba6297292fc670a97b79b1703ef788cdd00f2478706879870",
+      "record_ids": [
+        "80bfa77894dd692ac7f0728be672392d69e7edd599599f1ce28d30740048c1dd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Rektangel områder rompe el compuesto; debe expresarse rektangelområder o arealene til rektanglene."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.name",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "527421451d7f57e15d5c17b27efb7d2385d033d75cca562d532d31a1a42476b0",
+      "record_ids": [
+        "d3f7a6baf656add048df43817065c1aca98c6fa8febe84e69dec23b7d909d3ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Rektangel puslespill rompe el compuesto nominal del nombre descriptivo."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.title",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "e47315ea0e009910bd908473edaed5a78252329749ba2aae9400bfb0f1377003",
+      "record_ids": [
+        "5d9baa0678f2c5a74ab119f712fa693b6064bd894744dc0b6fed67d7b41712bb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; se conserva solo Shikaku como nombre propio."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.faq.4.q",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "63a65296c191baa640477bb70b185c45add62f95f9e8a10d6917f18e3e175c38",
+      "record_ids": [
+        "24ccb5254ebb99e29c86fb645bcade099635784a31c3faee2ad1bc41ba3f0e92"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Fuente, ida y vuelta actuales leídas directamente; significado, acciones, datos y negaciones de ida conservados. La vuelta se juzga por separado."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.processing",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "1ee65d02a4298d79af1437b6a2617407081d3f53adfb1856e830fe5ee686f296",
+      "record_ids": [
+        "05b7c60e6519bd54e73e43bdf7e8d76b25ab5bff454fee31a54c43083a9f2b88"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Tegner behandlet lyd indica dibujar sonido, no renderizar/procesar el audio; estado de operación equivocado."
+      ],
+      "critical_control": true,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.title",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "translation_hash": "e9185efb7ed2d0e92d2de19c02865d366b47310a1c8d22b88897644de4e3e148",
+      "record_ids": [
+        "8d8e842870ffb26e9427b5a3bb360f8c2f6406c0afefd664175cd8f324be5167"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Fuente/ida de los mismos hashes que la valoración actual v12; fuente/ida/vuelta históricas releídas.",
+        "Voice Changer Online deja sin localizar la intención principal del título; no es una marca propia."
+      ],
+      "critical_control": false,
+      "fixed_88_sample": false,
+      "translation_origin": "model"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "cc8556f3cef939b4accd893dba03ee8893a262610f282b1547d3c9a99ec9d9a3",
+      "back_translation_hash": "196624f8ac3693f51167cfa6f44d2b20e9024f4595bef74d90a6ea590365023d",
+      "notes": [
+        "Altura se deja en español a la vuelta en vez de Height; la etiqueta de ida sí es correcta. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "fb5e06282bfb50469c1c8599ed3fd31d782ada6f209a1a6f8e7007fb194933cb",
+      "back_translation_hash": "37adbac7eed205f867889e042305d9b8b2a6d5717afe85af9065e108f8deeccd",
+      "notes": [
+        "Scanner cambia parser por escáner; analizador de la ida es correcto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "4b9ec4b1649cb8bf492cdffbb18f380fb9335ab72f7b26ad5b8a6450d66a2042",
+      "back_translation_hash": "7c3ecabc36d3efb1ca0c12b008853f390c235d6cd58c41d43525f930c898c621",
+      "notes": [
+        "Tracks cambia las pistas del puzle por vías/pistas de otro sentido. Defecto de vuelta separado de la gramática de ida. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "14d152dd1e37315dbe2be7bb80fdf3431ef250daa2fe3e8f0124d6515e68626f",
+      "back_translation_hash": "c9ec38ca4aebddd175c6fe90889e545379c0cab76d303cc28d0a26093b72cf9c",
+      "notes": [
+        "Radius sustituye el efecto de radio por radio geométrico; la ida radio se refiere al efecto sonoro. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "520aeb12142008c3ffb5a16138dfc0c3a38773314a563089fd117f10431d22fb",
+      "back_translation_hash": "e436dc69e6c80bcd2a05e64857bc5825594ab6f6a9baec386caf1d1b9a02322b",
+      "notes": [
+        "Devices cambia entidades del dibujo por dispositivos; enheter se revisa en contexto de objetos del DXF, no hardware. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "e5090b8276f551c7c81bd13c2b811f6dedf6bfe79b2f6dd842e05d77d09ef15b",
+      "back_translation_hash": "0e6dcf2d35363d83267ab45f98c47ee6acdcc20fd54c87f47afd61e2a26d1bba",
+      "notes": [
+        "Mail limit cambia límite de registros DXF por límite de correo; postgrensen tiene sentido de registros en este contexto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "887df37b8f5609878a1048edb7631f494c462f9bb3a9c9516d93e2328aa661e9",
+      "back_translation_hash": "43b84fb8ecb8a030a945655f722aa2d5c129543b01723b16e215eb8d090db6ef",
+      "notes": [
+        "Displayed Devices cambia entidades geométricas mostradas por dispositivos; la ida se lee en el panel de entidades del DXF. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "618d9413de8bff26154be0ccecf42558109e71afc0e1e5f1b6ca677829485e1f",
+      "back_translation_hash": "6c566e4cb47deb338898d9b4e292bd3dd5a0458f05bb4a5f111a20ddbe6f0c51",
+      "notes": [
+        "Unsupported devices cambia entidades de geometría por dispositivos; la ida se interpreta en contexto DXF. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "e003d62b2cd9961a0c640ac204f12cc7fbb9bd124ed3dd1699a85115cb175cdc",
+      "back_translation_hash": "80fe1759d1ada560ee95b027e88f3f943422a5893f72368034d8630ef389ec11",
+      "notes": [
+        "Routes cambia casillas cubiertas por rutas; ruter de la ida significa casillas en la cuadrícula. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "fa2f3fd9b9a74547a47257ad599090651035458b6b83f4d22762160ee79c0a36",
+      "back_translation_hash": "23b71c9396c38bdde0e90bb85f2eb7e138a647424798d0f709293d41f7ccc568",
+      "notes": [
+        "Routes cambia casillas todavía vacías por rutas; la ida ruter se refiere al tablero. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    },
+    {
+      "record_id": "24ccb5254ebb99e29c86fb645bcade099635784a31c3faee2ad1bc41ba3f0e92",
+      "back_translation_hash": "eaaea5acccc95a008b4caa0db6ba633f0dc6795b9a79e13b383ffa8f673d2d1a",
+      "notes": [
+        "Treatment usa el sentido médico en vez de procesamiento de audio; behandlingen en la ida es correcto en contexto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+      ]
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "cc8556f3cef939b4accd893dba03ee8893a262610f282b1547d3c9a99ec9d9a3",
+      "translation_hash": "196624f8ac3693f51167cfa6f44d2b20e9024f4595bef74d90a6ea590365023d",
+      "back_translation_hash": "196624f8ac3693f51167cfa6f44d2b20e9024f4595bef74d90a6ea590365023d",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Altura se deja en español a la vuelta en vez de Height; la etiqueta de ida sí es correcta. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "fb5e06282bfb50469c1c8599ed3fd31d782ada6f209a1a6f8e7007fb194933cb",
+      "translation_hash": "a04f43a22f6ba3284debe06255a142678b31ea83d3f1f881ac3ac06f118c2667",
+      "back_translation_hash": "37adbac7eed205f867889e042305d9b8b2a6d5717afe85af9065e108f8deeccd",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Scanner cambia parser por escáner; analizador de la ida es correcto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "44f10b4b7d7ca50d6850125524e590b57d06e7331b9048a5de7ea60f6b6b3a27",
+      "translation_hash": "f145956bb87acecab61917a5615953e394ed53d27fe8911a11845f2e7a8b1e8d",
+      "back_translation_hash": "01a331abf86848373b5c3abf5adfc200aa8a703c6570c6320ec6e508c0c0040e",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Entidades no apoyadas usa el sentido de apoyo en lugar de compatibilidad técnica; debe indicar entidades no compatibles. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "23a58d32ac26e562e0b2d514b1951aec98340561e9cb447bcb5e0733c8ae11b4",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "back_translation_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "8828cc9444043b5741909c408cd37bbc01335471ca369240a1fd6d88071ac18b",
+      "translation_hash": "c0eaf0b8cd5c76551ddfbe35b80359cc6c73fbd64903cb57b6bf2c245d0c911e",
+      "back_translation_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Plazas cubiertas confunde casillas del tablero con plazas urbanas; etiqueta de recuento de casillas. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "cccf72cd7004e0ea37d02eee893e7ac5188eac8693d0478d6dba461d5c46b751",
+      "translation_hash": "112167491b2ce3ac756ebc832213963f6a931321945d197eeae2f098cb0ac745",
+      "back_translation_hash": "b68f1a3adccc27102a5de68892702b8793983fde781625fcf9254a4ca61f04ec",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Se elimina expresa proceso/presente, no confirma que el progreso guardado ya se ha eliminado. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "4b9ec4b1649cb8bf492cdffbb18f380fb9335ab72f7b26ad5b8a6450d66a2042",
+      "translation_hash": "1eb3fa6c816086ca2c966144a72d3e9f36c274522ebe1665e82a9915813611dc",
+      "back_translation_hash": "7c3ecabc36d3efb1ca0c12b008853f390c235d6cd58c41d43525f930c898c621",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Las áreas de rectángulo y pistas tiene coordinación y determinantes defectuosos; deben revisarse las áreas de los rectángulos y las pistas. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Tracks cambia las pistas del puzle por vías/pistas de otro sentido. Defecto de vuelta separado de la gramática de ida. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "079fd979b03cda05d9bec627174cea5c2e367b28cb3fdaa0dc1952db509bd126",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "back_translation_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "603b18dbfd1eda768f75785efec94be63cf6da1df2757da65ab536bff2086087",
+      "translation_hash": "21c6b4ddb63e593190c1ecd6bf197da546c81f2480d1bbfd9f03bd1781f80591",
+      "back_translation_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Shikaku Rectángulo rompecabezas conserva un orden nominal impropio del español. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "18864f0d447402b7a6f8dea4bc23391a49467c626360f7090ea6361d603854d8",
+      "translation_hash": "701838dec1bfb522c8468b8e03ed459a6e3795cf31984a8aa9bfcb0dd1b08bdf",
+      "back_translation_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; Shikaku es el nombre propio que debe conservarse. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "6e8830836aeb2d7a88df928c36cc5f7077f99ebf75f918806a5daad3c09b4bb6",
+      "translation_hash": "6de5d795908356a75077024ef1a075566ba0df7a5901e2cbac4b9ed2338e5ee3",
+      "back_translation_hash": "b9f577d55381eb22bc513f3b1e8ad001c6918971dc30a013d6a774880dbcb46c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Output level es nivel de salida de audio; Nivel de producción cambia el sentido del control de volumen. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "14d152dd1e37315dbe2be7bb80fdf3431ef250daa2fe3e8f0124d6515e68626f",
+      "translation_hash": "ae692e0850b0760d892d3722462e13a6c271a4222ba97669b544cbf890f6ed91",
+      "back_translation_hash": "c9ec38ca4aebddd175c6fe90889e545379c0cab76d303cc28d0a26093b72cf9c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Efecto más bajo, más alto, radio, brillante o eco es una coordinación poco natural que no explicita bien el tono; ajuste carece de su objeto en la segunda instrucción. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Radius sustituye el efecto de radio por radio geométrico; la ida radio se refiere al efecto sonoro. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "937687851fc9ede4930e6e89d2e5c3bb6327d5e1a91bedf7f0f030a94c93c4fb",
+      "translation_hash": "183e6ef83097c9749680a36fcf4043da20a47ffe64f52c9dceca47fcc5210898",
+      "back_translation_hash": "9cdf75876eae830e375e8a18ceee0112802e8be510dc8ea84c1ccbbec3dac7fb",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Voice Changer Online deja sin traducir la intención principal del título; no es una marca propia. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "1e69ee1d081130f9a13c764cb6e55cd9e4e14461608f247dbf059b9809247e72",
+      "translation_hash": "21defdd0209fcf65bd15bdd3b7d600a1ff41b6b499f084ac8cbd515f0a5b4988",
+      "back_translation_hash": "dfd386c937a742c687f0e2b52e71e759124b113a4820c3e94926f0b98cc1c05f",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Denne visningsprogrammet no concuerda con el neutro visningsprogrammet; corresponde dette. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "520aeb12142008c3ffb5a16138dfc0c3a38773314a563089fd117f10431d22fb",
+      "translation_hash": "1ae1770ecdfca596ca0d8d97703296589e818dd52d7e51c6be009d2f0005a18c",
+      "back_translation_hash": "e436dc69e6c80bcd2a05e64857bc5825594ab6f6a9baec386caf1d1b9a02322b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Devices cambia entidades del dibujo por dispositivos; enheter se revisa en contexto de objetos del DXF, no hardware. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "e5090b8276f551c7c81bd13c2b811f6dedf6bfe79b2f6dd842e05d77d09ef15b",
+      "translation_hash": "dc71c2af18e469561464d9169e99759af3a0d9cc8b32fe0df98e06a7a38f016b",
+      "back_translation_hash": "0e6dcf2d35363d83267ab45f98c47ee6acdcc20fd54c87f47afd61e2a26d1bba",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Mail limit cambia límite de registros DXF por límite de correo; postgrensen tiene sentido de registros en este contexto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "e35444c66e21dc38bcddfc731c165f02b409d1cc479cf387526f8d7df22ddebb",
+      "translation_hash": "ecad38728121591cedb1b10af07c07afc917f7762d94165065c05ddaa1a16c1e",
+      "back_translation_hash": "abb2896dc3c2a9402f901b88d5035cf0a83d5cf7c17e73642cdf562b0b9d3bc5",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "MIT- lisens rompe el compuesto con espacio tras el guion; corresponde MIT-lisens. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "887df37b8f5609878a1048edb7631f494c462f9bb3a9c9516d93e2328aa661e9",
+      "translation_hash": "ed2d089206499001695ebc45ff2b5dc98d0bdb054219848955c28b7f6c52530c",
+      "back_translation_hash": "43b84fb8ecb8a030a945655f722aa2d5c129543b01723b16e215eb8d090db6ef",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Displayed Devices cambia entidades geométricas mostradas por dispositivos; la ida se lee en el panel de entidades del DXF. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "618d9413de8bff26154be0ccecf42558109e71afc0e1e5f1b6ca677829485e1f",
+      "translation_hash": "bb5d168055e88e394cc6ded05c67af4bf916d68b69334071308f8daeaf7397ca",
+      "back_translation_hash": "6c566e4cb47deb338898d9b4e292bd3dd5a0458f05bb4a5f111a20ddbe6f0c51",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Unsupported devices cambia entidades de geometría por dispositivos; la ida se interpreta en contexto DXF. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "98e8eb1f566d52508ddd7d879323a2a4a6dc84ead2a4fce1a93648a8fb0aab6c",
+      "translation_hash": "68217e73ec5db34c1f8efe91aae5e198e070a5a46afded675e2e994d6410a4f1",
+      "back_translation_hash": "9a21599051d1d3ac68c817f083755c4e976ce1e0b3ea807884f25c449bf33996",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Vis lag, måle og eksportere mezcla imperativo con infinitivos y deja Viewer genérico en inglés. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "e003d62b2cd9961a0c640ac204f12cc7fbb9bd124ed3dd1699a85115cb175cdc",
+      "translation_hash": "9f64c23cc165874624bd8f808f6b74ec5fe5fd731c61acb05b05de77bc06e28d",
+      "back_translation_hash": "80fe1759d1ada560ee95b027e88f3f943422a5893f72368034d8630ef389ec11",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Routes cambia casillas cubiertas por rutas; ruter de la ida significa casillas en la cuadrícula. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "84288873fca3e152e572f4b851039439b2eea8305c25b91ec954a36758831301",
+      "translation_hash": "f7a91993818c4af5e628a3e002cba6123063a3af2217f588e80196b7765af532",
+      "back_translation_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Et nytt puslespill er klar no concuerda en neutro; corresponde klart. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "fa2f3fd9b9a74547a47257ad599090651035458b6b83f4d22762160ee79c0a36",
+      "translation_hash": "96dd0346432b89d2dfe52097ba0e2a2fbe15bd8a3967ba7e4917ddd8da25d2b9",
+      "back_translation_hash": "23b71c9396c38bdde0e90bb85f2eb7e138a647424798d0f709293d41f7ccc568",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Routes cambia casillas todavía vacías por rutas; la ida ruter se refiere al tablero. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "80bfa77894dd692ac7f0728be672392d69e7edd599599f1ce28d30740048c1dd",
+      "translation_hash": "def9b8911ebabebba6297292fc670a97b79b1703ef788cdd00f2478706879870",
+      "back_translation_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Rektangel områder rompe el compuesto; debe expresarse rektangelområder o arealene til rektanglene. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "d3f7a6baf656add048df43817065c1aca98c6fa8febe84e69dec23b7d909d3ab",
+      "translation_hash": "527421451d7f57e15d5c17b27efb7d2385d033d75cca562d532d31a1a42476b0",
+      "back_translation_hash": "ea6f9e6d6519973503d48bd0e8ff3c84ee4db64a5a8dbfb58035aab0c6ccb14a",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Rektangel puslespill rompe el compuesto nominal del nombre descriptivo. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "5d9baa0678f2c5a74ab119f712fa693b6064bd894744dc0b6fed67d7b41712bb",
+      "translation_hash": "e47315ea0e009910bd908473edaed5a78252329749ba2aae9400bfb0f1377003",
+      "back_translation_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; se conserva solo Shikaku como nombre propio. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "24ccb5254ebb99e29c86fb645bcade099635784a31c3faee2ad1bc41ba3f0e92",
+      "translation_hash": "63a65296c191baa640477bb70b185c45add62f95f9e8a10d6917f18e3e175c38",
+      "back_translation_hash": "eaaea5acccc95a008b4caa0db6ba633f0dc6795b9a79e13b383ffa8f673d2d1a",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Treatment usa el sentido médico en vez de procesamiento de audio; behandlingen en la ida es correcto en contexto. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "05b7c60e6519bd54e73e43bdf7e8d76b25ab5bff454fee31a54c43083a9f2b88",
+      "translation_hash": "1ee65d02a4298d79af1437b6a2617407081d3f53adfb1856e830fe5ee686f296",
+      "back_translation_hash": "dd6a9c1bd063e70418c730c4d08adf884b6002ea8a031cfc022f2210db461323",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Tegner behandlet lyd indica dibujar sonido, no renderizar/procesar el audio; estado de operación equivocado. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    },
+    {
+      "record_id": "8d8e842870ffb26e9427b5a3bb360f8c2f6406c0afefd664175cd8f324be5167",
+      "translation_hash": "e9185efb7ed2d0e92d2de19c02865d366b47310a1c8d22b88897644de4e3e148",
+      "back_translation_hash": "9cdf75876eae830e375e8a18ceee0112802e8be510dc8ea84c1ccbbec3dac7fb",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Voice Changer Online deja sin localizar la intención principal del título; no es una marca propia. Hallazgo posterior v12, archivo/rúbrica/gate anterior intactos."
+        }
+      }
+    }
+  ]
+}

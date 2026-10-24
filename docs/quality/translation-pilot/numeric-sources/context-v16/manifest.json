@@ -1,0 +1,49 @@
+{
+  "cldr_json_revision": "91c267402229a59e3ef2774544f001bf959e8809",
+  "cldr_revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+  "files": [
+    {
+      "path": "ko-numbers.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/ko/numbers.json",
+      "sha256": "2d6014a9d294f011f93524d6c642a1263b4e7f80f490a46dce5ea404800f5edf",
+      "bytes": 5339
+    },
+    {
+      "path": "numberingSystems.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-core/supplemental/numberingSystems.json",
+      "sha256": "0efb69a00dbae5950195b077e0cc6c7f319d3a1e8a81401083ec4f42c14b0014",
+      "bytes": 10695
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "bytes": 2033
+    },
+    {
+      "path": "tr35-numbers.md",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/docs/ldml/tr35-numbers.md",
+      "sha256": "32bb04796004f80476aa34405a258353b15523b61d0586b409018116f6d4d740",
+      "bytes": 169852,
+      "snapshot_in_repository": false
+    },
+    {
+      "path": "ko-rbnf.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/rbnf/ko.xml",
+      "sha256": "c85055d47098bd8a3e3a35fcdae6d72a609ab793057e5f6017d91e45d3c64aff",
+      "bytes": 6101,
+      "revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588"
+    }
+  ],
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-23T10:21:34.545754+00:00",
+  "locale": "ko",
+  "numbering_system": "latn",
+  "digits": "0123456789",
+  "group": ",",
+  "decimal": ".",
+  "primary_group_size": 3,
+  "secondary_group_size": 3,
+  "standard_pattern": "#,##0.###",
+  "scope": "Conservative decimal quantity audit, not a general Korean numeric parser. No compact (20만), RBNF, scientific, currency/accounting or unknown digit-system inference. U+2212 audit normalization inherits existing mathematical-minus policy; output bytes are never rewritten."
+}

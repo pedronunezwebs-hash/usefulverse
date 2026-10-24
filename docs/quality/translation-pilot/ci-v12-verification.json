@@ -1,0 +1,57 @@
+{
+  "runs": [
+    {
+      "run_id": 39730074541,
+      "job_id": 119662841750,
+      "source_commit": "32142e34766cd52fede4afba5b87a70b881fd9cf",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 80,
+      "python_pass": 78,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "317cb128a89e4061a9410d0cf4351112b168184a94b3661e399cd76623cc1a26",
+      "limitations": "No native/37 reviewed candidate locales/tool18 gates/seven tool layers/UI/responsive/RTL/weight/a11y/performance/hardware certification."
+    },
+    {
+      "run_id": 39734259820,
+      "job_id": 119676179254,
+      "source_commit": "a427cba68e5c7996a2f657717936fe5b44b9a782",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 82,
+      "python_pass": 80,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "326830dd91fd732ae567db63a59625d3078c9ec8297710e4edc74ad4a9ede09a",
+      "limitations": "No native/37 reviewed candidate locales/tool18 gates/seven tool layers/UI/responsive/RTL/weight/a11y/performance/hardware certification."
+    }
+  ],
+  "at_utc": "2026-10-22T06:35:22.805774+00:00"
+}

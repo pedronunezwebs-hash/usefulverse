@@ -1,0 +1,4 @@
+import { checkPwnedPassword } from '../pending-23/logic.mjs';
+import { mountPendingTool } from '../pending-23/controller.mjs';
+
+mountPendingTool('password-breach-checker', checkPwnedPassword);

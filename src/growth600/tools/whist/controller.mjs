@@ -1,0 +1,23 @@
+import { chooseWhistBotCard, legalWhistCards, nextWhistHand, playWhistCard, startWhistHand, whistCardLabel, WHIST_SUITS } from './logic.mjs';
+
+const root=document.querySelector('[data-tool="whist"]');
+if(root){
+  const form=root.querySelector('[data-pending-form]'),result=root.querySelector('[data-result]'),content=root.querySelector('[data-result-content]'),status=root.querySelector('[data-status]'),copy=JSON.parse(root.querySelector('[data-tool-copy]')?.textContent??'{}'),f=copy.fields;
+  const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=String(text);if(cls)el.className=cls;return el;};let game=null,timer=0;
+  function say(text){status.textContent=text;status.classList.remove('status--error');}
+  const teamName=(side)=>side===0?f.youAndPartner:f.opponents;
+  const cardName=(card)=>`${card.rank===14?f.rankAce:card.rank===13?f.rankKing:card.rank===12?f.rankQueen:card.rank===11?f.rankJack:String(card.rank)} ${f[WHIST_SUITS[card.suit]]}`;
+  function finishState(){if(game.finished)say(`${f.matchWinner}: ${teamName(game.winner)}.`);else if(game.handComplete)say(`${copy.messages.handComplete} ${teamName(game.tricks[0]>6?0:1)}: ${game.tricks[game.tricks[0]>6?0:1]} ${f.tricks}.`);}
+  function render(){content.replaceChildren();if(!game)return;const scoreboard=node('table',undefined,'pending-table');scoreboard.setAttribute('aria-label',f.score);const body=node('tbody');for(const[side,label]of [[0,f.youAndPartner],[1,f.opponents]]){const row=node('tr');row.append(node('th',label),node('td',`${game.scores[side]} ${f.points}`));body.append(row);}scoreboard.append(body);content.append(scoreboard);
+    const dealerName=[f.you,f.leftOpponent,f.partner,f.rightOpponent][game.dealer],trumpLabel=game.trump===null?f.noTrump:f[WHIST_SUITS[game.trump]];content.append(node('p',`${f.dealer}: ${dealerName} · ${f.trump}: ${trumpLabel} · ${f.tricks}: ${game.tricks[0]}–${game.tricks[1]}`));
+    if(game.table.length){const played=node('section');played.append(node('h3',f.currentTrick));for(const item of game.table)played.append(node('p',`${[f.you,f.leftOpponent,f.partner,f.rightOpponent][item.seat]}: ${whistCardLabel(item.card)} (${cardName(item.card)})`));content.append(played);}
+    if(game.lastTrick){const last=node('p',`${f.lastTrickWinner}: ${[f.you,f.leftOpponent,f.partner,f.rightOpponent][game.lastTrick.winner]} · ${f.tricks}: ${game.lastTrick.tricks[0]}–${game.lastTrick.tricks[1]}`);content.append(last);}
+    if(!game.finished&&!game.handComplete){const hand=node('section');hand.append(node('h3',`${f.yourHand} (${game.hands[0].length})`));const cards=node('div',undefined,'pending-whist-hand'),legal=new Set(legalWhistCards(game,0).map((card)=>card.id));for(const card of game.hands[0]){const button=node('button',whistCardLabel(card),`pending-whist-card${card.suit===1||card.suit===2?' pending-whist-card--red':''}`);button.type='button';button.dataset.card=card.id;button.setAttribute('aria-label',cardName(card));button.disabled=game.turn!==0||!legal.has(card.id);cards.append(button);}hand.append(cards);content.append(hand);}
+    if(game.handComplete&&!game.finished){const next=node('button',f.nextHand,'button button--primary');next.type='button';next.addEventListener('click',()=>{game=nextWhistHand(game);render();say(copy.messages.newHand);runBots();});content.append(next);}
+    const source=node('a',f.rulesSource);source.href='https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Whist';source.target='_blank';source.rel='noopener noreferrer';content.append(source);result.hidden=false;
+  }
+  function runBots(){if(!game||game.finished||game.handComplete||game.turn===0)return;clearTimeout(timer);timer=setTimeout(()=>{if(!game||game.finished||game.handComplete||game.turn===0)return;try{game=playWhistCard(game,game.turn,chooseWhistBotCard(game,game.turn).id);render();if(game.handComplete||game.finished)finishState();else runBots();}catch{say(copy.messages.invalid);}},320);}
+  form.addEventListener('submit',(event)=>{event.preventDefault();clearTimeout(timer);try{game=startWhistHand({seed:Number(form.elements.namedItem('seed').value),dealer:3,trumpMode:form.elements.namedItem('trumpMode').value});render();say(copy.messages.started);runBots();}catch{say(copy.messages.invalid);}});
+  content.addEventListener('click',(event)=>{const button=event.target.closest('[data-card]');if(!button||!game||game.turn!==0)return;try{game=playWhistCard(game,0,button.dataset.card);render();if(game.handComplete||game.finished)finishState();else runBots();}catch{say(copy.messages.invalid);}});
+  form.addEventListener('reset',()=>queueMicrotask(()=>{clearTimeout(timer);game=null;content.replaceChildren();result.hidden=true;status.textContent='';}));
+}

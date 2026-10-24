@@ -1,0 +1,29 @@
+{
+  "log_commands_use_task_owned_XDG_CACHE_HOME": true,
+  "owned_run_ids": [
+    39768400364,
+    39768406467,
+    39769512465,
+    39773203261
+  ],
+  "external_owned_run_log_zips": [],
+  "own_cached_log_zips_before_final_removal": [
+    {
+      "path": "cache/gh/run-log-39768406467-1792667340.zip",
+      "bytes": 239887
+    },
+    {
+      "path": "cache/gh/run-log-39773203261-1792669630.zip",
+      "bytes": 239423
+    },
+    {
+      "path": "cache/gh/run-log-39769512465-1792667874.zip",
+      "bytes": 718920
+    },
+    {
+      "path": "cache/gh/run-log-39768400364-1792667337.zip",
+      "bytes": 182987
+    }
+  ],
+  "cleanup_method": "Remove only this verified task root after remote recovery; no shared cache sweep."
+}

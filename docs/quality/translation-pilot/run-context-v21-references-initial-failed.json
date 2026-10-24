@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "run_id": 40069125442,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40069125442",
+  "source_commit": "4f88860864a5f70cb8a7c7d98097d0ff6afe006f",
+  "policy": "context-v21",
+  "engine": "madlad",
+  "scope": "references",
+  "locales": [
+    "id"
+  ],
+  "status_at_capture": "queued",
+  "started_at": "2026-10-24T06:10:11Z",
+  "dispatches": 1,
+  "complete": false,
+  "checkpoint_before": 0,
+  "model_inference_local": false,
+  "final_status": "completed",
+  "conclusion": "failure",
+  "inference_started": false,
+  "checkpoint_after": 0,
+  "new_records": 0,
+  "failed_tests": 1,
+  "actual_python_tests": 136,
+  "log_sha256": "7066c2a57839db257d62a266a1fd64526cd2e357093b9e863feafe57ae85a95e",
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "reason": "New test used ast.dump defaults across Python versions; no translation inference started.",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "conclusion": "failure"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Set up Python",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ]
+}
