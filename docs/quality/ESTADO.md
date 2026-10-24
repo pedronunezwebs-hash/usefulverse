@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-23 · **por:** Codex
-**Turno actual (candado):** LIBRE
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-24 07:59 +07 · v19 indonesio: contrato numérico versionado y referencias; sin despliegue
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
