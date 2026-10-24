@@ -22,5 +22,7 @@
     "historical_commit": "260d87a39690c23829f5c32e8cd5fc3161176f18"
   },
   "global_billing_audit": false,
-  "pre_ci_scan_at_utc": "2026-10-24T05:50:36.053039+00:00"
+  "pre_ci_scan_at_utc": "2026-10-24T05:50:36.053039+00:00",
+  "final_scan_at_utc": "2026-10-24T05:58:29.210076+00:00",
+  "final_findings": 0
 }
