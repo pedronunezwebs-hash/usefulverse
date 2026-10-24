@@ -12,7 +12,98 @@
   "status_at_capture": "in_progress",
   "started_at": "2026-10-24T01:38:39Z",
   "dispatches": 1,
-  "complete": false,
+  "complete": true,
   "checkpoint_before": 67,
-  "model_inference_local": false
+  "model_inference_local": false,
+  "job_id": 120742572308,
+  "conclusion": "success",
+  "final_status": "completed",
+  "checkpoint_after": 333,
+  "new_records": 266,
+  "checkpoint_sha256_at_collection": "71906835000cb289c004fc92f2607cf1a68c4a8b8d12aec931dbda9cd2c174c9",
+  "log_sha256": "92eb8816e850018f81e0723ef75ca33d3072f10540b87ae0f32057d3814f8c8b",
+  "models": [
+    {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    }
+  ],
+  "model_hashes_same_v19": true,
+  "summary": [
+    {
+      "approved": 0,
+      "conversion_seconds": 73.98672156499998,
+      "counts": {
+        "legacy": 92,
+        "model": 174,
+        "reviewed_memory_hits": 1
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3698944,
+      "scope": "full",
+      "total_seconds": 428.90846288200004
+    }
+  ],
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "actual_python_test_lines": [
+    "translation-pilot (madlad)\tUNKNOWN STEP\t2026-10-24T01:41:17.8707724Z Ran 131 tests in 103.149s"
+  ],
+  "collected_at_utc": "2026-10-24T05:45:52.173206+00:00",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "conclusion": "success"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "conclusion": "success"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "resumed_records_exact": 67
 }
