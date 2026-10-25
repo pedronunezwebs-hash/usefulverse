@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-10-25T13:05:23.347393+00:00",
+  "actual_model_records": 254,
+  "source_input_fragment_checks": 1190,
+  "memory_targets": 477,
+  "zh_memory_targets": 214,
+  "preserved_targets": 334,
+  "new_imports": 143,
+  "legacy_tie_choices": 13,
+  "finite_new_texts": 3,
+  "initial_red_tests": 4,
+  "full_suite_complete": false,
+  "expected_tests_before_model": 273,
+  "model_inference_local": false,
+  "approved_locales": []
+}

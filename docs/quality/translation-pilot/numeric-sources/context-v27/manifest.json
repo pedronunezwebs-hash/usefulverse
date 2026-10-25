@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "zh-CN-bound-lexical-v5",
+  "base_policy": "context-v26",
+  "paths": {
+    "base_manifest": "docs/quality/translation-pilot/numeric-sources/context-v26/manifest.json",
+    "checkpoint25": "docs/quality/translation-pilot/checkpoints/context-v25/madlad.jsonl",
+    "checkpoint26": "docs/quality/translation-pilot/checkpoints/context-v26/madlad.jsonl",
+    "source_snapshot": "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json",
+    "imports": "docs/quality/translation-pilot/reviewed-memory-v27-import.json"
+  },
+  "sha256": {
+    "base_manifest": "a8c654d23a1496a9e83e5cfe1c93202c22a7ee3a2645e15b7db0b08eff26aeef",
+    "checkpoint25": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3",
+    "checkpoint26": "9b559280228d19f4f4f539e02998844b59d3e19a0bab80e331ecdac393a5a503",
+    "source_snapshot": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+    "imports": "f5d3335bd345bcccd1224efc9794761711b3fd556c5f74deb56a902ea587273f"
+  },
+  "review_sha256": {
+    "review-context-v25-full.json": "8a3b690ffa4374ef7d66907e273b9765ef516eaebf55ad29d441fd27fd7836da",
+    "review-context-v26-references.json": "b6bc58ce5cbe0a5edff9fc00913da876c0a2550e2fcf9db29bc9cca5cab35db6",
+    "review-context-v25-full-legacy.json": "b50d8fe3ece0a5d9fe9ab5f31f0c65be1286a5b7812aa893fe37cc069b885940"
+  },
+  "contracts": "bound-contracts.json",
+  "contracts_sha256": "f93641a88598241a379c84df6a01172c5aeb30bd3cd8ef68939d30fa25da7632",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "policy_entries_digest": "72549ddce082f6bab3d24d6880286f59bd2985ac7c2e673da8c44bbcfacd1dba",
+  "policy_memory_digest": "faf22f66a2f1c2b2a8e1786a18ae6c62929165f319ab4aa1f53da578496a6e80",
+  "expected_memory_targets": 477,
+  "expected_new_memory_targets": 143,
+  "expected_zh_targets": 214
+}

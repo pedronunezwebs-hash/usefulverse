@@ -3,7 +3,7 @@ import ast,copy,importlib.util,json,unittest
 from pathlib import Path
 from unittest.mock import patch
 from test_translation_v25_history import stable
-from test_translation_indonesian_expanded_memory import strip_v26_dispatch
+from test_translation_indonesian_expanded_memory import strip_v26_dispatch,strip_v27_dispatch
 sp=importlib.util.spec_from_file_location('pilot',Path(__file__).with_name('translation-pilot.py'));pilot=importlib.util.module_from_spec(sp);sp.loader.exec_module(pilot)
 DATA=pilot.ROOT/'docs/quality/translation-pilot'
 class V26HistoryTest(unittest.TestCase):
@@ -24,7 +24,7 @@ class V26HistoryTest(unittest.TestCase):
   with self.assertRaisesRegex(AssertionError,'Changed v26 dispatch'):strip_v26_dispatch(changed)
  def test_all76_measured_functions_and_auditor_are_intact_except_negative_hook(self):
   proof=json.loads((DATA/'regression-v26-evidence.json').read_text());nodes={n.name:n for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)};self.assertEqual(len(proof['measurement_function_ast_digests_except_auditor']),76)
-  for name,want in proof['measurement_function_ast_digests_except_auditor'].items():self.assertEqual(pilot.digest(stable(nodes[name])),want,name)
+  for name,want in proof['measurement_function_ast_digests_except_auditor'].items():self.assertEqual(pilot.digest(stable(strip_v27_dispatch(nodes[name]))),want,name)
   self.assertEqual(pilot.digest(stable(strip_v26_dispatch(nodes['audit_review_warnings']))),proof['measured_auditor_ast_digest'])
   damaged=copy.deepcopy(nodes['audit_review_warnings']);call=next(n for n in ast.walk(damaged)if isinstance(n,ast.Call)and isinstance(n.func,ast.Name)and n.func.id=='chinese_quantity_unproved_v26');call.args[0]=ast.Constant(value=True)
   with self.assertRaisesRegex(AssertionError,'Changed v26 negative audit hook'):strip_v26_dispatch(damaged)
