@@ -16,7 +16,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V24 · completo zh-CN revisado y rechazado.** Referencias360/360 y contrato inglés completo resuelto. Completo 1481/1566,50 idas negativas (31 graves/19 leves); legacy779/828,24 idas negativas.51 cantidades no probadas se separan de errores lingüísticos, más2 dimensiones; no se suman como errores adicionales.14.710 registros/6.217 evaluaciones/1120 fixtures. [Informe v24](lotes/2026-10-24-piloto-v24.md). CI final y retirada efectiva pendientes; candado sigue EN CURSO.
+   **V24 · completo zh-CN revisado y rechazado.** Referencias360/360 y contrato inglés completo resuelto. Completo 1481/1566,50 idas negativas (31 graves/19 leves); legacy779/828,24 idas negativas.51 cantidades no probadas se separan de errores lingüísticos, más2 dimensiones; no se suman como errores adicionales.14.710 registros/6.217 evaluaciones/1120 fixtures. [Informe v24](lotes/2026-10-24-piloto-v24.md). CI final[40148453347](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40148453347) correcta, GET/XML sin cambios; retirada efectiva pendiente y candado EN CURSO.
 
    Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21). Chino simplificado completo rechazado; de/fr/pt-BR/ja/hi/ar históricos sin pasar y25 destinos sin revisión detallada. **0 idiomas aprobados**, P-001–P-008 pendientes/0 FALLA.
 
@@ -47,7 +47,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
-- [~] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final/push de cierre/retirada efectiva pendientes ·2026-10-25.
+- [~] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final40148453347 correcta; retirada efectiva pendiente ·2026-10-25.
 
 - [x] V23: nueve idas zh-CN corregidas y 16 contratos resueltos; 360/360 lingüístico, gate bloqueado por 1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI final 40111019015 correcta; retirada efectiva verificada.
 - [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
@@ -147,7 +147,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
-|2026-10-25|Codex|V24: contrato inglés resuelto; completo chino rechazado,50 idas y149 fixtures nuevas|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML final pendiente. Sin deploy.|
+|2026-10-25|Codex|V24: contrato inglés resuelto; completo chino rechazado,50 idas y149 fixtures nuevas|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML25.625 URLs y hashes sin cambios; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V23: zh-CN 360/360, bloqueado por 1 contrato; validación7, 65× y 5/103 fragmentos evitados|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial25.625 URLs; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V22: zh-CN referencias 344/360 rechazadas;37 fixtures, sin completo|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial 25.625 URLs, tres soft 404. Sin deploy.|
 | 2026-10-24 | Codex | V21: indonesio: referencias 360/360 y completo conocido 1566/1566 | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625 URLs; tres soft404 pendientes. Sin deploy. |
