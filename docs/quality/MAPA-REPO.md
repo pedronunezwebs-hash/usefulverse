@@ -2,6 +2,8 @@
 
 V26 ·25-oct-2026: V26: nueve correcciones/pruebas finitas y334 memorias; zh-CN referencias360/360 lingüístico, gate bloqueado por1cantidad sin prueba en shikaku.example; completo NO ejecutado. Legacy223/243 y8negativas.15.110 registros/6.617 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados. [Informe](lotes/2026-10-25-piloto-v26.md). Código/datos solo en PR #136; main solo seis documentos de relevo.
 
+[CI final40192256469](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40192256469) correcta sobre48a1694:3.045Node/255Python (253+2omisiones), builds principal/hub/20locales existentes y preview10.800páginas+homes noindex/sitemap0indexables. Preview36locales, no certifica37. Modelo/publicaciones omitidos/0artefactos. GET/XML25.625→25.625URLs,estados/bytes/hashes idénticos;3soft404pendientes,0deploys. Relevo y respaldo remoto en verificación; limpieza efectiva pendiente.
+
 V25 ·25-oct-2026: V25: zh-CN referencias360/360; completo1564/1566 bloqueado por2 leves y7 variantes sin prueba finita (0 graves y0 errores lingüísticos confirmados de cifras/negaciones). Legacy778/828,25 negativas (17 graves/8 leves).15.043 registros/6.550 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados para publicar. Política/código solo en rama PR #136; main recibe seis documentos de relevo,0/300 fuentes nuevas. Capacidad Pages/37 traducciones revisadas pendientes. [Informe](lotes/2026-10-25-piloto-v25.md).
 
 Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **público desde el 20-oct**, ~130 MB). Seguridad: ver `AGENTS.md`. Si cambias la estructura, actualiza este mapa.

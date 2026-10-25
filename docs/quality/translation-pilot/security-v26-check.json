@@ -14,5 +14,7 @@
   "bounded_cost_scope": "Public standard ubuntu-latest only, no paid APIs/Cloudflare/Codespaces/Containers/Packages/LFS/artifacts/persistent cache or model storage. No automatic Node cache selectors. No deploy.",
   "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
   "last_source_scan_at_utc": "2026-10-25T12:14:06.639264+00:00",
-  "last_source_scan_findings": 0
+  "last_source_scan_findings": 0,
+  "final_metadata_scan_at_utc": "2026-10-25T12:23:20.113976+00:00",
+  "final_metadata_secret_findings": 0
 }
