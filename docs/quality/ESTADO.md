@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-25 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24T23:45:35.708244+07:00 · v24: recuperación remota tras desaparición del temporal; cierre/revisión completa pendiente
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -16,7 +16,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V24 · completo zh-CN revisado y rechazado.** Referencias360/360 y contrato inglés completo resuelto. Completo 1481/1566,50 idas negativas (31 graves/19 leves); legacy779/828,24 idas negativas.51 cantidades no probadas se separan de errores lingüísticos, más2 dimensiones; no se suman como errores adicionales.14.710 registros/6.217 evaluaciones/1120 fixtures. [Informe v24](lotes/2026-10-24-piloto-v24.md). CI final[40148453347](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40148453347) correcta, GET/XML sin cambios; retirada efectiva pendiente y candado EN CURSO.
+   **V24 · completo zh-CN revisado y rechazado.** Referencias360/360 y contrato inglés completo resuelto. Completo 1481/1566,50 idas negativas (31 graves/19 leves); legacy779/828,24 idas negativas.51 cantidades no probadas se separan de errores lingüísticos, más2 dimensiones; no se suman como errores adicionales.14.710 registros/6.217 evaluaciones/1120 fixtures. [Informe v24](lotes/2026-10-24-piloto-v24.md). CI final[40148453347](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40148453347) correcta, GET/XML sin cambios; retirada efectiva verificada; candado LIBRE.
 
    Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21). Chino simplificado completo rechazado; de/fr/pt-BR/ja/hi/ar históricos sin pasar y25 destinos sin revisión detallada. **0 idiomas aprobados**, P-001–P-008 pendientes/0 FALLA.
 
@@ -47,7 +47,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
-- [~] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final40148453347 correcta; retirada efectiva pendiente ·2026-10-25.
+- [x] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final40148453347 correcta; respaldo y retirada efectiva verificados ·2026-10-25.
 
 - [x] V23: nueve idas zh-CN corregidas y 16 contratos resueltos; 360/360 lingüístico, gate bloqueado por 1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI final 40111019015 correcta; retirada efectiva verificada.
 - [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
@@ -205,3 +205,5 @@ Retirada efectiva el 2026-10-24T18:48:55.162410+07:00: eliminada directamente y 
 ## Cierre v23
 
 Retirada efectiva el 2026-10-24T23:30:33.226240+07:00: eliminada directamente y sin Papelera solo la carpeta propia usefulverse-codex-v23-20261024.ew4x29t7; ruta comprobada ausente. Tamaño lógico previo 552363050 bytes; disco libre posterior 38.0762 GiB (40884035584 bytes). Antes de borrar: 7625 archivos versionados recuperables por árbol Git/índice, seis documentos idénticos, 250 archivos históricos, prefijo 967,106 grupos y nueve adendas conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final 40111019015; después solo documentación/metadatos. Cero punteros LFS. Dos runs correctos y un intento previo fallido por prueba Unicode sin inferencia; cero artefactos/publicaciones y limpieza de modelos correcta. Cero ZIP propios externos restantes; tres ZIP de Actions internos y un ZIP de biblioteca versionada retirados con el clon propio, scripts, QA, binarios y cachés (originales recuperables en Git). Sin modelos de traducción ni builds completos locales. Fuentes verificadas antes de retirar: feature d96b8535e0d87a098d93187692a971387d945806, main ec2c46110c1050d15e9d35684f772e9c2a4794b0. Candado liberado después de la retirada.
+
+Cierre efectivo v24: 2026-10-25T01:03:28.982275+00:00; raíz propia eliminada directamente y ausencia comprobada antes de LIBRE. Disco libre al cerrar: 44.87GiB; cachés CLI propios de los tres runs:0 residuos. [Evidencia remota](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/remote-v24-verification.json).
