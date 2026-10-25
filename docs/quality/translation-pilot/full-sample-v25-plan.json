@@ -388,6 +388,16 @@
   "known_memory_targets": 325,
   "primary_known_corrections": 50,
   "same_source_family_followup": 1,
-  "full_dispatch_authorized": false,
-  "note": "Exactly the same known88 keys, all174 model+92 legacy. Reference gate/all warnings must pass first. Known exact corrections and lexical proofs disclosed; no blind/native/unseen-text or engine approval. Do not rerun any v24 model job."
+  "full_dispatch_authorized": true,
+  "note": "Exactly the same known88 keys, all174 model+92 legacy. Reference gate/all warnings must pass first. Known exact corrections and lexical proofs disclosed; no blind/native/unseen-text or engine approval. Do not rerun any v24 model job.",
+  "reference_authorization": {
+    "run_id": 40151851906,
+    "model_points": 360,
+    "maximum": 360,
+    "read_current_records": 67,
+    "warning_rows_audited": 57,
+    "unproved_data_rows": 0,
+    "reference_review_sha256": "38f33625588ad65438056f22f98525c1f2aef54c9530d2fe3d051f62095ab858",
+    "no_locale_approval": true
+  }
 }

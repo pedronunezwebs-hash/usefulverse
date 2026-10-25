@@ -1,0 +1,1404 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2 y RUNBOOK §8: significado, cifras/negaciones y naturalidad0–3. Lectura directa de todas las fuentes/idas/vueltas; gramática no probada bloquea sin inventar un defecto lingüístico.",
+  "expected_rows": 40,
+  "inference_policy": "context-v25",
+  "reviewed_at_utc": "2026-10-25T02:00:18.307550+00:00",
+  "scope": "Lectura directa de las 67 fuentes, idas y vueltas actuales v25 después del respaldo remoto. Las cadenas S/F/B coinciden con v24; se contrastaron por separado significado, cifras/negaciones y naturalidad. Nueve referencias de memoria conocidas. Sin evaluación ciega, nativa, de textos inéditos ni aprobación del idioma.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": true,
+  "rows": [
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "zh-CN",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "a7d49abed19cd849a6d392b017f0700b03bc069b1a1330a961c8aa7129da9ebf",
+      "record_ids": [
+        "5b38563912067002f8d38d28c179b2626c89c7dea5a4d742e9fb1745134fec16"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择音频文件 conserva la acción de elegir archivo de audio; compresión de caracteres normal en chino. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "zh-CN",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "e6ebe07d305704767ba6a0b229eb7f55ac5a1a1eb884948fead61214161cb488",
+      "record_ids": [
+        "9f1baec46ad7ca63fa9529aaaa49e10dcd641b4858bbcb38bf2786cb884b2339"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "音频保留在此浏览器中 y 没有音频被发送到或保存到UsefulVerse conservan ubicación y negación de envío/guardado. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "zh-CN",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "bc53baf03335a243634374b6e2cdb1142655000c87eecb81bd912e5966ef0623",
+      "record_ids": [
+        "2df26d7e7015eac91e932de8ee82a53fa8d1e38febbf356e90d47a5fbf02bfd9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "本地加载音频 es el imperativo correcto de carga local; la vuelta lo convierte en estado cargado. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "zh-CN",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "f88319f600c62990b579ac8c43498e6eeee41bd93f1c7ade54d59f0767ff3813",
+      "record_ids": [
+        "7260cd1e9aaaf3ce562d36c1139f15d3dbba47f3293dcb17eea9d3a6a8191bb3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "播放音频效果 expresa reproducir el efecto, desambiguación prevista de Preview; no es una vista de imagen. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "zh-CN",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "346e76111f3b2e54504970595c89b8530cdaf2f759ecaa6b6ed3d3ac47ee3f6b",
+      "record_ids": [
+        "0e845431f3d676287b17848c5c3e271b77e54e02836a379321e9bee385f84a18"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "停止播放音频效果 detiene la reproducción del efecto; acción y objeto correctos. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "zh-CN",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "496043608d9e6d72d7c4f204da058fc2f5ed6f4a351c3daa6b373eb9a9a7af6d",
+      "record_ids": [
+        "f91556a78db715cb6fea406a84a4b928f4e955a807a633e63dd1a5d3815a6b3c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除加载的音频 elimina el audio cargado, sin confundir clear con calidad acústica. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "zh-CN",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "f0a1ed209bbc9a3a111e35a5be9c46a824023db7adc3457dfbd0022c9e3a536d",
+      "record_ids": [
+        "e4c51e8891776e38a769882d750db6d357f8534ecf2b3f168c4b314d890d36fe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "导出处理过的WAV conserva exportar, procesamiento y formato WAV. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "zh-CN",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "record_ids": [
+        "44c4deb42560faa4598635d5077181b009b6b6e5a04132849c942cd89a7406f5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "zh-CN",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "32b681593c9c3c504f6278251555155ec99a8191f4d356c627fd73b337c7361d",
+      "record_ids": [
+        "17ddda02e2106105192469d7ce666106a1f9f561b1f7acb047914fc689d26e0f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "音频已在本地解码 expresa decodificación local terminada; 时长 y {duration} 秒 conservan duración, marcador literal y segundos. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "zh-CN",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "3cf235299e5ef10294fac898a5f2b8dac14fc9bd54eea1084092b885e62f0f19",
+      "record_ids": [
+        "a15e6028eed2706fe332a091575976951ebcd76c514861cd08bf28233d808baa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "无法解码该音频格式 conserva el error de decodificación; 请尝试 WAV 或 MP3 conserva alternativas, sin redirección ni clic inventados. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "zh-CN",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "record_ids": [
+        "008c6167cc366ad32aa424e9ec70f892266abd37ce8cf19f3b1823d098678eaf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "zh-CN",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "0fbd5facafd474063abd66058c7b03d02d99c537b1982dcc0c25b539ef51a494",
+      "record_ids": [
+        "214f072a5a91d62048ef90e20f5a8eb8b851e85948053eacdc8c92f917aac51a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "此工具支持长达30秒的剪辑 y 修剪文件并重试 conservan duración máxima, recortar y reintentar. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "zh-CN",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "6e7e4f70f3bb248ba035a1d92937e2629e0032468aea02f21db62293c470e464",
+      "record_ids": [
+        "5d2fe2c152bff6f7633da3e9c7edbd5d5e69deb8aa6cdf979596a27d1906d0a6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不 niega la pregunta; 本地解码并处理所选音频 conserva audio/decodificación/procesamiento local y 不会接收录音 conserva que UsefulVerse no recibe la grabación. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "zh-CN",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "f3408f4cc977c63cff4ad078b767bd5b592014c4c2fdf21f11230ea1ed499dc5",
+      "record_ids": [
+        "a5fbe1e5ba4af6c650045e40e284f4f1866a4cb67ddc70e0de5ad58641c5f045"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "音高降低→播放变慢 y 音高提高→播放变快 conservan relaciones de tono/velocidad, negativa y control simple de tasa de reproducción; construcción natural. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.example",
+      "locale": "zh-CN",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "record_ids": [
+        "279bee44a814047fd26bd0106d55e24e255306ee78e277b73f107856c747f2d9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "zh-CN",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "7850b89452b52ce71cff503a44719a1fff26c802d5b864c936773f1af6a85998",
+      "record_ids": [
+        "fe1a4f45e6496ce3600f6e5d99f0fa82ee34c1c269c32b0abf9953584bf52368"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "新谜题 es una acción de nuevo acertijo adecuada para este juego. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "zh-CN",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "243fe7bff5dc46d65b8f7a721590bf4410757129db848021220a9abf9f95c7b1",
+      "record_ids": [
+        "f8a0bf5caa1775d3855c2b298b523935479013fc0a865319b9203958bc04a6b8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "每日谜题 expresa el reto de cada día en chino simplificado, sin el calco 日常 ni 圖 tradicional. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "zh-CN",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "ea8e1a1cc815c8ec32be1961d2f0fb0eec82f486a4e06772fb2be9e5ab449cef",
+      "record_ids": [
+        "fb7f6657e9ef4d498f88253e63eadcedece6bbdb7e5d018093d96bf400b9be61"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "继续保存的游戏 permite leer continuar la partida guardada: 的 marca la relativa. La vuelta lo lee como continuar guardando; no se rebaja la ida solo por esa vuelta. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "zh-CN",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "3fa0bc3ddd33a4e264b25436c859f9c3c205b1598b5e0382cb3a72e9f8df1090",
+      "record_ids": [
+        "3ed1bbc94f32caa266ddc075320500613eb016c3afebc450f48c25d71894b943"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除已保存的游戏 conserva eliminar la partida guardada, no borrar el tablero actual. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "zh-CN",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "record_ids": [
+        "470a18d6b0512ea2e78f83ded5cad054a3261056118ce97ac097860feb3e1232"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "zh-CN",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "686a6dca8cfd62af40b89ef7eb9b565e83f718392fc841ab832a987b28625954",
+      "record_ids": [
+        "e227c2013c52aedaa2129cadd1814c9791cdbdb89de752b937ed9b8afad5aefc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "现在选择相反的角落 pide la esquina opuesta; se entiende en la selección de un rectángulo. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "zh-CN",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "a3fe35ee24292b4339cf4d462dcfe118069bc0441efa44db631005bef06072e1",
+      "record_ids": [
+        "587c53b819598d89e7da86705abca28276c2485ce838f900edf5c66882109ae5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "检查谜题 conserva comprobar el puzzle. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "zh-CN",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "b2101414fb98d92b6cd835bce6dc38ac0793aec5182c214cb3c06a2fe5d6f64d",
+      "record_ids": [
+        "09911d3bc3991a78a3b0cfb2cc55214d6fc3eeb6fdb79f0e7a41a1d60585f83b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "显示提示 es mostrar una pista en el contexto del juego; prompt en la vuelta puede ser una indicación y no demuestra por sí solo un defecto. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "zh-CN",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "6f4f897b7d7269d1f173ab2cf0d8e13f57f98302bca7d29f2097958321658c61",
+      "record_ids": [
+        "dcdd37214dd5bc3f268e16199330167f84d2cca905f5240244722027be8e0085"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "显示解 es una etiqueta matemática breve para mostrar la solución; no se cambia la acción. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "zh-CN",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "record_ids": [
+        "98be05ea046ee67cbd9a0a031fc46c93207d2045edcf3862f4f1a7235e494674"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "zh-CN",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "93743184452d24de08bb0a5cb006c8df1e85ad488d8d4b88f403030b5a5aa1ac",
+      "record_ids": [
+        "67276ea0a426278442297526318f32e2588c99a27b921f979f5192d014f12eb6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除所有矩形 elimina todos los rectángulos, alcance previsto de Clear rectangles. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "zh-CN",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "record_ids": [
+        "944a544f3e5d9ec01be137809ba9c40b0be3ca02ad0c2bab4665357763642736"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不能包含多个 y 必须包含一个 conservan exactamente una pista por rectángulo. La fuente/input completo y los fragmentos tienen ahora prueba ligada a hash/contexto; aceptación v24 verdadera, mientras el registro v23 permanece falso. Lectura directa de fuente/ida/vuelta actuales. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "locale": "zh-CN",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "c2720b35f19207979457356b52f91d4bb243ab1181f6d71d0460db9599839f06",
+      "record_ids": [
+        "301a6792adbcaecf1540637ad15ef29dd78a9639c4d1dd8901ab0aa7be3f2a8b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "locale": "zh-CN",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "d997b2a44142819342e61bf4fb31671e778c619204d5d3d0479bd1433b261bef",
+      "record_ids": [
+        "634a5b51032dc26fdaf5f2a11bd05725549d033819a0439dc5522511bb3b1eef"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "只有…以毫米为单位 conserva condición de milímetros; 使用文件声明的单位 y 将测量结果标为绘图单位 conservan unidad declarada y etiquetado de resultados como unidades de dibujo. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "locale": "zh-CN",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "10944bfc81908ece0e97dd4a2f9c3b4c02e7aae8ec07b9530a351185487cbf7a",
+      "record_ids": [
+        "b613881a5433510a48b9d2467cdd5df4b032b1e0275865585aa5d537e8ad4897"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "zh-CN",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "47402380923a9e156f334ae32b6aa0d72a54f9136b89fde454d882b82e2f05e5",
+      "record_ids": [
+        "9bd5c2d6decafa12293b7160ac95934e8d1d9c50bfe190185bb26d5aeaee4514"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "取消加载 cancela la carga; acción exacta. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "locale": "zh-CN",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "09f075a6c5c7f6e6642eca20c1b7fd4c62dfab85dfaa1967b3633fc0ed08f00f",
+      "record_ids": [
+        "b8148247af3b8193d9d54ba15451a01339ac1e5ff19fb120eeff5bb3b17e171c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不支持此文件 conserva el error; ASCII 格式的 .dxf 文件 separa formato ASCII y extensión .dxf, sin unirlos en un nombre. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "locale": "zh-CN",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "record_ids": [
+        "d837ffeccc768aa4253dcee9905efb9854a60e796c1ec0751176ea98c518b77c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "locale": "zh-CN",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "760116a740396ee63f923dc75e964101f5944fa0d027f6d679d44594503e0b15",
+      "record_ids": [
+        "27dfd45e5569f320e54bed63e66377e5a6d8c0772304230ef968d8047a446b5f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "测量距离 es la acción medir distancia en simplificado (测/离); control natural, no sintagma nominal Measurement distance. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "locale": "zh-CN",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "record_ids": [
+        "35f37d0d5edaf2fb759b41560ca1cf03dcd7e2685e6d9e895dc126e84dee22ca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "locale": "zh-CN",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "1e13ee178f21ce7f13716473fa704e7d6fbd647fe37d72133b30f4d4198ae87c",
+      "record_ids": [
+        "282bed4b5d7dad3241d3b0a5ade7cee662a9f505edc7df5e3350f4eba414e898"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "下载SVG文件 conserva descarga y tipoSVG. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "locale": "zh-CN",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "0f34f762bdf67fa11c2c4baac8e8e518b4756776ec79f64af6f260024e315c6b",
+      "record_ids": [
+        "0cc87fd49f31c047fbb65be0602a63d6612559e0566ec059699839e182578263"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "下载PNG conserva descarga y tipoPNG. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "zh-CN",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "23191d4280d35d7b5dfa22605d2eefe0b425ca0c934ae1eb5eeaba261c4bea9a",
+      "record_ids": [
+        "29623f78d9d8ea909d5fafdf6ce3a5a4f210ba990a717a6c73d746fdbadb4389"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "调整视图以显示整个图形 ordena ajustar la vista para mostrar el dibujo entero; no propone modificar el dibujo. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "locale": "zh-CN",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "80f8fbcfa01176339340176adcd440f3e7a8643f2d00acb7117feca389a845ca",
+      "record_ids": [
+        "c467a9976ae9bcd42d9293381e86b5b5a48b0fa15c5d660b0d14b7c7bfb0a6a7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "放大 es el comando chino correcto de ampliar la vista; la vuelta inventa un objeto lupa. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "locale": "zh-CN",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+zh-CN-bound-lexical-v3",
+      "translation_hash": "290f68030501cd9c82b1d3c59a3359d4ba572595fb3fc773fb8ffccb453ffb49",
+      "record_ids": [
+        "9039e36b649daa9be859ce4b12c6b165477399f0990a9695ad63e22f745d4630"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "缩小 es el comando correcto de reducir la vista, no una reducción de archivo. Fuente/ida/vuelta v25 leídas directamente; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "2df26d7e7015eac91e932de8ee82a53fa8d1e38febbf356e90d47a5fbf02bfd9",
+      "back_translation_hash": "24492194d9b21960bfa4176f757e5d2547e88fa8c97910dd8e08de661149f2b4",
+      "notes": [
+        "Locally loaded audio convierte la acción de cargar en estado, igual a la vuelta del modelo."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "5d2fe2c152bff6f7633da3e9c7edbd5d5e69deb8aa6cdf979596a27d1906d0a6",
+      "back_translation_hash": "b0bc2b607fdec62b404f63fa109c9a04dc05f29e7198d7fd7a0b9390b1eb758d",
+      "notes": [
+        "Does not accept recordings sustituye no recibir por no aceptar. La ida 不会接收录音 sí conserva recepción; defecto solo de vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "fb7f6657e9ef4d498f88253e63eadcedece6bbdb7e5d018093d96bf400b9be61",
+      "back_translation_hash": "b724da56e90e95fa3e85f107a5afae4cc876b0dbc1c6a2602cc0e5e3c6ae036f",
+      "notes": [
+        "Continue to save games cambia continuar la partida guardada por continuar guardando partidas; 保存的游戏 es la partida guardada."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "b8148247af3b8193d9d54ba15451a01339ac1e5ff19fb120eeff5bb3b17e171c",
+      "back_translation_hash": "3800af39b9e646cea59da759cd976342811bbc4aef45a5b7c344d9cb7e2df3b8",
+      "notes": [
+        "a.dxf pega el artículo a a la extensión como nombre a.dxf. El formato ASCII y la extensión .dxf debían permanecer separados del artículo; ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "27dfd45e5569f320e54bed63e66377e5a6d8c0772304230ef968d8047a446b5f",
+      "back_translation_hash": "f175b42a670959c83610d13f9c20ce32cfa7f89da474e2c5f213b711cba4fc4c",
+      "notes": [
+        "Measuring distance es un gerundio/estado, no la orden Measure distance del botón; ida 测量距离 correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "29623f78d9d8ea909d5fafdf6ce3a5a4f210ba990a717a6c73d746fdbadb4389",
+      "back_translation_hash": "4519cead733d6a76da8ac368ab181f8ceaf04ed38245613029145f6531b893f5",
+      "notes": [
+        "entire graph restringe el dibujo CAD a un gráfico; la orden de ajustar la vista se conserva y la ida 图形 es correcta en el visor."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "c467a9976ae9bcd42d9293381e86b5b5a48b0fa15c5d660b0d14b7c7bfb0a6a7",
+      "back_translation_hash": "ea23d3eb6ae3cfdbc6f8f1ed93c2ecbcecde06c2a1a6e4ff49621016f677101f",
+      "notes": [
+        "Magnifying glass es un objeto lupa, no el comando ampliar la vista; 放大 es correcto."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "9039e36b649daa9be859ce4b12c6b165477399f0990a9695ad63e22f745d4630",
+      "back_translation_hash": "0b92322328a27838f252136c3fd9e00bd56328e08676b77a30fab57e265397c6",
+      "notes": [
+        "Reduction es un sustantivo genérico y pierde la orden concreta de reducir la vista; 缩小 es correcto en el botón."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "5b38563912067002f8d38d28c179b2626c89c7dea5a4d742e9fb1745134fec16",
+      "translation_hash": "a7d49abed19cd849a6d392b017f0700b03bc069b1a1330a961c8aa7129da9ebf",
+      "back_translation_hash": "cd221ce104815eee7ae96bca99c7d2f8c3469ffb4a24e5b9683f5e35fcb533fd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 选择音频文件 conserva la acción de elegir archivo de audio; compresión de caracteres normal en chino."
+        }
+      }
+    },
+    {
+      "record_id": "2df26d7e7015eac91e932de8ee82a53fa8d1e38febbf356e90d47a5fbf02bfd9",
+      "translation_hash": "bc53baf03335a243634374b6e2cdb1142655000c87eecb81bd912e5966ef0623",
+      "back_translation_hash": "24492194d9b21960bfa4176f757e5d2547e88fa8c97910dd8e08de661149f2b4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 本地加载音频 es el imperativo correcto de carga local; la vuelta lo convierte en estado cargado."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Locally loaded audio convierte la acción de cargar en estado, igual a la vuelta del modelo."
+        }
+      }
+    },
+    {
+      "record_id": "7260cd1e9aaaf3ce562d36c1139f15d3dbba47f3293dcb17eea9d3a6a8191bb3",
+      "translation_hash": "f88319f600c62990b579ac8c43498e6eeee41bd93f1c7ade54d59f0767ff3813",
+      "back_translation_hash": "d47d83b97dfdca170a30b22453979a75256f9039380ffc59043fde6578f46051",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 播放音频效果 expresa reproducir el efecto, desambiguación prevista de Preview; no es una vista de imagen."
+        }
+      }
+    },
+    {
+      "record_id": "44c4deb42560faa4598635d5077181b009b6b6e5a04132849c942cd89a7406f5",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "back_translation_hash": "5374166b66b0077f94c1f1602d59d7a6839a0c6837c9fc34175ef6af527706b1",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+        }
+      }
+    },
+    {
+      "record_id": "17ddda02e2106105192469d7ce666106a1f9f561b1f7acb047914fc689d26e0f",
+      "translation_hash": "32b681593c9c3c504f6278251555155ec99a8191f4d356c627fd73b337c7361d",
+      "back_translation_hash": "560d61c025f23ca06d10034ee5f9f0eb28289ae9b7b0075ba41a9668028312ae",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 音频已在本地解码 expresa decodificación local terminada; 时长 y {duration} 秒 conservan duración, marcador literal y segundos."
+        }
+      }
+    },
+    {
+      "record_id": "a15e6028eed2706fe332a091575976951ebcd76c514861cd08bf28233d808baa",
+      "translation_hash": "3cf235299e5ef10294fac898a5f2b8dac14fc9bd54eea1084092b885e62f0f19",
+      "back_translation_hash": "dbeb49993d5acdadf0a08f4791975c588babadfc18c50996c8cb1534a4f4651d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 无法解码该音频格式 conserva el error de decodificación; 请尝试 WAV 或 MP3 conserva alternativas, sin redirección ni clic inventados."
+        }
+      }
+    },
+    {
+      "record_id": "008c6167cc366ad32aa424e9ec70f892266abd37ce8cf19f3b1823d098678eaf",
+      "translation_hash": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "back_translation_hash": "8e03e948027cbbe9e75c82bb07e30aca850e7222a7a630f6f5771dae7c5ed28e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+        }
+      }
+    },
+    {
+      "record_id": "214f072a5a91d62048ef90e20f5a8eb8b851e85948053eacdc8c92f917aac51a",
+      "translation_hash": "0fbd5facafd474063abd66058c7b03d02d99c537b1982dcc0c25b539ef51a494",
+      "back_translation_hash": "c0d187c355fb78dbdb44104c4d910d57d0e35b1791c538ebf6fa12caab078e70",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 此工具支持长达30秒的剪辑 y 修剪文件并重试 conservan duración máxima, recortar y reintentar."
+        }
+      }
+    },
+    {
+      "record_id": "5d2fe2c152bff6f7633da3e9c7edbd5d5e69deb8aa6cdf979596a27d1906d0a6",
+      "translation_hash": "6e7e4f70f3bb248ba035a1d92937e2629e0032468aea02f21db62293c470e464",
+      "back_translation_hash": "b0bc2b607fdec62b404f63fa109c9a04dc05f29e7198d7fd7a0b9390b1eb758d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 不 niega la pregunta; 本地解码并处理所选音频 conserva audio/decodificación/procesamiento local y 不会接收录音 conserva que UsefulVerse no recibe la grabación."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Does not accept recordings sustituye no recibir por no aceptar. La ida 不会接收录音 sí conserva recepción; defecto solo de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "a5fbe1e5ba4af6c650045e40e284f4f1866a4cb67ddc70e0de5ad58641c5f045",
+      "translation_hash": "f3408f4cc977c63cff4ad078b767bd5b592014c4c2fdf21f11230ea1ed499dc5",
+      "back_translation_hash": "260b52287590cd741eb93e19d20648a7b6f46d8d3103d3d068cdfef8ddf3679d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 音高降低→播放变慢 y 音高提高→播放变快 conservan relaciones de tono/velocidad, negativa y control simple de tasa de reproducción; construcción natural."
+        }
+      }
+    },
+    {
+      "record_id": "279bee44a814047fd26bd0106d55e24e255306ee78e277b73f107856c747f2d9",
+      "translation_hash": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "back_translation_hash": "9bc0695c103f64d72f8bfe09790779ddfc66c363ac79e2a90722c3e544c486de",
+      "warnings": {
+        "back_numeric_values": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Cifras de la vuelta contrastadas con fuente/ida: 6 escrito six en fuente y6 en ida/vuelta; contrato léxico explícito conserva valor/multiplicidad semántica. Señal de grafía, no cambio de cantidad."
+        },
+        "protected_tokens": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Contrato léxico explícito conserva uno/6/six y sus cantidades semánticas; la firma literal cambia de grafía, sin daño. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "back_protected_tokens": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Cifras de la vuelta contrastadas con fuente/ida: 6 escrito six en fuente y6 en ida/vuelta; contrato léxico explícito conserva valor/multiplicidad semántica. Señal de grafía, no cambio de cantidad."
+        }
+      }
+    },
+    {
+      "record_id": "fe1a4f45e6496ce3600f6e5d99f0fa82ee34c1c269c32b0abf9953584bf52368",
+      "translation_hash": "7850b89452b52ce71cff503a44719a1fff26c802d5b864c936773f1af6a85998",
+      "back_translation_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 新谜题 es una acción de nuevo acertijo adecuada para este juego."
+        }
+      }
+    },
+    {
+      "record_id": "f8a0bf5caa1775d3855c2b298b523935479013fc0a865319b9203958bc04a6b8",
+      "translation_hash": "243fe7bff5dc46d65b8f7a721590bf4410757129db848021220a9abf9f95c7b1",
+      "back_translation_hash": "a3cfcb312319e5ca987501c4aa375b93fb195f44b2b62b9d729e9c730e324d47",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 每日谜题 expresa el reto de cada día en chino simplificado, sin el calco 日常 ni 圖 tradicional."
+        }
+      }
+    },
+    {
+      "record_id": "fb7f6657e9ef4d498f88253e63eadcedece6bbdb7e5d018093d96bf400b9be61",
+      "translation_hash": "ea8e1a1cc815c8ec32be1961d2f0fb0eec82f486a4e06772fb2be9e5ab449cef",
+      "back_translation_hash": "b724da56e90e95fa3e85f107a5afae4cc876b0dbc1c6a2602cc0e5e3c6ae036f",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Continue to save games cambia continuar la partida guardada por continuar guardando partidas; 保存的游戏 es la partida guardada."
+        }
+      }
+    },
+    {
+      "record_id": "3ed1bbc94f32caa266ddc075320500613eb016c3afebc450f48c25d71894b943",
+      "translation_hash": "3fa0bc3ddd33a4e264b25436c859f9c3c205b1598b5e0382cb3a72e9f8df1090",
+      "back_translation_hash": "c4e9ca47628ba41dd342c84305f0126931c4c042b4d1c30b13367bac183f0c70",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 删除已保存的游戏 conserva eliminar la partida guardada, no borrar el tablero actual."
+        }
+      }
+    },
+    {
+      "record_id": "470a18d6b0512ea2e78f83ded5cad054a3261056118ce97ac097860feb3e1232",
+      "translation_hash": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "back_translation_hash": "cf465c9861202e949494b174654b61fc4209199ba03389e888324b4f69620ef6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+        }
+      }
+    },
+    {
+      "record_id": "e227c2013c52aedaa2129cadd1814c9791cdbdb89de752b937ed9b8afad5aefc",
+      "translation_hash": "686a6dca8cfd62af40b89ef7eb9b565e83f718392fc841ab832a987b28625954",
+      "back_translation_hash": "fda5a4194e93254f85a73ce3cba9226dd42cc8a896a830260603c7ffb417478a",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 现在选择相反的角落 pide la esquina opuesta; se entiende en la selección de un rectángulo."
+        }
+      }
+    },
+    {
+      "record_id": "587c53b819598d89e7da86705abca28276c2485ce838f900edf5c66882109ae5",
+      "translation_hash": "a3fe35ee24292b4339cf4d462dcfe118069bc0441efa44db631005bef06072e1",
+      "back_translation_hash": "25eb84288d7593c6e79de857e3196b2659426e6df945cfc5a9bcf8ae272bd4c4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 检查谜题 conserva comprobar el puzzle."
+        }
+      }
+    },
+    {
+      "record_id": "09911d3bc3991a78a3b0cfb2cc55214d6fc3eeb6fdb79f0e7a41a1d60585f83b",
+      "translation_hash": "b2101414fb98d92b6cd835bce6dc38ac0793aec5182c214cb3c06a2fe5d6f64d",
+      "back_translation_hash": "7977bea9fbd6fd89b23656f56306649723df2ca1e13e4be3b1ddd6bcd4dec2de",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 显示提示 es mostrar una pista en el contexto del juego; prompt en la vuelta puede ser una indicación y no demuestra por sí solo un defecto."
+        }
+      }
+    },
+    {
+      "record_id": "dcdd37214dd5bc3f268e16199330167f84d2cca905f5240244722027be8e0085",
+      "translation_hash": "6f4f897b7d7269d1f173ab2cf0d8e13f57f98302bca7d29f2097958321658c61",
+      "back_translation_hash": "ca2c68404a5c2bec4c72e84a6d4249672be06ed36bb28cb642f18ec17443bace",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 显示解 es una etiqueta matemática breve para mostrar la solución; no se cambia la acción."
+        }
+      }
+    },
+    {
+      "record_id": "98be05ea046ee67cbd9a0a031fc46c93207d2045edcf3862f4f1a7235e494674",
+      "translation_hash": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "back_translation_hash": "08de0268fddd51894ba30cffac35ea1193f8e92e36c05c0c8842496ddd370b12",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+        }
+      }
+    },
+    {
+      "record_id": "67276ea0a426278442297526318f32e2588c99a27b921f979f5192d014f12eb6",
+      "translation_hash": "93743184452d24de08bb0a5cb006c8df1e85ad488d8d4b88f403030b5a5aa1ac",
+      "back_translation_hash": "b0f74bc4b53749a4cde0d1e35e2167f834b6279a2b2c0ed55c09d983f4084608",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 删除所有矩形 elimina todos los rectángulos, alcance previsto de Clear rectangles."
+        }
+      }
+    },
+    {
+      "record_id": "634a5b51032dc26fdaf5f2a11bd05725549d033819a0439dc5522511bb3b1eef",
+      "translation_hash": "d997b2a44142819342e61bf4fb31671e778c619204d5d3d0479bd1433b261bef",
+      "back_translation_hash": "da552598a579f7f6c1ffd7a1354ed47dc328ac77fbbe7c6cce836ec83df616b2",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 只有…以毫米为单位 conserva condición de milímetros; 使用文件声明的单位 y 将测量结果标为绘图单位 conservan unidad declarada y etiquetado de resultados como unidades de dibujo."
+        }
+      }
+    },
+    {
+      "record_id": "9bd5c2d6decafa12293b7160ac95934e8d1d9c50bfe190185bb26d5aeaee4514",
+      "translation_hash": "47402380923a9e156f334ae32b6aa0d72a54f9136b89fde454d882b82e2f05e5",
+      "back_translation_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 取消加载 cancela la carga; acción exacta."
+        }
+      }
+    },
+    {
+      "record_id": "b8148247af3b8193d9d54ba15451a01339ac1e5ff19fb120eeff5bb3b17e171c",
+      "translation_hash": "09f075a6c5c7f6e6642eca20c1b7fd4c62dfab85dfaa1967b3633fc0ed08f00f",
+      "back_translation_hash": "3800af39b9e646cea59da759cd976342811bbc4aef45a5b7c344d9cb7e2df3b8",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "a.dxf pega el artículo a a la extensión como nombre a.dxf. El formato ASCII y la extensión .dxf debían permanecer separados del artículo; ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "d837ffeccc768aa4253dcee9905efb9854a60e796c1ec0751176ea98c518b77c",
+      "translation_hash": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "back_translation_hash": "020795786bf51456874169422ae128df404e9e45b8f699b26f1a50c98fd02037",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+        }
+      }
+    },
+    {
+      "record_id": "27dfd45e5569f320e54bed63e66377e5a6d8c0772304230ef968d8047a446b5f",
+      "translation_hash": "760116a740396ee63f923dc75e964101f5944fa0d027f6d679d44594503e0b15",
+      "back_translation_hash": "f175b42a670959c83610d13f9c20ce32cfa7f89da474e2c5f213b711cba4fc4c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 测量距离 es la acción medir distancia en simplificado (测/离); control natural, no sintagma nominal Measurement distance."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Measuring distance es un gerundio/estado, no la orden Measure distance del botón; ida 测量距离 correcta."
+        }
+      }
+    },
+    {
+      "record_id": "35f37d0d5edaf2fb759b41560ca1cf03dcd7e2685e6d9e895dc126e84dee22ca",
+      "translation_hash": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "back_translation_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+        }
+      }
+    },
+    {
+      "record_id": "29623f78d9d8ea909d5fafdf6ce3a5a4f210ba990a717a6c73d746fdbadb4389",
+      "translation_hash": "23191d4280d35d7b5dfa22605d2eefe0b425ca0c934ae1eb5eeaba261c4bea9a",
+      "back_translation_hash": "4519cead733d6a76da8ac368ab181f8ceaf04ed38245613029145f6531b893f5",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "entire graph restringe el dibujo CAD a un gráfico; la orden de ajustar la vista se conserva y la ida 图形 es correcta en el visor."
+        }
+      }
+    },
+    {
+      "record_id": "c467a9976ae9bcd42d9293381e86b5b5a48b0fa15c5d660b0d14b7c7bfb0a6a7",
+      "translation_hash": "80f8fbcfa01176339340176adcd440f3e7a8643f2d00acb7117feca389a845ca",
+      "back_translation_hash": "ea23d3eb6ae3cfdbc6f8f1ed93c2ecbcecde06c2a1a6e4ff49621016f677101f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 放大 es el comando chino correcto de ampliar la vista; la vuelta inventa un objeto lupa."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Magnifying glass es un objeto lupa, no el comando ampliar la vista; 放大 es correcto."
+        }
+      }
+    },
+    {
+      "record_id": "9039e36b649daa9be859ce4b12c6b165477399f0990a9695ad63e22f745d4630",
+      "translation_hash": "290f68030501cd9c82b1d3c59a3359d4ba572595fb3fc773fb8ffccb453ffb49",
+      "back_translation_hash": "0b92322328a27838f252136c3fd9e00bd56328e08676b77a30fab57e265397c6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud corresponde a escritura china; lectura completa confirma contenido. 缩小 es el comando correcto de reducir la vista, no una reducción de archivo."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Reduction es un sustantivo genérico y pierde la orden concreta de reducir la vista; 缩小 es correcto en el botón."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "zh-CN": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current source/forward/back reading. All reference quantities proved, including whole controlled input; known memory disclosed. No native/blind/unseen-text or locale approval."
+    }
+  },
+  "evidence_sources": {
+    "inference_source_commit": "e41cdd59cbb6b3970877b6a3965ecbeef2aac871",
+    "checkpoint_capture_commit": "396fb9371f94c9ab3892e0fdfda9f5cab2661305",
+    "checkpoint_sha256_at_capture": "c0c6b510f50b805423e760779a1fa6225c05a903943ab650afb517f374ea2535",
+    "run_id": 40151851906
+  },
+  "decision": "Model references pass; full conditional on audited warning coverage. No locale approval.",
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 243,
+    "legacy_points": 223,
+    "maximum": 243,
+    "frozen_engine": false
+  }
+}
