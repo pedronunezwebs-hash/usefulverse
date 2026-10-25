@@ -389,5 +389,13 @@
   "primary_known_corrections": 9,
   "same_source_family_followup": 0,
   "full_dispatch_authorized": false,
-  "note": "Same frozen88 keys, read all174 model+92 legacy, outside88 defects also block. Nine known memory repairs; no blind/native/general approval. No full dispatch before v26 reference gate and all warnings reviewed."
+  "note": "Same frozen88 keys, read all174 model+92 legacy, outside88 defects also block. Nine known memory repairs; no blind/native/general approval. No full dispatch before v26 reference gate and all warnings reviewed.",
+  "reference_block": {
+    "run_id": 40190935942,
+    "key": "shikaku.example",
+    "unproved_data_rows": 1,
+    "forward_linguistic_defects": 0,
+    "full_dispatched": false,
+    "note": "Current wording not covered by finite v26 proofs; raw/rejection intact. Full not authorized."
+  }
 }
