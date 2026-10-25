@@ -388,6 +388,22 @@
   "known_memory_targets": 477,
   "primary_known_corrections": 143,
   "same_source_family_followup": 0,
-  "full_dispatch_authorized": false,
-  "note": "Same frozen88keys, all174nonreference model+92legacy. All214 Chinese outputs are source-bound reviewed memory (13legacy ties), not new forward inference or blind/general-engine validation. Full still conditional on all actual reference warnings."
+  "full_dispatch_authorized": true,
+  "note": "Same frozen88keys, all174nonreference model+92legacy. All214 Chinese outputs are source-bound reviewed memory (13legacy ties), not new forward inference or blind/general-engine validation. Full still conditional on all actual reference warnings.",
+  "reference_authorization": {
+    "at_utc": "2026-10-25T13:33:37.332091+00:00",
+    "run_id": 40196684338,
+    "review_capture_commit": "20ae88a12b66f08121a36e8041bf36e417b2742c",
+    "reference_review_sha256_at_authorization": "00b6cc88cc11e3e208205be90469a8063958aca1f34d36be84274b065b3735fe",
+    "legacy_review_sha256_at_authorization": "ce029fbe907dd8ee3e049b90e72c350de30d5cc7a2fe019800a719c032322b99",
+    "model_points": 360,
+    "model_maximum": 360,
+    "model_gate_passed": true,
+    "model_warning_records_reviewed": 31,
+    "legacy_warning_records_reviewed": 26,
+    "checks_passed": 35,
+    "known_reference_memory_hits": 40,
+    "forward_model_records": 0,
+    "approved_locales": []
+  }
 }
