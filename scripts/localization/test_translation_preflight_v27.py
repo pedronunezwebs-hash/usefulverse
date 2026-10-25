@@ -25,7 +25,7 @@ class PreflightV27Test(unittest.TestCase):
   for key,item in pilot.POLICIES['context-v26']['reviewed_memory'].items():self.assertTrue(preserved(item,memories[key]),key)
   for key,item in memories.items():
    for locale,text in item['translations'].items():
-    checks=pilot.policy_typed_data_checks(item['source'],text,'en',locale,'context-v27')
+    checks=pilot.policy_typed_data_checks(item['source'],text,'en',locale,'context-v27');self.assertEqual(pilot.semantic_issues(key,item['source_hash'],text,locale),[],(key,locale))
     with self.subTest(key=key,locale=locale):
      if locale=='zh-CN':self.assertTrue(all(checks.values()))
      else:self.assertEqual(checks,pilot.policy_typed_data_checks(item['source'],text,'en',locale,'context-v26'))
