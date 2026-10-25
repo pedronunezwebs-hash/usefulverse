@@ -133,9 +133,12 @@ class ValidationCacheTest(unittest.TestCase):
         module.body = [node for node in module.body if node not in extra]
         self.assertEqual(pilot.digest(stable(module)), proof['original_module_ast_sha256'])
 
-    def test_all15443_current_record_flags_match_the_uncached_baseline(self):
+    def test_all15443_historical_flags_match_the_uncached_baseline(self):
         proof = json.loads((pilot.ROOT / 'docs/quality/translation-pilot/acceleration-measurements.json').read_text())
-        flags = {row['record_id']: pilot.record_flags(row) for file in sorted((pilot.ROOT / 'docs/quality/translation-pilot/checkpoints').rglob('*.jsonl')) for row in map(json.loads, file.read_text().splitlines())}
+        # This is a frozen cache-equivalence experiment, not a ban on discovering
+        # future defects. New findings have their own exact-evidence tests.
+        with patch.object(pilot, 'SEMANTIC_REGRESSIONS', pilot.SEMANTIC_REGRESSIONS[:1151]):
+            flags = {row['record_id']: pilot.record_flags(row) for file in sorted((pilot.ROOT / 'docs/quality/translation-pilot/checkpoints').rglob('*.jsonl')) for row in map(json.loads, file.read_text().splitlines())}
         self.assertEqual(len(flags), proof['records'])
         self.assertEqual(pilot.digest(flags), proof['record_flags_sha256'])
 
