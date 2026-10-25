@@ -13,5 +13,7 @@
   "primary_billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
   "billing_global_audit": false,
   "final_source_scan_at_utc": "2026-10-25T18:05:57.701002+00:00",
-  "final_source_secret_findings": 0
+  "final_source_secret_findings": 0,
+  "final_metadata_scan_at_utc": "2026-10-25T18:24:52.585581+00:00",
+  "final_metadata_secret_findings": 0
 }
