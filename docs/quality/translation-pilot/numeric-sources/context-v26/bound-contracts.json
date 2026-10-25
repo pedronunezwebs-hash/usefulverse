@@ -1,0 +1,668 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "text": "从 (0, 0) 到 (10, 0) 的线段长度为 10 个绘图单位。查看器会读取 DXF 文件中声明的单位代码；如果未声明，测量结果会标为绘图单位。",
+      "text_sha256": "d48fff113ea2e81adbae969f8a240ebf234a8f607eda289a83c53fbb1b59fdc5",
+      "source_text": "A line from (0, 0) to (10, 0) measures 10 drawing units. The viewer reads the DXF unit code when present; when it is absent, measurements are labelled as drawing units.",
+      "source_text_sha256": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+      "quantities": [
+        {
+          "value": "10",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "One distance10 outside coordinates; both exact coordinate pairs preserved; absence of a DXF unit code still labels drawing units.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "9e16c4855f2008e41c3b49f99f553b54bcc6e8fa6c8001c588e6350033bde396",
+        "key": "dxf-viewer.example",
+        "context": "example",
+        "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "第一点 Y",
+      "text_sha256": "2acb1408e1147c7d93d69dba558e4e1211ce0390e05310b2f8e7d56af2728479",
+      "source_text": "First point Y",
+      "source_text_sha256": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02",
+      "quantities": [],
+      "case_note": "第一 is the ordinal First, not a scalar amount; axisY remains exact.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "cc44a4e1cf583fdd1d783edb949c93b4356e91d501cc56e73f20b97aaef3785f",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "dxf-viewer.fields.firstY",
+        "context": "fields.firstY",
+        "source_hash": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "第一点 Y",
+      "text_sha256": "2acb1408e1147c7d93d69dba558e4e1211ce0390e05310b2f8e7d56af2728479",
+      "source_text": "First point Y",
+      "source_text_sha256": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02",
+      "quantities": [],
+      "case_note": "第一 is the ordinal First, not a scalar amount; axisY remains exact.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "cc44a4e1cf583fdd1d783edb949c93b4356e91d501cc56e73f20b97aaef3785f",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "dxf-viewer.fields.firstY",
+        "context": "fields.firstY",
+        "source_hash": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "第一点 Y",
+      "text_sha256": "2acb1408e1147c7d93d69dba558e4e1211ce0390e05310b2f8e7d56af2728479",
+      "source_text": "First point Y",
+      "source_text_sha256": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02",
+      "quantities": [],
+      "case_note": "第一 is the ordinal First, not a scalar amount; axisY remains exact.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "cc44a4e1cf583fdd1d783edb949c93b4356e91d501cc56e73f20b97aaef3785f",
+        "source_field": "forward_segments.0.input",
+        "target_field": "forward_segments.0.output",
+        "key": "dxf-viewer.fields.firstY",
+        "context": "fields.firstY",
+        "source_hash": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "第一点 Y",
+      "text_sha256": "2acb1408e1147c7d93d69dba558e4e1211ce0390e05310b2f8e7d56af2728479",
+      "source_text": "First point Y",
+      "source_text_sha256": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02",
+      "quantities": [],
+      "case_note": "第一 is the ordinal First, not a scalar amount; axisY remains exact.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "cc44a4e1cf583fdd1d783edb949c93b4356e91d501cc56e73f20b97aaef3785f",
+        "key": "dxf-viewer.fields.firstY",
+        "context": "fields.firstY",
+        "source_hash": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "选择一个开始方格,然后选择一个结束方格来画一个矩形。 您也可以在网格上拖移。 每个矩形必须包含一个数字线索。 这个数字必须等于矩形内的正方形数。",
+      "text_sha256": "d9900013009990d2007cc074af09571cf27035e91deef83df83e9361edb07466",
+      "source_text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Every rectangle must contain one clue whose number matches its area.",
+      "source_text_sha256": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "一个开始方格 and 一个结束方格 select a start/end cell; the sole scalar is one clue. Its value, not the number of clues, matches area.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "f6d48ca27ef1dea06173b0d9e9d2ed5c11be24f3381cc662270cbf7d89567898",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "shikaku.details",
+        "context": "details",
+        "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "选择一个开始方格,然后选择一个结束方格来画一个矩形。 您也可以在网格上拖移。 每个矩形必须包含一个数字线索。 这个数字必须等于矩形内的正方形数。",
+      "text_sha256": "d9900013009990d2007cc074af09571cf27035e91deef83df83e9361edb07466",
+      "source_text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Each rectangle must contain exactly one number clue. That number must equal the number of squares inside the rectangle.",
+      "source_text_sha256": "c630b4d9d84c1ed32a0e515e916ad2ad0259576ee5d5fe2bfa702b52a263016a",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "一个开始方格 and 一个结束方格 select a start/end cell; the sole scalar is one clue. Its value, not the number of clues, matches area.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "f6d48ca27ef1dea06173b0d9e9d2ed5c11be24f3381cc662270cbf7d89567898",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "shikaku.details",
+        "context": "details",
+        "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "每个矩形必须包含一个数字线索。",
+      "text_sha256": "8328aa98625b58b6d78c2da254ac122317d2d32bc1d15b493aae531c727e3153",
+      "source_text": "Each rectangle must contain exactly one number clue.",
+      "source_text_sha256": "6fe8ecaaa238493eabecfc9baef15128fa59cd976fa7e1fbc88201064d0580b1",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "一个开始方格 and 一个结束方格 select a start/end cell; the sole scalar is one clue. Its value, not the number of clues, matches area.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "f6d48ca27ef1dea06173b0d9e9d2ed5c11be24f3381cc662270cbf7d89567898",
+        "source_field": "forward_segments.2.input",
+        "target_field": "forward_segments.2.output",
+        "key": "shikaku.details",
+        "context": "details",
+        "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "选择一个开始方格,然后选择一个结束方格来画一个矩形。 您也可以在网格上拖移。 每个矩形必须包含一个数字线索。 这个数字必须等于矩形内的正方形数。",
+      "text_sha256": "d9900013009990d2007cc074af09571cf27035e91deef83df83e9361edb07466",
+      "source_text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Every rectangle must contain one clue whose number matches its area.",
+      "source_text_sha256": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "一个开始方格 and 一个结束方格 select a start/end cell; the sole scalar is one clue. Its value, not the number of clues, matches area.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "f6d48ca27ef1dea06173b0d9e9d2ed5c11be24f3381cc662270cbf7d89567898",
+        "key": "shikaku.details",
+        "context": "details",
+        "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "绘制矩形,使每个数字都是正好一个区域的面积。 覆盖每个方格一次,不要重叠。",
+      "text_sha256": "16b69b994c022f1fd4c6f8ab61320b8fafd0ccacbcca91dc5fc6d897ef1c6f3b",
+      "source_text": "Draw rectangles so every number is the area of exactly one region. Cover every square once, with no overlaps.",
+      "source_text_sha256": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "Exactly one region is the scalar1; once/一次 is the original coverage-frequency rule, with no overlaps.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "shikaku.intro",
+        "context": "intro",
+        "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "绘制矩形,使每个数字都是正好一个区域的面积。 覆盖每个方格一次,不要重叠。",
+      "text_sha256": "16b69b994c022f1fd4c6f8ab61320b8fafd0ccacbcca91dc5fc6d897ef1c6f3b",
+      "source_text": "Draw rectangles so every number is the area of exactly one region. Cover every square once, with no overlaps.",
+      "source_text_sha256": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "Exactly one region is the scalar1; once/一次 is the original coverage-frequency rule, with no overlaps.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "shikaku.intro",
+        "context": "intro",
+        "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "覆盖每个方格一次,不要重叠。",
+      "text_sha256": "be12a4b30db92bc5178c2c87dc15c0ddbfed2e39eff5cb6d4c2338643be5554f",
+      "source_text": "Cover every square once, with no overlaps.",
+      "source_text_sha256": "ad4a67310dab25d550b59fc76e63dc96b35b46cc5ed2008930803823f8aee7bf",
+      "quantities": [],
+      "case_note": "Exactly one region is the scalar1; once/一次 is the original coverage-frequency rule, with no overlaps.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+        "source_field": "forward_segments.1.input",
+        "target_field": "forward_segments.1.output",
+        "key": "shikaku.intro",
+        "context": "intro",
+        "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "绘制矩形,使每个数字都是正好一个区域的面积。 覆盖每个方格一次,不要重叠。",
+      "text_sha256": "16b69b994c022f1fd4c6f8ab61320b8fafd0ccacbcca91dc5fc6d897ef1c6f3b",
+      "source_text": "Draw rectangles so every number is the area of exactly one region. Cover every square once, with no overlaps.",
+      "source_text_sha256": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "case_note": "Exactly one region is the scalar1; once/一次 is the original coverage-frequency rule, with no overlaps.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+        "key": "shikaku.intro",
+        "context": "intro",
+        "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_text_sha256": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "a562479f00f7f282f3cf4b1db1cb33313a1dd0e8929cfe443f34f846f4194f4c",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "voice-changer.faq.2.a",
+        "context": "faq.2.a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "This tool cannot clone a person or isolate a voice track. It cannot make a voice sound like another real person. It only adds simple audio effects.",
+      "source_text_sha256": "ecb99433024340c1eead1b702c3c3598826639c95abf22d5fcccadacb8f56a80",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "a562479f00f7f282f3cf4b1db1cb33313a1dd0e8929cfe443f34f846f4194f4c",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "voice-changer.faq.2.a",
+        "context": "faq.2.a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "它无法让声音听起来像另一个真实的人。",
+      "text_sha256": "a631aee780209868ff9883f55aec3619a8f3a6fbc2ef8f0ce5a6877fc4f85b77",
+      "source_text": "It cannot make a voice sound like another real person.",
+      "source_text_sha256": "335e497822107434ca551ef62b56061a5155caa5875a4c1a01acbd4a88dbdbe8",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "a562479f00f7f282f3cf4b1db1cb33313a1dd0e8929cfe443f34f846f4194f4c",
+        "source_field": "forward_segments.1.input",
+        "target_field": "forward_segments.1.output",
+        "key": "voice-changer.faq.2.a",
+        "context": "faq.2.a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_text_sha256": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "a562479f00f7f282f3cf4b1db1cb33313a1dd0e8929cfe443f34f846f4194f4c",
+        "key": "voice-changer.faq.2.a",
+        "context": "faq.2.a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "The tool renders a standard uncompressed WAV file in your browser. The input may be any audio format that your browser can decode.",
+      "source_text_sha256": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "da25465993b15e769e92e3f17ab36aa34c429aecdc24b407eebbe986647e627a",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "voice-changer.faq.3.a",
+        "context": "faq.3.a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "This tool creates a standard uncompressed WAV file in your browser. You can use any input audio format that your browser can decode.",
+      "source_text_sha256": "1addce4c868464ade42976d8a0e25f3828be9b7ae63d5ce31b5a510252bec7a0",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "da25465993b15e769e92e3f17ab36aa34c429aecdc24b407eebbe986647e627a",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "voice-changer.faq.3.a",
+        "context": "faq.3.a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。",
+      "text_sha256": "6ff66525366874fb645a140d3249f0d71a89552273337db0b41a1f67f927e697",
+      "source_text": "This tool creates a standard uncompressed WAV file in your browser.",
+      "source_text_sha256": "e5bfebb60f11d8cd46e5bc2c1118687b2f24ed2f476edcb0f5c967332f79f9d6",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "da25465993b15e769e92e3f17ab36aa34c429aecdc24b407eebbe986647e627a",
+        "source_field": "forward_segments.0.input",
+        "target_field": "forward_segments.0.output",
+        "key": "voice-changer.faq.3.a",
+        "context": "faq.3.a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "The tool renders a standard uncompressed WAV file in your browser. The input may be any audio format that your browser can decode.",
+      "source_text_sha256": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "da25465993b15e769e92e3f17ab36aa34c429aecdc24b407eebbe986647e627a",
+        "key": "voice-changer.faq.3.a",
+        "context": "faq.3.a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_text_sha256": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "20ac9b270b944522a8d3df6d243831567a7ab4fd964ca1046e9ceab9df6eb0ec",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "voice-changer.fields.faq3a",
+        "context": "fields.faq3a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "This tool cannot clone a person or isolate a voice track. It cannot make a voice sound like another real person. It only adds simple audio effects.",
+      "source_text_sha256": "ecb99433024340c1eead1b702c3c3598826639c95abf22d5fcccadacb8f56a80",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "20ac9b270b944522a8d3df6d243831567a7ab4fd964ca1046e9ceab9df6eb0ec",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "voice-changer.fields.faq3a",
+        "context": "fields.faq3a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "它无法让声音听起来像另一个真实的人。",
+      "text_sha256": "a631aee780209868ff9883f55aec3619a8f3a6fbc2ef8f0ce5a6877fc4f85b77",
+      "source_text": "It cannot make a voice sound like another real person.",
+      "source_text_sha256": "335e497822107434ca551ef62b56061a5155caa5875a4c1a01acbd4a88dbdbe8",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "20ac9b270b944522a8d3df6d243831567a7ab4fd964ca1046e9ceab9df6eb0ec",
+        "source_field": "forward_segments.1.input",
+        "target_field": "forward_segments.1.output",
+        "key": "voice-changer.fields.faq3a",
+        "context": "fields.faq3a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "该工具无法克隆人或隔离语音轨道。 它无法让声音听起来像另一个真实的人。 它只添加简单的音频效果。",
+      "text_sha256": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "source_text": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_text_sha256": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "quantities": [],
+      "case_note": "另一个真实的人 is another real identity, not an added scalar; cloning/vocal-isolation negations are conserved.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "20ac9b270b944522a8d3df6d243831567a7ab4fd964ca1046e9ceab9df6eb0ec",
+        "key": "voice-changer.fields.faq3a",
+        "context": "fields.faq3a",
+        "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "The tool renders a standard uncompressed WAV file in your browser. The input may be any audio format that your browser can decode.",
+      "source_text_sha256": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "42ad4aea10ce3c9853a511f9598a998dd2d14de0731e03bc462959a796eeb0c6",
+        "source_field": "source",
+        "target_field": "translation",
+        "key": "voice-changer.fields.faq4a",
+        "context": "fields.faq4a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "This tool creates a standard uncompressed WAV file in your browser. You can use any input audio format that your browser can decode.",
+      "source_text_sha256": "1addce4c868464ade42976d8a0e25f3828be9b7ae63d5ce31b5a510252bec7a0",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "42ad4aea10ce3c9853a511f9598a998dd2d14de0731e03bc462959a796eeb0c6",
+        "source_field": "model_input",
+        "target_field": "translation",
+        "key": "voice-changer.fields.faq4a",
+        "context": "fields.faq4a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。",
+      "text_sha256": "6ff66525366874fb645a140d3249f0d71a89552273337db0b41a1f67f927e697",
+      "source_text": "This tool creates a standard uncompressed WAV file in your browser.",
+      "source_text_sha256": "e5bfebb60f11d8cd46e5bc2c1118687b2f24ed2f476edcb0f5c967332f79f9d6",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "observed",
+        "record_id": "42ad4aea10ce3c9853a511f9598a998dd2d14de0731e03bc462959a796eeb0c6",
+        "source_field": "forward_segments.0.input",
+        "target_field": "forward_segments.0.output",
+        "key": "voice-changer.fields.faq4a",
+        "context": "fields.faq4a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "此工具在您的浏览器中创建一个标准的未压缩的WAV文件。 您可以使用您的浏览器可以解码的任何输入音频格式。",
+      "text_sha256": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "source_text": "The tool renders a standard uncompressed WAV file in your browser. The input may be any audio format that your browser can decode.",
+      "source_text_sha256": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "quantities": [],
+      "case_note": "一个标准的WAV expresses the indefinite standard file from a standard WAV; no scalar measurement is introduced. Uncompressed/local/any decodable input remain.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "42ad4aea10ce3c9853a511f9598a998dd2d14de0731e03bc462959a796eeb0c6",
+        "key": "voice-changer.fields.faq4a",
+        "context": "fields.faq4a",
+        "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    },
+    {
+      "text": "让短音频片段的音高变低或变高，或添加收音机、明亮音色或回声效果。试听并调整结果，然后在此设备上导出 WAV 文件。",
+      "text_sha256": "d1e2d68a6b366f79b0ad7c7524d2540f6c4a6a3751b551b8eae7d3dd0497c23f",
+      "source_text": "Give a short audio clip a lower, higher, radio, bright, or echo effect. Preview the result, adjust it, and export a WAV file on your device.",
+      "source_text_sha256": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "quantities": [],
+      "case_note": "Five effect alternatives are preserved, including pitch lower/higher; no scalar amount is introduced. WAV export stays on device.",
+      "dimension_alias_2D": false,
+      "evidence": {
+        "kind": "correction",
+        "old_record_id": "b72d9292510506fa813f0ea3f8a2cbbb3d61fe47b3698c0be8923a5024a4fb97",
+        "key": "voice-changer.intro",
+        "context": "intro",
+        "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469"
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "note": "Finite source/context-bound data proof only. Articles/classifiers, once/another, ordinals and lexical Numeric_Value characters are not new scalar amounts; only the attested English counter is authorized. No grade or release approval."
+    }
+  ],
+  "approved_locales": [],
+  "source_policy": "context-v25",
+  "note": "Finite observed/corrected strings only; no general Han grammar and no approval."
+}

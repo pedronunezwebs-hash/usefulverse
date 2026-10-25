@@ -74,7 +74,38 @@ def stable_ast(value):
  if isinstance(value,list):return [stable_ast(child) for child in value]
  return value
 
+def strip_v26_dispatch(node):
+ """Remove only the exact opt-in route; reject altered cache owners or audit code."""
+ node=copy.deepcopy(node)
+ if node.name=='run':
+  expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v7":\n return translate_complete_sentences_v26(texts, cached_prose_v26(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)').body[0]
+ elif node.name=='policy_typed_data_checks':
+  expected=ast.parse('if policy == "context-v26":\n return chinese_typed_data_checks_v26(source, target, source_locale, target_locale)').body[0]
+ elif node.name=='record_flags':
+  previous=next(n for n in node.body if isinstance(n,ast.If)and any(isinstance(v,ast.Constant)and v.value=='context-v25'for v in ast.walk(n.test)))
+  class Rewrite(ast.NodeTransformer):
+   def visit_Name(self,n):
+    if n.id.endswith('_v25'):n.id=n.id[:-4]+'_v26'
+    return n
+   def visit_Constant(self,n):
+    if n.value=='context-v25':n.value='context-v26'
+    return n
+  expected=Rewrite().visit(copy.deepcopy(previous))
+ else:return node
+ removed=0
+ for parent in ast.walk(node):
+  for field,children in ast.iter_fields(parent):
+   if not isinstance(children,list):continue
+   for i,child in reversed(list(enumerate(children))):
+    if isinstance(child,ast.If)and stable_ast(child.test)==stable_ast(expected.test):
+     if stable_ast(child)!=stable_ast(expected):raise AssertionError('Changed v26 dispatch')
+     del children[i];removed+=1
+ if removed!=1:raise AssertionError('Missing or duplicate v26 dispatch')
+ return node
+
+
 def strip_v25_dispatch(node):
+ node=strip_v26_dispatch(node)
  """Remove only the exact opt-in v25 route; preserve every historical field."""
  node=copy.deepcopy(node)
  expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v6":\n return translate_complete_sentences_v25(texts, cached_prose_v25(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)').body[0]

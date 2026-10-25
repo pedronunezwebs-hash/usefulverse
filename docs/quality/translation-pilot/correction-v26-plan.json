@@ -126,6 +126,7 @@
   "approved_locales": [],
   "native_review": false,
   "references_before_full": true,
-  "full_dispatch_authorized": false,
-  "frozen_inputs": true
+  "frozen_inputs": true,
+  "initial_full_dispatch_authorized": false,
+  "authorization_source": "full-sample-v26-plan.json after actual reference review; this correction file is frozen before measurement"
 }

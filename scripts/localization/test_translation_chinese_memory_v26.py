@@ -21,10 +21,13 @@ class ChineseMemoryV26Test(unittest.TestCase):
     self.assertEqual(values[0][0],item['translation'])
     self.assertTrue(all(pilot.policy_typed_data_checks(row['source'],values[0][0],'en','zh-CN',policy).values()))
  def test_previous325_targets_and_source_inputs_are_preserved(self):
-  self.assertIn('context-v26',pilot.POLICIES)
+  self.assertTrue('context-v26'in pilot.POLICIES,'Independent v26 policy must be registered')
   old=pilot.POLICIES['context-v25'];new=pilot.POLICIES['context-v26'];self.assertEqual(old['entries'],new['entries'])
   self.assertEqual(sum(len(e['translations'])for e in old['reviewed_memory'].values()),325)
   self.assertEqual(sum(len(e['translations'])for e in new['reviewed_memory'].values()),334)
+  def preserved(before,after):
+   if isinstance(before,dict):return isinstance(after,dict)and all(k in after and preserved(v,after[k])for k,v in before.items())
+   return before==after
   for key,item in old['reviewed_memory'].items():
-   self.assertEqual(item,new['reviewed_memory'][key])
+   self.assertTrue(preserved(item,new['reviewed_memory'][key]),key)
 if __name__=='__main__':unittest.main()

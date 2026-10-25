@@ -1,0 +1,42 @@
+{
+  "at_utc": "2026-10-25T11:48:23.833842+00:00",
+  "baseline_current_records": 15043,
+  "original_functions_ast_checked": 71,
+  "current_model_units_replayed": 214,
+  "source_input_fragment_comparisons": 1004,
+  "previous_memory_targets": 325,
+  "memory_targets": 334,
+  "known_chinese_targets": 71,
+  "finite_new_entries": 30,
+  "new_distinct_proof_texts": 11,
+  "focused_tests": {
+    "test_translation_chinese_memory_v26": {
+      "sha256": "e6e33a158f660d4a56a89c340918d12d7bf521a52c6f8581e5b21f41a4d579a8",
+      "tests": 2
+    },
+    "test_translation_chinese_variants_v26": {
+      "sha256": "7c28036134f8daf2b61ff9e345132b0681d23c7bdf4192f67273e5daf7adcd56",
+      "tests": 4
+    },
+    "test_translation_chinese_preflight_v26": {
+      "sha256": "071a00eee144059e6e560498b1390dd074a5e085af27cb4912f9c3f63e72fb06",
+      "tests": 1
+    },
+    "test_translation_v26_history": {
+      "sha256": "c51284a6a4c39482ae9f3cb92e3afc8a8455a3be529dca12d55a7111145e8587",
+      "tests": 2
+    },
+    "test_translation_v25_history": {
+      "sha256": "ba1acfee4e3a68a7e28cea6068760658a3da8d2c9be92041d25e73032c05e2e0",
+      "tests": 3
+    },
+    "test_translation_runtime_cache_v26": {
+      "sha256": "8fd57c4ce50a525fa003432e8abfdf72554d291b9793632d94c09d92292beaf5",
+      "tests": 7
+    }
+  },
+  "focused_test_total": 19,
+  "full_suite_complete": false,
+  "local_model_inference": false,
+  "approved_locales": []
+}
