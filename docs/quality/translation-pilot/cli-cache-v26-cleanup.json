@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-10-25T12:26:10.578704+00:00",
+  "run_ids": [
+    40190935942,
+    40192256469
+  ],
+  "removed_exact_owned_zips": [
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40192256469-1792930484.zip",
+      "bytes": 239216
+    },
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40190935942-1792929367.zip",
+      "bytes": 117283
+    }
+  ],
+  "remaining_owned_zips": 0,
+  "task_root_absent": true,
+  "other_project_caches_touched": false,
+  "method": "Exact run IDs in ZIP basenames only, then task root rmtree after remote tree/index equality. OS temp root not deleted."
+}

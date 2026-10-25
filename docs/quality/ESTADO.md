@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-25 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-25T12:11:31.223062+00:00 · v26 en cierre; limpieza efectiva pendiente
+**Turno actual (candado):** LIBRE · Codex · 2026-10-25T12:26:10.578704+00:00 · v26 cerrado; clon/QA/cachés propios eliminados
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -22,7 +22,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
    **Siguiente exacto:** Crear v27 independiente para zh-CN, sin repetir40190935942 ni runs v25. Reproducir la traza actual de shikaku.example (13b71b671428d304447f8543e16143f971f4d7d36e34ee5a87c92ffbd76117a1), cuyo chino conserva pista6/un rectángulo/seis casillas pero 位于…内 no tiene prueba finita. Conservar la política/perfil/gramática/raws/revisiones v26 y334 memorias; su registry es auditoría negativa, nunca aceptación. Añadir memoria exacta fuente/hash/contexto y contratos finitos del nuevo texto/fragmentos/input; resolver también la vuelta variante de shikaku.fields.faq.1.a sin inventar defecto de ida. Preflight debe cubrir214 registros modelo v25 y40 modelo v26 con todas sus trazas, además334 memorias; no basta repetir v25. Contrastar legacy y elegir la cadena mejor solo tras revisión exacta. Referencias y todos sus avisos antes del completo condicional, mismas88 y lectura174 modelo+92 legacy; cualquier defecto fuera88 bloquea. Se puede priorizar memoria exacta de traducciones ya revisadas del mismo corpus para evitar variación/calls, declarando muestra conocida y sin aprobación genérica. Después25 destinos empezando bn; ha/am/te/gu/ta/mr/sw requieren80 muestras; seis históricos siguen sin pasar. Paso A abierto por capacidad Pages/37 traducciones revisadas/nb real; no avanzar fase0.
 
-   [CI final40192256469](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40192256469) correcta sobre48a1694:3.045Node/255Python (253+2omisiones), builds principal/hub/20locales existentes y preview10.800páginas+homes noindex/sitemap0indexables. Preview36locales, no certifica37. Modelo/publicaciones omitidos/0artefactos. GET/XML25.625→25.625URLs,estados/bytes/hashes idénticos;3soft404pendientes,0deploys. Relevo y respaldo remoto en verificación; limpieza efectiva pendiente.
+   [CI final40192256469](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40192256469) correcta sobre48a1694:3.045Node/255Python (253+2omisiones), builds principal/hub/20locales existentes y preview10.800páginas+homes noindex/sitemap0indexables. Preview36locales, no certifica37. Modelo/publicaciones omitidos/0artefactos. GET/XML25.625→25.625URLs,estados/bytes/hashes idénticos;3soft404pendientes,0deploys. Respaldo remoto y retirada efectiva verificados después de eliminar realmente el clon/QA/cachés propios.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
