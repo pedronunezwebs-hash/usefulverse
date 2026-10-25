@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-25 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-25T18:19:44.694755+07:00 · v26: dos leves zh-CN y siete variantes finitas
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-25T12:11:31.223062+00:00 · v26 en cierre; limpieza efectiva pendiente
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -16,11 +16,11 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V25: zh-CN referencias360/360; completo1564/1566 bloqueado por2 leves y7 variantes sin prueba finita (0 graves y0 errores lingüísticos confirmados de cifras/negaciones). Legacy778/828,25 negativas (17 graves/8 leves).15.043 registros/6.550 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados para publicar.** [Informe v25](lotes/2026-10-25-piloto-v25.md). CI final y GET/XML correctos; respaldo y retirada efectiva se consignan en el recibo final de cierre.
+   **V26: nueve correcciones/pruebas finitas y334 memorias; zh-CN referencias360/360 lingüístico, gate bloqueado por1cantidad sin prueba en shikaku.example; completo NO ejecutado. Legacy223/243 y8negativas.15.110 registros/6.617 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados.** [Informe v26](lotes/2026-10-25-piloto-v26.md).
 
-   Pasan muestras completas conocidas: español y noruego bokmål(v15),coreano(v18),indonesio(v21). Chino simplificado v25 sigue bloqueado. Seis históricos sin pasar: alemán,francés,portugués de Brasil,japonés,hindi,árabe.25 sin revisión detallada: bengalí,ruso,urdu,turco,vietnamita,italiano,chino tradicional,búlgaro,catalán,neerlandés,griego,malayo,polaco,sueco,tailandés,ucraniano,swahili,marathi,telugu,hausa,filipino,tamil,persa,amárico,gujarati. Inglés es fuente. Una muestra conocida no equivale a1.000 herramientas traducidas ni a idioma aprobado.
+   Pasan muestras completas conocidas: español y noruego bokmål(v15),coreano(v18),indonesio(v21). Chino simplificado v26 sigue bloqueado. Seis históricos sin pasar: alemán,francés,portugués de Brasil,japonés,hindi,árabe.25 sin revisión detallada: bengalí,ruso,urdu,turco,vietnamita,italiano,chino tradicional,búlgaro,catalán,neerlandés,griego,malayo,polaco,sueco,tailandés,ucraniano,swahili,marathi,telugu,hausa,filipino,tamil,persa,amárico,gujarati. Inglés es fuente. Una muestra conocida no equivale a1.000 herramientas traducidas ni a idioma aprobado.
 
-   **Siguiente exacto:** Crear v26 independiente para zh-CN, sin repetir40151851906/40152812589/40153243412. Primero reproducir callbacks/trazas v25 y test rojo de dxf-viewer.example y voice-changer.intro, más las siete variantes de unproved-data-v25-full.json. Corregir por memoria exacta fuente/hash/contexto conservando325 destinos y resolver por contratos finitos cada nueva fuente/input/fragmento/salida; sin Han universal ni cambio del parser global. Conservar política/perfil/gramática/checkpoints/revisiones v25 e historia. El registro de siete es auditoría negativa, nunca aceptación; todas son variantes sin memoria. Preflight debe cubrir las salidas reales v25, además de los callbacks v24. Referencias y todos sus avisos antes del completo condicional; mismas88 claves y lectura174 modelo+92 legacy, cualquier defecto fuera88 bloquea. ES/NBv15,KOv18,IDv21 se conservan. Después25 destinos sin revisión detallada empezando bn; ha/am/te/gu/ta/mr/sw requieren80 muestras y seis históricos siguen sin pasar. Paso A abierto por capacidad Pages y37 traducciones revisadas/nb real; no avanzar fase0.
+   **Siguiente exacto:** Crear v27 independiente para zh-CN, sin repetir40190935942 ni runs v25. Reproducir la traza actual de shikaku.example (13b71b671428d304447f8543e16143f971f4d7d36e34ee5a87c92ffbd76117a1), cuyo chino conserva pista6/un rectángulo/seis casillas pero 位于…内 no tiene prueba finita. Conservar la política/perfil/gramática/raws/revisiones v26 y334 memorias; su registry es auditoría negativa, nunca aceptación. Añadir memoria exacta fuente/hash/contexto y contratos finitos del nuevo texto/fragmentos/input; resolver también la vuelta variante de shikaku.fields.faq.1.a sin inventar defecto de ida. Preflight debe cubrir214 registros modelo v25 y40 modelo v26 con todas sus trazas, además334 memorias; no basta repetir v25. Contrastar legacy y elegir la cadena mejor solo tras revisión exacta. Referencias y todos sus avisos antes del completo condicional, mismas88 y lectura174 modelo+92 legacy; cualquier defecto fuera88 bloquea. Se puede priorizar memoria exacta de traducciones ya revisadas del mismo corpus para evitar variación/calls, declarando muestra conocida y sin aprobación genérica. Después25 destinos empezando bn; ha/am/te/gu/ta/mr/sw requieren80 muestras; seis históricos siguen sin pasar. Paso A abierto por capacidad Pages/37 traducciones revisadas/nb real; no avanzar fase0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -47,6 +47,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
+- [x] V26: nueve correcciones/pruebas finitas y334 memorias; zh-CN referencias360/360 lingüístico, gate bloqueado por1cantidad sin prueba en shikaku.example; completo NO ejecutado. Legacy223/243 y8negativas.15.110 registros/6.617 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados. ·2026-10-25.
 - [x] V25: zh-CN referencias360/360; completo1564/1566 bloqueado por2 leves y7 variantes sin prueba finita (0 graves y0 errores lingüísticos confirmados de cifras/negaciones). Legacy778/828,25 negativas (17 graves/8 leves).15.043 registros/6.550 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados para publicar. ·2026-10-25.
 - [x] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final40148453347 correcta; respaldo y retirada efectiva verificados ·2026-10-25.
 
@@ -148,6 +149,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+|2026-10-25|Codex|V26: nueve correcciones/pruebas finitas y334 memorias; zh-CN referencias360/360 lingüístico, gate bloqueado por1cantidad sin prueba en shikaku.example; completo NO ejecutado. Legacy223/243 y8negativas.15.110 registros/6.617 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados.|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial25.625 URLs,hashes idénticos;3soft404,sin deploy.|
+|2026-10-25|Codex|V25: referencias360/360; completo1564/1566 y7 variantes sin prueba|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML25.625URLs sin cambios; tres soft404;sin deploy.|
 |2026-10-25|Codex|V24: contrato inglés resuelto; completo chino rechazado,50 idas y149 fixtures nuevas|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML25.625 URLs y hashes sin cambios; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V23: zh-CN 360/360, bloqueado por 1 contrato; validación7, 65× y 5/103 fragmentos evitados|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial25.625 URLs; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V22: zh-CN referencias 344/360 rechazadas;37 fixtures, sin completo|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial 25.625 URLs, tres soft 404. Sin deploy.|

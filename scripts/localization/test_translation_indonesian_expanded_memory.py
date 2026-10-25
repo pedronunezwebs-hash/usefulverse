@@ -81,6 +81,12 @@ def strip_v26_dispatch(node):
   expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v7":\n return translate_complete_sentences_v26(texts, cached_prose_v26(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)').body[0]
  elif node.name=='policy_typed_data_checks':
   expected=ast.parse('if policy == "context-v26":\n return chinese_typed_data_checks_v26(source, target, source_locale, target_locale)').body[0]
+ elif node.name=='audit_review_warnings':
+  matches=[n for n in ast.walk(node)if isinstance(n,ast.BoolOp)and any(isinstance(v,ast.Call)and isinstance(v.func,ast.Name)and v.func.id=='chinese_quantity_unproved_v26'for v in n.values)]
+  expected=ast.parse('chinese_quantity_unproved_v22(row) or chinese_quantity_unproved_v23(row) or chinese_quantity_unproved_v24(row) or chinese_quantity_unproved_v25(row) or chinese_quantity_unproved_v26(row)',mode='eval').body
+  if len(matches)!=1 or stable_ast(matches[0])!=stable_ast(expected):raise AssertionError('Changed v26 negative audit hook')
+  matches[0].values.pop()
+  return node
  elif node.name=='record_flags':
   previous=next(n for n in node.body if isinstance(n,ast.If)and any(isinstance(v,ast.Constant)and v.value=='context-v25'for v in ast.walk(n.test)))
   class Rewrite(ast.NodeTransformer):

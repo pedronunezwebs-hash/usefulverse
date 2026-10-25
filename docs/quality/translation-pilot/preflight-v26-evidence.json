@@ -44,5 +44,42 @@
   "python_test_seconds": 272.872,
   "python_log_sha256": "7f186cf8c3ec3233cb3b52aa4398d8ce20258a356ae5c1b4989880dc1a42b1f2",
   "node_corpus_tests": 2,
-  "node_log_sha256": "96ca03de2525e09d8db0dec4da28ae747e0dc36815f42970917bdf0a3d15764f"
+  "node_log_sha256": "96ca03de2525e09d8db0dec4da28ae747e0dc36815f42970917bdf0a3d15764f",
+  "post_reference_focused_tests": [
+    {
+      "pattern": "test_translation_chinese_unproved_v26",
+      "log_sha256": "db6dac7064797bcbbbc4f178fb76c48c71e2a1b37fd33ad59bd9199915fe9d0e"
+    },
+    {
+      "pattern": "test_translation_chinese_current_review_v26",
+      "log_sha256": "2158402782a76811c902c0270d9c4cdd0da8c1287fa26f8c1047257b65cc4a46"
+    },
+    {
+      "pattern": "test_translation_v26_history",
+      "log_sha256": "ce0be86fd46fbf8eff18590af31bdaacbc7e86b87c75c95a0bbca11eecfdc09a"
+    },
+    {
+      "pattern": "test_translation_v25_history",
+      "log_sha256": "23ccb140a8fcdb9b1a7ad99baad451c608e82ed5951b0072b084f0853034b77c"
+    }
+  ],
+  "post_reference_focused_count": 11,
+  "current_suite_expected_tests": 255,
+  "post_reference_neighbor_tests": {
+    "count": 40,
+    "logs": [
+      {
+        "pattern": "test_translation_pilot",
+        "log_sha256": "e3ac63c159305a4138a7e954675719e6d14fb3fd6c925bf99317e46221e510c1"
+      },
+      {
+        "pattern": "test_translation_chinese_contract_review",
+        "log_sha256": "6299c61ecefc2c6e262ba2dccd92b35e4ade4e41b723fe2eac602dbd7b324b98"
+      },
+      {
+        "pattern": "test_translation_warning_coverage",
+        "log_sha256": "b623fbf0a59cd818607a4b0a03a31c2b1977374cbbc8fce638eca7146c4ba9f2"
+      }
+    ]
+  }
 }

@@ -29,7 +29,7 @@ class V25HistoryTest(unittest.TestCase):
   self.assertEqual(stable(strip_v25_dispatch(nodes['run'])),proof['dispatcher_asts']['run'])
   for key in ['record_flags','policy_typed_data_checks']:
    node=strip_v26_dispatch(nodes[key]);matches=[n for n in node.body if isinstance(n,ast.If)and any(isinstance(c,ast.Constant)and c.value=='context-v25'for c in ast.walk(n.test))];self.assertEqual(len(matches),1);self.assertEqual(pilot.digest(stable(matches[0])),proof['opt_in_branch_digests'][key]);node.body.remove(matches[0]);self.assertEqual(stable(node),proof['dispatcher_asts'][key])
-  audit=copy.deepcopy(nodes['audit_review_warnings']);hook=next(n for n in ast.walk(audit)if isinstance(n,ast.For)and isinstance(n.target,ast.Name)and n.target.id=='withdrawal')
+  audit=strip_v26_dispatch(nodes['audit_review_warnings']);hook=next(n for n in ast.walk(audit)if isinstance(n,ast.For)and isinstance(n.target,ast.Name)and n.target.id=='withdrawal')
   expected=ast.parse('historical_forward_withdrawals(review, records) + historical_legacy_forward_withdrawal_v25(review, records)',mode='eval').body
   self.assertEqual(stable(hook.iter),stable(expected));hook.iter=hook.iter.left
   quantity_hook=next(n for n in ast.walk(audit)if isinstance(n,ast.BoolOp)and any(isinstance(v,ast.Call)and isinstance(v.func,ast.Name)and v.func.id=='chinese_quantity_unproved_v25'for v in n.values))

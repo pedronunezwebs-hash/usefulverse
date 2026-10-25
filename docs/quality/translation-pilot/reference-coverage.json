@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-25T06:03:52.566408+00:00",
+  "at_utc": "2026-10-25T12:10:36.104166+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 6550,
+  "agent_reviewed_translations": 6617,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 6550,
+  "agent_reviewed_evaluations": 6617,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -325,7 +325,7 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 15043,
+  "total_records_all_policies": 15110,
   "semantic_regressions": 1146,
   "contextual_reference_gate": {
     "es": {
@@ -387,10 +387,10 @@
       "number_negation_errors": 0,
       "major_rows": 0,
       "minor_rows": 0,
-      "unproved_data_rows": 0,
-      "passed": true,
+      "unproved_data_rows": 1,
+      "passed": false,
       "minimum_style_budget_met": true,
-      "reason": "Direct current source/forward/back reading. All reference quantities proved, including whole controlled input; known memory disclosed. No native/blind/unseen-text or locale approval."
+      "reason": "360/360 lingüístico, bloqueado por1 variante actual de cantidad sin prueba finita en shikaku.example. No cambia la nota a error numérico ni acepta la salida. Completo no autorizado."
     }
   },
   "full_tool_gate": {
@@ -502,7 +502,7 @@
       "global_no_open_defects_requirement": "voice-changer.intro está fuera88 y bloquea; los7 datos sin prueba también."
     }
   },
-  "contextual_policies_reviewed": 24,
+  "contextual_policies_reviewed": 25,
   "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
     "locales": [
@@ -523,19 +523,19 @@
     "nb-NO": "context-v15",
     "ko": "context-v18",
     "id": "context-v21",
-    "zh-CN": "context-v25"
+    "zh-CN": "context-v26"
   },
   "latest_reference_pilot": {
-    "policy": "context-v25",
+    "policy": "context-v26",
     "locale": "zh-CN",
-    "run_id": 40151851906,
+    "run_id": 40190935942,
     "model_references": 40,
     "legacy_references": 27,
-    "model_gate_passed": true,
-    "full_dispatched": true,
+    "model_gate_passed": false,
+    "full_dispatched": false,
     "approved_locales": []
   },
-  "engines_inventory_note": "Baseline retained; contextual counts in context-run-evidence. V25 only zh-CN, preserves ES/NBv15,KOv18,IDv21 and all previous evidence. No native/blind/unseen-text language/engine approval or publication.",
+  "engines_inventory_note": "Baseline and all historical evidence preserved. V26 only zh-CN; ES/NBv15,KOv18,IDv21 unchanged. Known sample, no native/blind/unseen-text approval or publication.",
   "full_tool_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
@@ -568,7 +568,9 @@
       "hi",
       "ar"
     ],
-    "current_references_not_passed": [],
+    "current_references_not_passed": [
+      "zh-CN"
+    ],
     "remaining_without_detailed_review": 25,
     "approved_locales": [],
     "current_full_not_passed": [
