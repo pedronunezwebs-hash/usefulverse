@@ -17,6 +17,9 @@ class Batch1FindingsTest(unittest.TestCase):
         self.assertEqual(findings['read_records'], 402)
         records = {row['record_id']: row for engine in ['madlad', 'm2m100'] for row in map(json.loads, (DATA / f'checkpoints/{engine}.jsonl').read_text().splitlines())}
         for case in findings['cases']:
+            candidates = sorted({records[identity]['candidate'] for identity in case['observed_record_ids']})
+            self.assertEqual(case['observed_candidates'], candidates)
+            self.assertEqual(case['observed_candidate'], '+'.join(candidates))
             for identity in case['observed_record_ids']:
                 row = records[identity]
                 with self.subTest(locale=row['locale'], key=row['key'], candidate=row['candidate'], engine=row['engine'], direction=case['direction']):
