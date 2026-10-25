@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-25 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-25T08:10:28.462321+07:00 · v25: correcciones zh-CN y contratos finitos
+**Turno actual (candado):** LIBRE · Codex · 2026-10-25T06:35:20.349228+00:00 · v25 cerrado, respaldo y retirada efectiva verificados
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -211,3 +211,6 @@ Cierre efectivo v24: 2026-10-25T01:03:28.982275+00:00; raíz propia eliminada di
 
 
 CI final[40168659587](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40168659587), fuente `75fe35402e3dda14984e1273aeccbd34550e57cc`, correcta:3.045 Node y233 Python (231 correctas/dos dependencias omitidas); build principal10.260 URLs, puerta20 locales existentes, hub217+100+106. Preview11.293 archivos/10.800 páginas y todas las homes noindex, sitemap0 indexables;36 locales de preview, no certifica37 idiomas. Ambas publicaciones y modelo omitidos;0 artefactos. GET/XML antes/después:25.625 URLs, mismos estados/bytes/SHA256 de ambos sitemaps y tres rutas falsas; estas siguen200 (soft404, fase0 pendiente). No verifica UI ni índice de Google. Ocho pruebas enfocadas reconstruidas correctas. Respaldo y retirada efectiva se consignan en el recibo final de cierre.
+
+
+Retirada efectiva v25: 2026-10-25T06:35:20.349228+00:00; raíz propia .usefulverse-v25-cierre-20261025 eliminada directamente y comprobada ausente antes de LIBRE. Disco libre 40.86GiB,0 ZIP propios externos restantes. Originales versionados recuperables por árbol Git; código/datos/revisiones/fixtures iguales a CI final40168659587. Seis documentos sincronizados. Evidencia: docs/quality/translation-pilot/remote-v25-verification.json y cli-cache-v25-cleanup.json.
