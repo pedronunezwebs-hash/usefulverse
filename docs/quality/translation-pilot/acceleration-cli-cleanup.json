@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-10-25T18:26:56.289729+00:00",
+  "run_ids": [
+    40219774134
+  ],
+  "removed_exact_owned_zips": [
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40219774134-1792951674.zip",
+      "bytes": 242146
+    }
+  ],
+  "remaining_owned_zips": 0,
+  "task_root_absent": true,
+  "other_project_caches_touched": false,
+  "method": "Exact owned Actions run ID ZIP names; task root removed after remote/index equality; OS temp root preserved."
+}
