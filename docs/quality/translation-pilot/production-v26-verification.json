@@ -34,7 +34,49 @@
       "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
     }
   ],
-  "after": null,
+  "after": [
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "status": 200,
+      "bytes": 786404,
+      "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+      "urls": 10260
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "status": 200,
+      "bytes": 1431497,
+      "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+      "urls": 15365
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    }
+  ],
   "deployed": false,
-  "method": "curl GET Mozilla/5.0; default urllib UA initially403, not used for sitemap counting"
+  "method": "curl GET Mozilla/5.0; default urllib UA initially403, not used for sitemap counting",
+  "after_at_utc": "2026-10-25T12:18:18.790122+00:00",
+  "unchanged": true,
+  "indexable_sitemap_urls_before": 25625,
+  "indexable_sitemap_urls_after": 25625,
+  "soft404_remaining": [
+    "https://tools.usefulverse.com/tools/zzz-no-existe/",
+    "https://tools.usefulverse.com/es/zzz/",
+    "https://tools.usefulverse.com/zzz.html"
+  ]
 }
