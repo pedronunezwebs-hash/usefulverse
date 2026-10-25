@@ -1,5 +1,11 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
+Aceleración ·2026-10-26: Aceleración: los 15.443 registros conservan exactamente todos sus indicadores. Benchmark local con cProfile: 51,77→29,34 s (1,76×); aperturas reales de archivo: 432.950→33. Cachés acotadas en RAM y casos de corrupción conservados. Los 25 destinos pendientes tienen nueve lotes preparados con evidencia existente; cero inferencia nueva y cero idiomas aprobados. [Informe](lotes/2026-10-26-aceleracion-traduccion.md).
+
+45 comprobaciones enfocadas correctas. Suite final esperada: 300 Python; CI global y GET/XML final pendientes. Relevo y respaldo remoto en verificación; limpieza efectiva pendiente.
+
+Nuevo: `scripts/localization/pilot-validation-cache.py` y `pilot-review-batch.py`. Código y evidencias solo en PR #136; main recibe seis documentos.
+
 V27 ·25-oct-2026: V27: la muestra china con memoria revisada pasa referencias (360/360) y ampliado (1.566/1.566; 88 claves fijas: 792/792). Hay 477 traducciones en memoria, 214 en chino; cero generación nueva de ida. Legacy: 778/828 y 25 negativas. Historial: 15.443 registros, 6.950 evaluaciones con repeticiones y 1.151 fixtures. Cero idiomas aprobados para publicar. [Informe](lotes/2026-10-25-piloto-v27.md). Código/datos solo en PR #136; main solo seis documentos de relevo.
 
 [CI final 40215319807](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40215319807) correcta sobre e39fa7f: 3.045 pruebas Node y 276 Python (274 correctas y 2 omisiones por dependencias). Builds principal/hub y puerta de los 20 locales existentes correctos; preview de 10.800 páginas y todas sus homes con noindex, sitemap con cero URLs indexables. Preview de 36 locales: no certifica 37. Modelo y ambas publicaciones omitidos; cero artefactos. Producción: 5 GET y 2 XML, 25.625→25.625 URLs, mismos estados, bytes y hashes; tres soft 404 pendientes y cero despliegues. Respaldo remoto y retirada efectiva verificados después de eliminar realmente el clon/QA/cachés propios.
