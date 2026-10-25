@@ -18,6 +18,10 @@ class V25HistoryTest(unittest.TestCase):
   self.assertEqual(len(flags),14710);self.assertEqual(pilot.digest(flags),proof['record_flags_digest'])
   nodes={n.name:n for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
   for name,want in proof['function_ast_digests'].items():self.assertEqual(pilot.digest(stable(nodes[name])),want,name)
+ def test_measured_functions_remain_unchanged_after_negative_audit(self):
+  proof=json.loads((DATA/'regression-v25-evidence.json').read_text());nodes={n.name:n for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
+  self.assertEqual(len(proof['measurement_function_ast_digests_except_auditor']),69)
+  for name,want in proof['measurement_function_ast_digests_except_auditor'].items():self.assertEqual(pilot.digest(stable(nodes[name])),want,name)
  def test_three_dispatchers_only_add_the_exact_version25_route(self):
   from test_translation_indonesian_expanded_memory import strip_v25_dispatch
   proof=json.loads((DATA/'regression-v25-evidence.json').read_text());nodes={n.name:n for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
@@ -27,6 +31,8 @@ class V25HistoryTest(unittest.TestCase):
   audit=copy.deepcopy(nodes['audit_review_warnings']);hook=next(n for n in ast.walk(audit)if isinstance(n,ast.For)and isinstance(n.target,ast.Name)and n.target.id=='withdrawal')
   expected=ast.parse('historical_forward_withdrawals(review, records) + historical_legacy_forward_withdrawal_v25(review, records)',mode='eval').body
   self.assertEqual(stable(hook.iter),stable(expected));hook.iter=hook.iter.left
+  quantity_hook=next(n for n in ast.walk(audit)if isinstance(n,ast.BoolOp)and any(isinstance(v,ast.Call)and isinstance(v.func,ast.Name)and v.func.id=='chinese_quantity_unproved_v25'for v in n.values))
+  self.assertEqual(stable(quantity_hook.values[-1]),stable(ast.parse('chinese_quantity_unproved_v25(row)',mode='eval').body));quantity_hook.values.pop()
   self.assertEqual(pilot.digest(stable(audit)),proof['audit_function_ast_digest_before_hook'])
   damaged=copy.deepcopy(nodes['run']);call=next(n for n in ast.walk(damaged)if isinstance(n,ast.Call)and isinstance(n.func,ast.Name)and n.func.id=='cached_prose_v25');call.args[1]=ast.Name(id='prose_translate',ctx=ast.Load())
   with self.assertRaisesRegex(AssertionError,'Changed v25 dispatch'):strip_v25_dispatch(damaged)

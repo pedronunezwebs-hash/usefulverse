@@ -1504,6 +1504,24 @@ def historical_forward_withdrawals(review, records):
     return result
 
 
+def chinese_quantity_unproved_v25(row):
+    """Audit seven frozen unproved outputs; never accept data or approve a gate."""
+    if row.get("inference_policy") != "context-v25" or row.get("candidate") != "model" or row.get("locale") != "zh-CN" or row.get("truncated"):
+        return False
+    path = ROOT / "docs/quality/translation-pilot/unproved-data-v25-full.json"
+    if not path.exists(): return False
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != "7af2ee635d5e87bfd1d805913bf7e10e32b5082a2e8ba83f87747490fb6e6284":
+        raise ValueError("Changed frozen v25 unproved audit registry")
+    registry = json.loads(raw)
+    item = next((r for r in registry["rows"] if r["record_id"] == row.get("record_id")), None)
+    if item is None or item["row_digest"] != digest(row): return False
+    validate_record(row)
+    checks = typed_record_evidence(row)
+    return (all(checks["input"].values()) and checks["forward"]["quantities"] is False
+        and all(v for k, v in checks["forward"].items() if k != "quantities"))
+
+
 def chinese_quantity_unproved_v22(row):
     """An explicit blocking audit status, never an inference acceptance or grade."""
     if row.get("inference_policy") != "context-v22" or row.get("locale") != "zh-CN" or row.get("truncated"): return False
@@ -1687,7 +1705,7 @@ def audit_review_warnings(review, records, check_coverage=True):
                 raise ValueError("Warning decision needs disposition, note and explicit gate effect")
             if disposition == "unproved-data":
                 gate = review.get("reference_gate", review.get("full_gate", {})).get(row["locale"], {})
-                if flag not in {"forward_typed_data", "forward_sentence_evidence", "marker_restore", "protected_tokens"} or not (chinese_quantity_unproved_v22(row) or chinese_quantity_unproved_v23(row) or chinese_quantity_unproved_v24(row)) or not decision["blocks_gate"] or gate.get("passed") is not False:
+                if flag not in {"forward_typed_data", "forward_sentence_evidence", "marker_restore", "protected_tokens"} or not (chinese_quantity_unproved_v22(row) or chinese_quantity_unproved_v23(row) or chinese_quantity_unproved_v24(row) or chinese_quantity_unproved_v25(row)) or not decision["blocks_gate"] or gate.get("passed") is not False:
                     raise ValueError("Unproved v22 Han quantities require an explicitly blocked gate and intact known data")
                 continue
             if flag == "known_semantic_errors" and disposition != "forward-defect":

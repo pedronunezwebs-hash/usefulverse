@@ -1,0 +1,15 @@
+{
+  "at_utc": "2026-10-25T06:02:55.547933+00:00",
+  "previous_owned_root_absent_at_resume": true,
+  "raw_checkpoint_online_before_loss": true,
+  "raw_capture_commit": "e265796ba891b064624ab850f1ab23d4d5d4fa45",
+  "checkpoint_sha256": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3",
+  "records": 333,
+  "lost_unpushed_closure_files_not_claimed_restored": true,
+  "reviews_reconstructed_from_same_immutable_checkpoint_and_direct_reading_in_current_conversation": true,
+  "model_redispatches": 0,
+  "previous_local_post_review_suite_log_unavailable": true,
+  "new_red_tests_run_again": true,
+  "measurement_functions_frozen": 69,
+  "approved_locales": []
+}

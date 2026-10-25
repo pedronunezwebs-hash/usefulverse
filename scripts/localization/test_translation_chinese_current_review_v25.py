@@ -42,14 +42,36 @@ class ChineseCurrentReviewV25Test(unittest.TestCase):
                     self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['back_translation'], 'zh-CN', 'back'), 'Observed back finding has no exact permanent fixture')
         self.assertEqual(seen, set(records), 'Every current raw result must be read before the lot is closed')
 
-    def test_every_current_typed_contract_is_proved(self):
-        records = list(map(json.loads, (DATA/'checkpoints/context-v25/madlad.jsonl').read_text().splitlines()))
+    def test_every_current_typed_failure_is_explicit_and_blocking(self):
+        records=list(map(json.loads,(DATA/'checkpoints/context-v25/madlad.jsonl').read_text().splitlines()))
+        registry=json.loads((DATA/'unproved-data-v25-full.json').read_text());unknown=set()
         for row in records:
-            with self.subTest(key=row['key'], candidate=row['candidate']):
-                evidence = pilot.typed_record_evidence(row)
-                self.assertTrue(all(evidence['forward'].values()))
+            with self.subTest(key=row['key'],candidate=row['candidate']):
+                evidence=pilot.typed_record_evidence(row)
                 self.assertTrue(all(evidence['input'].values()))
+                if all(evidence['forward'].values()):continue
+                if pilot.chinese_quantity_unproved_v25(row):
+                    unknown.add(row['record_id']);self.assertFalse(evidence['forward']['quantities']);self.assertTrue(all(v for k,v in evidence['forward'].items()if k!='quantities'))
+                else:
+                    self.assertEqual((row['candidate'],row['key']),('legacy','voice-changer.details'));self.assertTrue(pilot.semantic_issues(row['key'],row['source_hash'],row['translation'],'zh-CN'))
+        self.assertEqual(unknown,{r['record_id']for r in registry['rows']});self.assertEqual(len(unknown),7)
 
+    def test_frozen_unknown_rows_cannot_approve_or_survive_tampering(self):
+        records={r['record_id']:r for r in map(json.loads,(DATA/'checkpoints/context-v25/madlad.jsonl').read_text().splitlines())}
+        full=json.loads((DATA/'review-context-v25-full.json').read_text());ids={r['record_id']for r in json.loads((DATA/'unproved-data-v25-full.json').read_text())['rows']}
+        for identity in ids:
+            row=records[identity];self.assertTrue(pilot.chinese_quantity_unproved_v25(row))
+            for field in ['record_id','source','source_hash','context','translation','raw_translation','back_translation','model_input','inference_policy']:
+                changed=copy.deepcopy(row);changed[field]+=' 11';self.assertFalse(pilot.chinese_quantity_unproved_v25(changed),field)
+            changed=copy.deepcopy(row);changed['truncated']=True;self.assertFalse(pilot.chinese_quantity_unproved_v25(changed))
+            review=copy.deepcopy(full);review['rows']=[j for j in review['rows']if identity in j['record_ids']];review['expected_rows']=1;review['warning_reconciliation']=[j for j in review['warning_reconciliation']if j['record_id']==identity];review['requires_complete_model_warning_coverage']=False
+            pilot.audit_review_warnings(review,records);review['full_gate']['zh-CN']['passed']=True
+            with self.assertRaises(ValueError):pilot.audit_review_warnings(review,records)
+        import tempfile
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory()as root:
+            path=Path(root)/'docs/quality/translation-pilot';path.mkdir(parents=True);(path/'unproved-data-v25-full.json').write_text((DATA/'unproved-data-v25-full.json').read_text()+' ')
+            with patch.object(pilot,'ROOT',Path(root)):
+                with self.assertRaisesRegex(ValueError,'Changed frozen'):pilot.chinese_quantity_unproved_v25(records[next(iter(ids))])
 
-if __name__ == "__main__":
-    unittest.main()
+if __name__=='__main__':unittest.main()

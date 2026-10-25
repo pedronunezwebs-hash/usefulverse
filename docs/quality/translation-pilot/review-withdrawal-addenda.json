@@ -86,5 +86,77 @@
         }
       }
     ]
+  },
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v24-full.json",
+    "review_file_sha256": "a7dab2f1a436aea1b89d71e216c30fd4e14209d2874adc5b327723ff9a168024",
+    "review_digest": "c3b05a5af15d9d69799d23b7f3529ec9b3abe6a06b81b2616cb102746502f925",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-25T06:01:41.220728+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Relectura directa v25: dos leves de estilo puntuados3 en v24; rebaja explícita, originales y gate rechazado intactos.",
+    "entries": [
+      {
+        "record_id": "934cccf56104deb7cc503873d277cfaec986fb88e0d6e7f9d0116ca99a526a3c",
+        "key": "dxf-viewer.example",
+        "locale": "zh-CN",
+        "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+        "context": "example",
+        "inference_policy": "context-v24",
+        "translation_hash": "480499e9ebbba8d2f13317fa7a646e3d02b522be9811969ecf9d386b151195da",
+        "back_translation_hash": "448f3f4d6d99a6baa5ad85e62fa017d6c0e100dee40ef12931a845b8f61a1c34",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Se conserva sentido/cifras, pero DXF 单位代码(如果存在 ) 。 mezcla puntuación y espacios dentro del paréntesis y antes del punto; naturalidad2, sin inventar defecto numérico.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Se conserva sentido/cifras, pero DXF 单位代码(如果存在 ) 。 mezcla puntuación y espacios dentro del paréntesis y antes del punto; naturalidad2, sin inventar defecto numérico."
+          }
+        }
+      },
+      {
+        "record_id": "a4c84444973e8503157a43d934f586349e618e2d6e6867e1dded46e50e88f0d0",
+        "key": "voice-changer.intro",
+        "locale": "zh-CN",
+        "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+        "context": "intro",
+        "inference_policy": "context-v24",
+        "translation_hash": "096a183efa4d95b1f6945e25330dd448c0d555ecfb574a629676461f7d483b77",
+        "back_translation_hash": "51389608a3d89de5f1596a3cb7d12b1df855b56340d24740e19e34ff3919da33",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "给予短音频剪辑低、高、无线电…效果 calca la construcción inglesa y enumera cualidades sueltas: copy artificial; significado/cifras3, naturalidad2.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "给予短音频剪辑低、高、无线电…效果 calca la construcción inglesa y enumera cualidades sueltas: copy artificial; significado/cifras3, naturalidad2."
+          }
+        }
+      }
+    ]
   }
 ]

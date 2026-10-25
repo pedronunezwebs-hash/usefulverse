@@ -1,5 +1,15 @@
 # Piloto de traducción · evidencia y reanudación
 
+## V25 ·25-oct-2026 · completo revisado y bloqueado
+
+V25: zh-CN referencias360/360; completo1564/1566 bloqueado por2 leves y7 variantes sin prueba finita (0 graves y0 errores lingüísticos confirmados de cifras/negaciones). Legacy778/828,25 negativas (17 graves/8 leves).15.043 registros/6.550 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados para publicar.
+
+[Informe](lotes/2026-10-25-piloto-v25.md). Pasan muestras completas conocidas: español y noruego bokmål(v15),coreano(v18),indonesio(v21). Chino simplificado v25 sigue bloqueado. Seis históricos sin pasar: alemán,francés,portugués de Brasil,japonés,hindi,árabe.25 sin revisión detallada: bengalí,ruso,urdu,turco,vietnamita,italiano,chino tradicional,búlgaro,catalán,neerlandés,griego,malayo,polaco,sueco,tailandés,ucraniano,swahili,marathi,telugu,hausa,filipino,tamil,persa,amárico,gujarati. Inglés es fuente. Una muestra conocida no equivale a1.000 herramientas traducidas ni a idioma aprobado.
+
+P-001–P-008 pendientes/0 FALLA; sin IDs nuevos para esta infraestructura. Revisión nativa/oculta/textos inéditos, UI/dispositivos reales, responsive320–1920/RTL/textos largos, márgenes, peso, accesibilidad/rendimiento y puerta18/siete capas completas no certificados.0/300 en main,0 activadas,300 fuentes noindex en PR borrador;700 existentes conservadas.0 deploys/envíos. No avanzar fase0.
+
+CI final/GET y retirada efectiva pendientes al preparar este relevo. **Siguiente:** Crear v26 independiente para zh-CN, sin repetir40151851906/40152812589/40153243412. Primero reproducir callbacks/trazas v25 y test rojo de dxf-viewer.example y voice-changer.intro, más las siete variantes de unproved-data-v25-full.json. Corregir por memoria exacta fuente/hash/contexto conservando325 destinos y resolver por contratos finitos cada nueva fuente/input/fragmento/salida; sin Han universal ni cambio del parser global. Conservar política/perfil/gramática/checkpoints/revisiones v25 e historia. El registro de siete es auditoría negativa, nunca aceptación; todas son variantes sin memoria. Preflight debe cubrir las salidas reales v25, además de los callbacks v24. Referencias y todos sus avisos antes del completo condicional; mismas88 claves y lectura174 modelo+92 legacy, cualquier defecto fuera88 bloquea. ES/NBv15,KOv18,IDv21 se conservan. Después25 destinos sin revisión detallada empezando bn; ha/am/te/gu/ta/mr/sw requieren80 muestras y seis históricos siguen sin pasar. Paso A abierto por capacidad Pages y37 traducciones revisadas/nb real; no avanzar fase0.
+
 20-oct-2026 · Codex · PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136).
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.

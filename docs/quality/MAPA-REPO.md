@@ -1,5 +1,7 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
+V25 ·25-oct-2026: V25: zh-CN referencias360/360; completo1564/1566 bloqueado por2 leves y7 variantes sin prueba finita (0 graves y0 errores lingüísticos confirmados de cifras/negaciones). Legacy778/828,25 negativas (17 graves/8 leves).15.043 registros/6.550 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados para publicar. Política/código solo en rama PR #136; main recibe seis documentos de relevo,0/300 fuentes nuevas. Capacidad Pages/37 traducciones revisadas pendientes. [Informe](lotes/2026-10-25-piloto-v25.md).
+
 Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **público desde el 20-oct**, ~130 MB). Seguridad: ver `AGENTS.md`. Si cambias la estructura, actualiza este mapa.
 
 ## Dos sitios, dos builds

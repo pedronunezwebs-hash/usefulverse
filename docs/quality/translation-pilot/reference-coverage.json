@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-25T02:04:58.995341+00:00",
+  "at_utc": "2026-10-25T06:03:52.566408+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 6284,
+  "agent_reviewed_translations": 6550,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 6284,
+  "agent_reviewed_evaluations": 6550,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -325,8 +325,8 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 14777,
-  "semantic_regressions": 1122,
+  "total_records_all_policies": 15043,
+  "semantic_regressions": 1146,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -485,16 +485,21 @@
     "zh-CN": {
       "rows": 174,
       "sample": 174,
-      "points": 1481,
+      "points": 1564,
       "maximum": 1566,
-      "button_errors": 3,
-      "number_negation_errors": 10,
-      "major_rows": 31,
-      "minor_rows": 19,
-      "unproved_data_rows": 33,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 2,
+      "unproved_data_rows": 7,
       "passed": false,
       "minimum_style_budget_met": false,
-      "reason": "Rejected: directly observed forward defects and separately unproved data contracts. No native/blind/unseen-text or release approval."
+      "reason": "Gate bloqueado por defectos observados o datos sin prueba; memoria conocida declarada. Sin aprobación nativa/ciega/de idioma.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 791,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "voice-changer.intro está fuera88 y bloquea; los7 datos sin prueba también."
     }
   },
   "contextual_policies_reviewed": 24,
@@ -530,18 +535,18 @@
     "full_dispatched": true,
     "approved_locales": []
   },
-  "engines_inventory_note": "Baseline computation retained; contextual counts in context-run-evidence. V25 only zh-CN preserves ES/NBv15,KOv18,IDv21 and historical evidence. Exact known memory disclosed; no native/blind/unseen-text, engine/locale approval or publication.",
+  "engines_inventory_note": "Baseline retained; contextual counts in context-run-evidence. V25 only zh-CN, preserves ES/NBv15,KOv18,IDv21 and all previous evidence. No native/blind/unseen-text language/engine approval or publication.",
   "full_tool_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
     "ko": "context-v18",
     "id": "context-v21",
-    "zh-CN": "context-v24"
+    "zh-CN": "context-v25"
   },
   "latest_full_pilot": {
-    "policy": "context-v24",
+    "policy": "context-v25",
     "locale": "zh-CN",
-    "run_id": 40114620348,
+    "run_id": 40153243412,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,
