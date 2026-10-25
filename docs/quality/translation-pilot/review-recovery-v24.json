@@ -1,0 +1,582 @@
+{
+  "at_utc": "2026-10-25T00:48:45.106188+00:00",
+  "checkpoint_capture_commit": "dfc1f5815e8ac18e5fde0a38f6313002dd766790",
+  "raw_count": 333,
+  "read_ranges": [
+    [
+      0,
+      55
+    ],
+    [
+      55,
+      115
+    ],
+    [
+      115,
+      174
+    ],
+    [
+      174,
+      225
+    ],
+    [
+      225,
+      266
+    ]
+  ],
+  "source_models_rerun": false,
+  "previous_temporary_root_absent_at_resume": true,
+  "review_recreated_from_remote_raws": true,
+  "judgments": {
+    "forward": {
+      "0": [
+        2,
+        3,
+        3,
+        "多边形 son polígonos; una polyline puede estar abierta. No sustituye 多段线."
+      ],
+      "9": [
+        2,
+        3,
+        2,
+        "绘制边界 se lee dibujar un límite; la etiqueta pide los límites/extensión del dibujo."
+      ],
+      "25": [
+        2,
+        3,
+        3,
+        "MIT许可证 omite el nombre loglevel de la licencia concreta."
+      ],
+      "27": [
+        3,
+        3,
+        2,
+        "本地工作程序 resulta impreciso para el worker del navegador; conviene 工作线程 sin cambiar el alcance local."
+      ],
+      "37": [
+        2,
+        3,
+        3,
+        "无法打开此文件 cambia fallo de crear la vista previa por imposibilidad de abrir el archivo."
+      ],
+      "41": [
+        2,
+        3,
+        2,
+        "试着画一幅更小的画 ordena dibujar una imagen menor en lugar de elegir un dibujo/archivo menor."
+      ],
+      "43": [
+        3,
+        3,
+        2,
+        "绘制单位 y 未申报 son calcos poco adecuados; se esperan unidades del dibujo no declaradas."
+      ],
+      "45": [
+        3,
+        2,
+        3,
+        "Se conserva la unidad pulgadas pero el símbolo literal (in) se reemplaza por (英寸)."
+      ],
+      "47": [
+        2,
+        3,
+        2,
+        "昂斯特朗 es una transliteración opaca del nombre; la etiqueta técnica de unidad necesita 埃/埃米 (Å)."
+      ],
+      "48": [
+        3,
+        3,
+        2,
+        "奈米 es variante regional comprensible; para zh-CN debe fijarse 纳米, sin llamarlo cambio de valor."
+      ],
+      "51": [
+        2,
+        2,
+        2,
+        "德卡米特 no es una etiqueta de longitud clara para decámetros; debe expresar 十米."
+      ],
+      "52": [
+        2,
+        2,
+        2,
+        "赫克米 no identifica correctamente hectómetros; debe expresar 百米."
+      ],
+      "56": [
+        3,
+        2,
+        3,
+        "英尺 conserva pies, pero pierde el símbolo de unidad (ft)."
+      ],
+      "57": [
+        1,
+        1,
+        3,
+        "秒 son segundos, no pársecs: cambia longitud astronómica por tiempo."
+      ],
+      "58": [
+        3,
+        2,
+        3,
+        "英里 conserva millas, pero pierde el símbolo (mi)."
+      ],
+      "61": [
+        3,
+        2,
+        3,
+        "米 conserva metros, pero pierde el símbolo (m). La vuelta Rice no invalida el significado chino."
+      ],
+      "62": [
+        3,
+        2,
+        3,
+        "公里 es kilómetro, pero （公里） reemplaza el símbolo literal (km)."
+      ],
+      "64": [
+        1,
+        1,
+        3,
+        "Mils son milésimas de pulgada, no 毫米; cambia la escala de medida."
+      ],
+      "65": [
+        2,
+        3,
+        2,
+        "未得到支助 habla de no recibir ayuda/apoyo, en vez de tipos de entidad no compatibles."
+      ],
+      "71": [
+        1,
+        3,
+        3,
+        "家庭 significa familia, no enlace a la página de inicio."
+      ],
+      "75": [
+        2,
+        3,
+        2,
+        "Se traducen y pierden los identificadores de entidad LINE/CIRCLE/ARC; 出口 es exportación comercial, no 导出 de archivo."
+      ],
+      "78": [
+        2,
+        3,
+        2,
+        "多边形 cambia polilíneas por polígonos; 出口 añade un calco impropio de exportar un archivo. 二维 no se puntúa como cifra errónea."
+      ],
+      "82": [
+        2,
+        3,
+        2,
+        "在线播放 indica reproducir/emitir contenido multimedia; se trata de jugar Shikaku."
+      ],
+      "86": [
+        1,
+        3,
+        2,
+        "广场 son plazas públicas, no casillas cubiertas del tablero."
+      ],
+      "87": [
+        2,
+        3,
+        2,
+        "将 Tab 键移到方形 mueve la tecla Tab, no el foco; la instrucción de teclado queda equivocada."
+      ],
+      "88": [
+        1,
+        1,
+        2,
+        "提示数目 es cantidad de pistas, no el valor numérico de la pista que debe igualar el área."
+      ],
+      "91": [
+        3,
+        3,
+        2,
+        "生成的板与一个验证的解决方案 es un calco poco natural de tablero con solución verificada; no se inventa requisito de unicidad."
+      ],
+      "95": [
+        3,
+        3,
+        2,
+        "拼圖 usa 圖 tradicional en el destino simplificado; el sentido de puzzle se entiende por contexto."
+      ],
+      "98": [
+        3,
+        3,
+        2,
+        "拼圖規則 mezcla grafías tradicionales en zh-CN; el significado de reglas se conserva."
+      ],
+      "99": [
+        3,
+        3,
+        2,
+        "拼圖數 usa tradicionales y una etiqueta ambigua entre número identificador y cantidad de puzzles; leve de claridad."
+      ],
+      "101": [
+        3,
+        3,
+        2,
+        "解决方案 es un calco empresarial comprensible pero poco propio de la respuesta de un juego; preferir 解答/答案."
+      ],
+      "102": [
+        1,
+        3,
+        1,
+        "式<0xE9><0xA5><0xB7> contiene residuos de byte fallback y pierde el nombre/reglas de Shikaku."
+      ],
+      "108": [
+        3,
+        3,
+        2,
+        "重叠另一个 deja el objeto colgante; el contexto permite recuperar otro rectángulo, pero la frase necesita 与另一个矩形重叠."
+      ],
+      "113": [
+        2,
+        3,
+        2,
+        "如图所示 omite que se mostró la solución; 再次播放 trata el juego como reproducción de medios."
+      ],
+      "116": [
+        3,
+        3,
+        2,
+        "矩形区域 resulta ambiguo frente a 面积 para comprobar áreas numéricas; no se afirma que haya cambiado una cifra."
+      ],
+      "118": [
+        1,
+        3,
+        3,
+        "家庭 significa familia, no página de inicio."
+      ],
+      "119": [
+        1,
+        3,
+        3,
+        "如何购买 significa cómo comprar, no cómo jugar."
+      ],
+      "122": [
+        3,
+        3,
+        2,
+        "这个浏览器创建的谜题 es un fragmento sintáctico poco natural; el resto conserva generación local y negaciones."
+      ],
+      "127": [
+        2,
+        3,
+        2,
+        "Puzzle Online queda en inglés en un título del destino chino; Shikaku sí puede conservarse como nombre."
+      ],
+      "129": [
+        3,
+        3,
+        2,
+        "这个工具是免费和私人的 usa 私人的 como privado/personal del dueño; privacidad de datos necesita una formulación clara."
+      ],
+      "130": [
+        2,
+        3,
+        3,
+        "Web 音频 sustituye el identificador técnico Web Audio; se pierde la referencia a la API del navegador."
+      ],
+      "131": [
+        3,
+        3,
+        2,
+        "尝试录音 puede sugerir grabar de nuevo en vez de probar una grabación; ambigüedad leve, no una acción inventada demostrada."
+      ],
+      "141": [
+        3,
+        3,
+        2,
+        "La comparación 短剪辑和计算机...比手机上的长剪辑 mezcla dispositivo y clip como sujetos; sentido recuperable, estilo torpe."
+      ],
+      "144": [
+        3,
+        3,
+        2,
+        "聲音 conserva el sentido pero usa grafía tradicional en zh-CN."
+      ],
+      "145": [
+        3,
+        3,
+        2,
+        "中性聲音 conserva el preset neutral de la fuente controlada; 聲 necesita grafía simplificada 声."
+      ],
+      "165": [
+        3,
+        3,
+        2,
+        "广播电台 se entiende como emisora; el preset requiere aclarar efecto de radio, sin afirmar un cambio funcional demostrado."
+      ],
+      "167": [
+        1,
+        3,
+        2,
+        "产出水平 es nivel de producción económico, no nivel de salida de audio 输出电平."
+      ],
+      "170": [
+        3,
+        3,
+        2,
+        "短片/孤立声音 y 他们 para efectos son calcos poco naturales; negaciones y variación de duración siguen presentes."
+      ],
+      "171": [
+        2,
+        3,
+        2,
+        "影响 expresa impacto/influencia, en vez de efectos de audio."
+      ],
+      "173": [
+        3,
+        3,
+        2,
+        "El título duplica la raya — —; defecto leve de presentación, contenido principal conservado."
+      ],
+      "175": [
+        2,
+        2,
+        3,
+        "其数量 se refiere a cantidad de pistas, no a su valor numérico: la regla de área queda ambigua/equivocada."
+      ],
+      "179": [
+        3,
+        3,
+        2,
+        "La ayuda llama seleccionar a mover el foco con Tab y repite seleccionar con Enter; leve de precisión, 对角 es entendible como esquina opuesta."
+      ],
+      "181": [
+        1,
+        3,
+        3,
+        "鹿角 significa cuerno de ciervo y sustituye Shikaku."
+      ],
+      "183": [
+        3,
+        3,
+        2,
+        "生成板/解决方案 es un calco poco natural para tablero/solución del juego; una solución verificada no afirma por sí sola unicidad."
+      ],
+      "185": [
+        2,
+        1,
+        2,
+        "编号 transforma la respuesta No. en numeración; la condición de almacenamiento se conserva pero falta la negativa inicial."
+      ],
+      "193": [
+        3,
+        3,
+        2,
+        "解决方案 se entiende, pero es poco natural como solución de este juego; preferir 答案/解答."
+      ],
+      "194": [
+        1,
+        3,
+        3,
+        "鹿角规则 habla de reglas del cuerno de ciervo, no de Shikaku."
+      ],
+      "200": [
+        2,
+        3,
+        3,
+        "另一条线索 dice otra pista, cuando el solapamiento debe ser con otro rectángulo."
+      ],
+      "205": [
+        3,
+        3,
+        2,
+        "所示解决方案...再次玩 es un calco sintáctico poco natural; se entiende solución mostrada y volver a jugar."
+      ],
+      "208": [
+        3,
+        3,
+        2,
+        "矩形区域 es menos preciso que 面积 para comprobar áreas del puzzle; defecto leve de claridad."
+      ],
+      "216": [
+        1,
+        3,
+        3,
+        "鹿角 vuelve a sustituir el nombre Shikaku por cuerno de ciervo."
+      ],
+      "219": [
+        2,
+        3,
+        2,
+        "Puzzle Online sigue en inglés en un título chino."
+      ],
+      "222": [
+        2,
+        3,
+        3,
+        "网络音频 traduce Web Audio como audio de red, en vez de mantener el nombre de la API local."
+      ],
+      "223": [
+        3,
+        3,
+        2,
+        "尝试录音 sugiere la acción de grabar; para probar un archivo ya existente conviene una frase inequívoca. Solo ambigüedad leve."
+      ],
+      "225": [
+        2,
+        1,
+        2,
+        "编号 convierte No. en numeración. La segunda negación sobre recepción sigue presente, pero se pierde la respuesta inicial."
+      ],
+      "227": [
+        2,
+        1,
+        2,
+        "编号 reemplaza No. y se pierde la respuesta negativa sobre mantener duración; relación tono/velocidad conservada."
+      ],
+      "229": [
+        2,
+        1,
+        2,
+        "编号 reemplaza No.; además 将一个声音变成另一个真人 convierte sonido en persona. Negativas restantes presentes."
+      ],
+      "230": [
+        2,
+        3,
+        2,
+        "单独的人声 es un sintagma nominal de voces individuales, no el verbo separar/aislar voces."
+      ],
+      "233": [
+        3,
+        3,
+        2,
+        "La comparación de clips cortos y ordenador frente a clips largos en móvil queda mal organizada, aunque el consejo se entiende."
+      ],
+      "237": [
+        1,
+        3,
+        3,
+        "清洁 es limpiar físicamente, no preset neutral/sin efectos."
+      ],
+      "245": [
+        2,
+        1,
+        2,
+        "Mismo No.→编号 y sonido→persona en la FAQ de interfaz; clave fuente distinta preservada."
+      ],
+      "246": [
+        2,
+        3,
+        2,
+        "单独的人声 vuelve a nominalizar separar voces y cambia la pregunta funcional."
+      ],
+      "262": [
+        2,
+        3,
+        2,
+        "单独的声音 es voces aisladas como objeto de crear, no capacidad de separar voces; la última frase queda mal coordinada."
+      ],
+      "263": [
+        2,
+        3,
+        2,
+        "影响 significa impacto, no efectos de audio."
+      ]
+    },
+    "back": {
+      "0": "Polygons sustituye polylines, inducido por 多边形.",
+      "9": "Drawing the boundary es una acción, no límites/extensión del dibujo.",
+      "18": "Recording limit introduce grabación en el límite de registros DXF.",
+      "19": "Altitude cambia alto de dibujo por altitud.",
+      "25": "MIT License omite loglevel, igual que la ida.",
+      "27": "Local working program no conserva el worker del navegador.",
+      "34": "Analytical drawings cambia analizar/procesar dibujo por dibujos analíticos.",
+      "37": "Cannot open file sustituye el fallo específico de crear vista previa.",
+      "41": "Try drawing a smaller picture ordena dibujar, no probar un archivo menor.",
+      "43": "Unreported sugiere no declarado a una autoridad y conserva el calco de unidad.",
+      "45": "Inches (inches) pierde el símbolo (in).",
+      "46": "Code cambia la unidad yardas por código.",
+      "47": "Anstruth no identifica la unidad angstrom.",
+      "48": "Nami no identifica nanómetros.",
+      "50": "Centimetre cambia decímetros por centímetros.",
+      "51": "Decameron no es decámetro.",
+      "52": "Hekmi no es hectómetro.",
+      "56": "Feet pierde (ft).",
+      "57": "Seconds cambia pársecs por segundos.",
+      "58": "Mile pierde (mi).",
+      "61": "Rice cambia metros por arroz y pierde (m).",
+      "64": "mm sustituye milésimas de pulgada.",
+      "71": "Family no es Home.",
+      "75": "Sample bars cambia splines por barras de muestra; los identificadores de entidad originales tampoco vuelven.",
+      "78": "Polygons cambia polilíneas; defecto inducido por la ida.",
+      "82": "Chessboards añade un tablero de ajedrez específico a la referencia genérica de puzzle.",
+      "86": "Coverage square no identifica casillas cubiertas y refleja la plaza de la ida.",
+      "87": "Move the Tab key ordena mover la tecla, no enfocar una casilla.",
+      "88": "Number of hints es cantidad de pistas, no su valor numérico.",
+      "95": "Jigsaw restringe el puzzle numérico a piezas de imagen; la ida se entiende en contexto.",
+      "102": "Shuriken pierde reglas/nombre y convierte basura de tokens en otro concepto.",
+      "113": "As shown pierde solución; omisión que ya estaba en la ida.",
+      "118": "Family no es enlace a inicio.",
+      "119": "HOW TO BUY cambia jugar por comprar.",
+      "120": "Exact area of an area pierde que cada número corresponde a exactamente una región.",
+      "124": "Square rectangular puzzle pierde el nombre Shikaku recuperable como 四角 en chino.",
+      "131": "Try recording favorece grabar de nuevo frente a probar una grabación; ambigüedad de vuelta, no prueba suficiente de error grave de ida.",
+      "133": "Does not accept recordings cambia no recibir por no aceptar.",
+      "138": "Clone sounds amplía voz humana a sonidos genéricos; la ida se juzga por su propio texto.",
+      "141": "Short clips and computers are smoother compara objetos distintos, consejo torpe.",
+      "154": "Clone sounds amplía voz humana a sonidos genéricos en la clave de interfaz.",
+      "157": "La misma comparación entre clips/ordenadores y clips de móvil queda torcida en la FAQ interna.",
+      "159": "Using the browser can decode the format cambia una instrucción de elegir formato por una frase mal formada.",
+      "164": "Rendering Audio Processing cambia el audio procesado por el procesamiento de audio.",
+      "165": "Radio stations es una emisora, no el efecto de radio.",
+      "166": "Sound Transducer Status cambia el cambiador de voz por un transductor de sonido.",
+      "170": "Isolated sound como objeto de crear sustituye separar voces.",
+      "171": "Impact no significa efectos de audio.",
+      "172": "Sound converters no conserva con precisión cambiador de voz.",
+      "175": "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量.",
+      "179": "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter.",
+      "180": "Digital jigsaw y around a line cambian acertijo numérico y pistas.",
+      "181": "Deer horn sustituye Shikaku.",
+      "185": "Progress of the numbering refleja No.→编号 y altera el sujeto del progreso.",
+      "187": "Jigsaw restringe el puzzle numérico a puzzle de imagen; la ida se entiende por contexto.",
+      "194": "Deer horn rule no es reglas de Shikaku.",
+      "200": "Overlaps another clue sustituye otro rectángulo por otra pista.",
+      "212": "Area of an area pierde exactamente una región de la fuente.",
+      "216": "Deer horn rectangular puzzle conserva el nombre equivocado de la ida.",
+      "222": "Network audio filters sustituye la API Web Audio.",
+      "223": "Try to record sugiere grabar en vez de probar una grabación existente; ambigüedad leve.",
+      "225": "Numbers your browser y does not accept pierden la negativa inicial y cambian recibir por aceptar.",
+      "227": "Se omite la respuesta negativa explícita inicial.",
+      "229": "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial.",
+      "230": "Individual voices es nombre de voces individuales, no separar voces.",
+      "233": "Computers run smoother on your phone descoloca la comparación ordenador/teléfono.",
+      "236": "A bright sound pierde la referencia concreta a voz del preset.",
+      "237": "Cleaning refleja limpieza en lugar del preset neutral.",
+      "245": "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna.",
+      "246": "Individual voices no es separar voces, clave de interfaz.",
+      "249": "Computers run smoother on your phone repite la comparación mal formada.",
+      "251": "Use the browser to decode the format altera elegir un formato que el navegador pueda decodificar.",
+      "254": "Variations no identifica desplazamiento del tono en semitonos.",
+      "258": "Transducer state cambia el cambiador de voz por un transductor.",
+      "260": "Working principle of the transducer cambia el nombre de la herramienta.",
+      "262": "La vuelta omite toda la frase final de límites de efectos, separación de voces y consistencia entre navegadores.",
+      "263": "Impact sustituye efectos de audio.",
+      "264": "Transducers sustituye cambiador de voz."
+    },
+    "direct_read_ranges": [
+      [
+        0,
+        55
+      ],
+      [
+        55,
+        115
+      ],
+      [
+        115,
+        174
+      ],
+      [
+        174,
+        225
+      ],
+      [
+        225,
+        266
+      ]
+    ],
+    "note": "Entire S/F/B read directly after remote recovery; final local-only predecessor judgments are not claimed recovered."
+  },
+  "approved_locales": []
+}

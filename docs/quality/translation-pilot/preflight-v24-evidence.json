@@ -269,5 +269,13 @@
   "historical_policy_count": 22,
   "historical_function_ast_count": 26,
   "model_inference_local": false,
-  "paid_services": false
+  "paid_services": false,
+  "final_recovery_local_tests": {
+    "total": 206,
+    "passed": 204,
+    "skipped_dependencies": 2,
+    "seconds": 92.167,
+    "log_sha256": "3214ec8c3b1fca62ca1d2cbcbb6f234d6bde4cfff8a6d626912b303ef6ad7e03",
+    "result": "OK"
+  }
 }

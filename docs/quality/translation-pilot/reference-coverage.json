@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-24T17:05:49.998397+00:00",
+  "at_utc": "2026-10-25T00:49:40.280320+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 5951,
+  "agent_reviewed_translations": 6217,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 5951,
+  "agent_reviewed_evaluations": 6217,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -325,8 +325,8 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 14444,
-  "semantic_regressions": 971,
+  "total_records_all_policies": 14710,
+  "semantic_regressions": 1120,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -481,6 +481,20 @@
       "passed": true,
       "minimum_style_budget_met": true,
       "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+    },
+    "zh-CN": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1481,
+      "maximum": 1566,
+      "button_errors": 3,
+      "number_negation_errors": 10,
+      "major_rows": 31,
+      "minor_rows": 19,
+      "unproved_data_rows": 33,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Rejected: directly observed forward defects and separately unproved data contracts. No native/blind/unseen-text or release approval."
     }
   },
   "contextual_policies_reviewed": 23,
@@ -513,7 +527,7 @@
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
-    "full_dispatched": false,
+    "full_dispatched": true,
     "approved_locales": []
   },
   "engines_inventory_note": "Baseline computation retained; contextual counts in context-run-evidence. V24 only zh-CN, preserves ES/NBv15,KOv18,IDv21 and all historical evidence. Exact known memory disclosed; no native/blind/unseen-text language or engine approval or publication.",
@@ -521,15 +535,17 @@
     "es": "context-v15",
     "nb-NO": "context-v15",
     "ko": "context-v18",
-    "id": "context-v21"
+    "id": "context-v21",
+    "zh-CN": "context-v24"
   },
   "latest_full_pilot": {
-    "policy": "context-v21",
-    "locale": "id",
-    "run_id": 40070361820,
+    "policy": "context-v24",
+    "locale": "zh-CN",
+    "run_id": 40114620348,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,
+    "model_gate_passed": false,
     "approved_locales": []
   },
   "detailed_review_inventory": {
@@ -547,10 +563,11 @@
       "hi",
       "ar"
     ],
-    "current_references_not_passed": [
-      "zh-CN"
-    ],
+    "current_references_not_passed": [],
     "remaining_without_detailed_review": 25,
-    "approved_locales": []
+    "approved_locales": [],
+    "current_full_not_passed": [
+      "zh-CN"
+    ]
   }
 }

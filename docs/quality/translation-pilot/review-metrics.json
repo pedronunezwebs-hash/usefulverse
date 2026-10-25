@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-24T17:05:49.998397+00:00",
+  "at_utc": "2026-10-25T00:49:40.280320+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 5951,
+  "evaluations": 6217,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -1441,6 +1441,34 @@
       "major_rows": 0,
       "minor_rows": 0,
       "unproved_data_rows": 0
+    },
+    {
+      "review_file": "review-context-v24-full.json",
+      "policy": "context-v24",
+      "locale": "zh-CN",
+      "candidate": "madlad+complete-sentences+zh-CN-source-proof-v2",
+      "rows": 174,
+      "points": 1481,
+      "maximum": 1566,
+      "button_errors": 3,
+      "number_negation_errors": 10,
+      "major_rows": 31,
+      "minor_rows": 19,
+      "unproved_data_rows": 33
+    },
+    {
+      "review_file": "review-context-v24-full-legacy.json",
+      "policy": "context-v24",
+      "locale": "zh-CN",
+      "candidate": "legacy",
+      "rows": 92,
+      "points": 779,
+      "maximum": 828,
+      "button_errors": 1,
+      "number_negation_errors": 6,
+      "major_rows": 17,
+      "minor_rows": 7,
+      "unproved_data_rows": 18
     }
   ]
 }
