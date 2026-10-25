@@ -2,7 +2,7 @@
 
 Aceleración ·2026-10-26: Aceleración: los 15.443 registros conservan exactamente todos sus indicadores. Benchmark local con cProfile: 51,77→29,34 s (1,76×); aperturas reales de archivo: 432.950→33. Cachés acotadas en RAM y casos de corrupción conservados. Los 25 destinos pendientes tienen nueve lotes preparados con evidencia existente; cero inferencia nueva y cero idiomas aprobados. [Informe](lotes/2026-10-26-aceleracion-traduccion.md).
 
-45 comprobaciones enfocadas correctas. Suite final esperada: 300 Python; CI global y GET/XML final pendientes. Relevo y respaldo remoto en verificación; limpieza efectiva pendiente.
+[CI final 40219774134](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40219774134) correcta sobre a04f913: 3.045 pruebas Node y 300 Python (298 correctas, dos omisiones por dependencias), Python 525.834 s. Builds principal/hub, puerta de 20 locales existentes y preview de 10.800 páginas y todas sus homes noindex; sitemap vacío. Preview de 36 locales: no certifica 37. Modelo y ambas publicaciones omitidos; cero artefactos. Producción: 5 GET y 2 XML, 25.625→25.625 URLs, mismos estados/bytes/hashes; tres soft404 pendientes. Relevo y respaldo remoto en verificación; limpieza efectiva pendiente.
 
 Nuevo: `scripts/localization/pilot-validation-cache.py` y `pilot-review-batch.py`. Código y evidencias solo en PR #136; main recibe seis documentos.
 
