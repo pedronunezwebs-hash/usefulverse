@@ -3,7 +3,7 @@
 > Archivo de relevo entre agentes (ChatGPT/Codex ↔ Claude). En 1 minuto dice **dónde estamos, qué falta y por dónde
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
-**Última actualización:** 2026-10-24 · **por:** Codex
+**Última actualización:** 2026-10-25 · **por:** Codex
 **Turno actual (candado):** EN CURSO · Codex · 2026-10-24T23:45:35.708244+07:00 · v24: recuperación remota tras desaparición del temporal; cierre/revisión completa pendiente
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -16,11 +16,11 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V23 · zh-CN 360/360, gate bloqueado por 1 input completo sin prueba; completo no ejecutado.** Nueve idas corregidas, 16 carencias anteriores resueltas, cuatro regresiones nuevas.14.377 registros/5.884 evaluaciones/971 fixtures. Validación local7, 65× más rápida y 5/103 fragmentos evitados en el modelo, sin coste. [Informe v23](lotes/2026-10-24-piloto-v23.md). CI final 40111019015 y GET/XML sin cambios; retirada efectiva verificada; candado LIBRE.
+   **V24 · completo zh-CN revisado y rechazado.** Referencias360/360 y contrato inglés completo resuelto. Completo 1481/1566,50 idas negativas (31 graves/19 leves); legacy779/828,24 idas negativas.51 cantidades no probadas se separan de errores lingüísticos, más2 dimensiones; no se suman como errores adicionales.14.710 registros/6.217 evaluaciones/1120 fixtures. [Informe v24](lotes/2026-10-24-piloto-v24.md). CI final y retirada efectiva pendientes; candado sigue EN CURSO.
 
-   Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); zh-CN bloqueado por contrato, seis históricos sin pasar y 25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
+   Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21). Chino simplificado completo rechazado; de/fr/pt-BR/ja/hi/ar históricos sin pasar y25 destinos sin revisión detallada. **0 idiomas aprobados**, P-001–P-008 pendientes/0 FALLA.
 
-   **Siguiente exacto:** Crear v24 independiente sin repetir los runs v23. Primero reproducir el callback/traza real de shikaku.fields.faq.1.a en context-v23: marker_restore_ok es falso aunque la fuente canónica y los fragmentos pasan; test rojo que exija prueba del input controlado completo. Añadir contrato léxico explícito de A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue. ligado a model_input/hash/contexto/registro observado; no cambiar política, perfil, Unicode17 fijado, checkpoints o revisiones v23 ni gramáticas históricas. Hacer preflight de las 214 fuentes, inputs controlados completos y sus fragmentos ingleses para detectar otros huecos de prueba antes del modelo. Conservar los 274 destinos de memoria, caché cruda por instancia/dirección y el bloqueo de cualquier cifra desconocida; parser global sigue rechazando zh-CN/id. Referencias y todos los avisos primero; completo solo si pasa el gate, mismas 88 claves y lectura de todas las 174 modelo+92 legacy disponibles. Después los otros 25 destinos sin revisión detallada; ha/am/te/gu/ta/mr/sw requieren 80 muestras. ES/NB conservan v15, KO v18 e ID v21; seis destinos antiguos conservan evidencia histórica sin aprobar. No repetir 40108791297/40109970196 ni 40089099175. Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar fase 0.
+   **Siguiente exacto:** Crear v25 independiente, sin repetir 40113864520/40114620348 ni los runs v23. Primero reproducir con los callbacks/trazas v24 los 50 textos de ida negativos de review-context-v24-full.json (test rojo antes de corregir). Añadir correcciones por memoria exacta con fuente/hash/contexto; conservar los274 destinos previos y preferir legacy solo cuando la cadena revisada sea mejor y corresponda a la misma fuente/contexto, sin importar sus24 defectos. Corregir unidades/símbolos, polilíneas, regla valor de pista frente a cantidad de pistas, acciones/UI, Web Audio/loglevel, residuos de byte fallback y grafías regionales. Resolver por contratos finitos y ligados a cada fuente las51 cantidades no probadas (incluidos caracteres con Numeric_Value dentro de palabras, clasificadores, ordinales y nombres de unidad) y las2 dimensiones 2D→二维 pendientes, sin aceptar Han universalmente ni inventar notas negativas por datos desconocidos. Mantener inmutables política/perfil/13 pruebas inglesas/Unicode17/checkpoints/revisiones v24, los1120 fixtures y la historia; parser global sigue rechazando zh-CN/id. Preflight214 fuentes/inputs/fragmentos y274 memorias; referencias y todos sus avisos antes del completo condicional. Mismas88 claves y lectura de todas174 modelo+92 legacy; cualquier defecto fuera de88 bloquea. ES/NB conservan v15, KOv18, IDv21. Después otros25 destinos; ha/am/te/gu/ta/mr/sw requieren80 muestras y seis destinos históricos siguen sin pasar. Paso A abierto por capacidad Pages y37 traducciones revisadas/nb real; no avanzar fase0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -47,6 +47,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
+- [~] V24: chino simplificado referencias360/360; completo rechazado 1481/1566,50 idas modelo/24 legacy y51 cantidades no probadas;149 fixtures nuevas (1120 totales). CI final/push de cierre/retirada efectiva pendientes ·2026-10-25.
+
 - [x] V23: nueve idas zh-CN corregidas y 16 contratos resueltos; 360/360 lingüístico, gate bloqueado por 1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI final 40111019015 correcta; retirada efectiva verificada.
 - [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
 - [x] Diagnóstico de la caída del 16-oct (`docs/recovery/README.md`) · 2026-10-20
@@ -145,6 +147,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+|2026-10-25|Codex|V24: contrato inglés resuelto; completo chino rechazado,50 idas y149 fixtures nuevas|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML final pendiente. Sin deploy.|
 |2026-10-24|Codex|V23: zh-CN 360/360, bloqueado por 1 contrato; validación7, 65× y 5/103 fragmentos evitados|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial25.625 URLs; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V22: zh-CN referencias 344/360 rechazadas;37 fixtures, sin completo|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial 25.625 URLs, tres soft 404. Sin deploy.|
 | 2026-10-24 | Codex | V21: indonesio: referencias 360/360 y completo conocido 1566/1566 | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625 URLs; tres soft404 pendientes. Sin deploy. |

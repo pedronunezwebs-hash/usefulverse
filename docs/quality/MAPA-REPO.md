@@ -43,6 +43,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V23 ·24-oct:** nueve idas zh-CN corregidas y 16 carencias léxicas resueltas; referencias360/360, gate bloqueado por 1 input completo sin prueba. Caché de políticas inmutables7, 65× local y caché RAM exacta evita5/103 fragmentos del modelo; 274 memorias, 971 fixtures. Unicode17 fijado, historia/global intactos; no completo/deploy/aprobación. CI final 40111019015 correcta; retirada efectiva verificada. [Informe](lotes/2026-10-24-piloto-v23.md).
 
+- **V24 ·25-oct:** contrato de13 textos ingleses ligado a214 fuentes/inputs; referencias360/360, completo1481/1566 rechazado por50 idas y51 cantidades sin prueba.149 fixtures nuevas/1120 totales; caché evita53/509 fragmentos del completo. Cero aprobación/publicación. [Informe](lotes/2026-10-24-piloto-v24.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |
