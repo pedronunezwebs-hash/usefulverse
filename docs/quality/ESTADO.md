@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-25 · **por:** Codex
-**Turno actual (candado):** LIBRE · Codex · 2026-10-25T12:26:10.578704+00:00 · v26 cerrado; clon/QA/cachés propios eliminados
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-25T12:51:20.785054+00:00 · v27: contratos Shikaku y memoria de salidas revisadas
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
