@@ -82,3 +82,5 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - Las ramas locales sin push se pierden: `/tmp` se vacía al reiniciar el Mac.
 - `node_modules` + `dist` + `dist-growth600` + modelos de traducción ocupan GB: en el Mac, solo en carpetas temporales que se borran al terminar.
 - Un build completo regenera ~25.000 páginas: en local, usar builds parciales.
+
+En la rama del PR #136, validate-and-deploy dispone ahora de15 minutos por el timeout real de la suite ampliada; inference/piloto y condiciones de publicación no cambian. Main recibe solo documentación con [skip ci].
