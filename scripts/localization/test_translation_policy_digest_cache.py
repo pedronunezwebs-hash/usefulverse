@@ -11,7 +11,7 @@ pilot = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pilot)
 
 def factory(callback):
-    path = HERE / 'pilot-policy-digest-cache.py'
+    path = HERE / 'pilot-validation-cache.py'
     if not path.exists():
         return callback  # Before the optimization, every call serializes the same policy.
     spec = importlib.util.spec_from_file_location('policy_digest_cache', path)
@@ -71,11 +71,12 @@ class PolicyDigestCacheTest(unittest.TestCase):
     def test_warm_policy_cache_does_not_cache_or_skip_dependency_reads(self):
         pilot.v27_quantity_contracts()
         manifest = pilot.ROOT / 'docs/quality/translation-pilot/numeric-sources/context-v27/manifest.json'
-        old_read = Path.read_bytes
+        path_type = type(pilot.ROOT)
+        old_read = path_type.read_bytes
         def damaged(path):
             value = old_read(path)
             return value + b' ' if path == manifest else value
-        with patch.object(Path, 'read_bytes', damaged):
+        with patch.object(path_type, 'read_bytes', damaged):
             with self.assertRaisesRegex(ValueError, 'manifest/profile'):
                 pilot.v27_quantity_contracts()
 

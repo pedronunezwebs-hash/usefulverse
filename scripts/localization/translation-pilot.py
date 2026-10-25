@@ -2328,4 +2328,23 @@ def main():
     else: run(args)
 
 
+def enable_validation_cache():
+    """Install RAM-only validation reuse; original policy functions stay intact."""
+    global ROOT, hashlib, digest
+    path = Path(__file__).with_name("pilot-validation-cache.py").resolve()
+    name = "usefulverse_validation_cache_" + hashlib.sha256(str(path).encode()).hexdigest()[:16]
+    if name not in sys.modules:
+        cache_spec = importlib.util.spec_from_file_location(name, path)
+        module = importlib.util.module_from_spec(cache_spec)
+        cache_spec.loader.exec_module(module)
+        sys.modules[name] = module
+    module = sys.modules[name]
+    ROOT = module.ValidatedPath(ROOT)
+    hashlib = module.HashlibView(hashlib)
+    digest = module.cache_policy_digests(digest, POLICIES, (_FrozenPolicyDict, _FrozenPolicyList))
+
+
+enable_validation_cache()
+
+
 if __name__ == "__main__": main()

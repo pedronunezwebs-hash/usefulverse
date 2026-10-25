@@ -1,0 +1,47 @@
+{
+  "records": 15443,
+  "record_flags_sha256": "69bf743f9b633c73fd481629b581b0c0c4508fb2a66686ac886f366a090a1322",
+  "before_profiled_seconds": 51.77056120799534,
+  "baseline_source_sha256": "cea2c85ba610bf6a87a8bf30ad8ce6d1a8ae0ce4ac7c9296836c801613cedcd1",
+  "same_host_comparison_pending": false,
+  "red_tests": 1,
+  "red_log_sha256": "a98e4ac957d3ee6d0f7475160ac746f12a30c1b670b0fc4f5665bd2b51351e6e",
+  "no_models_local": true,
+  "after_profiled_seconds": 29.335909374996845,
+  "profiled_speedup": 1.7647505160388746,
+  "all_record_flag_vectors_equal": true,
+  "before_profile_sha256": "00862f53026e8e3f27a9e24651bbcdebe579f1ddae8b9a3eecf5b9874d9e5b24",
+  "after_profile_sha256": "b19ef3e7564c195232df14b1bc930c378a9306e56b0bbfcf12f105ebcd6d11fe",
+  "after_source_sha256": "63699dfee18cfeecffe51049f127031b314cf78d837cf9884cd5170715150c24",
+  "canonical_context_negative_test_red_log_sha256": "a22a26ea1b869a3cb2fbfcc0212ccb36539f3d8fdfce62974b16a7d76fd089b9",
+  "canonical_context_negative_test_green_log_sha256": "4af896a8bf84ddcaf8b58e96fd73b36b0f25fe7f2ee7863c1b2402dec8eb94e9",
+  "current_focused_tests": 45,
+  "cache_module_sha256": "ebeb069e1a06c8661b9c5c1555bb911c53730f6f0750525516089a002f0ee309",
+  "review_batch_module_sha256": "0f39487eeb31c98b6694c7b5a6435444441049b29b6218be91fe05b258af2de6",
+  "final_expected_python_tests": 300,
+  "benchmark_scope": "Same Mac, same15443records, nice15 and cProfile; no model inference or end-to-end translation speed claim.",
+  "shared_file_cache_limit_mib": 32,
+  "shared_sha_cache_limit_mib": 32,
+  "before_actual_file_open_calls": 432950,
+  "before_native_sha256_calls": 441750,
+  "after_actual_file_open_calls": 33,
+  "after_native_sha256_calls": 951,
+  "focused_logs": [
+    {
+      "name": "test_translation_allcache.py.log",
+      "sha256": "125cf15d122d989fe8846733597eab6595afac354f6d14ce41070a088c788c3f"
+    },
+    {
+      "name": "test_translation_review_batch.py.log",
+      "sha256": "8e4f0e7d78828048b7bb4531bf3c56dfc7fb2f066f12a07553945b300cdc7116"
+    },
+    {
+      "name": "test_translation_finite_v27.py.log",
+      "sha256": "f62fcf9c47363322037033c6e4e0f1ebd1896a9ffdc25fd72d51d754add5f5eb"
+    },
+    {
+      "name": "test_translation_chinese_variants_v26.py.log",
+      "sha256": "3e7a391fd857a4fbea596cd380526837420888e7633a75c5e8f06a9d6d7a0df9"
+    }
+  ]
+}
