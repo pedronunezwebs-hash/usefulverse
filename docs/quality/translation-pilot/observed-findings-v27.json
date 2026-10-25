@@ -51,6 +51,18 @@
       "record_ids": [
         "6a06bbf231cf3cb68eeed5726323099cdfb3cb2323364125fd922ca4f8a4ff3d"
       ]
+    },
+    {
+      "key": "shikaku.fields.faq.2.a",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "direction": "back",
+      "candidate": "legacy",
+      "translation": "The game only accepts boards with a verified solution.",
+      "record_ids": [
+        "5d9afb8320aa459d5645675775975862af961689b0bc1e65f12570e09b7f3c1e"
+      ],
+      "forward_known_defect": true,
+      "issue": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
     }
   ]
 }

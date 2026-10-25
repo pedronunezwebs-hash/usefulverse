@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-25T13:28:41.630792+00:00",
+  "at_utc": "2026-10-25T17:00:41.816880+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 6684,
+  "agent_reviewed_translations": 6950,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,18 +315,19 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 6684,
+  "agent_reviewed_evaluations": 6950,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO",
     "ko",
-    "id"
+    "id",
+    "zh-CN"
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 15177,
-  "semantic_regressions": 1146,
+  "total_records_all_policies": 15443,
+  "semantic_regressions": 1151,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -485,21 +486,23 @@
     "zh-CN": {
       "rows": 174,
       "sample": 174,
-      "points": 1564,
+      "points": 1566,
       "maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
-      "minor_rows": 2,
-      "unproved_data_rows": 7,
-      "passed": false,
-      "minimum_style_budget_met": false,
-      "reason": "Gate bloqueado por defectos observados o datos sin prueba; memoria conocida declarada. Sin aprobación nativa/ciega/de idioma.",
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known214 Chinese reviewed-memory outputs; all174 current nonreferences directly read and forward data proved. No observed outside88 forward defect. No native/blind/unseen-text/general-engine/release approval.",
       "fixed_sample_rows": 88,
-      "fixed_sample_points": 791,
+      "fixed_sample_points": 792,
       "fixed_sample_maximum": 792,
-      "fixed_sample_passed": false,
-      "global_no_open_defects_requirement": "voice-changer.intro está fuera88 y bloquea; los7 datos sin prueba también."
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Any observed forward defect or unproved forward data, including outside88, blocks. All174 read;0observed open forward defects.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
     }
   },
   "contextual_policies_reviewed": 26,
@@ -532,7 +535,7 @@
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
-    "full_dispatched": false,
+    "full_dispatched": true,
     "approved_locales": []
   },
   "engines_inventory_note": "V27 zh-CN known214 reviewed memory,13legacy ties; no forward-generation/engine benchmark or native/blind/unseen-text/release approval. ES/NBv15,KOv18,IDv21 and all historical evidence unchanged.",
@@ -541,16 +544,16 @@
     "nb-NO": "context-v15",
     "ko": "context-v18",
     "id": "context-v21",
-    "zh-CN": "context-v25"
+    "zh-CN": "context-v27"
   },
   "latest_full_pilot": {
-    "policy": "context-v25",
+    "policy": "context-v27",
     "locale": "zh-CN",
-    "run_id": 40153243412,
+    "run_id": 40198168513,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,
-    "model_gate_passed": false,
+    "model_gate_passed": true,
     "approved_locales": []
   },
   "detailed_review_inventory": {
@@ -558,7 +561,8 @@
       "es",
       "nb-NO",
       "ko",
-      "id"
+      "id",
+      "zh-CN"
     ],
     "historically_reviewed_not_passed": [
       "de",
@@ -571,9 +575,7 @@
     "current_references_not_passed": [],
     "remaining_without_detailed_review": 25,
     "approved_locales": [],
-    "current_full_not_passed": [
-      "zh-CN"
-    ]
+    "current_full_not_passed": []
   },
   "v25_historical_withdrawal_note": "Two explicit naturalness reassessments for duplicate v24 model/legacy FAQ; original review bytes/gates/score inventory preserved. See review-withdrawal-addenda.json; no locale approval."
 }

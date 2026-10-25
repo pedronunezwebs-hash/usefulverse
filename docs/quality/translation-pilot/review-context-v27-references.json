@@ -983,7 +983,7 @@
         "known_back_semantic_errors": {
           "disposition": "back-defect",
           "blocks_gate": false,
-          "note": "Locally loaded audio convierte la acción de cargar en estado, igual a la vuelta del modelo."
+          "note": "Locally loaded audio convierte la acción de cargar en un estado/participio."
         }
       }
     },
@@ -1096,7 +1096,7 @@
         "back_numeric_values": {
           "disposition": "reviewed-signal",
           "blocks_gate": false,
-          "note": "Contrato finito v27 recomputado:1rectángulo y6×2 en fuente/ida/vuelta. six pasa a6; a rectangle designa el único rectángulo en esta traza exacta. Diferencia de grafía literal sin cambio de cantidad; controles typed input/forward/back verdaderos. No se deduce la rúbrica de ida de la vuelta."
+          "note": "Lectura directa y contrato finito de vuelta verdadero: número escrito frente a dígito o expansión probada. La firma literal difiere sin alterar valor/multiplicidad/alcance; los defectos semánticos, si existen, se registran aparte."
         },
         "protected_tokens": {
           "disposition": "reviewed-signal",
@@ -1111,7 +1111,7 @@
         "back_protected_tokens": {
           "disposition": "reviewed-signal",
           "blocks_gate": false,
-          "note": "Contrato finito v27 recomputado:1rectángulo y6×2 en fuente/ida/vuelta. six pasa a6; a rectangle designa el único rectángulo en esta traza exacta. Diferencia de grafía literal sin cambio de cantidad; controles typed input/forward/back verdaderos. No se deduce la rúbrica de ida de la vuelta."
+          "note": "Lectura directa y contrato finito de vuelta verdadero: número escrito frente a dígito o expansión probada. La firma literal difiere sin alterar valor/multiplicidad/alcance; los defectos semánticos, si existen, se registran aparte."
         }
       }
     },
@@ -1308,7 +1308,7 @@
         "known_back_semantic_errors": {
           "disposition": "back-defect",
           "blocks_gate": false,
-          "note": "Measuring distance es un gerundio/estado, no la orden Measure distance del botón; ida 测量距离 correcta."
+          "note": "Measurement distance pierde el verbo de acción medir y forma un sintagma nominal defectuoso; el tradicional de ida sí expresa la acción."
         }
       }
     },
@@ -1400,5 +1400,8 @@
     "legacy_points": 223,
     "maximum": 243,
     "frozen_engine": false
-  }
+  },
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v27-full.json"
+  ]
 }

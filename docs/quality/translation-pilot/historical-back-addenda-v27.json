@@ -1,0 +1,16 @@
+{
+  "original_addenda": 9,
+  "new_addenda": 2,
+  "affected_reviews": [
+    {
+      "file": "review-context-v24-full-legacy.json",
+      "records": 1
+    },
+    {
+      "file": "review-context-v25-full-legacy.json",
+      "records": 1
+    }
+  ],
+  "original_reviews_changed": false,
+  "approved_locales": []
+}

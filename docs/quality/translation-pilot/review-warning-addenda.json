@@ -276,5 +276,53 @@
         }
       }
     ]
+  },
+  {
+    "review_file": "review-context-v24-full-legacy.json",
+    "review_digest": "242572466650fde0120d95a4a945243208387e764550396c5d10e7949ae656c0",
+    "review_file_sha256": "ea71fce4bdbc3d6261d1dc75d4eae9f106d2d352b02e767331df64cf7d8aab84",
+    "added_at_utc": "2026-10-25T16:56:09.045755+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "V27 confirms an exact duplicate historical back defect. Only non-gating back diagnostic added; original review/rubric/gate/policy/raw bytes preserved.",
+    "warning_reconciliation": [
+      {
+        "record_id": "4f0c2e10fec92b97416c4c796109773973bfe79e125f12f024b4376b9254a6c9",
+        "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+        "back_translation_hash": "6521f09df3b0e92567c341ad37ac401e5fb6b91064b26c20ebd3544025241138",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v25-full-legacy.json",
+    "review_digest": "27e44e40b231c328c8478d1a0fe6edd1da840d4d81b7b51a79cb242209eb345f",
+    "review_file_sha256": "b50d8fe3ece0a5d9fe9ab5f31f0c65be1286a5b7812aa893fe37cc069b885940",
+    "added_at_utc": "2026-10-25T16:56:09.052241+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "V27 confirms an exact duplicate historical back defect. Only non-gating back diagnostic added; original review/rubric/gate/policy/raw bytes preserved.",
+    "warning_reconciliation": [
+      {
+        "record_id": "a0963a9e7460e4e4a72b7f840c2516e38e2aa5962d4a61e10836b525b93e37a6",
+        "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+        "back_translation_hash": "6521f09df3b0e92567c341ad37ac401e5fb6b91064b26c20ebd3544025241138",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
+          }
+        }
+      }
+    ]
   }
 ]

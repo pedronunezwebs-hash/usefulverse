@@ -67,5 +67,15 @@
         "sha256": "9f55ca9a05cfe98a5a08f12a555843093444754042c80d6ee5444ded9ab723c7"
       }
     ]
+  },
+  "final_expected_python_tests": 276,
+  "new_back_variants": 5,
+  "new_back_fixture_records": 7,
+  "historical_non_gating_back_addenda": 2,
+  "post_full_audit": {
+    "tests": 1,
+    "seconds": 282.684,
+    "all_current_and_historical_reviews_passed": true,
+    "log_sha256": "d8967d0e5b2d4f22226e2ef7e07141d0751d4a7782270d66b62634a61a1cc894"
   }
 }

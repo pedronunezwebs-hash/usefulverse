@@ -717,7 +717,7 @@
         "known_back_semantic_errors": {
           "disposition": "back-defect",
           "blocks_gate": false,
-          "note": "Locally loaded audio convierte la acción de cargar en estado, igual a la vuelta del modelo."
+          "note": "Locally loaded audio convierte la acción de cargar en un estado/participio."
         }
       }
     },
@@ -913,7 +913,7 @@
         "known_back_semantic_errors": {
           "disposition": "back-defect",
           "blocks_gate": false,
-          "note": "Daily Jigsaw Puzzle selecciona el subtipo jigsaw de imagen, no declarado en la regla de Shikaku; no se rebaja la ida solo por esa vuelta."
+          "note": "Daily Jigsaw Puzzle elige explícitamente el subtipo jigsaw de imagen, distinto del puzzle lógico Shikaku. La ida se entiende en su contexto como puzzle; no se infiere su nota de esta vuelta."
         }
       }
     },
