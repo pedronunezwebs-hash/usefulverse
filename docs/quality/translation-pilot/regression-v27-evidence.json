@@ -143,5 +143,11 @@
     "tests": 4,
     "failures": 4,
     "log_sha256": "9d3c3568185110187524ee7bdf5cfd882bb104862a2308ae27013934e7401381"
+  },
+  "new_back_variant_red": {
+    "tests": 1,
+    "failures": 6,
+    "unique_variants": 4,
+    "log_sha256": "f09180f89c3e1ae4b885bd94e001c70957461a47e83682f181319dcba82ba4da"
   }
 }
