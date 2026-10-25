@@ -1,0 +1,64 @@
+{
+  "at_utc": "2026-10-25T12:24:08.583698+00:00",
+  "feature_head": "bc087ce79884ee1c89ed285ddd0fbb8d7aa3a58f",
+  "main_head": "dde92ad1b72cf70105c2ffea492b8777012f6244",
+  "local_versioned_files_equal_remote_tree": 7725,
+  "six_shared_documents_equal": true,
+  "main_changed_only_handoff_documents": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-25-piloto-v26.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md"
+  ],
+  "src_public_unchanged": 6851,
+  "original_pilot_files": 331,
+  "original_pilot_files_unchanged_excluding_four_aggregates": 327,
+  "original_fixture_prefix": 1146,
+  "original_metric_groups": 116,
+  "original_warning_addenda_unchanged": true,
+  "original_withdrawals_unchanged": true,
+  "progress_rows": 1001,
+  "progress_notes_only": [
+    {
+      "slug": "dxf-drawing-viewer",
+      "columns": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "shikaku-puzzle",
+      "columns": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "voice-changer",
+      "columns": [
+        "nota"
+      ]
+    }
+  ],
+  "lfs_pointers": 0,
+  "ci_run": 40192256469,
+  "ci_code_data_reviews_fixtures_unchanged": true,
+  "post_ci_changed_only_verification_metadata_and_handoff_docs": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-25-piloto-v26.md",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/final-ci-v26.json",
+    "docs/quality/translation-pilot/production-v26-verification.json",
+    "docs/quality/translation-pilot/security-v26-check.json"
+  ],
+  "successful_runs": [
+    40190935942,
+    40192256469
+  ],
+  "artifacts": 0,
+  "pr_open_draft": true,
+  "root_basename": ".usefulverse-v26-20261025",
+  "cleanup_completed": false
+}
