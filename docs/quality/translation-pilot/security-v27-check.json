@@ -15,5 +15,7 @@
   "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
   "final_source_scan_at_utc": "2026-10-25T17:11:39.704297+00:00",
   "final_source_secret_findings": 0,
-  "final_source_actionlint_passed": true
+  "final_source_actionlint_passed": true,
+  "final_metadata_scan_at_utc": "2026-10-25T17:27:19.792574+00:00",
+  "final_metadata_secret_findings": 0
 }
