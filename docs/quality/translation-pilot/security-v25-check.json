@@ -12,5 +12,8 @@
   "ignore_proof": "Actual Git blob bytes/SHA verified online; sorted public fixed88 digest recomputed. No broad repo ignores or credentials.",
   "billing_global_audit": false,
   "bounded_cost_scope": "Public standard ubuntu-latest only; no paid APIs/Cloudflare/Codespaces/Packages/LFS/artifacts/persistent model/cache. No deploy.",
-  "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions"
+  "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "final_snapshot_scanned_at_utc": "2026-10-25T06:33:23.806365+00:00",
+  "final_snapshot_secret_findings": 0,
+  "final_snapshot_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
 }
