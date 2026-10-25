@@ -49,5 +49,23 @@
       "name": "test_translation_v25_history",
       "sha256": "948e56eb5739db96dcff971dcf551f21d65928665b3ff3146a1c091fd2c8b1f2"
     }
-  ]
+  ],
+  "post_reference_checks": {
+    "tests": 35,
+    "reviewed_source_forward_back_records": 67,
+    "model_warning_records": 31,
+    "legacy_warning_records": 26,
+    "new_semantic_fixtures": 0,
+    "reference_gate_passed": true,
+    "logs": [
+      {
+        "name": "test_translation_current_review_v27",
+        "sha256": "aec84f02d46d42bc791abca52ec86114f365e331c6fea62dfea9dc68eb14092a"
+      },
+      {
+        "name": "test_translation_pilot",
+        "sha256": "9f55ca9a05cfe98a5a08f12a555843093444754042c80d6ee5444ded9ab723c7"
+      }
+    ]
+  }
 }
