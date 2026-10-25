@@ -78,8 +78,9 @@ POLICIES["context-v21"] = json.loads(Path(__file__).with_name("pilot-indonesian-
 POLICIES["context-v22"] = json.loads(Path(__file__).with_name("pilot-chinese-numeric-policy.json").read_text())
 POLICIES["context-v23"] = json.loads(Path(__file__).with_name("pilot-chinese-memory-policy.json").read_text())
 POLICIES["context-v24"] = json.loads(Path(__file__).with_name("pilot-chinese-source-proof-policy.json").read_text())
+POLICIES["context-v25"] = json.loads(Path(__file__).with_name("pilot-chinese-expanded-memory-policy.json").read_text())
 POLICIES = {name: freeze_policy(value) for name, value in POLICIES.items()}
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21", "context-v22", "context-v23", "context-v24"}
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21", "context-v22", "context-v23", "context-v24", "context-v25"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -424,6 +425,8 @@ def numeric_data_id_v19(text):
 
 
 def policy_typed_data_checks(source, target, source_locale, target_locale, policy):
+    if policy == "context-v25":
+        return chinese_typed_data_checks_v25(source, target, source_locale, target_locale)
     if policy == "context-v24":
         return chinese_typed_data_checks_v24(source, target, source_locale, target_locale)
     if policy == "context-v23":
@@ -913,6 +916,205 @@ def cached_prose_v24(callback, owner, source_locale, target_locale):
 
 
 
+
+_V25_QUANTITY_CACHE = {}
+
+
+def v25_quantity_contracts():
+    """Finite reviewed texts bound to real source/context; no general Han parser."""
+    directory = ROOT / "docs/quality/translation-pilot/numeric-sources/context-v25"
+    file = directory / "manifest.json"
+    profile = POLICIES["context-v25"]["numeric_profile"]
+    if profile != {"id": "zh-CN-bound-lexical-v3", "locale": "zh-CN", "manifest": str(file.relative_to(ROOT)), "manifest_sha256": hashlib.sha256(file.read_bytes()).hexdigest()}:
+        raise ValueError("Changed or unbound v25 numeric profile")
+    manifest = json.loads(file.read_text())
+    expected = {"base_manifest": "docs/quality/translation-pilot/numeric-sources/context-v24/manifest.json", "checkpoint": "docs/quality/translation-pilot/checkpoints/context-v24/madlad.jsonl", "corrections": "docs/quality/translation-pilot/correction-v25-plan.json", "source_snapshot": "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json"}
+    if manifest["base_policy"] != "context-v24" or manifest["contracts"] != "bound-contracts.json" or any(manifest[k] != v for k, v in expected.items()):
+        raise ValueError("Unexpected v25 proof dependency path")
+    dependency_bytes = {}
+    for name, path in expected.items():
+        raw = (ROOT / path).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != manifest[name + "_sha256"]:
+            raise ValueError("Changed pinned v25 dependency: " + name)
+        dependency_bytes[name] = raw
+    raw = (directory / manifest["contracts"]).read_bytes()
+    if hashlib.sha256(raw).hexdigest() != manifest["contracts_sha256"]:
+        raise ValueError("Changed bound quantity proof bytes")
+    policy = POLICIES["context-v25"]
+    if policy["entries"] != POLICIES["context-v24"]["entries"] or digest(policy["entries"]) != manifest["policy_entries_digest"] or digest(policy["reviewed_memory"]) != manifest["policy_memory_digest"]:
+        raise ValueError("Changed source inputs or corrected memory")
+    base = v24_quantity_contracts()  # Revalidate source files, Unicode17, English13 and older proofs, even warm.
+    cache_key = (str(ROOT.resolve()), profile["manifest_sha256"])
+    if cache_key in _V25_QUANTITY_CACHE: return _V25_QUANTITY_CACHE[cache_key]
+    snapshot = json.loads(dependency_bytes["source_snapshot"])
+    units = {u["key"]: u for u in snapshot["units"]}
+    if len(units) != 214 or snapshot["corpus_digest"] != manifest["corpus_digest"]:
+        raise ValueError("Changed source snapshot")
+    records = {r["record_id"]: r for r in map(json.loads, dependency_bytes["checkpoint"].decode().splitlines())}
+    if len(records) != 333: raise ValueError("Incomplete v24 source checkpoint")
+    for row in records.values():
+        validate_record(row)
+        unit = units[row["key"]]
+        if any(row[k] != unit[k] for k in ("source", "source_hash", "context")) or row["model_input"] != (translation_input(unit, "context-v24") if row["candidate"] == "model" else unit["source"]):
+            raise ValueError("Stale observed source/context")
+    correction_plan = json.loads(dependency_bytes["corrections"])
+    if len(correction_plan["entries"]) != 50 or len(correction_plan.get("family_followups", [])) != 1:
+        raise ValueError("Unexpected primary/family correction scope")
+    correction_list = correction_plan["entries"] + correction_plan["family_followups"]
+    corrections = {e["key"]: e for e in correction_list}
+    if len(corrections) != len(correction_list) or len(corrections) != 51:
+        raise ValueError("Unexpected correction scope")
+    for key, old in POLICIES["context-v24"]["reviewed_memory"].items():
+        for locale, target in old["translations"].items():
+            if policy["reviewed_memory"][key]["translations"][locale] != target:
+                raise ValueError("An earlier memory target was changed")
+    quantities, pairs, dimensions = {}, set(), set()
+    for entry in json.loads(raw)["entries"]:
+        text, english, evidence = entry["text"], entry["source_text"], entry["evidence"]
+        unit = units[evidence["key"]]
+        if any(evidence[k] != unit[k] for k in ("source_hash", "context")) or entry["native_review"] or entry["review_kind"] != "agent":
+            raise ValueError("Unbound proof context/provenance")
+        if hashlib.sha256(text.encode()).hexdigest() != entry["text_sha256"] or hashlib.sha256(english.encode()).hexdigest() != entry["source_text_sha256"]:
+            raise ValueError("Unbound proof text bytes")
+        if evidence["kind"] == "observed":
+            source_field, target_field = evidence["source_field"], evidence["target_field"]
+            if source_field in ("source", "model_input"):
+                if target_field != "translation": raise ValueError("Whole-source proof must bind the whole target")
+            elif re.fullmatch(r"forward_segments\.(?:0|[1-9][0-9]*)\.input", source_field):
+                if target_field != source_field[:-5] + "output": raise ValueError("Source/target proof must use the same observed sentence")
+            else: raise ValueError("A target field cannot impersonate a source proof")
+            row = records[evidence["record_id"]]
+            if any(row[k] != unit[k] for k in ("key", "source_hash", "context")):
+                raise ValueError("Observed proof uses a different source")
+            def field(name):
+                if name in ("source", "model_input", "translation"): return row[name]
+                parts = name.split(".")
+                if len(parts) != 3 or parts[0] != "forward_segments" or parts[2] not in ("input", "output") or row["candidate"] != "model":
+                    raise ValueError("Unexpected observed proof field")
+                index = int(parts[1]); part = row["forward_segments"][index]
+                if part["truncated"] or complete_sentence_parts(row["model_input"])[index][1] != part["input"]:
+                    raise ValueError("Stale/truncated attempted-source proof")
+                return part[parts[2]]
+            if field(evidence["source_field"]) != english or field(evidence["target_field"]) != text:
+                raise ValueError("Stale observed proof text")
+        elif evidence["kind"] == "correction":
+            item = corrections[unit["key"]]; row = records[item["old_record_id"]]
+            if any(item[k] != unit[k] or row[k] != unit[k] for k in ("source", "source_hash", "context")) or item["old_translation_hash"] != hashlib.sha256(row["translation"].encode()).hexdigest() or evidence["old_record_id"] != item["old_record_id"]:
+                raise ValueError("Stale corrected source/context")
+            if item["translation"] != text or english != unit["source"] or reviewed_memory(unit, "zh-CN", "context-v25") != text:
+                raise ValueError("Proof differs from the exact corrected memory")
+        else: raise ValueError("Unexpected proof evidence kind")
+        expected_values = numeric_data_zh_v24(english, "en", base)
+        if expected_values is None: raise ValueError("Unproved English source cannot authorize a target")
+        counter = Counter()
+        for item in entry["quantities"]:
+            value = Decimal(item["value"])
+            if not value.is_finite() or type(item["count"]) is not int or item["count"] <= 0 or item["suffix"] not in ("", "%", "°"):
+                raise ValueError("Invalid reviewed quantity")
+            counter[(value, item["suffix"])] += item["count"]
+        if counter != expected_values[0]: raise ValueError("Proof quantity differs from the bound English source")
+        partial = numeric_data_zh_v22(chinese_audit_text_v22(text))
+        if partial is None or partial[0] - counter:
+            raise ValueError("Known target quantities cannot be invented or changed")
+        missing = counter - partial[0]
+        for (value, suffix), count in missing.items():
+            glyphs = {Decimal(1): "一壹", Decimal(2): "二两兩貳"}.get(value, "")
+            if suffix or not glyphs or sum(text.count(c) for c in glyphs) < count:
+                raise ValueError("Unproved missing scalar quantity")
+        value = tuple(counter.items())
+        if text in quantities and quantities[text] != value: raise ValueError("Conflicting context-sensitive quantity proof")
+        quantities[text] = value; pairs.add((english, text))
+        if entry["dimension_alias_2D"]:
+            if "2D" not in english or "二维" not in text: raise ValueError("Unbound dimension alias")
+            dimensions.add((english, text))
+    result = {"quantities": quantities, "pairs": frozenset(pairs), "dimensions": frozenset(dimensions), "base": base}
+    result = freeze_policy(result)
+    _V25_QUANTITY_CACHE[cache_key] = result
+    return result
+
+
+def numeric_data_zh_v25(text, locale, contracts):
+    if locale == "zh-CN" and text in contracts["quantities"]:
+        return Counter(dict(contracts["quantities"][text])), coordinate_data(text)
+    return numeric_data_zh_v24(text, locale, contracts["base"])
+
+
+def chinese_typed_data_checks_v25(source, target, source_locale, target_locale):
+    result = chinese_typed_data_checks_v24(source, target, source_locale, target_locale)
+    if "zh-CN" not in (source_locale, target_locale) or source_locale not in ("en", "zh-CN") or target_locale not in ("en", "zh-CN"): return result
+    contracts = v25_quantity_contracts()
+    # Newly reviewed Han targets are only usable with their exact bound English
+    # source/input/fragment. Backward checks may read their known quantities;
+    # they never authorize forward text or inherit any review score.
+    if source_locale == "en" and (source, target) not in contracts["pairs"]: return result
+    values = [numeric_data_zh_v25(t, locale, contracts) for t, locale in zip((source, target), (source_locale, target_locale), strict=True)]
+    result["quantities"] = all(value is not None for value in values) and values[0][0] == values[1][0]
+    if (source, target) in contracts["dimensions"] or (target, source) in contracts["dimensions"]:
+        result["dimensions"] = True
+    return result
+
+
+def complete_sentence_evidence_valid_v25(trace, source, raw, source_locale, target_locale):
+    if not segment_evidence_valid(trace, source, raw): return False
+    expected = complete_sentence_parts(source)
+    if not expected or len(trace) != len(expected): return False
+    for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+        if part.get("kind") != "prose" or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+        if part.get("truncated") or not all(policy_typed_data_checks(text, part["output"], source_locale, target_locale, "context-v25").values()): return False
+    return True
+
+
+
+def translate_complete_sentences_v25(texts, model_translate, source_locale, target_locale, traces=None):
+    """v25 independent version: translate complete sentences with exact attempted-source coverage."""
+    plans = [complete_sentence_parts(text) for text in texts]
+    sentences = [part[1] for plan in plans for part in plan]
+    outputs = model_translate(sentences) if sentences else []
+    if len(outputs) != len(sentences): raise ValueError("Model returned an incomplete complete-sentence batch")
+    results, cursor = [], 0
+    for source, plan in zip(texts, plans, strict=True):
+        trace = [{"kind": "prose", "input": text, "output": outputs[cursor+i][0], "truncated": outputs[cursor+i][1],
+            "leading_space": leading, "trailing_space": trailing} for i, (leading, text, trailing) in enumerate(plan)]
+        cursor += len(plan)
+        raw = "".join(part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
+        valid = all(policy_typed_data_checks(source, raw, source_locale, target_locale, "context-v25").values())
+        valid &= complete_sentence_evidence_valid_v25(trace, source, raw, source_locale, target_locale)
+        if traces is not None: traces.append(trace)
+        results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
+    return results
+
+
+
+def cached_prose_v25(callback, owner, source_locale, target_locale):
+    """Exact raw results in RAM for this model instance/run; never approval memory."""
+    state = getattr(owner, "_usefulverse_v25_cache", None)
+    if state is None:
+        state = {"entries": {}, "requests": 0, "model_items": 0, "model_seconds": 0.0, "calls": 0}
+        owner._usefulverse_v25_cache = state
+    def cached(texts):
+        keys = [(source_locale, target_locale, text) for text in texts]
+        missing = list(dict.fromkeys(key for key in keys if key not in state["entries"]))
+        tick = time.monotonic()
+        values = callback([key[2] for key in missing]) if missing else []
+        seconds = time.monotonic() - tick
+        if len(values) != len(missing) or any(not isinstance(value, (tuple, list)) or len(value) != 2 or not isinstance(value[0], str) or type(value[1]) is not bool for value in values):
+            raise ValueError("Incomplete or invalid cached model batch")
+        fresh = {key: (value[0], value[1]) for key, value in zip(missing, values, strict=True)}
+        # Truncated text is returned verbatim but never reused in a later call.
+        state["entries"].update({key: value for key, value in fresh.items() if not value[1]})
+        result = [state["entries"].get(key, fresh.get(key)) for key in keys]
+        state["requests"] += len(texts); state["model_items"] += len(missing)
+        state["model_seconds"] += seconds; state["calls"] += bool(missing)
+        print("UVPILOT_CACHE " + canonical({"policy": "context-v25", "source_locale": source_locale, "target_locale": target_locale,
+            **{key: state[key] for key in ("requests", "model_items", "model_seconds", "calls")},
+            "avoided_items": state["requests"] - state["model_items"], "cached_entries": len(state["entries"]),
+            "request_hashes": [digest(key) for key in keys], "miss_hashes": [digest(key) for key in missing]}), flush=True)
+        return result
+    return cached
+
+
+
+
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
     normalized = unicodedata.normalize("NFKC", translation).strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
@@ -1131,6 +1333,15 @@ def record_flags(row):
             flags["back_" + flag] = not evidence["back"][check]
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v24(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v24(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
+    if row.get("inference_policy") == "context-v25":
+        evidence = typed_record_evidence(row)
+        # Use the same explicit v22 boundary contract in audit and inference;
+        # preserve all historical flags and every damaged-token hard block.
+        for flag, check in (("technical_tokens", "technical_tokens"), ("software_identifiers", "software_identifiers"), ("software_versions", "versions")):
+            flags[flag] = not evidence["forward"][check]
+            flags["back_" + flag] = not evidence["back"][check]
+        flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v25(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
+        flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v25(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
 
 
@@ -1183,6 +1394,56 @@ def audit_complete_model_warning_coverage(review, records):
     if not flagged <= covered:
         raise ValueError("An automatic warning outside the fixed sample was not reviewed")
     return covered
+
+
+def historical_legacy_forward_withdrawal_v25(review, records):
+    """One explicit negative legacy reassessment; never a grade/gate improvement.
+
+    Keep the historical model-only withdrawal mechanism unchanged. This separate
+    audit case binds one rejected v24 legacy review and its original raw bytes.
+    """
+    if review.get("inference_policy") != "context-v24": return []
+    directory = ROOT / "docs/quality/translation-pilot"
+    file = directory / "legacy-withdrawal-v25.json"
+    if not file.exists(): return []
+    case = json.loads(file.read_text())
+    if case.get("review_digest") != digest(review): return []
+    if (case.get("schema_version") != 1 or case.get("kind") != "historical-legacy-perfect-forward-score-withdrawal-v25"
+            or case.get("review_file") != "review-context-v24-full-legacy.json"
+            or case.get("source_checkpoint") != "checkpoints/context-v24/madlad.jsonl"
+            or case.get("automatic_approval") is not False or case.get("approved_locales") != []
+            or case.get("native_review") is not False or case.get("review_kind") != "agent"
+            or not case.get("reason", "").strip() or not case.get("reviewer", "").strip()
+            or not case.get("reviewed_at_utc", "").strip() or len(case.get("entries", [])) != 1):
+        raise ValueError("Invalid finite legacy withdrawal provenance/scope")
+    original_bytes = (directory / case["review_file"]).read_bytes()
+    if hashlib.sha256(original_bytes).hexdigest() != case.get("review_file_sha256") or digest(json.loads(original_bytes)) != digest(review):
+        raise ValueError("Stale original legacy review bytes")
+    if hashlib.sha256((directory / case["source_checkpoint"]).read_bytes()).hexdigest() != case.get("source_checkpoint_sha256"):
+        raise ValueError("Stale legacy source checkpoint bytes")
+    if review.get("approved_locales") or review.get("full_gate", {}).get("zh-CN", {}).get("passed") is not False or any(gate.get("passed") for field in ("reference_gate", "full_gate") for gate in review.get(field, {}).values()):
+        raise ValueError("Legacy withdrawal cannot conceal approval or a passed gate")
+    entry = case["entries"][0]; identity = entry.get("record_id")
+    if identity not in records: raise ValueError("Unbound legacy withdrawal record")
+    row = records[identity]; validate_record(row)
+    if row.get("candidate") != "legacy" or row.get("inference_policy") != "context-v24" or row.get("key") != "voice-changer.fields.faq5a" or row.get("locale") != "zh-CN":
+        raise ValueError("Legacy withdrawal uses a different candidate/key/policy")
+    original = next((r for r in review["rows"] if identity in r["record_ids"]), None)
+    if original is None or entry.get("original_scores") != original["scores"] or set(original["scores"].values()) != {3}:
+        raise ValueError("Legacy withdrawal requires the original perfect rubric")
+    for field in ("key", "locale", "source_hash", "context", "inference_policy"):
+        if entry.get(field) != row.get(field): raise ValueError("Stale legacy source/context")
+    for field in ("translation", "back_translation"):
+        if entry.get(field + "_hash") != hashlib.sha256(row[field].encode()).hexdigest():
+            raise ValueError("Stale legacy withdrawal text hash")
+    if entry.get("scores") != {"meaning": 3, "numbers_negations": 3, "naturalness": 2} or not entry.get("note", "").strip():
+        raise ValueError("Legacy withdrawal is a negative style reassessment only")
+    warning = entry.get("warning", {}).get("known_semantic_errors", {})
+    if (set(entry.get("warning", {})) != {"known_semantic_errors"} or warning.get("disposition") != "forward-defect"
+            or warning.get("blocks_gate") is not True or not warning.get("note", "").strip()
+            or not semantic_issues(row["key"], row["source_hash"], row["translation"], row["locale"])):
+        raise ValueError("Legacy withdrawal needs an exact permanent negative fixture")
+    return [entry]
 
 
 def historical_forward_withdrawals(review, records):
@@ -1396,7 +1657,7 @@ def audit_review_warnings(review, records, check_coverage=True):
                     raise ValueError("Historical addendum cannot replace an existing decision")
                 previous["warnings"].update(entry["warnings"])
             else: reconciliations.append(entry)
-    for withdrawal in historical_forward_withdrawals(review, records):
+    for withdrawal in historical_forward_withdrawals(review, records) + historical_legacy_forward_withdrawal_v25(review, records):
         identity = withdrawal["record_id"]
         # The original remains visible and immutable; only this audit uses the
         # explicit negative reassessment to prevent inheriting its false full marks.
@@ -1563,6 +1824,8 @@ def run(args):
                 return translate_unmasked_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "whole-unit-typed-data-v1":
                 return translate_whole_units(texts, prose_translate, source_locale, target_locale, traces)
+            if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v6":
+                return translate_complete_sentences_v25(texts, cached_prose_v25(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v5":
                 return translate_complete_sentences_v24(texts, cached_prose_v24(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v4":

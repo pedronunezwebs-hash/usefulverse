@@ -42,5 +42,49 @@
         }
       }
     ]
+  },
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v24-full.json",
+    "review_file_sha256": "a7dab2f1a436aea1b89d71e216c30fd4e14209d2874adc5b327723ff9a168024",
+    "review_digest": "c3b05a5af15d9d69799d23b7f3529ec9b3abe6a06b81b2616cb102746502f925",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-25T01:19:15.869394+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta.",
+    "entries": [
+      {
+        "record_id": "873974b3454398677915b021840b1c144c9559a0a53ff7c133bbc206b5908568",
+        "key": "voice-changer.fields.faq5a",
+        "locale": "zh-CN",
+        "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+        "context": "fields.faq5a",
+        "inference_policy": "context-v24",
+        "translation_hash": "e2a64ebfdbe1a485fab8524ff087b1c727b6434d9287097025f774292b634f31",
+        "back_translation_hash": "88ca0b82ba12165e82edc7a42ee1f725d007ed6981eeb9e3326b41881829e2ea",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta."
+          }
+        }
+      }
+    ]
   }
 ]

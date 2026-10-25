@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-25T01:28:51.637017+00:00",
+  "primary_sources": [
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2016/CHS/AutoCAD-DXF/files/GUID-A85E8E67-27CD-4C59-BE61-4DC9FADBE74A.htm",
+      "use": "Chinese CAD unit names for mil/angstrom/nanometre/deca/hectometre/parsec;9密耳,11埃,12纳米,15十米,16百米,20秒差距; drawing bounds is 图形范围."
+    },
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2021/CHS/AutoCAD-DXF/files/GUID-748FC305-F3F2-4F74-825A-61F04D757A50.htm",
+      "use": "Polyline term 多段线; can be open, do not replace with polygon."
+    },
+    {
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+      "use": "Mil length is0.001inch=0.0254mm, not millimetre."
+    },
+    {
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "use": "Bounded incremental compute: public standard runners; no paid APIs/large runners/artifacts/persistent model storage."
+    }
+  ],
+  "native_review": false,
+  "approved_locales": []
+}

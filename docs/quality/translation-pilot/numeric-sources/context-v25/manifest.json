@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "zh-CN-bound-lexical-v3",
+  "base_policy": "context-v24",
+  "base_manifest": "docs/quality/translation-pilot/numeric-sources/context-v24/manifest.json",
+  "base_manifest_sha256": "b76f2686d74d97ebece3926daf942dd0716c623fa49e72f19c660f87492bd27d",
+  "checkpoint": "docs/quality/translation-pilot/checkpoints/context-v24/madlad.jsonl",
+  "checkpoint_sha256": "5bb6591263a49a2946f14176555f50bda2d3aeb2af610e3d32b96bdb6001077c",
+  "corrections": "docs/quality/translation-pilot/correction-v25-plan.json",
+  "corrections_sha256": "a0daa88d9341d20ca1eb43e2a81f402ae92166d62a325c7520e579437407b94a",
+  "contracts": "bound-contracts.json",
+  "contracts_sha256": "c0f9e45859aaff781abd9a1f0f790f56d36c306ad32aa170f47c09f55dff714b",
+  "policy_entries_digest": "72549ddce082f6bab3d24d6880286f59bd2985ac7c2e673da8c44bbcfacd1dba",
+  "policy_memory_digest": "d17cbf9b88dcd96e978c9e767dd45d98d6507bb4d6cc7e9e0b3b233c02d0bb10",
+  "source_snapshot": "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json",
+  "source_snapshot_sha256": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "quantity_gaps": 51,
+  "dimension_gaps": 2
+}

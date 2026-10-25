@@ -1,0 +1,51 @@
+{
+  "source_units": 214,
+  "source_and_complete_input_and_sentence_checks": 1004,
+  "forward_v24_callbacks_replayed": 214,
+  "primary_corrections": 50,
+  "same_source_family_followup": 1,
+  "previous_memory_targets_preserved": 274,
+  "memory_targets_now": 325,
+  "observed_quantity_gaps_bound": 51,
+  "observed_dimension_spellings_bound": 2,
+  "finite_proof_entries": 226,
+  "distinct_target_proof_texts": 141,
+  "red_memory_tests": 2,
+  "red_memory_failures": 51,
+  "red_numeric_tests": 2,
+  "red_numeric_failures": 53,
+  "red_family_tests": 1,
+  "red_family_failures": 1,
+  "red_rehashed_source_field_tests": 1,
+  "red_rehashed_source_field_failures": 1,
+  "first_local_suite": {
+    "total": 225,
+    "failures": 3,
+    "skips": 2,
+    "seconds": 113.469,
+    "log_sha256": "67450f69a71a622f99f5d91bf5a19b5c8dc1789560b80f03dfb5c09474296b34",
+    "cause": "Test wrongly asked the Chinese policy to prove3 historical Indonesian numeric contracts; test now requires unchanged v24 behavior and explicit v21 Indonesian proof. No production parser or ID translation changed."
+  },
+  "native_review": false,
+  "approved_locales": [],
+  "local225_after_scope_fix": {
+    "result": "OK",
+    "total": 225,
+    "passed": 223,
+    "skips": 2,
+    "seconds": 112.352,
+    "log_sha256": "e647be62e0004077e1f44e2bb4c510d47a92637bf1dd6474a411808fc8c6583b"
+  },
+  "local226_failed_before_legacy_audit_fix": {
+    "errors": 2,
+    "seconds": 92.427,
+    "log_sha256": "8385cab4c3a105641c27623237a00a6265cd6d57230dd3004cbb54c744d7e5ea",
+    "cause": "Existing withdrawal audit deliberately allowed only model records. Preserve that function and add one separately bound non-approving legacy negative case."
+  },
+  "latest_focused_result": {
+    "tests": 12,
+    "result": "OK",
+    "seconds": 14.385,
+    "log_sha256": "e3bc9a11e5576235a0edc7744bd4c01fc1d8d69ac4cefd08dc48138ed480e758"
+  }
+}

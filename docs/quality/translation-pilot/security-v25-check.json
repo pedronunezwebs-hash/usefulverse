@@ -1,0 +1,16 @@
+{
+  "at_utc": "2026-10-25T01:24:42.176929+00:00",
+  "actionlint_version": "1.7.12",
+  "gitleaks_version": "8.30.1",
+  "official_release_checksums_verified": true,
+  "actionlint_passed": true,
+  "secret_findings": 0,
+  "exact_external_ignores": [
+    "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+    "docs/quality/translation-pilot/full-sample-v24-plan.json:generic-api-key:511"
+  ],
+  "ignore_proof": "Actual Git workflow blob bytes/SHA verified online and public fixed88 key digest recomputed; no credentials or broad repository ignores.",
+  "billing_global_audit": false,
+  "bounded_cost_scope": "Public standard ubuntu-latest only, no paid APIs, Cloudflare, Codespaces, Packages/LFS, artifacts or persistent model/cache storage. Package has no automatic cache selectors. No deploy.",
+  "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions"
+}

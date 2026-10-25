@@ -74,7 +74,24 @@ def stable_ast(value):
  if isinstance(value,list):return [stable_ast(child) for child in value]
  return value
 
+def strip_v25_dispatch(node):
+ """Remove only the exact opt-in v25 route; preserve every historical field."""
+ node=copy.deepcopy(node)
+ expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v6":\n return translate_complete_sentences_v25(texts, cached_prose_v25(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)').body[0]
+ removed=0
+ for parent in ast.walk(node):
+  for field,children in ast.iter_fields(parent):
+   if not isinstance(children,list):continue
+   for index,child in reversed(list(enumerate(children))):
+    if isinstance(child,ast.If) and stable_ast(child.test)==stable_ast(expected.test):
+     if stable_ast(child)!=stable_ast(expected):raise AssertionError('Changed v25 dispatch')
+     del children[index];removed+=1
+ if removed!=1:raise AssertionError('Missing or duplicate v25 dispatch')
+ return node
+
+
 def strip_v24_dispatch(node):
+ node=strip_v25_dispatch(node)
  """Remove only the exact opt-in v24 route; preserve every historical field."""
  node=copy.deepcopy(node)
  expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v5":\n return translate_complete_sentences_v24(texts, cached_prose_v24(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)').body[0]

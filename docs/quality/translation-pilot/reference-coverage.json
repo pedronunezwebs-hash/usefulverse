@@ -326,7 +326,7 @@
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
   "total_records_all_policies": 14710,
-  "semantic_regressions": 1120,
+  "semantic_regressions": 1122,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -569,5 +569,6 @@
     "current_full_not_passed": [
       "zh-CN"
     ]
-  }
+  },
+  "v25_historical_withdrawal_note": "Two explicit naturalness reassessments for duplicate v24 model/legacy FAQ; original review bytes/gates/score inventory preserved. See review-withdrawal-addenda.json; no locale approval."
 }

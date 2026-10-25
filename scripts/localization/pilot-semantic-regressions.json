@@ -12218,5 +12218,29 @@
     "direction": "back",
     "review_policy": "context-v24",
     "record_id": "affacf7e132a389c86a4cecc4857f83be13d1d8eac7abced0aa61f029ba344f8"
+  },
+  {
+    "locale": "zh-CN",
+    "key": "voice-changer.fields.faq5a",
+    "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+    "translation": "音频渲染使用您的设备内存和处理器。 短剪辑和计算机通常比手机上的长剪辑更加流畅。",
+    "issue": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta.",
+    "direction": "forward",
+    "observed_candidate": "model",
+    "run_id": "40114620348",
+    "review_policy": "context-v25",
+    "record_id": "873974b3454398677915b021840b1c144c9559a0a53ff7c133bbc206b5908568"
+  },
+  {
+    "locale": "zh-CN",
+    "key": "voice-changer.fields.faq5a",
+    "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+    "translation": "音频渲染使用您的设备内存和处理器。短剪辑和计算机通常比长剪辑在手机上运行更流畅。",
+    "issue": "Relectura v25 de la familia duplicada: la FAQ interna legacy tiene la misma fuente/ida que voice-changer.faq.4.a, cuya naturalidad ya era2. Se retira su nota perfecta inconsistente sin cambiar los bytes de la revisión ni su gate rechazado; no se copia este defecto a la memoria nueva.",
+    "direction": "forward",
+    "observed_candidate": "legacy",
+    "run_id": "40114620348",
+    "review_policy": "context-v25",
+    "record_id": "72c749f0c0258fc67ec37639d74df149dadfe52253891b3d5357694a78c0c247"
   }
 ]
