@@ -1,0 +1,146 @@
+{
+  "source_commit": "69cf7a5c27010d1088e132b5fedcc04b9c64f0df",
+  "main_handoff_commit": "e3b304014cac223147070448937c2670dd70e713",
+  "run_id": 40167955726,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40167955726",
+  "complete": true,
+  "status": "completed",
+  "conclusion": "cancelled",
+  "job_conclusions": [
+    {
+      "name": "validate-and-deploy",
+      "conclusion": "cancelled"
+    },
+    {
+      "name": "translation-pilot",
+      "conclusion": "skipped"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-10-25T06:06:55Z",
+      "completed_at": "2026-10-25T06:06:56Z"
+    },
+    {
+      "name": "Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-10-25T06:06:56Z",
+      "completed_at": "2026-10-25T06:07:03Z"
+    },
+    {
+      "name": "Set up Node.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-10-25T06:07:03Z",
+      "completed_at": "2026-10-25T06:07:03Z"
+    },
+    {
+      "name": "Install dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-10-25T06:07:03Z",
+      "completed_at": "2026-10-25T06:07:14Z"
+    },
+    {
+      "name": "Run tests",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-10-25T06:07:14Z",
+      "completed_at": "2026-10-25T06:15:16Z"
+    },
+    {
+      "name": "Build and validate all pages",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-10-25T06:15:16Z",
+      "completed_at": "2026-10-25T06:16:38Z"
+    },
+    {
+      "name": "Require linguistic approval for expanded locales",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-10-25T06:16:38Z",
+      "completed_at": "2026-10-25T06:16:38Z"
+    },
+    {
+      "name": "Build and validate the isolated tools hub",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "number": 8,
+      "started_at": "2026-10-25T06:16:38Z",
+      "completed_at": "2026-10-25T06:17:07Z"
+    },
+    {
+      "name": "Validate the 300 staged tools without publishing",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 9,
+      "started_at": "2026-10-25T06:17:07Z",
+      "completed_at": "2026-10-25T06:17:07Z"
+    },
+    {
+      "name": "Publish to the existing Cloudflare Pages project",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 10,
+      "started_at": "2026-10-25T06:17:07Z",
+      "completed_at": "2026-10-25T06:17:07Z"
+    },
+    {
+      "name": "Publish the separate static tools hub",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 11,
+      "started_at": "2026-10-25T06:17:07Z",
+      "completed_at": "2026-10-25T06:17:07Z"
+    },
+    {
+      "name": "Post Set up Node.js",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 21,
+      "started_at": "2026-10-25T06:17:07Z",
+      "completed_at": "2026-10-25T06:17:07Z"
+    },
+    {
+      "name": "Post Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 22,
+      "started_at": "2026-10-25T06:17:07Z",
+      "completed_at": "2026-10-25T06:17:08Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 23,
+      "started_at": "2026-10-25T06:17:08Z",
+      "completed_at": "2026-10-25T06:17:08Z"
+    }
+  ],
+  "log_sha256": "c8a418ac6aafc061885557ef5b6532d0cb3f824ddf98cd185e3fd8b2c9499c78",
+  "artifacts": 0,
+  "reason": "Cancellation during hub after configured10-minute validation window;233 Python and3045 Node plus main build/20-locale gate succeeded. Increase only validate-and-deploy timeout to15; inference functions/policy unchanged.",
+  "configured_minutes": 10,
+  "observed_python_tests": 233,
+  "observed_node_tests": 3045,
+  "model_job": "skipped",
+  "next_validation_limit_minutes": 15,
+  "annotation_messages": [
+    "The job has exceeded the maximum execution time of 10m0s",
+    "The operation was canceled.",
+    "\"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\""
+  ]
+}
