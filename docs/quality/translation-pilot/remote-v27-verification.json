@@ -2,7 +2,7 @@
   "at_utc": "2026-10-25T17:27:58.897923+00:00",
   "feature_head": "72d3107a389df081a4b84dbfd88d57f38a42d060",
   "main_head": "fcb63bf3d0c01b9f5e499cf5fe4ada2758267bb3",
-  "local_versioned_files_equal_remote_tree": 7755,
+  "local_versioned_files_equal_remote_tree": 7756,
   "six_shared_documents_equal": true,
   "main_changed_only_handoff_documents": [
     "docs/quality/ESTADO.md",
@@ -71,5 +71,13 @@
   "forward_model_records": 0,
   "pr_open_draft": true,
   "root_basename": ".usefulverse-v27-20261025",
-  "cleanup_completed": false
+  "cleanup_completed": true,
+  "feature_before_removal": "c85500f071c686b6a7208870fc2ccaa63890ce97",
+  "main_before_removal": "fcb63bf3d0c01b9f5e499cf5fe4ada2758267bb3",
+  "root_bytes_before_removal": 563465415,
+  "free_bytes_before_removal": 43642290176,
+  "own_cli_log_zip_residues": 0,
+  "removed_at_utc": "2026-10-25T17:28:48.091414+00:00",
+  "root_absent_verified": true,
+  "free_bytes_after_removal": 44227715072
 }
