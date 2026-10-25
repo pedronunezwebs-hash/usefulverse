@@ -1,0 +1,75 @@
+{
+  "at_utc": "2026-10-25T17:27:58.897923+00:00",
+  "feature_head": "72d3107a389df081a4b84dbfd88d57f38a42d060",
+  "main_head": "fcb63bf3d0c01b9f5e499cf5fe4ada2758267bb3",
+  "local_versioned_files_equal_remote_tree": 7755,
+  "six_shared_documents_equal": true,
+  "main_changed_only_handoff_documents": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-25-piloto-v27.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md"
+  ],
+  "src_public_unchanged": 6851,
+  "original_pilot_files": 349,
+  "original_pilot_changed_only": [
+    "docs/quality/translation-pilot/automatic-summary.json",
+    "docs/quality/translation-pilot/context-run-evidence.json",
+    "docs/quality/translation-pilot/reference-coverage.json",
+    "docs/quality/translation-pilot/review-metrics.json",
+    "docs/quality/translation-pilot/review-warning-addenda.json"
+  ],
+  "original_fixture_prefix": 1146,
+  "original_metric_groups": 118,
+  "original_warning_addenda_prefix_preserved": 9,
+  "new_warning_addenda": 2,
+  "original_withdrawals_unchanged": true,
+  "progress_rows": 1001,
+  "progress_notes_only": [
+    {
+      "slug": "dxf-drawing-viewer",
+      "columns": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "shikaku-puzzle",
+      "columns": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "voice-changer",
+      "columns": [
+        "nota"
+      ]
+    }
+  ],
+  "lfs_pointers": 0,
+  "ci_run": 40215319807,
+  "ci_code_data_reviews_fixtures_unchanged": true,
+  "post_ci_changed_only_verification_metadata_and_handoff_docs": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-25-piloto-v27.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/final-ci-v27.json",
+    "docs/quality/translation-pilot/production-v27-verification.json",
+    "docs/quality/translation-pilot/security-v27-check.json"
+  ],
+  "successful_runs": [
+    40196684338,
+    40198168513,
+    40215319807
+  ],
+  "artifacts": 0,
+  "known_sample_memory_only": true,
+  "forward_model_records": 0,
+  "pr_open_draft": true,
+  "root_basename": ".usefulverse-v27-20261025",
+  "cleanup_completed": false
+}
