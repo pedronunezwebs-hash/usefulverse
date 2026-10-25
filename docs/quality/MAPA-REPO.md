@@ -84,3 +84,6 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - Un build completo regenera ~25.000 páginas: en local, usar builds parciales.
 
 En la rama del PR #136, validate-and-deploy dispone ahora de15 minutos por el timeout real de la suite ampliada; inference/piloto y condiciones de publicación no cambian. Main recibe solo documentación con [skip ci].
+
+
+Retirada efectiva v25: 2026-10-25T06:35:20.349228+00:00; raíz propia .usefulverse-v25-cierre-20261025 eliminada directamente y comprobada ausente antes de LIBRE. Disco libre 40.86GiB,0 ZIP propios externos restantes. Originales versionados recuperables por árbol Git; código/datos/revisiones/fixtures iguales a CI final40168659587. Seis documentos sincronizados. Evidencia: docs/quality/translation-pilot/remote-v25-verification.json y cli-cache-v25-cleanup.json.

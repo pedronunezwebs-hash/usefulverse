@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-10-25T06:35:20.349228+00:00",
+  "root_basename": ".usefulverse-v25-cierre-20261025",
+  "root_absent_verified": true,
+  "direct_removal_without_trash": true,
+  "only_owned_root_removed": true,
+  "owned_run_ids": [
+    40151851906,
+    40152812589,
+    40153243412,
+    40167955726,
+    40168659587
+  ],
+  "removed_log_zips": [
+    {
+      "filename": "run-log-40167955726-1792908412.zip",
+      "bytes": 241218
+    },
+    {
+      "filename": "run-log-40168659587-1792909144.zip",
+      "bytes": 242181
+    }
+  ],
+  "own_cli_log_zip_residues": 0,
+  "free_bytes_after": 43874971648,
+  "all_versioned_originals_verified_online_before_removal": true
+}
