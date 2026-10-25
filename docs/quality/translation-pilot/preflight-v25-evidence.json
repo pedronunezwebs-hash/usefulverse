@@ -47,5 +47,21 @@
     "result": "OK",
     "seconds": 14.385,
     "log_sha256": "e3bc9a11e5576235a0edc7744bd4c01fc1d8d69ac4cefd08dc48138ed480e758"
-  }
+  },
+  "final_local_suite": {
+    "result": "OK",
+    "total": 228,
+    "passed": 226,
+    "dependency_skips": 2,
+    "seconds": 112.759,
+    "log_sha256": "4f145b18ac6eb0f640cc9ded67c2f8e5bc1dc2ce10c87fdcf5d04156a1bfc4e6"
+  },
+  "legacy_audit_fixture_fix": {
+    "previous_errors": 4,
+    "previous_log_sha256": "c86b0082dd55e540f83ebdbae374ff77ceb25288b2381b6eabf47e129673e804",
+    "cause": "Negative-test temporary ROOT omitted pinned manifests required by validate_record; copied full dependency skeleton instead of mocking or bypassing validation.",
+    "focused_green_log_sha256": "b25c56c1faf2125d6dcb875dae2000b95982e7302f41ea80e94867ffb89d5abc"
+  },
+  "permanent_fixtures_now": 1122,
+  "explicit_historical_withdrawals_added": 2
 }
