@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-24 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24T23:45:35.708244+07:00 · v24: contrato completo zh-CN y preflight214
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-24T23:45:35.708244+07:00 · v24: recuperación remota tras desaparición del temporal; cierre/revisión completa pendiente
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
