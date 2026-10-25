@@ -36,7 +36,13 @@
     }
   },
   "focused_test_total": 19,
-  "full_suite_complete": false,
+  "full_suite_complete": true,
   "local_model_inference": false,
-  "approved_locales": []
+  "approved_locales": [],
+  "python_tests": 249,
+  "python_skipped": 2,
+  "python_test_seconds": 272.872,
+  "python_log_sha256": "7f186cf8c3ec3233cb3b52aa4398d8ce20258a356ae5c1b4989880dc1a42b1f2",
+  "node_corpus_tests": 2,
+  "node_log_sha256": "96ca03de2525e09d8db0dec4da28ae747e0dc36815f42970917bdf0a3d15764f"
 }
