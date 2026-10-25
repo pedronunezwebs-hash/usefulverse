@@ -399,5 +399,13 @@
     "unproved_data_rows": 0,
     "reference_review_sha256": "38f33625588ad65438056f22f98525c1f2aef54c9530d2fe3d051f62095ab858",
     "no_locale_approval": true
+  },
+  "preinference_failed_attempt": {
+    "run_id": 40152812589,
+    "inference_executed": false,
+    "corrected_only_aggregate_metadata": true,
+    "local_full_suite": 230,
+    "local_skips": 2,
+    "log_sha256": "3744dcd50c93546904e00fb55eb262b6773150f7300f2160d94bbc7052cfe9f6"
   }
 }

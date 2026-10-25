@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-25T00:49:40.280320+00:00",
+  "at_utc": "2026-10-25T02:04:58.995341+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -1389,6 +1389,37 @@
         "scope": "full",
         "total_seconds": 421.774571721
       }
+    },
+    {
+      "inference_policy": "context-v25",
+      "run_id": 40151851906,
+      "job_id": 121044845475,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 89.88914405599996,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3719624,
+        "scope": "references",
+        "total_seconds": 173.85266004699997
+      }
     }
   ],
   "checkpoints": [
@@ -1478,6 +1509,11 @@
       "sha256": "5bb6591263a49a2946f14176555f50bda2d3aeb2af610e3d32b96bdb6001077c"
     },
     {
+      "path": "checkpoints/context-v25/madlad.jsonl",
+      "records": 67,
+      "sha256": "c0c6b510f50b805423e760779a1fa6225c05a903943ab650afb517f374ea2535"
+    },
+    {
       "path": "checkpoints/context-v3/madlad.jsonl",
       "records": 160,
       "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
@@ -1523,7 +1559,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 14710,
+  "total_records": 14777,
   "cancelled_runs": [
     {
       "run_id": 39484416039,
@@ -1609,6 +1645,18 @@
       "new_records": 0,
       "cleanup": "success",
       "reason": "Host Unicode Numeric_Value mismatch for 两/兩 caught by two negative tests; pinned Unicode17 table plus permanent simulation tests before retry. Original source and failed run receipt retained."
+    },
+    {
+      "inference_policy": "context-v25",
+      "run_id": 40152812589,
+      "job_id": 121047714724,
+      "source_commit": "42be2fa0b790dea43e9b048e21a9938b1de5eca7",
+      "conclusion": "failure",
+      "emitted_records": 0,
+      "converted_model_records": 0,
+      "reason": "230 tests detected stale checkpoint inventory and automatic-summary after adding the 67 reference rows. No inference/model conversion executed. Fix metadata and run full green suite before new dispatch.",
+      "cleanup_step": "success",
+      "log_sha256": "a906b28e16ba5eab0f692f846e359101f1ac62d20c4040b4e1b85e9305d2d2dc"
     }
   ]
 }
