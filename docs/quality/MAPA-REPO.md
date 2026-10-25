@@ -1,5 +1,9 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
+V27 ·25-oct-2026: V27: zh-CN muestra conocida con memoria revisada pasa referencias360/360 y completo1566/1566 (88fijas792/792).477destinos/214chinos,0generación nueva de ida. Legacy778/828 y25negativas.15.443registros/6.950evaluaciones con repeticiones/1151fixtures.0idiomas aprobados. [Informe](lotes/2026-10-25-piloto-v27.md). Código/datos solo en PR #136; main solo seis documentos de relevo.
+
+Referencias y completo ejecutados una sola vez, crudos respaldados antes de lectura; INT8 idéntico, limpieza correcta/0artefactos/site omitido.275tests reales antes del completo. Cinco variantes de vuelta añadidas tras tests rojos→verdes, sin rebajar idas de memoria ni mutar originales; dos diagnósticos históricos añadidos sin cambiar grados/gates. Auditoría global actual/histórica correcta (1test/282,684s); CI final276 y GET/XML final pendientes; limpieza efectiva pendiente.
+
 V26 ·25-oct-2026: V26: nueve correcciones/pruebas finitas y334 memorias; zh-CN referencias360/360 lingüístico, gate bloqueado por1cantidad sin prueba en shikaku.example; completo NO ejecutado. Legacy223/243 y8negativas.15.110 registros/6.617 evaluaciones con repeticiones/1146 fixtures.0 idiomas aprobados. [Informe](lotes/2026-10-25-piloto-v26.md). Código/datos solo en PR #136; main solo seis documentos de relevo.
 
 [CI final40192256469](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40192256469) correcta sobre48a1694:3.045Node/255Python (253+2omisiones), builds principal/hub/20locales existentes y preview10.800páginas+homes noindex/sitemap0indexables. Preview36locales, no certifica37. Modelo/publicaciones omitidos/0artefactos. GET/XML25.625→25.625URLs,estados/bytes/hashes idénticos;3soft404pendientes,0deploys. Respaldo remoto y retirada efectiva verificados después de eliminar realmente el clon/QA/cachés propios.
@@ -87,7 +91,7 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - `node_modules` + `dist` + `dist-growth600` + modelos de traducción ocupan GB: en el Mac, solo en carpetas temporales que se borran al terminar.
 - Un build completo regenera ~25.000 páginas: en local, usar builds parciales.
 
-En la rama del PR #136, validate-and-deploy dispone ahora de15 minutos por el timeout real de la suite ampliada; inference/piloto y condiciones de publicación no cambian. Main recibe solo documentación con [skip ci].
+En la rama del PR #136, validate-and-deploy dispone de30 minutos en v27: el precheck real del modelo tardó643,418s antes de ampliar a333registros revisados. Mismo runner público estándar; inferencia/piloto90min y condiciones de publicación intactos. Main recibe solo los seis documentos de relevo con [skip ci].
 
 
 Retirada efectiva v25: 2026-10-25T06:35:20.349228+00:00; raíz propia .usefulverse-v25-cierre-20261025 eliminada directamente y comprobada ausente antes de LIBRE. Disco libre 40.86GiB,0 ZIP propios externos restantes. Originales versionados recuperables por árbol Git; código/datos/revisiones/fixtures iguales a CI final40168659587. Seis documentos sincronizados. Evidencia: docs/quality/translation-pilot/remote-v25-verification.json y cli-cache-v25-cleanup.json.
