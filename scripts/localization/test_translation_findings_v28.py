@@ -29,6 +29,29 @@ class FindingsV28Test(unittest.TestCase):
                     for field in ['key', 'source_hash', 'locale']: self.assertEqual(case[field], row[field])
                     self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], case['translation'], row['locale'], case['direction']))
 
+    def test_next_plan_only_reuses_exact_positively_reviewed_source_text(self):
+        plan = json.loads((DATA / 'next-v29-bn-plan.json').read_text())
+        records = {r['record_id']: r for r in map(json.loads, (DATA / 'checkpoints/context-v28/madlad.jsonl').read_text().splitlines())}
+        self.assertFalse(plan['imported']); self.assertEqual(plan['approved_locales'], [])
+        self.assertEqual(plan['source_checkpoint_sha256'], hashlib.sha256((DATA / 'checkpoints/context-v28/madlad.jsonl').read_bytes()).hexdigest())
+        selected = set()
+        for choice in plan['best_exact_source_candidates']:
+            self.assertNotIn(choice['key'], selected); selected.add(choice['key'])
+            self.assertFalse(choice['imported']); self.assertFalse(choice['native_review'])
+            raw = records[choice['source_record_id']]
+            for field in ['key', 'locale', 'source_hash', 'translation', 'candidate']: self.assertEqual(choice[field], raw[field])
+            path = DATA / choice['source_review']
+            self.assertEqual(choice['source_review_sha256'], hashlib.sha256(path.read_bytes()).hexdigest())
+            judgment = next(r for r in json.loads(path.read_text())['rows'] if choice['source_record_id'] in r['record_ids'])
+            self.assertEqual(set(judgment['scores'].values()), {3})
+            self.assertEqual(choice['data_contract_unproved'], judgment['data_contract_unproved'])
+        pending = set(plan['still_requires_new_text_after_legacy_comparison'])
+        self.assertFalse(selected & pending)
+        reference_ids = set(json.loads((DATA / 'reference-v28-gate.json').read_text())['reference_record_ids'])
+        expected = {r['key'] for identity, r in records.items() if r['candidate'] == 'model' and identity not in reference_ids}
+        self.assertEqual(selected | pending, expected)
+        self.assertEqual(len(expected), 174)
+
     def test_current_reviews_have_complete_warning_coverage_and_no_release_approval(self):
         records = {r['record_id']: r for r in map(json.loads, (DATA / 'checkpoints/context-v28/madlad.jsonl').read_text().splitlines())}
         for name in ['references', 'legacy', 'full', 'full-legacy']:

@@ -27,5 +27,23 @@
     "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
     "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf"
   },
-  "note": "Every observed exact full error was registered in findings before its semantic fixture. Grades of forward text and independent back errors are separate. Frozen measured inference/runtime/policy/imports were not changed."
+  "note": "Every observed exact full error was registered in findings before its semantic fixture. Grades of forward text and independent back errors are separate. Frozen measured inference/runtime/policy/imports were not changed.",
+  "focused_green": {
+    "tests": 37,
+    "seconds": 146.767,
+    "log_sha256": "ae426e09bda1a6925b15d1d071fbdab8c3010a3eee0b65aa325d406466f346bc"
+  },
+  "best_source_green": {
+    "tests": 1,
+    "seconds": 0.154,
+    "log_sha256": "d10df881b011b8e607710ab2f89708a67f0fdeccde27851f98b50bf7049f0bb3"
+  },
+  "unique_focused_tests": 38,
+  "suite_tests_expected": 327,
+  "gitleaks": {
+    "version": "8.30.1",
+    "active_findings": 0,
+    "unchanged_public_metadata_exclusions": 2,
+    "report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
 }

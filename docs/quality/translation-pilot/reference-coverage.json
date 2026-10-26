@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-26T01:19:30.191649+00:00",
+  "at_utc": "2026-10-26T05:21:15.010305+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 7340,
+  "agent_reviewed_translations": 7606,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 7340,
+  "agent_reviewed_evaluations": 7606,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -326,8 +326,8 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 15510,
-  "semantic_regressions": 1339,
+  "total_records_all_policies": 15776,
+  "semantic_regressions": 1403,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -621,5 +621,26 @@
     "minimum_style_budget_met": true,
     "reason": "Known40 reviewed-memory references360/360 with all forward data proved;67 S/F/B read and every warning reconciled. No native/blind/unseen-text/generic-engine/release approval."
   },
-  "bn_reference_policy": "context-v28"
+  "bn_reference_policy": "context-v28",
+  "latest_bn_full_gate": {
+    "rows": 174,
+    "sample": 174,
+    "points": 1460,
+    "maximum": 1566,
+    "button_errors": 1,
+    "number_negation_errors": 18,
+    "major_rows": 12,
+    "minor_rows": 29,
+    "unproved_data_rows": 23,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Rejected: observed forward defects and unproved forward data remain. All rows read; no release/native/blind/general-engine approval.",
+    "fixed_sample_rows": 88,
+    "fixed_sample_points": 696,
+    "fixed_sample_maximum": 792,
+    "fixed_sample_passed": false,
+    "global_no_open_defects_requirement": "Every observed forward defect or unproved forward datum blocks, including outside fixed88.",
+    "known_memory_rows": 0,
+    "forward_model_rows": 174
+  }
 }
