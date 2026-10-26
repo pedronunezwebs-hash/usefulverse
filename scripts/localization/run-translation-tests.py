@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Run the complete discovered translation suite on at most four local CPUs.
 
-No test selection or retry: original modules stay together, every case ID is
+No test selection or retry: module fixtures stay together, every case ID is
 accounted for, and a worker crash, missing case, failure or error fails the job.
 """
 import argparse
+import ast
 from collections import Counter, defaultdict
 import hashlib
 import io
@@ -76,6 +77,30 @@ def worker(args):
     return 0 if result.wasSuccessful() else 1
 
 
+def partition(expected, jobs, test_dir):
+    """Keep module fixtures; split only the audited stateless generic module."""
+    path = Path(test_dir) / 'test_translation_pilot.py'
+    can_split = False
+    if path.exists():
+        tree = ast.parse(path.read_text())
+        fixtures = {'setUpModule', 'tearDownModule', 'setUpClass', 'tearDownClass',
+                    'setUp', 'tearDown', 'asyncSetUp', 'asyncTearDown'}
+        classes = [node for node in tree.body if isinstance(node, ast.ClassDef)]
+        can_split = bool(classes) and all(
+            not node.decorator_list and not node.keywords and len(node.bases) == 1 and ast.unparse(node.bases[0]) == 'unittest.TestCase'
+            for node in classes) and not any(
+                isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name in fixtures
+                for node in ast.walk(tree))
+    groups = defaultdict(list)
+    for case in expected:
+        module = case.split('.', 1)[0]
+        groups[case if can_split and module == 'test_translation_pilot' else module].append(case)
+    buckets = [[] for _ in range(min(jobs, len(groups)))]
+    for group in sorted(groups, key=lambda name: (-len(groups[name]), name)):
+        min(buckets, key=len).extend(groups[group])
+    return [bucket for bucket in buckets if bucket]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--jobs', type=int, default=4)
@@ -103,14 +128,8 @@ def main():
         baseline = json.loads((HERE.parent.parent / 'docs/quality/translation-pilot/parallel-test-inventory-v29.json').read_text())
         if baseline['serial_tests'] != len(baseline['ids']) or not set(baseline['ids']) <= set(expected):
             raise ValueError('A case from the passing serial suite is missing')
-    # Keep module/class fixtures and intra-module ordering together. Balance
-    # deterministic module groups by case count; do not omit or retry cases.
-    modules = defaultdict(list)
-    for case in expected:
-        modules[case.split('.', 1)[0]].append(case)
-    buckets = [[] for _ in range(min(args.jobs, len(modules)))]
-    for name in sorted(modules, key=lambda n: (-len(modules[n]), n)):
-        min(buckets, key=len).extend(modules[name])
+    # All case IDs are retained; only the generic fixture-free cases split.
+    buckets = partition(expected, args.jobs, args.test_dir)
     rows, codes = [], []
     parent = args.scratch_parent or os.environ.get('RUNNER_TEMP') or os.environ.get('TMPDIR')
     with tempfile.TemporaryDirectory(prefix='usefulverse-tests-', dir=parent) as temp:
