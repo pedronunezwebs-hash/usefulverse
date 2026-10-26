@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-26T05:21:15.010305+00:00",
+  "at_utc": "2026-10-26T07:59:23.606441+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 7606,
+  "agent_reviewed_translations": 7939,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,18 +315,19 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 7606,
+  "agent_reviewed_evaluations": 7939,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO",
     "ko",
     "id",
-    "zh-CN"
+    "zh-CN",
+    "bn"
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 15776,
+  "total_records_all_policies": 16109,
   "semantic_regressions": 1403,
   "contextual_reference_gate": {
     "es": {
@@ -392,6 +393,20 @@
       "passed": true,
       "minimum_style_budget_met": true,
       "reason": "Known40 source-bound reviewed-memory references360/360; direct current S/F/B reading and all warnings reconciled. All forward data proved, including Shikaku. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "bn": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
     }
   },
   "full_tool_gate": {
@@ -503,9 +518,30 @@
       "global_no_open_defects_requirement": "Any observed forward defect or unproved forward data, including outside88, blocks. All174 read;0observed open forward defects.",
       "known_memory_rows": 174,
       "forward_model_rows": 0
+    },
+    "bn": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
     }
   },
-  "contextual_policies_reviewed": 26,
+  "contextual_policies_reviewed": 27,
   "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
     "locales": [
@@ -526,30 +562,32 @@
     "nb-NO": "context-v15",
     "ko": "context-v18",
     "id": "context-v21",
-    "zh-CN": "context-v27"
+    "zh-CN": "context-v27",
+    "bn": "context-v29"
   },
   "latest_reference_pilot": {
-    "policy": "context-v27",
-    "locale": "zh-CN",
-    "run_id": 40196684338,
+    "policy": "context-v29",
+    "locale": "bn",
+    "run_id": 40282144871,
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
     "full_dispatched": true,
     "approved_locales": []
   },
-  "engines_inventory_note": "V27 zh-CN known214 reviewed memory,13legacy ties; no forward-generation/engine benchmark or native/blind/unseen-text/release approval. ES/NBv15,KOv18,IDv21 and all historical evidence unchanged.",
+  "engines_inventory_note": "V29 BN214 exact reviewed-memory targets;0new forward model inference. Back translations measured and all333 S/F/B read. Known sample only,no engine/native/blind/unseen/release approval. ES/NBv15,KOv18,IDv21,ZH-CNv27 and historical evidence unchanged.",
   "full_tool_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
     "ko": "context-v18",
     "id": "context-v21",
-    "zh-CN": "context-v27"
+    "zh-CN": "context-v27",
+    "bn": "context-v29"
   },
   "latest_full_pilot": {
-    "policy": "context-v27",
-    "locale": "zh-CN",
-    "run_id": 40198168513,
+    "policy": "context-v29",
+    "locale": "bn",
+    "run_id": 40286109390,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,
@@ -562,7 +600,8 @@
       "nb-NO",
       "ko",
       "id",
-      "zh-CN"
+      "zh-CN",
+      "bn"
     ],
     "historically_reviewed_not_passed": [
       "de",
@@ -573,7 +612,6 @@
       "ar"
     ],
     "current_references_not_passed": [
-      "bn",
       "ru",
       "ur"
     ],
@@ -619,28 +657,30 @@
     "unproved_data_rows": 0,
     "passed": true,
     "minimum_style_budget_met": true,
-    "reason": "Known40 reviewed-memory references360/360 with all forward data proved;67 S/F/B read and every warning reconciled. No native/blind/unseen-text/generic-engine/release approval."
+    "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
   },
-  "bn_reference_policy": "context-v28",
+  "bn_reference_policy": "context-v29",
   "latest_bn_full_gate": {
     "rows": 174,
     "sample": 174,
-    "points": 1460,
+    "points": 1566,
     "maximum": 1566,
-    "button_errors": 1,
-    "number_negation_errors": 18,
-    "major_rows": 12,
-    "minor_rows": 29,
-    "unproved_data_rows": 23,
-    "passed": false,
-    "minimum_style_budget_met": false,
-    "reason": "Rejected: observed forward defects and unproved forward data remain. All rows read; no release/native/blind/general-engine approval.",
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval.",
     "fixed_sample_rows": 88,
-    "fixed_sample_points": 696,
+    "fixed_sample_points": 792,
     "fixed_sample_maximum": 792,
-    "fixed_sample_passed": false,
-    "global_no_open_defects_requirement": "Every observed forward defect or unproved forward datum blocks, including outside fixed88.",
-    "known_memory_rows": 0,
-    "forward_model_rows": 174
-  }
+    "fixed_sample_passed": true,
+    "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+    "known_memory_rows": 174,
+    "forward_model_rows": 0
+  },
+  "scoped_back_regressions": 14,
+  "total_permanent_regression_cases": 1417
 }

@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "native_review": false,
+  "approved_locales": [],
+  "source_checkpoint": "checkpoints/context-v29/madlad.jsonl",
+  "source_checkpoint_sha256": "fdc1927ec634cf4f663215d77f4482b0a8903b4d707032e7ee5820f47cc66e19",
+  "source_run": 40286109390,
+  "purpose": "Current directly read back defects,scoped to policy/source/key/forward/back hashes. Does not alter frozen inference,raw outputs,forward grades or historical generic flags. Ambiguous article-one/once/layer-height cases are not declared errors from parser signals alone.",
+  "cases": [
+    {
+      "key": "dxf-viewer.fields.units.8",
+      "locale": "bn",
+      "source_hash": "88e4605e0ba3e42b02b5ae842abecbd5fd6c21ed4da6dafb65bda8c904951216",
+      "inference_policy": "context-v29",
+      "forward_hash": "b6f8e129e8d932f678a062a9f35ccac3aa24e88174c76b1f292256ed753c3c9e",
+      "back_translation": "Microns",
+      "back_translation_hash": "0f31142920ce09c9d36ffa66b75b4818a775b62ec7415b543b646b0de3d7c5a2",
+      "observed_record_ids": [
+        "5498a2ac2f8b9c133f170d70b2c5e47a687e817bf71bd4d33cc4627384a87cd0"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Microinches becomes Microns, a different length unit; Bengali microinch target is correct."
+    },
+    {
+      "key": "dxf-viewer.fields.units.9",
+      "locale": "bn",
+      "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+      "inference_policy": "context-v29",
+      "forward_hash": "bc69ed95149dd8615c7fcf8e88f513b9f14009c8290f2948fdfb5f63ad774e97",
+      "back_translation": "Mills.",
+      "back_translation_hash": "77bb81ebd4b8cc0e2683c0cc8f792d2f943e631bb5900c0789b89ef182b59451",
+      "observed_record_ids": [
+        "34d29baf3f401675190a4101a55e6fc8544be8e7e8d43ee8593bd1fcc26e1922"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "The technical unit Mils is misspelled Mills.; the forward transliteration is correct."
+    },
+    {
+      "key": "dxf-viewer.limits",
+      "locale": "bn",
+      "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+      "inference_policy": "context-v29",
+      "forward_hash": "b5d9a5d8116d4a8a8de76ddeecb93582152404684ac00c66072cc834e5e9a75e",
+      "back_translation": "Supported previews and exports: LINE, CIRCLE, ARC and LWPOLYLINE/POLYLINE of straight lines on XY plane. Bulge-curves, text, blocks, scale notes, splines, 3D entities and other types are listed as unsupported and are not included in scaling or export. Maximum file size: 10 MB; Maximum number of group records: 2,00,000.",
+      "back_translation_hash": "45de68265be9572b443fb6acd71eed64b3774f3cf599c2fe0e7cc50f2d922032",
+      "observed_record_ids": [
+        "5cd27bfcaa1ef24d7b7913bec230267df42f59e6e540af3ff7cc386a4d98b386"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Measurements become scaling and dimension annotations become scale notes; the Bengali target says measurements/annotations, not geometry scaling."
+    },
+    {
+      "key": "dxf-viewer.privacy",
+      "locale": "bn",
+      "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+      "inference_policy": "context-v29",
+      "forward_hash": "9b69e711849d2f6f13dd627c3d58fead7bd530f258599b5fb0990f9ca02820c3",
+      "back_translation": "The file is read in this browser and not uploaded. Only basic 2D lines, circles, arcs and straight segment polylines are drawn; unsupported entities are listed and excluded from scaling and exporting.",
+      "back_translation_hash": "38ed2542d767e05fd197b29288e4e07d06a691b825943bfc5d74918173a5de0d",
+      "observed_record_ids": [
+        "ab99db085fc67f6074cf0f71494045dcd577fe4dbd46937209b88f4713d69372"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Excluded from measurements becomes excluded from scaling; the Bengali target retains measurement."
+    },
+    {
+      "key": "dxf-viewer.language",
+      "locale": "bn",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "inference_policy": "context-v29",
+      "forward_hash": "18a818b2f0aa12d4a4277188498e0822102614873b638a362df0132f1f293019",
+      "back_translation": "_Languages",
+      "back_translation_hash": "0f8bcbd9036dbed1131e9b81b4f6658043c53c1b98aa1ade061d64bc4cba88ec",
+      "observed_record_ids": [
+        "d9580bdb36296984eaee9adf9388ad3e8583c643868988314ac7498e642cc62b"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "An underscore is invented before Languages in the back label."
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "bn",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "inference_policy": "context-v29",
+      "forward_hash": "7f566eb5ad34e4f351a14ebf13ad51ad9028857591101deef1ed68768ed1bcf0",
+      "back_translation": "Shikaku is a numerical puzzle. Draw rectangles around the numerical clues. The number of clues is equal to the number of squares in that rectangle. Use each grid square once.",
+      "back_translation_hash": "12b88af086acc6b770e56f0c5891d176acb0b88ddb1b2189b67f67cb333cef38",
+      "observed_record_ids": [
+        "fd647bf56dfe55cf268b3a0d56005e8667fea9ae67356e34228a45c740dcd049"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "The numeric value of a clue becomes the number of clues; value-to-area relation changes to clue-count-to-area."
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "bn",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "inference_policy": "context-v29",
+      "forward_hash": "8c046e85eaecb83860da81b8b8e498a3eec5bbeba8717502ea907d9189e731f6",
+      "back_translation": "Shikaku is a number puzzle. Draw rectangles around the formula. Each rectangle has a square shown by its clue and all grid squares must be used once.",
+      "back_translation_hash": "fa16f84170768cb336415257dd17e0eed87160d30defe4492a4b6bdb61bef7ed",
+      "observed_record_ids": [
+        "234a97709a10b7ea91806d8435ba031b05f8c09105c81c139d6bb91a5dc67809"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Clues become formula and area becomes a square; the forward Bengali uses clue/area in puzzle context."
+    },
+    {
+      "key": "shikaku.fields.statusDaily",
+      "locale": "bn",
+      "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+      "inference_policy": "context-v29",
+      "forward_hash": "7a57ba884dfe8acc04296f5603b9fcfd46d1e6ba21cad79a75697c77e8009e0a",
+      "back_translation": "Today's puzzle finished.",
+      "back_translation_hash": "6f9fdddc475cc89e52a3db5e6bc9fd34795dfde4196d0f11423031905be82019",
+      "observed_record_ids": [
+        "9c78fab67070611a38f02c856d7caf4ffef17f7e272d47e7e26be5012852561d"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Ready/generated daily puzzle becomes finished; forward target means created, not solved."
+    },
+    {
+      "key": "shikaku.intro",
+      "locale": "bn",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "inference_policy": "context-v29",
+      "forward_hash": "9a302346f789548119bc9080aa9498abd8bed764bc70cd82a5714aba38028020",
+      "back_translation": "Draw a rectangle so that each number is the exact product of an area. Cover each square once, without any overlap.",
+      "back_translation_hash": "f21a436f5c305f86a3e34a94f4e85e9ff3f0d85d868b004db82377a734ebb720",
+      "observed_record_ids": [
+        "4caa7d7c1b959634f8426bc391b04d1dd4eb8ac6420d8deb1528d7577c71f9b2"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Exactly one region area becomes the exact product of an area; invented product relation is a back error distinct from old forward punctuation."
+    },
+    {
+      "key": "shikaku.language",
+      "locale": "bn",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "inference_policy": "context-v29",
+      "forward_hash": "18a818b2f0aa12d4a4277188498e0822102614873b638a362df0132f1f293019",
+      "back_translation": "_Languages",
+      "back_translation_hash": "0f8bcbd9036dbed1131e9b81b4f6658043c53c1b98aa1ade061d64bc4cba88ec",
+      "observed_record_ids": [
+        "2841a662ef72e50a831c775a8464597323afaf29e8eb7e59aa1958ac87dc26f9",
+        "c6c031b0b75da2c20c0a019dc27ef3da68b13ea1f0623af3b606330f8b5e534c"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "An underscore is invented before Languages in the back label."
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "bn",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "inference_policy": "context-v29",
+      "forward_hash": "d168d4c3c59a472d5364ec0106cae36f72a3bb70095744c50dae597e8408d21a",
+      "back_translation": "This browser decodes the selected audio. It applies Web Audio filters locally and changes the audio volume. It changes the pitch and playback rate together; adds echo if desired. Creates a WAV file for download. No audio servers are sent.",
+      "back_translation_hash": "25db61b6cd06748128655e9ff915b8cb24bf61a896cb15f1ab27e4b0150eb767",
+      "observed_record_ids": [
+        "ac61f48a72645a4854651e60c2b0ca44b400894884825634e5c73a5dd97633f7"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "No audio is sent to a server becomes No audio servers are sent; object and destination are conflated."
+    },
+    {
+      "key": "voice-changer.faq.1.q",
+      "locale": "bn",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "inference_policy": "context-v29",
+      "forward_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "back_translation": "Does the pitch shift retain the real time?",
+      "back_translation_hash": "74b963a3c6ebcb9dd5b5b93137a8261a2654083516ac7c30ae78dff54a07138b",
+      "observed_record_ids": [
+        "b2ae2284777e4a140024a2df8c0212fe704ab3427ed0124de5b01e269e01c066"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Original duration becomes real time; elapsed clip duration is changed to a different temporal concept."
+    },
+    {
+      "key": "voice-changer.fields.faq2q",
+      "locale": "bn",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "inference_policy": "context-v29",
+      "forward_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "back_translation": "Does the pitch shift retain the real time?",
+      "back_translation_hash": "74b963a3c6ebcb9dd5b5b93137a8261a2654083516ac7c30ae78dff54a07138b",
+      "observed_record_ids": [
+        "ae4fbf365f3ed4f2b6671c004f10bc64fb0ba12d592f574a8f251ff34f91a7a7"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Original duration becomes real time; elapsed clip duration is changed to a different temporal concept."
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "bn",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "inference_policy": "context-v29",
+      "forward_hash": "cd2f8e302559defe28f96e10c1c1d7e8a63676830e87e08e3bfe7b1e567a54e6",
+      "back_translation": "This lightweight tool is designed for short clips, not full-length songs. Instead of changing the playback rate, the pitch is changed, so the duration of the clip and the pitch of the voices change together. These effects cannot create new identities that sound normal, cannot distinguish the voices, and cannot ensure the same results across all browsers.",
+      "back_translation_hash": "5a9096f59e4c099a5abb3dd588c8ec375ef39dbc4499bcca3e2dc3a191321ad6",
+      "observed_record_ids": [
+        "d2ec0c4430363505c831f73afc5bcc0ccae53feb2c87bc823a808da4d329154d"
+      ],
+      "direction": "back",
+      "blocks_gate": false,
+      "issue": "Changing pitch by adjusting playback rate becomes instead of changing playback rate; mechanism inverted. Separate voices also becomes distinguish voices."
+    }
+  ]
+}

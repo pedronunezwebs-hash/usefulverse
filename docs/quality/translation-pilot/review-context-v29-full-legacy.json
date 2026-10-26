@@ -1,0 +1,3077 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agent, no paid API)",
+  "native_review": false,
+  "rubric": "Meaning,numbers/negations,naturalness0–3. Actual source/forward/back directly read. Known reviewed memory is not a generic engine/native/blind/unseen-text/release approval.",
+  "expected_rows": 92,
+  "inference_policy": "context-v29",
+  "reviewed_at_utc": "2026-10-26T07:57:54.796121+00:00",
+  "scope": "full",
+  "approved_locales": [],
+  "engine_frozen": false,
+  "requires_complete_model_warning_coverage": false,
+  "warning_coverage_supplemental_reviews": [],
+  "rows": [
+    {
+      "key": "shikaku.description",
+      "locale": "bn",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "candidate": "legacy",
+      "translation_hash": "70f5d4ed3e8ddbaa2490445973721aac724a8844454fed75838be18f42379005",
+      "record_ids": [
+        "a1b3e5b6f695d6c2bffdee9ba6cb4005f3107223b7bc9faf5e971812c7b2c57e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.details",
+      "locale": "bn",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "candidate": "legacy",
+      "translation_hash": "c7b76d3b9006dd6e1a7d57465921636779ff0f8e9633e71d156c39c393c99ce0",
+      "record_ids": [
+        "780e7608562de35c27844660b919226900008cc27fdce189f38879e9097db02c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.exampleHeading",
+      "locale": "bn",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "51e6a2655c863ac9843e7a933edebeb96fccec7abe85cbf00225a37c811211a0",
+      "record_ids": [
+        "703886726b9f6582f408d22f409e2e50c7217e9e227b80f33b6247a3943653ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.faqHeading",
+      "locale": "bn",
+      "source_hash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+      "candidate": "legacy",
+      "translation_hash": "70b7fe82cbe3d10a840bcbc3e17d9ec92e4f74b9bb58d1426c7de126e2fb2435",
+      "record_ids": [
+        "417661387281da80364b29526eb6b564b62413968307e87206c2e3350226bc88"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "bn",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "legacy",
+      "translation_hash": "ef6270560d886b30ecc3d1363c92c4c1896a585d97bca6f3c0b3141e49b71ef3",
+      "record_ids": [
+        "f0cb39a0e5142c298c950151a16035ca335f9f65084e9cdbe16dfe89297a212b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.dragHelp",
+      "locale": "bn",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "candidate": "legacy",
+      "translation_hash": "5c42a455267e08ec088164e30cedc492f4c8aa69e010702f9c648386f7941d54",
+      "record_ids": [
+        "98d29c8a6cbbb8d43514f770a6ce85ff5e1170b56770257ae84d32b654f9cede"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "bn",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "candidate": "legacy",
+      "translation_hash": "8c046e85eaecb83860da81b8b8e498a3eec5bbeba8717502ea907d9189e731f6",
+      "record_ids": [
+        "234a97709a10b7ea91806d8435ba031b05f8c09105c81c139d6bb91a5dc67809"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.0.q",
+      "locale": "bn",
+      "source_hash": "034b4f79cdf40c346b5bfea1d81f216c16da62f5ae09859b43f3d62bbb7c5688",
+      "candidate": "legacy",
+      "translation_hash": "c048875f586a441eb96fe7fd4c13811799dd0e7f975cc14a903a776c51b18e19",
+      "record_ids": [
+        "143611567fd5a1fdc8d14612dfb9423d67461142ed650b0648c1d80ba2427f41"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.q",
+      "locale": "bn",
+      "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "candidate": "legacy",
+      "translation_hash": "f5bb405b05a5e06c6afa55535f850cc6a9dd4f71816e9f7df5fcb61986326941",
+      "record_ids": [
+        "1bc0efc8a671850c3e587968637cb9c4d0978186db31bd90ad039fdb7b6aac89"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.2.a",
+      "locale": "bn",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "candidate": "legacy",
+      "translation_hash": "2c4a452b49c616c1e5dd5d7c2bef4cfdb1d302ea30272e106a51189b01a90ca3",
+      "record_ids": [
+        "98e4169d1b266a6756ad30100c171e8e5996c2572b45e66c973c419c475f6946"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.2.q",
+      "locale": "bn",
+      "source_hash": "061b9172bbad7c11f22631f93f77ae0a15fd38ba2967a367865dcecef1eecd47",
+      "candidate": "legacy",
+      "translation_hash": "251bebe1a1c38d68ff5ae7c814efc75bd6f3f1f08eeb4430e6f162677e135458",
+      "record_ids": [
+        "bfb8705a5e17d4b5c72ad67cd5ec5ac8e8f2cc09213fd615aae339fc65c3a1af"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.3.a",
+      "locale": "bn",
+      "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+      "candidate": "legacy",
+      "translation_hash": "56b66401727cc1e665303f83f0cb0b5456a212781990fdaeb78dfd2214293246",
+      "record_ids": [
+        "79dd2f679ccfc02b60a4730cd48be750355bb81a68e61e42429ec69d9a53c196"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.3.q",
+      "locale": "bn",
+      "source_hash": "b368ec1d3c4b28a8345e45c54c667ae625be3816aa9b4efda42f6b018ca7f5a5",
+      "candidate": "legacy",
+      "translation_hash": "58c7d4db0c31fc34266fc83f7b0a0aae22f1a9c6ba1125bbc03ff59ff6c5a27e",
+      "record_ids": [
+        "bd6080b5f36a14d5f6d5763e52e44cdbdcab92f5557a673a1f74ce5f601fdf9f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.puzzle",
+      "locale": "bn",
+      "source_hash": "2509a26877403b3ffa4f242a266f7843bc3327829ddf8f325fb6dca399b7c2ac",
+      "candidate": "legacy",
+      "translation_hash": "da35714b0d97cc723304456817f28ef081413a659c3b7e1e828f64a0dd805aca",
+      "record_ids": [
+        "1139510bfb7bc5f38b92b9e3745adfb16168cec10de25bce10b372e118d5f2bb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.ready",
+      "locale": "bn",
+      "source_hash": "df6e45fe2a00defc65aeff5434d873d5f89e77c6f6bf0e58c0d3faff0218d7a8",
+      "candidate": "legacy",
+      "translation_hash": "c4714003afc1c6340c0e62b5ea986356c1aa549893a8dd9f80e4aae2b5a1a9ec",
+      "record_ids": [
+        "09278a79506b392900c1178180aab0edb57d0560b8cc7eb5fa4ca8d8998a416b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.regions",
+      "locale": "bn",
+      "source_hash": "183bc1aabbc9b333ab7faeaf5ee9f024cb5ef279777a51c70be866049d87aea5",
+      "candidate": "legacy",
+      "translation_hash": "8ee837dfecf38fa0db07a71b708ad17f2dbd692ddb7d23e3fff074f09892be10",
+      "record_ids": [
+        "8470bb7c0496bccd26b3ce79fd1865358d57842fe46356874e75e0ca237c458f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.ruleReference",
+      "locale": "bn",
+      "source_hash": "c52a28e3876b46a8bf98b8b60ad089168d859655b5a98b19e25e8cb4462050e0",
+      "candidate": "legacy",
+      "translation_hash": "2496e957cc8acfc048e7cf29d20ec1b6a42a2b3190c365c2811d51d7d6658696",
+      "record_ids": [
+        "f5b840f9ef2396a1451c144ae3c8379c578c33233af7a6cdcaa0d09215aafca5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.seed",
+      "locale": "bn",
+      "source_hash": "9a37c639fc9f5132c1813e6a00ad8b1e4d3af6669cb55823b6b93a93a4267a6c",
+      "candidate": "legacy",
+      "translation_hash": "7fca7c6fbe02ae9e934abd98b82ffea3a9dc85337cfc49d3244d5855076d2824",
+      "record_ids": [
+        "ce3a1f93c280466336ac06cfd3ad22fa5f4c1f00521193ae97061e0c6fbc73c9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.size",
+      "locale": "bn",
+      "source_hash": "3fd344ffd82464420f12a2ee86afd43dddc79c87e7b556845e4bc7c8cb34ebe8",
+      "candidate": "legacy",
+      "translation_hash": "ac9f56c474d5b0f060b45fad49e3306513ee3689c7acda14810676f233c7d3e4",
+      "record_ids": [
+        "1749a2a8c368e84cfcd0e9e9e26b183891cb863fa1ff52cdf9338acb68ba373b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "bn",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "candidate": "legacy",
+      "translation_hash": "c2fd3e141f656f9b9a970912fa3b9cb51ee802a8b23164b13cfa67521a675a99",
+      "record_ids": [
+        "92509a857a2eae635a483998b30fcece785c6996db1ccaa3ab81a035790c84fa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "bn",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "candidate": "legacy",
+      "translation_hash": "50b69e060c8cad309ed40f1ff653d167c44b6aee8e06d53108e1219d76264fde",
+      "record_ids": [
+        "54034d0464bea7a4bd6f205bf1c8c2fe8c985c11c4e7011158208abb83fb7a23"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusDaily",
+      "locale": "bn",
+      "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+      "candidate": "legacy",
+      "translation_hash": "fa640c891d173df075363f72a0f2186d21ade666d3398fa58ea349e73f8b1112",
+      "record_ids": [
+        "400f464538b133fe86055a8c1367db1f5b2b005fc616b85ca9d5ab96a5f70bc0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusDeleted",
+      "locale": "bn",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "candidate": "legacy",
+      "translation_hash": "c3f722f527e6ad06d8a74d0e7b9136be1fa9b2bfc8950e4c2493538249a1422c",
+      "record_ids": [
+        "979e17481d253cc14ffdd302a4dfa851f84fa293f1379e2be540d178adc149b3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 2
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. El signo final U+09F7 ৷ tiene valor numérico 1/4 en Unicode; se usa como puntuación y añade una cantidad espuria."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusGenerated",
+      "locale": "bn",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "candidate": "legacy",
+      "translation_hash": "1d82425ade0758a5ee2685cca9d230a361dba9bf1ac45e812b9128b20b7e016e",
+      "record_ids": [
+        "d8853931eb39b2674d2352a0474846278bf3b56e04a60f4c565929ae0f994116"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusHint",
+      "locale": "bn",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "candidate": "legacy",
+      "translation_hash": "c91694c0770669d116810461e3c7e60e5796a76fc8d06106b06c2eabbaa6e322",
+      "record_ids": [
+        "e7f0ab4a6957e8c59263575159fd7628fdd542eed6f9b83ac5f23420ff66e6b7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusIncomplete",
+      "locale": "bn",
+      "source_hash": "8d10609ff52aae309bf7e11e35149f7740322a671da31f8b3ecbea7f891a8955",
+      "candidate": "legacy",
+      "translation_hash": "e2674bfe78580eaf6b2f83507e3ba6fa53656c4e6536cdc7eb276be2c927f963",
+      "record_ids": [
+        "c29510fa6a725429f813a291b369ad737fc11f79e96e33ac5309f1dc6f9110cc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusInvalid",
+      "locale": "bn",
+      "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "candidate": "legacy",
+      "translation_hash": "e33f6a0cf1374990f0dce47f25e29de1026ef6cf43f6f8a37b309540f6f91d93",
+      "record_ids": [
+        "0aec5218e565bd0e56620058bca9269a643e1dc9d6cb2b126bb12e832743fddb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusNeedStart",
+      "locale": "bn",
+      "source_hash": "17e2fa514c38464d01ff155a1b975d9036d93571ae07aa2a5d92b1b7377a658f",
+      "candidate": "legacy",
+      "translation_hash": "fb9f878b46bf4f8c60cceb2382f64ef1b4535d72457007e3af53c1f0372fba6f",
+      "record_ids": [
+        "48095782536e1352f4010203564ae43c1e91dec0686e27b8da114c66e76b2b92"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusNoHint",
+      "locale": "bn",
+      "source_hash": "5f73bb19199ff39a117346245696341080defb739fb4aa96d4dc30a22a130302",
+      "candidate": "legacy",
+      "translation_hash": "7fb9dce2711603624ed6ad848e858a4dc6e34581129b72be64688e151ddd2339",
+      "record_ids": [
+        "42c3b9fc685745958c3c18954ff44e8c5a2d754368aecd991aaa285f3611c94f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusPlaced",
+      "locale": "bn",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "candidate": "legacy",
+      "translation_hash": "91cddb21b448691a1496cfc55fb927fec4383539ad64195e3df3949afef5f1a2",
+      "record_ids": [
+        "d4c4fdde7928806d84dfbaa0f167765072aa7aece688119dd16667606208f02a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusRemoved",
+      "locale": "bn",
+      "source_hash": "df2cea3d3735d58d384b4ec5756e0fd1b0e8a360dbd52da2743c1ea549c55eb5",
+      "candidate": "legacy",
+      "translation_hash": "a193c10611c3fbfced960cb11be7d339d332fc7570384445c3e8c3614b3e01c7",
+      "record_ids": [
+        "a1316c103b4ed443fe15c4f44565e2ccbe04b329a9826a0e21630e1f2d928b7b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusRevealed",
+      "locale": "bn",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "candidate": "legacy",
+      "translation_hash": "2617de05c4d79dd6b3294a2585537728ade67207640dadafb6837b68d0826780",
+      "record_ids": [
+        "7c22d894b0f2af0c245721ffcce125f2311382474eb2cc33e5b534e120fc806f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusSaved",
+      "locale": "bn",
+      "source_hash": "c834d5befcb40b515a790e5fe0c223a1383438a0302d4952463d635a8543cab9",
+      "candidate": "legacy",
+      "translation_hash": "6c595bb3156c961720d3ce0458213e91d14915618c57c1ca17a79cb3c20ecc77",
+      "record_ids": [
+        "3621d71e03e2913bb5330c90ccbe7eee41e590ce3e339fe78cbdc4ad7ed0095c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusWon",
+      "locale": "bn",
+      "source_hash": "6be09835314bbdf76630f2754d8607ee2b3cda0836f3ea8a55f4be02f1210744",
+      "candidate": "legacy",
+      "translation_hash": "54b1affb1440e592431f5bbc04c6521ef07126718e2eade86cd9af7b815eae27",
+      "record_ids": [
+        "ef07894bb05bdedb3034ee911dc7005efd204de4e82c57c37d1a720bd0a36a05"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "bn",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "legacy",
+      "translation_hash": "1a752d1d879a19081e8939553b744c68257ea3f79ec075cb72583ac91a71f829",
+      "record_ids": [
+        "fe9f0319160e518121c3d7ab290ce1c873c5a07bc8ea458ab6295c397b0503fd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.freeBadge",
+      "locale": "bn",
+      "source_hash": "c7b94045ee1ad4623931a29aa8c09b5ae4f5f21f4286314ba686cd1fc83096fb",
+      "candidate": "legacy",
+      "translation_hash": "00922bb583316545f211def25e3a314f93870de4c2e0364b080dd8a0ff7477a9",
+      "record_ids": [
+        "33a81d196fac3c42a4065fde4bbd944fcda91219d2d81a7283caed58815445d7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.home",
+      "locale": "bn",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "legacy",
+      "translation_hash": "6c4c17e4459e65331ab547e0481c464d0721c57763021a113fa9b8f87ebd4250",
+      "record_ids": [
+        "3ecc700aa24dd1458c6a1c53ba43de7b1fdd43682ee13284595fe9e7fa67858f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.howItWorks",
+      "locale": "bn",
+      "source_hash": "13a6b22428cd17c402c4a0361b645ee0894bada3ee921a3faa3eb3f2dd110e0c",
+      "candidate": "legacy",
+      "translation_hash": "3b0e6333b291694712399db24e821c3a0f1f3dee0fa0006c3e8033d30c1108f9",
+      "record_ids": [
+        "dfc9cca3be4753e169f84c0d1e614908b47447c0b949db0d02579f1cf12f0352"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.intro",
+      "locale": "bn",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "candidate": "legacy",
+      "translation_hash": "9a302346f789548119bc9080aa9498abd8bed764bc70cd82a5714aba38028020",
+      "record_ids": [
+        "4caa7d7c1b959634f8426bc391b04d1dd4eb8ac6420d8deb1528d7577c71f9b2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La última orden termina con আবরণ, sustantivo cobertura, en lugar de un imperativo natural para cubrir cada casilla."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.language",
+      "locale": "bn",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "candidate": "legacy",
+      "translation_hash": "18a818b2f0aa12d4a4277188498e0822102614873b638a362df0132f1f293019",
+      "record_ids": [
+        "c6c031b0b75da2c20c0a019dc27ef3da68b13ea1f0623af3b606330f8b5e534c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "bn",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "candidate": "legacy",
+      "translation_hash": "5c17c8d97012a362f8ddf5bf54eec720e0fa2f4492f2e9aa57df89efa83e29f1",
+      "record_ids": [
+        "6ba5d975775ed8ac5c6a5556e866e9f29e5005a9cd22121539a88570366894a7"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La frase final কোন অ্যাকাউন্ট বা ফাইল আপলোড প্রয়োজন carece de la negación necesaria de required; no garantiza que cuenta y subida sean innecesarias."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.limitsHeading",
+      "locale": "bn",
+      "source_hash": "5bec15dcf9064f77e758fd1db9f37a724d8038dc30b11a8043a44f5079fb6e59",
+      "candidate": "legacy",
+      "translation_hash": "772cd161336d4c76f9e39c4dfcdb92b265cf3290e38219b83ae15086fd7d6996",
+      "record_ids": [
+        "ad5c1cb161e12c062dbdcc14a0f03fcc2f242211061546a2969aa25aff4efc82"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "bn",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "legacy",
+      "translation_hash": "21688408987bd0dd07b19e6005a422dc19d8880236d3a0f6113b7a18eb7cff42",
+      "record_ids": [
+        "43e3303220806a6d90468a183b02c0865e61f059c2b17630bbacfd4af821de91"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.privacy",
+      "locale": "bn",
+      "source_hash": "6e1eec3cceb3260523ac5004e36aba6150bb58d19ea82378cc6ac78acce2a0c9",
+      "candidate": "legacy",
+      "translation_hash": "5a6c4c5d14f2fc2eb78396f045c3954cc2f3dba6fe473099f497edcaef9819f5",
+      "record_ids": [
+        "4b072410cd31dc59c00cbd6c74ece94fa889e22619c209b9b3a0c45d5f182f4d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.related",
+      "locale": "bn",
+      "source_hash": "ac611f323eb0278f314a8d645943ad2b529c24de4b6aca9fcb76fcf52ecb25e2",
+      "candidate": "legacy",
+      "translation_hash": "8a0b7152848881e7cc1f2751bd907ba8880b7a86a8d285f3c4ecf8fdcfdd5f95",
+      "record_ids": [
+        "d8d7f2f2d90a2a26b7a92afe7b2a9f71ea88d9cd1db11fdc06fc812a85cc0e08"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "bn",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "legacy",
+      "translation_hash": "3c560e34c695f064d3b7b9757952b76685b435f11f45943ab5262eda2bd5335d",
+      "record_ids": [
+        "df0a862748e4752779c5dd57d687e947f11dc96da7443368a3fcf9e5d1a7363d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.useTool",
+      "locale": "bn",
+      "source_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+      "candidate": "legacy",
+      "translation_hash": "d575e1737341783a67eb4fd2985e0a6e6b4cb75a0161814a5c0b1f93ff8fff87",
+      "record_ids": [
+        "2c6a9270df5f60c938ee7dc2fbd6c2f208e35777a84ec91f35a34b7ff4f2fc6e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "bn",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "candidate": "legacy",
+      "translation_hash": "25a66694f085f895dd77bad2956d45065c8e481f40dc849ff4d20a59130ee48e",
+      "record_ids": [
+        "8f29c971a11f01b49b287bf87ca57a0b3a93d13f5d647bb8dafb0da8b212857a"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La orden Change pitch pierde el verbo y shape radio se translitera como শেপ রেডিও sin expresar configurar el efecto."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "bn",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "candidate": "legacy",
+      "translation_hash": "188fede473d4a1c4f46a12bb13ce5e0a90f8c23b7342b55d3ba1c6f7b72d7fe2",
+      "record_ids": [
+        "423c1fb0bc3fad887c75916ece79f2d9c4502f44f89ada2edd3a438563720950"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Gain, amplitud del audio, se traduce লাভ (beneficio/ganancia económica) y el identificador Web Audio se localiza."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "bn",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "candidate": "legacy",
+      "translation_hash": "add97ac0b7c06a3696c80fb9d3e4686cdaf71ffde08dd524b3d59d0a6378e438",
+      "record_ids": [
+        "63e7363e02281859305e823f9ee8edbfad56e3acf031b19c452d3f0e1173ed4b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.exampleHeading",
+      "locale": "bn",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "51e6a2655c863ac9843e7a933edebeb96fccec7abe85cbf00225a37c811211a0",
+      "record_ids": [
+        "9a1e3a7bf13fcd4567af1c214b00465e658cd3f5dd35b11fd91ea473977fba4f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "bn",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "record_ids": [
+        "b072e77d93d8631e5169e8c86f1a59010c19e9865c761fb0f08b2df3ec72aca2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.0.q",
+      "locale": "bn",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "b1c2aff736911a2a5edaae2c0bec8a71900666be7b48cba562fbbf5b0bdf9886",
+      "record_ids": [
+        "cbcd62d9727fcb34f393e966d70b14268765ef40453f5821a3b7136748e992e4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.1.a",
+      "locale": "bn",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "9f3724c89a327212d9e875660b07f509e96d25fc95af4a725f10da65f0c288c0",
+      "record_ids": [
+        "180afee5276b7ca51e58441403fc65115073cadae005ecef84e61ce8e31b5380"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.1.q",
+      "locale": "bn",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "record_ids": [
+        "b2ae2284777e4a140024a2df8c0212fe704ab3427ed0124de5b01e269e01c066"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.2.a",
+      "locale": "bn",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "3147cc005398d010e8b8f0c93a6b7dc97d08dbdeb39c667896e5e003e1b45a65",
+      "record_ids": [
+        "587a4912b1399cf52679010c7fa81262c394ef6029b7049d8bbf3190bf21c799"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.2.q",
+      "locale": "bn",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "4bc9ffd7f2c16f09166605837bfba8c32b4f8547a98d20608f07548223ab73bc",
+      "record_ids": [
+        "20073eed67d98df357a2ef66f1ee5498fbeb626172b8498da52e7470c499870c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.3.a",
+      "locale": "bn",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "ea9531671475c97b94c10792a69660683de85624182d87662464704d203e48ea",
+      "record_ids": [
+        "2fdf85589e79f544438b1acd3019e3a8023647aca16aa69ae20c602182a2efa4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.3.q",
+      "locale": "bn",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "005e9df8ad37b57e780e09572bf6ebc6babdb98e2926aa9873cf25edd4aeaa22",
+      "record_ids": [
+        "83ec779fd6d32e33ac3835049bbc8add8728d4c300e334a232e8fc5513674d29"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "bn",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "3600a9a9d4c468799f60662a0061c220cbf77b3470f566343da7c78c76e4faa2",
+      "record_ids": [
+        "9068592d62016d05c15bef6f4f618991d353635f0552c122e823abf211f6395e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.4.q",
+      "locale": "bn",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "4afb270cf4806a297d18a8312c0637e2e74d2c0e661133a621b68b82f8c0243f",
+      "record_ids": [
+        "5d6127dba62ac7d6b85a71ebbe9fe31a2df057246f43dd5c926cec13840f2a50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faqHeading",
+      "locale": "bn",
+      "source_hash": "e956a9404b467e6b372e082d28cb9d4710af764c2fa5e56a415211e12166be0e",
+      "candidate": "legacy",
+      "translation_hash": "82f8c3af32f213d3912e374eda91e7206eb8e4d65704ebf1f2850d5bf4ee5197",
+      "record_ids": [
+        "ee1cdaa7199de639eea3f192e14fae609318a294824d04ba212c94b04aadee3a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.bright",
+      "locale": "bn",
+      "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+      "candidate": "legacy",
+      "translation_hash": "92fca17732d4a0594fd5f5f0bca195cfcec3267c573483094e30d9c5f9e49fe3",
+      "record_ids": [
+        "3475576c83029d10fcc725cea4ca9532a9b5d4375a8a3e71a43557cc0e693454"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.clean",
+      "locale": "bn",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "candidate": "legacy",
+      "translation_hash": "9008685d87213c63fc3f75195b890c9d980dd94bada0d88df3196e8301bb175d",
+      "record_ids": [
+        "d8934a1d19920585fa37599f53a4f0d8546290fa0cc72e932bda152e51df66cd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.deep",
+      "locale": "bn",
+      "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+      "candidate": "legacy",
+      "translation_hash": "2a2dea920863a3a0c318b1978e2b02a0aa49e6ca9dcb79053468859da92919fd",
+      "record_ids": [
+        "0ca5bb813c3f76f256d13446385c89d0d345a8da52a1bcde05be6e8ed9315e88"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.device",
+      "locale": "bn",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "candidate": "legacy",
+      "translation_hash": "1f01611848ec9d5cee5431f8f232e92445b05310528df55269276cbceffadfbc",
+      "record_ids": [
+        "4076d5f78487c743f7fd7ceec9f88d955043d8a6e6bba52fee3b6218c77adf77"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.echo",
+      "locale": "bn",
+      "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+      "candidate": "legacy",
+      "translation_hash": "bfa78ca38f936f531c2ec376c83d2b74005fae7f2676b4a71ab20197e3a3075c",
+      "record_ids": [
+        "af037774aefbab99f29ae959e9293dc26807ae70e79360f959beb92f23ceff8f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.effect",
+      "locale": "bn",
+      "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+      "candidate": "legacy",
+      "translation_hash": "a26f9f64bd19f7dc4d6c0827e13623f9738711ce96e4015c904d30820de36941",
+      "record_ids": [
+        "4935dd8f3ba813ccd6da36fc19e5e87958571a2cff37423775b6a400f9e102c0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "bn",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "candidate": "legacy",
+      "translation_hash": "e85e4c9b13fa3399d072481859d1564131b6a282d2b4a70443a15f628d0a771b",
+      "record_ids": [
+        "738f0fe543cfa7f3654dea9ba187073c23ea6e758c60859a7df4cb57284bee1f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq1q",
+      "locale": "bn",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "b1c2aff736911a2a5edaae2c0bec8a71900666be7b48cba562fbbf5b0bdf9886",
+      "record_ids": [
+        "e7719c6687d8629eeb44bfea8e633391868732a861dcaffd78447639b8be3187"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq2q",
+      "locale": "bn",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "record_ids": [
+        "ae4fbf365f3ed4f2b6671c004f10bc64fb0ba12d592f574a8f251ff34f91a7a7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq3a",
+      "locale": "bn",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "3147cc005398d010e8b8f0c93a6b7dc97d08dbdeb39c667896e5e003e1b45a65",
+      "record_ids": [
+        "25b2dbc36455c393303fc12b667d9109dbe875fca693abd42b0beb50d1e018b4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq3q",
+      "locale": "bn",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "4bc9ffd7f2c16f09166605837bfba8c32b4f8547a98d20608f07548223ab73bc",
+      "record_ids": [
+        "c161e049692f1d70aaa2ded5eb28ff093461f0a190906b6ad5c7ed97905b153e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq4a",
+      "locale": "bn",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "ea9531671475c97b94c10792a69660683de85624182d87662464704d203e48ea",
+      "record_ids": [
+        "584024dd009ff0223becda18069b379cc695844fd13f4b7fb30f081506775224"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq4q",
+      "locale": "bn",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "005e9df8ad37b57e780e09572bf6ebc6babdb98e2926aa9873cf25edd4aeaa22",
+      "record_ids": [
+        "3c2e3398b7ac34880416711425a0a3042258ee3678c8fd3d106a7e1d24c83195"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "bn",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "3600a9a9d4c468799f60662a0061c220cbf77b3470f566343da7c78c76e4faa2",
+      "record_ids": [
+        "8bffe337dd9471285129cc367f3792271e2e951f44da697b60dd1f10428546f5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq5q",
+      "locale": "bn",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "4afb270cf4806a297d18a8312c0637e2e74d2c0e661133a621b68b82f8c0243f",
+      "record_ids": [
+        "99c99b69e91c50cfa3a8b575ad79f0797b68ee02c7cde800cfd4404bb827b08d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "bn",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "candidate": "legacy",
+      "translation_hash": "f3248b76e843ab2ae9feb9f755e84c1c48e5251f9166b8b5cc0c48d0b08cb447",
+      "record_ids": [
+        "f6520a02a47fb43cd8e340468c586e5a8b6e936694dcf78cf78ce8e4d074180d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.loading",
+      "locale": "bn",
+      "source_hash": "d20218d43c5baad32d4b8080beec0bea5273de91138f25c3899aa78f69a1ccda",
+      "candidate": "legacy",
+      "translation_hash": "2bb78b0b94ea5c515672e60f79bad57ccbe41f87942f7da310dd1a824e9aa01b",
+      "record_ids": [
+        "d4ba3e3a1c1446126f100b213a141efa3256b1960203ab175a298303d5c5ea9a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "bn",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "candidate": "legacy",
+      "translation_hash": "94f607d657d634b93e1008e109b5136dd37e815d0a093e3eb5cc8e352c629e76",
+      "record_ids": [
+        "5b9e2ffcfe156b4fed9003a8f476b1ded16183bca632e7bd4c3dc4825a70b094"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "bn",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "candidate": "legacy",
+      "translation_hash": "53d375b05d5af0a7dbc449033ab4611380e925dfc523296de3e5b2fe46c644b9",
+      "record_ids": [
+        "f16a4759d58e8b320d7bb5579db8aab59b967569b82c836f5e8dd963155ed8c1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.playbackRateNote",
+      "locale": "bn",
+      "source_hash": "03f4e3f331c890be8134aa6d9b648ca437a864fed42753cb6f253ac072ce00d9",
+      "candidate": "legacy",
+      "translation_hash": "a98735c7cbc085ebb564ebecf696f7ca0248c6d22bb0aa2cb09e9da3906a66f9",
+      "record_ids": [
+        "c4c76fcc3e69f8dc1b7fcae74cb8b931d3d03f29b5b8f4b1eedf4041893ac195"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.processing",
+      "locale": "bn",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "candidate": "legacy",
+      "translation_hash": "772b7754a55a9960d1b534100504b2358866fc50f5af931bfbacc9e18b5dd323",
+      "record_ids": [
+        "c08de0db86b1f32397b569df6afc48fb0722f2c522faa73f52b78b5b468ea34f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.radio",
+      "locale": "bn",
+      "source_hash": "2a7dfeb2f2b018e5dae04497c0a281e7b22403057b91679046c9da52433894e1",
+      "candidate": "legacy",
+      "translation_hash": "be24d56048c2288e86eca73a49c691aa7ae6c0c57c6be93726e556cc3aa6ea04",
+      "record_ids": [
+        "ab2dddab368db4de8fcadbfdd16f60f60f19a1324e63415c4198876092150090"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "bn",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "candidate": "legacy",
+      "translation_hash": "e47122d952572784d4aa3c672b5b6303684f81093fbcc4dc622efa9fcf4bfbd7",
+      "record_ids": [
+        "1269dc8df762909f867835e2aeb0e26ab92486fb53c85c2d4575c8273c44274e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.volume",
+      "locale": "bn",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "candidate": "legacy",
+      "translation_hash": "c39fda75da9a163f3a645f930e068e1369759649ae4605bd7621a7bf73a62ca7",
+      "record_ids": [
+        "e3bd768f1bcd1ac0ce37ad70f4e98063ba83fd99f35d7e871a71e30dc9b3cfe1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.howItWorks",
+      "locale": "bn",
+      "source_hash": "de3eaa7ed04dee6b7107ac85941500cae480e29ede1e055980f63bfcfb32f70d",
+      "candidate": "legacy",
+      "translation_hash": "c599a716990324c597856980eca8e935a6291a7781eb80c4f4ed0d05f7003e7e",
+      "record_ids": [
+        "e0b8fe9afbb3ba493238145f94aacf2ec592d55ecb0605ccd95127037954e08e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "bn",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "candidate": "legacy",
+      "translation_hash": "0dfbca3b421302193c46f725e2026290c0b49bc6d07d617407b3273b9f5daf2b",
+      "record_ids": [
+        "7c3b05efcc1f4a01c7005216619fe2e6ee948c02d4a08247615d330c333c5071"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "bn",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "candidate": "legacy",
+      "translation_hash": "7fe2a36e739f786fd45e02cddd773b7f86d2ea2b99cf48760176fcb009115b7b",
+      "record_ids": [
+        "cc4bfa6cc234de0e486feeec2c3ee53e96c16eb6f1fe81c02428bd13d3e05443"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Cannot separate voices se convierte en no poder crear voces separadas; cambia la operación limitada."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.limitsHeading",
+      "locale": "bn",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "candidate": "legacy",
+      "translation_hash": "a2902dd31af9a5993e257fbcf9c5857dd528fcada60615bee2e132ee1cb6caab",
+      "record_ids": [
+        "fa014bc0aeb8d272b6c9214b684564d88925dfad259e983283628121ddb8fbed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.name",
+      "locale": "bn",
+      "source_hash": "d1518eabcadd5528e9274833eaad6891cb0eeeb91ff4dfb6d24a4bffe2b1f72c",
+      "candidate": "legacy",
+      "translation_hash": "b26b7bcb30ea4fc8d5a343eea5ef0571c031765fba24e25432b886a52cf50562",
+      "record_ids": [
+        "5df56698bb6186729c01f536c6204f48ec7dee380ad9b2bbfad8a6a2ba79ba4a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "bn",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "legacy",
+      "translation_hash": "6b6690d4707bedcbb0735394e8a313fc6a747f4a29aae37ccfa6011631d6161b",
+      "record_ids": [
+        "ac3d39cc7721bb51d2aa3c7cf380cbd0a00efbd0a062faa044216acac63a3ded"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-source-forward-back-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "a1b3e5b6f695d6c2bffdee9ba6cb4005f3107223b7bc9faf5e971812c7b2c57e",
+      "key": "shikaku.description",
+      "locale": "bn",
+      "back_translation_hash": "a485632c5caed3dadaeb7d3f11562854e0c32800e09b5ccaef319fb86c9bb417",
+      "notes": [
+        "La vuelta cambia el nombre propio Shikaku por Chicago."
+      ]
+    },
+    {
+      "record_id": "143611567fd5a1fdc8d14612dfb9423d67461142ed650b0648c1d80ba2427f41",
+      "key": "shikaku.fields.faq.0.q",
+      "locale": "bn",
+      "back_translation_hash": "65cf51ea5b81acfbd5488be924e230be470e813f1d6c6b7128b5b34328bc79c8",
+      "notes": [
+        "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+      ]
+    },
+    {
+      "record_id": "54034d0464bea7a4bd6f205bf1c8c2fe8c985c11c4e7011158208abb83fb7a23",
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "bn",
+      "back_translation_hash": "ea80c8cc4c6fa203463c4236e9dd5879f17c7ed57c1d46f4e17ec8f4d47d7d1e",
+      "notes": [
+        "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+      ]
+    },
+    {
+      "record_id": "0aec5218e565bd0e56620058bca9269a643e1dc9d6cb2b126bb12e832743fddb",
+      "key": "shikaku.fields.statusInvalid",
+      "locale": "bn",
+      "back_translation_hash": "2350692e41152866105d3952349613bc7bccbd5c77c5116a7a856f77caaeb08a",
+      "notes": [
+        "La vuelta elimina el objeto clue de does not match; pierde la condición de correspondencia con una pista aunque la ida sí la menciona."
+      ]
+    },
+    {
+      "record_id": "a1316c103b4ed443fe15c4f44565e2ccbe04b329a9826a0e21630e1f2d928b7b",
+      "key": "shikaku.fields.statusRemoved",
+      "locale": "bn",
+      "back_translation_hash": "ba857c684a01cf0d2d0695d5b01ad380bbbddb86289d165c8abf59fb8be8fd78",
+      "notes": [
+        "La vuelta dice Rectangle moved en lugar de Rectangle removed; cambia eliminar por mover."
+      ]
+    },
+    {
+      "record_id": "fe9f0319160e518121c3d7ab290ce1c873c5a07bc8ea458ab6295c397b0503fd",
+      "key": "shikaku.fields.statusWrong",
+      "locale": "bn",
+      "back_translation_hash": "676deabdb80366f58eb723e4180d5b90f47e30ccd896f59c78b76953d8838c4f",
+      "notes": [
+        "La vuelta convierte las pistas del rompecabezas en fórmulas."
+      ]
+    },
+    {
+      "record_id": "43e3303220806a6d90468a183b02c0865e61f059c2b17630bbacfd4af821de91",
+      "key": "shikaku.name",
+      "locale": "bn",
+      "back_translation_hash": "4a8de49dffa382854b9db367a25247b9ca9910f55b884c9699c8269e041e0600",
+      "notes": [
+        "La vuelta cambia el nombre propio Shikaku por Chicago."
+      ]
+    },
+    {
+      "record_id": "df0a862748e4752779c5dd57d687e947f11dc96da7443368a3fcf9e5d1a7363d",
+      "key": "shikaku.title",
+      "locale": "bn",
+      "back_translation_hash": "c2c498b7f5b681f9b09bf80f7e6204b13d068907b723b1f9c47f951b567ae29b",
+      "notes": [
+        "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+      ]
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "a1b3e5b6f695d6c2bffdee9ba6cb4005f3107223b7bc9faf5e971812c7b2c57e",
+      "translation_hash": "70f5d4ed3e8ddbaa2490445973721aac724a8844454fed75838be18f42379005",
+      "back_translation_hash": "a485632c5caed3dadaeb7d3f11562854e0c32800e09b5ccaef319fb86c9bb417",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta cambia el nombre propio Shikaku por Chicago."
+        }
+      }
+    },
+    {
+      "record_id": "780e7608562de35c27844660b919226900008cc27fdce189f38879e9097db02c",
+      "translation_hash": "c7b76d3b9006dd6e1a7d57465921636779ff0f8e9633e71d156c39c393c99ce0",
+      "back_translation_hash": "f931a6d906d524b77e775287222ac0c718d3cc1f4d05fa1dc083e7b9190e4062",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "234a97709a10b7ea91806d8435ba031b05f8c09105c81c139d6bb91a5dc67809",
+      "translation_hash": "8c046e85eaecb83860da81b8b8e498a3eec5bbeba8717502ea907d9189e731f6",
+      "back_translation_hash": "fa16f84170768cb336415257dd17e0eed87160d30defe4492a4b6bdb61bef7ed",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "143611567fd5a1fdc8d14612dfb9423d67461142ed650b0648c1d80ba2427f41",
+      "translation_hash": "c048875f586a441eb96fe7fd4c13811799dd0e7f975cc14a903a776c51b18e19",
+      "back_translation_hash": "65cf51ea5b81acfbd5488be924e230be470e813f1d6c6b7128b5b34328bc79c8",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+        }
+      }
+    },
+    {
+      "record_id": "1bc0efc8a671850c3e587968637cb9c4d0978186db31bd90ad039fdb7b6aac89",
+      "translation_hash": "f5bb405b05a5e06c6afa55535f850cc6a9dd4f71816e9f7df5fcb61986326941",
+      "back_translation_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "98e4169d1b266a6756ad30100c171e8e5996c2572b45e66c973c419c475f6946",
+      "translation_hash": "2c4a452b49c616c1e5dd5d7c2bef4cfdb1d302ea30272e106a51189b01a90ca3",
+      "back_translation_hash": "572d95eaa95695a8061b9460de1454a9e9a76a84e6c363da6c1cc59042ca1498",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "09278a79506b392900c1178180aab0edb57d0560b8cc7eb5fa4ca8d8998a416b",
+      "translation_hash": "c4714003afc1c6340c0e62b5ea986356c1aa549893a8dd9f80e4aae2b5a1a9ec",
+      "back_translation_hash": "df6e45fe2a00defc65aeff5434d873d5f89e77c6f6bf0e58c0d3faff0218d7a8",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "54034d0464bea7a4bd6f205bf1c8c2fe8c985c11c4e7011158208abb83fb7a23",
+      "translation_hash": "50b69e060c8cad309ed40f1ff653d167c44b6aee8e06d53108e1219d76264fde",
+      "back_translation_hash": "ea80c8cc4c6fa203463c4236e9dd5879f17c7ed57c1d46f4e17ec8f4d47d7d1e",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+        }
+      }
+    },
+    {
+      "record_id": "979e17481d253cc14ffdd302a4dfa851f84fa293f1379e2be540d178adc149b3",
+      "translation_hash": "c3f722f527e6ad06d8a74d0e7b9136be1fa9b2bfc8950e4c2493538249a1422c",
+      "back_translation_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. El signo final U+09F7 ৷ tiene valor numérico 1/4 en Unicode; se usa como puntuación y añade una cantidad espuria."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. El signo final U+09F7 ৷ tiene valor numérico 1/4 en Unicode; se usa como puntuación y añade una cantidad espuria."
+        }
+      }
+    },
+    {
+      "record_id": "d8853931eb39b2674d2352a0474846278bf3b56e04a60f4c565929ae0f994116",
+      "translation_hash": "1d82425ade0758a5ee2685cca9d230a361dba9bf1ac45e812b9128b20b7e016e",
+      "back_translation_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "e7f0ab4a6957e8c59263575159fd7628fdd542eed6f9b83ac5f23420ff66e6b7",
+      "translation_hash": "c91694c0770669d116810461e3c7e60e5796a76fc8d06106b06c2eabbaa6e322",
+      "back_translation_hash": "ee10cfd4e409f9b2eb9b3d9d5e39c2374a450e48eac1b2c6c52545244442796d",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "0aec5218e565bd0e56620058bca9269a643e1dc9d6cb2b126bb12e832743fddb",
+      "translation_hash": "e33f6a0cf1374990f0dce47f25e29de1026ef6cf43f6f8a37b309540f6f91d93",
+      "back_translation_hash": "2350692e41152866105d3952349613bc7bccbd5c77c5116a7a856f77caaeb08a",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta elimina el objeto clue de does not match; pierde la condición de correspondencia con una pista aunque la ida sí la menciona."
+        }
+      }
+    },
+    {
+      "record_id": "48095782536e1352f4010203564ae43c1e91dec0686e27b8da114c66e76b2b92",
+      "translation_hash": "fb9f878b46bf4f8c60cceb2382f64ef1b4535d72457007e3af53c1f0372fba6f",
+      "back_translation_hash": "d1bc768fbbbf7908e19fa3790d0e40232590eb3acbab5b14db5ba72fce91e715",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "a1316c103b4ed443fe15c4f44565e2ccbe04b329a9826a0e21630e1f2d928b7b",
+      "translation_hash": "a193c10611c3fbfced960cb11be7d339d332fc7570384445c3e8c3614b3e01c7",
+      "back_translation_hash": "ba857c684a01cf0d2d0695d5b01ad380bbbddb86289d165c8abf59fb8be8fd78",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta dice Rectangle moved en lugar de Rectangle removed; cambia eliminar por mover."
+        }
+      }
+    },
+    {
+      "record_id": "7c22d894b0f2af0c245721ffcce125f2311382474eb2cc33e5b534e120fc806f",
+      "translation_hash": "2617de05c4d79dd6b3294a2585537728ade67207640dadafb6837b68d0826780",
+      "back_translation_hash": "8f2db0eff134ddb9e4d7b3b627153f36260dfb65942e222e455ae87dda29e5bd",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "fe9f0319160e518121c3d7ab290ce1c873c5a07bc8ea458ab6295c397b0503fd",
+      "translation_hash": "1a752d1d879a19081e8939553b744c68257ea3f79ec075cb72583ac91a71f829",
+      "back_translation_hash": "676deabdb80366f58eb723e4180d5b90f47e30ccd896f59c78b76953d8838c4f",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta convierte las pistas del rompecabezas en fórmulas."
+        }
+      }
+    },
+    {
+      "record_id": "4caa7d7c1b959634f8426bc391b04d1dd4eb8ac6420d8deb1528d7577c71f9b2",
+      "translation_hash": "9a302346f789548119bc9080aa9498abd8bed764bc70cd82a5714aba38028020",
+      "back_translation_hash": "f21a436f5c305f86a3e34a94f4e85e9ff3f0d85d868b004db82377a734ebb720",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La última orden termina con আবরণ, sustantivo cobertura, en lugar de un imperativo natural para cubrir cada casilla."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La última orden termina con আবরণ, sustantivo cobertura, en lugar de un imperativo natural para cubrir cada casilla."
+        }
+      }
+    },
+    {
+      "record_id": "6ba5d975775ed8ac5c6a5556e866e9f29e5005a9cd22121539a88570366894a7",
+      "translation_hash": "5c17c8d97012a362f8ddf5bf54eec720e0fa2f4492f2e9aa57df89efa83e29f1",
+      "back_translation_hash": "cf58ccf4bd6556882acf60816ad8c0f62fa4d4804130bebe007ef9b6b08c8910",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La frase final কোন অ্যাকাউন্ট বা ফাইল আপলোড প্রয়োজন carece de la negación necesaria de required; no garantiza que cuenta y subida sean innecesarias."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La frase final কোন অ্যাকাউন্ট বা ফাইল আপলোড প্রয়োজন carece de la negación necesaria de required; no garantiza que cuenta y subida sean innecesarias."
+        }
+      }
+    },
+    {
+      "record_id": "43e3303220806a6d90468a183b02c0865e61f059c2b17630bbacfd4af821de91",
+      "translation_hash": "21688408987bd0dd07b19e6005a422dc19d8880236d3a0f6113b7a18eb7cff42",
+      "back_translation_hash": "4a8de49dffa382854b9db367a25247b9ca9910f55b884c9699c8269e041e0600",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta cambia el nombre propio Shikaku por Chicago."
+        }
+      }
+    },
+    {
+      "record_id": "df0a862748e4752779c5dd57d687e947f11dc96da7443368a3fcf9e5d1a7363d",
+      "translation_hash": "3c560e34c695f064d3b7b9757952b76685b435f11f45943ab5262eda2bd5335d",
+      "back_translation_hash": "c2c498b7f5b681f9b09bf80f7e6204b13d068907b723b1f9c47f951b567ae29b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta cambia el nombre propio Shikaku por Chicago; en el título también desaparece la referencia a rectángulos."
+        }
+      }
+    },
+    {
+      "record_id": "8f29c971a11f01b49b287bf87ca57a0b3a93d13f5d647bb8dafb0da8b212857a",
+      "translation_hash": "25a66694f085f895dd77bad2956d45065c8e481f40dc849ff4d20a59130ee48e",
+      "back_translation_hash": "33adce0df9bc5be5cce5e9927e94f4fa80c207de145110b18f207fe30c7e9f7c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. La orden Change pitch pierde el verbo y shape radio se translitera como শেপ রেডিও sin expresar configurar el efecto."
+        }
+      }
+    },
+    {
+      "record_id": "423c1fb0bc3fad887c75916ece79f2d9c4502f44f89ada2edd3a438563720950",
+      "translation_hash": "188fede473d4a1c4f46a12bb13ce5e0a90f8c23b7342b55d3ba1c6f7b72d7fe2",
+      "back_translation_hash": "65cbf1c425a4e4e28bce984b2635387c20643abfb74989598202761826321cdd",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_software_identifiers": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Gain, amplitud del audio, se traduce লাভ (beneficio/ganancia económica) y el identificador Web Audio se localiza."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Gain, amplitud del audio, se traduce লাভ (beneficio/ganancia económica) y el identificador Web Audio se localiza."
+        },
+        "software_identifiers": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Gain, amplitud del audio, se traduce লাভ (beneficio/ganancia económica) y el identificador Web Audio se localiza."
+        }
+      }
+    },
+    {
+      "record_id": "587a4912b1399cf52679010c7fa81262c394ef6029b7049d8bbf3190bf21c799",
+      "translation_hash": "3147cc005398d010e8b8f0c93a6b7dc97d08dbdeb39c667896e5e003e1b45a65",
+      "back_translation_hash": "0df8c438845916d0ea465ae8cd395d85c5b7a69854a5ecd839bd382d7a994d7c",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "20073eed67d98df357a2ef66f1ee5498fbeb626172b8498da52e7470c499870c",
+      "translation_hash": "4bc9ffd7f2c16f09166605837bfba8c32b4f8547a98d20608f07548223ab73bc",
+      "back_translation_hash": "ab9a21aef29ac0b27e029ca962c5c934572ad51acd05d3cf5c538bffb439cf00",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+        }
+      }
+    },
+    {
+      "record_id": "2fdf85589e79f544438b1acd3019e3a8023647aca16aa69ae20c602182a2efa4",
+      "translation_hash": "ea9531671475c97b94c10792a69660683de85624182d87662464704d203e48ea",
+      "back_translation_hash": "da7330a3890fa48901eebababb6cfc7eb9e0822d3791a2b10ffe4e64b3a1a0b5",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "83ec779fd6d32e33ac3835049bbc8add8728d4c300e334a232e8fc5513674d29",
+      "translation_hash": "005e9df8ad37b57e780e09572bf6ebc6babdb98e2926aa9873cf25edd4aeaa22",
+      "back_translation_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "4076d5f78487c743f7fd7ceec9f88d955043d8a6e6bba52fee3b6218c77adf77",
+      "translation_hash": "1f01611848ec9d5cee5431f8f232e92445b05310528df55269276cbceffadfbc",
+      "back_translation_hash": "602e6a92486ee11b36e9f900c359ab9bcc1ba506d68d45f86d64d48413e3f391",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "25b2dbc36455c393303fc12b667d9109dbe875fca693abd42b0beb50d1e018b4",
+      "translation_hash": "3147cc005398d010e8b8f0c93a6b7dc97d08dbdeb39c667896e5e003e1b45a65",
+      "back_translation_hash": "0df8c438845916d0ea465ae8cd395d85c5b7a69854a5ecd839bd382d7a994d7c",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "c161e049692f1d70aaa2ded5eb28ff093461f0a190906b6ad5c7ed97905b153e",
+      "translation_hash": "4bc9ffd7f2c16f09166605837bfba8c32b4f8547a98d20608f07548223ab73bc",
+      "back_translation_hash": "ab9a21aef29ac0b27e029ca962c5c934572ad51acd05d3cf5c538bffb439cf00",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Separate vocals, verbo separar, se convierte en una voz separada que podría clonarse; cambia las dos acciones preguntadas."
+        }
+      }
+    },
+    {
+      "record_id": "584024dd009ff0223becda18069b379cc695844fd13f4b7fb30f081506775224",
+      "translation_hash": "ea9531671475c97b94c10792a69660683de85624182d87662464704d203e48ea",
+      "back_translation_hash": "da7330a3890fa48901eebababb6cfc7eb9e0822d3791a2b10ffe4e64b3a1a0b5",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "3c2e3398b7ac34880416711425a0a3042258ee3678c8fd3d106a7e1d24c83195",
+      "translation_hash": "005e9df8ad37b57e780e09572bf6ebc6babdb98e2926aa9873cf25edd4aeaa22",
+      "back_translation_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Datos de ida sin prueba finita: quantities, coordinates. Bloquea sin inventar error lingüístico."
+        }
+      }
+    },
+    {
+      "record_id": "cc4bfa6cc234de0e486feeec2c3ee53e96c16eb6f1fe81c02428bd13d3e05443",
+      "translation_hash": "7fe2a36e739f786fd45e02cddd773b7f86d2ea2b99cf48760176fcb009115b7b",
+      "back_translation_hash": "7480956574576139eb9aa10895681d74e3a4a0eb71eed54c261a49f7bf65c621",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas. El parser no prueba esta variante de vuelta; cantidades-artículos,pronombres y formas técnicas se distinguen de los defectos independientes registrados por separado. Un daño heredado de la ida legacy no se presenta como un defecto nuevo independiente de vuelta ni rebaja una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Cannot separate voices se convierte en no poder crear voces separadas; cambia la operación limitada."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Ida legacy actual leída y comparada con su revisión negativa anterior; bytes/fuente/clave iguales. La vuelta actual se revisa de forma independiente. Cannot separate voices se convierte en no poder crear voces separadas; cambia la operación limitada."
+        }
+      }
+    }
+  ],
+  "scoped_back_findings": [
+    {
+      "record_id": "234a97709a10b7ea91806d8435ba031b05f8c09105c81c139d6bb91a5dc67809",
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "bn",
+      "translation_hash": "8c046e85eaecb83860da81b8b8e498a3eec5bbeba8717502ea907d9189e731f6",
+      "back_translation_hash": "fa16f84170768cb336415257dd17e0eed87160d30defe4492a4b6bdb61bef7ed",
+      "notes": [
+        "Clues become formula and area becomes a square; the forward Bengali uses clue/area in puzzle context."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "4caa7d7c1b959634f8426bc391b04d1dd4eb8ac6420d8deb1528d7577c71f9b2",
+      "key": "shikaku.intro",
+      "locale": "bn",
+      "translation_hash": "9a302346f789548119bc9080aa9498abd8bed764bc70cd82a5714aba38028020",
+      "back_translation_hash": "f21a436f5c305f86a3e34a94f4e85e9ff3f0d85d868b004db82377a734ebb720",
+      "notes": [
+        "Exactly one region area becomes the exact product of an area; invented product relation is a back error distinct from old forward punctuation."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "ae4fbf365f3ed4f2b6671c004f10bc64fb0ba12d592f574a8f251ff34f91a7a7",
+      "key": "voice-changer.fields.faq2q",
+      "locale": "bn",
+      "translation_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "back_translation_hash": "74b963a3c6ebcb9dd5b5b93137a8261a2654083516ac7c30ae78dff54a07138b",
+      "notes": [
+        "Original duration becomes real time; elapsed clip duration is changed to a different temporal concept."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "b2ae2284777e4a140024a2df8c0212fe704ab3427ed0124de5b01e269e01c066",
+      "key": "voice-changer.faq.1.q",
+      "locale": "bn",
+      "translation_hash": "758ad8daf86d345f5fc4ea6db3d9e0d64b2d3fbb5a4ab3d8c2e9b15c939876aa",
+      "back_translation_hash": "74b963a3c6ebcb9dd5b5b93137a8261a2654083516ac7c30ae78dff54a07138b",
+      "notes": [
+        "Original duration becomes real time; elapsed clip duration is changed to a different temporal concept."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "c6c031b0b75da2c20c0a019dc27ef3da68b13ea1f0623af3b606330f8b5e534c",
+      "key": "shikaku.language",
+      "locale": "bn",
+      "translation_hash": "18a818b2f0aa12d4a4277188498e0822102614873b638a362df0132f1f293019",
+      "back_translation_hash": "0f8bcbd9036dbed1131e9b81b4f6658043c53c1b98aa1ade061d64bc4cba88ec",
+      "notes": [
+        "An underscore is invented before Languages in the back label."
+      ],
+      "blocks_gate": false
+    }
+  ],
+  "full_gate": {
+    "bn": {
+      "rows": 92,
+      "sample": 92,
+      "points": 812,
+      "maximum": 828,
+      "button_errors": 0,
+      "number_negation_errors": 2,
+      "major_rows": 4,
+      "minor_rows": 4,
+      "unproved_data_rows": 16,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Rejected by observed forward errors or unproved data; back findings are separate. No approval.",
+      "fixed_sample_rows": 39,
+      "fixed_sample_points": 339,
+      "fixed_sample_maximum": 351,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+      "known_memory_rows": 0,
+      "forward_model_rows": 0
+    }
+  }
+}
