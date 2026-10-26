@@ -1,0 +1,1297 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T13:06:14.908916+00:00",
+  "source": "0159802ac2f59186e13030abfd635b0e1e480afa",
+  "verified_feature_before_cleanup": "00131ce108517bbfe9b987d5529d007b7ddb168c",
+  "verified_main_before_cleanup": "1d066250626eba0db27402672567093a08a6dbf6",
+  "versioned_files": 7906,
+  "all_index_matches_remote_tree": true,
+  "main_changed_only_six_docs": true,
+  "six_shared_docs_same": true,
+  "unchanged_src_public_files": 6851,
+  "immutable_old_pilot_blobs": 450,
+  "old_checkpoint_files": 31,
+  "old_records": 16109,
+  "current_records": 16442,
+  "old_metrics_groups_preserved": 140,
+  "current_metrics_groups": 144,
+  "evaluations": 8272,
+  "old_global1403_cases_byte_identical": true,
+  "old_scoped14_cases_byte_identical": true,
+  "memory_targets": 731,
+  "frozen_runtime_sha256": {
+    "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+    "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+    "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+    "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+    "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+    "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+    "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+    "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+    "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+    "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+    "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+    "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+    "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1"
+  },
+  "progress_rows": 1001,
+  "progress_changed_only_notes": [
+    "dxf-drawing-viewer",
+    "shikaku-puzzle",
+    "voice-changer"
+  ],
+  "approved_locales": 0,
+  "native_review": false,
+  "tools_activated": 0,
+  "new_tool_sources_in_main": 0,
+  "deployments": 0,
+  "pr_draft": true,
+  "repository_private": false,
+  "code_data_tests_reviews_fixtures_match_ci": true,
+  "post_ci_changes_limited_to_shared_docs_and_receipts": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-26-piloto-v30-ru.md",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/ci-v30-verification.json"
+  ],
+  "ci": {
+    "schema_version": 1,
+    "at_utc": "2026-10-26T13:04:28.528951+00:00",
+    "run_id": 40324945714,
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40324945714",
+    "source": "0159802ac2f59186e13030abfd635b0e1e480afa",
+    "conclusion": "success",
+    "node_tests": 3045,
+    "python": {
+      "tests": 363,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "inventory_sha256": "c5c7b81b653334ba57ebf41d71a2fa53536687e4432997d51e0cd99c388b7748",
+      "workers": 4,
+      "seconds": 893.794
+    },
+    "all_case_ids_executed_once": true,
+    "runner": "public standard ubuntu-latest",
+    "artifacts": 0,
+    "model": "skipped",
+    "publications": "skipped",
+    "log_sha256": "18b0598e53362acbb281654d7db56b4da7428f94d2f14dc871c9f841ae6358d5",
+    "build_scope": {
+      "principal_tool_pages": 9972,
+      "principal_homes": 36,
+      "sitemap_urls": 10260,
+      "hub_growth_tools": 217,
+      "hub_market_tools": 100,
+      "editable_recovered_tools": 106,
+      "growth_pages": 7848,
+      "growth_files": 8253,
+      "preview_files": 11293,
+      "preview_tool_pages": 10800,
+      "preview_locales": 36,
+      "all_tool_pages_and_homes_noindex": true,
+      "indexable_preview_urls": 0,
+      "not37locale_certification": true
+    },
+    "native_review": false,
+    "approved_locales": [],
+    "pedro_tests": {
+      "pending": 8,
+      "fails": 0,
+      "new_ids": []
+    },
+    "limitations": [
+      "No UI/devices/responsive/native/blind/general-engine/release certification.",
+      "Model runs have focused16 prechecks;this final CI executes the complete suite."
+    ],
+    "costs": {
+      "at_utc": "2026-10-26T11:22:06.645018+00:00",
+      "repository_private": false,
+      "runner": "ubuntu-latest public standard",
+      "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+      "new_paid_api_calls": 0,
+      "cloudflare_operations": 0,
+      "codespaces": 0,
+      "containers": 0,
+      "persistent_model_caches": 0,
+      "artifacts_expected": 0,
+      "note": "Official documents verified this turn;standard public runner free. No claim about pre-existing account bills."
+    }
+  },
+  "production": {
+    "before": {
+      "at_utc": "2026-10-26T11:18:43.776502+00:00",
+      "rows": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "status": 200,
+          "bytes": 786404,
+          "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "urls": 10260
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "status": 200,
+          "bytes": 1431497,
+          "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "urls": 15365
+        },
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        }
+      ],
+      "method": "Five real GET plus2 XML parses;compare status/bytes/SHA256 and URL counts. No UI/search-index certification."
+    },
+    "after": {
+      "at_utc": "2026-10-26T12:15:12.320458+00:00",
+      "rows": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "status": 200,
+          "bytes": 786404,
+          "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "urls": 10260
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "status": 200,
+          "bytes": 1431497,
+          "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "urls": 15365
+        },
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "status": 200,
+          "bytes": 98535,
+          "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+        }
+      ],
+      "method": "Five real GET plus2 XML parses;compare status/bytes/SHA256 and URL counts. No UI/search-index certification."
+    },
+    "identical": true,
+    "indexable_urls_before": 25625,
+    "indexable_urls_after": 25625,
+    "soft404_routes_still200": true,
+    "deployments": 0
+  },
+  "secret_scan_active_findings": 0,
+  "production_final_readonly_confirmation": {
+    "at_utc": "2026-10-26T13:05:21.752703+00:00",
+    "method": "After successful final CI:5real GET+2XML,status/bytes/SHA256+URL counts exactly compared to both earlier batch reads.",
+    "rows": [
+      {
+        "url": "https://usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 786404,
+        "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+        "urls": 10260
+      },
+      {
+        "url": "https://tools.usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 1431497,
+        "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+        "urls": 15365
+      },
+      {
+        "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/es/zzz/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/zzz.html",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      }
+    ],
+    "identical": true,
+    "indexable_urls": 25625,
+    "deployments": 0
+  },
+  "light_local_performance_inspection": {
+    "method": "Light local cProfile sample:three actual v30 model records,two passes,Mac Python3.14. No model/build/dependencies. Not a CI benchmark or speedup claim.",
+    "record_ids": [
+      "702265689b4f216db7175d9cace0afded63481071941cd826dd778c88c011ec6",
+      "e4a37a1b199b004a606c1325e7836617602de2a0033d1df8b5a13c36ddf5874d",
+      "528949e30b39db9f28a9b718c811e9e5c3d221b6559228b0207f668ca6cf0636"
+    ],
+    "flag_evaluations": 6,
+    "seconds": 6.581042,
+    "top_cumulative": [
+      {
+        "file": "pilot-russian-v30.py",
+        "function": "flags",
+        "line": 210,
+        "primitive_calls": 6,
+        "total_calls": 6,
+        "own_seconds": 4.6e-05,
+        "cumulative_seconds": 6.580991
+      },
+      {
+        "file": "pilot-russian-v30.py",
+        "function": "checks",
+        "line": 161,
+        "primitive_calls": 80,
+        "total_calls": 3482,
+        "own_seconds": 0.004302,
+        "cumulative_seconds": 6.575243
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "typed_record_evidence",
+        "line": 389,
+        "primitive_calls": 12,
+        "total_calls": 1146,
+        "own_seconds": 0.001874,
+        "cumulative_seconds": 6.04711
+      },
+      {
+        "file": "pilot-bengali-v29.py",
+        "function": "flags",
+        "line": 310,
+        "primitive_calls": 6,
+        "total_calls": 6,
+        "own_seconds": 8e-06,
+        "cumulative_seconds": 5.653671
+      },
+      {
+        "file": "pilot-bengali-v28.py",
+        "function": "flags",
+        "line": 268,
+        "primitive_calls": 6,
+        "total_calls": 6,
+        "own_seconds": 2e-05,
+        "cumulative_seconds": 5.653663
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "record_flags",
+        "line": 1611,
+        "primitive_calls": 6,
+        "total_calls": 6,
+        "own_seconds": 0.000101,
+        "cumulative_seconds": 5.653642
+      },
+      {
+        "file": "pilot-russian-v30.py",
+        "function": "numeric",
+        "line": 136,
+        "primitive_calls": 160,
+        "total_calls": 160,
+        "own_seconds": 0.009685,
+        "cumulative_seconds": 5.287874
+      },
+      {
+        "file": "pilot-bengali-v29.py",
+        "function": "numeric",
+        "line": 192,
+        "primitive_calls": 92,
+        "total_calls": 92,
+        "own_seconds": 0.012357,
+        "cumulative_seconds": 5.200433
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "v27_quantity_contracts",
+        "line": 1299,
+        "primitive_calls": 92,
+        "total_calls": 92,
+        "own_seconds": 0.004742,
+        "cumulative_seconds": 5.095588
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "validate_record",
+        "line": 1505,
+        "primitive_calls": 1134,
+        "total_calls": 1134,
+        "own_seconds": 0.007366,
+        "cumulative_seconds": 4.773494
+      },
+      {
+        "file": "pilot-bengali-v29.py",
+        "function": "checks",
+        "line": 260,
+        "primitive_calls": 3402,
+        "total_calls": 3402,
+        "own_seconds": 0.001137,
+        "cumulative_seconds": 4.746949
+      },
+      {
+        "file": "pilot-bengali-v28.py",
+        "function": "checks",
+        "line": 218,
+        "primitive_calls": 3402,
+        "total_calls": 3402,
+        "own_seconds": 0.000961,
+        "cumulative_seconds": 4.745812
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "policy_typed_data_checks",
+        "line": 429,
+        "primitive_calls": 3402,
+        "total_calls": 3402,
+        "own_seconds": 0.001472,
+        "cumulative_seconds": 4.744851
+      },
+      {
+        "file": "translation-pilot.py",
+        "function": "v24_quantity_contracts",
+        "line": 776,
+        "primitive_calls": 4757,
+        "total_calls": 4757,
+        "own_seconds": 0.060462,
+        "cumulative_seconds": 3.645796
+      }
+    ],
+    "dependency_read_functions": [
+      {
+        "file": "__init__.py",
+        "function": "read_bytes",
+        "calls": 73,
+        "cumulative_seconds": 0.01834
+      },
+      {
+        "file": "pilot-bengali-v28.py",
+        "function": "file_sha",
+        "calls": 54,
+        "cumulative_seconds": 0.004332
+      },
+      {
+        "file": "pilot-bengali-v29.py",
+        "function": "file_sha",
+        "calls": 3402,
+        "cumulative_seconds": 0.066973
+      },
+      {
+        "file": "pilot-russian-v30.py",
+        "function": "file_sha",
+        "calls": 40712,
+        "cumulative_seconds": 0.626428
+      },
+      {
+        "file": "pilot-validation-cache.py",
+        "function": "read_bytes",
+        "calls": 161479,
+        "cumulative_seconds": 2.082211
+      },
+      {
+        "file": "pilot-bengali-v29.py",
+        "function": "contracts",
+        "calls": 93,
+        "cumulative_seconds": 0.402806
+      },
+      {
+        "file": "pilot-bengali-v28.py",
+        "function": "contracts",
+        "calls": 1,
+        "cumulative_seconds": 0.121957
+      },
+      {
+        "file": "pilot-russian-v30.py",
+        "function": "contracts",
+        "calls": 1312,
+        "cumulative_seconds": 1.306639
+      }
+    ],
+    "decision": "Profile independent v31 contract/dependency revalidation before any further optimization;preserve frozen v30 runtime and tamper rejection. Do not infer whole-suite/model speed from this sample."
+  },
+  "direct_current_review_proof": {
+    "reference": {
+      "checkpoint_sha256": "194a0e83a8bf3a698006dac3a46dfe76c6d74b93da11634828b2fcf3c02762a3",
+      "read_ids": [
+        "0b04e73024664c6b057fabc7d5d4d3df6405fc6eac7441b87352d44e2ddd9ae1",
+        "0e14962f434673fef5cbfdf6c7cddf0c9c0a50f0b543899172f4a17745ce2dfd",
+        "0f927dcc23dc33c048dab9c1447d0b420c20b9c13688fbb403350e0c9ea1f122",
+        "13d64b6142ee3097212e7574ea5f463bd39a388aee81d152c05c636772452b12",
+        "1ae9e992832af5f87fdc7301da97a9e79a6550aa3af4946f95aa80922e33503e",
+        "1afee2644b719876ad2483965845c1d8323107b205c93ff1c5cb9a4cd88d0e7d",
+        "1b1c14d4a368a64e0a13c8e4d5acfaf53b11b7ed29ad40e64da4f1d9c48aa75a",
+        "1ba254db34c77b14841d183bd89cb68d9d325f7ac3e8330c39bd9e79cb0edfca",
+        "1d9173d3b8554d46d8cf69ff3a83a4e75ba050bd2c46bd49b55050c5bdd60f66",
+        "1eacd5e44dc5fb50fb73b11c731a0624f6da3a078a9e4beec4c6018dd456fb5b",
+        "1eb17fe1972033ae171c761f971bebf4e5a87d3dd5563f4317e7fcc78fe62ff4",
+        "1ee1d609cbf30f690a5e3bf274d1fd7bfe3a77e82b15639c578210cfa01fbce7",
+        "1fbf89d6000abbed8318359d5e895e7c965423d42ef17ea1734e543d1fd798de",
+        "2606d90a3a0ddc492725e5a71565695f514b1df62995d3714e6ba107c03c817d",
+        "280cbfa2dfa0319f5946bad4c61cdc3b5cf9f22b6d3b96af8392d68e2cca8cc2",
+        "2a5a1e3292608f048cb7156b89469bdf5c92cdeec3aa406a540faefa8a41f781",
+        "2e26d059de28fcdb144c16750e528d2bbe62518b660268139e35c59c4eb1c2f3",
+        "30534f0f5b8945fe91a50bb5b687e354e908a34a768d911cf72176fbc9ea7f83",
+        "319aba41c426be34f8b3af6ac634d9cbca5368d45095ccd7f21af0dd35f4c242",
+        "34913351ea98c692185e49d7177f761e0f72b855110b8dac9f7ad7309772b062",
+        "3d99250b39862992a2200154aeee4e01ef59f078e73b16738f523b8bd768968a",
+        "3ea061efb328b91d977f079d14dd232710b0e23ceda7e3849a29f4f45c5105ea",
+        "3edc418d1528990b81c1b33f45c319da6840bc8d65353c5ab390d28ff2fba412",
+        "46fa460fa694d91931c5f4094100f17b681401cbfc194e376106614ae70c20ba",
+        "470d2ccd1fadd73c3cbe4185b189fed29bcde4a7f84c3b6d5cb0a7fdb70c11b8",
+        "48932a7df815c9c52e0fe633f71bb0ec78d015ec20ca252a9e254642c4aa582e",
+        "4f3f54a320458e392263973181b6fa7788ac8ef5349f7e55007e430cfa011031",
+        "4f5d56a75c8ff69d2a841a798363d23617484e3c27cb9c05336287999ff3b414",
+        "515d68bb61bbab43aca297e027520977e2ca167f9009f33c0f85e43b7894ecd3",
+        "5874b0b4cded9963438212170d4bb1e2274f641e02e5eae971f1072cd89f6364",
+        "5bd6495fe7d5eba355d9a97dd7f62e2817d4ba90a56d8dc9bcbeea2d64542305",
+        "60d3bfc467907668f178d7ccdd4834a752ee36ee8b03aa57aa0c41d72a0655d0",
+        "6301be7da96ebdbabfc8dc7c5eeee7fe3239f7941e23b015bfe5c9e95f9db848",
+        "68dce77c9c07f7ba0ed40b7fba8521d22394d71a0897c32000311d13e9e93e2f",
+        "6baa2c8ec4cfabcf9e06d5450f6981aabb5bb9bba5a99e2c965dd7416aa85302",
+        "6beb314665a2b4cca649105d555e3d7aac5e554e7ee27c0afccd46f9032b2988",
+        "7363fb96edd109d543dd2d471114e644d78d799081dbc11a8e1a8c4e611d0cb3",
+        "73df719236bcfe8c3eca56e56c780273d6b0e3981851307e554e5d7a19dac49e",
+        "78e814f604a937f98c6f3a4df1590fc34de7924f9c1565564e8cfde3cfc627c8",
+        "834a58cb4699465b99425ac8dd97230a3b50fcb5528a06444c4c6b5a4e822540",
+        "8672397683624b2ecf20bef5fbadf180e99b28a8921b33ec958201cbb10041cf",
+        "878d8cecceb2a241cc776292903c7e01761a0d49c2dd7acb5673caf29b298968",
+        "8838372edecf18f3edff93e99ff56b082ca24a8fd0b112b4ac810269be37fa15",
+        "8967ccbc80b6221f4b293c4806bf3ffcc5fda044ec1cc581bf0913c42dfbca6d",
+        "99c9ae6c0ecf103b9f9462b2d894d27f36588f0fac1455759579b42180578fac",
+        "9b436672c3696072b2d8cf5a457769d3b425b2da892c8ca039f4109ddb6b70bc",
+        "9c28191190c711e6c26314c1791c9373710d83aadedd53474943239402522a87",
+        "9d76d311056bd5bb36298eaab6b5adf1f8bd55cff59d05647fd04fdf3ab9cdbf",
+        "9dcc7c16740613a05d47c935e3f6c373e6d73268e910bbe4ce60788e83f97803",
+        "9f07dc90701747c36919973311344dc13289dc45f55122a23f85ab3b106209c7",
+        "a770b7afe32bb2f9a5e6f71aee158d86631f5616ce78222d58c37c830625d230",
+        "a90556b6d7cf2f97b7c31a4dabf4eb4a4c16c85c2bc84325ffe8ebc9a4d42697",
+        "b62fd546483c038add1ee3984776954d0de96265dd6f5e6541075d3da8d5b7e9",
+        "b6c8878012b142b9b92fbebfc2039d8ebc844cd7f53bab7bf6d56cec505028bf",
+        "b7fd3519231b1a9b9e94f41d75fa186ebce146e96076adce03ca30c15300191b",
+        "bac536b985aac0ede3a303dc17e0b5eb97488d5c23b5079820bfbef3eaa22a36",
+        "bd963e6ba79218b3bcda44a329269bf6e1ec71035ba6d156ea0e6860b7906140",
+        "c5505bc35add67995d0f444d62354270195e531b72eed5ed5baf0dd8c4c9a6ed",
+        "ca9b5ec747caacd496f698c998a8a3d145966488ef75c449c55d6b931071fa37",
+        "d613b756771040787b7b3bb97c59236d1025c2ac973c86cb3d7100ab0753fd5f",
+        "dc8f7d4c42fc113d6067f93901d0b0c4e97a735b59d6f6f7f547f0bd0b3d5cf4",
+        "e157a63c1062922a8f7de9f440ddded672f79e91c7104c0abc7fdab43fa1dfee",
+        "e184dd749776fd14915db3900bf3eb8b6365cd5445d78f9707f401f6bcfe65ec",
+        "e93c5457bd87b9107c51ab0d13db98466f9aef2a8d22c789e4ff124278d16e86",
+        "eab304166388f30e1349ff946450ec24273e2ebce2aa5c994714a6677e391c6b",
+        "f2425599e791d07a080c04e2fcc1f9354aaf873623b32eec5e0c51fb5fc39ac5",
+        "fffecf542165d2429293f92b95c9ba6ba9ddbd4167425c3f2dcd87ce1f9f1536"
+      ],
+      "read_ranges": [
+        [
+          0,
+          20
+        ],
+        [
+          20,
+          40
+        ]
+      ],
+      "notes": [],
+      "accepted_context_notes": [
+        "Nominal UI labels,including measurement/check/export/binary saving options,retain the actions and technical meaning;no native stylistic approval.",
+        "Opposite angle/corner is geometric polysemy,not a confirmed forward error.",
+        "Single rectangle preserves one rectangle;the English back parser does not prove single,so the warning is separate from linguistic quality.",
+        "Repeated No,no is redundant emphasis without negation reversal.",
+        "Old straight-corner/headbreaking back errors did not recur in current Shikaku outputs and are not inherited."
+      ]
+    },
+    "full": {
+      "checkpoint_sha256": "d86812e0a2cfb0ca83ffb43a501626387b9194c18331578f5ce97fd2eceba903",
+      "read_ids": [
+        "000eb4d03eadbde60dfee5678db5043302f11f93bb177f3cd6082e1543cf0c7d",
+        "003699d6a6b77a44abe7061430b214fda4cc59966702a481af7d79b02699ff2b",
+        "013e9c497b9adb930aad942bd017ba580ef172466283cbbef40647cf7bdc613e",
+        "0195c53f176899e93c0a240b46c3ade91371a63160e88b1f58941f5a32e69ef6",
+        "027e8f3958054f0c3053aafb56bfe0527dff888ad84172dd77fdfa92ba51e9a4",
+        "030c1670b3cebe34c34f657d760eb5faa334f13d49d1c99710c38f0b5b83a96d",
+        "06738f0c91b1a86c5e436e34ecbc8b0f2533033e6f3f37401cc35421f56ab085",
+        "06c3a33077d5251d8bcbb4bc15753098e7c3d93730fb450f7e7e4460493ee05e",
+        "082dd88077214b3b611f1222b95a7e2d23cf1d115c7a05334bc4c8cebd0895a6",
+        "089dd649f268a345320305367bc33e8629dacfef8fd660288145aa8cb6a1ea8d",
+        "0b65a278e284124190ecb527450f1179ac42eafdbe496f97b2c72a5892978a1b",
+        "0c3329bfb3758bea70328a1a8a148445b212009d91a19fa53fffb3520074f619",
+        "0c859856e2d15c6d76a35e8112120aa7608bc43773961dcf170abdd48ce04cb2",
+        "0d188a5019d1a53456fb8aef4209ad3c65b660e1349ab147d76b940ba7453dad",
+        "0e97a352f707b69e3a5a5e0f7ab03f6d66a9f7bebb00bab62a27e69499d43df2",
+        "1130ca3a4c0d04f40a2d3dce785db1e9468a5ec87bea4ee6556610f5e170703a",
+        "12261b013a5619143e3aa36f05cbf8745e7892daea9e985e26d6a76347115a58",
+        "129667d6452fcfa25c22e6d8631648cd3656123ec8559ca162a9a5f56aa7ba11",
+        "13348ac24329f7f8a9349be84774c59338dcf0199d4f2cb69d9d0656f954ce2f",
+        "1390c5790c1d2b6f7327f88fe0e59fdaa2a8a5165969b42d3a9b80ad694cc7bf",
+        "13b7440b61a5265c71f6b12db7fa607520e26b9a7e25bbe1d90364109dc45833",
+        "140fb41ee5caef6a92a59fa81a9ec027c6e2cf5b736506bcc9198c5bfc5815e5",
+        "147396784979e360c5cfeb769e99952f48e121227e2517b5527fed42a6ea3277",
+        "14ace78dfac3104985fbf2ac110fa8e16eff59c434370f08e5ad17d0192481d5",
+        "150120e123819429b154a72213b47123564c1dfa425f5331578332d4dd020819",
+        "15d2ec413a40887d0998da2b2c82950cda2db69c4d9f6fc90bb298cad3224ad0",
+        "16abdbf011e77210d462e1eb7e5c36fac90e2fcef55ed7c354427f7a34691cad",
+        "18c464641419625aaefc8e58050b54eb6dace86c1e58df7de7d68a838f6e0ce0",
+        "19d4faaf68991212c18a8c19fbc454bd36e429dd060b2ee2cda706ef2d27c7cb",
+        "1a946f43a904424dbdcd6dd3bfa8e45ca751243c0a9c46da3753b364bdf32d1f",
+        "1b21c794dc00e3bd332a45a0c0505ed4a8ed0892732cf85acde1205df0d24c56",
+        "1d26e96c2daa735ef56e3a98fbc793ff7a12fd7cbbabbbc6c58a396cb5ad078c",
+        "1e70bf2571eef164940326db787616c4034b14952e43e2d12439a681ffa55546",
+        "1f7e69f69229c7db8d2300f7337e6eb22f3931d5fbff3b16ebb49d274ea56b31",
+        "1faa77aa66f1ecf919cd762ef8d798b0e2c99b3552707fb28491213fcbe42800",
+        "205f8a4446f982a6d3f71adc18094b01a03475835d6b2425ab95353778b1dbe5",
+        "209f9f4245c0bd17274b62dc96288e8d2afc5c83663ba7db03e0807f6e695120",
+        "22e4633ef5ed77a2c338d75e08d459911dc1703d6e696d227e2736d3e1475243",
+        "2302f90f5ae330960d79907af1fc045491c16716ab1b2869df1f228abaab4ad0",
+        "230e2e280db2e2977d41904ffc947782146789790797e12593121cdb8103769f",
+        "2416a8ee638aa1e44084ad573a5d59da08d43df2eff377b5270ff9614ba5371f",
+        "24a9af4d201e62ac92970b1050f1f87d0be8ec6c5fa4d51f764d07fcb96ae3a4",
+        "25724d393593427187630290399ae1ef4f7ba3646e7b65702e77188614a587a2",
+        "25a57f994c0abd84aa428a5a2dd4a9d319d431fee2e296d66edf4cc830a21538",
+        "2701b2962e58ddc6e4c64f5265521953a069ceccfa498e22a06b320a922e5aaf",
+        "294c38695ff34fe382082a7a77e81197c9a2d7a3b2df15846c7914ca2c513da2",
+        "2a2ff9eff7fa6b1d806c5bb66ba6ceb504284058c5d6605e003961c93d860244",
+        "2b5840683fece588ca53e9f06e018536a220162bcefc99b54309a702fe0008ee",
+        "2b96244de5519c9d036574d3977e50fdcc5aab8c67715d8639b8938c266c996e",
+        "2dc17705f1e8f1861294b6b43c314e75b90cb3d0be98f0303d9f6110e00f5228",
+        "2e476e37a9fb45b4d46e01ddba4b4ad8b79433de1db43d153fcac78f6723e2b0",
+        "2e5aaca87c63997fe1dca344702bf93bf31283209e70fd1a85e469e9b6c5cc3e",
+        "2eb421991cd082c45cdff4f8868a82c30f83f7d507cbe567631171dba3801b4d",
+        "2f6f0bb0981744b700d4825e06a4b4967f437892949229c57c5e5d51ea8ef30e",
+        "302125ec1baa7cee81fd1bd393b5bd5e39ee51a5e8373a5848415cc1d140fd3c",
+        "3103035b9d3ea0706d7dc753a0493eef075e213f86097d7a08eaa353f9fd6d1a",
+        "3143caaf386b40f7b6eacaf18bf61852480b0e49476408e14b06b66088434c82",
+        "335d31a5dac966f283d59be6c279cb3a5826588bea76239e4d07237820413204",
+        "335ef59c6686d9c199b76b0bcefe42455e4169c472b86daf7642dc491e9fb74a",
+        "33e3e76dbd0533039dbd89c2e4ee21e8f5d8b35924227a11714a4570976cf936",
+        "340ed9e8eb865262822b66b5d22cd9e8cd3d1b4a078a402c91f56c1b31200f2c",
+        "3433e3818ad218440578001b40daf9447aa9c8a7915a3b2413c6bbcf06a3ecc7",
+        "35804d5f5abb7df3e6a31225bb162aa7d8d9ad51e3080d466b10dac5383671e6",
+        "35a7dda6e5a00b779c008793a37fe3f05c53876a849e9366684ee5ef4b13336c",
+        "35bbf996538d201cec7c23f94160d6b8abd4b03ccefaaae026df15227c744c7a",
+        "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a",
+        "38e96158beb29670107232236bd87cc4d4f574e354fcbf188c4930bca818dae4",
+        "39284f7a718bb60d1d8749b3ebc85be0fcc6bdcbe927f59c7c9c19a03f03e905",
+        "3ac5895478fe8ed991984105999d5d527a4bde349b55d5fda0f7cbcedecd80ce",
+        "3d4d974c48b3c4a7fd081a59697cdbdd6fe9f61c3395bff8bc1ab0a6f9a68b1d",
+        "3e21c3a2f44754e91f0d29e2e8c7b3f37440b61d49b5b77699996c60b3a75bcb",
+        "3e308d17fd2c5889418511c8a5ddd961610dd388961de5953a89b00814ee4691",
+        "3e4ed7b7712db480096640e75f71712bbc3c52e897b0bedabd181c1618303417",
+        "413e6c216792e7ae386e6abaf8a5a862a951b0689feb916de7c884af0608b253",
+        "4312ff6f3d92bdd685c7cd7599619143d8699633f79c6d18343208b9ff40e397",
+        "43b8404a9b586c599b508f8a8f5433e3d8c39bf30a3de8dfffccf81f0b03e01e",
+        "44c4eaafed8b65dd11f2d55326b5211567034c7201568c7739feb2f762e58d3b",
+        "45075164302b0d7b9872abf0a0d0361649ffd2c47a80c434e7a300ad2c2db9c8",
+        "4945777c6784e2a9db95d2e2c030e44f53ef22d50aec395ea3686c6f1b15d862",
+        "4c4ae40d5b14674f968dd4bcf67c7257b4a73e23d051a0b9b35a800bdc45d12b",
+        "4c609402afa8c2626d33a860601ee13f250cd2c0ca6bf6e4e51e160f6388ad21",
+        "4d21d1ac2f1c2630cd26495ab66766406aad4ee20f67a0fd6192871dc57932d6",
+        "4d700fb37a9fbc02237f6be06a958d49cfeacd2d7047c9d130bd2acd43c5da23",
+        "4f9399a554720ba77554552f60ec651abce78f8f67b9fe91052bc378e7d7721a",
+        "503d03553ea3d64169459ebcb1e22400c34facdb150f6907dcc979e6395034c2",
+        "51e0096c2c3fbbca8c3b6504863be0b6d37c53a82383202c3133fa9ef9ccc181",
+        "528949e30b39db9f28a9b718c811e9e5c3d221b6559228b0207f668ca6cf0636",
+        "533b0b1715e910ea4717ae999023356824a9db59fb55326bfab37576555db0ca",
+        "535fa93c6ec638eedf0cff28d518c09b10e26a72d87aa7a1b661bce5a049b104",
+        "53bfb0dd5cc781f9225f42d9028f3322736b8832de05ada79f5f1e90cc2b8589",
+        "54817aaa6d0347aaefdd1e2b4e5aa14282fbe5584dceb3c9ee6d38164f160073",
+        "54af8b42433a99dec91200870124561769b5c311b62d9e73f95581b3b2e87e0b",
+        "54b92ebd3ff6eacc907fdad312081e9fa5d9976ff7c747e89f74164ee42e7693",
+        "5616c8428d76b6cf3ea7da600897f382203e90e6d02080acd97e2de651172ed7",
+        "5701c740eeb4087d44f6e629e38209648aa57623d8d8462efab44edbd1b87ee4",
+        "591af0d6735dbde923fd5fd32eb5d1529b4d6255a0d909b14812650333bdfed5",
+        "5abb33cb26051fc4a0e1979b383eb258bd53b67f6affbf19dd0f86ab6cf83455",
+        "5af150dda3a59d407d378bebc795cec7613c56ade92b33310d7cdb413710a717",
+        "5b59a21bd450bec14de80623d6cc6a698954857abd08ca4c411524860a0a6489",
+        "5b91623ad0a83400627b2346a354c7629e2ecdc163ddd732a756f12681c2ef58",
+        "5ef65a1d56892fcd5b59459cc6ec0fd2561e9ee069c2015fe35a04044be29092",
+        "5ff2af7e34754ebe889827b30efd3e9346645e8d897e61a7a06752ae9793e2b5",
+        "61485456395d9c016f8663459b0542790798965147eb934059550726dfe3ca3c",
+        "617e0547ed46d47cab1d69daf93058f78166849c7e5aa0eee4b16fedd35e5410",
+        "621f56c5aa43b11a1a1649a62e73740e3c6035cd6365d0183ed8ac712a1da148",
+        "63a1dfccf3f76a944f15c77c714467beda3c01e86e2b9757bd040bd4add89fb7",
+        "64c89641320d0b6ce4359097338507b242560d32be2b6890b8ce2fccb0d01c1a",
+        "66651b82bdab93973f067d9a0003f3827d0b3ba79f054e6dd973ca4ea11a48bc",
+        "66919c3daa069340a729eb8f0bef148e8a6017b673bc1af739c25ce57a45e4a9",
+        "67e29455205697e0d2ec9a4d35856834a9414eb327c043aacb749624d0084283",
+        "680125d95749fb1e4459057d51afe8f8a2283242399708ab6cae6f405773bbd6",
+        "68afa6d5b2f809dde8906af52d096184569e1b94fff7ab8c9e9dc567c32dd3cf",
+        "698933b15cf7f033523fa9ede5d2370309d588608106cf45d3916192b79dfe5f",
+        "69d90d0a5ca973c9469abc9f81d36960277260f13af03b1dc4d067158914ed59",
+        "6acc3cfaf871ef86ef0d3db83f91be15c46718ebf61978e0dcf4adb966ab5a2c",
+        "6dd13097c054ed2a2ddd31a67d9ae20ca5d99714b3ba638f5d8072e086580a7a",
+        "6ef7339c2abc63e5442ff5ab7ff491db323cb1a7975ea17c86dff63f65affe2c",
+        "6f2f6920b20cea472e9c53c5f39e52d93e1b95643c8d878307c93a52b7822871",
+        "6fbb6658c5877f2d9402809da5883fd14b12421afea01039e070c7da8d9706c5",
+        "702265689b4f216db7175d9cace0afded63481071941cd826dd778c88c011ec6",
+        "713191b76023a56175ddf45a4faeeb28afe60338ff474db4e52ad1fb86f17f29",
+        "7161fb7319d222279f6da91d33ecdbf3ce9392437f9de7a2ef87c723eeffc147",
+        "7219cdbd2a01978a8d7a7d6bbb12e51260861f1dd287942b662684b7180615c1",
+        "72836152a3973c98de09a15272d83f1c2c8c2fff1aab9fcf2690b6961fd61c62",
+        "73bfe019f605775e34e22989eb8589bdfa084b2f07894f08c308ecd5f93ab507",
+        "73eab817cd436d015612668cc1af026d4202c2e926833e3accad5973bdc88014",
+        "74b80083c750e7da86940e1e8f767152312f87284d07af8fc90f5b74180a802b",
+        "7529ec4c8045627e0f7a5a8c04b292a543497d20a60fceeddb257fa7299327e3",
+        "752ec5321a51dfd6021e05d4240153f6a5db449a19519807cf84845933c481f1",
+        "76dea5568db4e3b466c776b3c015454199e6e68d48c365322de953bc8d245962",
+        "772d6f9e351da4dcaa77c8581d91415a38b2da263afc365c53819e22ad517146",
+        "7867c2a9ecff1c46804bb428ac6009a9b0c053a5cba07a3f03378feedcfdef07",
+        "789d4bf734721331bd79fae56b0cb0225c240e95c76668edbf59904c76e414a8",
+        "79058b5636bdb1c196709c5e8b0550c338af2ee086b6ce369bc418fb8a42e998",
+        "79b0250465865a65fde29bfa5de5402e15cebd014586801e505fabc9d6cf85fc",
+        "7bb231db2ed031eebda37bc24c43567bf43c7fdb25007b53bdb82edeab362268",
+        "7e47ae9d66b6755c70a185adef773c68d05c6d9d339641f8a018cf69144100ab",
+        "7e7fbb4f405230efade9802c64feeede58d639296ca93fa4c56e12a5adcd55e9",
+        "7ef06548939de7eead02076223c1e310d5959d704db8ae170748e11b95bb1d08",
+        "7f933f32becf6d7f961d8e0b47bde1615267f4d68aca8ea0960eb42476a56b94",
+        "80316d0111feef44e53a601a7e126ae83ed009aa2582f043bead88785fb84ec5",
+        "8113b5882944e17a10088498eb18ead3ecccaff19ef28b4f7bb7d8c6b61645fb",
+        "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9",
+        "82c95c39e49b391c92ed2550b2a317a4513e5a4b566c30895c3ed5048de03903",
+        "831dcb05e3de04c2c94596e72d095b94743644cf3cb19625e7e6e3c3c50b471e",
+        "84e7dd961bb5a0fd7c78cfe651cf3985fc545515c9ea086a80108113c7bf8bb4",
+        "866a42d58f56461ce3d15ab6760d9c71c9904f0fb331b3f49104c6768d282e62",
+        "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62",
+        "87b06f8ee6e38e0af745c6cb25cbe427fd7f92e2fe4b7fae555b740b68a53235",
+        "89c9332dc650b131c39c74fab6639bc759d19dc22342813a8a1061670dfc656e",
+        "8b04815dac15012a1a9f5ad3fda8bb9cb7efc7d60e2f2edaeda0d841ed0a9f4c",
+        "8b4086a760db623560f7a00832f33dfc729114a2f6d57017a96875562facc079",
+        "8c825134a6ed0f4f31e5f781afa1e03df95ce4aa2a6faf165211c9273e05daa2",
+        "8c9551572d05f74a7d9c8223a1883d9013c567048558cf3b2f9478b5352c0060",
+        "8f8d5cefa0cf40658a124749e181a3b36e2e357da2a8cb7897628baa37d707cb",
+        "8ffe10da9ab1dc8971294683551347784b0829abc7bd119ad13c9e0f87d8c8bc",
+        "90554ed422244342e215440564cda02dfacda22a2c48c62fd28d462f66f8cc99",
+        "91081e156cf8440c05fc34488ae86246cda44d9b18b36c8b470a00446148b6e4",
+        "9436156b50e125399aeee24c4f7d66d0bf81ed367cd53cc5983b27b21c439ae8",
+        "96c68a0c1d06a59f44eb703f9d5459fb6591883a0291912c4ec2c602f7c5e332",
+        "977f20a0ef4c919c37153edd5ad9fb1bd92c9af76153020b69f18c37a69544e2",
+        "98e1a910819aefc7515d44530f0777120a16c0f90648fe22711cd09f5f4f4c58",
+        "997f92963c79974ca80a401316b1694e62d4ec7f82825eaaec1be81675a45144",
+        "99bf8b5d90cba4da848b6bf81ca3dbf09ee4e394f8fbb4f65aed1125ad44cf4f",
+        "99f4b558779330f0fb864c4fe03ec3ba78b4f425e0eb97fb545f40ea71bce7ef",
+        "9b35f16e8bd85dbe6cc4f69373e5eefac06e8d36fa105c135f634ae6f8e6b06d",
+        "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3",
+        "9c83dd9831457c24c9dc26851f0188305af1ba49b47501652f4927412baca83b",
+        "9cce023e1be88832341ac16a0d46d6e9bbd3b284c44b7c815e9a25a4f4244a75",
+        "9d43f993ed0407dff7dad40c5277e40372e9e1fd69a157810cc27779dfe68760",
+        "9ef51a6b9ffc0079865e639c3236373e336a320ef2b2d2a2f9c79067fb1e506d",
+        "9fb01357c01b0f07521274056e84aa428394482a7997176f876d5d3ed57ff643",
+        "a03107ab9d4fddd6a1e50db90f670a6d5854148810c267eca9e441e79e0349e5",
+        "a21291166113cf7abc23f70608e6bbc1d8af283f3effab857a90a70cb871d4d8",
+        "a36fc733b1388a0c20a6fbb07fda0acedd4aadae7042181d568463fda46c1b30",
+        "a53b9b19347c3fb1ad5403efc66df9817954075e74dd9c09d264c34fa08498eb",
+        "a7b7678b3077eb44d123544bedf287e017f041e35bef9ce0f6b95fe3c03eb43b",
+        "a82abf53ceb1e89e12688b705a70052486963dfdc1b08566c6bd4839892529da",
+        "a83118a87ad0b5797a1ab80005092724b7a3e1e5aa651a092f4ac4d92090468a",
+        "aadde6ea5251328436c2e66466d7ccf590783477d8ef4e92d06dfd68ff22c423",
+        "ab7deed127afd335dffeafd7e2b7eeb5694c4dc2432ec3001ff48addcd6dcee0",
+        "ac5237e75a147d3aeb393376a8e7f5e2188d6e1ba1712192047a5e0c285e269c",
+        "aca2401253b45d455451f19f8342c15774f94c9e3dd308108a113fa296ea9e03",
+        "ad55be9326086409934d6cf955ede1efdb79d927226b9ce2fdefdad0401c32e8",
+        "ae3fb1e3ed0caceedee78409501f69a621c65e92f98e86bdefeb926af2ae2bdb",
+        "af3165e58bc85116fcad33da866dd0c77ca755b47fa628532446628b48dde4f5",
+        "b06b2b57a0a8d5dd452158edca7d37870ac31ad47fc59f3df758322376e501b4",
+        "b09688d1db6ef6ed81c6c45c0f869c0387b56ea1801ffa97be1dbdf5fff37379",
+        "b141d3d264e04b022af1a1cb9cbfa5daa28408e529c2eae0e4bcfb1fab197c7b",
+        "b37b4bc44dbd183b4794272abab52d037d8116f2882955abc4c54ca235c055d4",
+        "b3c99592e6f9534f0e13264a419c01d24a92de74de37c378f8dde8bacecdaf41",
+        "b725f6e8defc14d87fb5cd7caa09b69a9bb1bcf569f9c0054f9bae3b1996d0dd",
+        "b8af8fe1d8dbfe8ad3f0547efc1b2d9820a7faf007d001380d693c82c82683f3",
+        "b902b45b9b4473d100e4beb597a084004454276f50d23f76401ee6dbb2acb461",
+        "bc58e66519ac73d3523f928e8dcfe88488d65c7478053d692f0137c29b6c6652",
+        "bcd2870017216708f25a60d81ae948e41f8810546134992a7a9665bd1c32b6bd",
+        "bee3c242f7d21b0b35a937bb1c5ec8de616733645b7c19c9386e7dd4f31aec5e",
+        "bee74fc78342dbe12f8b19d64749e7e4b5a515c4f67fc16129f2ec74c6fa7667",
+        "bf4ae82fe0cab7823a64d38260ff0ea673a605983df50ae3e5fe236eff36fcd4",
+        "c07f57e703a6853386833c80a7af8e7ebfba79ab227ac2e47ab6f5a47f53fe30",
+        "c341955af71b362eede17ac1a866eec595fe0d8f17b0985676cec22eee2d7187",
+        "c395dff4eb05aab601a486581d79925839d5f23d881a2489964dd0bd719e0cc7",
+        "c4880f852a23865ee3b786b94c1ce48b5968e59bf07c7a65e50bc78c968b5172",
+        "c4b83f17d2245bd4c67cb6511738c0fa42af745985b6d79af206f19825d7a715",
+        "c7017cda1bb45d8f4e7a11c0af3016f569bcb63fc9c863d4c542c89c0ba4a395",
+        "c9767aa29a17a2d01b9876f4fd3ce917c51512983f4440ed8794c59742464ea8",
+        "ca7b3e2c8f2d0d115d05b96a9370b9e9e3040636a8524068d23f815021501ad6",
+        "ca9b796097141edbb85954b923c4f683c59c398c81638816989eb403c5fdd99a",
+        "cac424175dfd5f0d3640ac562da7008e3b83406bef0d7e8a1a3993fead86ae16",
+        "cb6547b7a70ddac25c5f890ab29577d419690edc1d470b91e64f8879c14ca85b",
+        "cb6fa29e856c1b31647f39f85fa9853942faea21a987196f5b02fc9f400875f2",
+        "cc3a7dc3cf9ee4c77446be9596524bec550275a1111753f92107b0e305a4c707",
+        "cc87ffb65d5bb9da3f6dfc7ffb87e872f40d510d3acf906a1cd5ee971eb420f0",
+        "ccb1e2580799def5ce0d41d5c741e82a6ad3993a8efded5c04819925ecfae025",
+        "cedb6207de8fc34661299e213000ee3a732c1e32da4770d715cdd812736ef0ae",
+        "d0607f8adb738e0a2752fb33666a6b59021293cbe4a64897866ff4ec10c4943b",
+        "d0bff5f3291b24ab9ee43e0aa51812a657940d77ad7787dc6f729d35b8e60c3c",
+        "d200a3e884d8383ae7851dbab04fe0ce6df9601e99d12b59d27db9dd4d4d9ca2",
+        "d3661631e60aa574c2d86f6719efcc46d1e1dfd3e6a88ffc814d190059d90e13",
+        "d456fd8e51162527b948c5e924ad77abe616815f0db4db6a8d49c3028d174315",
+        "d7488faefe904ddbdac04afa8007cb61f8a1b4eeefdb971c3d6d5ed7507af19c",
+        "d80af232f747a381025a39ff76e4bd4be062bfe7c8d901130d1e976e8105e96a",
+        "da58888f10cf03e2e325ecdbd577549f3e8d42e0c6297b0eb59c757201f141b1",
+        "dc0018355015600e1a0d184540393462d83f0ecebed252b198ff7b53fd7efbb7",
+        "dc3bf10179c9f265e712eea4ece9b26ce2dc81839505be25d6b144db87f8b3fc",
+        "dc8f10b38e070b39db2b55b44b91482fe1a827dbf097d54a65deefabd802b6cd",
+        "dd797086a893c72f97db88b8117f9b64e09dd1a1baddda99296dbb09974946e3",
+        "dead12cd06b3c9ec6f372ec1a561c4a89d3445358917d919d8009af60dafe48c",
+        "df4ff992ea72d147d2eef57914146e58cefd6b3cb016f9400c48c09be50aef55",
+        "e04f1e538a9c3a3ca0e669756e68fcd6114aa0c5eb0738696c3a48fef4b95ea0",
+        "e217af51c906f21a34a8cd678b268f6d985ebb1b016ae9fac05114be89adcde3",
+        "e3448a739d0292590bd1028cb8ef83382658c74a634b09354c0cf3a1bc90ef40",
+        "e3466f525fc32f23b687492902ee9dbffbe0910af009826c1b7c7a84c126689e",
+        "e35ed89e6909ceb2e7b4b1b315149b04201d40a87969a4b70e4f6d0345bbd8a0",
+        "e4a37a1b199b004a606c1325e7836617602de2a0033d1df8b5a13c36ddf5874d",
+        "e59197c486da5faac356c3ade9be07f8f38ea8859b35703aea085c44a19ac880",
+        "e5c7e7209da964b249c0dd0c2b32ec3398f7cdb8964234c1de5dec836fac9d19",
+        "e84f661bf1537aee437285b866cd69d0e3d28dba0905f7781348ddc6ce066109",
+        "ea26594df5cd7ab0c6ff07db1831a0ba7bc0c71e4a587f893eee08fb71420c98",
+        "eacfa5f6f662155e7d136b118a282c74c940135e56d0d611deb9b2b0ae83f785",
+        "ebde8d2d9b7d16978d91ad190959b053e5df3bf90bcdedec68122f7821449b3e",
+        "ed5084e0b6e856120feab4d9501445ec29fd3538ea34cfebf63cfa336a4d3ad9",
+        "ed622367bb6f0c1cbdde671c5c1bcf1170b0763b1098ab14b09541ff6870172e",
+        "edaf0a670aecf14a66719a8a11dbd9b05325f3d5ab2a832af568219e4bbd59f4",
+        "eebc2410bc7f122fcbdc3a6045fc3b2c1ebaa43e5c0c8e305d7f7cc675fb59f8",
+        "eef8fbbd80e1a7711ee1fdbc7fa31a856396cc06a06720047372c287694d8a06",
+        "ef3a74fd67276e5645750d4c8e40bc745b9070db8ca829b9461de6cdedceb204",
+        "ef9ccc141901df8f6eb1d1b2207cc010f172068e8310d1c0e3fb7526df7f4165",
+        "f0de763304d69c040538cd4f4b122b4c245455c0cdbfd7948eac6189d23955c9",
+        "f118146d459934fae493b367fa2344acb0bf145514d7cc2c76cc1c487ae398d1",
+        "f1e46fecf4f3c25969c79e3888e3893d16c7405f0053d9368a39d02617ece970",
+        "f21d830e2afddd6bfbf39213f56a6a671a0b427615fd55b4ac768ef71aaa6ec4",
+        "f2cb6869fa598a021980ec72fca9deb634aa61dbc62b4cd0c02e896ec08367f8",
+        "f3de11c83565e9cb60978cf1f3fbd18e41fd9389f51c20729395445d55f9db67",
+        "f60adb6ff2e32558a1594dc162af6521aa82cc5050e2f2c37fe4c96a142a4b9a",
+        "f6fc064795856ba877745c01b89e736e957bb8f580c8177ea5967cbfb831281f",
+        "f7d64f9b9983a3a38349cba972048b2e2f2a2f1ecf8fe24efa1020ac161ae9f2",
+        "f91508c002d9f881493ac9d2013faf50d2659769c728e73f14f78754f6513eb9",
+        "f9d148963ff6dda42d556324d23a220ec9480c1f1d9b5572ef3a831f5130e971",
+        "fa9cc598cb57b1684bc97a895ddb385b3c58101477594b3acf1e06e150423161",
+        "fb1cbf41c528fdff81a40ae64a0438faf1f9cd13fd9cbe8717d5f99a965d93f9",
+        "fc24d7a2a9f9c6a07c8c8497610a1c2332ed0c76861837c6c9814e750f3b4d47",
+        "fd30ffc0e254063492d4e2c1f1c3a4f2f64ce668453390bb68ab6c961e303eae",
+        "fd5c2494f6c5fedfcda9643402c2c1130bfc16163599904589f30eb861ac3f5f",
+        "ff2ebcc0fdbbfd2c78fe6b6d5a46a87c37d618bc2f7ec38d47800d1f1110980d",
+        "ffaae62d49ee51e80561e466dfbaaf9b166c6c1a0fa40f28c6b7a5a01a5be33b"
+      ],
+      "read_ranges": [
+        [
+          0,
+          25
+        ],
+        [
+          25,
+          50
+        ],
+        [
+          50,
+          75
+        ],
+        [
+          75,
+          100
+        ],
+        [
+          100,
+          125
+        ],
+        [
+          125,
+          150
+        ],
+        [
+          150,
+          174
+        ]
+      ],
+      "notes": [
+        {
+          "record_id": "789d4bf734721331bd79fae56b0cb0225c240e95c76668edbf59904c76e414a8",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 2,
+            "naturalness": 2
+          },
+          "forward_note": "Count is rendered номер(identifier),not количество;the report is by entity type and count."
+        },
+        {
+          "record_id": "a7b7678b3077eb44d123544bedf287e017f041e35bef9ce0f6b95fe3c03eb43b",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "CAD entities become субъекты(subjects),wrong technical domain."
+        },
+        {
+          "record_id": "2f6f0bb0981744b700d4825e06a4b4967f437892949229c57c5e5d51ea8ef30e",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Drawing bounds/extents become Рисование границ,the action of drawing borders."
+        },
+        {
+          "record_id": "c4880f852a23865ee3b786b94c1ce48b5968e59bf07c7a65e50bc78c968b5172",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "CAD entities become Организации(organizations)."
+        },
+        {
+          "record_id": "089dd649f268a345320305367bc33e8629dacfef8fd660288145aa8cb6a1ea8d",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Record-count limit becomes предел записи,a write/individual-record limit;export instruction is an awkward noun fragment."
+        },
+        {
+          "record_id": "e59197c486da5faac356c3ade9be07f8f38ea8859b35703aea085c44a19ac880",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Required software identifier loglevel is omitted;MIT alone does not identify the licensed library."
+        },
+        {
+          "record_id": "977f20a0ef4c919c37153edd5ad9fb1bd92c9af76153020b69f18c37a69544e2",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Shown CAD entities become Показанные субъекты(subjects)."
+        },
+        {
+          "record_id": "5616c8428d76b6cf3ea7da600897f382203e90e6d02080acd97e2de651172ed7",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 0,
+            "naturalness": 3
+          },
+          "forward_note": "Mils(thousandths of an inch) become Миля(mile),a different length unit."
+        },
+        {
+          "record_id": "96c68a0c1d06a59f44eb703f9d5459fb6591883a0291912c4ec2c602f7c5e332",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Free browser tool becomes Бесплатный браузер(free browser);the product is not a web browser."
+        },
+        {
+          "record_id": "528949e30b39db9f28a9b718c811e9e5c3d221b6559228b0207f668ca6cf0636",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Unsupported objects are excluded from exports,not from оценка экспорта(export evaluation/estimation)."
+        },
+        {
+          "record_id": "2701b2962e58ddc6e4c64f5265521953a069ceccfa498e22a06b320a922e5aaf",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Свежая доска is a literal fresh-board calque in generated-grid copy;needs natural wording for a new game board."
+        },
+        {
+          "record_id": "e4a37a1b199b004a606c1325e7836617602de2a0033d1df8b5a13c36ddf5874d",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "ровно один цифровой подсказку has incorrect gender/case agreement;the numeric rule itself is preserved."
+        },
+        {
+          "record_id": "b3c99592e6f9534f0e13264a419c01d24a92de74de37c378f8dde8bacecdaf41",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Covered grid squares become Крытые площади(indoor/roofed areas),losing the grid-square concept."
+        },
+        {
+          "record_id": "5b59a21bd450bec14de80623d6cc6a698954857abd08ca4c411524860a0a6489",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Нажмите клавишу Tab на квадрат is malformed and does not state Tab navigation to a square clearly."
+        },
+        {
+          "record_id": "eacfa5f6f662155e7d136b118a282c74c940135e56d0d611deb9b2b0ae83f785",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "The rule-reference title keeps Shikaku but omits rules."
+        },
+        {
+          "record_id": "302125ec1baa7cee81fd1bd393b5bd5e39ee51a5e8373a5848415cc1d140fd3c",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Feminine другую refers to another clue;the source overlap is with another rectangle(masculine)."
+        },
+        {
+          "record_id": "5701c740eeb4087d44f6e629e38209648aa57623d8d8462efab44edbd1b87ee4",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 2,
+            "naturalness": 3
+          },
+          "forward_note": "Rectangle areas are numeric площади,not области(regions);the instruction loses the area-value sense."
+        },
+        {
+          "record_id": "866a42d58f56461ce3d15ab6760d9c71c9904f0fb331b3f49104c6768d282e62",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 1
+          },
+          "forward_note": "Шикаку прямоугольник головоломка is an ungrammatical stack of uninflected nouns."
+        },
+        {
+          "record_id": "82c95c39e49b391c92ed2550b2a317a4513e5a4b566c30895c3ed5048de03903",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Свободно играть says freely play rather than that play is free of charge."
+        },
+        {
+          "record_id": "5af150dda3a59d407d378bebc795cec7613c56ade92b33310d7cdb413710a717",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 1
+          },
+          "forward_note": "глубокий голос эффект has English noun order;частный means private ownership rather than confidentiality."
+        },
+        {
+          "record_id": "3d4d974c48b3c4a7fd081a59697cdbdd6fe9f61c3395bff8bc1ab0a6f9a68b1d",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Required literal Web Audio identifier is translated into веб-аудиофильтры;this is an identifier-contract defect,not a claim that Russian transliteration is grammatically invalid."
+        },
+        {
+          "record_id": "c341955af71b362eede17ac1a866eec595fe0d8f17b0985676cec22eee2d7187",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Lower-pitch preset becomes a lower level(уровень),changing pitch into output level."
+        },
+        {
+          "record_id": "b902b45b9b4473d100e4beb597a084004454276f50d23f76401ee6dbb2acb461",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Vocals become a generic audio track;the specific vocal-isolation limitation is lost."
+        },
+        {
+          "record_id": "082dd88077214b3b611f1222b95a7e2d23cf1d115c7a05334bc4c8cebd0895a6",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Vocals become a generic audio track;the specific vocal-isolation limitation is lost."
+        },
+        {
+          "record_id": "b06b2b57a0a8d5dd452158edca7d37870ac31ad47fc59f3df758322376e501b4",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Audio rendering/file generation becomes звуковое отображение(sound display)."
+        },
+        {
+          "record_id": "13348ac24329f7f8a9349be84774c59338dcf0199d4f2cb69d9d0656f954ce2f",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Audio rendering/file generation becomes звуковое отображение(sound display)."
+        },
+        {
+          "record_id": "fb1cbf41c528fdff81a40ae64a0438faf1f9cd13fd9cbe8717d5f99a965d93f9",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Generic preset is left in English in Эффект preset;it is not a protected brand/identifier."
+        },
+        {
+          "record_id": "4c4ae40d5b14674f968dd4bcf67c7257b4a73e23d051a0b9b35a800bdc45d12b",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Rendering processed audio becomes displaying it,an incorrect processing stage."
+        },
+        {
+          "record_id": "ed5084e0b6e856120feab4d9501445ec29fd3538ea34cfebf63cfa336a4d3ad9",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Audio output level becomes Уровень выпуска(release/production level)."
+        },
+        {
+          "record_id": "702265689b4f216db7175d9cace0afded63481071941cd826dd778c88c011ec6",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 1
+          },
+          "forward_note": "Просмотрите…,настроить…,и экспорт WAV-файл mixes imperative,infinitive and noun with broken case;the actions remain identifiable."
+        },
+        {
+          "record_id": "3e21c3a2f44754e91f0d29e2e8c7b3f37440b61d49b5b77699996c60b3a75bcb",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Voice identity becomes самобытность(originality);полнометражные песни is an inappropriate film-length collocation.",
+          "force_unproved": true
+        },
+        {
+          "record_id": "2e5aaca87c63997fe1dca344702bf93bf31283209e70fd1a85e469e9b6c5cc3e",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Voice changer becomes a voice manager,losing the changing action in the tool name."
+        },
+        {
+          "record_id": "ae3fb1e3ed0caceedee78409501f69a621c65e92f98e86bdefeb926af2ae2bdb",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Voice Changer Online remains in English;these generic function words are not a protected brand."
+        },
+        {
+          "record_id": "fc24d7a2a9f9c6a07c8c8497610a1c2332ed0c76861837c6c9814e750f3b4d47",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Свежая доска is a fresh-board calque for a new generated grid."
+        },
+        {
+          "record_id": "90554ed422244342e215440564cda02dfacda22a2c48c62fd28d462f66f8cc99",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Крытые квадраты is an unnatural roofed-square collocation for covered grid cells."
+        },
+        {
+          "record_id": "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 2,
+            "naturalness": 3
+          },
+          "forward_note": "Area shown by a clue becomes area shown below the clue,adding an incorrect placement relationship."
+        },
+        {
+          "record_id": "c9767aa29a17a2d01b9876f4fd3ce917c51512983f4440ed8794c59742464ea8",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 2,
+            "naturalness": 3
+          },
+          "forward_note": "Numeric rectangle areas become regions(области),not площади."
+        },
+        {
+          "record_id": "294c38695ff34fe382082a7a77e81197c9a2d7a3b2df15846c7914ca2c513da2",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Puzzle Online remains in English;Shikaku may stay a brand,but the generic title words need localization."
+        },
+        {
+          "record_id": "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Radio is detached from effect and preview echo uses visual viewing terminology in audio copy."
+        },
+        {
+          "record_id": "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+        },
+        {
+          "record_id": "72836152a3973c98de09a15272d83f1c2c8c2fff1aab9fcf2690b6961fd61c62",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Creating/rendering a WAV file becomes displaying it."
+        },
+        {
+          "record_id": "e3466f525fc32f23b687492902ee9dbffbe0910af009826c1b7c7a84c126689e",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Creating/rendering a WAV file becomes displaying it."
+        },
+        {
+          "record_id": "129667d6452fcfa25c22e6d8631648cd3656123ec8559ca162a9a5f56aa7ba11",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Audio rendering becomes sound visualization,an incorrect operation."
+        },
+        {
+          "record_id": "8b04815dac15012a1a9f5ad3fda8bb9cb7efc7d60e2f2edaeda0d841ed0a9f4c",
+          "scores": {
+            "meaning": 2,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Audio rendering becomes sound visualization,an incorrect operation."
+        },
+        {
+          "record_id": "68afa6d5b2f809dde8906af52d096184569e1b94fff7ab8c9e9dc567c32dd3cf",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Neutral Clean preset becomes the action Очистить(clear/delete)."
+        },
+        {
+          "record_id": "9d43f993ed0407dff7dad40c5277e40372e9e1fd69a157810cc27779dfe68760",
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 2
+          },
+          "forward_note": "эффект ниже,выше is an unnatural adverb construction for lower/higher pitch effects."
+        },
+        {
+          "record_id": "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a",
+          "scores": {
+            "meaning": 1,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "forward_note": "Separate voices is attached as an object of create:cannot create separate voices,instead of cannot isolate voices.",
+          "force_unproved": true
+        }
+      ],
+      "accepted_ambiguities": [
+        "Loading/loaded Russian passive wording and preview/viewing are context-sensitive;clarity risks are not silently converted into confirmed forward defects.",
+        "Broad Russian расшифровать can mean decode;English decrypt is narrower. Back decryption is recorded without inventing a forward encryption claim.",
+        "Shikaku/Sikaku transliteration and region/area synonyms are not by themselves brand/geography defects.",
+        "Directional loading verbs are reviewed in local-file/privacy/export context;new independent back direction errors are forward-hash-bound.",
+        "Five localized unit-symbol spellings are linguistically meaningful but unproved by the frozen contract;no fake changed-value grade."
+      ]
+    }
+  },
+  "preclose_independent_remote_audit": {
+    "source": "0159802ac2f59186e13030abfd635b0e1e480afa",
+    "main": "122b5dd36b698463478edb7cbf26d03e33725267",
+    "index_matches_remote_tree": 7905,
+    "main_only_six_docs": true,
+    "unchanged_product_files": 6851,
+    "immutable_old_pilot_blobs": 450,
+    "frozen_runtime_files": 23,
+    "old_checkpoint_files": 31,
+    "raw_records": 16442,
+    "evaluations": 8272,
+    "old_metric_groups_preserved": 140,
+    "current_metric_groups": 144,
+    "global_cases1403_and_old_scoped14_byte_identical": true,
+    "current_reviewed_records": 333,
+    "next_plan_exact_positive_targets": 190,
+    "next_plan_repair_targets": 24,
+    "progress_rows": 1001,
+    "progress_only_notes": true,
+    "reference_gate_still_valid": true,
+    "approved_locales": 0
+  }
+}
