@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "native_review": false,
+  "approved_locales": [],
+  "cases": [
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "forward_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "back_translation": "Cancel Download",
+      "back_translation_hash": "c0c05b34c0b1ed98474b99e3b68f3e3d9a58be2fe838cf21afc61128f94c4472",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "3ea061efb328b91d977f079d14dd232710b0e23ceda7e3849a29f4f45c5105ea"
+      ],
+      "issue": "Cancel local loading becomes Cancel Download;the forward Russian loading verb is valid in local-file context."
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "forward_hash": "27b250b132fbe7ce7c36753823e342a487b774c025bfe3172367e133aea9b6f1",
+      "back_translation": "Insert drawing",
+      "back_translation_hash": "677e4851a0c047ed61e9fadcffd14677b6613ab07dba09780c82654ef2540af6",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "68dce77c9c07f7ba0ed40b7fba8521d22394d71a0897c32000311d13e9e93e2f"
+      ],
+      "issue": "Fit the drawing to the viewport becomes Insert drawing;view framing changes into adding content."
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "forward_hash": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+      "back_translation": "The audio remains in this browser. UsefulVerse does not load or save it.",
+      "back_translation_hash": "6cd056e2109159adaf4968fdcb8879e50432756d20a136e0e1d7ee177c36f10d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "30534f0f5b8945fe91a50bb5b687e354e908a34a768d911cf72176fbc9ea7f83",
+        "a770b7afe32bb2f9a5e6f71aee158d86631f5616ce78222d58c37c830625d230"
+      ],
+      "issue": "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+    }
+  ]
+}

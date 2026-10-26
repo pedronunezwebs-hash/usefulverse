@@ -185,8 +185,10 @@
   "selected_before_full_dispatch": true,
   "selected_before_full_results_collection": true,
   "known_reference_memory_rows": 40,
-  "reference_gate_passed": false,
-  "full_dispatch_authorized": false,
+  "reference_gate_passed": true,
+  "full_dispatch_authorized": true,
   "approved_locales": [],
-  "note": "Same88fixed keys selected before full results.40known source-bound references;full174forward model candidates remain new inference,not known memory. Read all174+92 S/F/B. No native/blind/general-engine/release approval."
+  "note": "Same88fixed keys selected before full results.40known source-bound references;full174forward model candidates remain new inference,not known memory. Read all174+92 S/F/B. No native/blind/general-engine/release approval.",
+  "reference_gate_file": "reference-v30-gate.json",
+  "reference_gate_sha256": "3e51a6265f77d43a737996450b2bc1eb0f8dbad95932520d892f346f390290d3"
 }

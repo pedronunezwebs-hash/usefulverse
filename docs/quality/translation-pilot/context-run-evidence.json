@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-26T07:50:54.501687+00:00",
+  "at_utc": "2026-10-26T11:29:33.814789+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -1703,6 +1703,46 @@
       "cleanup": "success",
       "records": 266,
       "evidence": "run-context-v29-full.json"
+    },
+    {
+      "inference_policy": "context-v30",
+      "scope": "reference",
+      "run_id": 40314553754,
+      "job_id": 121543771011,
+      "conclusion": "success",
+      "source_commit": "1edc9d6479b20f7f733ae05773a6475319061ea6",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 92.12490365100001,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3652448,
+        "scope": "references",
+        "total_seconds": 137.967692289
+      },
+      "cleanup": "success",
+      "records": 67,
+      "evidence": "run-context-v30-reference.json"
     }
   ],
   "checkpoints": [
@@ -1822,6 +1862,11 @@
       "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
     },
     {
+      "path": "checkpoints/context-v30/madlad.jsonl",
+      "records": 67,
+      "sha256": "194a0e83a8bf3a698006dac3a46dfe76c6d74b93da11634828b2fcf3c02762a3"
+    },
+    {
       "path": "checkpoints/context-v4/madlad.jsonl",
       "records": 856,
       "sha256": "8a79e3d62b322ed1b5b51e056127c234883abd06b1323df5cf514c4ed1568fec"
@@ -1862,7 +1907,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 16109,
+  "total_records": 16176,
   "cancelled_runs": [
     {
       "run_id": 39484416039,
