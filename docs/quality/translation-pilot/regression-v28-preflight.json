@@ -103,5 +103,8 @@
       ],
       "review_policy": "baseline-negative-reassessment-v28"
     }
-  ]
+  ],
+  "validation_history_red_log_sha256": "96f38d568fa179a3b24c6b80bc2366f37ce048231cb08d3900e592b7d521a8de",
+  "corpus_guards_red_log_sha256": "f3c4114e2ab38327572ae993b07b4219da67d74cfb63765e9b9b9ebb4917a250",
+  "v28_runtime_sha256": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b"
 }

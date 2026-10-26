@@ -10,6 +10,8 @@ from unittest.mock import patch
 import ast
 import hashlib
 import unicodedata
+import tempfile
+import os
 from test_translation_v25_history import stable
 
 spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot.py'))
@@ -156,6 +158,23 @@ class BengaliV28Test(unittest.TestCase):
             with patch.dict(module, {'file_sha': lambda path: 'stale' if path.name == 'review-context-v28-references.json' else original(path)}), self.assertRaises(ValueError): route.full_allowed()
         else:
             with self.assertRaisesRegex(ValueError, 'references must pass'): route.full_allowed()
+
+    def test_wrong_corpus_digest_or_reference_selection_fails_before_model_download(self):
+        route = pilot.BENGALI_V28
+        units = [dict(unit, reference=key in route.contracts()['imports'], legacy={}) for key, unit in route.contracts()['units'].items()]
+        digest = json.loads((DATA / 'numeric-sources/context-v24/source-snapshot.json').read_text())['corpus_digest']
+        module = route.run.__func__.__globals__
+        for mutation in ['digest', 'selection']:
+            corpus = dict(sourceDigest=digest, units=copy.deepcopy(units), fullSourceUnits=214)
+            if mutation == 'digest': corpus['sourceDigest'] = 'forged'
+            else:
+                next(u for u in corpus['units'] if u['reference'])['reference'] = False
+                next(u for u in corpus['units'] if not u['reference'] and u['key'] not in route.contracts()['imports'])['reference'] = True
+            with tempfile.TemporaryDirectory() as directory:
+                file = Path(directory) / 'corpus.json'; file.write_text(json.dumps(corpus))
+                args = SimpleNamespace(policy='context-v28', locales='bn', scope='references', corpus=str(file), engine='madlad', beam_size=3, batch_size=4, resume=None, output=str(Path(directory) / 'output.jsonl'))
+                with patch.dict(os.environ, {'GITHUB_ACTIONS': 'true', 'RUNNER_OS': 'Linux', 'RUNNER_TEMP': directory}), patch.object(module['subprocess'], 'run', side_effect=AssertionError('Model download must not start')), self.subTest(mutation=mutation), self.assertRaisesRegex(ValueError, 'corpus digest|reference selection'):
+                    route.run(args)
 
     def test_raw_model_adapter_uses_pinned_cpu_contract_and_rejects_truncation_budget(self):
         route = pilot.BENGALI_V28

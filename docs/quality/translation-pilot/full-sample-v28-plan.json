@@ -109,7 +109,6 @@
     ],
     "purpose": "Conservar la muestra v4 sin cambiarla y añadir textos no usados para corregir v4. Las 20 adicionales no sustituyen ningún control ni permiten aprobar automáticamente."
   },
-  "fixed88_keys_sha256": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a",
   "critical_controls": [
     "voice-changer.fields.clean",
     "voice-changer.fields.radio",
@@ -188,5 +187,6 @@
   "reference_gate_passed": false,
   "full_dispatch_authorized": false,
   "approved_locales": [],
-  "note": "Preparation only. Full inference remains blocked until the40 actual references and all warnings pass. Same88 known selection, never blind/unseen/native or generic-engine approval. All174 model rows must be read, including outside88;92 legacy rows retain their own verdict."
+  "note": "Preparation only. Full inference remains blocked until the40 actual references and all warnings pass. Same88 known selection, never blind/unseen/native or generic-engine approval. All174 model rows must be read, including outside88;92 legacy rows retain their own verdict.",
+  "fixed88_digest": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a"
 }

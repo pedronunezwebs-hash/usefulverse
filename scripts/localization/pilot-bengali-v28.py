@@ -77,7 +77,10 @@ class BengaliV28:
         require(all(file_sha(self.directory / path) == digest for path, digest in PRIMARY.items()), 'Changed pinned Bengali CLDR bytes')
         # Validate actual source modules too, not just a copied snapshot.
         n['v24_quantity_contracts']()
-        cache_key = n['digest']([profile, current, n['policy_digest'](POLICY), n['digest'](n['SEMANTIC_REGRESSIONS'])])
+        # A later semantic finding must not make a historical raw record
+        # unreadable. Current semantic acceptance is checked before inference
+        # and by the current review/flag auditors, separately from data validity.
+        cache_key = n['digest']([profile, current, n['policy_digest'](POLICY)])
         if cache_key in self.cache:
             return self.cache[cache_key]
         numbers = json.loads((self.directory / 'bn-numbers.json').read_text())['main']['bn']['numbers']
@@ -109,7 +112,6 @@ class BengaliV28:
             text = item['translation']
             require(hashlib.sha256(text.encode()).hexdigest() == item['translation_sha256'] and n['reviewed_memory'](unit, 'bn', POLICY) == text, 'Stale Bengali memory target')
             require(item['native_review'] is False and item['review_kind'] == 'agent' and set(item['scores'].values()) == {3}, 'Unreviewed or mislabelled Bengali memory')
-            require(not n['semantic_issues'](key, unit['source_hash'], text, 'bn'), 'A known forward defect entered memory')
             if key in corrections:
                 require(item['origin'] == 'agent-correction' and not item['record_ids'], 'New correction is not old model evidence')
             else:
@@ -140,9 +142,15 @@ class BengaliV28:
                 else: require(word == unicodedata.normalize('NFC', 'নয়') and (reading['key'] == 'voice-changer.fields.tooLarge' and 'no larger' in item['source'] or reading['key'] == 'dxf-viewer.fields.binary' and 'not supported' in item['source']), 'Unproved negative copula')
             require(reading['translation'] not in by_text, 'Ambiguous duplicate lexical context')
             by_text[reading['translation']] = reading
-        result = dict(lexicon=lexicon, readings=by_text, units=units, imports=import_by_key)
+        result = dict(lexicon=lexicon, readings=by_text, units=units, imports=import_by_key, corpus_digest=snapshot['corpus_digest'])
         self.cache = {cache_key: result}
         return result
+
+    def preflight_memory(self):
+        contracts = self.contracts()
+        for key, item in contracts['imports'].items():
+            require(not self.ns['semantic_issues'](key, item['source_hash'], item['translation'], 'bn'), 'Known Bengali forward defect blocks new inference: ' + key)
+        return True
 
     def numeric(self, text, locale, opposite=None):
         n = self.ns
@@ -342,11 +350,14 @@ class BengaliV28:
         n = self.ns
         n['actions_only']()
         require(args.locales == 'bn', 'v28 runs Bengali only; no default mass inference')
-        self.contracts()
+        self.preflight_memory()
         if args.scope == 'full': self.full_allowed()
         corpus = json.loads(Path(args.corpus).read_text())
+        contracts = self.contracts()
+        require(corpus['sourceDigest'] == contracts['corpus_digest'], 'Wrong v28 corpus digest')
         units = sorted((u for u in corpus['units'] if args.scope == 'full' or u['reference']), key=lambda u: (not u['reference'], u['key']))
         require(len(units) == (40 if args.scope == 'references' else corpus['fullSourceUnits']), 'Wrong v28 corpus scope')
+        require({u['key'] for u in units} == set(contracts['imports'] if args.scope == 'references' else contracts['units']), 'Wrong v28 reference selection or full source coverage')
         for unit in units:
             require(hashlib.sha256(unit['source'].encode()).hexdigest() == unit['source_hash'], 'Stale v28 source hash')
             canonical = self.contracts()['units'].get(unit['key'])

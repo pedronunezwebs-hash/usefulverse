@@ -1724,6 +1724,16 @@
         "completed_at": "2026-10-21T15:10:41Z"
       },
       "log_sha256": "281f24232dec26e4ff5310f9592caefe0b4c51a71e8ecc4ac1fd20d098bf45be"
+    },
+    {
+      "run_id": 40250574315,
+      "source_commit": "f9a40ae550d237e4bd3b5899c8f7013bdfac39fb",
+      "conclusion": "cancelled",
+      "reason": "Separate historical data validity from future semantic findings before freezing the first actual references",
+      "partial_records_in_log": 0,
+      "cleanup_step": "success",
+      "at_utc": "2026-10-26T00:54:15.655222+00:00",
+      "approved_locales": []
     }
   ],
   "interrupted_runs": [
