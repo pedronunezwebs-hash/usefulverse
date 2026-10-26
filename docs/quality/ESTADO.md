@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-26 · **por:** Codex
-**Turno actual (candado):** LIBRE · Codex · 2026-10-26T00:08:01.808972+00:00 · lote de referencias bn/ru/ur cerrado; siguiente v28 bn
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-26T00:12:14.457212+00:00 · v28 bn: memoria por fuente/contexto y contratos propios; sin publicación
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
