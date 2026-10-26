@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T07:13:36.461209+00:00",
+  "run_id": 40282144871,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40282144871",
+  "source_commit": "528cee0d0255a468d84142240b664e298baea702",
+  "policy": "context-v29",
+  "scope": "reference",
+  "locales": [
+    "bn"
+  ],
+  "conclusion": "success",
+  "new_records": 67,
+  "total_checkpoint_records": 67,
+  "new_forward_model_rows": 0,
+  "new_reviewed_memory_rows": 40,
+  "summary": {
+    "approved": 0,
+    "conversion_seconds": 94.26244492399996,
+    "counts": {
+      "legacy": 27,
+      "model": 40,
+      "reviewed_memory_hits": 40
+    },
+    "engine": "madlad",
+    "peak_rss_kib": 3659556,
+    "scope": "references",
+    "total_seconds": 140.754938434
+  },
+  "model": {
+    "converted_sha256": {
+      "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+      "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+      "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+    },
+    "engine": "madlad",
+    "license": "Apache-2.0",
+    "minimum_free_gib": 18,
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  },
+  "python_tests": 338,
+  "python_seconds": 1132.985,
+  "python_skips": 0,
+  "artifacts": 0,
+  "cleanup": "success",
+  "site_job": "skipped",
+  "runner_labels": [
+    "ubuntu-latest"
+  ],
+  "runtime_sha256": {
+    "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+    "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+    "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+    "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec"
+  },
+  "checkpoint_sha256": "63ae2391e9f09713cb50f3404c8aaaa7b43147365aff9b9d91f48577b9b48805",
+  "approved_locales": [],
+  "method": "Original complete base64 records from public Actions logs;duplicate logs deduplicated by identity,conflicts rejected. Stored target bytes are never repaired. Model forward rows are known reviewed memory;actual new inference is back translation."
+}

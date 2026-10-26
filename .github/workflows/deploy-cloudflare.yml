@@ -72,7 +72,7 @@ jobs:
       - name: Run tests
         run: |
           npm test
-          python3 -m unittest discover -s scripts/localization -p 'test_translation*.py'
+          python3 scripts/localization/run-translation-tests.py --jobs 4
 
       - name: Build and validate all pages
         run: npm run check
@@ -145,7 +145,7 @@ jobs:
           python -m pip install --no-cache-dir --disable-pip-version-check -r scripts/localization/pilot-requirements.txt
       - name: Check pilot contracts and extract the real three-tool corpus
         run: |
-          python -m unittest discover -s scripts/localization -p 'test_translation*.py'
+          python scripts/localization/run-translation-tests.py --jobs 4
           node --test scripts/localization/pilot-corpus.test.mjs
           node scripts/localization/pilot-corpus.mjs "$RUNNER_TEMP/pilot-corpus.json"
       - name: Translate, back-translate and checkpoint machine drafts in logs

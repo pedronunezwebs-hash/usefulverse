@@ -88,6 +88,8 @@ class BengaliV29Test(unittest.TestCase):
         self.assertEqual(pilot.digest(stable(klass)),proof['original_generic_test_class_ast_digest'])
         text=(pilot.ROOT/'.github/workflows/deploy-cloudflare.yml').read_text()
         edits=[('context-v27, context-v28, context-v29]','context-v27, context-v28]'),('Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios','Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio'),('python -u scripts/localization/translation-pilot-v29.py run','python -u scripts/localization/translation-pilot.py run')]
+        # Two additional command substitutions keep all tests on the same four-core runner.
+        edits.extend([('python3 scripts/localization/run-translation-tests.py --jobs 4', "python3 -m unittest discover -s scripts/localization -p 'test_translation*.py'"), ('python scripts/localization/run-translation-tests.py --jobs 4', "python -m unittest discover -s scripts/localization -p 'test_translation*.py'")])
         for after,before in edits:
             self.assertEqual(text.count(after),1);text=text.replace(after,before)
         self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),proof['workflow_before_sha256'])

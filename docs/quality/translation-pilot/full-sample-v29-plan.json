@@ -184,9 +184,11 @@
   "read_every_model_and_available_legacy_source_forward_back": true,
   "any_observed_forward_error_or_unproved_forward_data_blocks": true,
   "known_reference_memory_rows": 40,
-  "reference_gate_passed": false,
-  "full_dispatch_authorized": false,
+  "reference_gate_passed": true,
+  "full_dispatch_authorized": true,
   "approved_locales": [],
   "note": "Same88 fixed known-source keys, chosen before full dispatch. Read all174 model+92legacy, including outside88. All214 forward targets are exact known memory; no new forward generation/native/blind/general-engine/release approval.",
-  "fixed88_digest": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a"
+  "fixed88_digest": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a",
+  "reference_gate_file": "reference-v29-gate.json",
+  "reference_gate_sha256": "22db8dbcb38a21f05f7ffbca17d604baab79f597ef5881e8fef92be1d52c4cbf"
 }

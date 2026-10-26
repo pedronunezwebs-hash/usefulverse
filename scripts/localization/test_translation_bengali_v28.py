@@ -212,11 +212,13 @@ class BengaliV28Test(unittest.TestCase):
     def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
         proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
         text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
-        # Normalize only the three explicit v29 integration edits, preserving
+        # Normalize only the five explicit v29 integration edits, preserving
         # the original v28 golden blob assertion for every other workflow byte.
         text = text.replace('context-v27, context-v28, context-v29]', 'context-v27, context-v28]')
         text = text.replace('Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios', 'Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio')
         text = text.replace('python -u scripts/localization/translation-pilot-v29.py run', 'python -u scripts/localization/translation-pilot.py run')
+        text = text.replace('python3 scripts/localization/run-translation-tests.py --jobs 4', "python3 -m unittest discover -s scripts/localization -p 'test_translation*.py'")
+        text = text.replace('python scripts/localization/run-translation-tests.py --jobs 4', "python -m unittest discover -s scripts/localization -p 'test_translation*.py'")
         self.assertIn('context-v27, context-v28]', text)
         text = text.replace('context-v27, context-v28]', 'context-v27]')
         text = text.replace('Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio', 'Baseline o variantes v2–v27; v27 reutiliza corpus revisado y contratos Shikaku')
