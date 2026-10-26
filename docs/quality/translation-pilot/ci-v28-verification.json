@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T05:52:09.367978+00:00",
+  "run_id": 40274336760,
+  "run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40274336760",
+  "source": "a56790699da358cc0331902051b42debcd6dbf65",
+  "implementation": "17c1602eb1f49ad0524d2c075f834c2bcc6f47e1",
+  "conclusion": "success",
+  "node_tests": 3045,
+  "python_tests": 327,
+  "python_passed": 325,
+  "python_dependency_skips": 2,
+  "python_seconds": 1177.897,
+  "focused_tests": 38,
+  "artifacts": 0,
+  "model_job": "skipped",
+  "publish_steps": "skipped",
+  "runner": "ubuntu-latest public standard",
+  "repository_private": false,
+  "runner_labels": [
+    "ubuntu-latest"
+  ],
+  "jobs": [
+    {
+      "name": "validate-and-deploy",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:27:48Z",
+      "completed_at": "2026-10-26T05:51:52Z"
+    },
+    {
+      "name": "translation-pilot",
+      "conclusion": "skipped",
+      "started_at": "2026-10-26T05:27:46Z",
+      "completed_at": "2026-10-26T05:27:46Z"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:27:49Z",
+      "completed_at": "2026-10-26T05:27:50Z"
+    },
+    {
+      "name": "Check out source",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:27:50Z",
+      "completed_at": "2026-10-26T05:27:57Z"
+    },
+    {
+      "name": "Set up Node.js",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:27:57Z",
+      "completed_at": "2026-10-26T05:27:58Z"
+    },
+    {
+      "name": "Install dependencies",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:27:58Z",
+      "completed_at": "2026-10-26T05:28:09Z"
+    },
+    {
+      "name": "Run tests",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:28:09Z",
+      "completed_at": "2026-10-26T05:49:34Z"
+    },
+    {
+      "name": "Build and validate all pages",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:49:34Z",
+      "completed_at": "2026-10-26T05:50:54Z"
+    },
+    {
+      "name": "Require linguistic approval for expanded locales",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:50:54Z",
+      "completed_at": "2026-10-26T05:50:55Z"
+    },
+    {
+      "name": "Build and validate the isolated tools hub",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:50:55Z",
+      "completed_at": "2026-10-26T05:51:37Z"
+    },
+    {
+      "name": "Validate the 300 staged tools without publishing",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:51:37Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    },
+    {
+      "name": "Publish to the existing Cloudflare Pages project",
+      "conclusion": "skipped",
+      "started_at": "2026-10-26T05:51:51Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    },
+    {
+      "name": "Publish the separate static tools hub",
+      "conclusion": "skipped",
+      "started_at": "2026-10-26T05:51:51Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    },
+    {
+      "name": "Post Set up Node.js",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:51:51Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    },
+    {
+      "name": "Post Check out source",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:51:51Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success",
+      "started_at": "2026-10-26T05:51:51Z",
+      "completed_at": "2026-10-26T05:51:51Z"
+    }
+  ],
+  "log_sha256": "f92a7cd3f470ceaaa5c80a04a9379d99d92d2b1cd1904fc7550b2bd6133f6be0",
+  "build_scope": {
+    "principal_tool_pages": 9972,
+    "principal_homes": 36,
+    "principal_sitemap_urls": 10260,
+    "existing_locale_gate": 20,
+    "preview_reported_indexable_pages": 0,
+    "preview_files": 11293,
+    "preview_tool_pages": 10800,
+    "preview_locales": 36,
+    "preview_all_tool_pages_and_homes_noindex": true,
+    "preview_indexable_sitemap_urls": 0,
+    "not37locale_certification": true,
+    "hub_growth_tools": 217,
+    "hub_market_tools": 100,
+    "hub_editable_recovered_tools": 106,
+    "growth_build_pages": 7848,
+    "growth_build_files": 8253
+  },
+  "approved_locales": [],
+  "native_review": false,
+  "limitations": [
+    "No native/blind/unseen-text/general-engine approval",
+    "No UI/real-device/responsive/18-tool-gates/7-layer certification",
+    "Bengali full rejected; zero activation or deployment"
+  ],
+  "pedro_tests": {
+    "new_ids": [],
+    "pending": [
+      "P-001",
+      "P-002",
+      "P-003",
+      "P-004",
+      "P-005",
+      "P-006",
+      "P-007",
+      "P-008"
+    ],
+    "fails": 0
+  },
+  "costs": {
+    "verified_at_utc": "2026-10-26T01:05:16.300444+00:00",
+    "repository_private": false,
+    "runner": "ubuntu-latest",
+    "standard_public_runner": true,
+    "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+    "new_paid_api_calls": 0,
+    "cloudflare_operations": 0,
+    "codespaces": 0,
+    "containers": 0,
+    "persistent_model_caches": 0,
+    "artifacts_expected": 0,
+    "note": "Current official documentation confirms standard hosted runners in public repositories are free. Does not assert that pre-existing account bills or the fixed Workers plan disappear. All model weights stay on disposable Actions runners; no Packages/LFS uploads."
+  },
+  "secret_scan": {
+    "version": "8.30.1",
+    "official_binary_archive_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+    "active_findings": 0,
+    "scope": "All sparse-clone text and actual changed code/data, with unchanged src/public verified against remote tree.",
+    "known_unchanged_public_metadata_fingerprints": [
+      "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+      "docs/quality/translation-pilot/full-sample-v24-plan.json:generic-api-key:511"
+    ]
+  }
+}
