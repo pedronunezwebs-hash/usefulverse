@@ -313,6 +313,40 @@
   "current_metrics_groups": 131,
   "current_review_evaluations": 7271,
   "reference_languages_passed": [],
-  "cleanup_executed": false,
-  "lock": "EN CURSO until actual removal"
+  "cleanup_executed": true,
+  "lock": "LIBRE only after actual verified removal",
+  "cleanup": {
+    "schema_version": 1,
+    "at_utc": "2026-10-26T00:08:01.808972+00:00",
+    "root": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-batch-bn-ru-ur-20261026",
+    "root_removed_and_absent": true,
+    "removed_before_lock_free": true,
+    "versioned_files_matched_to_remote_tree": 7792,
+    "backed_up_feature_source": "7bbc9909073cd0d655533c054131ec6bfaf26c60",
+    "backed_up_main_source": "7e500eab1792874d456bb939c5cb835f15e79eb3",
+    "ci_source": "7ec358639d326a2dafdd29e556dd4724a6a34f66",
+    "ci_run": 40246599367,
+    "post_ci_changes_limited_to_shared_docs_and_receipts": [
+      "docs/quality/ESTADO.md",
+      "docs/quality/LOG.md",
+      "docs/quality/MAPA-REPO.md",
+      "docs/quality/lotes/2026-10-26-referencias-bn-ru-ur.md",
+      "docs/quality/translation-pilot.md",
+      "docs/quality/translation-pilot/ci-batch1-verification.json",
+      "docs/quality/translation-pilot/remote-batch1-verification.json"
+    ],
+    "internal_run_log_zips_removed": [
+      "ci-40246599367.zip",
+      "ci-40245562940-failed.zip"
+    ],
+    "external_own_run_cache_files_removed": [],
+    "external_own_run_cache_files_remaining": [],
+    "local_models_or_dependencies_installed": false,
+    "bytes_free_before": 44620292096,
+    "bytes_free_after": 44834144256,
+    "git_histories_deleted_to_solve_codespaces": false
+  },
+  "backed_up_feature_before_removal": "7bbc9909073cd0d655533c054131ec6bfaf26c60",
+  "backed_up_main_before_removal": "7e500eab1792874d456bb939c5cb835f15e79eb3",
+  "versioned_files_verified_before_removal": 7792
 }
