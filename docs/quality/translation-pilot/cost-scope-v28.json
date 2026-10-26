@@ -1,0 +1,15 @@
+{
+  "verified_at_utc": "2026-10-26T01:05:16.300444+00:00",
+  "repository_private": false,
+  "runner": "ubuntu-latest",
+  "standard_public_runner": true,
+  "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+  "new_paid_api_calls": 0,
+  "cloudflare_operations": 0,
+  "codespaces": 0,
+  "containers": 0,
+  "persistent_model_caches": 0,
+  "artifacts_expected": 0,
+  "note": "Current official documentation confirms standard hosted runners in public repositories are free. Does not assert that pre-existing account bills or the fixed Workers plan disappear. All model weights stay on disposable Actions runners; no Packages/LFS uploads."
+}
