@@ -1,3 +1,17 @@
+## V30 ·26-oct-2026 · estado actual
+
+V30, ruso: referencias 360/360; ampliado rechazado con 1504/1.566 (763/792 en las 88 claves fijas). Se leyeron las 333 fuentes, idas y vueltas actuales: 40 referencias conocidas, 174 idas modelo nuevas y 92 legacy ampliadas. Modelo: 33 idas con defectos y 6 datos sin prueba; cualquier bloqueo impide aprobar. Legacy: 807/828, 14 negativas y 1 datos sin prueba; rechazado. Hay 731 memorias, 16.442 registros, 8.272 evaluaciones con repeticiones en 144 grupos y 1484 casos permanentes (1.403 globales,14scoped v29 y67v30). Cero idiomas aprobados para publicar. [Informe](lotes/2026-10-26-piloto-v30-ru.md).
+
+Pasan muestras completas: es, nb-NO, ko, id, zh-CN, bn. 8 revisados sin pasar: de, fr, pt-BR, ja, hi, ar, ru, ur. Quedan22sin revisión detallada: tr, vi, it, zh-TW, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, fil, ta, fa, am, gu. Inglés es fuente. Muestras de tres herramientas,no1000 traducidas.0/36destinos aprobados. [Listado](translation-pilot/language-status-v30.json).
+
+Aceleración gratuita medida: Python932,653→683.472s(26,7%menos observado),350casos con todos347IDs anteriores y tres nuevos. Fuente/corpus/revisiones históricos iguales;comparación entre ejecuciones,no garantía. V30 usa16prechecks específicos antes de cada inferencia y toda la suite en CI final;los perfiles antiguos conservan su precheck completo. Primarias CLDR ru fijadas,75formas cardinales,468textos/629fragmentos previos. Sin APIs de pago,Cloudflare,Codespaces,Containers,artefactos ni cachés persistentes de modelos.
+
+**Siguiente:** Crear v31 ruso independiente desde next-v31-ru-plan.json y review-context-v30-full*.json. Corregir solo las idas negativas después de test rojo,preferir una legacy exacta probada si es mejor y resolver cada dato sin prueba con contratos finitos por fuente/hash/contexto. No inventar errores lingüísticos por límites del parser ni reparar crudos. Mantener731memorias,15runtimev28/v29+8v30medidos,políticas/gramáticas/datos/revisiones y todos los casos permanentes. No repetir40314553754/40316656982. Referencias y avisos antes del ampliado condicional,mismas88 y lectura174+92 completa. Después ur(32/8) y22destinos restantes;ha/am/te/gu/ta/mr/sw requieren80. Paso A sigue abierto por capacidad Pages,37traducciones revisadas y nb real;no avanzar a fase0.
+
+CI final pendiente; candado EN CURSO.
+
+P-001–P-008:8pendientes/0FALLA;sin IDs nuevos. No certificados:revisión nativa/ciega/textos inéditos/motor genérico,UI/dispositivos,responsive320–1920/RTL/textos largos/márgenes/peso,a11y/rendimiento,puerta18/siete capas.300nuevas noindex en PRborrador;0en main/activadas,700existentes conservadas;0deploys/envíos.
+
 ## V29 ·26-oct-2026 · estado actual
 
 V29, bengalí: referencias conocidas 360/360; muestra ampliada pasa con 1566/1.566 y 792/792 en las 88 claves fijas. Se leyeron las 333 fuentes, idas y vueltas actuales. Hay 0 idas modelo con defectos y 0 datos sin prueba. Legacy: 812/828, 8 idas negativas y 16 datos sin prueba; rechazado. Memoria: 691 textos, incluidos 214 bn. Historial: 16.109 registros, 7.939 evaluaciones con repeticiones en 140 grupos y 1.417 casos permanentes (1.403 globales y 14 de vuelta ligados a la ida). Cero idiomas aprobados para publicar. [Informe](lotes/2026-10-26-piloto-v29-bn.md).
