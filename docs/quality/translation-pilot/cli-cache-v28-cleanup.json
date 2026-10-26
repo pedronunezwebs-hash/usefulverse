@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T05:54:00.396215+00:00",
+  "root": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-v28-bn-20261026",
+  "root_removed_and_absent": true,
+  "removed_before_lock_free": true,
+  "versioned_files_matched_to_remote_tree": 7825,
+  "backed_up_feature_source": "11636fb6760d86417dc84fbcf1613ccec1e6c84b",
+  "backed_up_main_source": "fb36996de1802cc36e017cdc2774561fcb540ec1",
+  "ci_source": "a56790699da358cc0331902051b42debcd6dbf65",
+  "ci_run": 40274336760,
+  "post_ci_changes_limited_to_shared_docs_and_receipts": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-26-piloto-v28-bn.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/ci-v28-verification.json",
+    "docs/quality/translation-pilot/production-v28-verification.json",
+    "docs/quality/translation-pilot/remote-v28-verification.json"
+  ],
+  "internal_run_log_zips_removed": [
+    "run-40251753561.zip",
+    "run-40274336760.zip",
+    "run-40250574315.zip",
+    "run-40253948985.zip"
+  ],
+  "external_own_run_cache_files_removed": [],
+  "external_own_run_cache_files_remaining": [],
+  "local_models_or_dependencies_installed": false,
+  "bytes_removed": 215331316,
+  "bytes_free_before": 44514177024,
+  "bytes_free_after": 44735062016,
+  "git_histories_deleted_to_solve_codespaces": false
+}
