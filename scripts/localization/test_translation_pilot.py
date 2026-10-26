@@ -7,9 +7,10 @@ from pathlib import Path
 import tempfile
 import unittest
 
-spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot.py'))
+spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot-v29.py'))
 pilot = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pilot)
+pilot = pilot.pilot
 
 
 class TranslationPilotTest(unittest.TestCase):

@@ -59,5 +59,38 @@
     "Ran 8 tests in 2.545s",
     "",
     "FAILED (failures=6, errors=4)"
-  ]
+  ],
+  "original_generic_test_class_ast_digest": "cbeaca06131996295fd69c0679ebee6539977288abbcb7a5bd189d92c33608d5",
+  "preflight_fragments": {
+    "units": 214,
+    "whole_texts": 642,
+    "fragments": 791
+  },
+  "focused_green": {
+    "tests": 38,
+    "seconds": 53.793,
+    "log_sha256": "ed126ba8cd8e0908cd9acc4ca29f066b5824a18d79d17432fec2b950cf1dc68c"
+  },
+  "fragment_red_log_sha256": "1b337dc313b4d7628394cc4f6d62cda87a3b6913a52d0ce94e1c2b6c192b4207",
+  "architecture": "Independent entry/module. Measured9 v28 files byte-identical. Only the generic current-policy test imports the new adapter; all its method assertions remain identical. Workflow changes exactly choice,description,entry script; all old contexts delegate.",
+  "generic_compatibility_green": {
+    "tests": 2,
+    "seconds": 299.788,
+    "log_sha256": "78cbf20b7a359380127fe7f381a2dd0b3a29647356a61436e2c5e718b4d31201"
+  },
+  "adapter_invariant_green": {
+    "tests": 1,
+    "seconds": 0.064,
+    "log_sha256": "e87a3624b9ff6e37854d66ac2b9be4b54fd9776a804b023f94a14be04934c3a8"
+  },
+  "unique_focused_tests": 41,
+  "expected_suite_tests": 338,
+  "measured_runtime_v29_sha256": {
+    "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+    "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+    "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+    "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+    "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec"
+  }
 }

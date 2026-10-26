@@ -11,7 +11,7 @@ DATA=pilot.ROOT/'docs/quality/translation-pilot';POLICY='context-v29'
 
 class BengaliV29Test(unittest.TestCase):
     def test_independent_policy_preserves517_targets_and_adds174_exact_known_targets(self):
-        self.assertIn(POLICY,pilot.POLICIES)
+        self.assertIn(POLICY,list(pilot.POLICIES))
         before=pilot.POLICIES['context-v28']['reviewed_memory'];after=pilot.POLICIES[POLICY]['reviewed_memory']
         def same(a,b):return isinstance(b,dict)and all(k in b and same(v,b[k])for k,v in a.items())if isinstance(a,dict)else a==b
         self.assertTrue(same(before,after));self.assertEqual(sum(len(v['translations'])for v in after.values()),691)
@@ -62,6 +62,35 @@ class BengaliV29Test(unittest.TestCase):
         with patch.object(pilot,'SEMANTIC_REGRESSIONS',pilot.SEMANTIC_REGRESSIONS+[finding]):
             self.assertTrue(route.contracts())
             with self.assertRaisesRegex(ValueError,'forward defect'):route.preflight_memory()
+
+    def test_every_source_controlled_input_and_target_fragment_proves_whole_data(self):
+        result=pilot.BENGALI_V29.preflight_fragments()
+        self.assertEqual(result['units'],214);self.assertEqual(result['whole_texts'],642)
+        self.assertGreaterEqual(result['fragments'],642)
+        route=pilot.BENGALI_V29
+        for value in ['দুটি','চারপাশে','শোনাতে']:
+            with self.subTest(value=value):self.assertIsNone(route.numeric(value,'bn'))
+
+    def test_warm_contract_cache_rejects_changed_dependency_bytes(self):
+        route=pilot.BENGALI_V29;route.contracts();path=route.directory/'bound-readings.json';cls=type(path);original=cls.read_bytes
+        def changed(file):
+            data=original(file)
+            return bytes(data)+b' ' if str(file)==str(path) else data
+        with patch.object(cls,'read_bytes',changed),self.assertRaisesRegex(ValueError,'dependency'):route.contracts()
+        self.assertTrue(route.contracts())
+
+    def test_adapter_keeps_generic_assertions_and_only_three_workflow_edits(self):
+        import ast
+        from test_translation_v25_history import stable
+        proof=json.loads((DATA/'regression-v29-preflight.json').read_text())
+        module=ast.parse((HERE/'test_translation_pilot.py').read_text())
+        klass=next(n for n in module.body if isinstance(n,ast.ClassDef))
+        self.assertEqual(pilot.digest(stable(klass)),proof['original_generic_test_class_ast_digest'])
+        text=(pilot.ROOT/'.github/workflows/deploy-cloudflare.yml').read_text()
+        edits=[('context-v27, context-v28, context-v29]','context-v27, context-v28]'),('Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios','Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio'),('python -u scripts/localization/translation-pilot-v29.py run','python -u scripts/localization/translation-pilot.py run')]
+        for after,before in edits:
+            self.assertEqual(text.count(after),1);text=text.replace(after,before)
+        self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),proof['workflow_before_sha256'])
 
     def test_no_local_mass_or_ungated_full_conversion(self):
         route=pilot.BENGALI_V29

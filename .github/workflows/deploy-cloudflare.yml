@@ -26,11 +26,11 @@ on:
         type: choice
         options: [both, m2m100, madlad]
       pilot_policy:
-        description: "Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio"
+        description: "Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios"
         required: false
         default: baseline
         type: choice
-        options: [baseline, context-v2, context-v3, context-v4, context-v5, context-v6, context-v7, context-v8, context-v9, context-v10, context-v11, context-v12, context-v13, context-v14, context-v15, context-v16, context-v17, context-v18, context-v19, context-v20, context-v21, context-v22, context-v23, context-v24, context-v25, context-v26, context-v27, context-v28]
+        options: [baseline, context-v2, context-v3, context-v4, context-v5, context-v6, context-v7, context-v8, context-v9, context-v10, context-v11, context-v12, context-v13, context-v14, context-v15, context-v16, context-v17, context-v18, context-v19, context-v20, context-v21, context-v22, context-v23, context-v24, context-v25, context-v26, context-v27, context-v28, context-v29]
       pilot_scope:
         description: "40 referencias o las tres herramientas completas"
         required: false
@@ -154,7 +154,7 @@ jobs:
           checkpoint="docs/quality/translation-pilot/checkpoints/${PILOT_ENGINE}.jsonl"
           if [ "$PILOT_POLICY" != "baseline" ]; then checkpoint="docs/quality/translation-pilot/checkpoints/${PILOT_POLICY}/${PILOT_ENGINE}.jsonl"; fi
           if [ -f "$checkpoint" ]; then args+=(--resume "$checkpoint"); fi
-          python -u scripts/localization/translation-pilot.py run \
+          python -u scripts/localization/translation-pilot-v29.py run \
             --policy "$PILOT_POLICY" --engine "$PILOT_ENGINE" --scope "$PILOT_SCOPE" --locales "$PILOT_LOCALES" \
             --corpus "$RUNNER_TEMP/pilot-corpus.json" --output "$RUNNER_TEMP/pilot-results.jsonl" "${args[@]}"
       - name: Remove job-owned model downloads and caches
