@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-26T07:59:23.606441+00:00",
+  "at_utc": "2026-10-26T12:15:11.296470+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 7939,
+  "agent_reviewed_translations": 8272,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 7939,
+  "agent_reviewed_evaluations": 8272,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -327,7 +327,7 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 16109,
+  "total_records_all_policies": 16442,
   "semantic_regressions": 1403,
   "contextual_reference_gate": {
     "es": {
@@ -407,6 +407,20 @@
       "passed": true,
       "minimum_style_budget_met": true,
       "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "ru": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current S/F/B agent review;all warnings reconciled. No native/blind/generic-engine/release approval."
     }
   },
   "full_tool_gate": {
@@ -541,7 +555,7 @@
       "forward_model_rows": 0
     }
   },
-  "contextual_policies_reviewed": 28,
+  "contextual_policies_reviewed": 29,
   "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
     "locales": [
@@ -563,19 +577,20 @@
     "ko": "context-v18",
     "id": "context-v21",
     "zh-CN": "context-v27",
-    "bn": "context-v29"
+    "bn": "context-v29",
+    "ru": "context-v30"
   },
   "latest_reference_pilot": {
-    "policy": "context-v29",
-    "locale": "bn",
-    "run_id": 40282144871,
+    "policy": "context-v30",
+    "locale": "ru",
+    "run_id": 40314553754,
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
     "full_dispatched": true,
     "approved_locales": []
   },
-  "engines_inventory_note": "V29 BN214 exact reviewed-memory targets;0new forward model inference. Back translations measured and all333 S/F/B read. Known sample only,no engine/native/blind/unseen/release approval. ES/NBv15,KOv18,IDv21,ZH-CNv27 and historical evidence unchanged.",
+  "engines_inventory_note": "V30Russian:40known source-bound memory references;174new forward candidates,all333current S/F/B directly read. All previous language evidence unchanged;no native/blind/general-engine/release approval.",
   "full_tool_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
@@ -585,13 +600,13 @@
     "bn": "context-v29"
   },
   "latest_full_pilot": {
-    "policy": "context-v29",
-    "locale": "bn",
-    "run_id": 40286109390,
+    "policy": "context-v30",
+    "locale": "ru",
+    "run_id": 40316656982,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,
-    "model_gate_passed": true,
+    "model_gate_passed": false,
     "approved_locales": []
   },
   "detailed_review_inventory": {
@@ -612,12 +627,13 @@
       "ar"
     ],
     "current_references_not_passed": [
-      "ru",
       "ur"
     ],
     "remaining_without_detailed_review": 22,
     "approved_locales": [],
-    "current_full_not_passed": []
+    "current_full_not_passed": [
+      "ru"
+    ]
   },
   "v25_historical_withdrawal_note": "Two explicit naturalness reassessments for duplicate v24 model/legacy FAQ; original review bytes/gates/score inventory preserved. See review-withdrawal-addenda.json; no locale approval.",
   "latest_baseline_reference_batch": {
@@ -681,6 +697,43 @@
     "known_memory_rows": 174,
     "forward_model_rows": 0
   },
-  "scoped_back_regressions": 14,
-  "total_permanent_regression_cases": 1417
+  "scoped_back_regressions": 34,
+  "total_permanent_regression_cases": 1484,
+  "latest_ru_reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current S/F/B agent review;all warnings reconciled. No native/blind/generic-engine/release approval."
+  },
+  "latest_ru_full_gate": {
+    "rows": 174,
+    "sample": 174,
+    "points": 1504,
+    "maximum": 1566,
+    "button_errors": 0,
+    "number_negation_errors": 3,
+    "major_rows": 13,
+    "minor_rows": 20,
+    "unproved_data_rows": 6,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Blocked by observed forward defects or unproved data;no approval.",
+    "fixed_sample_rows": 88,
+    "fixed_sample_points": 763,
+    "fixed_sample_maximum": 792,
+    "fixed_sample_passed": false,
+    "global_no_open_defects_requirement": "Every observed forward error or unproved datum blocks,including outside88.",
+    "forward_model_rows": 174,
+    "known_memory_rows": 0
+  },
+  "ru_reference_policy": "context-v30",
+  "scoped_forward_regressions": 47
 }

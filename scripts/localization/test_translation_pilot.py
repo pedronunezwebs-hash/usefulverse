@@ -11,6 +11,10 @@ spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name(
 pilot = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pilot)
 pilot = pilot.pilot
+post_spec = importlib.util.spec_from_file_location("post_review30", Path(__file__).with_name("pilot-review-audit-v30.py"))
+post_review = importlib.util.module_from_spec(post_spec)
+post_spec.loader.exec_module(post_review)
+post_review.install(vars(pilot))
 
 
 class TranslationPilotTest(unittest.TestCase):

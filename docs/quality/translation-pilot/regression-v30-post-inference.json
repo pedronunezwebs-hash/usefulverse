@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "full_back_cases": 20,
+  "full_forward_cases": 47,
+  "red_findings": {
+    "tests": 2,
+    "failures": 21,
+    "log_sha256": "d9216ef409e828e55127cbef87ddd42401da651a4254dae0f977946ca974dc60"
+  },
+  "red_reporting": {
+    "tests": 2,
+    "failures": 2,
+    "log_sha256": "c4d0451af301bc23bd54ad108daea139049b9a0a9fd4ca6bf7b2796a25a8a086"
+  },
+  "raw_checkpoint_sha256": "d86812e0a2cfb0ca83ffb43a501626387b9194c18331578f5ce97fd2eceba903",
+  "unproved_rows": 7,
+  "unit_symbol_unproved_rows": 5,
+  "inference_runtime_changed": false,
+  "green_reporting_and_exact_defects": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 9.168,
+    "log_sha256": "e409b7bd5dfc38be58ce2a1d544048b7d184a7b192e72bf6079c604442c879dd"
+  },
+  "focused_final_before_ci": {
+    "log_sha256": "9b9801498009235eeec310b13edb9864a1e89b2e3a2647ac1c5ce9ff8d2bdbf3",
+    "tests": 14,
+    "passed": true
+  }
+}

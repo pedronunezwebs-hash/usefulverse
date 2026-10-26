@@ -48,6 +48,264 @@
         "a770b7afe32bb2f9a5e6f71aee158d86631f5616ce78222d58c37c830625d230"
       ],
       "issue": "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+    },
+    {
+      "key": "dxf-viewer.fields.cancelled",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "54c69a2d32a0deefe7942d596ae015a43b475cf92cd346421f1b5eb8b2e7a7d6",
+      "forward_hash": "588c29cbe7b88ba2557ecf0b6c88a4d6c10a10b93b68da793669c386a48d0c4f",
+      "back_translation": "Upload canceled.",
+      "back_translation_hash": "b0ac4715557c36f323f2622e6b268220c2554914dd4550bb22ae43a8cae5e1f2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1faa77aa66f1ecf919cd762ef8d798b0e2c99b3552707fb28491213fcbe42800"
+      ],
+      "issue": "Local loading becomes Upload in the back,an incorrect network direction."
+    },
+    {
+      "key": "dxf-viewer.fields.clear",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "forward_hash": "e915c2df4a9b4a576642af82286306cc7562805c733f3a4fe57ac480e7f2b221",
+      "back_translation": "Delete uploaded drawing",
+      "back_translation_hash": "25fcdc5fee36c3c29c59c6f61df33e5a28c1fb9d0dccacfcb1310771aa4ed70b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "ebde8d2d9b7d16978d91ad190959b053e5df3bf90bcdedec68122f7821449b3e"
+      ],
+      "issue": "Loaded local drawing becomes uploaded drawing in the back."
+    },
+    {
+      "key": "dxf-viewer.fields.units.0",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+      "forward_hash": "663875cc10216703831a853dce6cd833e46784b072f2b84309a25ad36fbf5cc5",
+      "back_translation": "Non-singular",
+      "back_translation_hash": "5a4fa745c0030c7a20ada9ccab0597e07e143d075bbb91ff7cee4bd59115c53d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "89c9332dc650b131c39c74fab6639bc759d19dc22342813a8a1061670dfc656e"
+      ],
+      "issue": "Unitless becomes Non-singular,a different mathematical concept."
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "forward_hash": "199d6db958cdb81713e474a75baeddf7b70122aae0da9f96eb6a238caf738786",
+      "back_translation": "Decision",
+      "back_translation_hash": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "15d2ec413a40887d0998da2b2c82950cda2db69c4d9f6fc90bb298cad3224ad0",
+        "b725f6e8defc14d87fb5cd7caa09b69a9bb1bcf569f9c0054f9bae3b1996d0dd"
+      ],
+      "issue": "Puzzle solution becomes Decision,wrong sense of Russian решение."
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "forward_hash": "4f16ed31f9ab656d244ae98ccd6c44d6aa1d320880a16b62f4e661ac449d88b8",
+      "back_translation": "This browser creates puzzles. Large grids can take some time on slow devices. No account required. No need to download files.",
+      "back_translation_hash": "e18a04dbaf7ec8843500b9127680b7d5ca0168037db8ea2e16a7db279109c0e5",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "cb6fa29e856c1b31647f39f85fa9853942faea21a987196f5b02fc9f400875f2"
+      ],
+      "issue": "No file upload needed becomes no need to download files."
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "forward_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "back_translation": "Change the pitch, create radio or deep voice effects, preview echoes and export processed sound locally. Free, confidential and no download.",
+      "back_translation_hash": "3984e14c11293e270908c041a4bd6252b185f5ed67f884fe736a9ed9c244528b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62"
+      ],
+      "issue": "No upload becomes no download,contradicting local WAV export."
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "forward_hash": "12bccb9165a128497ea4530c4d2840b5924620cdb7899249350da0010d96b6f8",
+      "back_translation": "Try voice recording. Compare the original with the preset radio effect or with the preset lower level. Altitude changes also change the playback speed. It's not voice cloning or studio pitch correction.",
+      "back_translation_hash": "ea9326c877ddec9e92045c008487dcceba247167135faa5e31b865e583432aa2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "c341955af71b362eede17ac1a866eec595fe0d8f17b0985676cec22eee2d7187"
+      ],
+      "issue": "Audio pitch becomes Altitude in the back;this error is separate from the forward lower-level mistranslation."
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "forward_hash": "05da201ea12888a06c9e0b1afe1a53ab83fa00c4d2d8359a8fde76f36b89fcb8",
+      "back_translation": "The selected record is never loaded. This browser decrypts and processes the record locally. UsefulVerse is not receiving a record.",
+      "back_translation_hash": "43c3634dfcde47e229e6bc1ac1f22845760c03fff82db57e08adc73748db3bce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "dead12cd06b3c9ec6f372ec1a561c4a89d3445358917d919d8009af60dafe48c"
+      ],
+      "issue": "No upload becomes never loaded,and generic audio decoding is narrowed to decryption."
+    },
+    {
+      "key": "voice-changer.faq.0.q",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "forward_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation": "Is my recording loaded?",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "0195c53f176899e93c0a240b46c3ade91371a63160e88b1f58941f5a32e69ef6",
+        "2416a8ee638aa1e44084ad573a5d59da08d43df2eff377b5270ff9614ba5371f"
+      ],
+      "issue": "Recording uploaded becomes recording loaded,losing the privacy/network question."
+    },
+    {
+      "key": "voice-changer.fields.faq1q",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "forward_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation": "Is my recording loaded?",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "147396784979e360c5cfeb769e99952f48e121227e2517b5527fed42a6ea3277",
+        "8c825134a6ed0f4f31e5f781afa1e03df95ce4aa2a6faf165211c9273e05daa2"
+      ],
+      "issue": "Recording uploaded becomes recording loaded,losing the privacy/network question."
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "forward_hash": "62164bc12c5407b497bae588b3f55782625e1ce80c6c4cf263196133f2f9624f",
+      "back_translation": "Use a format that your browser can decrypt. Maximum 25 MB and 30 seconds.",
+      "back_translation_hash": "a87dd6adf3d7866648ff2c909ca954d4ea45702a2eaaf440223b3eb85a16c336",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "06c3a33077d5251d8bcbb4bc15753098e7c3d93730fb450f7e7e4460493ee05e"
+      ],
+      "issue": "Generic format decoding is narrowed to decryption;the Russian broad decoding verb does not require encryption."
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "forward_hash": "02eda071401a30984094d9ce4c23118d14dce0e3f496db7eee6ce6e0f4542cc0",
+      "back_translation": "Upload the audio clip before preview or export.",
+      "back_translation_hash": "f8a22d68b337667d4e34aad9b6750fb5202c60329c8e02e43ca9db228931c487",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1390c5790c1d2b6f7327f88fe0e59fdaa2a8a5165969b42d3a9b80ad694cc7bf"
+      ],
+      "issue": "Local audio loading becomes upload in the back."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "forward_hash": "3cd1f43b85ea9acb8019252fdd94f6ced07fee8ffb0d798da9d39614250baa36",
+      "back_translation": "Altitude displacement (poloniums)",
+      "back_translation_hash": "0bbd8765d0e0f3352ba0abc98491835d0ed3b9ab813209419ebdebd3f99450d9",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "013e9c497b9adb930aad942bd017ba580ef172466283cbbef40647cf7bdc613e"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "forward_hash": "32d8eb7bbac9e090670c9267081daf62978044439ae4da0512ea00c660763834",
+      "back_translation": "Sound pitch shift (polonium)",
+      "back_translation_hash": "995c72b915b18da2e850ad36241a470a724704521edbbdfa6db90708dfe85f61",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "66919c3daa069340a729eb8f0bef148e8a6017b673bc1af739c25ce57a45e4a9"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "forward_hash": "0e78039ef9e77ddda8c05a69870759a594bca961c17e16ff4797911880c22e20",
+      "back_translation": "Status of change of vote",
+      "back_translation_hash": "d818d4d98c7996bf3c9859bdc5c21161a0ef38ca7d61b7acb106c366ef8a56dc",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1d26e96c2daa735ef56e3a98fbc793ff7a12fd7cbbabbbc6c58a396cb5ad078c"
+      ],
+      "issue": "Voice becomes political vote in the back."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "forward_hash": "3fca24b9f1351228715c1d9cd4532d1e352adc84550efbf3aefdc3c83dec41ed",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "209f9f4245c0bd17274b62dc96288e8d2afc5c83663ba7db03e0807f6e695120"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "forward_hash": "6e596c39c74cd3d5553fa4a7756c7fdfa56fe42c5c1900f1a33dd6f36d4248a3",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2302f90f5ae330960d79907af1fc045491c16716ab1b2869df1f228abaab4ad0"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
     }
   ]
 }
