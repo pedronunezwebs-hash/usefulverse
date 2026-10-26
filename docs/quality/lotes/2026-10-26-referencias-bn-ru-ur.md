@@ -1,4 +1,4 @@
-# Referencias bn/ru/ur · 26-oct-2026 · EN CURSO
+# Referencias bn/ru/ur · 26-oct-2026 · CERRADO
 
 Lote bn/ru/ur:402 registros S/F/B existentes leídos directamente,321 juicios de ida y9 revisiones negativas independientes. MADLAD:bn341/360,ru346/360,ur311/360; referencias rechazadas, ampliado no ejecutado.106/120 frases lingüísticamente reutilizables pendientes de prueba v28;14 requieren corrección (3bn,3ru,8ur).183 fixtures nuevas,1334 totales;15443 registros sin nuevas inferencias y7271 evaluaciones con repeticiones/131 grupos.0 idiomas aprobados.
 
@@ -50,7 +50,7 @@ Checklist FABLE7+9:
 - [x] Tests rojos antes de fixtures; decisiones explícitas por aviso.
 - [x] Comparación con muestras equivalentes y preselección sin aprobación automática.
 - [x] CI completa, seguridad y comprobación GET/XML de producción.
-- [ ] Seis documentos sincronizados, push verificado, retirada efectiva y LIBRE.
+- [x] Seis documentos sincronizados, push verificado, retirada efectiva y LIBRE.
 
 P-001–P-008:8 pendientes,0 FALLA;0 nuevas. UI, hardware, responsive y las18 puertas
 y7 capas de herramientas no certificados por esta revisión.0 herramientas activadas,
@@ -75,4 +75,6 @@ Estas propuestas no alteran las106 candidatas previas ni eliminan las14 correcci
 
 CI final[40246599367](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40246599367), fuente`7ec358639d326a2dafdd29e556dd4724a6a34f66`, correcta:3045 Node y308 Python (306 correctas,2 omisiones por dependencias), Python593.43s. Build principal9972 páginas+36 homes/10260 URLs; gate20 locales existentes; hub:217 herramientas Growth,100 de mercado y106 recuperadas editables; buildGrowth7848 páginas/8253 archivos. Preview11293 archivos/10800 páginas y todas las homes noindex,0 URLs indexables;36 locales, no acredita37. Modelo y ambas publicaciones omitidos;0 artefactos.21 tests enfocados correctos y gitleaks sin secretos nuevos. Producción antes/después:5 GET y2 XML con mismos estados/bytes/SHA256,25625 URLs;3 soft404 siguen200. Sin UI/nativo/hardware/responsive/índice Google certificados.0 nuevas pruebas Pedro;P-001–P-008 pendientes.
 
-Recibos: docs/quality/translation-pilot/ci-batch1-verification.json y remote-batch1-verification.json (en la rama del PR). Retirada efectiva pendiente de ejecutar; no declararla ni liberar candado antes.
+Recibos: docs/quality/translation-pilot/ci-batch1-verification.json y remote-batch1-verification.json (en la rama del PR). Retirada efectiva ejecutada y verificada, recibo al cierre.
+
+Retirada efectiva: 2026-10-26T00:08:01.808972+00:00; raíz propia .usefulverse-batch-bn-ru-ur-20261026 eliminada y comprobada ausente antes de LIBRE. 7792 archivos versionados cotejados con el árbol remoto; código/datos/revisiones/fixtures iguales a CI final40246599367; solo6 documentos y recibos posteriores. Seis documentos idénticos en main/feature; main solo cambia esos6. Cero cachés/ZIP propios externos restantes; originales recuperables en GitHub. Disco libre 41.76GiB. Evidencia: remote-batch1-verification.json y cli-cache-batch1-cleanup.json (rama del PR#136).
