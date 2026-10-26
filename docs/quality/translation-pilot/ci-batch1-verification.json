@@ -127,15 +127,17 @@
     "principal_homes": 36,
     "principal_sitemap_urls": 10260,
     "existing_locale_gate": 20,
-    "hub_files": 217,
-    "hub_tool_pages": 100,
-    "hub_js": 106,
     "preview_files": 11293,
     "preview_tool_pages": 10800,
     "preview_locales": 36,
     "preview_all_tool_pages_and_homes_noindex": true,
     "preview_indexable_sitemap_urls": 0,
-    "not37locale_certification": true
+    "not37locale_certification": true,
+    "hub_growth_tools": 217,
+    "hub_market_tools": 100,
+    "hub_editable_recovered_tools": 106,
+    "growth_build_pages": 7848,
+    "growth_build_files": 8253
   },
   "production": {
     "before": {
