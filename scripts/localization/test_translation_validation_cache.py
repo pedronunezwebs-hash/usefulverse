@@ -127,6 +127,11 @@ class ValidationCacheTest(unittest.TestCase):
     def test_only_explicit_cache_bootstrap_changes_the_original_module_ast(self):
         proof = json.loads((pilot.ROOT / 'docs/quality/translation-pilot/acceleration-source-proof.json').read_text())
         module = ast.parse((HERE / 'translation-pilot.py').read_text())
+        optin = [node for node in module.body if isinstance(node, ast.FunctionDef) and node.name == 'enable_bengali_v28' or isinstance(node, ast.Expr) and isinstance(node.value, ast.Call) and isinstance(node.value.func, ast.Name) and node.value.func.id == 'enable_bengali_v28']
+        v28 = json.loads((pilot.ROOT / 'docs/quality/translation-pilot/regression-v28-preflight.json').read_text())
+        self.assertEqual(len(optin), 2)
+        self.assertEqual(pilot.digest(stable(ast.Module(body=optin, type_ignores=[]))), v28['optin_bootstrap_ast_sha256'])
+        module.body = [node for node in module.body if node not in optin]
         extra = [node for node in module.body if isinstance(node, ast.FunctionDef) and node.name == 'enable_validation_cache' or isinstance(node, ast.Expr) and isinstance(node.value, ast.Call) and isinstance(node.value.func, ast.Name) and node.value.func.id == 'enable_validation_cache']
         self.assertEqual(len(extra), 2)
         self.assertEqual(pilot.digest(stable(ast.Module(body=extra, type_ignores=[]))), proof['bootstrap_ast_sha256'])
@@ -138,7 +143,8 @@ class ValidationCacheTest(unittest.TestCase):
         # This is a frozen cache-equivalence experiment, not a ban on discovering
         # future defects. New findings have their own exact-evidence tests.
         with patch.object(pilot, 'SEMANTIC_REGRESSIONS', pilot.SEMANTIC_REGRESSIONS[:1151]):
-            flags = {row['record_id']: pilot.record_flags(row) for file in sorted((pilot.ROOT / 'docs/quality/translation-pilot/checkpoints').rglob('*.jsonl')) for row in map(json.loads, file.read_text().splitlines())}
+            historical = json.loads((pilot.ROOT / 'docs/quality/translation-pilot/regression-v28-preflight.json').read_text())
+            flags = {row['record_id']: pilot.record_flags(row) for name in sorted(historical['historical_checkpoint_sha256']) for row in map(json.loads, (pilot.ROOT / 'docs/quality/translation-pilot' / name).read_text().splitlines())}
         self.assertEqual(len(flags), proof['records'])
         self.assertEqual(pilot.digest(flags), proof['record_flags_sha256'])
 

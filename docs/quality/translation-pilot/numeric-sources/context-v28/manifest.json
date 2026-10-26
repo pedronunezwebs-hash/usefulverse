@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "bn-decimal-bound-v1",
+  "locale": "bn",
+  "base_policy": "context-v27",
+  "base_policy_file": "scripts/localization/pilot-chinese-known-corpus-policy.json",
+  "base_policy_sha256": "d034fe153d164d00dbc3e259b0d2411787e599cdd5f27398eac94acabe842bc4",
+  "source_snapshot": "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json",
+  "dependencies": {
+    "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+    "scripts/localization/pilot-chinese-known-corpus-policy.json": "d034fe153d164d00dbc3e259b0d2411787e599cdd5f27398eac94acabe842bc4",
+    "docs/quality/translation-pilot/batch1-v28-candidate-plan.json": "daf4cd088915dba532f5bc259d49afb12e2933fae16b3a6148e3ea69efa398d0",
+    "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+    "docs/quality/translation-pilot/checkpoints/madlad.jsonl": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643",
+    "docs/quality/translation-pilot/checkpoints/m2m100.jsonl": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a",
+    "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+    "docs/quality/translation-pilot/review-batch1-bn-legacy.json": "e0323a8ca6d30f37ebd4d4d41150429beb30ccb44f2a343f8f1b995f6166c5e7",
+    "docs/quality/translation-pilot/review-batch1-bn-madlad.json": "326424c0374efc3b2e8b634cdb18ffca9fa90f844020795640134d70e414e72b",
+    "docs/quality/translation-pilot/review-batch1-bn-m2m100.json": "305eadaf43442a2428bb8c2939eeaa91a6e3128df58ab34d1b411f5f6261d075",
+    "docs/quality/translation-pilot/numeric-sources/context-v22/numberingSystems.json": "0efb69a00dbae5950195b077e0cc6c7f319d3a1e8a81401083ec4f42c14b0014",
+    "docs/quality/translation-pilot/numeric-sources/context-v22/LICENSE": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  },
+  "primary_files": [
+    {
+      "path": "bn-numbers.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/bn/numbers.json",
+      "sha256": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+      "bytes": 18128
+    },
+    {
+      "path": "bn-rbnf.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/rbnf/bn.xml",
+      "sha256": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+      "bytes": 4155
+    }
+  ],
+  "digits": {
+    "latn": "0123456789",
+    "beng": "০১২৩৪৫৬৭৮৯"
+  },
+  "decimal": ".",
+  "group": ",",
+  "primary_group_size": 3,
+  "secondary_group_size": 2,
+  "standard_pattern": "#,##,##0.###",
+  "scope": "Context-v28 only. Strict decimal subset, finite CLDR cardinals0–99 with টি classifier, closed source-bound article/unit/negative-copula readings. Unknown compounds/fractions/signs/compact forms fail closed. Does not prove linguistic correctness or freeze an engine."
+}

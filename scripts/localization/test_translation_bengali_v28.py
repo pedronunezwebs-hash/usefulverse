@@ -180,5 +180,14 @@ class BengaliV28Test(unittest.TestCase):
         for name, digest in proof['historical_policy_digests'].items(): self.assertEqual(pilot.policy_digest(name), digest)
         self.assertEqual(pilot.digest(pilot.SEMANTIC_REGRESSIONS[:1334]), proof['historical_fixture_prefix_digest'])
 
+    def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
+        proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
+        text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
+        self.assertIn('context-v27, context-v28]', text)
+        text = text.replace('context-v27, context-v28]', 'context-v27]')
+        text = text.replace('Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio', 'Baseline o variantes v2–v27; v27 reutiliza corpus revisado y contratos Shikaku')
+        raw = text.encode()
+        self.assertEqual(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest(), proof['workflow_before_blob_sha'])
+
 
 if __name__ == '__main__': unittest.main()

@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 7271,
+  "agent_reviewed_translations": 7273,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 7271,
+  "agent_reviewed_evaluations": 7273,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -327,7 +327,7 @@
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
   "total_records_all_policies": 15443,
-  "semantic_regressions": 1334,
+  "semantic_regressions": 1336,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -599,5 +599,12 @@
     "passed_locales": [],
     "approved_locales": [],
     "candidate_plan": "batch1-v28-candidate-plan.json"
+  },
+  "negative_bn_legacy_reassessment": {
+    "path": "review-v28-legacy-reassessment.json",
+    "original_points": 236,
+    "effective_points": 232,
+    "maximum": 243,
+    "reason": "Two U+09F7 fraction glyphs were falsely scored perfect; original bytes retained and current negative audit projects232/243.37 usable Bengali candidates still exist via two MADLAD substitutions."
   }
 }

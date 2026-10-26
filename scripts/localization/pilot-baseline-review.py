@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Audit negative baseline reviews. Cannot pass a gate or approve a locale."""
 import hashlib
+import copy
 import importlib.util
 import json
 from pathlib import Path
@@ -23,8 +24,41 @@ def text_hash(value):
     return hashlib.sha256(value.encode('utf-8')).hexdigest()
 
 
+def negative_reassessment(review, reassessment=None):
+    """Project two new negative findings without editing the historical review."""
+    file = DATA / 'review-v28-legacy-reassessment.json'
+    if reassessment is None:
+        if not file.exists(): return review
+        reassessment = json.loads(file.read_text())
+    if pilot.digest(review) != reassessment['original_review_digest']: return review
+    require(reassessment['original_review_file'] == 'review-batch1-bn-legacy.json' and reassessment['negative_only'] is True and reassessment['native_review'] is False and reassessment['approved_locales'] == [], 'Reassessment cannot approve or change scope')
+    original = DATA / reassessment['original_review_file']
+    require(hashlib.sha256(original.read_bytes()).hexdigest() == reassessment['original_review_sha256'] and pilot.digest(json.loads(original.read_text())) == reassessment['original_review_digest'], 'Stale original negative-review binding')
+    require(review['reference_gate']['passed'] is False and review['locale'] == 'bn' and review['candidate'] == 'legacy', 'Only a blocked Bengali legacy review may be reassessed')
+    require(reassessment['expected_rows'] == len(reassessment['rows']) == 2 and {r['key'] for r in reassessment['rows']} == {'shikaku.fields.hint', 'voice-changer.fields.decodeFailed'}, 'Wrong reassessment scope')
+    result = copy.deepcopy(review)
+    records = {r['record_id']: r for engine in ['madlad', 'm2m100'] for r in map(json.loads, (DATA / f'checkpoints/{engine}.jsonl').read_text().splitlines())}
+    for correction in reassessment['rows']:
+        old = next(row for row in result['rows'] if row['key'] == correction['key'])
+        require(all(old[k] == correction[k] for k in ['key', 'locale', 'source_hash', 'translation_hash', 'record_ids', 'record_sha256']), 'Unbound negative rubric')
+        require(set(correction['scores']) == set(old['scores']) and all(type(v) is int and 0 <= v <= old['scores'][k] for k, v in correction['scores'].items()) and any(v < old['scores'][k] for k, v in correction['scores'].items()), 'Reassessment must only lower old scores')
+        old['scores'] = correction['scores']; old['notes'] += correction['notes']
+        for identity in correction['record_ids']:
+            raw = records[identity]
+            require('\u09f7' in raw['translation'] and pilot.semantic_issues(raw['key'], raw['source_hash'], raw['translation'], 'bn'), 'Missing exact observed fraction regression')
+            entry = next((item for item in result['warning_reconciliation'] if item['record_id'] == identity), None)
+            if entry is None:
+                entry = dict(record_id=identity, record_sha256=pilot.digest(raw), translation_hash=text_hash(raw['translation']), back_translation_hash=text_hash(raw['back_translation']), warnings={})
+                result['warning_reconciliation'].append(entry)
+            require('known_semantic_errors' not in entry['warnings'], 'Negative reassessment cannot replace an old warning')
+            entry['warnings']['known_semantic_errors'] = dict(disposition='forward-defect', blocks_gate=True, note=correction['notes'][0])
+    result['reference_gate'].update(metrics(result))
+    return result
+
+
 def audit(review):
     """Recompute evidence, coverage and every warning; no inference or grading."""
+    review = negative_reassessment(review)
     require(review['review_type'] == 'baseline-negative-review-batch-v1', 'Wrong review type')
     require(review['native_review'] is False and review['approved_locales'] == [], 'Approval forbidden')
     require(review['engine_frozen'] is False and review['typed_profile_verified'] is False, 'Baseline is not a frozen typed engine')

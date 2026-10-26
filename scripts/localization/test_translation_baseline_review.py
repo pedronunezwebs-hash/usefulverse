@@ -16,7 +16,8 @@ class BaselineReviewTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.reviews = {path.name: json.loads(path.read_text()) for path in DATA.glob('review-batch1-*.json')}
-        cls.records = {row['record_id']: row for file in (DATA / 'checkpoints').rglob('*.jsonl') for row in map(json.loads, file.read_text().splitlines())}
+        historical = json.loads((DATA / 'regression-v28-preflight.json').read_text())
+        cls.records = {row['record_id']: row for name in historical['historical_checkpoint_sha256'] for row in map(json.loads, (DATA / name).read_text().splitlines())}
 
     def test_nine_complete_reviews_bind402_original_records_without_new_inference(self):
         self.assertEqual(len(self.reviews), 9)
@@ -78,10 +79,11 @@ class BaselineReviewTest(unittest.TestCase):
         proof = json.loads((DATA / 'batch1-regression-proof.json').read_text())
         prefix = pilot.SEMANTIC_REGRESSIONS[:1151]
         self.assertEqual(pilot.digest(prefix), proof['fixture_prefix_sha256'])
-        self.assertEqual(len(pilot.SEMANTIC_REGRESSIONS), 1334)
+        self.assertGreaterEqual(len(pilot.SEMANTIC_REGRESSIONS), 1334)
         with patch.object(pilot, 'SEMANTIC_REGRESSIONS', prefix):
             before = {i: pilot.record_flags(row) for i, row in self.records.items()}
-        after = {i: pilot.record_flags(row) for i, row in self.records.items()}
+        with patch.object(pilot, 'SEMANTIC_REGRESSIONS', pilot.SEMANTIC_REGRESSIONS[:1334]):
+            after = {i: pilot.record_flags(row) for i, row in self.records.items()}
         self.assertEqual(len(before), 15443)
         self.assertEqual(pilot.digest(before), proof['before_flags_sha256'])
         self.assertEqual(pilot.digest(after), proof['after_flags_sha256'])

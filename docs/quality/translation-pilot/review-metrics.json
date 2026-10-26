@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-25T23:32:41.992782+00:00",
+  "at_utc": "2026-10-26T00:38:49.454128+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 7271,
+  "evaluations": 7273,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -1735,6 +1735,20 @@
       "major_rows": 3,
       "minor_rows": 2,
       "unproved_data_rows": 2
+    },
+    {
+      "review_file": "review-v28-legacy-reassessment.json",
+      "policy": "baseline-negative-reassessment-v28",
+      "locale": "bn",
+      "candidate": "legacy",
+      "rows": 2,
+      "points": 14,
+      "maximum": 18,
+      "button_errors": 1,
+      "number_negation_errors": 2,
+      "major_rows": 0,
+      "minor_rows": 2,
+      "unproved_data_rows": 0
     }
   ]
 }

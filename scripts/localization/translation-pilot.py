@@ -2347,4 +2347,16 @@ def enable_validation_cache():
 enable_validation_cache()
 
 
+def enable_bengali_v28():
+    """Install an opt-in Bengali route; historical callable bodies stay intact."""
+    path = Path(__file__).with_name("pilot-bengali-v28.py")
+    spec = importlib.util.spec_from_file_location("usefulverse_bengali_v28", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.install(globals())
+
+
+enable_bengali_v28()
+
+
 if __name__ == "__main__": main()

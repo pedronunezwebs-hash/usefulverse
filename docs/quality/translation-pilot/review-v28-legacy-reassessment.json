@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex",
+  "native_review": false,
+  "approved_locales": [],
+  "negative_only": true,
+  "original_review_file": "review-batch1-bn-legacy.json",
+  "original_review_sha256": "e0323a8ca6d30f37ebd4d4d41150429beb30ccb44f2a343f8f1b995f6166c5e7",
+  "original_review_digest": "135bc0a7441360fd5e0a37d4483e12eb734ed4299454b397b9beae0e9e5c92f9",
+  "expected_rows": 2,
+  "rows": [
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "bn",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "legacy",
+      "translation_hash": "344e3cd1811b72e18789d51cecab6b5b126184d1a6ab57a9a36597aecb2526b7",
+      "canonical_context": "fields.hint",
+      "record_ids": [
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65"
+      ],
+      "record_sha256": {
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878": "c59973c5ba4b53475fce716f4bcfedc5ad58785463002587a49afeef5788631a",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65": "ea14b5284a5f9bd807971158ddde89af23ba8aa6a8d96018013c139a6c4019b7"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 2
+      },
+      "notes": [
+        "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-agent-negative-reassessment-v28",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "bn",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "legacy",
+      "translation_hash": "10719c106a525f244cd3ba992fa04c32495b8eeb4050337ea19571a0cff7c0ec",
+      "canonical_context": "fields.decodeFailed",
+      "record_ids": [
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
+      ],
+      "record_sha256": {
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f": "67ce15ebc6bf47d9ba4bf6c6d0191f0038a7ac9672829b2e79a3d8dbc3461f0d",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303": "d71116f611c5cdad1805fbca0d0ba982a07786f76a900f901e71f99270509928"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 2
+      },
+      "notes": [
+        "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-agent-negative-reassessment-v28",
+      "data_contract_unproved": false
+    }
+  ],
+  "observations": 4,
+  "cases": [
+    {
+      "locale": "bn",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation": "একটি ইঙ্গিত দেখান৷",
+      "issue": "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate.",
+      "direction": "forward",
+      "observed_candidate": "legacy",
+      "observed_record_ids": [
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65"
+      ],
+      "review_policy": "baseline-negative-reassessment-v28"
+    },
+    {
+      "locale": "bn",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation": "এই ব্রাউজারটি সেই অডিও ফর্ম্যাটটি ডিকোড করতে পারেনি৷ WAV বা MP3 ব্যবহার করে দেখুন।",
+      "issue": "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate.",
+      "direction": "forward",
+      "observed_candidate": "legacy",
+      "observed_record_ids": [
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
+      ],
+      "review_policy": "baseline-negative-reassessment-v28"
+    }
+  ],
+  "original_review_immutable": true,
+  "red_tests": {
+    "failed_observations": 4,
+    "log_sha256": "ed5c835d65197642cd79b9e0bfb3b727ad6d5271248ede75cf4b1ef0985ef960"
+  },
+  "unicode_value": {
+    "codepoint": "U+09F7",
+    "name": "BENGALI CURRENCY NUMERATOR FOUR",
+    "value": "1/4",
+    "primary_source": "docs/quality/translation-pilot/numeric-sources/context-v23/DerivedNumericValues.txt",
+    "primary_source_sha256": "139b976bdc288be01c80f018523da769cf2845109b5a7f0f8a432db64bfedcfa",
+    "primary_line": "09F7 ; 0.25 ; ; 1/4 # No BENGALI CURRENCY NUMERATOR FOUR"
+  },
+  "replaced_preselections": [
+    {
+      "key": "shikaku.fields.hint",
+      "original_candidate_plan": "batch1-v28-candidate-plan.json",
+      "original_candidate_plan_sha256": "daf4cd088915dba532f5bc259d49afb12e2933fae16b3a6148e3ea69efa398d0",
+      "withdrawn_translation_hash": "344e3cd1811b72e18789d51cecab6b5b126184d1a6ab57a9a36597aecb2526b7",
+      "withdrawn_record_ids": [
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65"
+      ],
+      "replacement_review": "review-batch1-bn-madlad.json",
+      "replacement_review_sha256": "326424c0374efc3b2e8b634cdb18ffca9fa90f844020795640134d70e414e72b",
+      "replacement_record_ids": [
+        "27819a794b11349f5166961f82a9a567d572fd5c99981d4ea5ca28b94abc866c"
+      ],
+      "replacement_translation": "একটি ইঙ্গিত দেখাও",
+      "replacement_translation_hash": "27cc37f6634b158778addc42eb4eb0bf30944d23d928f471bdafa4318e29a0e4",
+      "note": "Existing directly read alternative, not a new forward inference or generic engine approval."
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "original_candidate_plan": "batch1-v28-candidate-plan.json",
+      "original_candidate_plan_sha256": "daf4cd088915dba532f5bc259d49afb12e2933fae16b3a6148e3ea69efa398d0",
+      "withdrawn_translation_hash": "10719c106a525f244cd3ba992fa04c32495b8eeb4050337ea19571a0cff7c0ec",
+      "withdrawn_record_ids": [
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
+      ],
+      "replacement_review": "review-batch1-bn-madlad.json",
+      "replacement_review_sha256": "326424c0374efc3b2e8b634cdb18ffca9fa90f844020795640134d70e414e72b",
+      "replacement_record_ids": [
+        "9c69e043d54d2dafe8706ff814cdc90cfdde5a8bc9fba3092c30efc221772638"
+      ],
+      "replacement_translation": "এই ব্রাউজার অডিও ফরম্যাটটি ডিকোড করতে পারেনি। WAV অথবা MP3 চেষ্টা করুন।",
+      "replacement_translation_hash": "af7fb4940c4c53c75730cda83a1568607cda325d78dcd64bcb6510f08f4be706",
+      "note": "Existing directly read alternative, not a new forward inference or generic engine approval."
+    }
+  ]
+}

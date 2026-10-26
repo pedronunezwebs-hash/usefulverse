@@ -15568,5 +15568,33 @@
     "observed_candidates": [
       "model"
     ]
+  },
+  {
+    "locale": "bn",
+    "key": "shikaku.fields.hint",
+    "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+    "translation": "একটি ইঙ্গিত দেখান৷",
+    "issue": "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate.",
+    "direction": "forward",
+    "observed_candidate": "legacy",
+    "observed_record_ids": [
+      "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878",
+      "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65"
+    ],
+    "review_policy": "baseline-negative-reassessment-v28"
+  },
+  {
+    "locale": "bn",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "এই ব্রাউজারটি সেই অডিও ফর্ম্যাটটি ডিকোড করতে পারেনি৷ WAV বা MP3 ব্যবহার করে দেখুন।",
+    "issue": "Rectificación negativa: U+09F7 es BENGALI CURRENCY NUMERATOR FOUR, valor1/4, no un signo de puntuación. Está usado como cierre de oración y añade un glifo numérico ajeno a la fuente. No se borra la revisión original ni se aprueba ningún gate.",
+    "direction": "forward",
+    "observed_candidate": "legacy",
+    "observed_record_ids": [
+      "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f",
+      "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
+    ],
+    "review_policy": "baseline-negative-reassessment-v28"
   }
 ]

@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "locale": "bn",
+  "entries": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "source": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "context": "faq.0.a",
+      "translation": "না, এই টুলটি শুধুমাত্র ASCII DXF খোলে। এটি DWG বা বাইনারি DXF ডিকোড করে না।",
+      "translation_sha256": "3283b9f59a57f0709278ecb11ebec505def535803575711648f83dc0b0cb3650",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "source": "Only when the DXF declares millimetres. Otherwise the viewer uses the declared unit or labels measurements as drawing units.",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "context": "faq.2.a",
+      "translation": "শুধুমাত্র যখন DXF মিলিমিটার ঘোষণা করে। অন্যথায় প্রদর্শক ঘোষণা করা একক ব্যবহার করে অথবা মাপকে অঙ্কনের একক হিসেবে লেবেল করে।",
+      "translation_sha256": "c462b3a4cfd834d210bb012c3962a86312d468aa11936b05647854a9e81087fa",
+      "zero_readings": [
+        {
+          "start": 67,
+          "end": 70,
+          "text": "একক",
+          "kind": "unit-noun"
+        },
+        {
+          "start": 102,
+          "end": 105,
+          "text": "একক",
+          "kind": "unit-noun"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "source": "Binary DXF is not supported. Save or export the drawing as ASCII DXF.",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "context": "fields.binary",
+      "translation": "বাইনারি DXF সমর্থিত নয়। ASCII DXF হিসেবে অঙ্কনটি সংরক্ষণ অথবা রপ্তানি করুন।",
+      "translation_sha256": "10341a2d73cf4c98ac7ec5dc2dde9b22a5ba0512277b08d78d53ca86370d75c6",
+      "zero_readings": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "নয়",
+          "kind": "negative-copula"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "source": "Cancel loading",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "context": "fields.cancel",
+      "translation": "লোড করা বাতিল করো",
+      "translation_sha256": "ec352e4659182fe764d9b5124a3efa9458323111669bbefd23ae59ebed60675a",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "source": "Download PNG",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "context": "fields.exportPng",
+      "translation": "PNG ডাউনলোড করো",
+      "translation_sha256": "96dc3ad01f7df6ffca2975f892ed322079b0bc91e5863fb14b6aa285915532b3",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "source": "Download SVG",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "context": "fields.exportSvg",
+      "translation": "SVG ডাউনলোড করো",
+      "translation_sha256": "853076e52ababf216b63e4b7e3c6a0b34f7e1c36970ee748ac718664c4ba37b4",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "source": "Choose an ASCII DXF file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "context": "fields.file",
+      "translation": "একটি ASCII DXF ফাইল বেছে নিন",
+      "translation_sha256": "446d8e877be16176eea31de7c18f53cd1bb49501f47e6b831d788a2d534430d7",
+      "zero_readings": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source": "Enter four valid coordinates.",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "context": "fields.invalidCoordinates",
+      "translation": "চারটি বৈধ স্থানাঙ্ক লিখুন ।",
+      "translation_sha256": "33cc09ae5b0b85ac8b0cfdc838114fc2ca033d9f5e589a099f27d779fdee8707",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "source": "Measure distance",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "context": "fields.measurement",
+      "translation": "দূরত্ব পরিমাপ করুন",
+      "translation_sha256": "6b3846e61aa0375fc30dbfb15b90e513520acc30fe9486e8daf98971e40bccce",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView",
+      "translation": "অঙ্কনটি পর্দায় ফিট করুন",
+      "translation_sha256": "06ec0fd8b0f87955c6d83fe0c1de9087e8a86eb1cec847b1c5ddf6f394632d7a",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "source": "Unsupported file. Choose an ASCII .dxf file.",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "context": "fields.unsupported",
+      "translation": "অসমর্থিত ফাইল। অনুগ্রহ করে একটি ASCII.dxf ফাইল নির্বাচন করুন।",
+      "translation_sha256": "ba01d17d1c9a039247e80101e45f886c1cb634462f2d72adfd2ff68e7f7b7dae",
+      "zero_readings": [
+        {
+          "start": 27,
+          "end": 31,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "source": "Zoom in",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "context": "fields.zoomIn",
+      "translation": "বড় আকারে প্রদর্শন",
+      "translation_sha256": "72f59ca077924a339da205517bc4c5f874b3c892eb0196804d32850ff198744a",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "source": "Zoom out",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "context": "fields.zoomOut",
+      "translation": "ছোট করে দেখুন",
+      "translation_sha256": "f219157133a101015ed11e1c9da0167f2c37618ad924e44e13e102788265a925",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.example",
+      "source": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "context": "example",
+      "translation": "6 চিহ্নিত একটি ক্লু একটি আয়তক্ষেত্রের মধ্যে রয়েছে যা ঠিক ছয়টি বর্গক্ষেত্র কভার করে।",
+      "translation_sha256": "72eb2ed87c2a9eea435e12d3bbd630cfcd01e1f6e85fd5cf92122ed93a2bd17f",
+      "zero_readings": [
+        {
+          "start": 10,
+          "end": 14,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.check",
+      "source": "Check puzzle",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "context": "fields.check",
+      "translation": "ধাঁধা যাচাই করুন",
+      "translation_sha256": "694197c970705ccc655e9719b6858723331888d5736336085edbedfb6d230a5f",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "source": "Clear rectangles",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "context": "fields.clear",
+      "translation": "আয়তক্ষেত্রগুলি পরিষ্কার করুন",
+      "translation_sha256": "3a208eee9c38c074e318eaefbc3299de30cc3f7628c5436018870535c2424a0f",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "source": "Daily puzzle",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "context": "fields.daily",
+      "translation": "দৈনিক ধাঁধা",
+      "translation_sha256": "30f286a8779b15c2551a7253f933a4969d4fa5a1bb134c46f9d9b3cb60f12c1d",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "source": "Delete saved game",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "context": "fields.deleteSave",
+      "translation": "সংরক্ষিত গেম মুছুন",
+      "translation_sha256": "ab07ccd6afaa9e29546bbc8dd0fcaebec04b0f71a51c24d01c0578c15962c97b",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "translation": "না, প্রত্যেকটি আয়তক্ষেত্রের মধ্যে অবশ্যই একটি সংখ্যার ইঙ্গিত থাকতে হবে।",
+      "translation_sha256": "880786078a32bac875c9eddba58914a8a3cff52f79131d92e55d54ea64eb497f",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "source": "Show a hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "context": "fields.hint",
+      "translation": "একটি ইঙ্গিত দেখাও",
+      "translation_sha256": "27cc37f6634b158778addc42eb4eb0bf30944d23d928f471bdafa4318e29a0e4",
+      "zero_readings": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "source": "New puzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "context": "fields.newPuzzle",
+      "translation": "নতুন ধাঁধা",
+      "translation_sha256": "c8ffa2710cdf1df43db10bdd63678126e974cd28f72eabc0ec68133a6fb70d7d",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "source": "Resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "context": "fields.resume",
+      "translation": "পুনরায় শুরু করুন",
+      "translation_sha256": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "source": "Show solution",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "context": "fields.reveal",
+      "translation": "সমাধান দেখান",
+      "translation_sha256": "b7c1c31159d5d2e76fd12472e11776e8a4da44e63ab49259770fe3847c44c1d2",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "source": "Now choose the opposite corner.",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "context": "fields.selectEnd",
+      "translation": "এখন বিপরীত কোণটি বেছে নিন।",
+      "translation_sha256": "35babb8655b94669761c2553a06dc40b586c68489f912d0b4052d53e4a429d2c",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "source": "Choose a start square.",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "context": "fields.selectStart",
+      "translation": "একটি স্টার্ট স্কোয়ার বেছে নিন।",
+      "translation_sha256": "0edee41d130e9e115e672a16187542c877892e2f0faa1987f9653324cba0ad63",
+      "zero_readings": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "source": "Undo last rectangle",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "context": "fields.undo",
+      "translation": "শেষ আয়তক্ষেত্র পূর্বাবস্থায় ফেরান",
+      "translation_sha256": "28e1e8277e593004233a7bbbd9a862bf68ee724cff98e86d0518e5e917067b69",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "source": "Choose an audio file",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "context": "fields.chooseFile",
+      "translation": "একটি অডিও ফাইল বেছে নিন",
+      "translation_sha256": "436d88a0b970a6af0c81ea0a308921a22eaa5be2d74c6b062e8b45fdcb3002eb",
+      "zero_readings": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "source": "Choose an audio file first.",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "context": "fields.chooseFirst",
+      "translation": "প্রথমে একটি অডিও ফাইল নির্বাচন করুন।",
+      "translation_sha256": "05d3ba9d563d5b3244b3a9777c8de91794a8585a80c87e4469419201c5d7e2f6",
+      "zero_readings": [
+        {
+          "start": 7,
+          "end": 11,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "source": "Clear audio",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "context": "fields.clear",
+      "translation": "অডিও সাফ করুন",
+      "translation_sha256": "bc30058d8db9d39cd61509cd58ca0bb5bd990e9d6c603b21788ac2cd67d7deff",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "source": "This browser could not decode that audio format. Try WAV or MP3.",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "context": "fields.decodeFailed",
+      "translation": "এই ব্রাউজার অডিও ফরম্যাটটি ডিকোড করতে পারেনি। WAV অথবা MP3 চেষ্টা করুন।",
+      "translation_sha256": "af7fb4940c4c53c75730cda83a1568607cda325d78dcd64bcb6510f08f4be706",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "source": "Export processed WAV",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "context": "fields.export",
+      "translation": "প্রক্রিয়াকৃত WAV রপ্তানি করুন",
+      "translation_sha256": "97907110351e4c2da8b22d864ea66ec4e2e171412e834bade4097f95abb724e7",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "fields.faq1a",
+      "translation": "না। আপনার ব্রাউজার স্থানীয়ভাবে নির্বাচিত অডিও ডিকোড করে এবং প্রক্রিয়া করে। UsefulVerse রেকর্ডিং পায় না.",
+      "translation_sha256": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "fields.faq2a",
+      "translation": "না। এই লাইটওয়েট পিচ কন্ট্রোল প্লেব্যাক রেট পরিবর্তন করে, তাই একটি নিম্ন পিচ ধীর বাজায় এবং একটি উচ্চ পিচ দ্রুত বাজায়।",
+      "translation_sha256": "9f3724c89a327212d9e875660b07f509e96d25fc95af4a725f10da65f0c288c0",
+      "zero_readings": [
+        {
+          "start": 62,
+          "end": 66,
+          "text": "একটি",
+          "kind": "article"
+        },
+        {
+          "start": 92,
+          "end": 96,
+          "text": "একটি",
+          "kind": "article"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "source": "Load audio locally",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "context": "fields.load",
+      "translation": "স্থানীয়ভাবে অডিও লোড করুন",
+      "translation_sha256": "dc7f0673fdf475715e621537f3e457cc6d8bff27b5e6d4c0622afceb8bbe6112",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "source": "Audio decoded locally. Duration: {duration} seconds.",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "context": "fields.loaded",
+      "translation": "স্থানীয়ভাবে অডিও ডিকোড করা হয়েছে। সময়কাল: {duration} সেকেন্ড।",
+      "translation_sha256": "f36d313758349621f2273fd49c7bbdd171ea6a037f9af4506eac45a6683b912f",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "source": "Preview effect",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "context": "fields.preview",
+      "translation": "প্রাকদর্শন",
+      "translation_sha256": "b38bfa05afed7bb69c2082b0b613548d4ebd60a702f086dfd05c45090e514704",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "source": "Audio stays in this browser. It is not uploaded or saved by UsefulVerse.",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "context": "fields.privacy",
+      "translation": "অডিও এই ব্রাউজারে থাকে। এটি UsefulVerse দ্বারা আপলোড বা সংরক্ষণ করা হয় না।",
+      "translation_sha256": "4cb4fbbd5d577783de81ada8f862dfe78dbc30de08cc90bb4a369d766a9377ee",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "source": "Stop preview",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "context": "fields.stop",
+      "translation": "স্টপ প্রিভিউ",
+      "translation_sha256": "67bd87983ea87a451084108775eb9e0cfde8b291e049f3e0d23a99ddfde59684",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "source": "Choose an audio file no larger than 25 MB.",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "context": "fields.tooLarge",
+      "translation": "অনুগ্রহ করে একটি অডিও ফাইল নির্বাচন করুন যা 25 MB এর চেয়ে বড় নয়।",
+      "translation_sha256": "dd809ffd71be82bedf899df7bacf65d5f0d38315f7081cf984c03b1a2c700a18",
+      "zero_readings": [
+        {
+          "start": 12,
+          "end": 16,
+          "text": "একটি",
+          "kind": "article"
+        },
+        {
+          "start": 63,
+          "end": 66,
+          "text": "নয়",
+          "kind": "negative-copula"
+        }
+      ],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "source": "This tool supports clips up to 30 seconds. Trim the file and try again.",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "context": "fields.tooLong",
+      "translation": "এই টুল 30 সেকেন্ড পর্যন্ত ক্লিপ সমর্থন করে। ফাইলটি ট্রিম করুন এবং আবার চেষ্টা করুন।",
+      "translation_sha256": "83169b2eeb8e8d03988e1dc15d01215986684bfb2eb91bbaf06c58b2b19f00d7",
+      "zero_readings": [],
+      "note": "Lectura cerrada de esta fuente/ida, sin regla global para artículos, unidad o cópula negativa."
+    }
+  ]
+}
