@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T08:10:08.676064+00:00",
+  "scope": "Audit inventory counter only;no translation/runtime/grade/approval changes.",
+  "old_counter": 27,
+  "actual_contextual_policies": 28,
+  "derivation": "Unique review-metrics groups.policy starting context-v:context-v2 through context-v29.",
+  "permanent_test": "scripts/localization/test_translation_coverage_inventory.py",
+  "red": {
+    "tests": 1,
+    "failures": 1,
+    "log_sha256": "9855d0cc4087155a7d110d175a947ddddb45f06b3e68ab5caeac2d5b7aa3191d"
+  },
+  "green": {
+    "tests": 1,
+    "failures": 0,
+    "log_sha256": "d10ffbd9f0faa72cd6837063279524e199b59fbc3d035051302a1e8dbc4b36ad"
+  },
+  "ci_scope": "Additional targeted regression after the complete CI source was frozen;the 346-case CI and 1 focused inventory test are reported separately. No model rerun or unnecessary complete build.",
+  "test_sha256": "cbd31fabf7a50eb3dbbc2e9deb4f513ad4fc3281a4abd612eb344b00cff80f68",
+  "current_discovered_tests": 347
+}
