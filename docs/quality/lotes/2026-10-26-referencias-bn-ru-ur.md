@@ -49,7 +49,7 @@ Checklist FABLE7+9:
 - [x] Lectura íntegra S/F/B y legacy con procedencia para las tres lenguas.
 - [x] Tests rojos antes de fixtures; decisiones explícitas por aviso.
 - [x] Comparación con muestras equivalentes y preselección sin aprobación automática.
-- [ ] CI completa, seguridad y comprobación GET/XML de producción.
+- [x] CI completa, seguridad y comprobación GET/XML de producción.
 - [ ] Seis documentos sincronizados, push verificado, retirada efectiva y LIBRE.
 
 P-001–P-008:8 pendientes,0 FALLA;0 nuevas. UI, hardware, responsive y las18 puertas
@@ -59,4 +59,20 @@ Containers/modelos locales. CI/builds completos solo Actions público estándar.
 
 Siguiente: Crear v28 independiente empezando por bn: usar batch1-v28-candidate-plan.json y las9 review-batch1-*.json;37/40 idas bn preseleccionadas por revisión lingüística, corregir resetView,zoomOut yshikaku.check. Las37 no están importadas ni probadas por contrato: ligar cada memoria a fuente/hash/contexto exactos y su revisión; mantener procedencia, nunca contar la evidencia original como inferencia nueva. Probar cantidades y tokens por idioma, incluidos four,one,six,25MB,30seconds y negaciones; las pruebas chinas no validan bn/ru/ur. Primero test rojo del fallo antes de cada arreglo. Conservar477 memorias, políticas/perfiles/gramáticas/checkpoints/revisiones anteriores y prefijo1151 de1334 fixtures. Repetir40 referencias bn y todos los avisos con el perfil nuevo; solo si pasan, ampliado con mismas88 claves fijas y lectura de todas174 idas/vueltas y legacy disponible, también fuera88. Después ru (37 reutilizables/3 correcciones) y ur (32/8), con gates independientes. No repetir baseline ni v27 40196684338/40198168513. Los22 destinos restantes siguen en acceleration-review-batches.json (desde tr/vi/it), los6 históricos necesitan reparación; ha/am/te/gu/ta/mr/sw requieren80 muestras modelo. Compartir preparación y CI por lote, sin omitir suite ni revisión. Paso A sigue abierto por capacidad Pages,37 traducciones revisadas y nb real; no avanzar a fase0.
 
-CI inicial40245562940: error de formato en fixtures nuevas (faltaba observed_candidate), corregido con procedencia exacta por ID. El test histórico y el test de hallazgos pasan sin rebajar comprobaciones; notas/avisos/textos/runtime intactos. Suite completa pendiente de repetir; no liberar candado.
+CI inicial40245562940: error de formato en fixtures nuevas (faltaba observed_candidate), corregido con procedencia exacta por ID. El test histórico y el test de hallazgos pasan sin rebajar comprobaciones; notas/avisos/textos/runtime intactos. Suite completa repetida y correcta en40246599367; el error de formato queda documentado y su prueba histórica se conserva.
+
+
+Borradores de arranque v28bn (propuestas nuevas, sin nota, sin importar ni pasar puerta; requieren revisión directa, vínculo fuente/hash/contexto, contrato y vuelta nueva):
+
+| Clave | Propuesta | Intención que debe conservar |
+|---|---|---|
+| `dxf-viewer.fields.resetView` | অঙ্কনটি পর্দায় ফিট করুন | Ajustar todo el dibujo al área visible, sin convertir la acción en dibujar. |
+| `dxf-viewer.fields.zoomOut` | ছোট করে দেখুন | Alejar/reducir la vista; nunca ampliar. |
+| `shikaku.fields.check` | ধাঁধা যাচাই করুন | Acción de comprobar el puzle, no un sustantivo sobre examen. |
+
+Estas propuestas no alteran las106 candidatas previas ni eliminan las14 correcciones pendientes. No son nuevas evaluaciones ni memoria aprobada.
+
+
+CI final[40246599367](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40246599367), fuente`7ec358639d326a2dafdd29e556dd4724a6a34f66`, correcta:3045 Node y308 Python (306 correctas,2 omisiones por dependencias), Python593.43s. Build principal9972 páginas+36 homes/10260 URLs; gate20 locales existentes; hub217 archivos/100 páginas/106JS. Preview11293 archivos/10800 páginas y todas las homes noindex,0 URLs indexables;36 locales, no acredita37. Modelo y ambas publicaciones omitidos;0 artefactos.21 tests enfocados correctos y gitleaks sin secretos nuevos. Producción antes/después:5 GET y2 XML con mismos estados/bytes/SHA256,25625 URLs;3 soft404 siguen200. Sin UI/nativo/hardware/responsive/índice Google certificados.0 nuevas pruebas Pedro;P-001–P-008 pendientes.
+
+Recibos: docs/quality/translation-pilot/ci-batch1-verification.json y remote-batch1-verification.json (en la rama del PR). Retirada efectiva pendiente de ejecutar; no declararla ni liberar candado antes.
