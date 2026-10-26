@@ -212,6 +212,11 @@ class BengaliV28Test(unittest.TestCase):
     def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
         proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
         text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
+        # Normalize four explicit v30 additions before the existing v29/v28 guards.
+        text = text.replace('context-v28, context-v29, context-v30]','context-v28, context-v29]')
+        text = text.replace('Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios','Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios')
+        text = text.replace('python -u scripts/localization/translation-pilot-v30.py run','python -u scripts/localization/translation-pilot-v29.py run')
+        text = text.replace('bash scripts/localization/pilot-precheck-v30.sh','python scripts/localization/run-translation-tests.py --jobs 4')
         # Normalize only the five explicit v29 integration edits, preserving
         # the original v28 golden blob assertion for every other workflow byte.
         text = text.replace('context-v27, context-v28, context-v29]', 'context-v27, context-v28]')

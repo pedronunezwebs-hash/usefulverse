@@ -87,6 +87,11 @@ class BengaliV29Test(unittest.TestCase):
         klass=next(n for n in module.body if isinstance(n,ast.ClassDef))
         self.assertEqual(pilot.digest(stable(klass)),proof['original_generic_test_class_ast_digest'])
         text=(pilot.ROOT/'.github/workflows/deploy-cloudflare.yml').read_text()
+        # Four explicit v30 additions; every other workflow byte remains guarded.
+        self.assertEqual(text.count('context-v28, context-v29, context-v30]'),1);text=text.replace('context-v28, context-v29, context-v30]','context-v28, context-v29]')
+        self.assertEqual(text.count('Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios'),1);text=text.replace('Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios','Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios')
+        self.assertEqual(text.count('python -u scripts/localization/translation-pilot-v30.py run'),1);text=text.replace('python -u scripts/localization/translation-pilot-v30.py run','python -u scripts/localization/translation-pilot-v29.py run')
+        self.assertEqual(text.count('bash scripts/localization/pilot-precheck-v30.sh'),1);text=text.replace('bash scripts/localization/pilot-precheck-v30.sh','python scripts/localization/run-translation-tests.py --jobs 4')
         edits=[('context-v27, context-v28, context-v29]','context-v27, context-v28]'),('Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios','Baseline o variantes v2–v28; v28 añade referencias bengalíes con contrato propio'),('python -u scripts/localization/translation-pilot-v29.py run','python -u scripts/localization/translation-pilot.py run')]
         # Two additional command substitutions keep all tests on the same four-core runner.
         edits.extend([('python3 scripts/localization/run-translation-tests.py --jobs 4', "python3 -m unittest discover -s scripts/localization -p 'test_translation*.py'"), ('python scripts/localization/run-translation-tests.py --jobs 4', "python -m unittest discover -s scripts/localization -p 'test_translation*.py'")])

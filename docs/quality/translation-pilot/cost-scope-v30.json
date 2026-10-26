@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-26T11:22:06.645018+00:00",
+  "repository_private": false,
+  "runner": "ubuntu-latest public standard",
+  "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+  "new_paid_api_calls": 0,
+  "cloudflare_operations": 0,
+  "codespaces": 0,
+  "containers": 0,
+  "persistent_model_caches": 0,
+  "artifacts_expected": 0,
+  "note": "Official documents verified this turn;standard public runner free. No claim about pre-existing account bills."
+}
