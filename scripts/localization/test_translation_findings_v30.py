@@ -24,6 +24,18 @@ class FindingsV30Test(unittest.TestCase):
     with self.subTest(identity=identity):self.assertIn(case['issue'],mod.issues(row))
     for field in ['translation','source_hash','inference_policy','key','locale']:
      self.assertEqual(mod.issues({**row,field:row[field]+' changed'}),[])
+ def test_common_review_detector_preserves_inference_and_finds_exact_new_errors(self):
+  base=vars(pilot)['semantic_issues'];flags=vars(pilot)['record_flags'];run=vars(pilot)['run'];typed=vars(pilot)['policy_typed_data_checks']
+  for case in json.loads((DATA/'findings-v30.json').read_text())['forward_cases']:
+   with self.subTest(key=case['key']):self.assertIn(case['issue'],pilot.semantic_issues(case['key'],case['source_hash'],case['translation'],case['locale']))
+   for field in ['key','source_hash','translation','locale']:
+    changed=dict(case);changed[field]+=' changed';self.assertNotIn(case['issue'],pilot.semantic_issues(changed['key'],changed['source_hash'],changed['translation'],changed['locale']))
+   self.assertNotIn(case['issue'],pilot.semantic_issues(case['key'],case['source_hash'],case['translation'],case['locale'],'back'))
+  self.assertIs(vars(pilot)['semantic_issues'],base);self.assertIs(pilot.record_flags,flags);self.assertIs(pilot.run,run);self.assertIs(pilot.policy_typed_data_checks,typed)
+  from unittest.mock import patch
+  original=pilot.ROOT
+  with patch.object(pilot,'ROOT',original/'unused-test-root'):self.assertEqual(vars(pilot)['ROOT'],original/'unused-test-root')
+  self.assertEqual(pilot.ROOT,original)
  def test_current_reviews_cover_every_read_record_and_all_generic_and_scoped_warnings(self):
   records=self.records();seen=set()
   for path in DATA.glob('review-context-v30-*.json'):
