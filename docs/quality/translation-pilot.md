@@ -1,3 +1,15 @@
+## V29 ·26-oct-2026 · estado actual
+
+V29 bengalí: referencias conocidas360/360; ampliado pasa1566/1566 (88 fijas792/792),0 idas modelo con defectos y0 datos sin prueba. Leídos333 registros S/F/B;legacy ampliado812/828,8 negativas y16 datos sin prueba.691 memorias actuales(214bn),16109 registros,7939 evaluaciones con repeticiones/140 grupos y1417 casos permanentes(1403globales+14de vuelta ligados a ida).0 idiomas aprobados. [Informe](lotes/2026-10-26-piloto-v29-bn.md).
+
+Pasan solo muestras completas conocidas:es/nb-NO/ko/id/zh-CN/bn;8revisados no pasan(de/fr/pt-BR/ja/hi/ar/ru/ur);22sin revisión detallada:tr,vi,it,zh-TW,bg,ca,nl,el,ms,pl,sv,th,uk,sw,mr,te,ha,fil,ta,fa,am,gu. Inglés es fuente;0/36destinos aprobados para publicar. Memoria conocida no demuestra motor genérico ni1000herramientas revisadas. P-001–P-008:8pendientes/0FALLA;0IDs nuevos. Sin certificación nativa/ciega/textos inéditos,UI/dispositivos,responsive320–1920/RTL/textos largos/márgenes/peso,accesibilidad/rendimiento ni puerta18/siete capas.0/300fuentes nuevas en main;0activadas;300noindex en PRborrador;700existentes conservadas.0despliegues/envíos. [37idiomas](translation-pilot/language-status-v29.json).
+
+Pruebas en el mismo runner público gratuito:338seriales en1132,985s frente342 en756.237s,1.50× observado (33.3%menos). Incluye4tests nuevos;no es benchmark del modelo ni garantía de velocidad futura. Inventario exacto y338IDs originales conservados,0fallos/errores/omisiones con dependencias reales.0 APIs de pago,Cloudflare,Codespaces,Containers,artefactos o cachés de modelo persistentes.
+
+**Siguiente:** Crear v30 independiente para ruso,con37 candidatas exactas y3 correcciones desde batch1-v28-candidate-plan.json y las revisiones baseline bn/ru/ur. Conservar691 destinos de memoria,todas las políticas/perfiles/gramáticas/crudos/revisiones,el prefijo1403 de fixtures y los9archivos runtime v28+6v29 medidos idénticos. No repetir40282144871/40286109390. Leer las tres fuentes/idas/vueltas negativas reales;antes de arreglarlas,test rojo. Gate y contratos ru propios,fuente/hash/contexto/registro/revisión exactos;primero40referencias y todos sus avisos,ampliado solo si pasan,88claves fijas y lectura completa174modelo+92legacy,también fuera88. Todo defecto observado o dato sin prueba bloquea. Compartir preparación y CI con ur(32candidatas/8correcciones)cuando sea seguro,sin mezclar gates ni rebajar muestras. Después22destinos de acceleration-review-batches.json;ha/am/te/gu/ta/mr/sw requieren80. Paso A abierto por capacidad Pages,37 traducciones revisadas y nb real;no avanzar fase0.
+
+CI final pendiente; candado EN CURSO. Código/datos/revisiones solo en [PR#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136);main recibe seis documentos con[skip ci].
+
 # Piloto de traducción · evidencia y reanudación
 
 ## V28 ·26-oct-2026 · estado actual
