@@ -15596,5 +15596,44 @@
       "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
     ],
     "review_policy": "baseline-negative-reassessment-v28"
+  },
+  {
+    "locale": "bn",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Czech Puzzle",
+    "issue": "La vuelta Czech Puzzle interpreta el préstamo চেক como nacionalidad checa y no como acción de comprobar. La ida legacy ya está rechazada por su propio defecto; esta observación no cambia su nota.",
+    "direction": "back",
+    "observed_candidate": "legacy",
+    "observed_record_ids": [
+      "192477fabbbe483fe1b68b436b19a6c8576ba690ac4b4162190b11967fc7914c",
+      "bec57a26ffd06fc18c33e7dac5392bedfa6c09b398d0d5e35dd9472ad5cc469d"
+    ]
+  },
+  {
+    "locale": "bn",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not detect recording.",
+    "issue": "La ida পায় না conserva no recibe. La vuelta does not detect cambia recibir una grabación por detectar una grabación, debilitando la afirmación de privacidad; fallo de vuelta independiente.",
+    "direction": "back",
+    "observed_candidate": "legacy+model",
+    "observed_record_ids": [
+      "0649136e7daa9b4cd6a949f72f3e3dee64f53d26b7f3d0ce7698ce6f3df19430",
+      "cf478f1e1bc4cd5b6b0a76c9af18db45c4cd86bcbf606ddd506ce08eae36aaad"
+    ]
+  },
+  {
+    "locale": "bn",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "_Preview",
+    "issue": "La vuelta añade un guion bajo inicial en _Preview, ausente de la ida y de la etiqueta fuente; artefacto tipográfico de vuelta, sin rebajar la ida.",
+    "direction": "back",
+    "observed_candidate": "model",
+    "observed_record_ids": [
+      "554b040343d596f6f29ca2cfad90eeda60de7bd7d5341f00be304e2ec8d3b4cf",
+      "d39811240d5741424d0839f1bbeedff34d9197a6c3806bb8b2346b350533b56c"
+    ]
   }
 ]

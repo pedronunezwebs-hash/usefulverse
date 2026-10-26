@@ -58,7 +58,24 @@ def negative_reassessment(review, reassessment=None):
 
 def audit(review):
     """Recompute evidence, coverage and every warning; no inference or grading."""
+    original = review
     review = negative_reassessment(review)
+    file = DATA / 'baseline-back-addenda-v28.json'
+    if file.exists():
+        for addendum in json.loads(file.read_text()):
+            if addendum['review_digest'] != pilot.digest(original): continue
+            path = DATA / addendum['review_file']
+            require(path.name == addendum['review_file'] and path.name.startswith('review-batch1-bn-') and hashlib.sha256(path.read_bytes()).hexdigest() == addendum['review_file_sha256'] and pilot.digest(json.loads(path.read_text())) == addendum['review_digest'], 'Stale baseline back addendum')
+            require(addendum['approved_locales'] == [], 'Back addendum cannot approve a locale')
+            review = copy.deepcopy(review)
+            bound = {identity for row in review['rows'] for identity in row['record_ids']}
+            for entry in addendum['warning_reconciliation']:
+                require(entry['record_id'] in bound and set(entry['warnings']) == {'known_back_semantic_errors'} and entry['warnings']['known_back_semantic_errors']['disposition'] == 'back-defect' and entry['warnings']['known_back_semantic_errors']['blocks_gate'] is False, 'Only non-gating back findings may supplement an old baseline')
+                previous = next((item for item in review['warning_reconciliation'] if item['record_id'] == entry['record_id']), None)
+                if previous:
+                    require(all(previous[k] == entry[k] for k in ['translation_hash', 'back_translation_hash', 'record_sha256']) and 'known_back_semantic_errors' not in previous['warnings'], 'Back addendum cannot replace an old warning')
+                    previous['warnings'].update(entry['warnings'])
+                else: review['warning_reconciliation'].append(copy.deepcopy(entry))
     require(review['review_type'] == 'baseline-negative-review-batch-v1', 'Wrong review type')
     require(review['native_review'] is False and review['approved_locales'] == [], 'Approval forbidden')
     require(review['engine_frozen'] is False and review['typed_profile_verified'] is False, 'Baseline is not a frozen typed engine')

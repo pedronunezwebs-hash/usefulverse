@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-25T23:32:41.992782+00:00",
+  "at_utc": "2026-10-26T01:19:30.191649+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 7273,
+  "agent_reviewed_translations": 7340,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 7273,
+  "agent_reviewed_evaluations": 7340,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -326,8 +326,8 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 15443,
-  "semantic_regressions": 1336,
+  "total_records_all_policies": 15510,
+  "semantic_regressions": 1339,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -606,5 +606,20 @@
     "effective_points": 232,
     "maximum": 243,
     "reason": "Two U+09F7 fraction glyphs were falsely scored perfect; original bytes retained and current negative audit projects232/243.37 usable Bengali candidates still exist via two MADLAD substitutions."
-  }
+  },
+  "latest_bn_reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known40 reviewed-memory references360/360 with all forward data proved;67 S/F/B read and every warning reconciled. No native/blind/unseen-text/generic-engine/release approval."
+  },
+  "bn_reference_policy": "context-v28"
 }

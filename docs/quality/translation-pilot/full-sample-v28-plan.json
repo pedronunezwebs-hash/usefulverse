@@ -184,9 +184,11 @@
   "read_every_model_and_available_legacy_source_forward_back": true,
   "any_observed_forward_error_or_unproved_forward_data_blocks": true,
   "known_reference_memory_rows": 40,
-  "reference_gate_passed": false,
-  "full_dispatch_authorized": false,
+  "reference_gate_passed": true,
+  "full_dispatch_authorized": true,
   "approved_locales": [],
   "note": "Preparation only. Full inference remains blocked until the40 actual references and all warnings pass. Same88 known selection, never blind/unseen/native or generic-engine approval. All174 model rows must be read, including outside88;92 legacy rows retain their own verdict.",
-  "fixed88_digest": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a"
+  "fixed88_digest": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a",
+  "reference_gate_file": "reference-v28-gate.json",
+  "reference_gate_sha256": "4b52285b9984276308e640eb38d609e20bb01c8d0268cea30db28135e56bb62e"
 }
