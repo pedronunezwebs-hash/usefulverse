@@ -138,6 +138,16 @@ class BengaliV28Test(unittest.TestCase):
         changed['reviewed_memory']['voice-changer.fields.tooLarge']['translations']['bn'] += ' হ্যাঁ'
         with patch.dict(pilot.POLICIES, {'context-v28': changed}), self.assertRaisesRegex(ValueError, 'memory target'): route.contracts()
 
+    def test_new_semantic_finding_preserves_historical_data_validation_but_blocks_new_inference(self):
+        route = pilot.BENGALI_V28
+        item = next(x for x in pilot.POLICIES['context-v28']['reviewed_memory'].values() if 'bn' in x['translations'])
+        key = next(k for k, v in pilot.POLICIES['context-v28']['reviewed_memory'].items() if v is item)
+        synthetic = dict(locale='bn', key=key, source_hash=item['source_hash'], translation=item['translations']['bn'], issue='Synthetic future finding used only by this unit test', direction='forward')
+        with patch.object(pilot, 'SEMANTIC_REGRESSIONS', pilot.SEMANTIC_REGRESSIONS + [synthetic]):
+            self.assertIsInstance(route.contracts(), dict)
+            with self.assertRaisesRegex(ValueError, 'Known Bengali forward defect'):
+                route.preflight_memory()
+
     def test_full_inference_requires_reference_gate_before_any_model_operation(self):
         route = pilot.BENGALI_V28
         if (DATA / 'reference-v28-gate.json').exists():
