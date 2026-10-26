@@ -31,11 +31,22 @@ class FindingsV28Test(unittest.TestCase):
 
     def test_current_reviews_have_complete_warning_coverage_and_no_release_approval(self):
         records = {r['record_id']: r for r in map(json.loads, (DATA / 'checkpoints/context-v28/madlad.jsonl').read_text().splitlines())}
-        for name in ['references', 'legacy']:
+        for name in ['references', 'legacy', 'full', 'full-legacy']:
             review = json.loads((DATA / f'review-context-v28-{name}.json').read_text())
             self.assertFalse(review['native_review']); self.assertEqual(review['approved_locales'], [])
             if name == 'references':
                 self.assertEqual({row['key'] for row in review['rows']}, set(pilot.BENGALI_V28.contracts()['imports']))
+            if name.startswith('full'):
+                reference_ids = set(json.loads((DATA / 'reference-v28-gate.json').read_text())['reference_record_ids'])
+                candidate = 'legacy' if name.endswith('legacy') else 'model'
+                expected = {identity for identity, row in records.items() if row['candidate'] == candidate and identity not in reference_ids}
+                self.assertEqual({identity for row in review['rows'] for identity in row['record_ids']}, expected)
+                self.assertEqual(len(expected), 92 if candidate == 'legacy' else 174)
+                self.assertFalse(review['full_gate']['bn']['passed'])
+                if candidate == 'model':
+                    self.assertTrue(review['requires_complete_model_warning_coverage'])
+                    self.assertEqual(sum(row['in_fixed88'] for row in review['rows']), 88)
+                    self.assertEqual(review['warning_coverage_supplemental_reviews'], ['review-context-v28-references.json'])
             pilot.audit_review_warnings(review, records)
             for row in review['rows']:
                 if min(row['scores'].values()) < 3:
