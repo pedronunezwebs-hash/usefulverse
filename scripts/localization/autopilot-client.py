@@ -12,7 +12,8 @@ def request(path, method='GET', payload=None):
     command=['gh','api']
     allow=path.endswith('/logs') and _escape is not False
     if allow: command.append('--allow-escape-sequences')
-    command.append('repos/'+REPOSITORY+'/'+path)
+    endpoint='repos/'+REPOSITORY+('/'+path if path else '')
+    command.append(endpoint)
     if method!='GET': command+=['--method',method]
     data=None
     if payload is not None:
