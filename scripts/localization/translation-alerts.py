@@ -32,6 +32,9 @@ def classify(run, jobs, report, now):
             return 'queued','No hay trabajos ejecutándose y la tanda lleva más de 90 minutos esperando.'
         return None,None
     if report is None:return 'report_missing','La tanda terminó sin un informe final verificable.'
+    # A later saved campaign supersedes the latest-report pointer. Do not
+    # turn a previously successful run into a false missing-report alarm.
+    if conclusion=='success' and report.get('run_id',0)>run['id']:return None,None
     if report.get('run_id')!=run['id']:return 'report_missing','El informe disponible no corresponde a esta tanda.'
     pending=report.get('pending',0);quarantine=report.get('quarantined',0)
     if pending or quarantine:

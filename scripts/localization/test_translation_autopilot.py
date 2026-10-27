@@ -127,6 +127,10 @@ class AutopilotMemoryTest(unittest.TestCase):
         for forbidden in ['upload-artifact','actions/cache','self-hosted','gpu','pull_request_target']:
             self.assertNotIn(forbidden,wave)
         self.assertIn('ref: automation/translation-results',publisher)
+        self.assertIn('max-parallel: 4',model)
+        controller=(root/'.github/workflows/translation-autopilot.yml').read_text()
+        self.assertEqual(controller.count('uses: ./.github/workflows/translation-wave.yml'),6)
+        self.assertIn('dt.timedelta(hours=24)',(HERE/'translation-autopilot.py').read_text())
 
 
 class GithubClientTest(unittest.TestCase):
@@ -155,6 +159,11 @@ class TranslationNoticeTest(unittest.TestCase):
         row['conclusion']='success'
         self.assertEqual(alerts.classify(row,[],dict(run_id=12,pending=2,quarantined=1),now)[0],'pending')
         self.assertEqual(alerts.classify(row,[],dict(run_id=12,pending=0,quarantined=0),now)[0],'complete')
+    def test_later_campaign_report_does_not_create_a_false_historical_alarm(self):
+        row=self.run_record();row.update(status='completed',conclusion='success')
+        now=dt.datetime(2026,10,28,3,tzinfo=dt.timezone.utc)
+        self.assertEqual(alerts.classify(row,[],dict(run_id=13,pending=3),now),(None,None))
+        self.assertEqual(alerts.classify(row,[],dict(run_id=11,pending=3),now)[0],'report_missing')
     def test_disabled_or_missing_daily_campaign_is_reported(self):
         now=dt.datetime(2026,10,28,12,tzinfo=dt.timezone.utc)
         control=dict(enabled=True,watch_from_utc='2026-10-27T00:00:00Z')
