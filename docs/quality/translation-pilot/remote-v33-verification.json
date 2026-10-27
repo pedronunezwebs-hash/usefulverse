@@ -890,5 +890,67 @@
   "paid_api_calls": 0,
   "cloudflare_operations": 0,
   "pr_draft": true,
-  "cleanup": "pending;will be recorded only after actual removal"
+  "cleanup": {
+    "schema_version": 1,
+    "at_utc": "2026-10-27T13:47:44.511177+00:00",
+    "root_label": ".usefulverse-v32-ru-20261027",
+    "root_removed_and_absent": true,
+    "removed_before_lock_free": true,
+    "backed_up_feature_source": "90f7ecd643427a5fb4d070e1ffa11ab5e8f28482",
+    "backed_up_main_source": "341d828db8738c15e24e83bfb78b358e2bdd81b2",
+    "versioned_files_matched_to_remote_tree": 8013,
+    "ci_source": "660bb37d294ce392e3353ac4973e20521bb7baeb",
+    "ci_run": 40509319243,
+    "internal_zips_removed": 6,
+    "external_own_cache_files_removed": 0,
+    "external_own_cache_files_remaining": 0,
+    "local_models_or_dependencies_installed": false,
+    "logical_bytes_removed": 168452501,
+    "bytes_free_before": 43524837376,
+    "bytes_free_after": 43699847168
+  },
+  "removed_before_lock_free": true,
+  "production_final_readonly_confirmation": {
+    "at_utc": "2026-10-27T13:42:36.472923+00:00",
+    "rows": [
+      {
+        "url": "https://usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 786404,
+        "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+        "urls": 10260
+      },
+      {
+        "url": "https://tools.usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 1431497,
+        "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+        "urls": 15365
+      },
+      {
+        "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/es/zzz/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/zzz.html",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      }
+    ],
+    "method": "5realGET+2XML/status+bytes+SHA256+URL counts;no visual certification"
+  },
+  "handoff_compaction_final": {
+    "before_bytes": 75035,
+    "after_bytes": 20233,
+    "reduction_percent": 73.04
+  }
 }
