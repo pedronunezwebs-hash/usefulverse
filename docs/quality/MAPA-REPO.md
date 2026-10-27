@@ -25,17 +25,15 @@ Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo
 - Pipeline local ligero: pruebas enfocadas, extracción de corpus y análisis estático. Modelos/builds completos exclusivamente en Actions. No usar Codespaces ni Containers.
 - CI histórica v33: <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
 
-## Traducción automática en segundo plano · 27-oct
+## Traducción automática y vista previa · 28-oct
 
-`translation-drafts.yml` es un workflow separado, solo manual y solo repo público. Se registra también en main para poder lanzarlo, pero su código/fuentes actuales se ejecutan desde `feat/new-tools-batch-1`. No cambia el workflow de deploy ni dispara builds por cada idioma.
+El controlador `translation-autopilot.yml` ejecuta la fuente fijada de `feat/new-tools-batch-1` en runners públicos estándar, con auditoría de significado, cuarentena, reanudación y entrega automática a `automation/translation-results`. Hasta seis vueltas, cuatro jobs simultáneos y plazo de 24 h; sin APIs pagadas, artifacts/cache persistente, Codespaces ni Cloudflare. `translation-watch.yml` avisa al finalizar y vigila cada 30 min; correo confirmado por Pedro, push y ejecución cron real aún sin acreditar. [Operación y límites](translation-drafts/README.md).
 
-- Dos vueltas de cuatro jobs `ubuntu-latest`, dos simultáneos; cada uno tiene 240 min de presupuesto y 300 min de timeout.
-- `background-source.mjs` extrae las 300 fuentes actuales: 15.815 unidades / 9.505 pares de texto-contexto; 36 destinos.
-- `background-drafts.py` deduplica por texto, contexto e idioma; fija MADLAD; comprueba datos protegidos, vacío, truncamiento, inglés idéntico, idioma/escritura y una muestra de negaciones por retrotraducción.
-- No escribe repos ni usa secretos, artefactos, cachés remotas, Cloudflare o API de traducción. Recupera automáticamente checkpoints anteriores con permiso `actions:read`, guarda registros acumulados en logs recuperables y conserva `approved:false`.
-- Recolección mecánica, checkpoints en Git y reanudación: [README](translation-drafts/README.md). Generar borradores no aprueba su publicación.
-
-- CI actual de automatización: [40523434352](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352), fuente `65626e5`, 3.045 Node + 409 Python, cero fallos/errores, dos omisiones opcionales. Tanda remota: [40523422271](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271); no esperar en el chat a que termine.
+- Corpus: 1.000 propietarios; 120 con solo metadatos, sin certificar UI completa. Ningún idioma ni herramienta se aprueba por generar un paquete.
+- `scripts/localization/prepare-preview-packages.py`: revalida memoria/semillas con Python 3.11 y exporta a un directorio temporal separado, sin red, inferencia ni escritura en la rama de datos.
+- `automatic-packages.mjs` / `automatic-preview.mjs`: enlazan hash/contexto/políticas a hojas de copia. Solo preview optativo de los 300 `indexable:false`, con respaldo inglés normalizado; se comprueba el JSON renderizado de las 10.800 rutas. El build normal no consume paquetes ni modifica copias de las 700 existentes.
+- `validate-staged.yml`: CI manual sin despliegue. [40599566567](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40599566567) ya pasó revalidación y preview; suite completa/builds normales pendientes al guardar este relevo. No usarlo como aprobación de producción. [Detalle](lotes/2026-10-28-preview-traducciones.md).
+- `translation-drafts.yml` y sus checkpoints siguen preservados como sistema anterior; no relanzarlos para sustituir el controlador autónomo ni cancelar la campaña activa 40565692987.
 
 ## Carpetas clave
 

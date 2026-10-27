@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T22:53:09.377371+00:00 · conectar paquetes verificados a preview noindex de Paso A
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T22:53:11.534085+00:00 · conectar paquetes verificados a preview noindex de Paso A
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -21,11 +21,11 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 **Calidad reforzada solicitada por Pedro:** reintento acotado solo para dudas (beam 4, máximo dos propuestas), mismos controles/umbrales y veto de 46 errores de los 1.586 juicios anteriores, sin otra revisión frase a frase del chat. [Prueba real 40578541656](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40578541656): cuatro de 12 cuarentenas rescatadas, ocho retenidas y 19 originales conservados; mediana 2,4585 s por frase y máximo 8,793 s en la muestra, con modelos cargados; consumo reportado cero. Calibración: 186 casos, 29 errores que escapaban al filtro anterior quedan vetados. No garantiza equivalencia universal con revisión del agente: 67/140 ejemplos previamente aceptados quedan retenidos por prudencia. [Informe](lotes/2026-10-28-calidad-traductor.md). Entra en la próxima campaña, sin interrumpir 40565692987 ni sobrescribir memoria. La nueva salida incluye contadores por idioma; seguir mejorando la web sin esperar toda la cola.
 
-**Siguiente paso exacto:** consultar solo resumen/estado e incidencias del traductor; ante un fallo, corregir el sistema con regresión permanente. Dejar que GitHub siga trabajando y mejorar las fuentes inglesas en la rama del Paso A, sin otra microversión manual por idioma. Continuar los pendientes de Paso A (capacidad de publicación, cobertura real y conexión del adaptador de paquetes al build, más puertas de calidad). `automatic-packages.mjs` valida hash/contexto/política y mantiene el inglés ante faltantes; aún no está conectado a producción. No esperar dentro del chat a que acaben las 929.922 unidades ni declararlas terminadas. No aprobar idiomas/herramientas por un contador sin avisos.
+**Siguiente paso exacto:** consultar primero la conclusión y logs de [CI 40599566567](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40599566567), fuente f0960a3. Ya pasaron revalidación de memoria y build con paquetes reales: 10.800 rutas noindex y JSON del controlador comprobados; suite completa/builds normales todavía pendientes al cerrar este lote. Si falla, añadir regresión y arreglar antes de aceptar el lote; si pasa, guardar contadores/consumo y seguir capacidad de publicación, cobertura de UI de los 120 propietarios con solo metadatos y demás puertas del Paso A (RUNBOOK §7). El adaptador está conectado a preview optativo, no a producción. No avanzar fase 0 ni aprobar herramientas/idiomas por este resultado. Consultar solo resumen/estado/incidencias del traductor; dejar que GitHub trabaje sin traducción/relectura frase a frase en el chat ni esperar toda su cola. [Relevo y límites](lotes/2026-10-28-preview-traducciones.md).
 
 **Histórico preservado:** 35 checkpoints / 17.441 registros de pilotos, 905 memorias. Muestras conocidas es, nb-NO, ko, id, zh-CN, bn y ru; siete revisados sin pasar (de, fr, pt-BR, ja, hi, ar, ur), 22 sin revisión detallada histórica. Esto no se convierte en una cola manual nueva. Inglés es fuente; 0/36 destinos aprobados para publicar. [Listado histórico v33](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v33.json).
 
-**Producción:** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas inexistentes del hub siguen dando 200. Sin despliegue, activación ni envío a buscadores. P-001–P-008: ocho pendientes, cero FALLA; P-009 OK (correo confirmado por Pedro; push no comprobado). No certificados: UI/dispositivos, responsive/RTL/textos largos/peso, a11y/rendimiento, puerta de 18 puntos/siete capas ni revisión nativa. Ninguna herramienta se marca terminada.
+**Producción (comprobación del lote anterior):** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas inexistentes del hub siguen dando 200. Sin despliegue, activación ni envío a buscadores. P-001–P-008: ocho pendientes, cero FALLA; P-009 OK (correo confirmado por Pedro; push no comprobado). No certificados: UI/dispositivos, responsive/RTL/textos largos/peso, a11y/rendimiento, puerta de 18 puntos/siete capas ni revisión nativa. Ninguna herramienta se marca terminada.
 
 **Orden posterior:** fase 0 (404 real, título home, sitemaps por idioma) + G1 (hash de 106 JS) → fase 0b (26 errores, test antes del arreglo) → unificar dominio (RUNBOOK §4b) → Planeta Infinito y bucle de calidad según progress.csv.
 
@@ -53,7 +53,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [x] Respaldo de las 300 recuperable online; fuente con noindex en PR #136, cero en main/activadas.
 - [x] Pilotos históricos y regresiones preservados; informes y commits en LOG.md y lotes/.
 - [x] V32/v33 ruso: cinco reparaciones; muestra conocida pasa. Publicación sigue sin aprobar.
-- [x] CI final y retirada efectiva verificadas antes de LIBRE.
+- [x] CI del traductor anterior y retirada efectiva verificadas.
+- [x] Adaptador conectado al build aislado: hash/contexto/políticas, respaldo inglés y comprobación del HTML real.
+- [ ] CI completa del adaptador 40599566567: preview correcto; suite/builds normales aún en curso al guardar el relevo.
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`

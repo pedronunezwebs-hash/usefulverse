@@ -52,3 +52,7 @@ Se mantiene la exigencia de significado y datos; Pedro acepta algo más de CPU g
 - `UVREFINE_RECORD` guarda propuestas, pruebas y selección ligadas al original/política. Las semillas verificadas se recuperan de `quality-v1/checkpoints/`; el original nunca se sobrescribe. El informe de la nueva campaña añade `refinement_pending`, `refined_adopted` y `by_locale`. Los paquetes refinados exigen también el hash `quality_policy` en el adaptador de build.
 
 [Evidencia de modelos](quality-v1/benchmark.json), [CI](quality-v1/ci.json). Las notificaciones por correo ya están confirmadas por Pedro mediante captura: P-009 OK; push del teléfono no comprobado. El cron registrado sigue pendiente de observación real; los avisos por fin/cancelación sí están probados.
+
+## Consumo en vista previa aislada · 28-oct
+
+El adaptador ya se conecta al build optativo de los 300 noindex mediante `GROWTH600_AUTOMATIC_PREVIEW_PACKAGES` y los hashes `GROWTH600_PREVIEW_SEMANTIC_POLICY`/`GROWTH600_PREVIEW_QUALITY_POLICY`. `validate-staged.yml` lee la rama de datos y `prepare-preview-packages.py` revalida registros/semillas con Python 3.11, sin modelos ni red, en una salida temporal separada. Solo se aplican hojas válidas; lo pendiente usa inglés normalizado. Las entradas aprobadas para esta vista previa no son aprobaciones de publicación ni revisión nativa. El build publicado continúa sin consumir paquetes. [Evidencia, CI pendiente y siguiente paso](../lotes/2026-10-28-preview-traducciones.md).
