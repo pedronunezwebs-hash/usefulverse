@@ -185,8 +185,10 @@
   "selected_before_full_dispatch": true,
   "selected_before_full_results_collection": true,
   "known_reference_memory_rows": 40,
-  "reference_gate_passed": false,
-  "full_dispatch_authorized": false,
+  "reference_gate_passed": true,
+  "full_dispatch_authorized": true,
   "approved_locales": [],
-  "note": "Known214 reviewed-memory targets;40references must pass first. Read all174+92 current nonreferences. No new forward model inference,back is new. No native/blind/unseen/general-engine/release approval."
+  "note": "Known214 reviewed-memory targets;40references must pass first. Read all174+92 current nonreferences. No new forward model inference,back is new. No native/blind/unseen/general-engine/release approval.",
+  "reference_gate_file": "reference-v31-gate.json",
+  "reference_gate_sha256": "265665f4b1c8165cf2efe1848547281919d1890edbb079c3416b9090ff21d45f"
 }

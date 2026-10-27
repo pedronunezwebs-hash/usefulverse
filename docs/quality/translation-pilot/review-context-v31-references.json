@@ -1,0 +1,1031 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex(agent,no paid API)",
+  "native_review": false,
+  "approved_locales": [],
+  "engine_frozen": false,
+  "inference_policy": "context-v31",
+  "reviewed_at_utc": "2026-10-27T07:29:24.554319+00:00",
+  "scope": "references",
+  "expected_rows": 40,
+  "rows": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "c965611c24afc6096b9d4eb9e28c759f89f0cabdf547a1c13fd3278fa90b28e6",
+      "record_ids": [
+        "c3017fac20ff5e9a95e4c30eee33b53a1431eda4483a60eb633a91360b12613e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "locale": "ru",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "a944ed60b0cc06536c111d8ca76e126af082d97a00d4246a863fd94b468fd81c",
+      "record_ids": [
+        "89150be823afac74ddd1d61b67582a0a255cbbf683c4d32c3371b0c58d6fbe22"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "locale": "ru",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "f0665e1bcf61362851a9e9eb720445c14c0dd91c2c02f3a2201ed19013484eb0",
+      "record_ids": [
+        "541521dab0e6d1e195bc0bc9e8a7e19308f27d49bd3ef33c8f1a2586291dfcf6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "record_ids": [
+        "5403953e3abf681c043a58461508ee15a5d6a2e671482a1fbecbe03910432ea8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "locale": "ru",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "285c21ce1a47eac446c450c7a7ecf7f555a5bba1a571fc5c33f70c22a7573a12",
+      "record_ids": [
+        "cddf60df9fd0721bfd4a97bf92624823b70b0ad791a7814b510f59b78d01908c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "locale": "ru",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "45bf70d6a4218906e0a93f6f828c17e0184e541d1ac0b5096b5a99bf8c78f26e",
+      "record_ids": [
+        "d27f8d1ec9d9133ca5102b1024d2ccc3922d3add3997ce5901ae548e8ddc27fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "locale": "ru",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "dfa3336886a57b64140fa0cfc8c388cf5b309b6fd4e3c3f1a41b61a4a556a08a",
+      "record_ids": [
+        "22573fdd3489f15f8885c9bf5dffc8a4f4d5369c485a0769fa681590ffca517f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "locale": "ru",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "2e38334003cb9635ae88ee2346edc953502f8b89c6a5ca9c5e0175fc6b1ef645",
+      "record_ids": [
+        "12aff2e5aed473423e847126c1e300bc593b2d4cc9289e290ea7cfd7d90204e1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "locale": "ru",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "8d26ad052ce3011a3c902fc5ada5fd6be7d1e4770aed0cce01deeb2d492fb07e",
+      "record_ids": [
+        "459f948f95e0985567b437118550a233fa95e1560a885eb61cb1c78a6c3a33e1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "27b250b132fbe7ce7c36753823e342a487b774c025bfe3172367e133aea9b6f1",
+      "record_ids": [
+        "40a68013f02c58919e00464db88bb7f3545847e3e279f4452c94bc0247b74113"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "locale": "ru",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "5010d3145e733a2be9d803660e6b6e9bf3c4b3e66bd7629d3044c2ba7bc7eac3",
+      "record_ids": [
+        "78eea41fb28b9216d4a051ba6d73d0399961e7a82e21176e514fe5d9726fecc5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "locale": "ru",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "3acc44d6a1b1941c5d0c64a09637fd4332ea3d5b5504572fdaf9b771d24b672a",
+      "record_ids": [
+        "f0dfbd68eaceaa7b637dd0761a72b8bb5beb07ad588f8431479d2e20e57f7b87"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "locale": "ru",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "0b9ff60343ea45e1859aef2389c8afea31aedb975536be898a3b90f735e0c26f",
+      "record_ids": [
+        "edcdf053af5dfcb1af1d789a743f3dad51df35db19356d1ae97a9b34124715ad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.example",
+      "locale": "ru",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+      "record_ids": [
+        "186bc58e190240a4676e51aecb2c2a1666bbd09502186a5d8fbf2524ecec2c95"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "ru",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "7a621492ef995f230029b159272ea991d2550780992a9520d8385420987c5d26",
+      "record_ids": [
+        "c66e99b61e0203501f17663c374f98fac64046a8dbf7dd4771785680ce8c3dfd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "ru",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "27df399ecca1aa4e11ab8cdd89ae78588db673e3718b5acf1d6e5a928d344420",
+      "record_ids": [
+        "d1f85e87805a72e6b90d8bc8326dfef21646b50a9634948902045d8fd4e06572"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "ru",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "455846dbd91fdc541336890e84d5d160ab9c3e003825fab56f5d6ce3c1538e7b",
+      "record_ids": [
+        "e4b5853e403be82a8f88fad0aa95a7c2f4e72c670173fe9ccaf7ed88776a55c9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "ru",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "33d9c9808e02c2f3360461a0b9a862c722509dbcc06f69f65e4020d1d3db4d59",
+      "record_ids": [
+        "685615f55ffe358a3f193ead248fc67fe375d56f9d613088725c838a797bf157"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "ru",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "f8fcc8c6ce1294ea7bfe39fc3a0755e65d31aae619b416173e9d84173671942a",
+      "record_ids": [
+        "81e196e6c8e655cb6efb4c0f8550532fca9fba9274af6655e833c1a7d9b435fa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "ru",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+      "record_ids": [
+        "a3895d7f141a0c95321e932ce802f2aa52fd96e6c2a147552c27427f89e96195"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "ru",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "1667e6ed1048a896aed50e88e6442cb7b3bcb2651f2404882dfd6c13f0671c0c",
+      "record_ids": [
+        "7764a76c8b3e822010eb2c4de82fd1b523aad15d543a00c911c69644c0c64d95"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "ru",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "07c7b8b8142d494fe76a69062c3f5194b7ad0eaa46d603cff431322c387c5676",
+      "record_ids": [
+        "6744e7b37244828edd532f823be6f2fa7ccd23e87b874e0a06f70286cc9bd476"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "ru",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "ce029a0abbcd2ae2ecc416f02e6eae2f7925f06b84fdd812ac95c8359b47241e",
+      "record_ids": [
+        "d146f57263585ee1284d6444eefcd849cc797e5933f02fd05d290d9dffb3ea77"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "ru",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "91094be3c40d496da0ee8fa432fb21175c9019be0376a82af928bfa484b68872",
+      "record_ids": [
+        "90ade51f33dccff4c1ee4519d76c892c6c80736f2e4dc4a6c59bc4dc026023dd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "ru",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "98f1d7d660dc6fee828aa209c97adae8512b9fedec358d75f96e3571b4fcb4b9",
+      "record_ids": [
+        "32da769bdfe55395ff3159470e453b559ffb9ecb8d4f836dbf21fa9ad479d009"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "ru",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "b675b12a80f21713685e56735dac89017f5d7263b35ae4a30ce90fbb990b3e8d",
+      "record_ids": [
+        "ec073681d3b07b574e64cf0f773f60e8bd1c46957b5b6269dc4da6861f8a22b3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "ru",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "5429ab1b9cb873179fce353402ba785d8fc46f282dd9ea641c525356cc65160d",
+      "record_ids": [
+        "5de67752d9b559ab30f09111ca07cf437865ca15fc3145742e7199c19b02e1b4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "ru",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "54ff4589dd1241cd6e4dab5c8ee40b8a4e636d4c677f32c4fa7adafe42bb3376",
+      "record_ids": [
+        "5b3f697ec1addbbcfd351a44c8d36a3669397a795804412cc2ce6468a1e22096"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "ru",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "be48473b0eaf465312192060ab60f24e9d6eccb6d365ab9d36cd5c2247c5bc92",
+      "record_ids": [
+        "e8bbd32ee98248035918f325244736e3777e179816985e2080e36d8e3de71885"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "ru",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "73c6209f7c56933c255a0255e7736a4be9494842dbd13cabf947ca67c2588e40",
+      "record_ids": [
+        "e6e5cfb0c47f88d631835aac93f6fe0a991886729c944cbc54d931a5a98c6968"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "ru",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "c9f2485825b56283cd0731fb217e538b21717491f915f39b706bb19db738bdca",
+      "record_ids": [
+        "c855277393d7478094ded02b363d1683b73dfcea16f70ea658a31e9fa89528a8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "8e0bd7ec9f26a3763eea5719e821998126641d4ffcb00a3b5f4c3512109ff97f",
+      "record_ids": [
+        "d7cee25c4fd819893644b1b0baa551852ae989f12a0af0d2b6b24d05848aedea"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "ru",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "b503c5536934af55b390d0e1cb273c460efba847c6e08bc22b37a790238cfce7",
+      "record_ids": [
+        "025b6867e1f778e4b355b70d56e1f875cc8eb7d5ba64ea56b838800c10c6041d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "ru",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+      "record_ids": [
+        "1ebdb3466456b728e895d2908f8ac08e58a2485250b013799dd16deb34330a16"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "ru",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "6fd21e63d20c19adc595fb71d96576fb722cc0023d28a0f52a605c647e630613",
+      "record_ids": [
+        "c8c64e4155121c10439021d1cd14f5bf51d5891ac72f80257b8cc927c6988f88"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "ru",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "fe2ccec36969800a9db127f534050d414b0da1fd588b52173bb20571bd573f6e",
+      "record_ids": [
+        "d5a56888095ebf2c391eaaa8241fbc41baa518b0371f7cc0def717c72c2a6b3e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+      "record_ids": [
+        "578124288ad2c4fb5c31e010900f566165ec6fb535b6e7d089e25110dcd9f627"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "ru",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "6467d4af32b4c0bde936d48b58d2d3c1a974e64c575e83931cf6baf91b492d39",
+      "record_ids": [
+        "9ad10e8a9dea6a4d8a8ded979baed3e84c420e41432628585937657809c92725"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "ru",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "9ef534aa35e19fffaf7567a03e264e13a92f1eb265a8821298e23556854aa9e7",
+      "record_ids": [
+        "6a9843291c5f48472c8771202d5991bd79ec69b68f8f9f11407c0ee6ca83a430"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "ru",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "reviewed-memory+madlad-back-v31",
+      "translation_hash": "047841d070adaee0b88f6f06b60901a00cc54efdee137759c85c3864f16f9cc6",
+      "record_ids": [
+        "33c650dde754e5c546b376537c331abb3b7569f97858cd3ac0625102f01b6d2b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Current source/forward/back directly read. Forward exactly matches source-bound reviewed memory:190exact positives+19agent corrections+5notation clarifications across214targets. Known memory,not new forward inference. Back reviewed independently."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B;agent-known-memory",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "a3895d7f141a0c95321e932ce802f2aa52fd96e6c2a147552c27427f89e96195",
+      "key": "shikaku.fields.hint",
+      "locale": "ru",
+      "back_translation_hash": "704a4ae053516107693b2f500c8092f4b8b2789ad18f4b1aef5b1d3807a5fa99",
+      "notes": [
+        "tooltip cambia la pista del juego por un componente de interfaz."
+      ]
+    }
+  ],
+  "scoped_back_findings": [
+    {
+      "record_id": "5403953e3abf681c043a58461508ee15a5d6a2e671482a1fbecbe03910432ea8",
+      "key": "dxf-viewer.fields.cancel",
+      "forward_digest": "de169c6239dc392641d786899fdadd3c053941c14497d56378b77cda3ed79534",
+      "back_translation_hash": "c0c05b34c0b1ed98474b99e3b68f3e3d9a58be2fe838cf21afc61128f94c4472",
+      "notes": [
+        "Cancel local loading becomes Cancel Download;the forward Russian loading verb is valid in local-file context."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "40a68013f02c58919e00464db88bb7f3545847e3e279f4452c94bc0247b74113",
+      "key": "dxf-viewer.fields.resetView",
+      "forward_digest": "2814d4dc4c380c4d7e6d0d6f90062eac414a566e51481206689e06acb3e0822d",
+      "back_translation_hash": "677e4851a0c047ed61e9fadcffd14677b6613ab07dba09780c82654ef2540af6",
+      "notes": [
+        "Fit the drawing to the viewport becomes Insert drawing;view framing changes into adding content."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "578124288ad2c4fb5c31e010900f566165ec6fb535b6e7d089e25110dcd9f627",
+      "key": "voice-changer.fields.privacy",
+      "forward_digest": "fa7794e80b925a8983b5e21a5ab7cde9f7d2f4e0af377adb2595a4f36400e2bb",
+      "back_translation_hash": "6cd056e2109159adaf4968fdcb8879e50432756d20a136e0e1d7ee177c36f10d",
+      "notes": [
+        "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+      ],
+      "blocks_gate": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "186bc58e190240a4676e51aecb2c2a1666bbd09502186a5d8fbf2524ecec2c95",
+      "translation_hash": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+      "back_translation_hash": "c8c9971e5d8f449e8acc0c7ef07cce7dbe92193f4f69f8ab2d1c050e04ecb2c0",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;typed/script heuristic is separate from linguistic error.Confirmed current independent back errors have bound findings;no forward downgrade from back alone."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;typed/script heuristic is separate from linguistic error.Confirmed current independent back errors have bound findings;no forward downgrade from back alone."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;typed/script heuristic is separate from linguistic error.Confirmed current independent back errors have bound findings;no forward downgrade from back alone."
+        }
+      }
+    },
+    {
+      "record_id": "a3895d7f141a0c95321e932ce802f2aa52fd96e6c2a147552c27427f89e96195",
+      "translation_hash": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+      "back_translation_hash": "704a4ae053516107693b2f500c8092f4b8b2789ad18f4b1aef5b1d3807a5fa99",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "tooltip cambia la pista del juego por un componente de interfaz."
+        }
+      }
+    }
+  ],
+  "requires_complete_model_warning_coverage": false,
+  "warning_coverage_supplemental_reviews": [],
+  "rubric": "Current S/F/B directly read.0–3 meaning,numbers/negations,naturalness. Known214source-bound memory targets;back errors never grade a correct forward.No native/blind/unseen/general-engine/release approval.",
+  "reference_gate": {
+    "ru": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known source-bound reviewed-memory targets;every current S/F/B and warning read.No native/blind/unseen/general-engine/release approval."
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "inference_policy": "context-v31",
+  "scope": "references",
+  "run_id": 40466449927,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40466449927",
+  "job_id": 122062908874,
+  "conclusion": "success",
+  "source_commit": "dc520c57f709c0d0b3ab69c59dbb53372912eb00",
+  "locales": [
+    "ru"
+  ],
+  "engine": "madlad",
+  "model": {
+    "converted_sha256": {
+      "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+      "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+      "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+    },
+    "engine": "madlad",
+    "license": "Apache-2.0",
+    "minimum_free_gib": 18,
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  },
+  "timing": {
+    "approved": 0,
+    "conversion_seconds": 75.84576787099999,
+    "counts": {
+      "legacy": 27,
+      "model": 40,
+      "reviewed_memory_hits": 40
+    },
+    "engine": "madlad",
+    "peak_rss_kib": 3705808,
+    "scope": "references",
+    "total_seconds": 122.58761004299998
+  },
+  "cleanup": "success",
+  "records": 67,
+  "python_precheck": {
+    "tests": 18,
+    "seconds": 33.758
+  },
+  "artifacts": 0,
+  "site_and_publications": "skipped",
+  "frozen_runtime_sha256": {
+    "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+    "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+    "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+    "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+    "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+    "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+    "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+    "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+    "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+    "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+  },
+  "log_sha256": "3da460cf80c88a07ce4ff8fd50f14b3ca8eabc63f7445f3cf63e50e37632fc3b",
+  "evidence": "run-context-v31-references.json",
+  "approved_locales": [],
+  "native_review": false
+}

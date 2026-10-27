@@ -106,5 +106,14 @@
   "agent_forward_corrections": 19,
   "notation_clarifications": 5,
   "approved_locales": [],
-  "native_review": false
+  "native_review": false,
+  "reference_findings_red": {
+    "tests": 1,
+    "failures": 1,
+    "log_sha256": "51cc14b8b991bd79606dc1c1404df3695beb99706cb29170c0fcc806438e811a"
+  },
+  "reference_findings_green": {
+    "tests": 3,
+    "log_sha256": "039340d53f3872428ac2dc0bd130d1aed6ec12f7a04495f3cae819ec1381fc4e"
+  }
 }
