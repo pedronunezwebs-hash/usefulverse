@@ -2,7 +2,7 @@
 
 ## 2026-10-27 · Codex · v32/v33 ruso y relevo compacto
 
-Cinco reparaciones; muestra rusa conocida pasa; siete destinos con muestra conocida aprobada por el agente y cero idiomas aprobados para publicar. V32: referencias 40477109792 y ampliado rechazado 40478376896. V33: referencias 40480964445 y ampliado 40502016693. <!-- V33_CHECK -->CI final pendiente; no se declara verificación completa del lote hasta su resultado.<!-- /V33_CHECK -->
+Cinco reparaciones; muestra rusa conocida pasa; siete destinos con muestra conocida aprobada por el agente y cero idiomas aprobados para publicar. V32: referencias 40477109792 y ampliado rechazado 40478376896. V33: referencias 40480964445 y ampliado 40502016693. <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
 
 [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md). Próximo: v34 urdu; sin despliegue ni nuevas pruebas para Pedro.
 

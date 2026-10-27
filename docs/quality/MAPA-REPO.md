@@ -23,7 +23,7 @@ Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo
 - Piloto: workflow_dispatch, translation_pilot=true, perfil context-v33, engine madlad, locale ru y scope references/full; full exige referencias y avisos aprobados. No repetir los runs cerrados.
 - Solo ubuntu-latest estándar. Sitio: 45 min; piloto: 90 min. Permisos contents:read, acciones por SHA. No usar runners de pago, artefactos ni cachés persistentes de modelos.
 - Pipeline local ligero: pruebas enfocadas, extracción de corpus y análisis estático. Modelos/builds completos exclusivamente en Actions. No usar Codespaces ni Containers.
-- CI final del lote: <!-- V33_CHECK -->CI final pendiente; no se declara verificación completa del lote hasta su resultado.<!-- /V33_CHECK -->
+- CI final del lote: <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
 
 ## Carpetas clave
 
