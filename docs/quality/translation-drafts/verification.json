@@ -2,7 +2,7 @@
   "schema": 1,
   "local_checks": {
     "python": {
-      "tests": 12,
+      "tests": 13,
       "failures": 0
     },
     "node_extraction": {
@@ -12,7 +12,7 @@
   },
   "source_sha256": {
     "scripts/localization/background-drafts.py": "513b1ab0432515c3d91451f60bcff59a6a351f05ffd5f2ce9722b331dbf73292",
-    "scripts/localization/background-resume.py": "15c84b1aedf311ac5e4611c5f3f8428491aeb015f480179139b8cc098fc7ebe4",
+    "scripts/localization/background-resume.py": "873f790ebfe6ab3df594f7797f2693e7a145f257ecd19fb0c533256cd20fdd0b",
     "scripts/localization/background-source.mjs": "db360e5505454ac3840ebaa15590f43e9a58a1ef36c325855ca7470007bed2e3",
     ".github/workflows/translation-drafts.yml": "2d97b8f995df6894f654f4ddaf88fc7bb4caa4d62ff3103471abb93b5364697d"
   },
@@ -43,5 +43,7 @@
   ],
   "smoke_status": "success",
   "validation_status": "pending_old_source",
-  "automatic_resume_recovered_real_records": 16
+  "automatic_resume_recovered_real_records": 16,
+  "failed_long_run": 40522692881,
+  "failure_fixed": "GitHub CLI ANSI log guard; opaque byte capture with documented flag and fallback for old CLI."
 }

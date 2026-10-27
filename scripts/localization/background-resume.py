@@ -13,10 +13,19 @@ spec = importlib.util.spec_from_file_location('background', Path(__file__).with_
 drafts = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(drafts)
 REPO = 'repos/pedronunezwebs-hash/usefulverse'
+ALLOW_ESCAPE_SUPPORTED = None
 
 
 def github(path):
-    result = subprocess.run(['gh', 'api', REPO + '/' + path], capture_output=True)
+    global ALLOW_ESCAPE_SUPPORTED
+    # Logs contain ANSI bytes from Actions itself. Capture them as opaque data;
+    # never render the downloaded response in a terminal or evaluate its contents.
+    allow = path.endswith('/logs') and ALLOW_ESCAPE_SUPPORTED is not False
+    command = ['gh', 'api'] + (['--allow-escape-sequences'] if allow else []) + [REPO + '/' + path]
+    result = subprocess.run(command, capture_output=True)
+    if allow and result.returncode and b'unknown flag' in result.stderr:
+        ALLOW_ESCAPE_SUPPORTED = False
+        result = subprocess.run(['gh', 'api', REPO + '/' + path], capture_output=True)
     if result.returncode:
         error = result.stderr.decode()
         if 'HTTP 404' in error:

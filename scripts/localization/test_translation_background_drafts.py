@@ -205,6 +205,18 @@ class BackgroundDraftsTest(unittest.TestCase):
             self.assertEqual(resume.recover({'units': [changed]}, ['es'], 0, 4, 'feature', output, request=github), {})
         self.assertTrue(any('actions/jobs/7/logs' in path for path in paths))
 
+    def test_runner_cli_reads_log_escape_bytes_without_rendering_them(self):
+        spec = importlib.util.spec_from_file_location('resume', HERE/'background-resume.py')
+        resume = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(resume)
+        captured = []
+        def run(args, **kwargs):
+            captured.append(args)
+            return types.SimpleNamespace(returncode=0, stdout=b'\x1b[32mopaque log\x1b[0m', stderr=b'')
+        with patch.object(resume.subprocess, 'run', run):
+            self.assertEqual(resume.github('actions/jobs/7/logs'), b'\x1b[32mopaque log\x1b[0m')
+        self.assertIn('--allow-escape-sequences', captured[0])
+
 
 if __name__ == '__main__':
     unittest.main()
