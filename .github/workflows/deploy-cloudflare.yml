@@ -84,7 +84,7 @@ jobs:
         run: npm run build:growth600
 
       - name: Validate the 300 staged tools without publishing
-        if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && github.ref != 'refs/heads/main')
+        if: github.event_name == 'pull_request'
         env:
           GROWTH600_NOINDEX_DRAFT_RELEASE: "1"
           GROWTH600_PREVIEW_ONLY: "1"

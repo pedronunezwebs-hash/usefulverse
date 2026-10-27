@@ -1,0 +1,45 @@
+name: Validate staged UsefulVerse without publishing
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: usefulverse-staged-validation
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: feat/new-tools-batch-1
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+      - name: Check historical workflow integrity and autopilot contracts first
+        run: |
+          python3 -m unittest discover -s scripts/localization -p test_translation_autopilot.py
+          PYTHONPATH=scripts/localization python3 -m unittest \
+            test_translation_bengali_v28.BengaliV28Test.test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes \
+            test_translation_bengali_v29.BengaliV29Test.test_adapter_keeps_generic_assertions_and_only_three_workflow_edits
+      - name: Install pinned dependencies without hooks
+        run: npm ci --ignore-scripts
+      - name: Run complete Node and Python suites
+        run: |
+          npm test
+          python3 scripts/localization/run-translation-tests.py --jobs 4
+      - name: Build and validate the main site
+        run: npm run check
+      - name: Enforce existing locale release gate
+        run: npm run locale:release-check
+      - name: Build the existing tools hub
+        run: npm run build:growth600
+      - name: Build isolated 300-tool noindex preview
+        env:
+          GROWTH600_NOINDEX_DRAFT_RELEASE: '1'
+          GROWTH600_PREVIEW_ONLY: '1'
+          GROWTH600_DIST: dist-new-tools-noindex
+        run: npm run build:growth600

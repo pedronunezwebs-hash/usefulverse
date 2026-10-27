@@ -1,0 +1,11 @@
+{
+  "run_id": 40564076126,
+  "source_commit": "6ab882052f907a5b6df04d39b1b158d5f7dc288c",
+  "tests": 427,
+  "failures": 2,
+  "errors": 0,
+  "skipped": 2,
+  "seconds": 1604.775,
+  "reason": "one new preview condition changed the frozen deployment workflow",
+  "remedy": "restore original bytes and validate in a separate read-only no-deploy workflow"
+}
