@@ -212,6 +212,11 @@ class BengaliV28Test(unittest.TestCase):
     def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
         proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
         text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
+        # Four explicit v31 edits before unchanged historical whole-blob guards.
+        self.assertEqual(text.count('context-v29, context-v30, context-v31]'),1);text=text.replace('context-v29, context-v30, context-v31]','context-v29, context-v30]')
+        self.assertEqual(text.count('Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada'),1);text=text.replace('Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada','Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios')
+        self.assertEqual(text.count('python -u scripts/localization/translation-pilot-v31.py run'),1);text=text.replace('python -u scripts/localization/translation-pilot-v31.py run','python -u scripts/localization/translation-pilot-v30.py run')
+        self.assertEqual(text.count('bash scripts/localization/pilot-precheck-v31.sh'),1);text=text.replace('bash scripts/localization/pilot-precheck-v31.sh','bash scripts/localization/pilot-precheck-v30.sh')
         # Normalize four explicit v30 additions before the existing v29/v28 guards.
         text = text.replace('context-v28, context-v29, context-v30]','context-v28, context-v29]')
         text = text.replace('Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios','Baseline o variantes v2–v29; v29 añade corpus bengalí conocido con contratos propios')

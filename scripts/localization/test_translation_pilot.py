@@ -7,7 +7,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot-v30.py'))
+spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot-v31.py'))
 pilot = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pilot)
 pilot = pilot.pilot

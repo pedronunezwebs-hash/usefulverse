@@ -57,4 +57,9 @@ class PostReviewAudit:
         return len(expected)
 
 def install(namespace):
-    namespace['audit_review_warnings']=PostReviewAudit(namespace['RUSSIAN_V30']).audit
+    old=PostReviewAudit(namespace['RUSSIAN_V30']).audit
+    if 'RUSSIAN_V31' not in namespace:namespace['audit_review_warnings']=old;return
+    def combined(review,records,check_coverage=True):
+        if review.get('inference_policy')=='context-v31':return namespace['RUSSIAN_V31'].audit(review,records,check_coverage)
+        return old(review,records,check_coverage)
+    namespace['audit_review_warnings']=combined
