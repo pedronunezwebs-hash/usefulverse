@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T20:09:19.480012+00:00 · refinar traducciones dudosas automáticamente y medir calidad sin coste
+**Turno actual (candado):** LIBRE
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -161,8 +161,10 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** verificada antes de LIBRE: clon propio eliminado, 42.27 GiB libres. Fuente, documentación y los 16 checkpoints iniciales recuperables en GitHub; documentos sincronizados. La tanda remota continúa sin el Mac. [Comprobante](translation-drafts/closure.json).
+**Retirada actual:** clon, datos descargados, logs y pycache propios eliminados tras respaldo online verificado; 40.7 GiB libres. [Recibo](translation-drafts/quality-v1/closure.json).
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
 
 **Cierre 28-oct verificado:** respaldo online de código/docs/resultados; clon y temporales propios eliminados sin Papelera antes de LIBRE; 42,1 GiB libres. Cuatro jobs de traducción siguen activos en GitHub. Cron registrado, aún sin disparo `schedule` observado; los avisos por fin/cancelación y la mención real sí están probados. [Recibo](translation-drafts/closure-20261028.json).
+
+**Cierre calidad 28-oct:** código, doce semillas y evidencias recuperables online; retirada propia verificada antes de LIBRE. Correo confirmado por Pedro (P-009 OK); ocho pruebas físicas pendientes, cero FALLA y push no probado. La campaña activa continúa y la mejora entra en la siguiente. [Recibo](translation-drafts/quality-v1/closure.json).

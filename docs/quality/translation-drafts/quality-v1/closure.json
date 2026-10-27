@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-10-27T22:47:02.726396+00:00",
+  "source_before_closure": "14ad2fce7aa36207c322c35b86283572a6f90762",
+  "own_clone": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-quality-20261028",
+  "own_clone_removed": true,
+  "free_gib": 40.7,
+  "active_campaign": 40565692987,
+  "active_jobs": [
+    "wave-1 / drafts (1)",
+    "wave-1 / drafts (2)",
+    "wave-1 / drafts (3)",
+    "wave-1 / drafts (0)"
+  ],
+  "quality_benchmark": 40578541656,
+  "ci": 40577503166,
+  "originals_preserved": 19,
+  "rescued": 4,
+  "unresolved": 8,
+  "median_seconds": 2.4585,
+  "email_confirmed_by_pedro": true,
+  "phone_push_checked": false,
+  "deployments": 0,
+  "production_urls": 25625,
+  "rollout": "Next campaign; current pinned source remains unchanged",
+  "native_review": false,
+  "approved": false
+}
