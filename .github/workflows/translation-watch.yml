@@ -1,0 +1,44 @@
+name: Translation alerts
+on:
+  workflow_run:
+    workflows: [Background translation drafts]
+    types: [completed]
+  schedule:
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: 'Crear una única prueba de aviso en las notificaciones de Pedro'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: usefulverse-translation-alerts
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          persist-credentials: false
+          sparse-checkout: scripts/localization
+      - name: Notify only on meaningful state changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          PROBE: ${{ inputs.probe }}
+        run: |
+          args=()
+          if [ -n "$RUN_ID" ]; then args+=(--run-id "$RUN_ID"); fi
+          if [ "$PROBE" = 'true' ]; then args+=(--probe); fi
+          python3 scripts/localization/translation-alerts.py "${args[@]}"

@@ -1,0 +1,11 @@
+{
+  "version": "semantic-screen-1",
+  "embedding": {"repository": "intfloat/multilingual-e5-small", "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3", "license": "MIT"},
+  "nli": {"repository": "cross-encoder/nli-deberta-v3-small", "revision": "fa2804872c3b4bd748f38c0185cc85775361e735", "license": "Apache-2.0"},
+  "minimum_similarity": 0.80,
+  "minimum_entailment": 0.60,
+  "maximum_contradiction": 0.20,
+  "max_tokens": 512,
+  "claims_native_quality": false,
+  "allows_publication": false
+}
