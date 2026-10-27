@@ -65,7 +65,12 @@ def run_watch(args):
         run=dict(id=0,html_url='https://github.com/'+client.REPOSITORY+'/actions',status='completed',conclusion='success')
         url,_=notify(run,'probe','Prueba del aviso automático solicitada al configurar el sistema. No se ha detectado una avería.',None)
         print(json.dumps(dict(notification_test=url)));return
-    rows=[client.api('actions/runs/'+str(args.run_id))] if args.run_id else client.api('actions/workflows/translation-drafts.yml/runs?per_page=5')['workflow_runs']
+    rows=[]
+    if args.run_id:rows=[client.api('actions/runs/'+str(args.run_id))]
+    else:
+        for workflow in ['translation-drafts.yml','translation-autopilot.yml']:
+            try:rows.extend(client.api('actions/workflows/'+workflow+'/runs?per_page=5')['workflow_runs'])
+            except FileNotFoundError:pass
     now=dt.datetime.now(dt.timezone.utc)
     control=json.loads(Path(__file__).with_name('translation-control.json').read_text())
     for run in rows:

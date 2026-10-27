@@ -5,5 +5,8 @@
   "campaign_hours": 24,
   "maximum_parallel_models": 2,
   "maximum_cost_usd": 0,
-  "result_branch": "automation/translation-results"
+  "result_branch": "automation/translation-results",
+  "migration_runs": [
+    40523422271
+  ]
 }

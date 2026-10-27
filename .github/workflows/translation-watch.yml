@@ -1,7 +1,7 @@
 name: Translation alerts
 on:
   workflow_run:
-    workflows: [Background translation drafts]
+    workflows: [Background translation drafts, UsefulVerse translation autopilot]
     types: [completed]
   schedule:
     - cron: '13,43 * * * *'

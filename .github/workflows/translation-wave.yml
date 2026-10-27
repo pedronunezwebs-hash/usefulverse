@@ -1,0 +1,131 @@
+name: Translation bounded wave
+on:
+  workflow_call:
+    inputs:
+      source_sha:
+        type: string
+        required: true
+      source_ref:
+        type: string
+        required: true
+      minutes:
+        type: string
+        default: '240'
+      locales:
+        type: string
+        default: ''
+permissions:
+  contents: read
+  actions: read
+jobs:
+  drafts:
+    permissions:
+      contents: read
+      actions: read
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      DRAFT_LOCALES: ${{ inputs.locales }}
+      DRAFT_SHARD: ${{ matrix.shard }}
+      DRAFT_MINUTES: ${{ inputs.minutes }}
+      DRAFT_SOURCE_SHA: ${{ inputs.source_sha }}
+      DRAFT_SOURCE_REF: ${{ inputs.source_ref }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: source
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: automation/translation-results
+          path: results
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Recover immutable checkpoints and plan a bounded job
+        id: recover
+        working-directory: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/localization/autopilot-source.mjs "$RUNNER_TEMP/corpus.json"
+          echo "HF_HOME=$RUNNER_TEMP/usefulverse-autopilot-hf" >> "$GITHUB_ENV"
+          python scripts/localization/translation-autopilot.py recover \
+            --corpus "$RUNNER_TEMP/corpus.json" --memory "$GITHUB_WORKSPACE/results" \
+            --raw "$RUNNER_TEMP/raw.jsonl" --audits "$RUNNER_TEMP/audits.jsonl" \
+            --shard "$DRAFT_SHARD" --locales "$DRAFT_LOCALES" --minutes "$DRAFT_MINUTES"
+      - name: Install pinned CPU dependencies only when work remains
+        if: steps.recover.outputs.gen_minutes != '0' || steps.recover.outputs.audit_minutes != '0'
+        working-directory: source
+        run: |
+          python -m pip install --no-cache-dir --disable-pip-version-check torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir --disable-pip-version-check -r scripts/localization/pilot-requirements.txt
+      - name: Generate resumable drafts without publishing
+        if: steps.recover.outputs.gen_minutes != '0'
+        working-directory: source
+        env:
+          GENERATE_MINUTES: ${{ steps.recover.outputs.gen_minutes }}
+        run: |
+          GITHUB_SHA="$DRAFT_SOURCE_SHA" python -u scripts/localization/background-drafts.py run \
+            --corpus "$RUNNER_TEMP/corpus.json" --resume "$RUNNER_TEMP/raw.jsonl" \
+            --output "$RUNNER_TEMP/generated.jsonl" --model-dir "$RUNNER_TEMP/autopilot-model" \
+            --locales "$DRAFT_LOCALES" --minutes "$GENERATE_MINUTES" --shard "$DRAFT_SHARD" --shards 4
+      - name: Audit meaning and quarantine
+        if: steps.recover.outputs.audit_minutes != '0'
+        working-directory: source
+        env:
+          AUDIT_MINUTES: ${{ steps.recover.outputs.audit_minutes }}
+          CAMPAIGN_DEADLINE: ${{ steps.recover.outputs.deadline }}
+        run: |
+          python -u scripts/localization/translation-autopilot.py audit \
+            --raw "$RUNNER_TEMP/raw.jsonl" --audits "$RUNNER_TEMP/audits.jsonl" \
+            --generated "$RUNNER_TEMP/generated.jsonl" --model-dir "$RUNNER_TEMP/autopilot-model" \
+            --minutes "$AUDIT_MINUTES" --deadline "$CAMPAIGN_DEADLINE"
+      - name: Remove job-owned downloads
+        if: always()
+        run: rm -rf -- "$RUNNER_TEMP/usefulverse-autopilot-hf" "$RUNNER_TEMP/autopilot-model" "$RUNNER_TEMP/corpus.json" "$RUNNER_TEMP/raw.jsonl" "$RUNNER_TEMP/audits.jsonl" "$RUNNER_TEMP/generated.jsonl"
+  deliver:
+    needs: drafts
+    if: always() && github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write # Pedro: automatic data delivery, fixed branch and path allowlist.
+      actions: read
+    env:
+      DRAFT_SOURCE_SHA: ${{ inputs.source_sha }}
+      DRAFT_SOURCE_REF: ${{ inputs.source_ref }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: source
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: automation/translation-results
+          path: results
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Save verified packages and all raw checkpoints to the data branch
+        working-directory: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/localization/autopilot-source.mjs "$RUNNER_TEMP/corpus.json"
+          python scripts/localization/translation-autopilot.py deliver \
+            --corpus "$RUNNER_TEMP/corpus.json" --memory "$GITHUB_WORKSPACE/results" --commit
