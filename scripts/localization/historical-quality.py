@@ -47,6 +47,7 @@ def read():
         if sha((ROOT/'docs/quality/translation-pilot'/name).read_text())!=expected:raise ValueError('Earlier judgment file changed')
     for row in data['records']:
         if sha(row['source'])!=row['source_hash'] or sha(row['translation'])!=row['translation_hash']:raise ValueError('Reference text changed')
+    if data!=compile_references():raise ValueError('Compiled references changed the exact earlier judgments or records')
     return data
 
 

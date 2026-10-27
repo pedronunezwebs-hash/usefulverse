@@ -38,6 +38,13 @@ class BoundedQualityTest(unittest.TestCase):
             self.assertTrue(quality.history.rejects(dict(row,key=row['key'].replace('.', '.copy.',1))))
             changed=dict(row,source_hash=quality.drafts.digest('Another source'))
             self.assertFalse(quality.history.rejects(changed))
+    def test_relabeling_an_old_failure_without_changing_its_review_hash_is_rejected(self):
+        history=load('historical-quality');data=copy.deepcopy(quality.history.data)
+        next(r for r in data['records'] if not r['accepted'])['accepted']=True
+        with tempfile.TemporaryDirectory() as temp:
+            path=Path(temp)/'forged.json';path.write_text(json.dumps(data))
+            with patch.object(history,'PATH',path):
+                with self.assertRaises(ValueError):history.read()
     def test_known_bad_translation_cannot_be_selected_even_when_models_falsely_pass(self):
         _,_,_,fixture=self.fixture();scores=fixture['proposals'][0]['audit']['scores']
         ref=next(r for r in quality.history.data['records'] if not r['accepted'] and all(quality.drafts.checks(r['source'],r['translation']).values()))
