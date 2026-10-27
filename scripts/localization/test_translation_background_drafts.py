@@ -1,7 +1,9 @@
 import argparse
 import base64
 import copy
+import contextlib
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
@@ -102,7 +104,7 @@ class BackgroundDraftsTest(unittest.TestCase):
             env = {'GITHUB_ACTIONS': 'true', 'RUNNER_OS': 'Linux',
                    'GITHUB_REPOSITORY': 'pedronunezwebs-hash/usefulverse', 'GITHUB_STEP_SUMMARY': ''}
             detector = types.SimpleNamespace(classify=lambda text: ('es', 0))
-            with patch.dict(os.environ, env), patch.object(drafts, 'Model', FakeModel), patch.dict('sys.modules', {'langid': detector}):
+            with patch.dict(os.environ, env), patch.object(drafts, 'Model', FakeModel), patch.dict('sys.modules', {'langid': detector}), contextlib.redirect_stdout(io.StringIO()):
                 drafts.generate(args)
                 first = output.read_bytes()
                 args.resume = [output]
