@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T17:56:31.117195+00:00 · calidad semántica automática, entrega y avisos GitHub sin gasto
+**Turno actual (candado):** LIBRE
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -17,7 +17,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 **Verificado:** [smoke integral 40563472659](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40563472659) correcto con generación, auditoría y push bot. [Modelos reales 40562898178](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40562898178): diez referencias/diez decisiones esperadas; consumo GitHub reportado `UBUNTU.total_ms=0`. Aviso [#137](https://github.com/pedronunezwebs-hash/usefulverse/issues/137) asignado y visible en la bandeja de Pedro por API; [#138](https://github.com/pedronunezwebs-hash/usefulverse/issues/138) acredita cancelación de la tanda antigua al migrar. Vigilancia cada 30 min y al completar; correo/push por probar en P-009. No garantizar SLA ni avisos si también falla/desactiva GitHub el vigilante.
 
-**CI actual:** [40568857285](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40568857285), fuente `807a149`, en curso en `validate-staged.yml`, solo lectura y sin deploy. El run 40564076126 terminó con 427 pruebas Python, dos fallos de integridad del workflow histórico y dos omisiones; se restauraron sus bytes originales, sin tocar fixtures ni umbrales, y la nueva validación comprueba esas dos regresiones antes de la suite completa/builds/preview. 19 pruebas Python enfocadas y tres Node correctas sobre el traductor. Cierre en [informe del lote](lotes/2026-10-28-traductor-autonomo.md).
+**CI final:** [CI 40568857285](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40568857285) correcta, fuente `807a149`: 3.048 Node y 428 Python (426 correctas, dos omisiones opcionales), cero fallos/errores; Python 1869,847 s/cuatro procesos. Builds principal/hub, gate de 20 locales existentes y 10.800 páginas de preview noindex correctos; cero publicaciones/artifacts. Ajuste posterior del controlador `1a796a2`: [40571740997](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40571740997), 20 contratos y diez referencias reales correctas, consumo reportado cero ms facturables. No acredita 37 idiomas ni dispositivos. El workflow histórico se restauró sin tocar sus pruebas; la validación ampliada vive en `validate-staged.yml`.
 
 **Siguiente paso exacto:** consultar solo resumen/estado e incidencias del traductor; ante un fallo, corregir el sistema con regresión permanente. Dejar que GitHub siga trabajando y mejorar las fuentes inglesas en la rama del Paso A, sin otra microversión manual por idioma. Continuar los pendientes de Paso A (capacidad de publicación, cobertura real y conexión del adaptador de paquetes al build, más puertas de calidad). `automatic-packages.mjs` valida hash/contexto/política y mantiene el inglés ante faltantes; aún no está conectado a producción. No esperar dentro del chat a que acaben las 929.922 unidades ni declararlas terminadas. No aprobar idiomas/herramientas por un contador sin avisos.
 
@@ -162,3 +162,5 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 **Retirada actual:** verificada antes de LIBRE: clon propio eliminado, 42.27 GiB libres. Fuente, documentación y los 16 checkpoints iniciales recuperables en GitHub; documentos sincronizados. La tanda remota continúa sin el Mac. [Comprobante](translation-drafts/closure.json).
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
+
+**Cierre 28-oct verificado:** respaldo online de código/docs/resultados; clon y temporales propios eliminados sin Papelera antes de LIBRE; 42,1 GiB libres. Cuatro jobs de traducción siguen activos en GitHub. Cron registrado, aún sin disparo `schedule` observado; los avisos por fin/cancelación y la mención real sí están probados. [Recibo](translation-drafts/closure-20261028.json).
