@@ -1,0 +1,44 @@
+{
+  "client_date": "2026-10-28",
+  "closed_at_utc": "2026-10-27T17:32:31.644894+00:00",
+  "root_label": ".usefulverse-background-20261027",
+  "root_removed": true,
+  "disk_free_gib": 42.27,
+  "heads_before_release": {
+    "main": "cd58f74004c181f197bc43828b7388093f9dc1ce",
+    "feat/new-tools-batch-1": "cfc013a2763527497cabb08ba1f0a2f788eb4c91"
+  },
+  "ci_run": 40523434352,
+  "validated_source": "65626e5376c5d623fb48ed0c157c91316f836307",
+  "background_run": 40523422271,
+  "background_jobs": [
+    {
+      "id": 122256378342,
+      "name": "drafts (0)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 122256378731,
+      "name": "drafts (2)",
+      "status": "queued",
+      "conclusion": null
+    },
+    {
+      "id": 122256378953,
+      "name": "drafts (1)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "id": 122256379090,
+      "name": "drafts (3)",
+      "status": "queued",
+      "conclusion": null
+    }
+  ],
+  "background_intentionally_left_running": true,
+  "permanent_checkpoint_records": 16,
+  "new_pedro_test_ids": [],
+  "deployed": false
+}

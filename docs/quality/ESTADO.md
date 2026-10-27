@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T14:10:01.904790+00:00 · automatizar borradores en Actions por petición de Pedro; solo scripts/workflow/docs
+**Turno actual (candado):** LIBRE · Codex · 2026-10-27T17:32:31.644894+00:00 · automatización con CI verde, clon retirado; la tanda remota continúa sola
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -161,6 +161,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** en curso; el candado se libera después de comprobar push y eliminar el clon propio. La tanda remota continúa sin depender del Mac. Evidencias actuales: translation-drafts/verification.json y production-final.json; historial v33 conservado.
+**Retirada actual:** verificada antes de LIBRE: clon propio eliminado, 42.27 GiB libres. Fuente, documentación y los 16 checkpoints iniciales recuperables en GitHub; documentos sincronizados. La tanda remota continúa sin el Mac. [Comprobante](translation-drafts/closure.json).
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
