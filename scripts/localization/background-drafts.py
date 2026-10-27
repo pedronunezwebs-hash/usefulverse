@@ -220,6 +220,14 @@ def generate(args):
     work = work_items(corpus, locales, args.shard, args.shards)
     completed = load_records(args.resume)
     remaining = [unit for unit in work if unit['record_id'] not in completed]
+    # Carry valid prior records into this job's logs. Later jobs can resume even
+    # before an agent collects the final checkpoint into Git.
+    recovered_bytes = 0
+    for unit in work:
+        if unit['record_id'] in completed:
+            encoded = PREFIX + base64.b64encode(canonical(completed[unit['record_id']]).encode()).decode()
+            recovered_bytes += len(encoded) + 1
+            print(encoded, flush=True)
     print('UVDRAFT_PLAN ' + canonical(dict(shard=args.shard, unique_targets=len(work),
           pending=len(remaining), reused=len(work)-len(remaining), tools=corpus['tools'],
           minutes=args.minutes, approved=0)), flush=True)
@@ -240,12 +248,12 @@ def generate(args):
     counts = Counter()
     sampled = Counter()
     warning_counts = Counter()
-    emitted_bytes = 0
+    emitted_bytes = recovered_bytes
     started = time.monotonic()
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open('a') as handle:
         # Round robin across destinations prevents one long locale starving the others.
-        while any(queues.values()) and time.monotonic() < deadline and emitted_bytes < 32 * 1024**2:
+        while any(queues.values()) and time.monotonic() < deadline and emitted_bytes < 256 * 1024**2:
             for locale, pending in queues.items():
                 if not pending or time.monotonic() >= deadline:
                     continue

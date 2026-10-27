@@ -8,7 +8,7 @@ Decisión de Pedro, 27-oct-2026: que GitHub genere y compruebe traducciones comp
 gh workflow run translation-drafts.yml --repo pedronunezwebs-hash/usefulverse --ref feat/new-tools-batch-1 -f minutes=240
 ```
 
-Cuatro tandas por idioma (nueve destinos cada una), máximo dos máquinas estándar simultáneas. Presupuesto de 4 h por job, timeout de 5 h, máximo 20 horas de runner en una ejecución; unas 8–10 h de ejecución sin contar colas si se agota todo el presupuesto. No es una estimación de finalización del corpus. Se para antes si acaba o llega a 32 MiB de registros por job. No hay cron, bucle infinito ni siguiente tanda automática. El Mac puede apagarse y el chat no tiene que seguir abierto. Para probar una selección: `-f locales=es,ur,nb-NO`.
+Dos vueltas automáticas de cuatro tandas por idioma (nueve destinos cada una), máximo dos máquinas estándar simultáneas. La segunda vuelta espera a la primera y recupera su avance sin intervención del agente. Presupuesto de 4 h por job, timeout de 5 h, máximo 40 horas de runner en una ejecución; unas 16–20 h de ejecución sin contar colas si se agota todo el presupuesto. No es una estimación de finalización del corpus. Se para antes si acaba o llega a 256 MiB de registros por job. No hay cron ni bucle infinito; cada lanzamiento contiene solo esas dos vueltas. El Mac puede apagarse y el chat no tiene que seguir abierto. Para probar una selección: `-f locales=es,ur,nb-NO`.
 
 ## Qué hace solo GitHub
 
@@ -29,12 +29,16 @@ gh api repos/pedronunezwebs-hash/usefulverse/actions/jobs/JOB_ID/logs > job.log
 python3 scripts/localization/background-drafts.py collect --output docs/quality/translation-drafts/checkpoints/batch-N.jsonl job.log
 ```
 
-El colector valida identidades y controles, rechaza conflictos, conserva lo que ya contiene la salida y escribe de forma atómica. Recoger todos los jobs, hacer commit/push de los checkpoints y borrar logs locales. La próxima ejecución lee los checkpoints versionados y omite esos destinos exactos, incluidos los que están señalados para revisión; no repite automáticamente una traducción defectuosa para gastar horas sin resolverla. Consultar resúmenes y avisos antes de lanzar más trabajo.
+El colector valida identidades y controles, rechaza conflictos, conserva lo que ya contiene la salida y escribe de forma atómica. Recoger todos los jobs, hacer commit/push de los checkpoints y borrar logs locales. La segunda vuelta y las ejecuciones siguientes recuperan automáticamente los logs de jobs completados (incluido el run actual) mediante el token automático de GitHub, solo `actions:read`. Los registros se vuelven a emitir como checkpoint acumulado; se validan sin releerlos en el chat. También se leen los checkpoints versionados y omite esos destinos exactos, incluidos los que están señalados para revisión; no repite automáticamente una traducción defectuosa para gastar horas sin resolverla. Consultar resúmenes y avisos antes de lanzar más trabajo.
 
-Los logs tienen retención finita de GitHub: recoger/guardar checkpoints al cerrar la tanda, nunca tratarlos como respaldo permanente ni borrarlos antes del commit. La primera tanda está desatendida durante su ejecución; la recolección/importación final aún necesita ejecutar el colector y hacer commit. No hay permisos de escritura automática al repositorio: se conserva `contents:read`, sin ampliar credenciales.
+Los logs tienen retención finita de GitHub: recoger/guardar checkpoints al cerrar la tanda, nunca tratarlos como respaldo permanente ni borrarlos antes del commit. La generación, sus dos vueltas, los controles y la reanudación están desatendidos. El respaldo permanente/importación final aún necesita ejecutar el colector y hacer commit, una operación mecánica; no una revisión frase por frase. No hay permisos de escritura automática al repositorio: se conserva `contents:read`; solo se añade lectura de logs propios con `actions:read`, sin secretos personalizados ni permisos de escritura.
 
 ## Coste y seguridad
 
 Repo público verificado, solo `ubuntu-latest` estándar. Minutos de cómputo gratuitos conforme a GitHub; uso acotado para producir los archivos del propio proyecto, sin mantener un servicio. No artifacts ni cachés persistentes, Packages, LFS, Codespaces, runners grandes/GPU, secretos o Cloudflare. Logs/resúmenes no consumen cuota de artifacts. Los modelos/dependencias se descargan solo en la máquina desechable de Actions y se limpian al terminar. No se activa ni publica ninguna traducción con este workflow; URLs indexables sin cambio.
 
 Fuentes comprobadas el 27-oct: [facturación](https://docs.github.com/en/billing/concepts/product-billing/github-actions), [límites](https://docs.github.com/en/actions/reference/limits), [uso permitido](https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions).
+
+## Primera verificación real
+
+[Smoke 40520460992](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40520460992): 16 destinos únicos españoles generados, 16 retrotraducciones; 14 sin avisos automáticos y dos con aviso del detector de idioma. Los 16 conservan datos protegidos y no están truncados. Se recuperaron por código y quedaron en checkpoints; cero lectura/juicio lingüístico del agente. No son 16 idiomas ni 16 herramientas terminadas. La reanudación automática también recuperó los 16 desde la API real. Doce pruebas Python nuevas y dos de extracción pasan en local; la CI completa está enlazada en ESTADO.

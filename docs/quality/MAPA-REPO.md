@@ -29,10 +29,10 @@ Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo
 
 `translation-drafts.yml` es un workflow separado, solo manual y solo repo público. Se registra también en main para poder lanzarlo, pero su código/fuentes actuales se ejecutan desde `feat/new-tools-batch-1`. No cambia el workflow de deploy ni dispara builds por cada idioma.
 
-- Cuatro jobs `ubuntu-latest`, dos simultáneos; cada uno tiene 240 min de presupuesto y 300 min de timeout.
+- Dos vueltas de cuatro jobs `ubuntu-latest`, dos simultáneos; cada uno tiene 240 min de presupuesto y 300 min de timeout.
 - `background-source.mjs` extrae las 300 fuentes actuales: 15.815 unidades / 9.505 pares de texto-contexto; 36 destinos.
 - `background-drafts.py` deduplica por texto, contexto e idioma; fija MADLAD; comprueba datos protegidos, vacío, truncamiento, inglés idéntico, idioma/escritura y una muestra de negaciones por retrotraducción.
-- No escribe repos ni usa secretos, artefactos, cachés remotas, Cloudflare o API de traducción. Guarda registros completos en logs recuperables y conserva `approved:false`.
+- No escribe repos ni usa secretos, artefactos, cachés remotas, Cloudflare o API de traducción. Recupera automáticamente checkpoints anteriores con permiso `actions:read`, guarda registros acumulados en logs recuperables y conserva `approved:false`.
 - Recolección mecánica, checkpoints en Git y reanudación: [README](translation-drafts/README.md). Generar borradores no aprueba su publicación.
 
 ## Carpetas clave

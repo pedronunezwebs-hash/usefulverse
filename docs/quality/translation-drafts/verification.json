@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "local_checks": {
+    "python": {
+      "tests": 12,
+      "failures": 0
+    },
+    "node_extraction": {
+      "tests": 2,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "scripts/localization/background-drafts.py": "513b1ab0432515c3d91451f60bcff59a6a351f05ffd5f2ce9722b331dbf73292",
+    "scripts/localization/background-resume.py": "15c84b1aedf311ac5e4611c5f3f8428491aeb015f480179139b8cc098fc7ebe4",
+    "scripts/localization/background-source.mjs": "db360e5505454ac3840ebaa15590f43e9a58a1ef36c325855ca7470007bed2e3",
+    ".github/workflows/translation-drafts.yml": "2d97b8f995df6894f654f4ddaf88fc7bb4caa4d62ff3103471abb93b5364697d"
+  },
+  "legacy_measured_source_modified": false,
+  "src_or_public_modified": false,
+  "publication": {
+    "deployments": 0,
+    "activated": 0,
+    "approved_locales": 0
+  },
+  "actions": {
+    "repository_public": true,
+    "runner": "ubuntu-latest",
+    "max_parallel": 2,
+    "jobs": 8,
+    "timeout_minutes_each": 300,
+    "persistent_cache_bytes_before": 0,
+    "artifact_bytes_before": 0,
+    "contents_permission": "read",
+    "secrets": false,
+    "actions_permission": "read"
+  },
+  "smoke_run": 40520460992,
+  "validation_run": 40520470671,
+  "cancelled_runs": [
+    40520267020,
+    40520263451
+  ],
+  "smoke_status": "success",
+  "validation_status": "pending_old_source",
+  "automatic_resume_recovered_real_records": 16
+}

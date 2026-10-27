@@ -1,0 +1,32 @@
+{
+  "run": 40520460992,
+  "job": 122246050179,
+  "records": 16,
+  "summary": {
+    "approved": 0,
+    "counts": {
+      "es:machine-draft": 14,
+      "es:needs-review": 2
+    },
+    "paused": true,
+    "recover": "Download completed job logs and run background-drafts.py collect; commit checkpoints before deleting logs.",
+    "remaining": 9489,
+    "samples": {
+      "es": 16
+    },
+    "warnings": {
+      "es:language_detection": 2
+    }
+  },
+  "last_progress": {
+    "approved": 0,
+    "counts": {
+      "es:machine-draft": 14,
+      "es:needs-review": 2
+    },
+    "remaining": 9489,
+    "seconds": 72.0
+  },
+  "source": "8ac6c403790526cb4c8b99f8a31a222d36d9e97c",
+  "sample_approved_by_agent": false
+}

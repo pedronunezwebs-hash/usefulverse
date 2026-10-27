@@ -86,6 +86,29 @@ class BackgroundDraftsTest(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, 'never on the Mac'):
                 drafts.generate(argparse.Namespace())
 
+    def test_conversion_time_does_not_swallow_a_short_inference_budget(self):
+        clock = [0.0]
+        class SlowConversionModel:
+            def __init__(self, directory):
+                clock[0] += 120.0
+            def translate(self, texts, locale):
+                clock[0] += 1.0
+                return [('Texto ' + text, False) for text in texts]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            corpus = root/'corpus.json'
+            corpus.write_text(json.dumps({'tools': 1, 'units': [self.unit()]}))
+            args = argparse.Namespace(corpus=corpus, output=root/'out.jsonl', model_dir=root/'model',
+                                      locales='es', shard=0, shards=1, minutes=1, resume=[])
+            env = {'GITHUB_ACTIONS': 'true', 'RUNNER_OS': 'Linux',
+                   'GITHUB_REPOSITORY': 'pedronunezwebs-hash/usefulverse', 'GITHUB_STEP_SUMMARY': ''}
+            detector = types.SimpleNamespace(classify=lambda text: ('es', 0))
+            with patch.dict(os.environ, env), patch.object(drafts, 'Model', SlowConversionModel), \
+                 patch.object(drafts.time, 'monotonic', lambda: clock[0]), \
+                 patch.dict('sys.modules', {'langid': detector}), contextlib.redirect_stdout(io.StringIO()):
+                drafts.generate(args)
+            self.assertEqual(len(drafts.load_records([args.output])), 1)
+
     def test_end_to_end_round_robin_flush_resume_and_no_approval(self):
         class FakeModel:
             calls = []
@@ -152,8 +175,35 @@ class BackgroundDraftsTest(unittest.TestCase):
         self.assertIn('max-parallel: 2', text)
         self.assertIn('timeout-minutes: 300', text)
         self.assertIn('persist-credentials: false', text)
+        self.assertIn('needs: drafts', text)
         for forbidden in ['contents: write', 'secrets.', 'upload-artifact', 'actions/cache', 'wrangler', 'pull_request_target', 'schedule:']:
             self.assertNotIn(forbidden, text)
+
+    def test_automatic_resume_filters_stale_sources_and_keeps_exact_prior_records(self):
+        spec = importlib.util.spec_from_file_location('resume', HERE/'background-resume.py')
+        resume = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(resume)
+        row = self.record()
+        paths = []
+        def github(path):
+            paths.append(path)
+            if '/runs?' in path:
+                return json.dumps({'workflow_runs': [{'id': 1}]}).encode()
+            if path.endswith('/jobs?per_page=100'):
+                # Prior selected locales may belong to a different numbered shard.
+                return json.dumps({'jobs': [{'id': 7, 'status': 'completed', 'conclusion': 'success', 'name': 'drafts (3)',
+                                   'steps': [{'name': 'Generate resumable drafts without publishing', 'status': 'completed', 'conclusion': 'success'}]},
+                                   {'id': 8, 'status': 'completed', 'conclusion': 'cancelled', 'name': 'drafts (0)', 'steps': []}]}).encode()
+            if 'actions/jobs/8/' in path:
+                self.fail('A never-started cancelled job has no logs to download')
+            return (drafts.PREFIX + base64.b64encode(drafts.canonical(row).encode()).decode()).encode()
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()), patch.dict(os.environ, {'GITHUB_RUN_ID': ''}):
+            output = Path(directory)/'recovered.jsonl'
+            recovered = resume.recover({'units': [self.unit()]}, ['es'], 0, 4, 'feature', output, request=github)
+            self.assertEqual(recovered, {row['record_id']: row})
+            changed = self.unit(source='Different English source.')
+            self.assertEqual(resume.recover({'units': [changed]}, ['es'], 0, 4, 'feature', output, request=github), {})
+        self.assertTrue(any('actions/jobs/7/logs' in path for path in paths))
 
 
 if __name__ == '__main__':
