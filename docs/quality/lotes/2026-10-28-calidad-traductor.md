@@ -19,3 +19,5 @@ La campaña 40565692987 continúa sin cancelarse, fijada a su fuente anterior; l
 Producción: cinco GET y dos XML, 25.625 URLs; las tres rutas falsas del hub siguen respondiendo 200. Sin despliegues/activaciones/envíos. Pedro confirma por captura la recepción de correos de GitHub: P-009 OK; ocho pruebas físicas pendientes, cero FALLA y push del teléfono no comprobado. Los mensajes `stopped`/`pending` de la captura pertenecen a la migración y a la prueba previa; la tanda actual sigue activa.
 
 Fuentes: [decodificación CTranslate2](https://opennmt.net/CTranslate2/decoding.html), [Actions público gratuito](https://docs.github.com/en/actions/concepts/billing-and-usage). Evidencia: [benchmark](../translation-drafts/quality-v1/benchmark.json), [CI](../translation-drafts/quality-v1/ci.json), [GET/XML](../translation-drafts/quality-v1/production.json). Siguiente: dejar que GitHub continúe y retomar los pendientes de Paso A, sin avanzar fase ni releer todas las traducciones.
+
+Cierre: respaldo remoto y eliminación directa del clon/datos/logs/pycache propios comprobados, 40.7 GiB libres; candado LIBRE. [Retirada y estado](../translation-drafts/quality-v1/closure.json).
