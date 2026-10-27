@@ -629,4 +629,15 @@ Retirada efectiva v28:2026-10-26T05:54:00.396215+00:00; raíz propia .usefulvers
 
 ## 2026-10-27 · Traducción en segundo plano (Codex)
 
-Pedro cambia el método: traducciones comprensibles, generación/controles en GitHub y trabajo del agente centrado en la web. Se añade automatización separada sin cambiar deploy, memorias ni juicios del piloto. Fuentes de las 300, 36 destinos, cuatro jobs/dos simultáneos y checkpoints en logs. Nueve pruebas locales nuevas y dos de extracción pasan. Run real y cierre pendientes; [operación](translation-drafts/README.md). No se declara aprobado ningún idioma ni se avanza de fase.
+Pedro cambia el método: traducciones comprensibles, generación/controles en GitHub y trabajo del agente centrado en la web. Se añade automatización separada sin cambiar deploy, memorias ni juicios del piloto. Fuentes de las 300, 36 destinos, cuatro jobs/dos simultáneos y checkpoints en logs. Trece pruebas locales nuevas y dos de extracción pasan. Smoke real: 16 borradores españoles/16 retrotraducciones; 14 sin avisos y dos del detector de idioma. Recuperación automática comprobada con la API real; no revisión lingüística del agente. Se añadió una segunda vuelta con checkpoints automáticos, sin escritura de repos. Run largo y cierre pendientes; [operación](translation-drafts/README.md). No se declara aprobado ningún idioma ni se avanza de fase.
+
+
+### Cierre 28-oct · automatización verificada
+
+Fuente `65626e5376c5d623fb48ed0c157c91316f836307`; [CI 40523434352](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352) correcta: 3.045 Node y 409 Python, cero fallos/errores y dos omisiones opcionales; builds principal/hub, gate y preview noindex correctos. El primer run largo 40522692881 falló antes de descargar modelos por la protección ANSI de gh; test permanente rojo antes del arreglo, trece pruebas nuevas pasan. Se cancelaron solo validaciones propias sobre fuentes anteriores para dar paso a la fuente final.
+
+[Tanda 40523422271](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271): dos jobs ejecutan el modelo, dos esperan; la segunda vuelta continúa automáticamente. Sin agentes traduciendo/releyendo frases. Smoke anterior: 16 borradores españoles/16 retrotraducciones, 14 sin avisos y dos del detector; recuperación real de los 16 comprobada y checkpoint versionado. Los contadores finales de la tanda larga todavía no están disponibles.
+
+Producción revisada con cinco GET y dos XML: 25.625 URLs, tres soft404 siguen en 200. Sin deploy, activación ni envíos. Src/public y workflow de deploy intactos. P-001–P-008 siguen pendientes, cero FALLA y sin IDs nuevos. Permanecen los pilotos y las 905 memorias; su inventario de 35 checkpoints/17.441 registros no cambia. Las herramientas y los idiomas no se marcan terminados. Las 700 existentes aún necesitan adaptadores de extracción y la salida no se importa automáticamente a paquetes de producción.
+
+Se sincronizan instrucciones/resultados con main usando [skip ci], sin integrar el código de las 300 ni publicar. Retirada efectiva y liberación del candado se documentan después de eliminar el clon.

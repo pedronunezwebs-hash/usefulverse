@@ -1,0 +1,16 @@
+{
+  "run": 40522692881,
+  "model_downloads_started": false,
+  "failure_stage": "Recover prior completed checkpoints automatically",
+  "cause": "GitHub runner CLI rejects terminal escapes in Actions log bodies unless its documented allow-escape-sequences option is supplied.",
+  "red_regression": {
+    "tests": 13,
+    "failures": 1
+  },
+  "green_regression": {
+    "tests": 13,
+    "failures": 0
+  },
+  "raw_response_rendered": false,
+  "permission_changes_for_fix": false
+}

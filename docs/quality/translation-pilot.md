@@ -1,4 +1,14 @@
-## V31 ·27-oct-2026 · estado actual
+# Traducción · operación actual (28-oct-2026)
+
+Por petición de Pedro, la generación y sus controles se ejecutan en segundo plano en GitHub; no seguir creando perfiles ni revisar cada frase en el chat. Leer solo [ESTADO](ESTADO.md) y [operación automática](translation-drafts/README.md).
+
+[CI completa correcta](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352): 3.045 Node y 409 Python, cero fallos/errores y dos omisiones opcionales. [Tanda larga activa](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271), dos máquinas estándar como máximo, con checkpoints y segunda vuelta automáticos. No publica ni aprueba idiomas por sí sola.
+
+## Historial del piloto · no ejecutar los siguientes pasos fechados de abajo
+
+Los perfiles, cifras, juicios y propuestas antiguas se conservan como evidencia. El próximo v34 urdu quedó sustituido por la automatización, según la decisión del dueño del 27-oct.
+
+## V31 ·27-oct-2026 · antecedente
 
 ## V32/v33 ruso · 27-oct-2026
 

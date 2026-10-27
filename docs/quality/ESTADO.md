@@ -2,7 +2,7 @@
 
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
-**Última actualización:** 2026-10-27 · **por:** Codex
+**Última actualización:** 2026-10-28 · **por:** Codex
 **Turno actual (candado):** EN CURSO · Codex · 2026-10-27T14:10:01.904790+00:00 · automatizar borradores en Actions por petición de Pedro; solo scripts/workflow/docs
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
@@ -13,15 +13,17 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 Ruso v33: referencias 360/360; ampliado conocido 1566/1566 y 792/792 en las 88 claves fijas. Cero defectos de ida o datos sin prueba en modelo. Cinco reparaciones en este lote (cuatro v32 y una v33); perfil actual: 213 destinos conservados y uno corregido; 214 idas de memoria y cero idas modelo nuevas. Retrotraducciones actuales; 333 registros S/F/B actuales: 279 exactos ya leídos en esta misma sesión y 54 nuevos leídos directamente, con procedencia comprobada; no se declara una revisión independiente. Legacy mantiene sus fallos y no pasa. 905 memorias; 9271 evaluaciones con repeticiones / 156 grupos. Cero idiomas aprobados para publicar. [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md).
 
-**Siguiente paso exacto (Pedro, 27-oct): automatizar y dejar de revisar idioma por idioma en el chat.** Montar y verificar `Background translation drafts`: fuentes reales de las 300, 36 destinos, MADLAD CPU fijado, memoria exacta, controles y hasta 20 retrotraducciones por destino. Tandas limitadas de cuatro jobs (máximo dos simultáneos), sin APIs de pago, secretos, artefactos, cachés persistentes ni publicación. Resultados completos recuperables en logs; recolección mecánica con `background-drafts.py collect`, commit de checkpoints y reanudación solo de pendientes. El siguiente agente consulta el resumen y corrige fallos del sistema; no traduce ni relee normalmente cada frase. [Operación](translation-drafts/README.md).
+**Siguiente paso exacto (Pedro, 27-oct): automatizar y dejar de revisar idioma por idioma en el chat.** `Background translation drafts` ya está implementado y verificado: fuentes reales de las 300, 36 destinos, MADLAD CPU fijado, memoria exacta, controles y hasta 20 retrotraducciones por destino. Dos vueltas limitadas de cuatro jobs (máximo dos simultáneos), con recuperación automática de checkpoints entre vueltas y ejecuciones, sin APIs de pago, secretos personalizados, artefactos, cachés persistentes ni publicación. Resultados completos recuperables en logs; recolección mecánica con `background-drafts.py collect`, commit de checkpoints y reanudación solo de pendientes. El siguiente agente consulta el resumen y corrige fallos del sistema; no traduce ni relee normalmente cada frase. [Operación](translation-drafts/README.md).
 
 **Cambio de método autorizado por Pedro:** priorizar traducciones comprensibles y experiencia de usuario; generación y controles en segundo plano mientras el agente trabaja en la web. El antiguo siguiente paso v34 urdu (32 candidatas/ocho reparaciones) se conserva como antecedente, sin ejecutar otra microversión manual. Las 905 memorias y todos los perfiles/juicios históricos permanecen intactos. No convertir la generación automática en aprobación de idiomas ni de herramientas. Paso A, puertas de publicación y orden posterior siguen pendientes; se puede preparar trabajo de la web mientras corre la tanda, sin declararlo verificado ni saltar la integración pendiente.
 
-**Lote actual:** implementación de la automatización en curso; se anotarán run, resultados reales y verificación antes de liberar el candado.
+**Lote actual:** smoke real 40520460992 correcto: 16 borradores españoles, 16 retrotraducciones, 14 sin avisos automáticos y dos con aviso del detector; todos conservan datos protegidos. Recolección y reanudación mecánicas verificadas con la API real, sin lectura lingüística del agente. Trece pruebas Python nuevas y dos de extracción pasan localmente. **Tanda larga [40523422271](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271): dos jobs en generación, otros dos en cola; segunda vuelta automática pendiente.** La reanudación corregida ya pasó en los jobs activos. [CI 40523434352](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352) correcta sobre `65626e5`: 3.045 Node + 409 Python (407 correctas, dos omisiones opcionales), cero fallos/errores; builds principal/hub, gate y preview noindex correctos, cero publicaciones. No se conoce aún el recuento final de la tanda larga ni hay idiomas nuevos aprobados.
+
+**Siguiente paso al retomar:** consultar solo el resumen/estado de la tanda 40523422271; si terminó, recoger mecánicamente sus checkpoints y hacer commit/push, sin releer frases ni repetir perfiles manuales. Mientras genera, trabajar en la web: continuar los pendientes del Paso A y preparar fase 0 sin desplegar ni declarar superadas las fases pendientes. Al mejorar cada fuente inglesa existente, conectar su formato al extractor; actualmente cubre las 300, no todas las fuentes de las 700 existentes ni la exportación a producción.
 
 **Idiomas:** pasan muestras conocidas es, nb-NO, ko, id, zh-CN, bn y ru. Siete revisados sin pasar: de, fr, pt-BR, ja, hi, ar, ur. Veintidós sin revisión detallada: tr, vi, it, zh-TW, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, fil, ta, fa, am, gu. Inglés es fuente. Son muestras de tres herramientas; 0/36 destinos aprobados para publicar. [Listado](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v33.json).
 
-**Verificación:** <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
+**Verificación histórica v33:** <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
 
 **Producción:** 5 GET y 2 XML: 25.625 URLs; tres rutas inexistentes siguen dando 200 (soft404 pendientes). Sin despliegue, activación ni envío a buscadores. P-001–P-008: ocho pendientes, cero FALLA, sin IDs nuevos. No certificados: revisión nativa/ciega/textos inéditos, motor genérico, UI/dispositivos, responsive/RTL/textos largos/peso, a11y/rendimiento ni puerta de 18 puntos/siete capas.
 
@@ -50,7 +52,7 @@ Ruso v33: referencias 360/360; ampliado conocido 1566/1566 y 792/792 en las 88 c
 - [x] Repo público, historial revisado sin secretos, bloqueo de push y acciones fijadas; no debilitar seguridad.
 - [x] Respaldo de las 300 recuperable online; fuente con noindex en PR #136, cero en main/activadas.
 - [x] Pilotos históricos y regresiones preservados; informes y commits en LOG.md y lotes/.
-- [x] V32/v33 ruso: cuatro reparaciones; muestra conocida pasa. Publicación sigue sin aprobar.
+- [x] V32/v33 ruso: cinco reparaciones; muestra conocida pasa. Publicación sigue sin aprobar.
 - [x] CI final y retirada efectiva verificadas antes de LIBRE.
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
@@ -128,7 +130,8 @@ Ruso v33: referencias 360/360; ampliado conocido 1566/1566 y 792/792 en las 88 c
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
-| 27-oct | v32/v33 ruso | Muestra conocida pasa; cuatro reparaciones; relevo compacto | [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md) |
+| 28-oct | Traducción automática | CI verde; tanda larga en dos máquinas, recuperación automática | [Operación](translation-drafts/README.md) |
+| 27-oct | v32/v33 ruso | Muestra conocida pasa; cinco reparaciones; relevo compacto | [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md) |
 | 27-oct | v31 ruso | Cuatro defectos pendientes, ya preservados como negativos | [Informe](lotes/2026-10-27-piloto-v31-ru.md) |
 | 26-oct | v30 ruso / v29 bengalí | Diagnóstico ruso / muestra bengalí pasa | [Historial](LOG.md) |
 
@@ -158,6 +161,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** verificada: carpeta propia eliminada antes de LIBRE; originales recuperables en GitHub y seis documentos sincronizados. Evidencias históricas: translation-pilot/remote-v*-verification.json y cli-cache-v*-cleanup.json, en la rama del PR #136.
+**Retirada actual:** en curso; el candado se libera después de comprobar push y eliminar el clon propio. La tanda remota continúa sin depender del Mac. Evidencias actuales: translation-drafts/verification.json y production-final.json; historial v33 conservado.
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.

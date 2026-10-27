@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "local_checks": {
+    "python": {
+      "tests": 13,
+      "failures": 0
+    },
+    "node_extraction": {
+      "tests": 2,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "scripts/localization/background-drafts.py": "513b1ab0432515c3d91451f60bcff59a6a351f05ffd5f2ce9722b331dbf73292",
+    "scripts/localization/background-resume.py": "873f790ebfe6ab3df594f7797f2693e7a145f257ecd19fb0c533256cd20fdd0b",
+    "scripts/localization/background-source.mjs": "db360e5505454ac3840ebaa15590f43e9a58a1ef36c325855ca7470007bed2e3",
+    ".github/workflows/translation-drafts.yml": "2d97b8f995df6894f654f4ddaf88fc7bb4caa4d62ff3103471abb93b5364697d"
+  },
+  "legacy_measured_source_modified": false,
+  "src_or_public_modified": false,
+  "publication": {
+    "deployments": 0,
+    "activated": 0,
+    "approved_locales": 0
+  },
+  "actions": {
+    "repository_public": true,
+    "runner": "ubuntu-latest",
+    "max_parallel": 2,
+    "jobs": 8,
+    "timeout_minutes_each": 300,
+    "persistent_cache_bytes_before": 0,
+    "artifact_bytes_before": 0,
+    "contents_permission": "read",
+    "secrets": false,
+    "actions_permission": "read"
+  },
+  "smoke_run": 40520460992,
+  "validation_run": 40523434352,
+  "cancelled_runs": [
+    40520267020,
+    40520263451
+  ],
+  "smoke_status": "success",
+  "validation_status": "success",
+  "automatic_resume_recovered_real_records": 16,
+  "failed_long_run": 40522692881,
+  "failure_fixed": "GitHub CLI ANSI log guard; opaque byte capture with documented flag and fallback for old CLI.",
+  "validation_source": "65626e5376c5d623fb48ed0c157c91316f836307",
+  "node_tests": 3045,
+  "python": {
+    "tests": 409,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "dc8e686d0d8421fbd42bc993a13e7381f1aaa336e328c9da9f806a52064b406b",
+    "workers": 4,
+    "seconds": 1650.372
+  },
+  "background_run": 40523422271,
+  "background_jobs": [
+    {
+      "id": 122256378342,
+      "name": "drafts (0)",
+      "status": "in_progress",
+      "conclusion": null,
+      "current_step": "Generate resumable drafts without publishing"
+    },
+    {
+      "id": 122256378731,
+      "name": "drafts (2)",
+      "status": "queued",
+      "conclusion": null,
+      "current_step": ""
+    },
+    {
+      "id": 122256378953,
+      "name": "drafts (1)",
+      "status": "in_progress",
+      "conclusion": null,
+      "current_step": "Generate resumable drafts without publishing"
+    },
+    {
+      "id": 122256379090,
+      "name": "drafts (3)",
+      "status": "queued",
+      "conclusion": null,
+      "current_step": ""
+    }
+  ],
+  "background_complete": false,
+  "checked_at_utc": "2026-10-27T17:25:13.496776+00:00",
+  "production_identical_to_start": true
+}
