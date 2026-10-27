@@ -58,5 +58,10 @@
       ]
     }
   },
-  "checkpoint_sha256": "a58b7fad651733a8306b29263b819618793ca9d16894c29044811db42953292c"
+  "checkpoint_sha256": "a58b7fad651733a8306b29263b819618793ca9d16894c29044811db42953292c",
+  "checkout_commits": [
+    "abcafa4a8ae663d20897fe05af31bbffe6510f44",
+    "ee462a9eaf7232577e734bf2dff891496f2c3c4d"
+  ],
+  "artifacts": 0
 }
