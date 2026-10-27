@@ -2,7 +2,7 @@
 
 Estado, candado, métricas y siguiente paso: **[ESTADO.md](ESTADO.md)**. Historial: [LOG.md](LOG.md) e informes de lotes. Este mapa conserva solo estructura y operación.
 
-Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo en AGENTS.md. Código del Paso A y piloto actual solo en `feat/new-tools-batch-1`, [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. Main recibe los seis documentos de relevo con `[skip ci]`, sin publicación.
+Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo en AGENTS.md. Código del Paso A y piloto actual solo en `feat/new-tools-batch-1`, [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. Main recibe el relevo y los controladores/workflows del traductor con `[skip ci]`, sin publicar las 300 ni cambiar la web.
 
 ## Dos sitios, dos builds
 
@@ -77,3 +77,7 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - Si src/markets-no-ch se usa en sparse-checkout, incluir las seis fuentes copy-en/translations de voice-changer, shikaku y dxf-viewer: los contratos verifican sus bytes.
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
+
+## Traductor autónomo · 28-oct
+
+Operación actual: [translation-drafts/README.md](translation-drafts/README.md). `translation-autopilot.yml` coordina tres vueltas de `translation-wave.yml`; fuente fijada de la rama permitida, modelos solo lectura y publicador acotado a `automation/translation-results`. Cron diario y cambios del inglés; omite modelos si la cola está procesada. `translation-watch.yml` comprueba estados cada 30 min y crea avisos nativos GitHub. Main registra controladores; el runtime/extractor se ejecuta desde el SHA de la fuente (inicialmente feat/new-tools-batch-1). No activar el source_ref main antes de integrar esas fuentes. No ejecuta deploy.

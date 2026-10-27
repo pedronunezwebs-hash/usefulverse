@@ -155,6 +155,12 @@ class TranslationNoticeTest(unittest.TestCase):
         row['conclusion']='success'
         self.assertEqual(alerts.classify(row,[],dict(run_id=12,pending=2,quarantined=1),now)[0],'pending')
         self.assertEqual(alerts.classify(row,[],dict(run_id=12,pending=0,quarantined=0),now)[0],'complete')
+    def test_disabled_or_missing_daily_campaign_is_reported(self):
+        now=dt.datetime(2026,10,28,12,tzinfo=dt.timezone.utc)
+        control=dict(enabled=True,watch_from_utc='2026-10-27T00:00:00Z')
+        self.assertEqual(alerts.controller_state(dict(state='disabled_inactivity'),[],None,control,now)[0],'disabled')
+        self.assertEqual(alerts.controller_state(dict(state='active'),[],dict(pending=3),control,now)[0],'overdue')
+        self.assertEqual(alerts.controller_state(dict(state='active'),[],dict(pending=0),control,now),(None,None))
     def test_unchanged_notice_does_not_notify_again(self):
         calls=[]
         body='<!-- usefulverse-translation:12 -->\n<!-- state:failed -->'

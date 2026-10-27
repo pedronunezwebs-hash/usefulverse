@@ -1,49 +1,38 @@
-# Traducción en segundo plano
+# Traducciones automáticas en GitHub
 
-Decisión de Pedro, 27-oct-2026: que GitHub genere y compruebe traducciones comprensibles mientras el agente mejora la web. No invertir una sesión del chat en cada idioma ni releer todas las traducciones. Esta primera integración cubre las fuentes actuales de las 300 candidatas; todavía no conecta todos los formatos de las 700 existentes ni exporta a paquetes de producción.
+Decisión de Pedro, 28-oct-2026: inglés comprensible traducido en segundo plano, controles automáticos y avisos si se para. El agente mejora la web y consulta informes; no traduce ni relee cada frase. Los pilotos v1–v33, sus juicios y memorias permanecen intactos.
 
-## Ejecutar
+## Operación normal
 
-```sh
-gh workflow run translation-drafts.yml --repo pedronunezwebs-hash/usefulverse --ref feat/new-tools-batch-1 -f minutes=240
-```
-
-Dos vueltas automáticas de cuatro tandas por idioma (nueve destinos cada una), máximo dos máquinas estándar simultáneas. La segunda vuelta espera a la primera y recupera su avance sin intervención del agente. Presupuesto de 4 h por job, timeout de 5 h, máximo 40 horas de runner en una ejecución; unas 16–20 h de ejecución sin contar colas si se agota todo el presupuesto. No es una estimación de finalización del corpus. Se para antes si acaba o llega a 256 MiB de registros por job. No hay cron ni bucle infinito; cada lanzamiento contiene solo esas dos vueltas. El Mac puede apagarse y el chat no tiene que seguir abierto. Para probar una selección: `-f locales=es,ur,nb-NO`.
-
-## Qué hace solo GitHub
-
-1. Extrae el inglés actual de las 300: 15.815 claves, 9.505 pares distintos texto/contexto, 36 destinos; el recuento se vuelve a medir en cada ejecución.
-2. Deduplica y reutiliza checkpoints únicamente con el mismo texto, hash, contexto, idioma, modelo y configuración. Traducir una frase compartida no equivale a perder su asociación con las claves de cada herramienta.
-3. Ejecuta MADLAD-400 3B CPU int8 (Apache-2.0), revisión fija `fa184c675da0b5c9e1c8694fccd4e12e2d422094`, beam 2. No llama a ninguna API de traducción ni consume tokens de ChatGPT.
-4. Comprueba texto vacío, números/signos, variables, URLs, código, etiquetas y formatos protegidos, marcadores dañados, truncamiento e inglés idéntico. Añade avisos de idioma, alfabeto y longitud. Retrotraduce como máximo 20 frases por destino y señala cambios detectados de datos/negación.
-5. Guarda cada registro completo inmediatamente en los logs (`UVDRAFT_RECORD`), antes de continuar; muestra contadores y resumen con pendientes. Un error posterior no borra los registros ya emitidos. El bloqueo de una tanda no declara aprobado un idioma.
-
-Los controles automáticos detectan errores, pero no demuestran que toda frase conserve su significado. Un borrador sin avisos no equivale a idioma nativo ni a herramienta terminada. No se maquillan los datos antiguos ni se rebajan sus tests para convertir un fallo histórico en aprobado.
-
-## Recuperar sin releer traducciones
-
-Con el job terminado (aunque los otros sigan en marcha):
+`UsefulVerse translation autopilot` se ejecuta a diario (02:23 UTC), cuando cambia `src/` o `translation-sources/`, o manualmente:
 
 ```sh
-gh api repos/pedronunezwebs-hash/usefulverse/actions/jobs/JOB_ID/logs > job.log
-# En gh reciente, añadir --allow-escape-sequences si exige permitir ANSI; guardar en archivo, nunca renderizar el log.
-python3 scripts/localization/background-drafts.py collect --output docs/quality/translation-drafts/checkpoints/batch-N.jsonl job.log
+gh workflow run translation-autopilot.yml --repo pedronunezwebs-hash/usefulverse --ref main
 ```
 
-El colector valida identidades y controles, rechaza conflictos, conserva lo que ya contiene la salida y escribe de forma atómica. Recoger todos los jobs, hacer commit/push de los checkpoints y borrar logs locales. La segunda vuelta y las ejecuciones siguientes recuperan automáticamente los logs de jobs completados (incluido el run actual) mediante el token automático de GitHub, solo `actions:read`. Los registros se vuelven a emitir como checkpoint acumulado; se validan sin releerlos en el chat. También se leen los checkpoints versionados y omite esos destinos exactos, incluidos los que están señalados para revisión; no repite automáticamente una traducción defectuosa para gastar horas sin resolverla. Consultar resúmenes y avisos antes de lanzar más trabajo.
+Fija el SHA de la fuente al arrancar. La última rama inglesa se conserva en el manifiesto de resultados; inicialmente es `feat/new-tools-batch-1`. Solo admite esa rama o `main`. Al integrar Paso A, usar `source_ref=main`. No moverla antes de que main contenga las fuentes y scripts necesarios. Pausa: `scripts/localization/translation-control.json`, `enabled:false` en main. No ejecutar el workflow manual antiguo en paralelo.
 
-Los logs tienen retención finita de GitHub: recoger/guardar checkpoints al cerrar la tanda, nunca tratarlos como respaldo permanente ni borrarlos antes del commit. La generación, sus dos vueltas, los controles y la reanudación están desatendidos. El respaldo permanente/importación final aún necesita ejecutar el colector y hacer commit, una operación mecánica; no una revisión frase por frase. No hay permisos de escritura automática al repositorio: se conserva `contents:read`; solo se añade lectura de logs propios con `actions:read`, sin secretos personalizados ni permisos de escritura.
+Tres vueltas como máximo, cuatro grupos de destinos y dos modelos simultáneos. Cada job tiene presupuesto de hasta 120 min de generación y 120 de auditoría, más instalación, con timeout 330 min. La campaña deja de iniciar modelos al cumplir 24 h; las colas pueden añadir espera y reducir las vueltas útiles. No hay un job de 24 h ni garantía de servicio continuo. El siguiente día recupera pendientes. Cuando todas las unidades están procesadas omite modelos; una cuarentena no se regenera indefinidamente.
+
+## Trabajo automático
+
+1. Extrae las fuentes inglesas reales de los 1.000 propietarios del catálogo y textos comunes. Medición inicial: 42.053 claves, 25.832 pares texto/contexto, 36 destinos. Cobertura parcial explícita: 106 recuperadas solo metadatos y otras 14 sin interfaz centralizada detectada. No acredita toda su UI. Una mejora puede añadir `translation-sources/<slug>.json` con `toolId` y `sourceCopy`; sustituye su extracción anterior.
+2. Reutiliza únicamente identidad exacta de texto, contexto, idioma y configuración del modelo. Cambiar el inglés invalida el paquete afectado. MADLAD-400 3B CPU int8, revisión fija; datos protegidos, idioma/alfabeto, longitud, truncamiento y marcas se validan antes de aceptar nada.
+3. Retrotraduce cada candidato estructuralmente válido que audita. Compara el significado con multilingual-e5-small y entailment/contradicción DeBERTa en ambas direcciones. Conserva cifras y orden, variables, URLs, código, negación, dirección de conversión, condiciones y estado de carga. Modelos y licencias en `semantic-policy.json`. Verifica diez referencias al cargar los modelos; un fallo cierra la aceptación. Los modelos también pueden equivocarse: este filtro no prueba fidelidad perfecta ni calidad nativa.
+4. Deja en cuarentena lo dudoso y exporta solo entradas con todos los controles actuales. Las auditorías están ligadas a los bytes crudos y al hash de la política/código. No modifica evidencias antiguas ni finge aprobación humana.
+5. Después de cada vuelta guarda memoria y paquetes en [automation/translation-results](https://github.com/pedronunezwebs-hash/usefulverse/tree/automation/translation-results). `report.json` contiene generadas, auditadas, pendientes y cuarentenas. `manifest.json` fija procedencia; `memory/` conserva registros originales y auditorías; `packages/` contiene solo entradas utilizables. Recupera también logs de jobs completados/cancelados y evita descargarlos otra vez cuando ya están guardados. Los logs son recuperación provisional, no respaldo permanente.
+6. `automatic-packages.mjs` aplica entradas a la copia inglesa solo con hash/contexto/política coincidentes y conserva el inglés ante entradas faltantes o desfasadas. Es un adaptador de build preparado; **aún no está conectado al build de producción**. No cambia URLs, idiomas aprobados, noindex ni despliega. La puerta de herramienta y publicación sigue vigente.
+
+## Avisos
+
+`Translation alerts` vigila a los 13 y 43 minutos de cada hora y al terminar una tanda. Abre/actualiza una incidencia asignada y con mención a Pedro si falla, se cancela, queda en cola demasiado tiempo o falta el informe, GitHub lo desactiva o no arranca ninguna campaña durante más de 30 h con trabajo pendiente; también informa de fin/pendientes. No repite el mismo estado. La prueba real es [#137](https://github.com/pedronunezwebs-hash/usefulverse/issues/137): verificada en la bandeja GitHub como mención. El correo y el aviso del teléfono dependen de tus ajustes (P-009). Una caída global o retraso del propio GitHub puede retrasar también el aviso; no prometer notificación inmediata o fuera de GitHub.
 
 ## Coste y seguridad
 
-Repo público verificado, solo `ubuntu-latest` estándar. Minutos de cómputo gratuitos conforme a GitHub; uso acotado para producir los archivos del propio proyecto, sin mantener un servicio. No artifacts ni cachés persistentes, Packages, LFS, Codespaces, runners grandes/GPU, secretos o Cloudflare. Logs/resúmenes no consumen cuota de artifacts. Los modelos/dependencias se descargan solo en la máquina desechable de Actions y se limpian al terminar. No se activa ni publica ninguna traducción con este workflow; URLs indexables sin cambio.
+**Presupuesto: 0 USD.** Repo público comprobado en cada campaña, solo `ubuntu-latest` estándar; se detiene si deja de ser público. Sin APIs pagadas, tokens de ChatGPT, artifacts, cachés persistentes, LFS, Packages, runners grandes/GPU, Codespaces, Containers ni Cloudflare. Se usa el token efímero nativo de Actions, sin secretos nuevos. Solo el publicador puede escribir y solo en la rama de datos y rutas permitidas, con push sin force. Modelos tienen lectura; vigilante tiene `issues:write`. Excepción acotada documentada en AGENTS.md por autorización de Pedro.
 
-Fuentes comprobadas el 27-oct: [facturación](https://docs.github.com/en/billing/concepts/product-billing/github-actions), [límites](https://docs.github.com/en/actions/reference/limits), [uso permitido](https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features#actions).
+Los runners estándar públicos son gratuitos según [facturación de GitHub](https://docs.github.com/en/actions/concepts/billing-and-usage). Los [límites](https://docs.github.com/en/actions/reference/limits) y [retrasos/desactivación de cron](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) impiden garantizar 24/7. Revalidar condiciones antes de cambiar infraestructura. No se instala un monitor de Codex que consuma sesiones o dependa del Mac.
 
-## Primera verificación real
+## Recuperación excepcional
 
-[Smoke 40520460992](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40520460992): 16 destinos únicos españoles generados, 16 retrotraducciones; 14 sin avisos automáticos y dos con aviso del detector de idioma. Los 16 conservan datos protegidos y no están truncados. Se recuperaron por código y quedaron en checkpoints; cero lectura/juicio lingüístico del agente. No son 16 idiomas ni 16 herramientas terminadas. La reanudación automática también recuperó los 16 desde la API real. Trece pruebas Python nuevas y dos de extracción pasan en local; la CI completa está enlazada en ESTADO.
-
-## Estado al 28-oct
-
-[CI completa correcta](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352): 3.045 Node + 409 Python, cero fallos/errores y dos omisiones opcionales. [Tanda larga activa](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271): dos jobs en generación, otros dos en cola y segunda vuelta automática posterior. El estado agregado del run puede figurar en cola mientras hay jobs ejecutándose; consultar los jobs. No se ha medido aún la salida final de esta tanda. La CLI actual exige permitir explícitamente los bytes ANSI de los logs: el recuperador los captura sin renderizarlos, con compatibilidad para la CLI anterior; el fallo queda protegido por un test permanente.
+No volver a pilotos manuales por idioma. Consultar `report.json`, resumen Actions e incidencia; arreglar el sistema con test permanente. Ante cancelación, la próxima vuelta/día recoge los logs aún retenidos, valida registros y guarda el respaldo. No borrar logs antes de comprobar el commit de datos. No forzar conflictos de checkpoint ni push. `Background translation drafts` queda como antecedente de migración, no como operación normal.

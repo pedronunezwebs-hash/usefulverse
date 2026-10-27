@@ -5,6 +5,7 @@ import { createSources, isProse } from './autopilot-source.mjs';
 test('all 1000 catalog owners have English sources without pretending recovered JS is fully extracted', async () => {
   const corpus = await createSources();
   assert.equal(corpus.tools, 1000);
+  assert.ok(!corpus.documents.some(d => ['pending-tools', 'text-to-binary'].includes(d.toolId)), 'source modules must not be re-extracted as extra tools');
   assert.equal(corpus.coverage.recoveredMetadataOnly.length, 106);
   assert.ok(corpus.coverage.metadataOnly.length >= 106);
   assert.equal(corpus.destinationLocales.length, 36);

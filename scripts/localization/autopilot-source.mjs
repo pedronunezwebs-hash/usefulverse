@@ -7,6 +7,7 @@ import { tools } from '../../src/catalog.mjs';
 import { seo } from '../../src/seo.mjs';
 import { runtimeMessages, runtimeTemplates, ui } from '../../src/locales.mjs';
 import { pendingToolEnglishCopy } from '../../src/growth600/locales/pending-tools.en.mjs';
+import { growthPilotTools } from '../../src/growth600/catalog.mjs';
 import growthEnglish from '../../src/growth600/locales/en.mjs';
 import { marketTools } from '../../src/markets-no-ch/catalog.mjs';
 import { english as marketEnglish } from '../../src/markets-no-ch/copy-en.mjs';
@@ -34,17 +35,18 @@ export async function createSources() {
     title: tool.title, shortTitle: tool.shortTitle, description: tool.description,
     intro: tool.intro, body: tool.body, seo: seo[tool.id] ?? {},
   });
+  const growthOwners = new Set(growthPilotTools.map(tool => tool.id));
   const growthDirectory = new URL('../../src/growth600/locales/', import.meta.url);
   const growthCopies = { ...pendingToolEnglishCopy, ...growthEnglish };
   for (const file of (await readdir(growthDirectory)).filter(name => name.endsWith('.en.mjs'))) {
     const id = file.slice(0, -7);
-    if (growthCopies[id]) continue;
+    if (!growthOwners.has(id) || growthCopies[id]) continue;
     const module = await import(new URL(file, growthDirectory));
     const copies = Object.entries(module).filter(([name, value]) => /EnglishCopy$/u.test(name) && value && typeof value === 'object');
     if (copies.length === 1) growthCopies[id] = copies[0][1];
   }
   for (const [id, copy] of Object.entries(growthCopies)) {
-    if (!id.startsWith('_') && /^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(id)) add(id, copy);
+    if (growthOwners.has(id)) add(id, copy);
   }
   const modes = new Set(marketTools.map(tool => tool.mode));
   const modeCopies = new Map(Object.entries(marketEnglish).filter(([key]) => modes.has(key)));

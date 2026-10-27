@@ -190,6 +190,7 @@ def export(corpus,rows,audits,directory,run_id):
         raw=''.join(canonical(r)+'\n' for r in sorted(records,key=lambda r:canonical(r)))
         if len(raw.encode())>25*1024**2:raise ValueError('Checkpoint file exceeds the free pipeline bound')
         write(directory/'memory'/kind/locale/(prefix+'.jsonl'),raw)
+    if any(path.is_symlink() for path in directory.rglob('*')):raise ValueError('Results tree contains symlinks')
     for old in (directory/'packages').glob('*/*.json'):
         if old.is_symlink():raise ValueError('Symlink package')
         old.unlink()
