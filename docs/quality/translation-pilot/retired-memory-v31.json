@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "native_review": false,
+  "approved_locales": [],
+  "entries": [
+    {
+      "key": "dxf-viewer.description",
+      "locale": "ru",
+      "source": "Open ASCII DXF drawings locally. View supported 2D lines, circles, arcs and polylines, toggle layers, measure distances and export the supported geometry as SVG or PNG.",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "context": "description",
+      "retired_translation": "Открытие чертежей ASCII DXF на этом устройстве. Просмотр поддерживаемых 2D-линий, окружностей, дуг и полилиней. Показывать или скрывать слои и измерять расстояния. Экспортировать поддерживаемую геометрию в SVG или PNG.",
+      "retired_translation_hash": "53879e7ea8976470fe06768012d51b1eb60b213519e8457dfee0e18756dd95a2",
+      "prior_positive_source_import": {
+        "key": "dxf-viewer.description",
+        "source": "Open ASCII DXF drawings locally. View supported 2D lines, circles, arcs and polylines, toggle layers, measure distances and export the supported geometry as SVG or PNG.",
+        "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+        "context": "description",
+        "translation": "Открытие чертежей ASCII DXF на этом устройстве. Просмотр поддерживаемых 2D-линий, окружностей, дуг и полилиней. Показывать или скрывать слои и измерять расстояния. Экспортировать поддерживаемую геометрию в SVG или PNG.",
+        "translation_sha256": "53879e7ea8976470fe06768012d51b1eb60b213519e8457dfee0e18756dd95a2",
+        "source_record_id": "54af8b42433a99dec91200870124561769b5c311b62d9e73f95581b3b2e87e0b",
+        "source_record_sha256": "0e64e17eb52c13f755d879f24b95eccf2ca1d6415e485e72964981f626ef2ff7",
+        "source_review": "review-context-v30-full.json",
+        "source_review_sha256": "4ce7abf6e2ee459eda8007157655ec4eb1666c8b1c41efae03b56076c7a85475",
+        "source_judgment": {
+          "key": "dxf-viewer.description",
+          "locale": "ru",
+          "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+          "candidate": "madlad+typed-ru-v30",
+          "translation_hash": "53879e7ea8976470fe06768012d51b1eb60b213519e8457dfee0e18756dd95a2",
+          "record_ids": [
+            "54af8b42433a99dec91200870124561769b5c311b62d9e73f95581b3b2e87e0b"
+          ],
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "notes": [
+            "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+          ],
+          "critical_control": false,
+          "score_origin": "direct-current-S/F/B-agent-review",
+          "translation_origin": "model",
+          "data_contract_unproved": false,
+          "in_fixed88": true
+        },
+        "origin": "existing-exact-agent-reviewed-import",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "review_kind": "agent",
+        "native_review": false,
+        "approved_locales": []
+      },
+      "negative_current_record_ids": [
+        "820550e7a489abdfd8876accdc022477770b12782898001231c2f3e70a8c79a1"
+      ],
+      "negative_current_scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "issue": "Genitive plural полилиней is malformed;standard Russian полилиний is needed after просмотр. Current independent negative;old positive review is preserved unchanged.",
+      "withdrawn_for_future_reuse": true,
+      "old_policy_and_reviews_unchanged": true,
+      "draft_translation": "Открывайте чертежи ASCII DXF на своём устройстве. Просматривайте поддерживаемые 2D-линии, окружности, дуги и полилинии. Показывайте или скрывайте слои, измеряйте расстояния и экспортируйте поддерживаемую геометрию в SVG или PNG.",
+      "draft_translation_hash": "fb64aaf8c50d2501b039210a0b8221f9e3c8966e06870fc94391ffb39840808c",
+      "draft_typed_forward_checks": {
+        "nonempty": true,
+        "quantities": true,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": true,
+        "unit_symbols": true
+      },
+      "draft_review_kind": "agent-proposal",
+      "draft_imported": false,
+      "draft_inference_calls": 0,
+      "native_review": false
+    },
+    {
+      "key": "dxf-viewer.example",
+      "locale": "ru",
+      "source": "A line from (0, 0) to (10, 0) measures 10 drawing units. The viewer reads the DXF unit code when present; when it is absent, measurements are labelled as drawing units.",
+      "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+      "context": "example",
+      "retired_translation": "Линия от (0, 0) до (10, 0) измеряет 10 чертежных единиц. Этот инструмент считывает DXF код единицы, если таковой присутствует. Без этого кода измерения обозначаются как чертежные единицы.",
+      "retired_translation_hash": "e41e542f0b30fbe9126af025254e22a8ec0921348bcddf6cb2746c1dc105f9ae",
+      "prior_positive_source_import": {
+        "key": "dxf-viewer.example",
+        "source": "A line from (0, 0) to (10, 0) measures 10 drawing units. The viewer reads the DXF unit code when present; when it is absent, measurements are labelled as drawing units.",
+        "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+        "context": "example",
+        "translation": "Линия от (0, 0) до (10, 0) измеряет 10 чертежных единиц. Этот инструмент считывает DXF код единицы, если таковой присутствует. Без этого кода измерения обозначаются как чертежные единицы.",
+        "translation_sha256": "e41e542f0b30fbe9126af025254e22a8ec0921348bcddf6cb2746c1dc105f9ae",
+        "source_record_id": "8ffe10da9ab1dc8971294683551347784b0829abc7bd119ad13c9e0f87d8c8bc",
+        "source_record_sha256": "721205a5ba75459b1bd1313bdfe89373bf709bb615b1f2a7c614afc7459f08db",
+        "source_review": "review-context-v30-full.json",
+        "source_review_sha256": "4ce7abf6e2ee459eda8007157655ec4eb1666c8b1c41efae03b56076c7a85475",
+        "source_judgment": {
+          "key": "dxf-viewer.example",
+          "locale": "ru",
+          "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+          "candidate": "madlad+typed-ru-v30",
+          "translation_hash": "e41e542f0b30fbe9126af025254e22a8ec0921348bcddf6cb2746c1dc105f9ae",
+          "record_ids": [
+            "8ffe10da9ab1dc8971294683551347784b0829abc7bd119ad13c9e0f87d8c8bc"
+          ],
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "notes": [
+            "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+          ],
+          "critical_control": false,
+          "score_origin": "direct-current-S/F/B-agent-review",
+          "translation_origin": "model",
+          "data_contract_unproved": false,
+          "in_fixed88": true
+        },
+        "origin": "existing-exact-agent-reviewed-import",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "review_kind": "agent",
+        "native_review": false,
+        "approved_locales": []
+      },
+      "negative_current_record_ids": [
+        "a784e22f4ea1ed1a585085f9f33d71a91f8b1ee55f74857c3f159b3149699361"
+      ],
+      "negative_current_scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "issue": "Линия…измеряет10единиц is an active-verb calque:a line has a length,it does not perform measurement. Values/coordinates remain correct. Current independent negative;old positive unchanged.",
+      "withdrawn_for_future_reuse": true,
+      "old_policy_and_reviews_unchanged": true,
+      "draft_translation": "Длина линии от (0, 0) до (10, 0) составляет 10 единиц чертежа. Просмотрщик считывает код единиц из DXF, если он задан. Если код не указан, измерения подписываются как единицы чертежа.",
+      "draft_translation_hash": "c131757e38d526b465626b545d1659a8e4d649fc9c7124cae3d054d06bdfcdd3",
+      "draft_typed_forward_checks": {
+        "nonempty": true,
+        "quantities": true,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": true,
+        "unit_symbols": true
+      },
+      "draft_review_kind": "agent-proposal",
+      "draft_imported": false,
+      "draft_inference_calls": 0,
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "source": "Try a voice recording and compare the original with the radio or lower-pitch preset. Pitch changes also change playback speed; this is not voice cloning or studio-grade pitch correction.",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "context": "example",
+      "retired_translation": "Попробуйте записать голос и сравнить оригинал с радио или более низким тоном. Изменение высоты звука также меняет скорость воспроизведения; это не клонирование голоса или коррекция высоты звука студийного уровня.",
+      "retired_translation_hash": "d88450537a25d380cafe5977d8f0e751af1c8c171536def888235c9901ef8db4",
+      "prior_positive_source_import": {
+        "key": "voice-changer.example",
+        "source": "Try a voice recording and compare the original with the radio or lower-pitch preset. Pitch changes also change playback speed; this is not voice cloning or studio-grade pitch correction.",
+        "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+        "context": "example",
+        "translation": "Попробуйте записать голос и сравнить оригинал с радио или более низким тоном. Изменение высоты звука также меняет скорость воспроизведения; это не клонирование голоса или коррекция высоты звука студийного уровня.",
+        "translation_sha256": "d88450537a25d380cafe5977d8f0e751af1c8c171536def888235c9901ef8db4",
+        "source_record_id": "ab7deed127afd335dffeafd7e2b7eeb5694c4dc2432ec3001ff48addcd6dcee0",
+        "source_record_sha256": "8846fa5549769f6ad1e952504ae5de04d3cdae8e404625993cbae01a3eec1bb9",
+        "source_review": "review-context-v30-full-legacy.json",
+        "source_review_sha256": "40804475ca82d169bc0c3dff67f3a60bb0391856dd4350abf7a052ee44af3e2d",
+        "source_judgment": {
+          "key": "voice-changer.example",
+          "locale": "ru",
+          "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+          "candidate": "legacy",
+          "translation_hash": "d88450537a25d380cafe5977d8f0e751af1c8c171536def888235c9901ef8db4",
+          "record_ids": [
+            "ab7deed127afd335dffeafd7e2b7eeb5694c4dc2432ec3001ff48addcd6dcee0"
+          ],
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "notes": [
+            "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+          ],
+          "critical_control": false,
+          "score_origin": "direct-current-S/F/B-agent-review",
+          "translation_origin": "legacy",
+          "data_contract_unproved": false,
+          "in_fixed88": true
+        },
+        "origin": "existing-exact-agent-reviewed-import",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "review_kind": "agent",
+        "native_review": false,
+        "approved_locales": []
+      },
+      "negative_current_record_ids": [
+        "01284d8d92ea4deb958e0d295b43a9302106110d5fcae4189c52f9233188aea3",
+        "7955b6717f10873e92832fadbc1f17f4cb90f146293c7c33df07ec9483f03d91"
+      ],
+      "negative_current_scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "issue": "Try a voice recording asks to use an audio recording;Попробуйте записать голос asks to create one. The action is changed. Current model and exact legacy share this inherited defect;old positive judgments stay immutable.",
+      "withdrawn_for_future_reuse": true,
+      "old_policy_and_reviews_unchanged": true,
+      "draft_translation": "Возьмите аудиозапись голоса и сравните исходный звук с эффектом радио или понижения тона. Изменение высоты звука также меняет скорость воспроизведения. Это не клонирование голоса и не студийная коррекция высоты звука.",
+      "draft_translation_hash": "985f178fb9683e809fcd7d478a24e5aa81418fcb4cf5bea0cf2b1f92d6ec81a1",
+      "draft_typed_forward_checks": {
+        "nonempty": true,
+        "quantities": true,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": true,
+        "unit_symbols": true
+      },
+      "draft_review_kind": "agent-proposal",
+      "draft_imported": false,
+      "draft_inference_calls": 0,
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.limitsHeading",
+      "locale": "ru",
+      "source": "Effects and limitations",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "context": "limitsHeading",
+      "retired_translation": "Последствия и ограничения",
+      "retired_translation_hash": "1c893ca40df2102ee3ea0a67c1b3935de28d980fbbcb2412ad36f5173d0ad2da",
+      "prior_positive_source_import": {
+        "key": "voice-changer.limitsHeading",
+        "source": "Effects and limitations",
+        "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+        "context": "limitsHeading",
+        "translation": "Последствия и ограничения",
+        "translation_sha256": "1c893ca40df2102ee3ea0a67c1b3935de28d980fbbcb2412ad36f5173d0ad2da",
+        "source_record_id": "bee74fc78342dbe12f8b19d64749e7e4b5a515c4f67fc16129f2ec74c6fa7667",
+        "source_record_sha256": "675512a4d035dda081621b662f9f8a6276a1559790ab5f450b5410ef688bb913",
+        "source_review": "review-context-v30-full.json",
+        "source_review_sha256": "4ce7abf6e2ee459eda8007157655ec4eb1666c8b1c41efae03b56076c7a85475",
+        "source_judgment": {
+          "key": "voice-changer.limitsHeading",
+          "locale": "ru",
+          "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+          "candidate": "madlad+typed-ru-v30",
+          "translation_hash": "1c893ca40df2102ee3ea0a67c1b3935de28d980fbbcb2412ad36f5173d0ad2da",
+          "record_ids": [
+            "bee74fc78342dbe12f8b19d64749e7e4b5a515c4f67fc16129f2ec74c6fa7667"
+          ],
+          "scores": {
+            "meaning": 3,
+            "numbers_negations": 3,
+            "naturalness": 3
+          },
+          "notes": [
+            "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+          ],
+          "critical_control": false,
+          "score_origin": "direct-current-S/F/B-agent-review",
+          "translation_origin": "model",
+          "data_contract_unproved": false,
+          "in_fixed88": false
+        },
+        "origin": "existing-exact-agent-reviewed-import",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "review_kind": "agent",
+        "native_review": false,
+        "approved_locales": []
+      },
+      "negative_current_record_ids": [
+        "6b5bd61be5b2f89a01e69c147b9506577ef6275be5eeb2b1d94dd30007864f95",
+        "f8f5e2a52dcdf8eed86a97cbc09bb0f663a56d063bf69f8601cb417990dd10c3"
+      ],
+      "negative_current_scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "issue": "Audio Effects becomes Последствия(consequences),the wrong sense for the audio-effects heading. Current independent negative;old positive judgments stay immutable.",
+      "withdrawn_for_future_reuse": true,
+      "old_policy_and_reviews_unchanged": true,
+      "draft_translation": "Эффекты и ограничения",
+      "draft_translation_hash": "6ad034f12440b79698b030226b9a96ab15b8fdf45faddbc160cec2a14eb3b472",
+      "draft_typed_forward_checks": {
+        "nonempty": true,
+        "quantities": true,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": true,
+        "unit_symbols": true
+      },
+      "draft_review_kind": "agent-proposal",
+      "draft_imported": false,
+      "draft_inference_calls": 0,
+      "native_review": false
+    }
+  ]
+}

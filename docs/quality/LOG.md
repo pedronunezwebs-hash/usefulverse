@@ -1,3 +1,17 @@
+## V31 ·27-oct-2026 · estado actual
+
+V31, ruso: referencias conocidas 360/360; ampliado rechazado con 1562/1.566 y 789/792 en las 88 claves fijas. Leídos los 333 registros actuales de fuente/ida/vuelta. Las 214 idas modelo son memoria revisada, con cero generación nueva de ida; las vueltas son nuevas. Modelo ampliado: 4 defectos y 0 datos sin prueba. Legacy ampliado: 805/828, 16 negativas y 1 datos sin prueba; rechazado. Memoria:905 textos. Historial:16.775 registros,8.605 evaluaciones con repeticiones en148 grupos y1507casos permanentes.0idiomas aprobados para publicar. [Informe](lotes/2026-10-27-piloto-v31-ru.md).
+
+Pasan muestras completas conocidas: es, nb-NO, ko, id, zh-CN, bn. Revisados sin pasar(8): de, fr, pt-BR, ja, hi, ar, ru, ur. Pendientes de revisión detallada(22): tr, vi, it, zh-TW, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, fil, ta, fa, am, gu. Inglés es fuente. Muestras de tres herramientas,no1.000herramientas traducidas;0/36destinos aprobados para publicar. [Listado](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v31.json).
+
+Caché inglesa exacta y acotada a4096entradas,con comprobación de inventario de archivos(inodo/mtime/ctime),políticas congeladas,funciones y raíz en cada reutilización;copias de resultados y delegación original para todo lo no almacenado. Archivos auxiliares también cubiertos,primero test rojo. Benchmark local con6evaluaciones de flags iguales:2.184448→1.678978s(23.1%menos). Muestra pequeña,no estimación del motor ni de toda la CI. Las18pruebas previas de inferencia no sustituyen la suite completa. Sin APIs pagadas,Cloudflare,Codespaces,Containers ni artefactos/cachés de modelos.
+
+**Siguiente:** Preparar v32 ruso independiente desde next-v32-ru-plan.json y retired-memory-v31.json:210positivas actuales y4retiradas explícitas,con cuatro borradores probados por datos pero no importados. Mantener el snapshot905y sus juicios históricos;en el perfil nuevo retirar solo las cuatro variantes con su negativo actual emparejado. Preparar v32 ruso independiente para resolver las filas negativas o datos sin prueba de review-context-v31-full*.json. Conservar905memorias y todos los33archivos medidos,datos y pruebas. Tests rojos antes de arreglos,referencias y avisos antes del ampliado condicional. No repetir los runs40466449927/40467626526. Paso A sigue abierto por capacidad Pages,37traducciones revisadas y nb real;no avanzar a fase0.
+
+CI completa pendiente; candado EN CURSO.
+
+P-001–P-008:ocho pendientes,0FALLA,sin IDs nuevos. No certificados:UI/dispositivos,responsive320–1920/RTL/textos largos/márgenes/peso,a11y/rendimiento,puerta18/siete capas,revisión nativa/ciega/textos inéditos/motor genérico.300nuevas siguen noindex en PRborrador,0en main/activadas;700existentes conservadas.0deploys/envíos.
+
 ## V30 ·26-oct-2026 · estado actual
 
 V30, ruso: referencias conocidas 360/360; ampliado rechazado, 1504/1.566 y 763/792 en las 88 claves fijas. Leídos los 333 registros actuales de fuente/ida/vuelta: 40 referencias de memoria, 174 idas modelo nuevas y 119 legacy (27 de referencia y 92 ampliadas). Modelo ampliado: 33 idas con defectos y seis datos sin prueba, con solapamiento en limits. Legacy ampliado: 807/828, 14 negativas y un dato sin prueba. Hay 731 textos en memoria, 16.442 registros, 8.272 evaluaciones con repeticiones en 144 grupos y 1484 casos permanentes (1.403 globales, 14 de vuelta v29 y 67 v30). Cero idiomas aprobados para publicar. [Informe](lotes/2026-10-26-piloto-v30-ru.md).

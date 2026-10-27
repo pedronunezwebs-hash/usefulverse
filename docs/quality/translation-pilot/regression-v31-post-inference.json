@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "full_checkpoint_sha256": "51c4121b17fabf85a7e9157dedea06e101de5100d1b09dfa1c55d50d0c711b77",
+  "raw_records": 333,
+  "read_model_records": 214,
+  "read_legacy_records": 119,
+  "back_cases": 19,
+  "back_observations": 21,
+  "forward_cases": 4,
+  "forward_observations": 6,
+  "explicit_retirements": 4,
+  "current_positive_targets": 210,
+  "drafts_not_imported": 4,
+  "initial_full_findings_red": {
+    "tests": 2,
+    "failures": 5,
+    "log_sha256": "fd2b8f86ec0f1622198d58707fe095460f787404dd7f555156117b3c1370863e"
+  },
+  "focused_green": {
+    "tests": 15,
+    "seconds": 364.101,
+    "log_sha256": "763c58df4f1ec6770de972c90161c6906ee9098a9ae6d72ec6a4a41d62feaae8"
+  },
+  "workflow_guards_green": {
+    "tests": 2,
+    "log_sha256": "f2f7f20b09268ff1a5a9edf399b32bb047568b9780fc65a6c38dee4a6be91892"
+  },
+  "old_inference_files_changed": false,
+  "site_ci_timeout_minutes": 45,
+  "model_timeout_minutes": 90,
+  "native_review": false,
+  "approved_locales": []
+}

@@ -24,5 +24,28 @@ class FindingsV31Test(unittest.TestCase):
    for item in review['rows']:
     for identity in item['record_ids']:
      self.assertNotIn(identity,seen);seen.add(identity);record=raw[identity];self.assertEqual(item['translation_hash'],hashlib.sha256(record['translation'].encode()).hexdigest())
-     if record['candidate']=='model':self.assertEqual(set(item['scores'].values()),{3});self.assertFalse(item['data_contract_unproved']);self.assertEqual(record['translation_origin'],'reviewed-memory');self.assertTrue(all(pilot.typed_record_evidence(record)['forward'].values()))
+     if record['candidate']=='model':
+      cases=json.loads((DATA/'findings-v31.json').read_text()).get('forward_cases',[]);observed=next((c for c in cases if identity in c['observed_record_ids']),None)
+      if observed:self.assertEqual(item['scores'],observed['scores']);self.assertFalse(review['full_gate']['ru']['passed'])
+      else:self.assertEqual(set(item['scores'].values()),{3})
+      self.assertFalse(item['data_contract_unproved']);self.assertEqual(record['translation_origin'],'reviewed-memory');self.assertTrue(all(pilot.typed_record_evidence(record)['forward'].values()))
   self.assertEqual(seen,set(raw))
+
+ def test_all_current_forward_defects_are_exposed_by_common_review_api(self):
+  for case in json.loads((DATA/'findings-v31.json').read_text())['forward_cases']:
+   with self.subTest(key=case['key']):self.assertIn(case['issue'],pilot.semantic_issues(case['key'],case['source_hash'],case['translation'],'ru'))
+
+ def test_current_negative_forward_cases_cannot_be_regraded_as_passed(self):
+  import copy
+  records={r['record_id']:r for r in map(json.loads,(DATA/'checkpoints/context-v31/madlad.jsonl').read_text().splitlines())};review=json.loads((DATA/'review-context-v31-full.json').read_text());pilot.audit_review_warnings(review,records)
+  for case in json.loads((DATA/'findings-v31.json').read_text())['forward_cases']:
+   identity=next(i for i in case['observed_record_ids']if records[i]['candidate']=='model')
+   for mutation in ['perfect','passed']:
+    changed=copy.deepcopy(review)
+    if mutation=='perfect':next(j for j in changed['rows']if identity in j['record_ids'])['scores']=dict(meaning=3,numbers_negations=3,naturalness=3)
+    else:changed['full_gate']['ru']['passed']=True
+    with self.subTest(key=case['key'],mutation=mutation),self.assertRaises(ValueError):pilot.audit_review_warnings(changed,records)
+ def test_explicit_four_retirements_preserve_old_positive_judgments_and_are_not_imported(self):
+  data=json.loads((DATA/'next-v32-ru-plan.json').read_text());self.assertEqual(data['exact_current_positive_targets'],210);self.assertEqual(data['retired_targets'],4);self.assertFalse(data['imported']);self.assertEqual(data['approved_locales'],[])
+  for item in data['required_repairs']:
+   self.assertTrue(item['withdrawn_for_future_reuse']);self.assertEqual(set(item['prior_positive_source_import']['source_judgment']['scores'].values()),{3});self.assertLess(min(item['negative_current_scores'].values()),3);self.assertFalse(item['draft_imported']);self.assertTrue(all(item['draft_typed_forward_checks'].values()))

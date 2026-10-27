@@ -87,6 +87,8 @@ class BengaliV29Test(unittest.TestCase):
         klass=next(n for n in module.body if isinstance(n,ast.ClassDef))
         self.assertEqual(pilot.digest(stable(klass)),proof['original_generic_test_class_ast_digest'])
         text=(pilot.ROOT/'.github/workflows/deploy-cloudflare.yml').read_text()
+        # Bounded site CI budget for the growing complete proof suite;model90unchanged.
+        self.assertEqual(text.count('timeout-minutes: 45'),1);text=text.replace('timeout-minutes: 45','timeout-minutes: 30')
         # Four explicit v31 edits before unchanged historical whole-blob guards.
         self.assertEqual(text.count('context-v29, context-v30, context-v31]'),1);text=text.replace('context-v29, context-v30, context-v31]','context-v29, context-v30]')
         self.assertEqual(text.count('Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada'),1);text=text.replace('Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada','Baseline o variantes v2–v30; v30 añade referencias rusas con contratos propios')

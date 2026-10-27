@@ -1,0 +1,544 @@
+{
+  "as_of": "2026-10-27T08:01:43.743402+00:00",
+  "source": "en",
+  "product_locales": 37,
+  "destination_locales": 36,
+  "automatic_references_destinations": 36,
+  "passed_known_full_sample": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v18",
+    "id": "context-v21",
+    "zh-CN": "context-v27",
+    "bn": "context-v29"
+  },
+  "zh_CN_current_gates": {
+    "references": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known40 source-bound reviewed-memory references360/360; direct current S/F/B reading and all warnings reconciled. All forward data proved, including Shikaku. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "full": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known214 Chinese reviewed-memory outputs; all174 current nonreferences directly read and forward data proved. No observed outside88 forward defect. No native/blind/unseen-text/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Any observed forward defect or unproved forward data, including outside88, blocks. All174 read;0observed open forward defects.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    },
+    "last_full_v25": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1564,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 2,
+      "unproved_data_rows": 7,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Gate bloqueado por defectos observados o datos sin prueba; memoria conocida declarada. Sin aprobación nativa/ciega/de idioma.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 791,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "voice-changer.intro está fuera88 y bloquea; los7 datos sin prueba también."
+    }
+  },
+  "remaining_without_detailed_review": [
+    "tr",
+    "vi",
+    "it",
+    "zh-TW",
+    "bg",
+    "ca",
+    "nl",
+    "el",
+    "ms",
+    "pl",
+    "sv",
+    "th",
+    "uk",
+    "sw",
+    "mr",
+    "te",
+    "ha",
+    "fil",
+    "ta",
+    "fa",
+    "am",
+    "gu"
+  ],
+  "approved_for_release": 0,
+  "note": "Una muestra conocida no significa que todas las herramientas estén traducidas/revisadas. Sin revisión nativa, motor congelado ni aprobación de publicación. No se omiten los 7 locales de bajos recursos: requieren80 muestras.",
+  "rows": [
+    {
+      "locale": "en",
+      "nombre": "Inglés",
+      "estado": "fuente inglesa; no requiere traducción",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "es",
+      "nombre": "Español",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v15",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fr",
+      "nombre": "Francés",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "pt-BR",
+      "nombre": "Portugués de Brasil",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "de",
+      "nombre": "Alemán",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ja",
+      "nombre": "Japonés",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ko",
+      "nombre": "Coreano",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v18",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "id",
+      "nombre": "Indonesio",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v21",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "hi",
+      "nombre": "Hindi",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ar",
+      "nombre": "Árabe",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "zh-CN",
+      "nombre": "Chino simplificado",
+      "estado": "muestra completa conocida pasa con memoria exacta revisada; sin nueva generación de ida ni aprobación del idioma",
+      "policy": "context-v27",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "bn",
+      "nombre": "Bengalí",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v29",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ru",
+      "nombre": "Ruso",
+      "estado": "referencias pasan;ampliado bloqueado",
+      "policy": "context-v31",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ur",
+      "nombre": "Urdu",
+      "estado": "referencias baseline revisadas en lote bn/ru/ur; no pasan",
+      "policy": "baseline",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "tr",
+      "nombre": "Turco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "vi",
+      "nombre": "Vietnamita",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "it",
+      "nombre": "Italiano",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "zh-TW",
+      "nombre": "Chino tradicional",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "bg",
+      "nombre": "Búlgaro",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ca",
+      "nombre": "Catalán",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "nl",
+      "nombre": "Neerlandés",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "el",
+      "nombre": "Griego",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ms",
+      "nombre": "Malayo",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "pl",
+      "nombre": "Polaco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "sv",
+      "nombre": "Sueco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "th",
+      "nombre": "Tailandés",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "uk",
+      "nombre": "Ucraniano",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "sw",
+      "nombre": "Suajili",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "mr",
+      "nombre": "Maratí",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "te",
+      "nombre": "Telugu",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ha",
+      "nombre": "Hausa",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fil",
+      "nombre": "Filipino",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ta",
+      "nombre": "Tamil",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fa",
+      "nombre": "Persa",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "am",
+      "nombre": "Amhárico",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "gu",
+      "nombre": "Guyaratí",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "nb-NO",
+      "nombre": "Noruego bokmål",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v15",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    }
+  ],
+  "current_policy": "context-v31",
+  "current_full_dispatched": true,
+  "current_unproved_reference_data": 0,
+  "current_method": "Known214 source-bound Russian memory targets;all333current S/F/B read.No native/blind/unseen/general-engine/release approval.",
+  "bn_current_gates": {
+    "references": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "full": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    },
+    "previous_v28_full": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1460,
+      "maximum": 1566,
+      "button_errors": 1,
+      "number_negation_errors": 18,
+      "major_rows": 12,
+      "minor_rows": 29,
+      "unproved_data_rows": 23,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Rejected: observed forward defects and unproved forward data remain. All rows read; no release/native/blind/general-engine approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 696,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "Every observed forward defect or unproved forward datum blocks, including outside fixed88.",
+      "known_memory_rows": 0,
+      "forward_model_rows": 174
+    }
+  },
+  "reviewed_not_passing": [
+    "de",
+    "fr",
+    "pt-BR",
+    "ja",
+    "hi",
+    "ar",
+    "ru",
+    "ur"
+  ],
+  "ru_current_gates": {
+    "references": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known source-bound reviewed-memory targets;every current S/F/B and warning read.No native/blind/unseen/general-engine/release approval."
+    },
+    "full": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1562,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 4,
+      "unproved_data_rows": 0,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Blocked by forward defects/unproved data;no approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 789,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "Any observed forward error or unproved datum outside88 also blocks.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    }
+  },
+  "ru_previous_v30_gates": {
+    "references": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current S/F/B agent review;all warnings reconciled. No native/blind/generic-engine/release approval."
+    },
+    "full": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1504,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 3,
+      "major_rows": 13,
+      "minor_rows": 20,
+      "unproved_data_rows": 6,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Blocked by observed forward defects or unproved data;no approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 763,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "Every observed forward error or unproved datum blocks,including outside88.",
+      "forward_model_rows": 174,
+      "known_memory_rows": 0
+    }
+  },
+  "ru_retired_targets_for_future_reuse": 4,
+  "ru_current_positive_sample_targets": 210,
+  "ru_repair_drafts_not_imported": 4
+}

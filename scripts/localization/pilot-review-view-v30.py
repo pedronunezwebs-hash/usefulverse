@@ -29,17 +29,15 @@ class ReviewView:
 
     def semantic_issues(self, key, source_hash, text, locale, direction='forward'):
         found = self._module.semantic_issues(key, source_hash, text, locale, direction)
-        path = self.ROOT / 'docs/quality/translation-pilot/scoped-forward-regressions-v30.json'
-        if direction != 'forward' or not path.exists():
+        if direction != 'forward':
             return found
-        registry = json.loads(path.read_text())
-        if registry['native_review'] is not False or registry['approved_locales'] != []:
-            raise ValueError('Review detector cannot approve languages')
-        for case in registry['cases']:
-            if case['inference_policy'] != 'context-v30' or case['direction'] != 'forward' or case['blocks_gate'] is not True:
-                raise ValueError('Invalid scoped forward review fixture')
-            if hashlib.sha256(case['translation'].encode()).hexdigest() != case['translation_hash']:
-                raise ValueError('Stale review fixture text')
-            if (key, source_hash, text, locale) == (case['key'], case['source_hash'], case['translation'], case['locale']):
-                found = found + [case['issue']]
+        for policy in ['context-v30','context-v31']:
+            path=self.ROOT/'docs/quality/translation-pilot'/('scoped-forward-regressions-'+policy.replace('context-','')+'.json')
+            if not path.exists():continue
+            registry=json.loads(path.read_text())
+            if registry['native_review']is not False or registry['approved_locales']!=[]:raise ValueError('Review detector cannot approve languages')
+            for case in registry['cases']:
+                if case['inference_policy']!=policy or case['direction']!='forward'or case['blocks_gate']is not True:raise ValueError('Invalid scoped forward fixture')
+                if hashlib.sha256(case['translation'].encode()).hexdigest()!=case['translation_hash']:raise ValueError('Stale forward text hash')
+                if(key,source_hash,text,locale)==(case['key'],case['source_hash'],case['translation'],case['locale']):found=found+[case['issue']]
         return sorted(set(found))

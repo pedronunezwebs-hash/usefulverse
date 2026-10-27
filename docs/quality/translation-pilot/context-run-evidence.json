@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-27T07:25:06.396109+00:00",
+  "at_utc": "2026-10-27T07:39:58.833604+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -1822,6 +1822,46 @@
       "cleanup": "success",
       "records": 67,
       "evidence": "run-context-v31-references.json"
+    },
+    {
+      "inference_policy": "context-v31",
+      "scope": "full",
+      "run_id": 40467626526,
+      "job_id": 122066766492,
+      "conclusion": "success",
+      "source_commit": "a3ce9aea00f29068726998b8323261f04dbf9f40",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 110.368378739,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7411496,
+        "scope": "full",
+        "total_seconds": 266.73019307199996
+      },
+      "cleanup": "success",
+      "records": 266,
+      "evidence": "run-context-v31-full.json"
     }
   ],
   "checkpoints": [
@@ -1947,8 +1987,8 @@
     },
     {
       "path": "checkpoints/context-v31/madlad.jsonl",
-      "records": 67,
-      "sha256": "2e72b3fc533c40d83dcd1e61ed12d61cb266d0c98d6ec9261858eeb244c74bc3"
+      "records": 333,
+      "sha256": "51c4121b17fabf85a7e9157dedea06e101de5100d1b09dfa1c55d50d0c711b77"
     },
     {
       "path": "checkpoints/context-v4/madlad.jsonl",
@@ -1991,7 +2031,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 16509,
+  "total_records": 16775,
   "cancelled_runs": [
     {
       "run_id": 39484416039,

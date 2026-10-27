@@ -60,6 +60,9 @@ def install(namespace):
     old=PostReviewAudit(namespace['RUSSIAN_V30']).audit
     if 'RUSSIAN_V31' not in namespace:namespace['audit_review_warnings']=old;return
     def combined(review,records,check_coverage=True):
-        if review.get('inference_policy')=='context-v31':return namespace['RUSSIAN_V31'].audit(review,records,check_coverage)
+        if review.get('inference_policy')=='context-v31':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('forward_gate31',Path(__file__).with_name('pilot-review-forward-v31.py'));gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate);gate.audit(review,records,namespace['ROOT'])
+            return namespace['RUSSIAN_V31'].audit(review,records,check_coverage)
         return old(review,records,check_coverage)
     namespace['audit_review_warnings']=combined
