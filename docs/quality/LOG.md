@@ -641,3 +641,5 @@ Fuente `65626e5376c5d623fb48ed0c157c91316f836307`; [CI 40523434352](https://gith
 Producción revisada con cinco GET y dos XML: 25.625 URLs, tres soft404 siguen en 200. Sin deploy, activación ni envíos. Src/public y workflow de deploy intactos. P-001–P-008 siguen pendientes, cero FALLA y sin IDs nuevos. Permanecen los pilotos y las 905 memorias; su inventario de 35 checkpoints/17.441 registros no cambia. Las herramientas y los idiomas no se marcan terminados. Las 700 existentes aún necesitan adaptadores de extracción y la salida no se importa automáticamente a paquetes de producción.
 
 Se sincronizan instrucciones/resultados con main usando [skip ci], sin integrar el código de las 300 ni publicar. Retirada efectiva y liberación del candado se documentan después de eliminar el clon.
+
+Retirada efectiva verificada el 28-oct: clon propio eliminado antes de liberar el candado; 42.27 GiB libres. El código y los 16 registros iniciales están en GitHub y los documentos coinciden en ambas ramas. La tanda 40523422271 sigue deliberadamente en Actions, independiente del Mac/chat; recoger su salida cuando termine. Comprobante: `translation-drafts/closure.json`.
