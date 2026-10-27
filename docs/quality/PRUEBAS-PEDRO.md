@@ -4,7 +4,7 @@ Cómo funciona (`docs/quality/PRUEBAS.md` §4): el agente añade aquí cada prue
 haces cuando puedas, por tandas, y cambias el **Estado** a `OK` o a `FALLA` con una nota o una captura. El siguiente agente arregla
 los `FALLA`. Una herramienta con una prueba pendiente aquí **no se da por terminada**.
 
-**Resumen:** 8 pendientes · 0 fallos abiertos · última actualización 2026-10-20 (Claude)
+**Resumen:** 9 pendientes · 0 fallos abiertos · última actualización 2026-10-28 (Codex)
 
 > Estas primeras pruebas salen de la auditoría del 20-oct y comprueban **el estado actual**. Cuando se arreglen las
 > herramientas, el agente las volverá a poner en `pendiente` para confirmar el arreglo. Si prefieres esperar a que estén
@@ -20,6 +20,8 @@ los `FALLA`. Una herramienta con una prueba pendiente aquí **no se da por termi
 | P-006 | [Medidor de micrófono](https://tools.usefulverse.com/tools/microphone-level-meter/) | Micrófono real | Móvil y ordenador | 1. Da permiso. 2. Habla y después quédate en silencio | La barra sube al hablar y baja en silencio | pendiente | |
 | P-007 | [Sudoku](https://usefulverse.com/tools/sudoku/) | Sensación de juego en pantalla táctil | Móvil | 1. Juega 2 partidas en nivel difícil. 2. Escribe números y bórralos | Fácil de tocar las casillas; ¿se nota difícil de verdad? (la auditoría dice que todas las cuadrículas tienen la misma estructura) | pendiente | |
 | P-008 | [Compresor de vídeo](https://usefulverse.com/tools/video-compressor/) | Vídeo real de móvil y rendimiento del aparato | iPhone y ordenador | 1. Comprime un vídeo de 1 min grabado con el móvil. 2. Reprodúcelo | Termina sin colgarse; anota el tiempo, el tamaño antes y después y la calidad | pendiente | |
+
+| P-009 | [Avisos del traductor](https://github.com/pedronunezwebs-hash/usefulverse/issues/137) | Entrega real de correo/push y ajustes de Pedro | Móvil o navegador (2–3 min) | 1. Abre las notificaciones de tu cuenta GitHub. 2. Busca la mención de prueba #137. 3. En Settings → Notifications comprueba el canal elegido para menciones/asignaciones. 4. Anota si llegó correo o aviso al teléfono | La mención aparece en GitHub; correo/push solo si están habilitados. El agente ya verificó la notificación web por API, no el correo ni el teléfono | pendiente | |
 
 Nota: comprueba que cada enlace lleve a la herramienta correcta. Los slugs salen del rastreo del 20-oct; si alguno ha
 cambiado, el agente lo corrige.

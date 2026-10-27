@@ -280,7 +280,7 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 
 ### Operación vigente · Pedro, 27-oct-2026
 
-Pedro pide traducciones comprensibles y controles automáticos, sin que el agente traduzca o relea cada frase ni bloquee el trabajo de la web. La generación pasa al workflow separado `Background translation drafts`, por tandas acotadas en Actions del repo público; [comandos y límites](../quality/translation-drafts/README.md). Los resultados son borradores con avisos, no aprobaciones inventadas. El agente consulta contadores/resumen, recoge checkpoints mecánicamente y actúa ante fallos; no continúa la sucesión manual de perfiles por idioma. Se conservan íntegros los pilotos, memorias, juicios y regresiones existentes. Las puertas de herramienta/publicación y los límites de URLs no se eliminan. Se puede preparar trabajo de la web mientras la generación sigue en Actions.
+Pedro pide traducciones comprensibles y controles automáticos, sin traducción o lectura frase a frase del agente. Desde el 28-oct el workflow `UsefulVerse translation autopilot` extrae inglés del catálogo, genera, retrotraduce, comprueba significado, pone dudas en cuarentena, guarda checkpoints/paquetes en la rama de datos y reanuda a diario. `Translation alerts` avisa a Pedro en GitHub. [Operación, cobertura parcial, coste cero y límites](../quality/translation-drafts/README.md). Consultar contadores e incidencias y corregir el sistema, sin otra microversión manual por idioma. Las puertas de herramienta/publicación y el orden del plan se mantienen; no fingir aprobación nativa. El adaptador de paquetes aún requiere conexión al build de producción. Se puede preparar la web mientras Actions trabaja.
 
 ### 8.1 Pasos (Codespaces o Mac, según la decisión)
 

@@ -39,6 +39,16 @@ def classify(run, jobs, report, now):
     return 'complete','La cola se completó y se guardaron los paquetes con controles automáticos. La publicación mantiene sus puertas propias.'
 
 
+def controller_state(workflow, runs, report, control, now):
+    if not control.get('enabled',False):return 'paused','El traductor está pausado en translation-control.json.'
+    if workflow.get('state')!='active':return 'disabled','GitHub ha desactivado el workflow del traductor.'
+    if any(run['status']!='completed' for run in runs):return None,None
+    latest=max((instant(run['created_at']) for run in runs),default=instant(control['watch_from_utc']))
+    if (not report or report.get('pending',0)>0) and (now-latest).total_seconds()>30*3600:
+        return 'overdue','Hay traducciones pendientes y no ha arrancado una tanda en más de 30 horas; comprobar el cron.'
+    return None,None
+
+
 def notify(run, state, explanation, report, api=client.api):
     marker=f'<!-- usefulverse-translation:{run["id"]} -->'
     issues=api('issues?state=all&per_page=100')
@@ -73,6 +83,19 @@ def run_watch(args):
             except FileNotFoundError:pass
     now=dt.datetime.now(dt.timezone.utc)
     control=json.loads(Path(__file__).with_name('translation-control.json').read_text())
+    if not args.run_id:
+        try:
+            workflow=client.api('actions/workflows/translation-autopilot.yml')
+            new_runs=[run for run in rows if run.get('workflow_id')==workflow['id']]
+            try:
+                blob=client.api('contents/report.json?ref='+client.RESULT_BRANCH)
+                latest_report=json.loads(base64.b64decode(blob['content']))
+            except FileNotFoundError:latest_report=None
+            state,reason=controller_state(workflow,new_runs,latest_report,control,now)
+            if state:
+                url,changed=notify(dict(id=-1,html_url='https://github.com/'+client.REPOSITORY+'/actions/workflows/translation-autopilot.yml'),state,reason,latest_report)
+                print(json.dumps(dict(controller=state,notification=url,changed=changed)))
+        except FileNotFoundError:pass
     for run in rows:
         if (run.get('head_repository') or {}).get('full_name')!=client.REPOSITORY:continue
         if run['status']=='completed' and instant(run['updated_at'])<instant(control['watch_from_utc']):continue
