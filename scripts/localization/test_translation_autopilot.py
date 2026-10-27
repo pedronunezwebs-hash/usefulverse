@@ -118,6 +118,11 @@ class AutopilotMemoryTest(unittest.TestCase):
             root=Path(temp).resolve();(root/'real').write_text('unchanged');(root/'link').symlink_to(root/'real')
             with self.assertRaises(ValueError):autopilot.write(root/'link','bad')
             self.assertEqual((root/'real').read_text(),'unchanged')
+    def test_controller_uses_the_same_python_minor_for_policy_hash_as_auditor(self):
+        root=HERE.parents[1]
+        controller=(root/'.github/workflows/translation-autopilot.yml').read_text().split('  wave-1:',1)[0]
+        self.assertIn("python-version: '3.11'",controller)
+
     def test_model_and_delivery_workflows_keep_zero_cost_and_separate_write_scope(self):
         root=HERE.parents[1]
         wave=(root/'.github/workflows/translation-wave.yml').read_text()
