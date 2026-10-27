@@ -101,8 +101,9 @@ def collect_runs(rows,audits,directory,shard=None):
 def recover(args):
     if client.api('')['private']:raise RuntimeError('Public standard runners only')
     rows,audits=memory(args.memory)
-    for path in (HERE.parents[1]/'docs/quality/translation-drafts/checkpoints').glob('*.jsonl'):
-        read_lines(path.read_text(),rows,audits)
+    for relative in ['docs/quality/translation-drafts/checkpoints','docs/quality/translation-drafts/quality-v1/checkpoints']:
+        for path in (HERE.parents[1]/relative).glob('*.jsonl'):
+            read_lines(path.read_text(),rows,audits)
     collect_runs(rows,audits,args.memory,args.shard)
     corpus=json.loads(args.corpus.read_text())
     wanted={r['record_id'] for r in drafts.work_items(corpus,args.locales.split(',') if args.locales else drafts.LOCALES,args.shard,4)}
