@@ -230,10 +230,12 @@ def generate(args):
         return
     if not remaining:
         return
-    deadline = time.monotonic() + args.minutes * 60
     args.model_dir.parent.mkdir(parents=True, exist_ok=True)
     model = Model(args.model_dir)
     import langid
+    # Conversion has its own room in the 300 min job timeout. A 1 min smoke run
+    # must still exercise inference after downloading/converting the model.
+    deadline = time.monotonic() + args.minutes * 60
     queues = {locale: [u for u in remaining if u['locale'] == locale] for locale in locales[args.shard::args.shards]}
     counts = Counter()
     sampled = Counter()
