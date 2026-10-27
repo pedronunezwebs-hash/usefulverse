@@ -26,6 +26,7 @@ Con el job terminado (aunque los otros sigan en marcha):
 
 ```sh
 gh api repos/pedronunezwebs-hash/usefulverse/actions/jobs/JOB_ID/logs > job.log
+# En gh reciente, añadir --allow-escape-sequences si exige permitir ANSI; guardar en archivo, nunca renderizar el log.
 python3 scripts/localization/background-drafts.py collect --output docs/quality/translation-drafts/checkpoints/batch-N.jsonl job.log
 ```
 
@@ -42,3 +43,7 @@ Fuentes comprobadas el 27-oct: [facturación](https://docs.github.com/en/billing
 ## Primera verificación real
 
 [Smoke 40520460992](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40520460992): 16 destinos únicos españoles generados, 16 retrotraducciones; 14 sin avisos automáticos y dos con aviso del detector de idioma. Los 16 conservan datos protegidos y no están truncados. Se recuperaron por código y quedaron en checkpoints; cero lectura/juicio lingüístico del agente. No son 16 idiomas ni 16 herramientas terminadas. La reanudación automática también recuperó los 16 desde la API real. Trece pruebas Python nuevas y dos de extracción pasan en local; la CI completa está enlazada en ESTADO.
+
+## Estado al 28-oct
+
+[CI completa correcta](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523434352): 3.045 Node + 409 Python, cero fallos/errores y dos omisiones opcionales. [Tanda larga activa](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40523422271): dos jobs en generación, otros dos en cola y segunda vuelta automática posterior. El estado agregado del run puede figurar en cola mientras hay jobs ejecutándose; consultar los jobs. No se ha medido aún la salida final de esta tanda. La CLI actual exige permitir explícitamente los bytes ANSI de los logs: el recuperador los captura sin renderizarlos, con compatibilidad para la CLI anterior; el fallo queda protegido por un test permanente.
