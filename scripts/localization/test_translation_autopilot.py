@@ -55,6 +55,7 @@ class SemanticScreenTest(unittest.TestCase):
     def test_completed_loading_aspect_is_normalized_without_progress_or_actor_changes(self):
         self.assertEqual(semantic.canonical_state('The drawing has finished loading.'),'The drawing is loaded.')
         self.assertEqual(semantic.canonical_state('The drawing is fully loaded.'),'The drawing is loaded.')
+        self.assertIn('loading_state_changed',semantic.critical_changes('The drawing has finished loading.','The drawing is still loading.'))
         for text in ['The drawing is still loading.','The drawing is not fully loaded.','The app has finished loading a file.']:
             self.assertEqual(semantic.canonical_state(text),text)
 

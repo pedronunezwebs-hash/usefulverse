@@ -32,6 +32,13 @@ def canonical_state(text):
     return re.sub(pattern,r'\1 is loaded',text,flags=re.I)
 
 
+def loading_state(text):
+    value=canonical_state(text)
+    if re.search(r'\bis (?:still )?loading\b|\bhas not finished loading\b',value,re.I):return 'pending'
+    if re.search(r'\bis loaded\b',value,re.I) and not NEGATION.search(value):return 'complete'
+    return None
+
+
 def direction(text):
     text = text.lower()
     forward = re.search(r'\b('+FILETYPE+r')\b.{0,80}?\b(?:to|into|as)\b.{0,30}?\b('+FILETYPE+r')\b', text)
@@ -51,6 +58,8 @@ def critical_changes(source, back):
         flags.append('quantity_or_coordinate_order')
     if bool(NEGATION.search(source)) != bool(NEGATION.search(back)):
         flags.append('negation')
+    state_a,state_b=loading_state(source),loading_state(back)
+    if (state_a or state_b) and state_a!=state_b:flags.append('loading_state_changed')
     a, b = direction(source), direction(back)
     if a is not None and (b is None or a != b):
         flags.append('conversion_direction')
