@@ -81,3 +81,5 @@ Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpo
 ## Traductor autónomo · 28-oct
 
 Operación actual: [translation-drafts/README.md](translation-drafts/README.md). `translation-autopilot.yml` coordina hasta seis vueltas con cuatro modelos simultáneos de `translation-wave.yml`; fuente fijada de la rama permitida, modelos solo lectura y publicador acotado a `automation/translation-results`. Cron diario y cambios del inglés; omite modelos si la cola está procesada. `translation-watch.yml` comprueba estados cada 30 min y crea avisos nativos GitHub. Main registra controladores; el runtime/extractor se ejecuta desde el SHA de la fuente (inicialmente feat/new-tools-batch-1). No activar el source_ref main antes de integrar esas fuentes. No ejecuta deploy.
+
+Validación ampliada: `validate-staged.yml`, solo manual/lectura y sin ningún paso de deploy; conserva intactos los bytes de `deploy-cloudflare.yml`. Fuente del cierre 807a149, suite completa/builds/gate/preview correctos. El ajuste posterior de Python del controlador pasó 20 contratos y diez referencias reales en 40571740997.

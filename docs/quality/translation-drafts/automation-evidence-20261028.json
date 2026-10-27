@@ -193,5 +193,22 @@
   "data_commit": "23f78850cfbcc55e445cdbe9089d21a30c9a0d30",
   "refresh_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565169603",
   "refresh_conclusion": "success",
-  "campaign": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987"
+  "campaign": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987",
+  "current_models_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40571740997",
+  "current_contract_tests": 20,
+  "current_reference_cases_correct": 10,
+  "current_billable": {
+    "UBUNTU": {
+      "total_ms": 0,
+      "jobs": 1,
+      "job_runs": [
+        {
+          "job_id": 122427464885,
+          "duration_ms": 0
+        }
+      ]
+    }
+  },
+  "final_ci": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40568857285",
+  "closure": "closure-20261028.json"
 }
