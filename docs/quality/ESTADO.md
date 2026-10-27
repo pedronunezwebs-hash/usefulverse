@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-27 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T12:32:29.200026+00:00 · cierre v32/v33 ruso y CI final; sin publicación
+**Turno actual (candado):** LIBRE · Codex · 2026-10-27T13:47:44.511177+00:00 · v32/v33 cerrado;respaldo y retirada efectiva verificados
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -47,7 +47,7 @@ Ruso v33: referencias 360/360; ampliado conocido 1566/1566 y 792/792 en las 88 c
 - [x] Respaldo de las 300 recuperable online; fuente con noindex en PR #136, cero en main/activadas.
 - [x] Pilotos históricos y regresiones preservados; informes y commits en LOG.md y lotes/.
 - [x] V32/v33 ruso: cuatro reparaciones; muestra conocida pasa. Publicación sigue sin aprobar.
-- [ ] CI final y retirada efectiva verificadas antes de LIBRE.
+- [x] CI final y retirada efectiva verificadas antes de LIBRE.
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -154,6 +154,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** pendiente; antes de liberar verificar push, árbol remoto, seis documentos idénticos y recuperación de originales. Evidencias históricas: translation-pilot/remote-v*-verification.json y cli-cache-v*-cleanup.json, en la rama del PR #136.
+**Retirada actual:** verificada: carpeta propia eliminada antes de LIBRE; originales recuperables en GitHub y seis documentos sincronizados. Evidencias históricas: translation-pilot/remote-v*-verification.json y cli-cache-v*-cleanup.json, en la rama del PR #136.
 
 Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
