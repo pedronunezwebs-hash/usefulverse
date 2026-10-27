@@ -3,6 +3,8 @@ import copy
 import datetime as dt
 import importlib.util
 import io
+import json
+import types
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -12,6 +14,7 @@ def load(name):
     spec=importlib.util.spec_from_file_location(name.replace('-','_'),HERE/(name+'.py'))
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 semantic=load('background-semantic');alerts=load('translation-alerts')
+client=load('autopilot-client')
 
 
 class SemanticScreenTest(unittest.TestCase):
@@ -49,6 +52,20 @@ class SemanticScreenTest(unittest.TestCase):
     def test_model_cannot_download_on_mac(self):
         with patch.dict('os.environ',{'GITHUB_ACTIONS':'','RUNNER_OS':'macOS'}):
             with self.assertRaises(RuntimeError):semantic.Models()
+    def test_completed_loading_aspect_is_normalized_without_progress_or_actor_changes(self):
+        self.assertEqual(semantic.canonical_state('The drawing has finished loading.'),'The drawing is loaded.')
+        self.assertEqual(semantic.canonical_state('The drawing is fully loaded.'),'The drawing is loaded.')
+        for text in ['The drawing is still loading.','The drawing is not fully loaded.','The app has finished loading a file.']:
+            self.assertEqual(semantic.canonical_state(text),text)
+
+
+class GithubClientTest(unittest.TestCase):
+    def test_repo_root_url_has_no_trailing_slash(self):
+        calls=[]
+        def run(command,**kwargs):
+            calls.append(command);return types.SimpleNamespace(returncode=0,stdout=b'{"private":false}',stderr=b'')
+        with patch.object(client.subprocess,'run',run):self.assertFalse(client.api('')['private'])
+        self.assertEqual(calls[0][-1],'repos/pedronunezwebs-hash/usefulverse')
 
 
 class TranslationNoticeTest(unittest.TestCase):

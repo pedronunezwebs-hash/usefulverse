@@ -25,6 +25,13 @@ def normalize(text):
     return re.findall(r'[a-z0-9]+', text.lower())
 
 
+def canonical_state(text):
+    # Passive completed-loading states of files. Do not normalize an active
+    # actor ("the app has finished loading a file") or an unfinished state.
+    pattern=r'\b((?:the|this|your|a|an)\s+(?:file|image|drawing|document|video|audio|recording))\s+(?:has finished loading|is fully loaded|has been loaded)\b'
+    return re.sub(pattern,r'\1 is loaded',text,flags=re.I)
+
+
 def direction(text):
     text = text.lower()
     forward = re.search(r'\b('+FILETYPE+r')\b.{0,80}?\b(?:to|into|as)\b.{0,30}?\b('+FILETYPE+r')\b', text)
@@ -122,7 +129,8 @@ class Models:
     def score(self, source, translation, back):
         torch=self.torch
         e=self.et(['query: '+source,'query: '+translation],padding=True,truncation=False,return_tensors='pt')
-        n=self.nt([source,back],[back,source],padding=True,truncation=False,return_tensors='pt')
+        a,b=canonical_state(source),canonical_state(back)
+        n=self.nt([a,b],[b,a],padding=True,truncation=False,return_tensors='pt')
         if e['input_ids'].shape[1]>POLICY['max_tokens'] or n['input_ids'].shape[1]>POLICY['max_tokens']:
             return None
         with torch.inference_mode():
