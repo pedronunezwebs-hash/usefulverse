@@ -1,0 +1,197 @@
+{
+  "semantic_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40562898178",
+  "source_commit": "093c7f8346d3d4aa8f82ea2270b8a70bec8b23e9",
+  "conclusion": "success",
+  "model_check": {
+    "policy_digest": "36421db300bb5b4775311d883e0717d9efadde33b6766e5fd6d698175f610ed0",
+    "cases": [
+      {
+        "source": "The file is saved on your device.",
+        "expected": true,
+        "passed": true,
+        "reasons": [],
+        "scores": {
+          "similarity": 1.0,
+          "forward_entailment": 0.9950438737869263,
+          "reverse_entailment": 0.9950438737869263,
+          "forward_contradiction": 0.00041721839806996286,
+          "reverse_contradiction": 0.00041721839806996286
+        }
+      },
+      {
+        "source": "You can download the result.",
+        "expected": true,
+        "passed": true,
+        "reasons": [],
+        "scores": {
+          "similarity": 0.9656233191490173,
+          "forward_entailment": 0.9980883002281189,
+          "reverse_entailment": 0.997779905796051,
+          "forward_contradiction": 0.00011951294436585158,
+          "reverse_contradiction": 0.0001081329319276847
+        }
+      },
+      {
+        "source": "No file is uploaded to a server.",
+        "expected": true,
+        "passed": true,
+        "reasons": [],
+        "scores": {
+          "similarity": 0.9826037287712097,
+          "forward_entailment": 0.9839179515838623,
+          "reverse_entailment": 0.9957744479179382,
+          "forward_contradiction": 0.0009104122873395681,
+          "reverse_contradiction": 0.00016294923261739314
+        }
+      },
+      {
+        "source": "The drawing has finished loading.",
+        "expected": true,
+        "passed": true,
+        "reasons": [],
+        "scores": {
+          "similarity": 0.9521195292472839,
+          "forward_entailment": 0.9924256801605225,
+          "reverse_entailment": 0.9924256801605225,
+          "forward_contradiction": 0.0007025957456789911,
+          "reverse_contradiction": 0.0007025957456789911
+        }
+      },
+      {
+        "source": "No file is uploaded to a server.",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "contradiction",
+          "meaning_not_preserved_both_ways",
+          "negation"
+        ],
+        "scores": {
+          "similarity": 0.9352514743804932,
+          "forward_entailment": 0.0021732207387685776,
+          "reverse_entailment": 7.91069760452956e-05,
+          "forward_contradiction": 0.996366024017334,
+          "reverse_contradiction": 0.9997866749763489
+        }
+      },
+      {
+        "source": "The drawing has finished loading.",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "loading_state_changed"
+        ],
+        "scores": {
+          "similarity": 0.951106071472168,
+          "forward_entailment": 0.8934217095375061,
+          "reverse_entailment": 0.9914284348487854,
+          "forward_contradiction": 0.015160931274294853,
+          "reverse_contradiction": 0.0013724385062232614
+        }
+      },
+      {
+        "source": "Download",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "contradiction",
+          "meaning_not_preserved_both_ways",
+          "short_command_changed"
+        ],
+        "scores": {
+          "similarity": 0.8889877796173096,
+          "forward_entailment": 0.00019769636855926365,
+          "reverse_entailment": 0.0006663319072686136,
+          "forward_contradiction": 0.999329686164856,
+          "reverse_contradiction": 0.9975306391716003
+        }
+      },
+      {
+        "source": "Convert PNG images to PDF.",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "contradiction",
+          "conversion_direction",
+          "meaning_not_preserved_both_ways"
+        ],
+        "scores": {
+          "similarity": 0.9834725856781006,
+          "forward_entailment": 0.0013704930897802114,
+          "reverse_entailment": 0.0008900230168364942,
+          "forward_contradiction": 0.9975671768188477,
+          "reverse_contradiction": 0.9982888102531433
+        }
+      },
+      {
+        "source": "The maximum is 20 files.",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "contradiction",
+          "meaning_not_preserved_both_ways",
+          "quantity_or_coordinate_order"
+        ],
+        "scores": {
+          "similarity": 0.9577104449272156,
+          "forward_entailment": 8.36589460959658e-05,
+          "reverse_entailment": 9.658509952714667e-05,
+          "forward_contradiction": 0.9994301199913025,
+          "reverse_contradiction": 0.9994695782661438
+        }
+      },
+      {
+        "source": "If the file is valid, process it.",
+        "expected": false,
+        "passed": false,
+        "reasons": [
+          "contradiction",
+          "meaning_not_preserved_both_ways"
+        ],
+        "scores": {
+          "similarity": 0.9684260487556458,
+          "forward_entailment": 0.00023200191208161414,
+          "reverse_entailment": 0.0009065210469998419,
+          "forward_contradiction": 0.9975253939628601,
+          "reverse_contradiction": 0.9969722032546997
+        }
+      }
+    ]
+  },
+  "notification_probe": "https://github.com/pedronunezwebs-hash/usefulverse/issues/137",
+  "notification_visible_in_owner_inbox": true,
+  "prior_failures": [
+    {
+      "run_id": 40558139389,
+      "regression": "completed loading valid paraphrase"
+    },
+    {
+      "run_id": 40562491648,
+      "regression": "completed versus still loading"
+    },
+    {
+      "run_id": 40558145627,
+      "regression": "root repository API trailing slash"
+    }
+  ],
+  "native_review": false,
+  "release_approved": false,
+  "github_reported_billable": {
+    "UBUNTU": {
+      "total_ms": 0,
+      "jobs": 1,
+      "job_runs": [
+        {
+          "job_id": 122396393021,
+          "duration_ms": 0
+        }
+      ]
+    }
+  },
+  "smoke_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40563472659",
+  "smoke_conclusion": "success",
+  "data_commit": "23f78850cfbcc55e445cdbe9089d21a30c9a0d30",
+  "refresh_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565169603",
+  "refresh_conclusion": "success",
+  "campaign": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987"
+}

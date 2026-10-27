@@ -12,7 +12,7 @@ gh workflow run translation-autopilot.yml --repo pedronunezwebs-hash/usefulverse
 
 Fija el SHA de la fuente al arrancar. La última rama inglesa se conserva en el manifiesto de resultados; inicialmente es `feat/new-tools-batch-1`. Solo admite esa rama o `main`. Al integrar Paso A, usar `source_ref=main`. No moverla antes de que main contenga las fuentes y scripts necesarios. Pausa: `scripts/localization/translation-control.json`, `enabled:false` en main. No ejecutar el workflow manual antiguo en paralelo.
 
-Tres vueltas como máximo, cuatro grupos de destinos y dos modelos simultáneos. Cada job tiene presupuesto de hasta 120 min de generación y 120 de auditoría, más instalación, con timeout 330 min. La campaña deja de iniciar modelos al cumplir 24 h; las colas pueden añadir espera y reducir las vueltas útiles. No hay un job de 24 h ni garantía de servicio continuo. El siguiente día recupera pendientes. Cuando todas las unidades están procesadas omite modelos; una cuarentena no se regenera indefinidamente.
+Seis vueltas como máximo, cuatro grupos de destinos y cuatro modelos simultáneos. Se duplicó el paralelismo tras la prueba inicial sin cambiar ningún filtro de calidad. Cada job tiene presupuesto de hasta 120 min de generación y 120 de auditoría, más instalación, con timeout 330 min. La campaña deja de iniciar modelos al cumplir 24 h; las colas pueden añadir espera y reducir las vueltas útiles. `minutes=0,waves=1` recupera y guarda el informe sin descargar modelos. No hay un job de 24 h ni garantía de servicio continuo. El siguiente día recupera pendientes. Cuando todas las unidades están procesadas omite modelos; una cuarentena no se regenera indefinidamente.
 
 ## Trabajo automático
 

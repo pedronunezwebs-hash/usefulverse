@@ -1,3 +1,9 @@
+## 2026-10-28 · Codex · Traductor autónomo y avisos gratuitos
+
+[Informe](lotes/2026-10-28-traductor-autonomo.md). Generación, retrotraducción, controles semánticos, cuarentena y guardado automático en rama de datos. Cron diario/cambios del inglés; hasta seis vueltas con cuatro runners estándar, sin APIs pagadas ni tokens ChatGPT, artifacts/cache persistente, Codespaces o Cloudflare. Push bot verificado por smoke 40563472659; modelos 40562898178: 10/10 y consumo reportado 0 ms facturables. Notificaciones #137/#138 verificadas en GitHub; correo/push pendiente P-009. Recuperación actual 40565169603: 14.531 borradores vigentes, 30 auditados, 18 exportados, 12 cuarentenas y 929.922 pendientes de auditoría. Campaña 40565692987 arrancada; no esperar en el chat ni volver a perfiles manuales.
+
+Fuente inglesa: 1.000 propietarios, 42.053 claves/25.832 pares texto-contexto; 120 coberturas parciales explícitas. Adaptador preparado, falta conexión al build de producción bajo sus puertas. Históricos 35/17.441 y 905 memorias intactos; cero idiomas aprobados. CI 40564076126 en curso al preparar el relevo; cierre posterior registra resultado exacto. 19 Python enfocadas + 3 Node correctas. Producción cinco GET/dos XML: 25.625 URLs, tres soft404 pendientes; cero deploys/activaciones/envíos. Nueve pruebas Pedro pendientes, cero FALLA. Paso A abierto; no avanzar fase 0. La retirada efectiva y LIBRE se registran solo después del respaldo remoto y borrado verificado del clon propio.
+
 ## V31 ·27-oct-2026 · estado actual
 
 ## 2026-10-27 · Codex · v32/v33 ruso y relevo compacto

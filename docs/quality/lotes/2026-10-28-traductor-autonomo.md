@@ -1,0 +1,25 @@
+# 28-oct · Traductor autónomo, sin gasto
+
+Pedro pide que GitHub genere, compruebe y entregue traducciones comprensibles sin revisión frase a frase del chat, con avisos si se detiene. No se retoma v34 ni se borran memorias/juicios de v1–v33. El trabajo fue infraestructura; no se modifica la web publicada.
+
+## Resultado
+
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136); implementación [1116a30](https://github.com/pedronunezwebs-hash/usefulverse/commit/1116a30), extracción corregida [6ab8820](https://github.com/pedronunezwebs-hash/usefulverse/commit/6ab8820), paralelismo/avisos [e8a7cb9](https://github.com/pedronunezwebs-hash/usefulverse/commit/e8a7cb9).
+- [Smoke integral correcto 40563472659](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40563472659): generación + auditoría + push bot sin intervención. 14.555 borradores recuperados/generados, 31 auditados, 19 entradas exportadas y 12 cuarentenas. Es prueba del sistema, no 14.555 herramientas terminadas. El corpus del smoke aún incluía un módulo duplicado, posteriormente corregido con test rojo/verde; consultar el informe actual de la rama de datos para cifras vigentes.
+- [Modelos reales 40562898178](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40562898178): diez casos, diez decisiones esperadas. Las dos pruebas anteriores fallaron ante una paráfrasis válida y ante carga completa/pendiente: fallos conservados y correcciones permanentes, sin eliminar referencias ni aflojar umbrales. La petición raíz del notificador también tuvo regresión roja antes del arreglo.
+- [Aviso real #137](https://github.com/pedronunezwebs-hash/usefulverse/issues/137): bot, asignación a Pedro y mención visible en su bandeja GitHub comprobadas por API. [#138](https://github.com/pedronunezwebs-hash/usefulverse/issues/138) acredita aviso real de cancelación al migrar la tanda antigua. P-009 comprueba correo/push en el aparato; no se afirma haberlos recibido.
+- [Resultados permanentes](https://github.com/pedronunezwebs-hash/usefulverse/tree/automation/translation-results): memoria inmutable, auditorías ligadas a bytes/política y paquetes por herramienta/idioma. Guardado tras cada vuelta, recuperación de jobs fallidos/cancelados, sin artifacts/cache ni relectura lingüística del agente.
+- Extractor actual: 1.000 herramientas, 42.053 claves, 25.832 pares distintos texto/contexto, 36 destinos. 120 coberturas parciales explícitas (106 recuperadas + 14 mercado): metadatos disponibles, no toda su UI. Las mejoras inglesas se incorporan por su módulo o `translation-sources/<slug>.json`.
+- Campaña diaria y cambios del inglés: hasta seis vueltas con cuatro runners estándar simultáneos, plazo de 24 h para nuevo trabajo y jobs de 330 min máximo. Omite modelos si no hay pendientes; mantiene cuarentenas sin repetir inferencias sin cambios. Puede continuar con el Mac apagado y sin ChatGPT.
+- Modelos fijados/licencias permisivas; controles de estructura, datos, retrotraducción de cada candidato auditado, similitud multilingüe y entailment/contradicción bidireccionales. No garantizan significado perfecto; no son una revisión nativa.
+- Adaptador de build preparado con invalidez por hash/contexto/política. Falta conectarlo al build de producción bajo la puerta de herramienta/publicación: los paquetes no activan ni despliegan traducciones por sí solos.
+
+## Seguridad y coste
+
+Repo público + `ubuntu-latest` estándar, sin fallback pagado. API real de consumo del run de modelos: `UBUNTU.total_ms=0`. Sin APIs pagadas, tokens ChatGPT en ejecución, artifacts, cache persistente, LFS, Packages, Codespaces, Containers ni Cloudflare. Excepción específica en AGENTS.md para publicador a rama de datos y avisos `issues:write`, autorizados por Pedro; modelos solo lectura, rutas/ref permitidos y push sin force. Main recibe controladores/documentos, sin incorporar las 300. Cron/avisos también dependen de la disponibilidad de GitHub; no hay SLA 24/7 ni garantía de correo/push.
+
+## Verificaciones y límites
+
+19 pruebas Python enfocadas y tres Node correctas. Piloto histórico: 35 checkpoints / 17.441 registros intactos, 905 memorias, cero idiomas nuevos aprobados. Producción: cinco GET y dos XML, 10.260 + 15.365 = 25.625 URLs; las tres rutas inexistentes del hub siguen respondiendo 200. Sin despliegue, activación, cambios de slug/noindex ni envío a buscadores. P-001–P-009: nueve pendientes, cero FALLA. Ninguna herramienta pasa a terminada y no se certifican dispositivos, UI, responsive/RTL/peso/a11y ni las siete capas.
+
+Evidencias: [modelos y notificación](../translation-drafts/automation-evidence-20261028.json), [smoke](../translation-drafts/smoke-report-20261028.json), [GET/XML](../translation-drafts/production-20261028.json). CI y campaña activa: ver ESTADO.md y el cierre de este informe. Siguiente: dejar la campaña funcionando y continuar los pendientes del Paso A; no avanzar a fase 0 antes de su verificación.
