@@ -1,5 +1,10 @@
 import base64
 import copy
+import contextlib
+import datetime as dt
+import io
+import os
+import types
 import importlib.util
 import json
 from pathlib import Path
@@ -123,6 +128,21 @@ class BoundedQualityTest(unittest.TestCase):
             self.assertEqual(report['refined_adopted'],1);self.assertEqual(report['pending'],0)
             self.assertEqual(report['by_locale']['es']['usable'],1)
             self.assertFalse(pack['release_approved'])
+    def test_recovery_reuses_a_verified_seed_instead_of_scheduling_another_attempt(self):
+        corpus,parent,primary,result=self.fixture()
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp).resolve();seed=root/'docs/quality/translation-drafts/quality-v1/checkpoints'
+            seed.mkdir(parents=True);(seed/'verified.jsonl').write_text(json.dumps(result)+'\n')
+            path=root/'corpus.json';path.write_text(json.dumps(corpus))
+            args=types.SimpleNamespace(memory=root/'results',corpus=path,raw=root/'raw.jsonl',audits=root/'audits.jsonl',shard=0,locales='es',minutes=0)
+            source=copy.deepcopy(parent)
+            def api(path):
+                return dict(private=False) if not path else dict(created_at=dt.datetime.now(dt.timezone.utc).isoformat())
+            with patch.object(pipeline,'HERE',root/'scripts/localization'), patch.object(pipeline,'memory',return_value=({parent['record_id']:parent},{quality.primary_key(parent):primary})), patch.object(pipeline,'collect_runs',return_value=[]), patch.object(pipeline.client,'api',side_effect=api), patch.dict(os.environ,{'GITHUB_RUN_ID':'123','GITHUB_OUTPUT':str(root/'outputs')}), contextlib.redirect_stdout(io.StringIO()):
+                pipeline.recover(args)
+            self.assertIn('pending_audit=0', (root/'outputs').read_text())
+            self.assertIn(quality.POLICY_DIGEST,args.audits.read_text())
+            self.assertEqual(parent,source)
     def test_quarantined_existing_audit_remains_pending_until_its_one_refinement(self):
         corpus,parent,primary,_=self.fixture();audits={quality.primary_key(parent):primary}
         with tempfile.TemporaryDirectory() as temp:

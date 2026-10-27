@@ -1,0 +1,62 @@
+{
+  "run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40578541656",
+  "source_commit": "abcafa4a8ae663d20897fe05af31bbffe6510f44",
+  "conclusion": "success",
+  "summary": {
+    "additional_candidates_max": 2,
+    "approved": false,
+    "attempted": 12,
+    "calibration": {
+      "accepted_before_and_model_passes": 73,
+      "approved": false,
+      "known_errors_blocked": 46,
+      "model_only_false_accepts_blocked_by_memory": 29,
+      "native_review": false,
+      "previously_accepted": 140,
+      "previously_rejected": 46,
+      "prior_agent_references": 186
+    },
+    "initialization_seconds": 217.031,
+    "native_review": false,
+    "passing_originals_preserved": 19,
+    "policy_digest": "0eeb566720322555f829a5a3be61f81c3c9d73a716a9e31c6a7419feb1ff5a59",
+    "primary_policy": "36421db300bb5b4775311d883e0717d9efadde33b6766e5fd6d698175f610ed0",
+    "remaining_reasons": {
+      "contradiction": 2,
+      "meaning_not_preserved_both_ways": 3,
+      "short_command_changed": 9
+    },
+    "rescued": 4,
+    "seconds": [
+      8.793,
+      3.31,
+      2.308,
+      3.154,
+      2.063,
+      1.714,
+      2.766,
+      3.413,
+      2.609,
+      1.606,
+      1.407,
+      1.812
+    ],
+    "unresolved": 8
+  },
+  "collected_records": 12,
+  "median_seconds": 2.4585,
+  "maximum_seconds": 8.793,
+  "billable": {
+    "UBUNTU": {
+      "total_ms": 0,
+      "jobs": 1,
+      "job_runs": [
+        {
+          "job_id": 122451438421,
+          "duration_ms": 0
+        }
+      ]
+    }
+  },
+  "checkpoint_sha256": "a58b7fad651733a8306b29263b819618793ca9d16894c29044811db42953292c"
+}
