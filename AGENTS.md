@@ -28,6 +28,7 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
   nunca la llave global.
 - Workflows: permisos `contents: read`, acciones fijadas por SHA, nunca `pull_request_target` ni secretos en jobs de
   PR. Los PR de personas externas necesitan aprobación de Pedro. `main` y `backup/*` no se pueden borrar ni sobrescribir.
+- **Excepción acotada autorizada por Pedro (28-oct-2026):** la entrega automática de traducciones puede usar `contents: write` únicamente en el job `deliver` de `translation-wave.yml`, para commits sin force a `automation/translation-results` y solo `memory/`, `packages/`, `manifest.json` y `report.json`. Los jobs de modelos mantienen `contents: read`; no escriben código, `main`, `backup/*` ni producción. `translation-watch.yml` puede usar `issues: write` para avisar a Pedro de cambios de estado. No añade colaboradores, apps, secretos ni servicios de pago.
 - Solo Pedro tiene permiso de escritura. No añadir colaboradores ni apps con escritura sin su aprobación.
 
 ## Pruebas (obligatorio, decisión de Pedro 20-oct-2026)

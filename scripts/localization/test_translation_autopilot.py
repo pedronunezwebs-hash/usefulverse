@@ -5,6 +5,8 @@ import importlib.util
 import io
 import json
 import types
+import tempfile
+import base64
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -15,6 +17,7 @@ def load(name):
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
 semantic=load('background-semantic');alerts=load('translation-alerts')
 client=load('autopilot-client')
+autopilot=load('translation-autopilot')
 
 
 class SemanticScreenTest(unittest.TestCase):
@@ -58,6 +61,72 @@ class SemanticScreenTest(unittest.TestCase):
         self.assertIn('loading_state_changed',semantic.critical_changes('The drawing has finished loading.','The drawing is still loading.'))
         for text in ['The drawing is still loading.','The drawing is not fully loaded.','The app has finished loading a file.']:
             self.assertEqual(semantic.canonical_state(text),text)
+
+
+class AutopilotMemoryTest(unittest.TestCase):
+    def fixture(self):
+        unit=dict(key='example-tool.copy.title',source='Save the file.',source_hash=autopilot.drafts.digest('Save the file.'),
+                  context='example-tool UI copy.title',locales=['es'])
+        corpus=dict(units=[unit],destinationLocales=['es'],sourceDigest='source1',tools=1,
+                    documents=[dict(toolId='example-tool',sourceCopy={},coverage='centralized-copy')],coverage={})
+        work=autopilot.drafts.work_items(corpus,['es'],0,4)[0]
+        row=autopilot.drafts.make_record(work,'Guarda el archivo.',False,'Guarda el archivo.',0.1)
+        scores=dict(similarity=.95,forward_entailment=.95,reverse_entailment=.95,forward_contradiction=.01,reverse_contradiction=.01)
+        audit=autopilot.semantic.make_audit(row,unit['source'],False,scores)
+        return corpus,row,audit
+    def test_checkpoint_is_immutable_and_partial_tail_only_for_cancelled_log(self):
+        corpus,row,audit=self.fixture();rows={};audits={}
+        raw=autopilot.drafts.PREFIX+base64.b64encode(autopilot.canonical(row).encode()).decode()
+        autopilot.read_lines(raw,rows,audits)
+        autopilot.read_lines(raw,rows,audits)
+        self.assertEqual(len(rows),1)
+        with self.assertRaises(ValueError):autopilot.merge(rows,audits,dict(row,seconds=99))
+        with self.assertRaises(ValueError):autopilot.read_lines(raw+'\n'+autopilot.drafts.PREFIX+'broken',rows,audits)
+        autopilot.read_lines(raw+'\n'+autopilot.drafts.PREFIX+'broken',rows,audits,partial_tail=True)
+    def test_only_current_bound_semantic_audits_can_export_and_changed_english_reopens(self):
+        corpus,row,audit=self.fixture()
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp).resolve()
+            report=autopilot.export(corpus,{row['record_id']:row},{},root,12)
+            self.assertEqual(report['exported_entries'],0);self.assertEqual(report['pending'],1)
+            audits={row['record_id']+':'+autopilot.semantic.POLICY_DIGEST:audit}
+            report=autopilot.export(corpus,{row['record_id']:row},audits,root,12)
+            self.assertEqual(report['exported_entries'],1);self.assertEqual(report['pending'],0)
+            pack=json.loads((root/'packages/es/example-tool.json').read_text())
+            self.assertFalse(pack['release_approved']);self.assertFalse(pack['native_review'])
+            corpus['units'][0]['source']='Save the result.'
+            corpus['units'][0]['source_hash']=autopilot.drafts.digest('Save the result.')
+            report=autopilot.export(corpus,{row['record_id']:row},audits,root,12)
+            self.assertEqual(report['exported_entries'],0);self.assertEqual(report['pending'],1)
+            self.assertFalse((root/'packages/es/example-tool.json').exists())
+    def test_quarantine_is_processed_but_never_exported_and_forged_audit_fails(self):
+        corpus,row,audit=self.fixture()
+        audit=autopilot.semantic.make_audit(row,'Delete the file.',False,dict(audit['scores'],forward_entailment=.01))
+        with tempfile.TemporaryDirectory() as temp:
+            audits={row['record_id']+':'+autopilot.semantic.POLICY_DIGEST:audit}
+            report=autopilot.export(corpus,{row['record_id']:row},audits,Path(temp).resolve(),12)
+            self.assertEqual((report['pending'],report['quarantined'],report['exported_entries']),(0,1,0))
+            audit['auto_usable']=True
+            with self.assertRaises(ValueError):autopilot.export(corpus,{row['record_id']:row},audits,Path(temp).resolve(),12)
+    def test_publisher_rejects_main_and_foreign_repositories(self):
+        with patch.object(autopilot.subprocess,'check_output',return_value='main\n'):
+            with self.assertRaises(ValueError):autopilot.validate_destination(HERE)
+        with patch.object(autopilot.subprocess,'check_output',side_effect=[autopilot.client.RESULT_BRANCH+'\n','https://github.com/other/repo.git\n']):
+            with self.assertRaises(ValueError):autopilot.validate_destination(HERE)
+    def test_symlink_cannot_overwrite_a_result(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp).resolve();(root/'real').write_text('unchanged');(root/'link').symlink_to(root/'real')
+            with self.assertRaises(ValueError):autopilot.write(root/'link','bad')
+            self.assertEqual((root/'real').read_text(),'unchanged')
+    def test_model_and_delivery_workflows_keep_zero_cost_and_separate_write_scope(self):
+        root=HERE.parents[1]
+        wave=(root/'.github/workflows/translation-wave.yml').read_text()
+        model,publisher=wave.split('  deliver:',1)
+        self.assertNotIn('contents: write',model);self.assertIn('contents: write',publisher)
+        self.assertEqual(wave.count('runs-on: ubuntu-latest'),2)
+        for forbidden in ['upload-artifact','actions/cache','self-hosted','gpu','pull_request_target']:
+            self.assertNotIn(forbidden,wave)
+        self.assertIn('ref: automation/translation-results',publisher)
 
 
 class GithubClientTest(unittest.TestCase):

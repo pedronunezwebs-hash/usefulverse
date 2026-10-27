@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { createSources, isProse } from './autopilot-source.mjs';
+
+test('all 1000 catalog owners have English sources without pretending recovered JS is fully extracted', async () => {
+  const corpus = await createSources();
+  assert.equal(corpus.tools, 1000);
+  assert.equal(corpus.coverage.recoveredMetadataOnly.length, 106);
+  assert.ok(corpus.coverage.metadataOnly.length >= 106);
+  assert.equal(corpus.destinationLocales.length, 36);
+  assert.equal(new Set(corpus.units.map(u => u.key)).size, corpus.units.length);
+  assert.ok(corpus.units.every(u => u.source_hash.length === 64 && u.context));
+});
+test('technical constants, formulas and URLs are not sent as prose', () => {
+  for (const text of ['UsefulVerse', 'PDF', '45', 'cm', '`a=5`', 'https://example.com/a']) assert.equal(isProse(text), false);
+  assert.equal(isProse('Your files stay on your device.'), true);
+});
