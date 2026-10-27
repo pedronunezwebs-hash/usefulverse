@@ -1,4 +1,5 @@
 """Exact earlier agent judgments become regression data, never native approval."""
+import ast
 from collections import Counter
 import hashlib
 import json
@@ -55,6 +56,7 @@ def identity(row):return (normalize_key(row['key']),row['locale'],row['source_ha
 class Guard:
     def __init__(self):
         self.data=read();self.digest=sha(canonical(self.data))
+        self.logic_digest=sha(ast.dump(ast.parse(Path(__file__).read_text()),include_attributes=False))
         # A conflicting earlier judgment remains blocked rather than silently approved.
         self.rejected={identity(row) for row in self.data['records'] if not row['accepted']}
     def rejects(self,row):

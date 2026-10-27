@@ -19,7 +19,7 @@ FORMAT='usefulverse-quality-refinement-v1'
 PREFIX='UVREFINE_RECORD '
 RECIPE=dict(model=drafts.MODEL,revision=drafts.REVISION,beam_size=4,maximum_candidates=2,
             max_input_tokens=512,max_output_tokens=256,attempts_per_source=1,
-            semantic_policy=semantic.POLICY_DIGEST,prior_judgments=history.digest)
+            semantic_policy=semantic.POLICY_DIGEST,prior_judgments=history.digest,prior_judgment_guard=history.logic_digest)
 POLICY_DIGEST=hashlib.sha256(json.dumps(RECIPE,sort_keys=True).encode()+
     ast.dump(ast.parse(Path(__file__).read_text()),include_attributes=False).encode()).hexdigest()
 CANDIDATE_FORMAT='usefulverse-refinement-candidate-v1'
