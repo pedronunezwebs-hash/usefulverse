@@ -147,13 +147,14 @@ def audit(args):
         previous=active_audit(row,audits)
         if previous:
             print(semantic.PREFIX+base64.b64encode(canonical(previous).encode()).decode(),flush=True)
-            refinement=quality.active(row,audits,previous) if not previous['auto_usable'] else None
+            refinement=quality.active(row,audits,previous) if not quality.primary_usable(row,previous) else None
             if refinement:print(quality.PREFIX+base64.b64encode(canonical(refinement).encode()).decode(),flush=True)
     pending=[row for row in rows.values() if quality.pending(row,audits,active_audit(row,audits))]
     if not pending:return
     deadline=min(time.time()+int(args.minutes)*60,int(args.deadline))
     if time.time()+5>=deadline:return
     models=semantic.Models();semantic.selftest(models)
+    print('UVREFINE_CALIBRATION '+canonical(quality.history.calibrate(models,semantic,drafts)),flush=True)
     deadline=min(time.time()+int(args.minutes)*60,int(args.deadline))
     back_model=None;counts=Counter()
     def get_translator():
@@ -178,7 +179,7 @@ def audit(args):
             semantic.validate_audit(result,row)
             audits[quality.primary_key(row)]=result
             print(semantic.PREFIX+base64.b64encode(canonical(result).encode()).decode(),flush=True)
-        if not result['auto_usable'] and quality.active(row,audits,result) is None:
+        if not quality.primary_usable(row,result) and quality.active(row,audits,result) is None:
             refined=quality.refine(row,result,models,get_translator,langid.classify,deadline)
             if refined is None:break
             audits[quality.key(row)]=refined
@@ -202,7 +203,7 @@ def export(corpus,rows,audits,directory,run_id):
     translations={key:quality.selected_translation(rows[key],audits,current[key]) for key in audited}
     usable={key for key,value in translations.items() if value is not None}
     refinement_pending={key for key in audited if quality.pending(rows[key],audits,current[key])}
-    refined={key for key in usable if not current[key]['auto_usable']}
+    refined={key for key in usable if not quality.primary_usable(rows[key],current[key])}
     counts={name:Counter(target_locale[key] for key in keys) for name,keys in dict(targets=source_targets,generated=generated,audited=audited,usable=usable,refinement_pending=refinement_pending,refined=refined).items()}
     by_locale={locale:{name:counter[locale] for name,counter in counts.items()} for locale in locales}
     for row in by_locale.values():

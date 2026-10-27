@@ -14,12 +14,12 @@ HERE=Path(__file__).resolve().parent
 def load(name):
     spec=importlib.util.spec_from_file_location(name.replace('-','_'),HERE/(name+'.py'))
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
-semantic=load('background-semantic');drafts=load('background-drafts')
+semantic=load('background-semantic');drafts=load('background-drafts');history=load('historical-quality').Guard()
 FORMAT='usefulverse-quality-refinement-v1'
 PREFIX='UVREFINE_RECORD '
 RECIPE=dict(model=drafts.MODEL,revision=drafts.REVISION,beam_size=4,maximum_candidates=2,
             max_input_tokens=512,max_output_tokens=256,attempts_per_source=1,
-            semantic_policy=semantic.POLICY_DIGEST)
+            semantic_policy=semantic.POLICY_DIGEST,prior_judgments=history.digest)
 POLICY_DIGEST=hashlib.sha256(json.dumps(RECIPE,sort_keys=True).encode()+
     ast.dump(ast.parse(Path(__file__).read_text()),include_attributes=False).encode()).hexdigest()
 CANDIDATE_FORMAT='usefulverse-refinement-candidate-v1'
@@ -32,7 +32,7 @@ def key(row):return row['record_id']+':'+POLICY_DIGEST
 
 def candidate(parent,raw,translation,truncated,detected_language,back=None):
     value=dict(format=CANDIDATE_FORMAT,parent_digest=digest(parent),source=parent['source'],source_hash=parent['source_hash'],
-               context=parent['context'],locale=parent['locale'],model=drafts.MODEL,revision=drafts.REVISION,beam_size=4,
+               context=parent['context'],key=parent['key'],keys=parent['keys'],locale=parent['locale'],model=drafts.MODEL,revision=drafts.REVISION,beam_size=4,
                raw_translation=raw,translation=translation,truncated=truncated,detected_language=detected_language,back_sample=back)
     value['checks']=drafts.checks(value['source'],translation,truncated)
     value['warnings']=drafts.warnings(value)
@@ -48,9 +48,12 @@ def validate_candidate(value,parent):
         raise ValueError('Candidate translation is not the exact restored model output')
 
 
-def choose(primary,proposals):
-    if primary['auto_usable']:return None
-    passing=[(i,p) for i,p in enumerate(proposals) if p['audit']['auto_usable']]
+def primary_usable(parent,primary):return primary['auto_usable'] and not history.rejects(parent)
+
+
+def choose(parent,primary,proposals):
+    if primary_usable(parent,primary):return None
+    passing=[(i,p) for i,p in enumerate(proposals) if p['audit']['auto_usable'] and not history.rejects(p['candidate'])]
     if not passing:return None
     # All hard/semantic gates must pass before scores can rank alternatives.
     def rank(item):
@@ -62,12 +65,12 @@ def choose(primary,proposals):
 def make_result(parent,primary,proposals):
     return dict(format=FORMAT,record_id=parent['record_id'],raw_digest=digest(parent),policy_digest=POLICY_DIGEST,
                 recipe=RECIPE,primary_audit_digest=digest(primary),proposals=copy.deepcopy(proposals),
-                selected=choose(primary,proposals),approved=False,native_review=False)
+                selected=choose(parent,primary,proposals),approved=False,native_review=False)
 
 
 def validate_result(result,parent,primary):
     semantic.validate_audit(primary,parent)
-    if primary['auto_usable']:raise ValueError('A passing original must never be refined or replaced')
+    if primary_usable(parent,primary):raise ValueError('A passing original must never be refined or replaced')
     if result.get('format')!=FORMAT or result.get('record_id')!=parent['record_id'] or result.get('raw_digest')!=digest(parent):
         raise ValueError('Refinement is not bound to the exact original')
     if result.get('policy_digest')!=POLICY_DIGEST or result.get('recipe')!=RECIPE or result.get('primary_audit_digest')!=digest(primary):
@@ -80,7 +83,7 @@ def validate_result(result,parent,primary):
         value=proposal['candidate'];validate_candidate(value,parent)
         if value['translation'] in seen:raise ValueError('Repeated candidate is not a second attempt')
         seen.add(value['translation']);semantic.validate_audit(proposal['audit'],value)
-    expected=choose(primary,proposals)
+    expected=choose(parent,primary,proposals)
     if type(result.get('selected')) not in (int,type(None)) or result['selected']!=expected:raise ValueError('Forged candidate selection')
     return result
 
@@ -91,12 +94,12 @@ def active(parent,audits,primary):
 
 
 def pending(parent,audits,primary):
-    return primary is None or (not primary['auto_usable'] and active(parent,audits,primary) is None)
+    return primary is None or (not primary_usable(parent,primary) and active(parent,audits,primary) is None)
 
 
 def selected_translation(parent,audits,primary):
     if primary is None:return None
-    if primary['auto_usable']:return parent['translation']
+    if primary_usable(parent,primary):return parent['translation']
     result=active(parent,audits,primary)
     if result is None or result['selected'] is None:return None
     return result['proposals'][result['selected']]['candidate']['translation']
@@ -120,7 +123,7 @@ def alternatives(model,text,locale):
 
 
 def refine(parent,primary,models,translator,classify,deadline):
-    if primary['auto_usable']:return None
+    if primary_usable(parent,primary):return None
     if time.time()+10>=deadline:return None
     model=translator();masked,saved=drafts.protect(parent['source'])
     outputs=alternatives(model,masked,parent['locale'])
@@ -151,6 +154,8 @@ def benchmark(memory,model_dir):
     rows,audits=pipeline.memory(memory)
     startup=time.monotonic()
     models=semantic.Models();semantic.selftest(models)
+    calibration=history.calibrate(models,semantic,drafts)
+    print('UVREFINE_CALIBRATION '+json.dumps(calibration,sort_keys=True),flush=True)
     cache=[]
     def translator():
         if not cache:cache.append(pipeline.translator(model_dir))
@@ -159,8 +164,8 @@ def benchmark(memory,model_dir):
     deadline=time.time()+35*60
     eligible=[(r,pipeline.active_audit(r,audits)) for r in rows.values()]
     eligible=[(r,a) for r,a in eligible if a]
-    passing=[(r,a) for r,a in eligible if a['auto_usable']]
-    bad=sorted([(r,a) for r,a in eligible if not a['auto_usable']],key=lambda pair:pair[0]['record_id'])[:20]
+    passing=[(r,a) for r,a in eligible if primary_usable(r,a)]
+    bad=sorted([(r,a) for r,a in eligible if not primary_usable(r,a)],key=lambda pair:pair[0]['record_id'])[:20]
     if bad:translator()
     initialization_seconds=round(time.monotonic()-startup,3)
     attempted=adopted=0;seconds=[];failures={}
@@ -174,7 +179,7 @@ def benchmark(memory,model_dir):
             for reason in proposal['audit']['reasons']:failures[reason]=failures.get(reason,0)+1
     # Original accepted entries are returned unchanged; no model call for them.
     assert all(selected_translation(r,audits,a)==r['translation'] for r,a in passing)
-    summary=dict(policy_digest=POLICY_DIGEST,primary_policy=semantic.POLICY_DIGEST,attempted=attempted,rescued=adopted,
+    summary=dict(calibration=calibration,policy_digest=POLICY_DIGEST,primary_policy=semantic.POLICY_DIGEST,attempted=attempted,rescued=adopted,
                  unresolved=attempted-adopted,passing_originals_preserved=len(passing),additional_candidates_max=2,
                  seconds=seconds,initialization_seconds=initialization_seconds,remaining_reasons=failures,native_review=False,approved=False)
     print('UVREFINE_BENCHMARK '+json.dumps(summary,sort_keys=True),flush=True)

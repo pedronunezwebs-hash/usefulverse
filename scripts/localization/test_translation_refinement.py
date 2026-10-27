@@ -29,6 +29,22 @@ class BoundedQualityTest(unittest.TestCase):
         audit=quality.semantic.make_audit(value,parent['source'],False,scores)
         result=quality.make_result(parent,primary,[dict(candidate=value,audit=audit)])
         return corpus,parent,primary,result
+    def test_prior_agent_reference_data_is_reproducible_and_all_known_errors_stay_blocked(self):
+        history=load('historical-quality')
+        self.assertEqual(history.read(),history.compile_references())
+        bad=[r for r in quality.history.data['records'] if not r['accepted']]
+        self.assertEqual(len(bad),46)
+        for row in bad:
+            self.assertTrue(quality.history.rejects(dict(row,key=row['key'].replace('.', '.copy.',1))))
+            changed=dict(row,source_hash=quality.drafts.digest('Another source'))
+            self.assertFalse(quality.history.rejects(changed))
+    def test_known_bad_translation_cannot_be_selected_even_when_models_falsely_pass(self):
+        _,_,_,fixture=self.fixture();scores=fixture['proposals'][0]['audit']['scores']
+        ref=next(r for r in quality.history.data['records'] if not r['accepted'] and all(quality.drafts.checks(r['source'],r['translation']).values()))
+        row=dict(ref,record_id='known-bad',keys=[ref['key']],checks=quality.drafts.checks(ref['source'],ref['translation']),warnings=[])
+        audit=quality.semantic.make_audit(row,ref['source'],False,scores)
+        self.assertTrue(audit['auto_usable']);self.assertFalse(quality.primary_usable(row,audit))
+        self.assertIsNone(quality.selected_translation(row,{},audit))
     def test_passing_original_never_spends_another_model_call_or_gets_replaced(self):
         _,parent,primary,result=self.fixture()
         good=quality.semantic.make_audit(parent,parent['source'],False,result['proposals'][0]['audit']['scores'])
