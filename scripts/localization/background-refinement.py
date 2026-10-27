@@ -129,7 +129,7 @@ def refine(parent,primary,models,translator,classify,deadline):
     outputs=alternatives(model,masked,parent['locale'])
     proposals=[];seen={parent['translation']}
     for raw,cut in outputs:
-        if time.time()+5>=deadline:break
+        if time.time()+5>=deadline:return None
         restored=drafts.queue.restore(raw,saved);translation=restored if restored is not None else raw
         if translation in seen:continue
         seen.add(translation)

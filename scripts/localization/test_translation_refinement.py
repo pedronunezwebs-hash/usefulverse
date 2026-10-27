@@ -86,6 +86,20 @@ class BoundedQualityTest(unittest.TestCase):
         self.assertIsNone(quality.selected_translation(parent,{quality.key(parent):empty},primary))
         bad=copy.deepcopy(result);bad['proposals']*=3
         with self.assertRaises(ValueError):quality.validate_result(bad,parent,primary)
+    def test_budget_expiring_during_search_is_not_saved_as_a_completed_attempt(self):
+        _,parent,primary,_=self.fixture()
+        with patch.object(quality.time,'time',side_effect=[0,100]), patch.object(quality,'alternatives',return_value=[('Descarga el archivo.',False)]):
+            self.assertIsNone(quality.refine(parent,primary,Mock(),lambda:Mock(),lambda text:('es',1),60))
+    def test_empty_or_oversized_proposal_cannot_pass_or_start_unbounded_decoding(self):
+        _,parent,primary,result=self.fixture()
+        value=quality.candidate(parent,'','',False,'es')
+        audit=quality.semantic.make_audit(value,'',True,None)
+        self.assertFalse(audit['auto_usable'])
+        self.assertIsNone(quality.choose(parent,primary,[dict(candidate=value,audit=audit)]))
+        model=Mock();model.tokenizer.encode.return_value=list(range(513))
+        model.tokenizer.convert_ids_to_tokens.side_effect=lambda ids:ids
+        self.assertEqual(quality.alternatives(model,'long source','es'),[])
+        model.translator.translate_batch.assert_not_called()
     def test_expired_budget_cannot_start_a_new_model(self):
         _,parent,primary,_=self.fixture();translator=Mock(side_effect=AssertionError('expired'))
         self.assertIsNone(quality.refine(parent,primary,Mock(),translator,Mock(),time.time()-1))
