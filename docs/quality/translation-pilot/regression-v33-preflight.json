@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "policy": "context-v33",
+  "red_tests": 1,
+  "red_failures": 1,
+  "focused_initial_tests": 16,
+  "focused_initial_passed": 15,
+  "corrected_semantic_registry_reread_tests": 1,
+  "corrected_semantic_registry_passed": true,
+  "corrected_semantic_registry_seconds": 4.537,
+  "old_current_review_tests": 3,
+  "old_current_review_seconds": 106.551,
+  "old_current_review_passed": true,
+  "source_units": 214,
+  "memory_targets": 905,
+  "exact_positive_imports": 213,
+  "agent_forward_corrections": 1,
+  "old_frozen_runtime_files": 42,
+  "native_review": false,
+  "approved_locales": []
+}

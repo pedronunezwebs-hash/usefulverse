@@ -57,11 +57,19 @@ class PostReviewAudit:
         return len(expected)
 
 def install(namespace):
+    current33=namespace.get('RUSSIAN_V33')
     current32=namespace.get('RUSSIAN_V32')
     old=PostReviewAudit(namespace['RUSSIAN_V30']).audit
     if 'RUSSIAN_V31' not in namespace:namespace['audit_review_warnings']=old;return
     def combined(review,records,check_coverage=True):
-        if current32 is not None and review.get('inference_policy')=='context-v32':return current32.audit(review,records,check_coverage)
+        if current33 is not None and review.get('inference_policy')=='context-v33':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('forward_gate33',Path(__file__).with_name('pilot-review-forward-v32.py'));gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate);gate.audit(review,records,namespace['ROOT'],policy='context-v33')
+            return current33.audit(review,records,check_coverage)
+        if current32 is not None and review.get('inference_policy')=='context-v32':
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('forward_gate32',Path(__file__).with_name('pilot-review-forward-v32.py'));gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate);gate.audit(review,records,namespace['ROOT'])
+            return current32.audit(review,records,check_coverage)
         if review.get('inference_policy')=='context-v31':
             import importlib.util
             spec=importlib.util.spec_from_file_location('forward_gate31',Path(__file__).with_name('pilot-review-forward-v31.py'));gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate);gate.audit(review,records,namespace['ROOT'])

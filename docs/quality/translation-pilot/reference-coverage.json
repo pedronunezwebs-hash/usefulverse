@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-27T08:01:43.745378+00:00",
+  "at_utc": "2026-10-27T09:27:34.813446+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 8605,
+  "agent_reviewed_translations": 8938,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 8605,
+  "agent_reviewed_evaluations": 8938,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -327,7 +327,7 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 16775,
+  "total_records_all_policies": 17108,
   "semantic_regressions": 1403,
   "contextual_reference_gate": {
     "es": {
@@ -555,7 +555,7 @@
       "forward_model_rows": 0
     }
   },
-  "contextual_policies_reviewed": 30,
+  "contextual_policies_reviewed": 31,
   "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
     "locales": [
@@ -697,8 +697,8 @@
     "known_memory_rows": 174,
     "forward_model_rows": 0
   },
-  "scoped_back_regressions": 53,
-  "total_permanent_regression_cases": 1507,
+  "scoped_back_regressions": 73,
+  "total_permanent_regression_cases": 1528,
   "latest_ru_reference_gate": {
     "rows": 40,
     "sample": 40,
@@ -711,32 +711,32 @@
     "unproved_data_rows": 0,
     "passed": true,
     "minimum_style_budget_met": true,
-    "reason": "Known source-bound reviewed-memory targets;every current S/F/B and warning read.No native/blind/unseen/general-engine/release approval."
+    "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval."
   },
   "latest_ru_full_gate": {
     "rows": 174,
     "sample": 174,
-    "points": 1562,
+    "points": 1565,
     "maximum": 1566,
     "button_errors": 0,
     "number_negation_errors": 0,
     "major_rows": 0,
-    "minor_rows": 4,
+    "minor_rows": 1,
     "unproved_data_rows": 0,
     "passed": false,
-    "minimum_style_budget_met": false,
-    "reason": "Blocked by forward defects/unproved data;no approval.",
+    "minimum_style_budget_met": true,
+    "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval.",
     "fixed_sample_rows": 88,
-    "fixed_sample_points": 789,
+    "fixed_sample_points": 792,
     "fixed_sample_maximum": 792,
-    "fixed_sample_passed": false,
+    "fixed_sample_passed": true,
     "global_no_open_defects_requirement": "Any observed forward error or unproved datum outside88 also blocks.",
     "known_memory_rows": 174,
     "forward_model_rows": 0
   },
-  "ru_reference_policy": "context-v31",
-  "scoped_forward_regressions": 51,
+  "ru_reference_policy": "context-v32",
+  "scoped_forward_regressions": 52,
   "reviewed_memory_targets": 905,
-  "ru_retired_targets_for_future_reuse": 4,
-  "ru_current_positive_sample_targets": 210
+  "ru_retired_targets_for_future_reuse": 5,
+  "ru_current_positive_sample_targets": 213
 }

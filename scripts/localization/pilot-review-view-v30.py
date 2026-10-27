@@ -31,7 +31,7 @@ class ReviewView:
         found = self._module.semantic_issues(key, source_hash, text, locale, direction)
         if direction != 'forward':
             return found
-        for policy in ['context-v30','context-v31']:
+        for policy in ['context-v30','context-v31','context-v32']:
             path=self.ROOT/'docs/quality/translation-pilot'/('scoped-forward-regressions-'+policy.replace('context-','')+'.json')
             if not path.exists():continue
             registry=json.loads(path.read_text())

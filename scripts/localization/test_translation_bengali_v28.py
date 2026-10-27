@@ -212,6 +212,9 @@ class BengaliV28Test(unittest.TestCase):
     def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
         proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
         text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
+        # Four explicit v33 changes; all historical workflow guards retained.
+        for after,before in [('context-v32, context-v33]', 'context-v32]'), ('Baseline o variantes v2–v33; v33 corrige el estado ruso de carga completada', 'Baseline o variantes v2–v32; v32 corrige cuatro variantes rusas retiradas'), ('python -u scripts/localization/translation-pilot-v33.py run', 'python -u scripts/localization/translation-pilot-v32.py run'), ('bash scripts/localization/pilot-precheck-v33.sh', 'bash scripts/localization/pilot-precheck-v32.sh')]:
+            self.assertEqual(text.count(after),1);text=text.replace(after,before)
         # Four explicit v32 changes; all previous whole-workflow assertions retained.
         for after,before in [('context-v31, context-v32]','context-v31]'),('Baseline o variantes v2–v32; v32 corrige cuatro variantes rusas retiradas','Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada'),('python -u scripts/localization/translation-pilot-v32.py run','python -u scripts/localization/translation-pilot-v31.py run'),('bash scripts/localization/pilot-precheck-v32.sh','bash scripts/localization/pilot-precheck-v31.sh')]:
             self.assertEqual(text.count(after),1);text=text.replace(after,before)
