@@ -278,6 +278,10 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 > También explica el **problema de volumen** (~19 M de palabras): dónde se ejecuta (Mac por la noche, repo público con
 > Actions ilimitado o Codespaces repartido) **ya está decidido: GitHub Actions en el repo público** (ver `REVISION-FINAL.md` §2).
 
+### Operación vigente · Pedro, 27-oct-2026
+
+Pedro pide traducciones comprensibles y controles automáticos, sin que el agente traduzca o relea cada frase ni bloquee el trabajo de la web. La generación pasa al workflow separado `Background translation drafts`, por tandas acotadas en Actions del repo público; [comandos y límites](../quality/translation-drafts/README.md). Los resultados son borradores con avisos, no aprobaciones inventadas. El agente consulta contadores/resumen, recoge checkpoints mecánicamente y actúa ante fallos; no continúa la sucesión manual de perfiles por idioma. Se conservan íntegros los pilotos, memorias, juicios y regresiones existentes. Las puertas de herramienta/publicación y los límites de URLs no se eliminan. Se puede preparar trabajo de la web mientras la generación sigue en Actions.
+
 ### 8.1 Pasos (Codespaces o Mac, según la decisión)
 
 1. Abrir un codespace de 2 núcleos sobre la rama del lote.

@@ -1,0 +1,79 @@
+name: Background translation drafts
+
+on:
+  workflow_dispatch:
+    inputs:
+      locales:
+        description: 'Destinos separados por coma; vacío = los 36 existentes'
+        type: string
+        default: ''
+      minutes:
+        description: 'Máximo de minutos por tanda; se guarda cada lote en logs'
+        type: choice
+        default: '240'
+        options: ['1', '60', '240']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: usefulverse-background-drafts
+  cancel-in-progress: false
+
+jobs:
+  drafts:
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      DRAFT_LOCALES: ${{ inputs.locales }}
+      DRAFT_MINUTES: ${{ inputs.minutes }}
+      DRAFT_SHARD: ${{ matrix.shard }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Check automation contracts and extract current sources
+        id: plan
+        run: |
+          python -m unittest discover -s scripts/localization -p 'test_translation_background_drafts.py'
+          node scripts/localization/background-source.mjs "$RUNNER_TEMP/draft-corpus.json"
+          echo "HF_HOME=$RUNNER_TEMP/usefulverse-draft-hf" >> "$GITHUB_ENV"
+          python scripts/localization/background-drafts.py run --plan-only \
+            --corpus "$RUNNER_TEMP/draft-corpus.json" --output "$RUNNER_TEMP/unused.jsonl" \
+            --model-dir "$RUNNER_TEMP/unused-model" --locales "$DRAFT_LOCALES" \
+            --shard "$DRAFT_SHARD" --shards 4 --minutes "$DRAFT_MINUTES"
+      - name: Install pinned CPU-only dependencies on the disposable runner
+        if: steps.plan.outputs.pending != '0'
+        run: |
+          python -m pip install --no-cache-dir --disable-pip-version-check torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir --disable-pip-version-check -r scripts/localization/pilot-requirements.txt
+      - name: Generate resumable drafts without publishing
+        if: steps.plan.outputs.pending != '0'
+        run: |
+          checkpoints=()
+          if [ -d docs/quality/translation-drafts/checkpoints ]; then
+            while IFS= read -r -d '' file; do checkpoints+=("$file"); done < <(find docs/quality/translation-drafts/checkpoints -name '*.jsonl' -print0)
+          fi
+          python -u scripts/localization/background-drafts.py run \
+            --corpus "$RUNNER_TEMP/draft-corpus.json" \
+            --output "$RUNNER_TEMP/draft-results.jsonl" \
+            --model-dir "$RUNNER_TEMP/usefulverse-draft-model" \
+            --locales "$DRAFT_LOCALES" --minutes "$DRAFT_MINUTES" \
+            --shard "$DRAFT_SHARD" --shards 4 --resume "${checkpoints[@]}"
+      - name: Remove job-owned downloads
+        if: always()
+        run: rm -rf -- "$RUNNER_TEMP/usefulverse-draft-hf" "$RUNNER_TEMP/usefulverse-draft-model" "$RUNNER_TEMP/draft-corpus.json" "$RUNNER_TEMP/draft-results.jsonl"
