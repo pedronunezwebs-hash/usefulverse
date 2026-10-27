@@ -27,6 +27,31 @@ jobs:
             test_translation_bengali_v29.BengaliV29Test.test_adapter_keeps_generic_assertions_and_only_three_workflow_edits
       - name: Install pinned dependencies without hooks
         run: npm ci --ignore-scripts
+      - name: Read saved translation memory without publishing or inference
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: automation/translation-results
+          path: .translation-results
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Revalidate saved proofs for the 300-tool preview
+        id: preview-packages
+        run: |
+          node scripts/localization/autopilot-source.mjs "$RUNNER_TEMP/preview-sources.json"
+          python scripts/localization/prepare-preview-packages.py \
+            --corpus "$RUNNER_TEMP/preview-sources.json" \
+            --memory .translation-results --output "$RUNNER_TEMP/preview-packages"
+      - name: Build isolated 300-tool noindex preview
+        env:
+          GROWTH600_NOINDEX_DRAFT_RELEASE: '1'
+          GROWTH600_PREVIEW_ONLY: '1'
+          GROWTH600_DIST: dist-new-tools-noindex
+          GROWTH600_AUTOMATIC_PREVIEW_PACKAGES: ${{ runner.temp }}/preview-packages
+          GROWTH600_PREVIEW_SEMANTIC_POLICY: ${{ steps.preview-packages.outputs.semantic_policy }}
+          GROWTH600_PREVIEW_QUALITY_POLICY: ${{ steps.preview-packages.outputs.quality_policy }}
+        run: npm run build:growth600
       - name: Run complete Node and Python suites
         run: |
           npm test
@@ -36,10 +61,4 @@ jobs:
       - name: Enforce existing locale release gate
         run: npm run locale:release-check
       - name: Build the existing tools hub
-        run: npm run build:growth600
-      - name: Build isolated 300-tool noindex preview
-        env:
-          GROWTH600_NOINDEX_DRAFT_RELEASE: '1'
-          GROWTH600_PREVIEW_ONLY: '1'
-          GROWTH600_DIST: dist-new-tools-noindex
         run: npm run build:growth600

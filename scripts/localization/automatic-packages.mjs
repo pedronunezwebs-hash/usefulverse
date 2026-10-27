@@ -9,6 +9,7 @@ export function applyAutomaticPackage(sourceCopy, toolId, locale, pack, expected
       || pack.release_approved !== false || pack.native_review !== false) throw Error('Invalid automatic package provenance');
   const copy = structuredClone(sourceCopy);
   let applied = 0;
+  const appliedKeys = [];
   const stale = [];
   for (const unit of extractToolCopyUnits(sourceCopy, toolId).units) {
     const entry = pack.entries[unit.key];
@@ -22,6 +23,7 @@ export function applyAutomaticPackage(sourceCopy, toolId, locale, pack, expected
     for (const part of path.slice(0, -1)) parent = parent[part];
     parent[path.at(-1)] = entry.translation;
     applied++;
+    appliedKeys.push(unit.key);
   }
-  return { copy, applied, stale, releaseApproved: false };
+  return { copy, applied, appliedKeys, stale, releaseApproved: false };
 }

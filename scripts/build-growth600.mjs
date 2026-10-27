@@ -11,6 +11,8 @@ import { growthPilotTools } from '../src/growth600/catalog.mjs';
 import { marketTools } from '../src/markets-no-ch/catalog.mjs';
 import { bundleGrowthControllers } from '../src/growth600/bundle-controllers.mjs';
 import { buildGrowthStaticSite } from '../src/growth600/build.mjs';
+import { prepareAutomaticPreview, verifyAutomaticPreview } from './localization/automatic-preview.mjs';
+import { pendingToolEnglishCopy } from '../src/growth600/locales/pending-tools.en.mjs';
 import { assertRuleSnapshotsCurrent } from '../src/growth600/rule-maintenance.mjs';
 import { getTranslationPackReleaseIssues } from '../src/growth600/translation-release-gate.mjs';
 import { growthReleasePlan } from '../src/growth600/release-plan.mjs';
@@ -202,6 +204,18 @@ for (const { key } of localeEntries) {
   for (const [toolId, pack] of translatedToolPacks) {
     if (pack[key]) copyByLocale[key][toolId] = pack[key];
   }
+}
+
+let automaticPreview;
+if (process.env.GROWTH600_AUTOMATIC_PREVIEW_PACKAGES) {
+  automaticPreview = await prepareAutomaticPreview({
+    directory: process.env.GROWTH600_AUTOMATIC_PREVIEW_PACKAGES,
+    semanticPolicy: process.env.GROWTH600_PREVIEW_SEMANTIC_POLICY,
+    qualityPolicy: process.env.GROWTH600_PREVIEW_QUALITY_POLICY,
+    previewOnly, tools: releaseTools, candidateIds: candidateToolIds,
+    locales: localeEntries, rawEnglish: pendingToolEnglishCopy, copyByLocale,
+  });
+  Object.assign(copyByLocale, automaticPreview.copyByLocale);
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -429,6 +443,12 @@ if (previewOnly) {
   const indexableHomes = (sitemap.match(/<loc>/gu) ?? []).length;
   if (missingNoindexRoutes.length || indexedCandidateRoutes.length || indexableHomes) {
     throw new Error(`Noindex preview failed closed: ${missingNoindexRoutes.length} candidate page(s) lack noindex; ${indexedCandidateRoutes.length} candidates remain in sitemap; ${indexableHomes} indexable homepage(s) remain.`);
+  }
+  if (automaticPreview) {
+    const checkedRoutes = await verifyAutomaticPreview({ outputDir: growthOnlyDir, tools: releaseTools,
+      locales: localeEntries, localePath, copyByLocale });
+    if (!automaticPreview.summary.translatedEntries) throw Error('Preview did not exercise any saved translation');
+    console.log(`Automatic preview copy verified: ${JSON.stringify({ ...automaticPreview.summary, checkedRoutes })}`);
   }
   await rename(growthOnlyDir, outputDir);
   console.log(`Verified noindex on ${releaseTools.length * localeEntries.length} preview tool pages (including all ${candidateToolIds.size * localeEntries.length} candidate pages) and all preview homepages; sitemap contains no indexable URLs.`);
