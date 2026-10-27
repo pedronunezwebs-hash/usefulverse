@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** LIBRE · Codex · 2026-10-27T17:32:31.644894+00:00 · automatización con CI verde, clon retirado; la tanda remota continúa sola
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T17:56:29.009330+00:00 · calidad semántica automática, entrega y avisos GitHub sin gasto
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
