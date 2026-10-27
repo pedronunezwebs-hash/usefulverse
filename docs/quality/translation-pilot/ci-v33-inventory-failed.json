@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "run_id": 40505395566,
+  "source": "71ce5c8efbd9a9fa3b0e21cffd524cd3c2ffee87",
+  "conclusion": "failure",
+  "python": {
+    "tests": 396,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "184ee3bbcc36990a5b86e763af0418e9cf592fa1fc97c800eba2e63322dd33c2",
+    "workers": 4,
+    "seconds": 1199.868
+  },
+  "failing_test": "test_translation_pilot.TranslationPilotTest.test_run_evidence_inventory_cannot_omit_a_checkpoint",
+  "cause": "Collector appended v32/v33 runs but omitted their checkpoints from the derived inventory and total.",
+  "raw_model_or_translation_changes": false,
+  "model_rerun_required": false,
+  "preserved_all_noninventory_evidence_fields": true,
+  "focused_red_tests": 1,
+  "focused_red_failures": 1,
+  "focused_green_tests": 1,
+  "focused_green_passed": true,
+  "builds": "not-run",
+  "publications": "skipped",
+  "approved_locales": [],
+  "native_review": false
+}

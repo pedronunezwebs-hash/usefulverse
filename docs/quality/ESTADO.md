@@ -153,3 +153,5 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 
 
 **Retirada actual:** pendiente; antes de liberar verificar push, árbol remoto, seis documentos idénticos y recuperación de originales. Evidencias históricas: translation-pilot/remote-v*-verification.json y cli-cache-v*-cleanup.json, en la rama del PR #136.
+
+Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.

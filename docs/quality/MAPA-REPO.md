@@ -63,3 +63,5 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - La preview construida tiene 36 locales; no acredita 37 ni nb real. Ninguna muestra del piloto equivale a un idioma aprobado para publicar.
 - 300 nuevas en noindex, fuera de sitemap/hreflang indexables y sin bloqueo robots; las 700 existentes se conservan indexables.
 - Si src/markets-no-ch se usa en sparse-checkout, incluir las seis fuentes copy-en/translations de voice-changer, shikaku y dxf-viewer: los contratos verifican sus bytes.
+
+Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Solo actualiza y comprueba inventario/total derivados; no modifica crudos, juicios ni procedencia de los runs.
