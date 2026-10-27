@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "at_utc": "2026-10-27T08:44:07.757724+00:00",
+  "at_utc": "2026-10-27T08:44:17.835223+00:00",
   "source": "1b0ace0cede22b40a71ccf81fa8ce89788125ceb",
-  "verified_feature_before_cleanup": "c65665984530a4408f5b7f7bcb9b108522beb291",
+  "verified_feature_before_cleanup": "cf8fcc973098f9a132bd8382f4ee62589e18bb7c",
   "verified_main_before_cleanup": "9aff6a28f91825ede632212df8179925d026cd21",
   "all_index_matches_remote_tree": true,
-  "versioned_files": 7945,
+  "versioned_files": 7946,
   "main_changed_only_six_docs": true,
   "six_shared_docs_same": true,
   "unchanged_product_files": 6851,
@@ -1060,5 +1060,27 @@
     "identical": true,
     "indexable_urls": 25625,
     "deployments": 0
-  }
+  },
+  "cleanup": {
+    "schema_version": 1,
+    "at_utc": "2026-10-27T08:44:17.835223+00:00",
+    "root": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-v31-ru-20261027",
+    "root_removed_and_absent": true,
+    "removed_before_lock_free": true,
+    "backed_up_feature_source": "cf8fcc973098f9a132bd8382f4ee62589e18bb7c",
+    "backed_up_main_source": "9aff6a28f91825ede632212df8179925d026cd21",
+    "versioned_files_matched_to_remote_tree": 7946,
+    "ci_source": "1b0ace0cede22b40a71ccf81fa8ce89788125ceb",
+    "ci_run": 40472276030,
+    "internal_zips_removed": 3,
+    "external_own_cache_files_removed": 0,
+    "external_own_cache_files_remaining": 0,
+    "local_models_or_dependencies_installed": false,
+    "bytes_removed": 135070780,
+    "bytes_free_before": 36856041472,
+    "bytes_free_after": 36993273856,
+    "git_history_not_deleted_to_solve_codespaces": true
+  },
+  "root_removed_and_absent": true,
+  "removed_before_lock_free": true
 }
