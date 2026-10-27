@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "policy": "context-v32",
+  "preflight": {
+    "source_units": 214,
+    "memory_targets": 214,
+    "whole_texts": 642,
+    "fragments": 872
+  },
+  "red": {
+    "test": "test_four_observed_defects_are_repaired_in_active_memory",
+    "tests": 1,
+    "failures": 4,
+    "log_sha256": "195bccf386554323ba4323217ede0fedb46b9130606fea3a06a1ff985fad0631"
+  },
+  "focused": {
+    "initial_tests": 16,
+    "passed": 15,
+    "failed_test": "contracts_reject_stale_retirement_and_target_after_warming",
+    "failure_cause": "Test patched pathlib.Path instead of the actual validated subclass; corrected test seam.",
+    "corrected_test_passed": true,
+    "corrected_seconds": 43.633
+  },
+  "exact_positive_imports": 210,
+  "agent_forward_corrections": 4,
+  "memory_targets": 905,
+  "frozen_runtime_files": 33,
+  "old_checkpoint_files": 33,
+  "native_review": false,
+  "approved_locales": []
+}

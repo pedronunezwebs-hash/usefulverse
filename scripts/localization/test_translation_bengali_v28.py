@@ -212,6 +212,9 @@ class BengaliV28Test(unittest.TestCase):
     def test_workflow_only_adds_the_v28_choice_and_description_without_cost_or_publish_changes(self):
         proof = json.loads((DATA / 'regression-v28-preflight.json').read_text())
         text = (pilot.ROOT / '.github/workflows/deploy-cloudflare.yml').read_text()
+        # Four explicit v32 changes; all previous whole-workflow assertions retained.
+        for after,before in [('context-v31, context-v32]','context-v31]'),('Baseline o variantes v2–v32; v32 corrige cuatro variantes rusas retiradas','Baseline o variantes v2–v31; v31 añade corpus ruso revisado y validación memoizada'),('python -u scripts/localization/translation-pilot-v32.py run','python -u scripts/localization/translation-pilot-v31.py run'),('bash scripts/localization/pilot-precheck-v32.sh','bash scripts/localization/pilot-precheck-v31.sh')]:
+            self.assertEqual(text.count(after),1);text=text.replace(after,before)
         # Bounded site CI budget for the growing complete proof suite;model90unchanged.
         self.assertEqual(text.count('timeout-minutes: 45'),1);text=text.replace('timeout-minutes: 45','timeout-minutes: 30')
         # Four explicit v31 edits before unchanged historical whole-blob guards.
