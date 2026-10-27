@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T20:09:17.264542+00:00 · refinar traducciones dudosas automáticamente y medir calidad sin coste
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-27T20:09:19.480012+00:00 · refinar traducciones dudosas automáticamente y medir calidad sin coste
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -15,21 +15,23 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 **Campaña activa:** [40565692987](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987), fuente `e8a7cb9`; cuatro jobs arrancados. [Informe permanente](https://github.com/pedronunezwebs-hash/usefulverse/blob/automation/translation-results/report.json). Snapshot verificado [40565169603](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565169603): 14.531 borradores vigentes, 30 auditorías, 18 entradas exportadas, 12 cuarentenas, 929.922 unidades aún sin auditoría actual. 42.053 claves inglesas / 25.832 pares texto-contexto / 36 destinos. Cobertura de 1.000 propietarios, pero 120 solo metadatos (106 recuperadas y 14 mercado): no afirmar UI completa. El smoke anterior guardó 14.555 crudos; los que ya no corresponden al corpus siguen preservados en memoria.
 
-**Verificado:** [smoke integral 40563472659](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40563472659) correcto con generación, auditoría y push bot. [Modelos reales 40562898178](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40562898178): diez referencias/diez decisiones esperadas; consumo GitHub reportado `UBUNTU.total_ms=0`. Aviso [#137](https://github.com/pedronunezwebs-hash/usefulverse/issues/137) asignado y visible en la bandeja de Pedro por API; [#138](https://github.com/pedronunezwebs-hash/usefulverse/issues/138) acredita cancelación de la tanda antigua al migrar. Vigilancia cada 30 min y al completar; correo/push por probar en P-009. No garantizar SLA ni avisos si también falla/desactiva GitHub el vigilante.
+**Verificado:** [smoke integral 40563472659](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40563472659) correcto con generación, auditoría y push bot. [Modelos reales 40562898178](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40562898178): diez referencias/diez decisiones esperadas; consumo GitHub reportado `UBUNTU.total_ms=0`. Aviso [#137](https://github.com/pedronunezwebs-hash/usefulverse/issues/137) asignado y visible en la bandeja de Pedro por API; [#138](https://github.com/pedronunezwebs-hash/usefulverse/issues/138) acredita cancelación de la tanda antigua al migrar. Vigilancia cada 30 min y al completar; correo confirmado por Pedro (P-009 OK); push del teléfono no comprobado. No garantizar SLA ni avisos si también falla/desactiva GitHub el vigilante.
 
-**CI final:** [CI 40568857285](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40568857285) correcta, fuente `807a149`: 3.048 Node y 428 Python (426 correctas, dos omisiones opcionales), cero fallos/errores; Python 1869,847 s/cuatro procesos. Builds principal/hub, gate de 20 locales existentes y 10.800 páginas de preview noindex correctos; cero publicaciones/artifacts. Ajuste posterior del controlador `1a796a2`: [40571740997](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40571740997), 20 contratos y diez referencias reales correctas, consumo reportado cero ms facturables. No acredita 37 idiomas ni dispositivos. El workflow histórico se restauró sin tocar sus pruebas; la validación ampliada vive en `validate-staged.yml`.
+**CI final:** [CI 40577503166](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40577503166), fuente `8209261`, correcta: 3.049 Node + 441 Python (439 correctas, dos omisiones), cero fallos/errores; builds principal/hub, gate existente y 10.800 páginas de preview noindex correctos, cero despliegues. Delta posterior de presupuesto: [40578541656](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40578541656), 34 contratos Python y dos Node más prueba real; último test de reanudación de semillas: 35 Python enfocados correctos en local.
+
+**Calidad reforzada solicitada por Pedro:** reintento acotado solo para dudas (beam 4, máximo dos propuestas), mismos controles/umbrales y veto de 46 errores de los 1.586 juicios anteriores, sin otra revisión frase a frase del chat. [Prueba real 40578541656](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40578541656): cuatro de 12 cuarentenas rescatadas, ocho retenidas y 19 originales conservados; mediana 2,4585 s por frase y máximo 8,793 s en la muestra, con modelos cargados; consumo reportado cero. Calibración: 186 casos, 29 errores que escapaban al filtro anterior quedan vetados. No garantiza equivalencia universal con revisión del agente: 67/140 ejemplos previamente aceptados quedan retenidos por prudencia. [Informe](lotes/2026-10-28-calidad-traductor.md). Entra en la próxima campaña, sin interrumpir 40565692987 ni sobrescribir memoria. La nueva salida incluye contadores por idioma; seguir mejorando la web sin esperar toda la cola.
 
 **Siguiente paso exacto:** consultar solo resumen/estado e incidencias del traductor; ante un fallo, corregir el sistema con regresión permanente. Dejar que GitHub siga trabajando y mejorar las fuentes inglesas en la rama del Paso A, sin otra microversión manual por idioma. Continuar los pendientes de Paso A (capacidad de publicación, cobertura real y conexión del adaptador de paquetes al build, más puertas de calidad). `automatic-packages.mjs` valida hash/contexto/política y mantiene el inglés ante faltantes; aún no está conectado a producción. No esperar dentro del chat a que acaben las 929.922 unidades ni declararlas terminadas. No aprobar idiomas/herramientas por un contador sin avisos.
 
 **Histórico preservado:** 35 checkpoints / 17.441 registros de pilotos, 905 memorias. Muestras conocidas es, nb-NO, ko, id, zh-CN, bn y ru; siete revisados sin pasar (de, fr, pt-BR, ja, hi, ar, ur), 22 sin revisión detallada histórica. Esto no se convierte en una cola manual nueva. Inglés es fuente; 0/36 destinos aprobados para publicar. [Listado histórico v33](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v33.json).
 
-**Producción:** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas inexistentes del hub siguen dando 200. Sin despliegue, activación ni envío a buscadores. P-001–P-009: nueve pendientes, cero FALLA. No certificados: UI/dispositivos, responsive/RTL/textos largos/peso, a11y/rendimiento, puerta de 18 puntos/siete capas ni revisión nativa. Ninguna herramienta se marca terminada.
+**Producción:** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas inexistentes del hub siguen dando 200. Sin despliegue, activación ni envío a buscadores. P-001–P-008: ocho pendientes, cero FALLA; P-009 OK (correo confirmado por Pedro; push no comprobado). No certificados: UI/dispositivos, responsive/RTL/textos largos/peso, a11y/rendimiento, puerta de 18 puntos/siete capas ni revisión nativa. Ninguna herramienta se marca terminada.
 
 **Orden posterior:** fase 0 (404 real, título home, sitemaps por idioma) + G1 (hash de 106 JS) → fase 0b (26 errores, test antes del arreglo) → unificar dominio (RUNBOOK §4b) → Planeta Infinito y bucle de calidad según progress.csv.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
-- [ ] **Pruebas para Pedro: 9 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
+- [ ] **Pruebas para Pedro: 8 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
 
 - [x] Limpieza de `/tmp` hecha el 20-oct con el OK de Pedro: 18 GB liberados (154 carpetas y archivos de usefulverse). Antes se
       respaldaron los restos sin commit de 5 reconstrucciones y 73 archivos de estado en el repo **privado**
@@ -128,7 +130,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
-| 28-oct | Traducción automática | CI verde; tanda larga en dos máquinas, recuperación automática | [Operación](translation-drafts/README.md) |
+| 28-oct | Traducción automática | CI verde; tanda activa en cuatro máquinas; calidad reforzada para la próxima | [Operación](translation-drafts/README.md) |
 | 27-oct | v32/v33 ruso | Muestra conocida pasa; cinco reparaciones; relevo compacto | [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md) |
 | 27-oct | v31 ruso | Cuatro defectos pendientes, ya preservados como negativos | [Informe](lotes/2026-10-27-piloto-v31-ru.md) |
 | 26-oct | v30 ruso / v29 bengalí | Diagnóstico ruso / muestra bengalí pasa | [Historial](LOG.md) |

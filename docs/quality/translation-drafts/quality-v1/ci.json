@@ -1,0 +1,22 @@
+{
+  "run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40577503166",
+  "source_commit": "82092617573d21875f1671aa4ef82d4d46c00f12",
+  "conclusion": "success",
+  "node_tests": 3049,
+  "python": {
+    "tests": 441,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "31e0c173af9bd2b52be1f20a24d9c95a2ce3e2f267df733e5a1081020367565f",
+    "workers": 4,
+    "seconds": 1587.204
+  },
+  "post_ci_quality_check": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40578541656",
+  "post_ci_contracts_in_actions": 34,
+  "final_local_contracts": 35,
+  "preview_pages": 10800,
+  "preview_noindex": true,
+  "preview_sitemap_indexable_urls": 0,
+  "deployments": 0
+}
