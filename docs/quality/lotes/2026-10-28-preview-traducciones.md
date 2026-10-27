@@ -23,3 +23,5 @@ Solo se usan runners estándar de un repositorio público, sin APIs pagadas, cac
 ## Relevo
 
 Consultar primero la conclusión de 40599566567 y sus logs. Si falla, reproducir el error en una regresión y corregir antes de aceptar este lote. Si pasa, guardar contadores reales/consumo y continuar los pendientes del Paso A: capacidad de publicación, cobertura de UI de los 120 propietarios con solo metadatos, puertas funcionales/visuales y restantes comprobaciones del RUNBOOK §7. La conexión a preview no habilita importar estos paquetes a producción. Mantener PR #136 en borrador y 300 en noindex.
+
+Cierre verificado 2026-10-27T23:09:55.537636+00:00: respaldo remoto comprobado antes de eliminar el clon y sus temporales propios; 40.65 GiB libres. Candado LIBRE. La CI completa 40599566567 sigue pendiente de conclusión; el build de preview ya pasó. No se avanza fase. Comprobante: `translation-drafts/preview-v1/closure.json`.
