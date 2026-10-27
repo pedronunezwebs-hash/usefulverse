@@ -17,3 +17,13 @@ test('export adapter applies only exact English hash and context, preserving cha
   for (const change of [{ semantic_policy: 'old' }, { release_approved: true }, { locale: 'fr' }])
     assert.throws(() => applyAutomaticPackage(source, 'example-tool', 'es', { ...pack, ...change }, 'current'));
 });
+
+
+test('a refined package also binds the current quality recipe', () => {
+  const source = { title: 'Save file' };
+  const pack = { schemaVersion: 1, toolId: 'sample-tool', locale: 'es', semantic_policy: 'semantic', quality_policy: 'quality',
+    release_approved: false, native_review: false, entries: {} };
+  assert.throws(() => applyAutomaticPackage(source, 'sample-tool', 'es', pack, 'semantic'));
+  assert.throws(() => applyAutomaticPackage(source, 'sample-tool', 'es', pack, 'semantic', 'old-quality'));
+  assert.equal(applyAutomaticPackage(source, 'sample-tool', 'es', pack, 'semantic', 'quality').applied, 0);
+});

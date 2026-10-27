@@ -105,7 +105,11 @@ class AutopilotMemoryTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             audits={row['record_id']+':'+autopilot.semantic.POLICY_DIGEST:audit}
             report=autopilot.export(corpus,{row['record_id']:row},audits,Path(temp).resolve(),12)
-            self.assertEqual((report['pending'],report['quarantined'],report['exported_entries']),(0,1,0))
+            self.assertEqual((report['pending'],report['quarantined'],report['exported_entries']),(1,1,0))
+            attempt=autopilot.quality.make_result(row,audit,[])
+            audits[autopilot.quality.key(row)]=attempt
+            report=autopilot.export(corpus,{row['record_id']:row},audits,Path(temp).resolve(),12)
+            self.assertEqual(report['pending'],0)
             audit['auto_usable']=True
             with self.assertRaises(ValueError):autopilot.export(corpus,{row['record_id']:row},audits,Path(temp).resolve(),12)
     def test_publisher_rejects_main_and_foreign_repositories(self):

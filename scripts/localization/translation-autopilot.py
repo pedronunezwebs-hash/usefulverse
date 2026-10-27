@@ -18,7 +18,7 @@ HERE=Path(__file__).resolve().parent
 def load(name):
     spec=importlib.util.spec_from_file_location(name.replace('-','_'),HERE/(name+'.py'))
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
-client=load('autopilot-client');drafts=load('background-drafts');semantic=load('background-semantic')
+client=load('autopilot-client');drafts=load('background-drafts');semantic=load('background-semantic');quality=load('background-refinement')
 RAW_FORMAT=drafts.FORMAT
 
 
@@ -32,7 +32,7 @@ def write(path,text):
 def merge(rows, audits, row):
     if row.get('format')==RAW_FORMAT:
         drafts.validate_record(row);table=rows;key=row['record_id']
-    elif row.get('format')==semantic.FORMAT:
+    elif row.get('format') in (semantic.FORMAT,quality.FORMAT):
         table=audits;key=row['record_id']+':'+row['policy_digest']
     else:raise ValueError('Unknown checkpoint format')
     if key in table and canonical(table[key])!=canonical(row):raise ValueError('Conflicting immutable checkpoint')
@@ -45,6 +45,7 @@ def read_lines(text,rows,audits,partial_tail=False):
         try:
             if drafts.PREFIX in line:row=json.loads(base64.b64decode(line.split(drafts.PREFIX,1)[1].strip(),validate=True))
             elif semantic.PREFIX in line:row=json.loads(base64.b64decode(line.split(semantic.PREFIX,1)[1].strip(),validate=True))
+            elif quality.PREFIX in line:row=json.loads(base64.b64decode(line.split(quality.PREFIX,1)[1].strip(),validate=True))
             elif line.startswith('{'):row=json.loads(line)
             else:continue
         except (ValueError,TypeError):
@@ -77,7 +78,7 @@ def harvest(run_id,rows,audits,imported=None,shard=None):
         try:raw=client.request(f'actions/jobs/{job["id"]}/logs').decode()
         except FileNotFoundError:continue
         # Downloaded terminal escapes are opaque data, never terminal output.
-        selected='\n'.join(line for line in raw.splitlines() if drafts.PREFIX in line or semantic.PREFIX in line)
+        selected='\n'.join(line for line in raw.splitlines() if drafts.PREFIX in line or semantic.PREFIX in line or quality.PREFIX in line)
         read_lines(selected,rows,audits,partial_tail=job.get('conclusion')=='cancelled')
         imported.add(job['id'])
 
@@ -110,7 +111,7 @@ def recover(args):
     write(args.raw,''.join(canonical(selected[k])+'\n' for k in sorted(selected)))
     write(args.audits,''.join(canonical(valid_audits[k])+'\n' for k in sorted(valid_audits)))
     pending_raw=len(wanted)-len(selected)
-    pending_audit=sum(active_audit(row,valid_audits) is None for row in selected.values())
+    pending_audit=sum(quality.pending(row,valid_audits,active_audit(row,valid_audits)) for row in selected.values())
     run=client.api('actions/runs/'+os.environ['GITHUB_RUN_ID'])
     start=dt.datetime.fromisoformat(run['created_at'].replace('Z','+00:00'))
     deadline=(start+dt.timedelta(hours=24)).timestamp()
@@ -144,42 +145,68 @@ def audit(args):
         if path.exists():read_lines(path.read_text(),rows,audits)
     for row in rows.values():
         previous=active_audit(row,audits)
-        if previous:print(semantic.PREFIX+base64.b64encode(canonical(previous).encode()).decode(),flush=True)
-    pending=[row for row in rows.values() if active_audit(row,audits) is None]
+        if previous:
+            print(semantic.PREFIX+base64.b64encode(canonical(previous).encode()).decode(),flush=True)
+            refinement=quality.active(row,audits,previous) if not previous['auto_usable'] else None
+            if refinement:print(quality.PREFIX+base64.b64encode(canonical(refinement).encode()).decode(),flush=True)
+    pending=[row for row in rows.values() if quality.pending(row,audits,active_audit(row,audits))]
     if not pending:return
     deadline=min(time.time()+int(args.minutes)*60,int(args.deadline))
     if time.time()+5>=deadline:return
     models=semantic.Models();semantic.selftest(models)
     deadline=min(time.time()+int(args.minutes)*60,int(args.deadline))
     back_model=None;counts=Counter()
+    def get_translator():
+        nonlocal back_model
+        if back_model is None:back_model=translator(args.model_dir)
+        return back_model
+    import langid
     for row in sorted(pending,key=lambda r:r['record_id']):
         if time.time()+5>=deadline:break
-        if all(row['checks'].values()) and not row['warnings']:
-            if row.get('back_sample'):
-                back=row['back_sample']['translation'];cut=row['back_sample']['truncated']
-            else:
-                if back_model is None:back_model=translator(args.model_dir)
-                masked,saved=drafts.protect(row['translation'])
-                [(raw,cut)]=back_model.translate([masked],'en')
-                back=drafts.queue.restore(raw,saved) or raw
-            scores=models.score(row['source'],row['translation'],back)
-        else:back='';cut=True;scores=None
-        result=semantic.make_audit(row,back,cut,scores)
-        semantic.validate_audit(result,row)
-        print(semantic.PREFIX+base64.b64encode(canonical(result).encode()).decode(),flush=True)
-        counts['usable' if result['auto_usable'] else 'quarantined']+=1
+        result=active_audit(row,audits)
+        if result is None:
+            if all(row['checks'].values()) and not row['warnings']:
+                if row.get('back_sample'):
+                    back=row['back_sample']['translation'];cut=row['back_sample']['truncated']
+                else:
+                    masked,saved=drafts.protect(row['translation'])
+                    [(raw,cut)]=get_translator().translate([masked],'en')
+                    back=drafts.queue.restore(raw,saved) or raw
+                scores=models.score(row['source'],row['translation'],back)
+            else:back='';cut=True;scores=None
+            result=semantic.make_audit(row,back,cut,scores)
+            semantic.validate_audit(result,row)
+            audits[quality.primary_key(row)]=result
+            print(semantic.PREFIX+base64.b64encode(canonical(result).encode()).decode(),flush=True)
+        if not result['auto_usable'] and quality.active(row,audits,result) is None:
+            refined=quality.refine(row,result,models,get_translator,langid.classify,deadline)
+            if refined is None:break
+            audits[quality.key(row)]=refined
+            print(quality.PREFIX+base64.b64encode(canonical(refined).encode()).decode(),flush=True)
+        usable=quality.selected_translation(row,audits,result) is not None
+        counts['usable' if usable else 'quarantined']+=1
         if sum(counts.values())%16==0:print('UVAUTOPILOT_AUDIT_PROGRESS '+canonical(counts),flush=True)
     print('UVAUTOPILOT_AUDIT_SUMMARY '+canonical(dict(counts=counts,remaining=len(pending)-sum(counts.values()),approved=False)),flush=True)
 
 
 def export(corpus,rows,audits,directory,run_id):
-    locales=corpus['destinationLocales'];unit_map={}
+    locales=corpus['destinationLocales'];unit_map={};target_locale={}
     for unit in corpus['units']:
-        for locale in locales:unit_map[(locale,unit['key'])]=(unit,drafts.identity(unit,locale))
+        for locale in locales:
+            identity=drafts.identity(unit,locale)
+            unit_map[(locale,unit['key'])]=(unit,identity);target_locale[identity]=locale
     source_targets=set(identity for unit,identity in unit_map.values())
     generated=set(rows)&source_targets
-    audited={key for key in generated if active_audit(rows[key],audits)}
-    usable={key for key in audited if active_audit(rows[key],audits)['auto_usable']}
+    current={key:active_audit(rows[key],audits) for key in generated}
+    audited={key for key in generated if current[key]}
+    translations={key:quality.selected_translation(rows[key],audits,current[key]) for key in audited}
+    usable={key for key,value in translations.items() if value is not None}
+    refinement_pending={key for key in audited if quality.pending(rows[key],audits,current[key])}
+    refined={key for key in usable if not current[key]['auto_usable']}
+    counts={name:Counter(target_locale[key] for key in keys) for name,keys in dict(targets=source_targets,generated=generated,audited=audited,usable=usable,refinement_pending=refinement_pending,refined=refined).items()}
+    by_locale={locale:{name:counter[locale] for name,counter in counts.items()} for locale in locales}
+    for row in by_locale.values():
+        row['pending']=row['targets']-row['audited']+row['refinement_pending'];row['quarantined']=row['audited']-row['usable']
     groups=defaultdict(list)
     for key,row in rows.items():groups[('raw',row['locale'],key[:2])].append(row)
     for key,result in audits.items():
@@ -203,16 +230,17 @@ def export(corpus,rows,audits,directory,run_id):
             entries={};missing=[]
             for unit in units:
                 identity=unit_map[locale,unit['key']][1]
-                if identity in usable:entries[unit['key']]=dict(source_hash=unit['source_hash'],context=unit['context'],translation=rows[identity]['translation'])
+                if identity in usable:entries[unit['key']]=dict(source_hash=unit['source_hash'],context=unit['context'],translation=translations[identity])
                 else:missing.append(unit['key'])
             exported+=len(entries);incomplete+=bool(missing)
-            package=dict(schemaVersion=1,toolId=tool,locale=locale,semantic_policy=semantic.POLICY_DIGEST,coverage=document['coverage'],entries=entries,missing=missing,
+            package=dict(schemaVersion=1,toolId=tool,locale=locale,semantic_policy=semantic.POLICY_DIGEST,quality_policy=quality.POLICY_DIGEST,coverage=document['coverage'],entries=entries,missing=missing,
                          complete_extracted_copy=not missing,release_approved=False,native_review=False,source_digest=corpus['sourceDigest'])
             if entries:write(directory/'packages'/locale/(tool+'.json'),canonical(package)+'\n')
     report=dict(schemaVersion=1,run_id=int(run_id),source_digest=corpus['sourceDigest'],source_targets=len(source_targets),generated=len(generated),
-                audited=len(audited),pending=len(source_targets)-len(generated)+len(generated)-len(audited),quarantined=len(audited)-len(usable),
+                audited=len(audited),pending=len(source_targets)-len(audited)+len(refinement_pending),quarantined=len(audited)-len(usable),
                 exported_entries=exported,incomplete_packages=incomplete,catalog_tools=corpus['tools'],coverage=corpus['coverage'],
-                approved=False,native_review=False,semantic_policy=semantic.POLICY_DIGEST)
+                approved=False,native_review=False,semantic_policy=semantic.POLICY_DIGEST,quality_policy=quality.POLICY_DIGEST,
+                refinement_pending=len(refinement_pending),refined_adopted=len(refined),by_locale=by_locale)
     write(directory/'report.json',canonical(report)+'\n')
     write(directory/'manifest.json',canonical(dict(format='usefulverse-automatic-results-v1',source_commit=os.environ.get('DRAFT_SOURCE_SHA'),run_id=int(run_id),
                                                source_ref=os.environ.get('DRAFT_SOURCE_REF','feat/new-tools-batch-1'),result_branch=client.RESULT_BRANCH,maximum_cost_usd=0,release_approved=False))+'\n')
@@ -252,7 +280,7 @@ def ready(args):
     corpus=json.loads(args.corpus.read_text())
     try:report=json.loads((args.memory/'report.json').read_text())
     except FileNotFoundError:report={}
-    done=report.get('source_digest')==corpus['sourceDigest'] and report.get('semantic_policy')==semantic.POLICY_DIGEST and report.get('pending')==0
+    done=report.get('source_digest')==corpus['sourceDigest'] and report.get('semantic_policy')==semantic.POLICY_DIGEST and report.get('quality_policy')==quality.POLICY_DIGEST and report.get('pending')==0
     value='false' if done else 'true'
     print('UVAUTOPILOT_READY '+value)
     if os.environ.get('GITHUB_OUTPUT'):

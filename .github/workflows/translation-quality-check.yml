@@ -1,0 +1,49 @@
+name: Automatic translation quality check
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quality:
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: '1'
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+      OMP_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: feat/new-tools-batch-1
+          path: source
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: automation/translation-results
+          path: results
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Verify bounded quality contracts first
+        working-directory: source
+        run: |
+          python -m unittest discover -s scripts/localization -p test_translation_refinement.py
+          python -m unittest discover -s scripts/localization -p test_translation_autopilot.py
+          node --test scripts/localization/automatic-packages.test.mjs
+          echo "HF_HOME=$RUNNER_TEMP/usefulverse-quality-hf" >> "$GITHUB_ENV"
+      - name: Install pinned CPU dependencies
+        working-directory: source
+        run: |
+          python -m pip install --no-cache-dir --disable-pip-version-check torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir --disable-pip-version-check -r scripts/localization/pilot-requirements.txt
+      - name: Measure refinement of quarantined translations without publishing
+        working-directory: source
+        run: |
+          python -u scripts/localization/background-refinement.py --memory "$GITHUB_WORKSPACE/results" --model-dir "$RUNNER_TEMP/usefulverse-quality-model"
+      - name: Remove job-owned downloads
+        if: always()
+        run: rm -rf -- "$RUNNER_TEMP/usefulverse-quality-hf" "$RUNNER_TEMP/usefulverse-quality-model"

@@ -2,9 +2,10 @@ import { createHash } from 'node:crypto';
 import { extractToolCopyUnits } from './extract-tool-copy-units.mjs';
 
 // Build adapter only: no network call, no production activation, no human sign-off.
-export function applyAutomaticPackage(sourceCopy, toolId, locale, pack, expectedPolicy) {
+export function applyAutomaticPackage(sourceCopy, toolId, locale, pack, expectedPolicy, expectedQualityPolicy) {
   if (pack?.schemaVersion !== 1 || pack.toolId !== toolId || pack.locale !== locale
       || !expectedPolicy || pack.semantic_policy !== expectedPolicy
+      || (pack.quality_policy && pack.quality_policy !== expectedQualityPolicy)
       || pack.release_approved !== false || pack.native_review !== false) throw Error('Invalid automatic package provenance');
   const copy = structuredClone(sourceCopy);
   let applied = 0;
