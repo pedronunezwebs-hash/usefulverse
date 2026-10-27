@@ -1,5 +1,12 @@
 ## V31 ·27-oct-2026 · estado actual
 
+## 2026-10-27 · Codex · v32/v33 ruso y relevo compacto
+
+Cinco reparaciones; muestra rusa conocida pasa; siete destinos con muestra conocida aprobada por el agente y cero idiomas aprobados para publicar. V32: referencias 40477109792 y ampliado rechazado 40478376896. V33: referencias 40480964445 y ampliado 40502016693. <!-- V33_CHECK -->CI final pendiente; no se declara verificación completa del lote hasta su resultado.<!-- /V33_CHECK -->
+
+[Informe](lotes/2026-10-27-piloto-v32-v33-ru.md). Próximo: v34 urdu; sin despliegue ni nuevas pruebas para Pedro.
+
+
 V31, ruso: referencias conocidas 360/360; ampliado rechazado con 1562/1.566 y 789/792 en las 88 claves fijas. Leídos los 333 registros actuales de fuente/ida/vuelta. Las 214 idas modelo son memoria revisada, con cero generación nueva de ida; las vueltas son nuevas. Modelo ampliado: 4 defectos y 0 datos sin prueba. Legacy ampliado: 805/828, 16 negativas y 1 datos sin prueba; rechazado. Memoria:905 textos. Historial:16.775 registros,8.605 evaluaciones con repeticiones en148 grupos y1507casos permanentes.0idiomas aprobados para publicar. [Informe](lotes/2026-10-27-piloto-v31-ru.md).
 
 Pasan muestras completas conocidas: es, nb-NO, ko, id, zh-CN, bn. Revisados sin pasar(8): de, fr, pt-BR, ja, hi, ar, ru, ur. Pendientes de revisión detallada(22): tr, vi, it, zh-TW, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, fil, ta, fa, am, gu. Inglés es fuente. Muestras de tres herramientas,no1.000herramientas traducidas;0/36destinos aprobados para publicar. [Listado](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v31.json).

@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-27T12:10:13.261111+00:00",
+  "at_utc": "2026-10-27T12:26:14.417467+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -2128,6 +2128,101 @@
       "python_precheck": {
         "tests": 16,
         "seconds": 30.839
+      }
+    },
+    {
+      "schema_version": 1,
+      "inference_policy": "context-v33",
+      "scope": "full",
+      "run_id": 40502016693,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40502016693",
+      "job_id": 122181783955,
+      "conclusion": "success",
+      "source_commit": "58332f985efc4c7b33da4d404c84ebb0df80539b",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 69.75042366100001,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3739000,
+        "scope": "full",
+        "total_seconds": 304.801065011
+      },
+      "cleanup": "success",
+      "records": 266,
+      "artifacts": 0,
+      "site_and_publications": "skipped",
+      "frozen_runtime_sha256": {
+        "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+        "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+        "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+        "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+        "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+        "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+        "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+        "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+        "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+        "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+        "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+        "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+        "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1",
+        "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+        "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+        "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+        "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+        "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+        "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "scripts/localization/translation-pilot-v32.py": "e850fd65b0b8b7d6da21f0b7fc8c536fd75d248ce632b49eed1b2c31006b73a8",
+        "scripts/localization/pilot-russian-v32.py": "b6b944825cb014fae2c3056cc31d6da2d78ca0e86fd4550250a6db3b867dd924",
+        "scripts/localization/pilot-russian-repaired-corpus-policy.json": "cb4833257255a413ac4b5cf1ce7111df0f01a4c39221bb9950d054c42128569c",
+        "docs/quality/translation-pilot/reviewed-memory-v32-import.json": "abfb2bbcd84b54004a4c799240eeba38f39f987a05f81da36689d0beaf60ba9e",
+        "docs/quality/translation-pilot/corrections-v32.json": "c93ae3179c103c24cf4c4527be1ba060d43e577a8f1a0c8888ded7ee316132ff",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/manifest.json": "e6fa11c36118af1bff93ec183851ceae5a48c8b457f8e94029fc81d4f42ea7a4",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+      },
+      "log_sha256": "8ca30aecf331bd4f39e4f5d37b026fe5d144553eef79561fa2383802dd6f3bf1",
+      "checkpoint_sha256": "cbc403f83b5677231f36015f45fe7efbf00661cd2119097eada3429c8b44b694",
+      "approved_locales": [],
+      "native_review": false,
+      "python_precheck": {
+        "tests": 16,
+        "seconds": 31.988
       }
     }
   ],

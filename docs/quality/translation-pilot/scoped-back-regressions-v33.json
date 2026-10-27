@@ -51,6 +51,327 @@
       ],
       "issue": "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded.",
       "source_case_policy": "context-v32"
+    },
+    {
+      "key": "dxf-viewer.fields.cancelled",
+      "locale": "ru",
+      "source_hash": "54c69a2d32a0deefe7942d596ae015a43b475cf92cd346421f1b5eb8b2e7a7d6",
+      "inference_policy": "context-v33",
+      "forward_digest": "e64123c1c77fdd3aff019f268883652176ad081df953f58a23f76e9667968afe",
+      "back_translation": "Upload canceled.",
+      "back_translation_hash": "b0ac4715557c36f323f2622e6b268220c2554914dd4550bb22ae43a8cae5e1f2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "5f734afd44cad9be3225190b8bd6cd03c09ac070048522c6323eb50092273a08"
+      ],
+      "issue": "Local loading becomes Upload in the back,an incorrect network direction.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "dxf-viewer.fields.clear",
+      "locale": "ru",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "inference_policy": "context-v33",
+      "forward_digest": "826a5419f415cde75e1a3ccc978cb6267b37de58bdda51aa95385d12cbdde0c3",
+      "back_translation": "Delete uploaded drawing",
+      "back_translation_hash": "25fcdc5fee36c3c29c59c6f61df33e5a28c1fb9d0dccacfcb1310771aa4ed70b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "4cf1306250ca290840c53ef41345d353d76c41b50528f47d796b7ff039a08afc"
+      ],
+      "issue": "Loaded local drawing becomes uploaded drawing in the back.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "dxf-viewer.fields.units.0",
+      "locale": "ru",
+      "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+      "inference_policy": "context-v33",
+      "forward_digest": "d2f905236351cca33c1f88ad1c347f8a6abd7402e4f1f015e1a8d5217929a29d",
+      "back_translation": "Non-singular",
+      "back_translation_hash": "5a4fa745c0030c7a20ada9ccab0597e07e143d075bbb91ff7cee4bd59115c53d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "84f29edc8966af400cb5360ae93b70066517ba1d02fa0bca1eef0a7cb166ec96"
+      ],
+      "issue": "Unitless becomes Non-singular,a different mathematical concept.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "dxf-viewer.fields.units.9",
+      "locale": "ru",
+      "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+      "inference_policy": "context-v33",
+      "forward_digest": "5d9bb988e78a25b4ec1f80b1bd84543e89aaa1edada321e4feaa1c5659a3c40a",
+      "back_translation": "Miles",
+      "back_translation_hash": "a1161f6445c68707092f5c86b611b6ed8660aedeb846638c4b37fb1c88b33817",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "778e7939c895d909189173997426f0919e62764b8da78e44cbb04dfe22454914"
+      ],
+      "issue": "Russian Милы is the technical mil unit(Autodesk INSUNITS9),but back says Miles;the forward is correct.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "ru",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "inference_policy": "context-v33",
+      "forward_digest": "d8081950032c5b6a78d688734f89ee5e24c2cb1d7560503d4dcf0fc6339abb40",
+      "back_translation": "Coated cells",
+      "back_translation_hash": "104d612d3f80220022c0abe697bd26aa87628b4bfdf7d5b86d305ab516fedd3e",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2144ac1321f6ca80fb60adf208a6432b1e10468b392cb8805b4155a8de2145fb"
+      ],
+      "issue": "Puzzle grid coverage becomes physical coating(Coated cells);the forward covered-cell label is correct.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "ru",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "inference_policy": "context-v33",
+      "forward_digest": "312d82d6e2c3e9a2c3ba1bfd5101b2f428abcabe6d57204fed4b77f680eb18de",
+      "back_translation": "Decision",
+      "back_translation_hash": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "0b72db8610c1087d11a7fb9db11e9c91247c293ef02728b0b5fe990fa6610fff",
+        "111215d65498d6640b5264781cda357dd9718ab4ccf57ad25ff0b1dc97a1391c"
+      ],
+      "issue": "Puzzle solution becomes Decision,wrong sense of Russian решение.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "ru",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "inference_policy": "context-v33",
+      "forward_digest": "5006ca2f54be46f016d389083bf028a1a3795b9b5b63dd94d378b892d162b560",
+      "back_translation": "This browser creates puzzles. Large grids can take some time on slow devices. No account required. No need to download files.",
+      "back_translation_hash": "e18a04dbaf7ec8843500b9127680b7d5ca0168037db8ea2e16a7db279109c0e5",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "730f6f03ef365025ecaec222c8cfbc872e4e01137df5627b2bb3a51f39e60bc2"
+      ],
+      "issue": "No file upload needed becomes no need to download files.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "inference_policy": "context-v33",
+      "forward_digest": "174d7aac2a731293608e01184583571833bd3d7d02e5aeb0053440a95ad83248",
+      "back_translation": "The selected record is never loaded. This browser decrypts and processes the record locally. UsefulVerse is not receiving a record.",
+      "back_translation_hash": "43c3634dfcde47e229e6bc1ac1f22845760c03fff82db57e08adc73748db3bce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "ed5f73657a7f51d49565794f1e7052373fc6ee4bd4c90ad157ea3db250872f64"
+      ],
+      "issue": "No upload becomes never loaded,and generic audio decoding is narrowed to decryption.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "inference_policy": "context-v33",
+      "forward_digest": "c2b471055962fde10721d321413fdda546d29e6678636f666c6ac8862fc618f5",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "dc4473f8a97c84db9fb9b1fb8c1187d9ed5ed87b89a3a43614eb7febeb72c7f1"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "ru",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "inference_policy": "context-v33",
+      "forward_digest": "4d54a6c10d9028ef894069592a619c7346731a4c8791424cbab5b17a1f9ff37d",
+      "back_translation": "Use a format that your browser can decrypt. Maximum 25 MB and 30 seconds.",
+      "back_translation_hash": "a87dd6adf3d7866648ff2c909ca954d4ea45702a2eaaf440223b3eb85a16c336",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "eb8ad32afa226b05bc4f992fdfc1aa98f1608157cff6d28198f20161ee7dbff4"
+      ],
+      "issue": "Generic format decoding is narrowed to decryption;the Russian broad decoding verb does not require encryption.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "shikaku.fields.statusHint",
+      "locale": "ru",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "inference_policy": "context-v33",
+      "forward_digest": "b1f233c4038ff19c9d02c00b53243c687b132b805964e895a870568d13c14819",
+      "back_translation": "Hint: A regular rectangle is circled.",
+      "back_translation_hash": "8069d1a7ed92542453277b96bb9450655ee776a145c2a75c7fb42c32012d80a0",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "de5a99605e48ea9a762202e073dd69baecab49f77f02cf94e66b99d574dc65cc"
+      ],
+      "issue": "Correct candidate rectangle becomes merely regular rectangle,losing the clue-validity criterion;no claim that every regular rectangle is a square.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "inference_policy": "context-v33",
+      "forward_digest": "6fd4c0d1a007adab9c4a57e6731fc55b14a8fbdc0fd19b34720dd108115da24b",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "5b556eca73bc1c603238d9ee447a7446276625fabf4ec8e97190533de8a81a04"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "ru",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "inference_policy": "context-v33",
+      "forward_digest": "c0e32b4b0ac651f76a3258c48560d73e76b8d60d67a63c760683fff4fe91385c",
+      "back_translation": "Upload the audio clip before preview or export.",
+      "back_translation_hash": "f8a22d68b337667d4e34aad9b6750fb5202c60329c8e02e43ca9db228931c487",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "f391c41c459d206fd3511dbcebac8ee44297c4767e58ee500f3617c43b165aee"
+      ],
+      "issue": "Local audio loading becomes upload in the back.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "inference_policy": "context-v33",
+      "forward_digest": "13bedd184962cee7eda00084d43f796fdbd495b9e957f05bc17643f38c1208b3",
+      "back_translation": "Sound pitch shift (polonium)",
+      "back_translation_hash": "995c72b915b18da2e850ad36241a470a724704521edbbdfa6db90708dfe85f61",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "68ff97207c072a252b245d2a84c2a4b581aa05bf94ff341ad959945dae5fa896"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude.",
+      "source_case_policy": "context-v32"
+    },
+    {
+      "key": "dxf-viewer.example",
+      "locale": "ru",
+      "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+      "inference_policy": "context-v33",
+      "forward_digest": "3b8f840ed2d9de935f65b37f8bbcb9045c1b893d3ac82557e2a1880673ada585",
+      "back_translation": "The length of the line from (0,0) to (10,0) is 10 drawing units. The viewer reads the unit code from the DXF, if it is specified. If the code is not specified, the measurements are signed as drawing units.",
+      "back_translation_hash": "4aaa283d9f4e4713098aacaca6175f67c1f090452b84a8f89368120864307ba4",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "e3b49762d10c38629e76d12a0757386057a943d6a88018c9af582a9310f0c09b"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Labelling units becomes signing in English back;Russian подписываются is correct for labels."
+    },
+    {
+      "key": "shikaku.description",
+      "locale": "ru",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "inference_policy": "context-v33",
+      "forward_digest": "e7f9c752397663c5c2302c1d8b49572d88ab2a03dda10e170da48a265743772d",
+      "back_translation": "Play Shikaku online for free. Divide the grid into rectangles with the area given by the numbers. A daily puzzle, hints, and new playgrounds are available. Your game is stored on this device.",
+      "back_translation_hash": "dc111f2c39a09bf29ac981acc18aa8d6c8244d4ab2ab948fc8147d831453d628",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "3784685ca17a18b4444a89e53070591349bdeda1cd3ba051d64616720fa0e863"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Game boards become physical playgrounds in the back;Russian игровые поля denotes game boards correctly."
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "ru",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "inference_policy": "context-v33",
+      "forward_digest": "fa5592bbf888a6b2ec44f56f54c5c4e7bb831f85cac1b414876974dcd403a18f",
+      "back_translation": "Audio processing uses the memory and processor of your device. Short entries on the computer are usually processed more smoothly than long entries on the phone.",
+      "back_translation_hash": "3e8d40e00b3c710b3b2248835769b4766802598707bcbe0582063c3a0f8ed94f",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "933498103914a2fe237406dcf678830eb295a78b57d3fdb9b4eec9ad431902a9"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Audio recordings become text entries in the back;Russian записи is valid in the audio context."
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "ru",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "inference_policy": "context-v33",
+      "forward_digest": "fa5592bbf888a6b2ec44f56f54c5c4e7bb831f85cac1b414876974dcd403a18f",
+      "back_translation": "Audio processing uses the memory and processor of your device. Short entries on the computer are usually processed more smoothly than long entries on the phone.",
+      "back_translation_hash": "3e8d40e00b3c710b3b2248835769b4766802598707bcbe0582063c3a0f8ed94f",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "e3968cc6ca359e9712d4fe005975d7381ab096c3d8d93b9c12dc7f44f7e55731"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Audio recordings become text entries in the back;Russian записи is valid in the audio context."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "inference_policy": "context-v33",
+      "forward_digest": "df5ea5a0c4293c13b7f974f49e2e7c726540543317fb3b3021c3db9b7366b0e3",
+      "back_translation": "Altitude displacement (poloniums)",
+      "back_translation_hash": "0bbd8765d0e0f3352ba0abc98491835d0ed3b9ab813209419ebdebd3f99450d9",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "20be63d3172823ef20063a56211572efc68f2578787f65b749a9c2aaad472962"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Audio pitch and semitones become altitude displacement and chemical poloniums;forward audio label is correct."
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "ru",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "inference_policy": "context-v33",
+      "forward_digest": "cdb08324a7a46c0b34dbc566498b9fb4c17b8021cb30afdf559ed8c3bbac7b41",
+      "back_translation": "Status of change of vote",
+      "back_translation_hash": "d818d4d98c7996bf3c9859bdc5c21161a0ef38ca7d61b7acb106c366ef8a56dc",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "ac4502d5c7af9a4afc5c4cc66a7ba7d827c0ac18def49b83188e021a1b4128b4"
+      ],
+      "source_case_policy": "context-v33",
+      "issue": "Audio voice change becomes voting in the back;Russian голоса is correctly disambiguated by the voice-changer context."
     }
   ]
 }

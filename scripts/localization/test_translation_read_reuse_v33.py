@@ -37,10 +37,13 @@ class SameTurnReadReuseTest(unittest.TestCase):
                 new.append(current[identity])
         self.assertEqual(seen, set(current))
         self.assertEqual(len(current), 333)
-        self.assertEqual(reused, 332)
-        self.assertEqual(len(new), 1)
-        self.assertEqual(new[0]['key'], 'dxf-viewer.fields.loaded')
-        self.assertEqual(new[0]['translation'], 'Чертёж загружен локально.')
+        self.assertEqual(reused, 279)
+        self.assertEqual(len(new), 54)
+        prior_by_key = {(r['key'], r['candidate']): r for r in old.values()}
+        changed_forward = [r for r in new if r['translation'] != prior_by_key[(r['key'], r['candidate'])]['translation']]
+        self.assertEqual(len(changed_forward), 1)
+        self.assertEqual(changed_forward[0]['key'], 'dxf-viewer.fields.loaded')
+        self.assertEqual(changed_forward[0]['translation'], 'Чертёж загружен локально.')
 
     def test_all_current_judgments_declare_reuse_or_actual_new_read(self):
         proof = json.loads((DATA / 'same-turn-read-reuse-v33.json').read_text())
@@ -52,3 +55,26 @@ class SameTurnReadReuseTest(unittest.TestCase):
             for row in review['rows']:
                 origin = 'same-turn-exact-SFB-review-reuse' if row['record_ids'][0] in reused else 'direct-current-S/F/B-agent-review'
                 self.assertEqual(row['score_origin'], origin)
+
+    def test_reusable_partition_rejects_changed_context_back_or_stale_source(self):
+        import copy
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('reuse', Path(__file__).with_name('pilot-review-reuse.py'))
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        source = 'Drawing loaded locally.'
+        row = dict(record_id='old', key='loaded', locale='ru', candidate='model', source=source, source_hash=hashlib.sha256(source.encode()).hexdigest(), context='fields.loaded', translation='Чертёж загружен локально.', back_translation=source)
+        current = dict(row, record_id='current')
+        pairs, new = module.partition([row], [current], {'old'})
+        self.assertEqual(len(pairs), 1)
+        self.assertEqual(new, [])
+        for field in ['key', 'locale', 'candidate', 'context', 'translation', 'back_translation']:
+            changed = dict(current, **{field: 'changed'})
+            with self.subTest(field=field):
+                self.assertEqual(module.partition([row], [changed], {'old'}), ([], [changed]))
+        with self.assertRaises(ValueError):
+            module.partition([row], [dict(current, source_hash='stale')], {'old'})
+        with self.assertRaises(ValueError):
+            module.partition([row], [current], {'unread'})
+        with self.assertRaises(ValueError):
+            module.partition([row], [current, current], {'old'})

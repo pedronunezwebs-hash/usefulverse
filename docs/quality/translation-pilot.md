@@ -1,5 +1,16 @@
 ## V31 ·27-oct-2026 · estado actual
 
+## V32/v33 ruso · 27-oct-2026
+
+Ruso v33: referencias 360/360; ampliado conocido 1566/1566 y 792/792 en las 88 claves fijas. Cero defectos de ida o datos sin prueba en modelo. Cinco reparaciones en este lote (cuatro v32 y una v33); perfil actual: 213 destinos conservados y uno corregido; 214 idas de memoria y cero idas modelo nuevas. Retrotraducciones actuales; 333 registros S/F/B actuales: 279 exactos ya leídos en esta misma sesión y 54 nuevos leídos directamente, con procedencia comprobada; no se declara una revisión independiente. Legacy mantiene sus fallos y no pasa. 905 memorias; 9271 evaluaciones con repeticiones / 156 grupos. Cero idiomas aprobados para publicar.
+
+<!-- V33_CHECK -->CI final pendiente; no se declara verificación completa del lote hasta su resultado.<!-- /V33_CHECK -->
+
+Siguiente: Crear v34 urdu independiente desde translation-pilot/next-v34-ur-plan.json y batch1-v28-candidate-plan.json: 32 candidatas exactas y ocho reparaciones, ninguna importada ni probada por contrato urdu. Test rojo antes de cada arreglo; ligar fuente, hash, contexto, registro y juicio exactos. Mantener las 905 memorias, los 51 archivos medidos, los crudos y todos los juicios históricos. Retirar solo variantes con negativo emparejado. Probar datos del urdu en textos completos y fragmentos. Primero 40 referencias y todos sus avisos; solo si pasan, ampliado con las mismas 88 claves y lectura completa de 174 modelo + 92 legacy, también fuera de las 88. No repetir v32 (40477109792/40478376896) ni v33 (40480964445/40502016693). Después los 22 destinos de acceleration-review-batches.json; ha/am/te/gu/ta/mr/sw requieren 80 muestras. No avanzar a fase 0.
+
+Informe: [lotes/2026-10-27-piloto-v32-v33-ru.md](lotes/2026-10-27-piloto-v32-v33-ru.md).
+
+
 V31, ruso: referencias conocidas 360/360; ampliado rechazado con 1562/1.566 y 789/792 en las 88 claves fijas. Leídos los 333 registros actuales de fuente/ida/vuelta. Las 214 idas modelo son memoria revisada, con cero generación nueva de ida; las vueltas son nuevas. Modelo ampliado: 4 defectos y 0 datos sin prueba. Legacy ampliado: 805/828, 16 negativas y 1 datos sin prueba; rechazado. Memoria:905 textos. Historial:16.775 registros,8.605 evaluaciones con repeticiones en148 grupos y1507casos permanentes.0idiomas aprobados para publicar. [Informe](lotes/2026-10-27-piloto-v31-ru.md).
 
 Pasan muestras completas conocidas: es, nb-NO, ko, id, zh-CN, bn. Revisados sin pasar(8): de, fr, pt-BR, ja, hi, ar, ru, ur. Pendientes de revisión detallada(22): tr, vi, it, zh-TW, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, fil, ta, fa, am, gu. Inglés es fuente. Muestras de tres herramientas,no1.000herramientas traducidas;0/36destinos aprobados para publicar. [Listado](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/language-status-v31.json).
