@@ -8,6 +8,8 @@
 
 Producción: cinco GET/dos XML y 25.625 URLs; tres soft404 conocidas en 200. Preview anterior: diez muestras 200/noindex desde Chrome, fuera de sitemap vacío y robots sin bloqueo global; HTTP directo 403/1010, no se cambia seguridad. Su versión no se certifica como esta rama. Sin deploy/activaciones/envíos ni avance de fase. P-001–P-008 pendientes, cero FALLA; P-009 correo OK, sin push probado ni IDs nuevos. Siguiente: capacidad de publicación del Paso A y cobertura de UI de los 120.
 
+Cierre verificado 2026-10-28T07:29:15.808531+00:00: fuentes/evidencias y refs remotos comprobados antes de retirar el clon, la pestaña de QA y los tres ZIP de logs propios de gh; 42.7 GiB libres. Candado LIBRE. CI completa y puerta rápida correctas, campaña de traducción sin interrumpir. [Recibo](translation-drafts/preflight-v1/closure.json).
+
 ## 2026-10-28 · Codex · Regresión del entorno GitHub corregida
 
 Primera CI: 3.053 Node correctas; 448 Python, un error de fixture por GITHUB_OUTPUT heredado, dos omisiones. Se completan las políticas simuladas, se aísla/verifica el archivo de salida y se ejecuta esta regresión al principio. [Fix 1d67bdf](https://github.com/pedronunezwebs-hash/usefulverse/commit/1d67bdf80d5081ab005bc945c03feef5bf708cc5). [Nueva CI 40646366137](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137): contratos/regresión y preview real correctos; suite completa/builds normales pendientes. Primera preview: 20 entradas, dos metadatos largos retenidos, 10.800 rutas verificadas.
