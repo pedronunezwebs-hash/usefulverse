@@ -1,3 +1,13 @@
+## 2026-10-28 · Codex · Puerta automática antes de modelos y CI completa resuelta
+
+[Informe](lotes/2026-10-28-puerta-automatica-traducciones.md). [Código 24fac63](https://github.com/pedronunezwebs-hash/usefulverse/commit/24fac631fce983baef04e87499643b17cda7e29f); controlador en main 81cb8b4, sin código de las 300. Futuras campañas deben pasar la puerta con el mismo SHA antes de los modelos. Seis regresiones nuevas verifican ejecución, bloqueo, señales/estados inválidos, fuente/dependencias, permisos y aviso ante fallo. Cinco archivos críticos/políticas/memoria conservan sus bytes.
+
+[Prueba real 40648113707](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40648113707): 45 Python y seis Node, 24 s, cero ms facturables/artifacts, sin inferencia. Primera invocación desde la próxima campaña aún no observada; la actual continúa sin cancelarse. Cron del vigilante ya observado en dos runs schedule correctos; diario de generación todavía sin evento acreditado.
+
+[CI 40646366137](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137) correcta: 3.053 Node y 448 Python (446 correctas, dos omisiones, cero fallos/errores), 1316,672 s/cuatro procesos. Principal/hub/gate de 20 locales y 10.800 rutas noindex correctos; 29.934 hojas parciales aplicadas, 238 metadatos con respaldo inglés. El nuevo control se comprueba aparte; no se declara un rerun completo de sus seis casos nuevos. Inventario explícito de 120 propietarios con extracción de metadatos pendiente de UI.
+
+Producción: cinco GET/dos XML y 25.625 URLs; tres soft404 conocidas en 200. Preview anterior: diez muestras 200/noindex desde Chrome, fuera de sitemap vacío y robots sin bloqueo global; HTTP directo 403/1010, no se cambia seguridad. Su versión no se certifica como esta rama. Sin deploy/activaciones/envíos ni avance de fase. P-001–P-008 pendientes, cero FALLA; P-009 correo OK, sin push probado ni IDs nuevos. Siguiente: capacidad de publicación del Paso A y cobertura de UI de los 120.
+
 ## 2026-10-28 · Codex · Regresión del entorno GitHub corregida
 
 Primera CI: 3.053 Node correctas; 448 Python, un error de fixture por GITHUB_OUTPUT heredado, dos omisiones. Se completan las políticas simuladas, se aísla/verifica el archivo de salida y se ejecuta esta regresión al principio. [Fix 1d67bdf](https://github.com/pedronunezwebs-hash/usefulverse/commit/1d67bdf80d5081ab005bc945c03feef5bf708cc5). [Nueva CI 40646366137](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137): contratos/regresión y preview real correctos; suite completa/builds normales pendientes. Primera preview: 20 entradas, dos metadatos largos retenidos, 10.800 rutas verificadas.

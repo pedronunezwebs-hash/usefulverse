@@ -1,0 +1,131 @@
+{
+  "checked_at": "2026-10-28T07:16:56.358580+00:00",
+  "scope": "Previously deployed draft; source version not certified as the current branch",
+  "requests": [
+    {
+      "kind": "tool",
+      "tool": "text-translator",
+      "locale": "en",
+      "route": "/tools/text-translator/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/text-translator/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "internet-speed-test",
+      "locale": "en",
+      "route": "/tools/internet-speed-test/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/internet-speed-test/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "truth-or-dare",
+      "locale": "es",
+      "route": "/es/tools/truth-or-dare/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/es/tools/truth-or-dare/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "uk-stamp-duty",
+      "locale": "es",
+      "route": "/es/tools/uk-stamp-duty/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/es/tools/uk-stamp-duty/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "tower-defense",
+      "locale": "de",
+      "route": "/de/tools/tower-defense/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/de/tools/tower-defense/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "virtual-drum-kit",
+      "locale": "de",
+      "route": "/de/tools/virtual-drum-kit/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/de/tools/virtual-drum-kit/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "ptsd-questionnaire",
+      "locale": "ar",
+      "route": "/ar/tools/ptsd-questionnaire/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ar/tools/ptsd-questionnaire/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "singapore-cpf",
+      "locale": "ar",
+      "route": "/ar/tools/singapore-cpf/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ar/tools/singapore-cpf/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "hdr-merger",
+      "locale": "ja",
+      "route": "/ja/tools/hdr-merger/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ja/tools/hdr-merger/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "tool",
+      "tool": "pet-feeding-calculator",
+      "locale": "ja",
+      "route": "/ja/tools/pet-feeding-calculator/",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ja/tools/pet-feeding-calculator/",
+      "status": 403,
+      "noindex": false,
+      "html_bytes": 17,
+      "in_sitemap": false
+    },
+    {
+      "kind": "robots",
+      "route": "/robots.txt",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/robots.txt",
+      "status": 403,
+      "blocks_all": false
+    },
+    {
+      "kind": "sitemap",
+      "route": "/sitemap.xml",
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/sitemap.xml",
+      "error": "ParseError: syntax error: line 1, column 0"
+    }
+  ],
+  "deployments": 0,
+  "approved": false
+}

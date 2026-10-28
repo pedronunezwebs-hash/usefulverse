@@ -1,0 +1,18 @@
+{
+  "run_id": 40565692987,
+  "source_targets": 929952,
+  "generated": 47211,
+  "audited": 34566,
+  "quarantined": 16437,
+  "pending": 895386,
+  "exported_entries": 47316,
+  "source_digest": "054c95cbe93531d6ac5a0d49ee5cb327aa2bd121a5f7c1cc77e0820d0f5df8d7",
+  "active_jobs": [
+    "wave-3 / drafts (1)",
+    "wave-3 / drafts (3)",
+    "wave-3 / drafts (0)",
+    "wave-3 / drafts (2)"
+  ],
+  "completed_deliveries": 2,
+  "approved": false
+}

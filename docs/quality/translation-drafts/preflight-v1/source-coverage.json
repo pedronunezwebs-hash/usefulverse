@@ -1,0 +1,491 @@
+{
+  "schemaVersion": 1,
+  "sourceDigest": "054c95cbe93531d6ac5a0d49ee5cb327aa2bd121a5f7c1cc77e0820d0f5df8d7",
+  "catalogTools": 1000,
+  "destinationLocales": 36,
+  "sourceUnits": 42053,
+  "partialTools": 120,
+  "partial": [
+    {
+      "toolId": "401k-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "alarm-clock",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "annuity-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "bac-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "bcrypt-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "body-surface-area-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "boolean-algebra-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "box-plot-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "breathing-exercise",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "bubble-shooter",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "business-letter-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "calories-burned-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "canasta-card-game",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "car-lease-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "cash-on-cash-return-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "circle-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "color-mixer",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "cpm-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "cribbage",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "crossword-online",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "csv-merge",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "currency-converter",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "debt-to-income-ratio-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "differential-equation-solver",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "dividend-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "docx-editor",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "effect-size-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "eisenhower-matrix",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "ellipse-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "email-signature-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "epub-to-pdf",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "euchre",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "extract-images-from-pdf",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "family-tree-maker",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "farkle-dice-game",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "fire-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "fisher-exact-test-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "forex-position-size-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "freecell",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "fuel-economy-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "gin-rummy",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "gold-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "gomoku",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "halma-game",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "heart-rate-zone-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "hiking-time-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "histogram-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "ics-viewer",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "ideal-weight-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "image-vectorizer",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "inequality-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "inflation-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "lease-vs-buy-car-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "lifetime-value-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "limit-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "linear-programming-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "local-spell-checker",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "ludo-game",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "mann-whitney-u-test-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "markdown-table-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "meeting-minutes-template",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "meeting-planner",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "memory-test",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "microphone-level-meter",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "modulo-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "moon-phase-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "mortgage-affordability-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "mortgage-refinance-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "name-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "net-worth-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "options-profit-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "overtime-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pdf-accessibility-checker",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pdf-bookmarks-editor",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pdf-flattener",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pdf-metadata-editor",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pdf-page-size-converter",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "pension-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "poker-odds-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "polar-graphing-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "prime-factorization-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "protein-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "push-up-test",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "radical-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "random-word-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "rational-expression-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "required-minimum-distribution-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "retirement-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "rhyme-finder",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "rref-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "shut-the-box",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "sitemap-validator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "skat-card-game",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "sleep-debt-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "snake-game",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "sobriety-counter",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "social-security-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "spades-game",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "spider-solitaire",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "statistical-power-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "stem-and-leaf-plot-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "stock-profit-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "switzerland-child-support-budget-calculator",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "switzerland-inheritance-gift-tax-calculator",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "switzerland-property-gains-tax-calculator",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "switzerland-tenancy-notice-planner",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "taylor-series-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "text-to-speech",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "timeline-maker",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "vcard-converter",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "vcard-generator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "vo2-max-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "water-intake-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "week-number-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "weekly-planner",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "wilks-calculator",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "word-hyphenation-tool",
+      "coverage": "catalog-metadata-only"
+    },
+    {
+      "toolId": "word-puzzle-solver",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "world-clock",
+      "coverage": "recovered-metadata-only"
+    },
+    {
+      "toolId": "xml-to-csv-converter",
+      "coverage": "recovered-metadata-only"
+    }
+  ],
+  "approved": false
+}

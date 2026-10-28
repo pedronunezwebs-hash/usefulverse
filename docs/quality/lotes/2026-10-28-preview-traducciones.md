@@ -35,3 +35,7 @@ La primera CI 40599566567 terminó con 3.053 Node correctas y 448 Python ejecuta
 El traductor completó dos vueltas y ejecuta cuatro jobs en la tercera. Snapshot: 47,211 unidades generadas vigentes, 34,566 auditadas, 16,437 retenidas y 895,386 pendientes; 47,316 entradas exportadas expanden claves repetidas y no se deben confundir con frases únicas. Esta campaña usa su política antigua fijada: los paquetes se revalidan con la política reforzada antes de consumirlos en la preview; no se aprueban idiomas ni producción. [Contadores](../translation-drafts/preview-v1/translation-progress.json).
 
 Trabajo hecho mediante API/Git remotos: ningún clon, modelo, dependencia ni temporal local nuevo; 43.46 GiB libres. Fuente y documentos recuperables online, candado LIBRE tras verificar los refs. Sin despliegues ni comprobación nueva en producción; P-001–P-008 pendientes, cero FALLA, P-009 correo OK y push sin probar. Sin nuevos IDs. Siguiente: consultar la conclusión de 40646366137; si pasa, seguir los pendientes de Paso A. No avanzar fase.
+
+## CI resuelta en el lote siguiente
+
+40646366137 terminó correctamente: 3.053 Node/448 Python, dos omisiones, cero fallos/errores; principal/hub/gate y preview de 10.800 rutas correctos. El estado en curso de los recibos anteriores describe su momento de observación. La continuidad vigente y los contadores completos están en [el lote de puerta automática](2026-10-28-puerta-automatica-traducciones.md) y ESTADO.md. No activa ni certifica herramientas.
