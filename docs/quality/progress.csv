@@ -1,5 +1,5 @@
 prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agente,fecha,pr,nota,capa1_ref,capa2_prop,capa3_regr,capa4_e2e,capa5_disp,capa6_a11y_perf,capa7_revision,pruebas_pedro
-0,fase-0,ambos,fase-0,,,,pendiente,Codex,2026-10-28,https://github.com/pedronunezwebs-hash/usefulverse/pull/136,"Paso A abierto; capacidad de publicación + UI de 120 propietarios pendientes; fase 0 no iniciada. CI 40646366137 correcta: 3053 Node/448 Python, 2 omisiones, builds/gate/10800 rutas noindex. Puerta automática previa a modelos: 45 Python + 6 Node en 24s, consumo reportado 0 ms. Traductor 34566 auditadas/16437 retenidas; sin equivalencia manual universal ni idiomas aprobados. Producción 25625 URLs; preview antigua 10 muestras Chrome 200/noindex; versión actual solo CI. P-009 correo OK, ocho físicas pendientes, 0 activaciones/capas aprobadas. Ver lote 2026-10-28-puerta-automatica-traducciones.md. Respaldo/retirada propios verificados (42.7 GiB libres), logs propios de gh retirados y candado LIBRE.",,,,,,,,
+0,fase-0,ambos,fase-0,,,,pendiente,Codex,2026-10-28,https://github.com/pedronunezwebs-hash/usefulverse/pull/136,"Paso A abierto; medición de capacidad completa en 40652759818: 10728/16354/11293 archivos separados; hub+300 27470 (+7470), 73 conflictos. Ruta provisional preview existente separada; integración definitiva pendiente. 13 tests Actions + caso sitemap posterior (14 locales), 0 ms facturables/artifacts. Pruebas físicas solo aplicables; ocho IDs existentes enlazados, cero nuevos/FALLA. Traductor 48836 auditadas/23273 retenidas, vuelta 4. Siguiente UI inglesa de 14 mercado+106 recuperados; 0 activaciones/capas aprobadas, fase 0 pendiente.",,,,,,,,
 1,date-calculator,usefulverse.com,existente,36,2547,2,pendiente,,,,falta nb,,,,,,,,
 2,time-duration-calculator,usefulverse.com,existente,36,2511,5,pendiente,,,,falta nb,,,,,,,,
 3,roman-numeral-converter,usefulverse.com,existente,36,2040,3,pendiente,,,,falta nb,,,,,,,,
@@ -78,7 +78,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 76,protractor,usefulverse.com,existente,36,91,3,pendiente,,,,falta nb,,,,,,,,
 77,pool-volume-calculator,tools.usefulverse.com,existente,36,90,3,pendiente,,,,falta nb,,,,,,,,
 78,remove-duplicate-lines,usefulverse.com,existente,36,90,0,pendiente,,,,falta nb,,,,,,,,
-79,voice-recorder,usefulverse.com,existente,36,90,0,pendiente,,,,falta nb,,,,,,,,
+79,voice-recorder,usefulverse.com,existente,36,90,0,pendiente,,,,falta nb,,,,,,,,P-003
 80,long-division-calculator,usefulverse.com,existente,36,89,0,pendiente,,,,falta nb,,,,,,,,
 81,battery-runtime-calculator,tools.usefulverse.com,existente,36,88,0,pendiente,,,,falta nb,,,,,,,,
 82,quotation-generator,usefulverse.com,existente,36,88,0,pendiente,,,,falta nb,,,,,,,,
@@ -142,7 +142,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 140,tax-calculator,usefulverse.com,existente,36,46,0,pendiente,,,,falta nb,,,,,,,,
 141,divisibility-calculator,tools.usefulverse.com,existente,36,45,0,pendiente,,,,falta nb,,,,,,,,
 142,linear-regression-calculator,usefulverse.com,existente,36,45,0,pendiente,,,,falta nb,,,,,,,,
-143,video-compressor,usefulverse.com,existente,36,45,0,pendiente,,,,falta nb,,,,,,,,
+143,video-compressor,usefulverse.com,existente,36,45,0,pendiente,,,,falta nb,,,,,,,,P-008
 144,room-planner,usefulverse.com,existente,36,44,1,pendiente,,,,falta nb,,,,,,,,
 145,chart-maker,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb,,,,,,,,
 146,cover-letter-builder,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb,,,,,,,,
@@ -214,7 +214,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 212,gravel-calculator,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb,,,,,,,,
 213,investment-allocation-calculator,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb,,,,,,,,
 214,journal-online,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb,,,,,,,,
-215,speaker-tester,usefulverse.com,existente,36,23,0,pendiente,,,,falta nb,,,,,,,,
+215,speaker-tester,usefulverse.com,existente,36,23,0,pendiente,,,,falta nb,,,,,,,,P-005
 216,polynomial-long-division-calculator,tools.usefulverse.com,existente,36,22,0,pendiente,,,,falta nb,,,,,,,,
 217,file-checksum,usefulverse.com,existente,36,21,1,pendiente,,,,falta nb,,,,,,,,
 218,kinetic-energy-calculator,tools.usefulverse.com,existente,36,21,0,pendiente,,,,falta nb,,,,,,,,
@@ -342,11 +342,11 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 340,roof-pitch-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb,,,,,,,,
 341,tic-tac-toe,usefulverse.com,existente,36,6,0,pendiente,,,,falta nb,,,,,,,,
 342,logic-grid-puzzle,tools.usefulverse.com,existente,36,5,1,pendiente,,,,falta nb,,,,,,,,
-343,2048-game,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
+343,2048-game,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,P-001
 344,complex-number-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
 345,effective-interest-rate-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
 346,robots-txt-generator,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
-347,screen-recorder,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
+347,screen-recorder,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,P-002
 348,section-modulus-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
 349,slitherlink,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
 350,workout-planner,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb,,,,,,,,
@@ -377,7 +377,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 375,reversi,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,
 376,roofing-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,
 377,sqlite-playground,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,
-378,sudoku,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,
+378,sudoku,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,P-007
 379,sudoku-solver,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb,,,,,,,,
 380,aes-encryption-tool,tools.usefulverse.com,existente,36,2,1,pendiente,,,,falta nb,,,,,,,,
 381,certificate-decoder,tools.usefulverse.com,existente,36,2,1,pendiente,,,,falta nb,,,,,,,,
@@ -543,7 +543,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 541,image-metadata-remover,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 542,image-sharpener,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 543,image-splitter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
-544,image-to-pdf,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
+544,image-to-pdf,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,P-004
 545,image-upscaler,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 546,image-vectorizer,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 547,inequality-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
@@ -567,7 +567,7 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 565,maze-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 566,meeting-planner,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 567,memory-test,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
-568,microphone-level-meter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,,,,,,,,,
+568,microphone-level-meter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,,,,,,,,,P-006
 569,minesweeper,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,
 570,mini-golf-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,,,,,,,,,
 571,mockup-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb,,,,,,,,

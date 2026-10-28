@@ -41,7 +41,7 @@ El repo es público, así que todo esto corre gratis en GitHub Actions (máquina
 **Aplicabilidad · decisión de Pedro, 28-oct-2026:** las pruebas físicas no se asignan por defecto a cada herramienta.
 El agente prueba con fixtures, archivos y navegadores todo lo que pueda reproducir y solo pide a Pedro lo que requiera
 hardware, condiciones reales del dispositivo o un juicio que no pueda comprobar. Por ejemplo, comprimir un PDF no
-requiere probar un micrófono: integridad, contenido, compresión y descarga se verifican automáticamente; no se crea una
+requiere probar un micrófono: integridad, contenido, compresión y descarga deben verificarse con archivos de prueba y navegador; no se crea una
 fila de prueba física de micrófono. Si queda una limitación real de archivo/dispositivo, se añade solo ese caso concreto.
 No se rebajan las siete capas aplicables ni se usa `n/a` para omitir una comprobación que sí corresponde.
 
@@ -64,6 +64,11 @@ El agente añade una fila en `PRUEBAS-PEDRO.md` con **todo lo necesario para hac
 - **Pasos numerados** («1. Abre…, 2. Pulsa…, 3. Elige un archivo HEIC de tu galería…»).
 - **Qué debería pasar** (resultado esperado concreto).
 - **Estado:** `pendiente`, después `OK` o `FALLA` + una nota de Pedro (o una captura).
+
+Antes de pedirla, el agente completa las comprobaciones que sí puede hacer y arregla los fallos que ya pueda reproducir.
+No se encarga a Pedro repetir un error conocido que el agente pueda comprobar por sí mismo; la prueba física confirma
+únicamente el comportamiento o límite que queda fuera de esa comprobación. Los IDs aplicables se enlazan en la fila de
+la herramienta en `progress.csv`; no se crean filas físicas para las herramientas que no las necesitan.
 
 Pedro hace las pruebas pendientes cuando quiera (mejor por tandas). El agente siguiente:
 1. Lee las filas `FALLA`, reproduce el problema si puede, lo arregla y vuelve a poner la fila en `pendiente` para

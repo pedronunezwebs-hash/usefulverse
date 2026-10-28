@@ -1,3 +1,11 @@
+## 2026-10-28 · Codex · Capacidad medida y pruebas físicas solo aplicables
+
+[Informe](lotes/2026-10-28-capacidad-paso-a.md), [código d1a7429](https://github.com/pedronunezwebs-hash/usefulverse/commit/d1a7429f76e6bb4ba157bc38ad5dbb0a36ee8d72), [Actions 40652759818](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818). 13 tests/tres builds/gate correctos en 113 s; cero ms facturables y artifacts. Principal 10.728 archivos, hub 16.354, preview 11.293; caben separados en el presupuesto conservador de Pages Free (20.000/25 MiB). Unión hipotética hub+300: 27.470, exceso mínimo 7.470, 73 conflictos/36 portadas y sitemap. No se ensamblan/sobrescriben builds ni se cambia cuenta/dominio/plan. Ruta provisional: dos sitios de las 700 y preview existente de las 300; publicación definitiva pendiente.
+
+Regresiones previas al arreglo para alias de salida/symlink a HTML y resumen/JSON compartidos; todas correctas. Caso adicional del sitemap real: 14 tests locales, no atribuido al run anterior de 13. PRUEBAS.md recoge pasada integral de las 1.000 y pruebas físicas solo donde corresponden, después de agotar lo automatizable y arreglar fallos reproducibles. Se enlazan ocho IDs existentes a sus filas; ocho pendientes, cero FALLA, P-009 correo OK/push sin probar y cero IDs nuevos.
+
+No se despliega ni se verifica una versión nueva en producción. Sin cambios de estados de herramientas, capas aprobadas, activaciones o avance de fase. El traductor continúa en vuelta 4; datos observados en capacity-v1/translation-progress.json. Siguiente: UI inglesa de los 14 de mercado y después los 106 recuperados; preview separada mientras se resuelve integración definitiva.
+
 ## 2026-10-28 · Codex · Puerta automática antes de modelos y CI completa resuelta
 
 [Informe](lotes/2026-10-28-puerta-automatica-traducciones.md). [Código 24fac63](https://github.com/pedronunezwebs-hash/usefulverse/commit/24fac631fce983baef04e87499643b17cda7e29f); controlador en main 81cb8b4, sin código de las 300. Futuras campañas deben pasar la puerta con el mismo SHA antes de los modelos. Seis regresiones nuevas verifican ejecución, bloqueo, señales/estados inválidos, fuente/dependencias, permisos y aviso ante fallo. Cinco archivos críticos/políticas/memoria conservan sus bytes.
