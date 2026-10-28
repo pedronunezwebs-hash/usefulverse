@@ -66,5 +66,8 @@
       "event": "schedule"
     },
     "cancelledOrRestartedByAgent": false
-  }
+  },
+  "verifiedSourceCommit": "47c1adc7db351cfd76ffbddd0fcdeb1dd494da85",
+  "verifiedSourceDirectorySHA": "04f89479f194e64c987b98bd82c6e3e00f1ec658",
+  "remoteSourcePackagesVerified": 106
 }
