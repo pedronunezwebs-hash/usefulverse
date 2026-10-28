@@ -33,3 +33,5 @@ Sin despliegue ni comprobación de una versión nueva en producción; delta de U
 **Código respaldado:** [ee9035d](https://github.com/pedronunezwebs-hash/usefulverse/commit/ee9035d5b5c40cbb8b6b1f5001bfb58a44d3a3db).
 
 **Alertas existentes antes de publicar:** el push notificó tres alertas abiertas de DOMPurify en la rama por defecto (crítica/alta/baja); la API confirma que las tres indican 3.4.17 como primera versión corregida. Existe PR #135 para revisión manual. Este lote no modifica dependencias ni afirma que la aplicación esté expuesta a todos esos modos de uso; revisar usos y regresiones antes de integrar/publicar. [Datos de GitHub](../market-ui-v1/security-alerts.json).
+
+Cierre UI-14 2026-10-28T09:20:26.426094+00:00: código/reportes comprobados en GitHub antes de eliminar el clon y todos los temporales propios (811 MB); servidor detenido y pestaña propia en blanco. 43.15 GiB libres. Candado LIBRE; 106 fuentes recuperadas y revisión manual DOMPurify PR #135 pendientes; cero despliegues, activaciones o Actions de web. [Recibo](../market-ui-v1/closure.json).
