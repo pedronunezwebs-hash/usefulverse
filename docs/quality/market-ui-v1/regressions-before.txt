@@ -1,0 +1,115 @@
+### regression-before
+  ✖ bubble-shooter (1.092167ms)
+  ✖ canasta-card-game (0.089542ms)
+  ✖ currency-converter (0.062791ms)
+  ✖ farkle-dice-game (0.062333ms)
+  ✖ halma-game (0.054083ms)
+  ✖ local-spell-checker (0.052833ms)
+  ✖ microphone-level-meter (0.048083ms)
+  ✖ shut-the-box (0.053041ms)
+  ✖ skat-card-game (0.081542ms)
+  ✖ switzerland-child-support-budget-calculator (0.078417ms)
+  ✖ switzerland-inheritance-gift-tax-calculator (0.048709ms)
+  ✖ switzerland-property-gains-tax-calculator (0.040084ms)
+  ✖ switzerland-tenancy-notice-planner (0.036083ms)
+  ✖ word-hyphenation-tool (0.04075ms)
+✖ all fourteen market UI owners expose their actual nested English copy (140.566625ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 0
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 692.434083
+✖ failing tests:
+✖ bubble-shooter (1.092167ms)
+  AssertionError [ERR_ASSERTION]: bubble-shooter must not fall back to metadata
+✖ canasta-card-game (0.089542ms)
+  AssertionError [ERR_ASSERTION]: canasta-card-game must not fall back to metadata
+✖ currency-converter (0.062791ms)
+  AssertionError [ERR_ASSERTION]: currency-converter must not fall back to metadata
+✖ farkle-dice-game (0.062333ms)
+  AssertionError [ERR_ASSERTION]: farkle-dice-game must not fall back to metadata
+✖ halma-game (0.054083ms)
+  AssertionError [ERR_ASSERTION]: halma-game must not fall back to metadata
+✖ local-spell-checker (0.052833ms)
+  AssertionError [ERR_ASSERTION]: local-spell-checker must not fall back to metadata
+✖ microphone-level-meter (0.048083ms)
+  AssertionError [ERR_ASSERTION]: microphone-level-meter must not fall back to metadata
+✖ shut-the-box (0.053041ms)
+  AssertionError [ERR_ASSERTION]: shut-the-box must not fall back to metadata
+✖ skat-card-game (0.081542ms)
+  AssertionError [ERR_ASSERTION]: skat-card-game must not fall back to metadata
+✖ switzerland-child-support-budget-calculator (0.078417ms)
+  AssertionError [ERR_ASSERTION]: switzerland-child-support-budget-calculator must not fall back to metadata
+✖ switzerland-inheritance-gift-tax-calculator (0.048709ms)
+  AssertionError [ERR_ASSERTION]: switzerland-inheritance-gift-tax-calculator must not fall back to metadata
+✖ switzerland-property-gains-tax-calculator (0.040084ms)
+  AssertionError [ERR_ASSERTION]: switzerland-property-gains-tax-calculator must not fall back to metadata
+✖ switzerland-tenancy-notice-planner (0.036083ms)
+  AssertionError [ERR_ASSERTION]: switzerland-tenancy-notice-planner must not fall back to metadata
+✖ word-hyphenation-tool (0.04075ms)
+  AssertionError [ERR_ASSERTION]: word-hyphenation-tool must not fall back to metadata
+✖ all fourteen market UI owners expose their actual nested English copy (140.566625ms)
+### contract-before
+  ✖ swissTenancy (0.646709ms)
+  ✖ swissPropertyGain (0.071ms)
+  ✖ swissInheritance (0.06275ms)
+  ✖ swissChildBudget (0.050291ms)
+  ✖ hyphenation (0.049708ms)
+  ✖ spellcheck (0.049208ms)
+  ✖ resume (0.045708ms)
+✖ remaining form sources keep status messages separate from their example (2.3795ms)
+✖ the six affected forms render a real status and example in every existing locale (4.237167ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 3
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 587.695792
+✖ failing tests:
+✖ swissTenancy (0.646709ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ swissPropertyGain (0.071ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ swissInheritance (0.06275ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ swissChildBudget (0.050291ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ hyphenation (0.049708ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ spellcheck (0.049208ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ resume (0.045708ms)
+  AssertionError [ERR_ASSERTION]: an example string must not occupy the messages argument
+✖ the six affected forms render a real status and example in every existing locale (4.237167ms)
+### subject-before
+✖ the six affected forms render a real status and example in every existing locale (6.01325ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 11
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 560.795083
+✖ failing tests:
+✖ the six affected forms render a real status and example in every existing locale (6.01325ms)
+  AssertionError [ERR_ASSERTION]: es: the letter subject must use the localized form text
+### handlers-before
+✖ spellcheck copy success and failure use the status-message contract (5.075541ms)
+✖ hyphenation preview success and invalid language use the status-message contract (1.094208ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 13
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 656.815959
+✖ failing tests:
+✖ spellcheck copy success and failure use the status-message contract (5.075541ms)
+✖ hyphenation preview success and invalid language use the status-message contract (1.094208ms)

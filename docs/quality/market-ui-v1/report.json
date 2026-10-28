@@ -1,0 +1,98 @@
+{
+  "status": "source-connected-not-tool-approved",
+  "sourceLocale": "en",
+  "catalogTools": 1000,
+  "sharedOwners": 2,
+  "before": {
+    "sourceUnits": 42053,
+    "sourceDigest": "054c95cbe93531d6ac5a0d49ee5cb327aa2bd121a5f7c1cc77e0820d0f5df8d7",
+    "metadataOnly": 120
+  },
+  "after": {
+    "sourceUnits": 42685,
+    "sourceDigest": "412d3db7929b84aa2d0b161f3b7dd8b3e73dbecf805ed53d5ad81516aea5456d",
+    "metadataOnly": 106,
+    "recoveredMetadataOnly": 106
+  },
+  "changedOwners": [
+    {
+      "id": "bubble-shooter",
+      "previousUnits": 3,
+      "sourceUnits": 25
+    },
+    {
+      "id": "canasta-card-game",
+      "previousUnits": 3,
+      "sourceUnits": 99
+    },
+    {
+      "id": "currency-converter",
+      "previousUnits": 3,
+      "sourceUnits": 43
+    },
+    {
+      "id": "farkle-dice-game",
+      "previousUnits": 3,
+      "sourceUnits": 86
+    },
+    {
+      "id": "halma-game",
+      "previousUnits": 3,
+      "sourceUnits": 64
+    },
+    {
+      "id": "local-spell-checker",
+      "previousUnits": 3,
+      "sourceUnits": 19
+    },
+    {
+      "id": "microphone-level-meter",
+      "previousUnits": 3,
+      "sourceUnits": 25
+    },
+    {
+      "id": "shut-the-box",
+      "previousUnits": 3,
+      "sourceUnits": 78
+    },
+    {
+      "id": "skat-card-game",
+      "previousUnits": 3,
+      "sourceUnits": 110
+    },
+    {
+      "id": "switzerland-child-support-budget-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 25
+    },
+    {
+      "id": "switzerland-inheritance-gift-tax-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 23
+    },
+    {
+      "id": "switzerland-property-gains-tax-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 24
+    },
+    {
+      "id": "switzerland-tenancy-notice-planner",
+      "previousUnits": 3,
+      "sourceUnits": 32
+    },
+    {
+      "id": "word-hyphenation-tool",
+      "previousUnits": 3,
+      "sourceUnits": 21
+    }
+  ],
+  "unchangedDocuments": 988,
+  "changedUnitsOutsideOwners": 0,
+  "newNetUnits": 632,
+  "existingSourceStringsReused": true,
+  "translatorCodeUnmodified": true,
+  "modelPolicyAndDataUnmodified": true,
+  "deployments": 0,
+  "toolsActivated": 0,
+  "approvedLanguages": 0
+}

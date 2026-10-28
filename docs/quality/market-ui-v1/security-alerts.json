@@ -1,0 +1,46 @@
+{
+  "source": "GitHub Dependabot alerts API, open on default branch, 2026-10-28",
+  "existingAlerts": [
+    {
+      "number": 3,
+      "package": "dompurify",
+      "severity": "critical",
+      "summary": "DOMPurify SAFE_FOR_TEMPLATES bypass: split template expressions survive in attached shadow root content on DOM output modes",
+      "vulnerableRange": ">= 3.4.4, <= 3.4.16",
+      "patchedVersion": {
+        "identifier": "3.4.17"
+      },
+      "manifest": "package-lock.json",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/security/dependabot/3",
+      "advisoryId": "GHSA-cg2g-xh64-v4q7"
+    },
+    {
+      "number": 2,
+      "package": "dompurify",
+      "severity": "high",
+      "summary": "DOMPurify IN_PLACE: hook that removes a parent or sibling leaves the detached subtree's event handlers armed (incomplete fix for GHSA-p98j-92pf-mc4p)",
+      "vulnerableRange": "<= 3.4.16",
+      "patchedVersion": {
+        "identifier": "3.4.17"
+      },
+      "manifest": "package-lock.json",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/security/dependabot/2",
+      "advisoryId": "GHSA-mrv2-3pqr-j5jr"
+    },
+    {
+      "number": 1,
+      "package": "dompurify",
+      "severity": "low",
+      "summary": "DOMPurify: SMIL attributeName=href guard is skipped when PARSER_MEDIA_TYPE is application/xhtml+xml",
+      "vulnerableRange": "<= 3.4.16",
+      "patchedVersion": {
+        "identifier": "3.4.17"
+      },
+      "manifest": "package-lock.json",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/security/dependabot/1",
+      "advisoryId": "GHSA-c6gr-qvv4-5v3f"
+    }
+  ],
+  "dependenciesChangedThisLot": false,
+  "automaticPRsRemainPaused": true
+}

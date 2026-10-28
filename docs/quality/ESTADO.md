@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T08:55:11.227762+00:00 · UI inglesa de los 14 propietarios de mercado; pruebas locales, traductor intacto
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T08:55:07.119486+00:00 · UI inglesa de los 14 propietarios de mercado; pruebas locales, traductor intacto
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -18,7 +18,11 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Paso A sigue abierto** en [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`. Las 300 nuevas conservan `indexable:false`: 0 en main, 0 activadas. Las 700 existentes se conservan. No avanzar a fase 0 sin verificar Paso A.
 
-**Siguiente paso exacto:** continuar la extracción de UI inglesa de los 14 propietarios de mercado y después los 106 recuperados, con pruebas locales/manuales. Preparar la publicación y el build único de RUNBOOK §4b para `usefulverse.com` sin Actions de web. Verificar el plan de Cloudflare ya existente y ausencia de costes nuevos antes de publicar; respetar 10 GB libres/2 GB de huella local, dividir trabajo si hace falta. Mantener la preview separada hasta resolver colisiones y verificar el corte; no dar la migración por hecha ni activar herramientas. Git normal sigue permitido. El traductor y sus siete workflows continúan intactos; no cambiar sus fuentes/modelos/checkpoints/avisos por esta restricción.
+**Siguiente paso exacto:** las 14 fuentes de mercado ya están conectadas en `feat/new-tools-batch-1` (42.685 unidades; [lote](lotes/2026-10-28-ui-inglesa-14-mercados.md)). Continuar ahora con la UI inglesa de los **106 recuperados**, empezando por `radical-calculator` según `src/growth600/live-only-106.manifest.json`: inventariar HTML/JS inglés, separar prosa de fórmulas/datos y añadir una fuente reutilizable con regresión previa, sin tocar el motor/umbrales/modelos del traductor. Mantener Paso A abierto y preview separada; no avanzar a fase 0. Preparar después el build único de RUNBOOK §4b sin Actions de web, resolviendo colisiones y verificando plan/coste antes de publicar. Git normal/local manual, ≥10 GB libres/≤2 GB por lote; ninguna activación.
+
+**Pendiente de seguridad antes de publicar:** GitHub mantiene tres alertas abiertas de DOMPurify (crítica/alta/baja); las tres indican 3.4.17 como corregida. Revisar manualmente la PR #135 y sus usos/regresiones, sin Actions de web ni cambios del traductor. Este lote no cambia dependencias ni da esa revisión por hecha. [Registro](market-ui-v1/security-alerts.json).
+
+**Lote UI inglesa (rama de PR, todavía sin publicar):** 14 propietarios dejan de ser solo metadatos: **120 → 106**, todos recuperados; +632 unidades netas y cero cambios de unidades fuera de esos 14. Se arreglan mensajes/ejemplos `undefined` en seis formularios y el asunto de carta fijo en inglés, con regresión previa. **478 pruebas locales** correctas; build parcial 518 páginas/37 locales; **378 muestras Chrome** en siete idiomas/nueve anchos sin overflow ni errores de consola. No se ejecutan los checks globales ni Firefox/WebKit/axe/Lighthouse: ninguna herramienta/idioma aprobado ni despliegue. [Evidencia](market-ui-v1/evidence.json).
 
 **Capacidad medida:** [40652759818](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818), fuente d1a7429: 13 tests, tres builds/gate correctos, 113 s, cero ms facturables/artifacts. El medidor solo lee los builds y escribe un informe separado; una medición correcta no aprueba publicar. Caso posterior del sitemap: 14 tests locales correctos, sin cambio del algoritmo. Presupuesto conservador de Pages Free, no plan real de la cuenta consultado ni modificado. [Datos](capacity-v1/report.json), [evidencia](capacity-v1/evidence.json).
 
@@ -28,11 +32,11 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Campaña activa:** [40565692987](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987), fuente e8a7cb9, tres vueltas entregadas y cuatro jobs en vuelta 4. Snapshot: 65,955 unidades generadas vigentes, 48,836 auditadas, 23,273 retenidas y 881,116 pendientes; 62,034 entradas exportadas expanden claves repetidas, no frases únicas. Usa su política anterior fijada; el consumo en preview revalida la actual. No cancelarla ni escribir datos por fuera de su publicador. [Contadores](capacity-v1/translation-progress.json), [operación](translation-drafts/README.md).
 
-**Calidad conservada sin promesas absolutas:** veto de los 46 errores conocidos entre 1.586 juicios anteriores, reintento acotado para dudas (máximo dos propuestas) y mismos umbrales. Prueba previa: cuatro de doce dudas rescatadas, ocho retenidas. No se demuestra equivalencia universal con lectura del agente o revisión nativa. El corpus cubre 1.000 propietarios/42.053 claves/36 destinos, pero 120 solo metadatos (106 recuperados y 14 mercado). Cero destinos aprobados para publicar; nb solo después de la puerta inglesa por herramienta. Pilotos históricos intactos: 35 checkpoints/17.441 registros y 905 memorias.
+**Calidad conservada sin promesas absolutas:** veto de los 46 errores conocidos entre 1.586 juicios anteriores, reintento acotado para dudas (máximo dos propuestas) y mismos umbrales. Prueba previa: cuatro de doce dudas rescatadas, ocho retenidas. No se demuestra equivalencia universal con lectura del agente o revisión nativa. El corpus de la rama cubre 1.000 propietarios/42.685 claves/36 destinos; quedan 106 recuperados solo con metadatos. Las 14 fuentes de mercado ya están conectadas, sin certificar todos los literales heredados. Cero destinos aprobados para publicar; nb solo después de la puerta inglesa por herramienta. Pilotos históricos intactos: 35 checkpoints/17.441 registros y 905 memorias.
 
 **Vigilancia:** dos ejecuciones reales por `schedule` acreditadas: 40595965237 y 40616437013. Es el cron del vigilante, sin cadencia/SLA garantizados; el cron diario del controlador de generación todavía no tiene evento observado. Avisos de fin/cancelación y correo a Pedro ya probados (P-009 OK); push del teléfono no comprobado. No garantizar avisos si también falla/desactiva GitHub el vigilante.
 
-**Producción comprobada en este lote:** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas falsas del hub siguen en 200 (fase 0). En la preview publicada anterior, diez muestras en Chrome: 200/noindex, fuera del sitemap, robots sin bloqueo global y sitemap vacío. El HTTP automatizado recibió 403/1010; el navegador ordinario funcionó sin cambios de seguridad. Esa preview antigua no acredita la versión de esta rama ni las traducciones recién generadas. Cero despliegues, activaciones o envíos. [GET/XML](translation-drafts/preflight-v1/production.json), [navegador](translation-drafts/preflight-v1/existing-preview-browser.json).
+**Última comprobación previa de producción (no revalidada en este lote):** cinco GET y dos XML, 25.625 URLs (10.260 + 15.365); tres rutas falsas del hub siguen en 200 (fase 0). En la preview publicada anterior, diez muestras en Chrome: 200/noindex, fuera del sitemap, robots sin bloqueo global y sitemap vacío. El HTTP automatizado recibió 403/1010; el navegador ordinario funcionó sin cambios de seguridad. Esa preview antigua no acredita la versión de esta rama ni las traducciones recién generadas. Cero despliegues, activaciones o envíos. [GET/XML](translation-drafts/preflight-v1/production.json), [navegador](translation-drafts/preflight-v1/existing-preview-browser.json).
 
 **Herramientas y Pedro:** P-001–P-008 son ocho pruebas físicas pendientes, cero FALLA; no una fase «P108». P-009 correo OK, push sin probar. Los ocho IDs se enlazan a sus herramientas en progress.csv. Las pruebas físicas solo se asignan si aplican y el agente no puede reproducirlas; primero se comprueba y arregla lo automatizable. La pasada integral abarca las 1.000, sin pruebas físicas por defecto. Cada herramienta conserva el bucle del RUNBOOK §5, sus 18 controles de §6 y las siete capas de PRUEBAS.md, con pruebas responsive 320–1920, RTL/textos largos, a11y/rendimiento, lógica/contenido/UX y dispositivos. Ninguna herramienta se marca terminada por superar el traductor.
 
@@ -77,9 +81,9 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 - [ ] Despliegue verificado + sitemaps reenviados
 
 ### Pruebas (`docs/quality/PRUEBAS.md`)
-- [ ] Infraestructura: Playwright (Chromium, Firefox, WebKit), fast-check, axe, Lighthouse CI en Actions
+- [ ] Infraestructura: Playwright (Chromium, Firefox, WebKit), fast-check, axe, Lighthouse por ejecución local/manual
 - [ ] Tests de regresión de los 26 errores de la auditoría (antes de arreglarlos)
-- [ ] Action semanal sobre producción que abre un Issue si algo falla
+- [ ] Revisión semanal local/manual sobre producción, con evidencia y comunicación de fallos
 - [x] Columnas de pruebas en `progress.csv` · 2026-10-20 (las siete capas de las 300 siguen pendientes)
 
 ### Fase 0b · Errores confirmados (`AUDITORIA-CATALOGO.md` §2) · arreglados: **0 / 26**
@@ -145,6 +149,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
+| 28-oct | UI inglesa de 14 mercados | +632 unidades; seis formularios sin undefined; 478 tests/518 páginas/378 muestras Chrome; sin publicar | [Lote](lotes/2026-10-28-ui-inglesa-14-mercados.md) |
 | 28-oct | Capacidad del Paso A | Tres salidas caben separadas; unión de 27.470 archivos excede presupuesto; pruebas físicas aplicables | [Lote](lotes/2026-10-28-capacidad-paso-a.md) |
 | 28-oct | Puerta automática del traductor | 51 controles antes de modelos; CI completa de preview resuelta; sin activaciones | [Lote](lotes/2026-10-28-puerta-automatica-traducciones.md) |
 | 27-oct | v32/v33 ruso | Muestra conocida pasa; cinco reparaciones; relevo compacto | [Informe](lotes/2026-10-27-piloto-v32-v33-ru.md) |

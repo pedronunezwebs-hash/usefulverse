@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-28T09:13:34.238382+00:00",
+  "baseCommit": "b6454625908b28644b31a0c0de7384ffaf44c6ac",
+  "execution": "local/manual; no web Actions",
+  "node": "v25.9.0",
+  "platform": "Darwin arm64",
+  "checks": [
+    {
+      "command": "node --test src/markets-no-ch/*.test.mjs scripts/localization/autopilot-source.test.mjs scripts/localization/extract-tool-copy-units.test.mjs",
+      "tests": 478,
+      "passed": 478,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "MARKETS_NO_CH_TOOL_IDS=<14 report IDs> MARKETS_NO_CH_DIST=<own temporary directory> nice -n 10 node scripts/build-markets-no-ch-pilot.mjs",
+      "exitCode": 0,
+      "htmlPages": 518,
+      "locales": 37,
+      "files": 652,
+      "visibleUndefined": 0,
+      "changedHTMLFromBeforeFix": 222,
+      "changedFilesFromBeforeFix": 223,
+      "outputSHA256": "c1a260b7f177fa3d27cd1d52e7f811b57921d9a7c5aaea913dad7c0c84970a40"
+    },
+    {
+      "command": "Chrome DevTools: six forms × seven locales × nine widths",
+      "samples": 378,
+      "overflow": 0,
+      "visibleUndefined": 0,
+      "missingStatusOrExample": 0,
+      "incorrectLocalizedSubject": 0,
+      "consoleErrorsOrWarnings": 0
+    }
+  ],
+  "protectedTreesUnchanged": {
+    "scripts": "41796878815adfcf91bdc3439de6da0917197704",
+    ".github/workflows": "b8f29e6e3bd6dad899c16ca4316e4965e79e5642",
+    "docs/quality/translation-drafts": "ca1d5dd9eb51475f7751cc419d4a5d622d4cd051"
+  },
+  "newWebActionRuns": 0,
+  "translatorModified": false,
+  "cloudflareChanged": false,
+  "productionVerificationThisLot": false,
+  "deployments": 0,
+  "indexableURLDelta": 0,
+  "toolsActivated": 0,
+  "toolsCompleted": 0,
+  "newPedroTests": [],
+  "notPerformed": [
+    "full npm test",
+    "npm run check (main site)",
+    "complete hub build",
+    "global locale release gate",
+    "Firefox/WebKit",
+    "axe/Lighthouse",
+    "real-device/native-language review",
+    "production deployment"
+  ],
+  "diskFreeGiB": 42.38
+}
