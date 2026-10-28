@@ -25,10 +25,13 @@ function growthHreflang(locale) {
 export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin, assetVersion, formHtml, pathForLocale = localePath, noindex = false }) {
   if (!tool?.id || !locale?.key || !copy?.title || !formHtml) throw new TypeError('Tool, locale, localized copy and form markup are required.');
   noindex = noindex || tool.indexable === false;
+  const fallback = copy.previewFallbackFor === locale.key && copy.copyLanguage === 'en' && copy.localizationStatus === 'source-fallback' && copy.releaseApproved === false;
+  if (copy.previewFallbackFor && (!noindex || !fallback)) throw Error('Source fallback cannot be indexed or mislabeled');
+  const contentLanguage = fallback ? 'en' : locale.code;
   const base = safeOrigin(origin);
   const canonical = `${base}${pathForLocale(locale.key, tool.id)}`;
   const alternates = noindex ? '' : localeEntries.map((entry) => `<link rel="alternate" hreflang="${escapeGrowthHtml(growthHreflang(entry))}" href="${base}${pathForLocale(entry.key, tool.id)}">`).join('\n    ');
-  const homeHref = pathForLocale(locale.key);
+  const homeHref = pathForLocale(fallback ? 'en' : locale.key);
   const direction = ['ar', 'fa', 'ur'].includes(locale.key) ? 'rtl' : 'ltr';
   const faq = [
     { question: copy.howQuestion, answer: copy.howAnswer },
@@ -59,12 +62,12 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
   const suffix = assetVersion ? `?v=${encodeURIComponent(assetVersion)}` : '';
   const schema = safeJsonLd({
     '@context': 'https://schema.org', '@type': 'WebApplication', name: copy.name, url: canonical,
-    description: copy.description, inLanguage: locale.code, applicationCategory: 'UtilitiesApplication',
+    description: copy.description, inLanguage: contentLanguage, applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any', browserRequirements: 'Requires JavaScript', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   });
   const faqSchema = safeJsonLd({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) });
   return `<!doctype html>
-<html lang="${escapeGrowthHtml(locale.code)}" dir="${direction}">
+<html lang="${escapeGrowthHtml(contentLanguage)}" dir="${direction}"${fallback ? ` data-route-locale="${escapeGrowthHtml(locale.key)}"` : ''}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

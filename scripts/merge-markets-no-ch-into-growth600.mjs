@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import { dirname, join, relative, resolve } from 'node:path';
 import { localeEntries } from '../src/locales.mjs';
 import { marketTools } from '../src/markets-no-ch/catalog.mjs';
+import { linkImmutableBuildFile } from './stage-build-tree.mjs';
 
 const source = resolve(process.env.MARKETS_NO_CH_DIST ?? '/private/tmp/usefulverse-market-candidate-20261018-a');
 const target = resolve(process.env.GROWTH600_DIST ?? '/private/tmp/usefulverse-growth600-merged-20261018-a');
@@ -50,7 +51,8 @@ for (const file of mergeFiles) {
   const destination = join(target, rel);
   if (await stat(destination).then(() => true, () => false)) continue;
   await mkdir(dirname(destination), { recursive: true });
-  await cp(file, destination, { errorOnExist: true, force: false });
+  if (process.env.GROWTH600_LOCAL_LINK_STAGING === '1') await linkImmutableBuildFile(file, destination);
+  else await cp(file, destination, { errorOnExist: true, force: false });
   addedFiles += 1;
 }
 

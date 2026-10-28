@@ -1,0 +1,6 @@
+
+> usefulverse@0.1.0 check
+> node scripts/build.mjs && node scripts/check-build.mjs
+
+Built 10260 pages (277 tools × 36 languages, 36 localized home pages, and 7 guide routes × 36 languages) in /Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-sequential-20261028/.qa-sequential/main
+Build check passed: 9972 localized tool pages + 36 home pages; 10260 URLs in sitemap.

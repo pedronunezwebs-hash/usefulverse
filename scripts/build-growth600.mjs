@@ -58,6 +58,8 @@ import chessAnalysisBoardCopies from '../src/growth600/locales/chess-analysis-bo
 import blackjackGameCopies from '../src/growth600/locales/blackjack-game-final.mjs';
 import tripeaksSolitaireCopies from '../src/growth600/locales/tripeaks-solitaire-final.mjs';
 import pendingToolsCopies from '../src/growth600/locales/pending-tools-final.mjs';
+import { addNorwegianDraftFallback } from '../src/growth600/draft-locales.mjs';
+import { stageBuildTree } from './stage-build-tree.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const execFile = promisify(execFileCallback);
@@ -206,6 +208,13 @@ for (const { key } of localeEntries) {
   }
 }
 
+const norwegianDraft = process.env.GROWTH600_PREVIEW_NB === '1'
+  ? addNorwegianDraftFallback({ previewOnly, tools: releaseTools, copyByLocale, extraToolLocales }) : null;
+const previewLocales = [...localeEntries, ...extraToolLocales];
+const previewPath = (key, id = '') => {
+  const extra = extraToolLocales.find(l => l.key === key);
+  return extra ? `${extra.prefix}${id ? `/tools/${id}/` : '/'}` : localePath(key, id);
+};
 let automaticPreview;
 if (process.env.GROWTH600_AUTOMATIC_PREVIEW_PACKAGES) {
   automaticPreview = await prepareAutomaticPreview({
@@ -432,9 +441,9 @@ if (previewOnly) {
   const sitemap = await readFile(resolve(growthOnlyDir, 'sitemap.xml'), 'utf8');
   const missingNoindexRoutes = [];
   const indexedCandidateRoutes = [];
-  for (const locale of localeEntries) {
+  for (const locale of previewLocales) {
     for (const { id: toolId } of releaseTools) {
-      const route = localePath(locale.key, toolId);
+      const route = previewPath(locale.key, toolId);
       const page = await readFile(resolve(growthOnlyDir, route.replace(/^\/+|\/+$/gu, ''), 'index.html'), 'utf8');
       if (!/<meta\s+name="robots"\s+content="noindex,follow">/u.test(page)) missingNoindexRoutes.push(route);
       if (sitemap.includes(`https://tools.usefulverse.com${route}`)) indexedCandidateRoutes.push(route);
@@ -446,12 +455,12 @@ if (previewOnly) {
   }
   if (automaticPreview) {
     const checkedRoutes = await verifyAutomaticPreview({ outputDir: growthOnlyDir, tools: releaseTools,
-      locales: localeEntries, localePath, copyByLocale });
+      locales: previewLocales, localePath: previewPath, copyByLocale });
     if (!automaticPreview.summary.translatedEntries) throw Error('Preview did not exercise any saved translation');
     console.log(`Automatic preview copy verified: ${JSON.stringify({ ...automaticPreview.summary, checkedRoutes })}`);
   }
   await rename(growthOnlyDir, outputDir);
-  console.log(`Verified noindex on ${releaseTools.length * localeEntries.length} preview tool pages (including all ${candidateToolIds.size * localeEntries.length} candidate pages) and all preview homepages; sitemap contains no indexable URLs.`);
+  console.log(`Verified noindex on ${releaseTools.length * previewLocales.length} preview tool pages and all preview homepages; sitemap contains no indexable URLs. ${JSON.stringify({ norwegianDraft })}`);
 } else {
 
 try {
@@ -460,7 +469,8 @@ try {
     env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir },
     maxBuffer: 8 * 1024 * 1024,
   });
-  await cp(growthOnlyDir, mergedDir, { recursive: true, errorOnExist: true, force: false });
+  if (process.env.GROWTH600_LOCAL_LINK_STAGING === '1') await stageBuildTree(growthOnlyDir, mergedDir);
+  else await cp(growthOnlyDir, mergedDir, { recursive: true, errorOnExist: true, force: false });
   await execFile(process.execPath, [resolve(root, 'scripts/merge-markets-no-ch-into-growth600.mjs')], {
     cwd: root,
     env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir, GROWTH600_DIST: mergedDir },

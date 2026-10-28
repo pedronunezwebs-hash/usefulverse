@@ -1,0 +1,47 @@
+✖ recovery locates source from a checkout with spaces and Unicode before validating the manifest (62.396167ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.901916
+
+✖ failing tests:
+
+test at scripts/recovery-path.test.mjs:9:1
+✖ recovery locates source from a checkout with spaces and Unicode before validating the manifest (62.396167ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /recovery manifest is invalid or incomplete/u. Input:
+
+  'node:internal/fs/promises:1281\n' +
+    '  return new FileHandle(await PromisePrototypeThen(\n' +
+    '                        ^\n' +
+    '\n' +
+    "Error: ENOENT: no such file or directory, open '/Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/src/growth600/live-only-106.manifest.json'\n" +
+    '    at async open (node:internal/fs/promises:1281:25)\n' +
+    '    at async readFile (node:internal/fs/promises:1929:14)\n' +
+    '    at async file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/scripts/merge-live-only-106.mjs:60:29 {\n' +
+    '  errno: -2,\n' +
+    "  code: 'ENOENT',\n" +
+    "  syscall: 'open',\n" +
+    "  path: '/Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/src/growth600/live-only-106.manifest.json'\n" +
+    '}\n' +
+    '\n' +
+    'Node.js v25.9.0\n'
+
+      at Object.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/recovery-path.test.mjs:18:14)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/recovery-path.test.mjs:17:5)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: "node:internal/fs/promises:1281\n  return new FileHandle(await PromisePrototypeThen(\n                        ^\n\nError: ENOENT: no such file or directory, open '/Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/src/growth600/live-only-106.manifest.json'\n    at async open (node:internal/fs/promises:1281:25)\n    at async readFile (node:internal/fs/promises:1929:14)\n    at async file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/scripts/merge-live-only-106.mjs:60:29 {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: '/Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-sequential-20261028/scripts/.recovery-path-LQMTCp/project%20with%20spaces%20%C3%A1/src/growth600/live-only-106.manifest.json'\n}\n\nNode.js v25.9.0\n",
+    expected: /recovery manifest is invalid or incomplete/u,
+    operator: 'match',
+    diff: 'simple'
+  }

@@ -6,6 +6,7 @@ import { growthPilotTools, assertGrowthCatalogIsAdditive } from './catalog.mjs';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { renderGrowthForm } from './forms.mjs';
 import { renderGrowthHomePage, renderGrowthToolPage } from './render.mjs';
+import { isDraftSourceFallback } from './draft-locales.mjs';
 
 const sha = (value) => createHash('sha256').update(value).digest('hex').slice(0, 12);
 
@@ -443,9 +444,11 @@ async function buildGrowthStaticSiteIntoDirectory({
     if (!availableTools.length) throw new Error(`${locale.key}: extra tool locale has no translated tool pages.`);
     for (const tool of availableTools) {
       const copy = localeCopy[tool.id];
-      if (copy.copyLanguage !== locale.key || !copy.title?.trim() || !copy.description?.trim() || copy.title.length > 60 || copy.description.length > 160) {
+      const fallback = isDraftSourceFallback(copy, locale, { noindex: noindexIds.has(tool.id), unapprovedAllowed: allowUnapprovedToolIds.includes(tool.id) });
+      if ((copy.copyLanguage !== locale.key && !fallback) || (copy.previewFallbackFor && !fallback) || !copy.title?.trim() || !copy.description?.trim() || copy.title.length > 60 || copy.description.length > 160) {
         throw new Error(`${locale.key}/${tool.id}: extra tool locale copy is missing, mislabeled, or exceeds metadata limits.`);
       }
+      if (fallback) assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: localeCopy._home, [tool.id]: copy } }, { allowUnapprovedToolIds: [tool.id] });
     }
   }
   for (const locale of localeEntries) {

@@ -34,6 +34,7 @@ export function inspectHTML(html) {
   const canonical = links.filter(tag => attribute(tag, 'rel')?.toLowerCase() === 'canonical');
   const noindex = metas.some(tag => attribute(tag, 'name')?.toLowerCase() === 'robots' && /(?:^|[\s,])noindex(?:$|[\s,])/iu.test(attribute(tag, 'content') ?? ''));
   return { noindex, canonical: canonical.length === 1 ? normalizeURL(attribute(canonical[0], 'href')) : null,
+    language: attribute(html.match(/<html\b[^>]*>/iu)?.[0] ?? '', 'lang'),
     alternates: links.filter(tag => attribute(tag, 'rel')?.toLowerCase() === 'alternate' && attribute(tag, 'hreflang')).map(tag => normalizeURL(attribute(tag, 'href'))),
     title: unescape((html.match(/<h1\b[^>]*>([^<]*)<\/h1>/iu) ?? [])[1] ?? ''),
     description: attribute(metas.find(tag => attribute(tag, 'name')?.toLowerCase() === 'description') ?? '', 'content') ?? '' };

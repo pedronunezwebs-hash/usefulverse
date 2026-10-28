@@ -1,3 +1,9 @@
+## 2026-10-29 · Codex · Construcción secuencial del Paso A (en curso)
+
+[Informe](lotes/2026-10-29-construccion-secuencial-paso-a.md). Preview de 11.100 rutas/37 destinos con noindex, JSON real y nb como fuente inglesa declarada; cero aprobaciones. 126 geometrías Chrome y 21 comprobaciones correctas. npm run check principal completo, 10.260 URLs, y gate de 20 idiomas existentes correctos. Npm test completo: 3.241 correctos; el primer intento omitía un documento del sparse y se repitió completo tras recuperarlo. No son herramientas terminadas.
+
+Se añade empaquetado local por archivo, hashes/recuperación íntegra, lector directo y composición desde archivos sin desplegar. Staging local con inodos compartidos solo para assets/páginas inmutables; metadatos mutables independientes. Instalación de navegador con versiones/integridad del lock y sin runtimes nativos de inferencia; tres Python correctos. Principal/preview comprimidos y verificados antes de retirar sus salidas crudas. Hub reanudado: el recuperador usaba URL.pathname y fallaba con espacios; primero test, después fileURLToPath. 106/3.816 recuperadas, sitemap 15.365 URLs; prueba final posterior en curso. Sin cambios del traductor, Actions de web, Cloudflare, activaciones ni nuevas pruebas físicas. Candado EN CURSO.
+
 ## 2026-10-28 · Codex · Webs sin Actions, traductor intacto
 
 [Decisión y comprobaciones](lotes/2026-10-28-webs-manuales-traductor-intacto.md). Nueva instrucción de Pedro: no usar Actions para herramientas/webs, excepto el traductor que se configuró deliberadamente con sus controles/avisos. Deshabilitados deploy-cloudflare, validate-staged y measure-release-capacity; sus definiciones siguen intactas. Los siete translation-*.yml mantienen estado activo y no se cancela/relanza la campaña. No se toca memoria, modelos, scripts, fuentes ni checkpoints.

@@ -9,6 +9,7 @@ import { renderHome } from '../src/template.mjs';
 import { tools, categories } from '../src/catalog.mjs';
 import { brotliCompressSync } from 'node:zlib';
 import { createSources } from './localization/autopilot-source.mjs';
+import { packBuild } from './packed-build.mjs';
 
 const hubOrigin = 'https://tools.usefulverse.com', draftOrigin = 'https://draft-300-noindex.usefulverse-tools.pages.dev';
 const page = (origin, path, noindex = false, extra = '') => `<!doctype html><html><head><link rel="canonical" href="${origin}${path}"><meta name="description" content="Useful local tool"><meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow'}">${extra}</head><body><h1>Tool ${path.split('/').at(-2)}</h1></body></html>`;
@@ -121,6 +122,36 @@ test('strict sitemap/URL parsing and header conflict handling', () => {
 
 test('a required nb destination cannot be silently omitted from the release', () => fixture(async c => {
   await assert.rejects(composeSites({ ...c.options, draftPrefixes: ['', 'es', 'nb'] }), /Draft locale missing: nb\/gamma/u);
+}));
+
+test('packed and ordinary builds compose to identical output with all inputs preserved', () => fixture(async c => {
+  await composeSites({ ...c.options, write: true });
+  const packed = {};
+  for (const role of ['main', 'hub', 'preview']) {
+    packed[role] = join(c.root, role + '.uvpack');
+    await packBuild({ input: c.dirs[role], output: packed[role], workingRoot: c.root });
+  }
+  const before = await inventory(c.root);
+  const output = join(c.root, 'from-packed');
+  await composeSites({ ...c.options, ...packed, output, write: true });
+  assert.deepEqual(await inventory(output), await inventory(c.options.output));
+  const after = await inventory(c.root);
+  for (const [path, file] of before) assert.deepEqual(after.get(path), file);
+}));
+
+test('preserves an already-indexed nb hub directory when the main build has no nb home', () => fixture(async c => {
+  await c.put('hub', 'nb/tools/beta/index.html', page(hubOrigin, '/nb/tools/beta/').replace('<html>', '<html lang="nb-NO">'));
+  await c.put('hub', 'nb/index.html', page(hubOrigin, '/nb/').replace('<html>', '<html lang="nb-NO">').replace('</body>', '<ul class="tool-directory"><li><a href="/nb/tools/beta/">Beta</a></li></ul></body>'));
+  const records = parseSitemap(await readFile(join(c.dirs.hub, 'sitemap.xml'), 'utf8')).records;
+  await c.put('hub', 'sitemap.xml', sitemapXML([...records, { loc: hubOrigin + '/nb/' }, { loc: hubOrigin + '/nb/tools/beta/' }]));
+  await composeSites({ ...c.options, write: true });
+  const html = await readFile(join(c.options.output, 'nb/index.html'), 'utf8');
+  assert.equal(inspectHTML(html).canonical, TARGET + '/nb/'); assert.equal(inspectHTML(html).noindex, false);
+  assert.match(html, /lang="nb-NO"/u); assert.match(html, /href="\/nb\/tools\/beta\/"/u);
+}));
+test('cannot invent an indexed nb home from a draft-only template', () => fixture(async c => {
+  await c.put('preview', 'nb/index.html', page(draftOrigin, '/nb/', true));
+  await assert.rejects(composeSites(c.options), /Home without/u);
 }));
 
 test('real primary home remains within 25 KiB Brotli with 1000 directory links', () => fixture(async c => {

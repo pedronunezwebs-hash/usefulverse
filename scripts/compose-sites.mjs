@@ -1,9 +1,10 @@
 import { createHash } from 'node:crypto';
-import { lstat, mkdir, mkdtemp, readFile, readdir, realpath, rename, rm, statfs, writeFile } from 'node:fs/promises';
+import { lstat, mkdir, mkdtemp, readFile, realpath, rename, rm, writeFile } from 'node:fs/promises';
 import { basename, dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { brotliCompressSync } from 'node:zlib';
-import { inventory } from './release-capacity.mjs';
+import { openBuildSource } from './packed-build.mjs';
+import { checkResources } from './local-resources.mjs';
 import { attribute, hasOldHost, inspectHTML, mergeHeaders, mergeRedirects, normalizeURL, parseSitemap, rewriteOrigins, sitemapXML, TARGET, unescape, xml } from './compose-sites-metadata.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
@@ -29,6 +30,14 @@ export function homeSearchIndex(primary, tools) {
 }
 export function compactHome(primary, tools, { indexURL, runtimeURL } = {}) {
   if (inspectHTML(primary).noindex) throw Error('The primary home must remain indexable');
+  // The live hub already has an indexed nb directory; main has no nb home.
+  // Preserve this existing template and its language rather than inventing one.
+  if (!primary.includes('id="tool-grid"') && primary.includes('<ul class="tool-directory">')) {
+    const directory = /<ul class="tool-directory">[\s\S]*?<\/ul>/gu;
+    if ([...primary.matchAll(directory)].length !== 1) throw Error('Existing hub directory contract changed');
+    const links = [...tools].sort((a, b) => a.id < b.id ? -1 : 1).map(tool => `<li><a href="${xml(new URL(tool.url).pathname)}"${tool.language ? ` lang="${xml(tool.language)}"` : ''}><h2>${xml(tool.title)}</h2></a></li>`).join('');
+    return primary.replace(directory, `<ul class="tool-directory tool-directory--composed">${links}</ul>`).replace('</head>', '<style>.tool-directory--composed li a{min-height:44px;overflow-wrap:anywhere}.tool-directory--composed h2{margin:0}</style></head>');
+  }
   const all = attribute(primary.match(/<button\b[^>]*data-category-filter=[^>]*>/u)?.[0] ?? '', 'data-category-filter');
   if (!all) throw Error('Primary home has no category/search contract');
   const oldCards = primaryCards(primary);
@@ -47,25 +56,20 @@ export function compactHome(primary, tools, { indexURL, runtimeURL } = {}) {
 }
 
 async function readEntry(entry) {
-  const bytes = await readFile(entry.source);
+  const bytes = entry.read ? await entry.read() : await readFile(entry.source);
   if (sha(bytes) !== entry.sha256) throw Error(`Build input changed after inventory: ${entry.path}`);
   return bytes;
 }
 
-async function footprint(root) {
-  let bytes = 0;
-  const seen = new Set();
-  async function visit(path) {
-    const info = await lstat(path);
-    if (info.isSymbolicLink()) return; // never follow a link outside the working tree
-    if (info.isDirectory()) for (const name of await readdir(path)) await visit(join(path, name));
-    else if (info.isFile() && !seen.has(`${info.dev}:${info.ino}`)) { seen.add(`${info.dev}:${info.ino}`); bytes += info.size; }
-  }
-  await visit(root); return bytes;
-}
-
 /** Compose only already-built local files. Never deploy, activate or edit inputs. */
-export async function composeSites({ main, hub, preview, output, existingIds, draftIds, draftPrefixes,
+export async function composeSites(options) {
+  const sources = {};
+  try {
+    for (const role of roles) sources[role] = await openBuildSource(options[role]);
+    return await composeSources({ ...options, sources });
+  } finally { for (const source of Object.values(sources)) await source.close(); }
+}
+async function composeSources({ sources, output, existingIds, draftIds, draftPrefixes,
   write = false, maxFiles = 80_000, maxAssetBytes = 25 * 1024 * 1024, maxOutputBytes = 1_500_000_000,
   maxHomeBrotliBytes = 25 * 1024,
   workingRoot, maxWorkingBytes = 2_000_000_000, minFreeBytes = 10_000_000_000,
@@ -74,11 +78,7 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
   const existing = new Set(existingIds), drafts = new Set(draftIds);
   if (![...existing, ...drafts].every(id => /^[a-z\d]+(?:-[a-z\d]+)*$/u.test(id)) || new Set(draftPrefixes).size !== draftPrefixes.length || !draftPrefixes.every(p => /^(?:[a-z\d]+(?:-[a-z\d]+)*)?$/u.test(p))) throw Error('Invalid catalog IDs/locales');
   if (existing.size !== existingIds.length || drafts.size !== draftIds.length || [...drafts].some(id => existing.has(id))) throw Error('Catalog IDs overlap or repeat');
-  const inputs = {};
-  for (const [role, path] of Object.entries({ main, hub, preview })) {
-    if (!path || (await lstat(resolve(path))).isSymbolicLink()) throw Error('Inputs must be real directories');
-    inputs[role] = await realpath(path);
-  }
+  const inputs = Object.fromEntries(roles.map(role => [role, sources[role].root]));
   const roots = Object.values(inputs);
   for (let i = 0; i < roots.length; i++) for (let j = i + 1; j < roots.length; j++) if (inside(roots[i], roots[j]) || inside(roots[j], roots[i])) throw Error('Input trees overlap');
   const parent = await realpath(dirname(resolve(output))), target = join(parent, basename(output));
@@ -91,11 +91,11 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
   const normalizedRecords = new Map(), sourceRecords = [], draftRoutes = new Set(), existingRoutes = new Set();
   let sameFiles = 0, homeConflicts = 0, llmsConflicts = 0, inputBytes = 0;
   for (const role of roles) {
-    maps[role] = await inventory(inputs[role]);
+    maps[role] = sources[role].files;
     for (const [path, file] of maps[role]) {
       if (file.bytes > maxAssetBytes) throw Error(`Input asset exceeds budget: ${path}`);
       inputBytes += file.bytes;
-      const entry = { ...file, path, source: join(inputs[role], path), role };
+      const entry = { ...file, path, role };
       if (generated(path)) continue;
       if (llmsRoute(path)) { const list = llms.get(path) ?? []; if (list.length) llmsConflicts++; list.push(entry); llms.set(path, list); continue; }
       if (homeRoute(path)) { const list = homes.get(path) ?? []; if (list.length) homeConflicts++; list.push(entry); homes.set(path, list); continue; }
@@ -109,7 +109,7 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
         if (info.canonical !== url || !info.title || !info.description) throw Error(`Missing/mismatched tool metadata: ${path}`);
         if (info.noindex !== isDraft) throw Error(`Wrong noindex for ${role}: ${path}`);
         if (isDraft) draftRoutes.add(url); else existingRoutes.add(url);
-        const list = toolsByPrefix.get(prefix) ?? []; list.push({ id, title: info.title, description: info.description, url }); toolsByPrefix.set(prefix, list);
+        const list = toolsByPrefix.get(prefix) ?? []; list.push({ id, title: info.title, description: info.description, language: info.language, url }); toolsByPrefix.set(prefix, list);
       }
       const previous = files.get(path);
       if (previous) {
@@ -126,7 +126,7 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
   const readRole = async (role, path, required = true) => {
     const entry = maps[role].get(path);
     if (!entry) { if (required) throw Error(`Missing ${role} metadata: ${path}`); return ''; }
-    return (await readEntry({ ...entry, source: join(inputs[role], path), path })).toString('utf8');
+    return (await readEntry({ ...entry, path })).toString('utf8');
   };
   for (const role of roles) {
     const visited = new Set();
@@ -177,7 +177,7 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
   const runtimePath = `assets/composed-search.${sha(searchRuntime).slice(0, 12)}.mjs`;
   metadata.set(runtimePath, searchRuntime);
   for (const [path, entries] of homes) {
-    const primary = entries.find(e => e.role === 'main');
+    const primary = entries.find(e => e.role === 'main') ?? entries.find(e => e.role === 'hub' && normalizedRecords.has(fileURL(path)));
     if (!primary) throw Error(`Home without a primary template: ${path}`);
     const prefix = path === 'index.html' ? '' : path.split('/')[0];
     const template = rewriteOrigins((await readEntry(primary)).toString('utf8')), links = toolsByPrefix.get(prefix) ?? [];
@@ -211,14 +211,12 @@ export async function composeSites({ main, hub, preview, output, existingIds, dr
   }
   const estimatedBytes = [...files.values()].reduce((n, f) => n + f.bytes, 0) + [...metadata.values()].reduce((n, t) => n + Buffer.byteLength(t), 0);
   if (files.size + metadata.size > maxFiles || estimatedBytes > maxOutputBytes) throw Error('Unified output exceeds its project budget');
-  const footprintBeforeBytes = await footprint(workRoot), disk = await statfs(parent);
-  const freeBytes = disk.bavail * disk.bsize, projectedWorkingBytes = footprintBeforeBytes + estimatedBytes;
-  if (projectedWorkingBytes > maxWorkingBytes || freeBytes - estimatedBytes < minFreeBytes) throw Error('Composition exceeds working-space/free-disk budget; use a smaller or sequential build');
+  const resources = await checkResources(workRoot, estimatedBytes, { maxWorkingBytes, minFreeBytes });
   const report = { scope, existingTools: existing.size, draftTools: drafts.size, existingToolRoutes: existingRoutes.size,
     draftToolRoutes: draftRoutes.size, requiredDraftLocales: draftPrefixes.length, inputSitemapURLs: sourceRecords.length, outputSitemapURLs: normalizedRecords.size,
     deduplicatedFiles: sameFiles, resolvedHomeCollisions: homeConflicts, resolvedLlmsCollisions: llmsConflicts,
     files: files.size + metadata.size, estimatedBytes, inputBytes, sitemapLanguages: byLanguage.size, homeBudgets,
-    resources: { footprintBeforeBytes, projectedWorkingBytes, maxWorkingBytes, freeBytes, minFreeBytes },
+    resources,
     homePolicy: 'primary-template-compact-directory-all-links-search-index-on-first-query',
     categoryPolicy: 'preserve-primary-categories-other-tools-searchable-under-existing-all-label',
     deployments: 0, toolsActivated: 0, deploymentApproved: false, cloudflarePlanVerified: false, written: false };
