@@ -1,0 +1,68 @@
+{
+  "suspects": [
+    {
+      "role": "hub",
+      "path": "assets/recovered-live-only-106/published/assets/vendor/pdf.worker.mjs",
+      "bytes": 98535,
+      "sha256": "ad18e27d5cd0b990fe6b6bd810e49717d177ad040fba2a4abfb5192acdae4b6f",
+      "begin": "<!doctype html>\n<html lang=\"en\" dir=\"ltr\"><head>\n  <meta charset=\"utf-"
+    },
+    {
+      "role": "hub",
+      "path": "assets/recovered-live-only-106/published/assets/vendor/qcms_bg.js",
+      "bytes": 98535,
+      "sha256": "ad18e27d5cd0b990fe6b6bd810e49717d177ad040fba2a4abfb5192acdae4b6f",
+      "begin": "<!doctype html>\n<html lang=\"en\" dir=\"ltr\"><head>\n  <meta charset=\"utf-"
+    }
+  ],
+  "refs": [
+    {
+      "role": "main",
+      "path": "assets/vendor/pdf.min.mjs",
+      "needle": "pdf.worker.mjs",
+      "context": "atic#Gs=new WeakMap;static{if(i){this.#zs=!0;GlobalWorkerOptions.workerSrc||=\"./pdf.worker.mjs\"}this._isSameOrigin=(t,e)=>{const i=URL.parse(t);if(!i?.origin||\"null\"===i.origin)ret"
+    },
+    {
+      "role": "main",
+      "path": "assets/vendor/pdf.worker.min.mjs",
+      "needle": "qcms_bg.js",
+      "context": "ms_convert_array(e,a,r,n)}function __wbg_get_imports(){return{__proto__:null,\"./qcms_bg.js\":{__proto__:null,__wbg___wbindgen_throw_344f42d3211c4765:function(e,t){throw new Error(fu"
+    },
+    {
+      "role": "hub",
+      "path": "assets/market-tools/vendor/pdf.min.mjs",
+      "needle": "pdf.worker.mjs",
+      "context": "      this.#isWorkerDisabled = true;\n      GlobalWorkerOptions.workerSrc ||= \"./pdf.worker.mjs\";\n    }\n    this._isSameOrigin = (baseUrl, otherUrl) => {\n      const base = URL.pars"
+    },
+    {
+      "role": "hub",
+      "path": "assets/market-tools/vendor/pdf.worker.min.mjs",
+      "needle": "pdf.worker.mjs",
+      "context": "WorkerMessageHandler\n};\n\nexport { WorkerMessageHandler };\n\n//# sourceMappingURL=pdf.worker.mjs.map"
+    },
+    {
+      "role": "hub",
+      "path": "assets/market-tools/vendor/pdf.worker.min.mjs",
+      "needle": "qcms_bg.js",
+      "context": "table.set(offset + 3, false);\n    }\n  };\n  return {\n    __proto__: null,\n    \"./qcms_bg.js\": import0\n  };\n}\nfunction getStringFromWasm0(ptr, len) {\n  return decodeText(ptr >>> 0, l"
+    },
+    {
+      "role": "hub",
+      "path": "assets/recovered-live-only-106/published/assets/vendor/extract-images-pdf-engine.mjs",
+      "needle": "pdf.worker.mjs",
+      "context": "c#n=0;static#a=!1;static#r=new WeakMap;static{bt&&(this.#a=!0,Mt.workerSrc||=\"./pdf.worker.mjs\"),this._isSameOrigin=(t,e)=>{let s=URL.parse(t);if(!s?.origin||s.origin===\"null\")retu"
+    },
+    {
+      "role": "hub",
+      "path": "assets/recovered-live-only-106/published/assets/vendor/extract-images-pdf-worker.mjs",
+      "needle": "pdf.worker.mjs",
+      "context": "WorkerMessageHandler\n};\n\nexport { WorkerMessageHandler };\n\n//# sourceMappingURL=pdf.worker.mjs.map"
+    },
+    {
+      "role": "hub",
+      "path": "assets/recovered-live-only-106/published/assets/vendor/extract-images-pdf-worker.mjs",
+      "needle": "qcms_bg.js",
+      "context": "table.set(offset + 3, false);\n    }\n  };\n  return {\n    __proto__: null,\n    \"./qcms_bg.js\": import0\n  };\n}\nfunction getStringFromWasm0(ptr, len) {\n  return decodeText(ptr >>> 0, l"
+    }
+  ]
+}

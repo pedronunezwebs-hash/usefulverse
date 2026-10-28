@@ -1,3 +1,11 @@
+## 2026-10-29 · Codex · Unión local completa 700+300, Paso A abierto
+
+[Informe](lotes/2026-10-29-construccion-secuencial-paso-a.md), [evidencia](sequential-v1/evidence.json). Construcción secuencial/paquetes íntegros; 38.817 archivos, 36.400 rutas, 25.300 existentes indexables y 11.100 nuevas noindex en 37 destinos. nb nuevo conserva inglés declarado, cero traducciones aprobadas. Sitemap unificado 25.589 tras deduplicar 36 homes; producción sin cambios. 327 directorios auxiliares nuevos noindex y búsqueda completa bajo demanda, máximo home 10.024 B Brotli. Proyección máxima 1.996.857.176 B, sin relajar límite.
+
+3.251 Node finales correctos (43 de composición incluidas), tres Python; principal check/gate20 repetidos sobre fuente final, correctos y hub reanudado/verificado tras regresión de espacios. Chrome 189 geometrías/53 comprobaciones más imagen PDF sintética; revisión visual móvil/tablet/escritorio. Regresiones de metadata multiline, guías/home, seguridad de home nb, paquetes y búsqueda. Dos capturas HTML falsas JS excluidas solo de unión con hashes/callers fijados; worker PDF correcto en uso. Sin certificación integral/Firefox/WebKit/axe/Lighthouse/hardware.
+
+Tres lecturas de producción: contador 200, soft404 tools. 200 pendiente y preview antigua noindex. Traductor intacto; siete workflows activos/tres web deshabilitados; cero Cloudflare, gastos nuevos, Actions de web, deploy, activaciones, envíos o IDs físicos. Siguiente: runtime real/cabeceras/QA y entrega manual del Paso A con plan/cuota/coste comprobados, sin adelantar fase 0/corte. Respaldo/cierre completados; candado LIBRE tras retirada verificada.
+
 ## 2026-10-28 · Codex · Webs sin Actions, traductor intacto
 
 [Decisión y comprobaciones](lotes/2026-10-28-webs-manuales-traductor-intacto.md). Nueva instrucción de Pedro: no usar Actions para herramientas/webs, excepto el traductor que se configuró deliberadamente con sus controles/avisos. Deshabilitados deploy-cloudflare, validate-staged y measure-release-capacity; sus definiciones siguen intactas. Los siete translation-*.yml mantienen estado activo y no se cancela/relanza la campaña. No se toca memoria, modelos, scripts, fuentes ni checkpoints.
@@ -727,3 +735,5 @@ Se sincronizan instrucciones/resultados con main usando [skip ci], sin integrar 
 Retirada efectiva verificada el 28-oct: clon propio eliminado antes de liberar el candado; 42.27 GiB libres. El código y los 16 registros iniciales están en GitHub y los documentos coinciden en ambas ramas. La tanda 40523422271 sigue deliberadamente en Actions, independiente del Mac/chat; recoger su salida cuando termine. Comprobante: `translation-drafts/closure.json`.
 
 Cierre seguridad/composición 2026-10-28T14:08:33.074916+00:00: árbol de [0c8b95a](https://github.com/pedronunezwebs-hash/usefulverse/commit/0c8b95adf21783cff229afab2e05eb5d236cad2a) comprobado en GitHub; retirada propia completa, 43.24 GiB libres; servidor/página QA cerrados. Sin trabajo único local; candado LIBRE. [Recibo](composition-v1/closure.json).
+
+Cierre 2026-10-28T18:25:51.951Z: fuente y árbol remoto verificados en [900621a](https://github.com/pedronunezwebs-hash/usefulverse/commit/900621a9fe95265b40ae38dfd1d05b633354f587); clon, builds, dependencias, descargas y cachés propios eliminados antes de LIBRE. 42.94 GiB libres. Servidores detenidos; pestaña QA en blanco/emulación restablecida. Cero deploy/activaciones/Actions web/Cloudflare; traductor intacto. [Recibo](sequential-v1/closure.json).

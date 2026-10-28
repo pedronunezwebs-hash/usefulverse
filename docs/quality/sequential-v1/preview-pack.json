@@ -1,0 +1,15 @@
+{
+  "files": 11593,
+  "rawBytes": 246762594,
+  "packedBytes": 78338135,
+  "packSha256": "87a5c4bd63f0d95bc2901dc2203b7c1979c8280323e7c1d643b7b74793521cb1",
+  "resources": {
+    "footprintBeforeBytes": 1303258922,
+    "projectedWorkingBytes": 1383689673,
+    "maxWorkingBytes": 2000000000,
+    "freeBytes": 44850540544,
+    "minFreeBytes": 10000000000
+  },
+  "sourcePreserved": true,
+  "verifiedEveryFile": true
+}

@@ -1,0 +1,8 @@
+{
+  "src/catalog.mjs": "e2c3b560379dc91f3b05a7ea7ae6964b379d3b754ad3475d8d7c2eccd40e7102",
+  "src/growth600/catalog.mjs": "02fc9b04a3b9e4fcf72f4c44af9a16007edbe0cfe536bcb61dcf1a32729a9cbc",
+  "src/markets-no-ch/catalog.mjs": "643ce3ce18da2c7ef7bf5572a606e6c8de73fafd9416d93d8728b43d98cfcf02",
+  "src/growth600/live-only-106.manifest.json": "c6e902f38b651a18d4f1816f3eaaa481d8c01f3b01dc3922fc2b550ee1a93b3b",
+  "docs/planning/usefulverse-1000-2026-10-19/implementation-progress.json": "a27e556d32a31da1c81b9e653da0c793b1a05b437a6980c5268f2787177df793",
+  "src/locales.mjs": "e3bbea7b2c55bfac0230c1ac558836060e941b937dfa6d6a5b66cee4293caab6"
+}

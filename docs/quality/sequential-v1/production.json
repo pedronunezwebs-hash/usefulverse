@@ -1,0 +1,31 @@
+{
+  "scope": "read-only-no-deployment-this-turn",
+  "checks": [
+    {
+      "url": "https://usefulverse.com/tools/word-counter/",
+      "title": "Word Counter for Google Docs & Text — Free | UsefulVerse",
+      "h1": "Word Counter",
+      "robots": null,
+      "canonical": "https://usefulverse.com/tools/word-counter/",
+      "status": 200
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz/",
+      "title": "Free everyday tools | UsefulVerse",
+      "h1": "Free everyday tools",
+      "robots": null,
+      "canonical": "https://tools.usefulverse.com/",
+      "status": 200
+    },
+    {
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/grammar-checker/",
+      "title": "Grammar Checker Free | UsefulVerse",
+      "h1": "Grammar Checker",
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/tools/grammar-checker/",
+      "status": 200
+    }
+  ],
+  "newBranchVersionVerifiedInProduction": false,
+  "deployments": 0
+}
