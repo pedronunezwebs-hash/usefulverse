@@ -7,6 +7,10 @@ sensaciones) se apunta en `docs/quality/PRUEBAS-PEDRO.md` para que Pedro lo haga
 Motivo: la auditoría del 20-oct encontró 26 errores reales (cálculos, juegos y conversiones) que habían pasado los tests
 existentes. Un test que no comprueba el resultado correcto no protege a nadie.
 
+La pasada integral abarca las 1.000 herramientas: 700 existentes y 300 en noindex. Antes de cerrar cada una deben quedar
+resueltas todas sus capas aplicables; los pendientes concretos se conservan en `progress.csv`, sin marcarla terminada.
+Después del cierre se mantienen las regresiones y la vigilancia semanal.
+
 ---
 
 ## 1. Las 7 capas de prueba (una herramienta está «verificada» solo si pasa todas las que le aplican)
@@ -33,6 +37,13 @@ El repo es público, así que todo esto corre gratis en GitHub Actions (máquina
   en el PR.
 
 ## 3. Herramientas que NO se pueden probar del todo de forma automática
+
+**Aplicabilidad · decisión de Pedro, 28-oct-2026:** las pruebas físicas no se asignan por defecto a cada herramienta.
+El agente prueba con fixtures, archivos y navegadores todo lo que pueda reproducir y solo pide a Pedro lo que requiera
+hardware, condiciones reales del dispositivo o un juicio que no pueda comprobar. Por ejemplo, comprimir un PDF no
+requiere probar un micrófono: integridad, contenido, compresión y descarga se verifican automáticamente; no se crea una
+fila de prueba física de micrófono. Si queda una limitación real de archivo/dispositivo, se añade solo ese caso concreto.
+No se rebajan las siete capas aplicables ni se usa `n/a` para omitir una comprobación que sí corresponde.
 
 WebKit en Playwright **no es** Safari de un iPhone de verdad, y un navegador sin interfaz no tiene cámara, micrófono,
 altavoces ni permisos reales. Estas pruebas van a `PRUEBAS-PEDRO.md`:
