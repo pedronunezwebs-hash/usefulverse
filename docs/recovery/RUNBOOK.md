@@ -64,30 +64,21 @@ nuevas** (la mejora de las existentes continúa) y se avisa a Pedro.
 
 ---
 
-## 3. Trabajar sin llenar el disco de Pedro (y en segundo plano)
+## 3. Trabajar sin llenar el disco de Pedro (operación vigente, 28-oct)
 
-El Mac de Pedro tiene **~22 GB libres** y Pedro sigue trabajando en él. Reglas:
-
-1. **Trabajo pesado en la nube, no en el Mac:**
-   - Traducción con modelos (M2M100, MADLAD: varios GB) → **solo en GitHub Codespaces**. Nunca se descargan modelos al Mac.
-   - Builds completos (25.000+ páginas) → los hace **GitHub Actions** al hacer push. En local solo se construyen las
-     herramientas del lote.
-2. **Codespaces sin coste:** presupuesto de Codespaces en 0 $ con bloqueo (se comprueba en GitHub → Settings → Billing antes
-   de crear uno). Máquina de 2 núcleos. Se borra el codespace **al terminar cada sesión**, después de comprobar que todo
-   está en GitHub (`gh codespace delete`). No se dejan codespaces parados.
-3. **Si se trabaja en el Mac:**
-   - Clon superficial en una carpeta temporal del agente (nunca en el Escritorio):
-     `git clone --depth 1 --filter=blob:none https://github.com/pedronunezwebs-hash/usefulverse.git`
-   - Si otro agente usa el mismo repo, cada uno trabaja en su propio `git worktree`, nunca en el checkout del otro.
-   - Builds parciales a una carpeta temporal: `USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=<idiomas> npm run build`
-     (las variables ya existen en el repo). Al terminar se borra `<tmp>/dist`.
-   - `node_modules`, `dist`, capturas y descargas se **borran al cerrar el lote**, sin Papelera.
-   - **Antes de cada lote:** `df -h /`. Si quedan **menos de 10 GB libres**, no se empieza; se avisa a Pedro.
-   - Huella máxima de un lote en el Mac: **2 GB**.
-4. **Segundo plano:** procesos con prioridad baja (`nice -n 15`), un solo build a la vez y nada que ocupe la pantalla.
-5. **Minutos de GitHub Actions:** como máximo **un despliegue al día** con un lote completo. Los cambios solo de
-   documentación llevan `[skip ci]`. Si el uso del mes supera el 80 % de los minutos gratuitos, se paran los
-   despliegues hasta el ciclo siguiente.
+1. **Webs/herramientas sin Actions:** pruebas, builds, mediciones y despliegues se ejecutan de forma local/manual.
+   Empezar por builds parciales del lote, un proceso cada vez y con prioridad baja. Antes de un build completo, estimar
+   y medir la huella; dividir generación/validación si hace falta. No sustituirlo por Actions ni otro servicio de pago.
+2. **Excepción: traductor intacto:** sus modelos, generación, controles, checkpoints y avisos continúan en los siete
+   workflows `translation-*.yml`. No descargar modelos al Mac ni cambiar esa canalización por esta decisión.
+3. **Recursos:** clones superficiales/filtrados y carpeta propia; preservar cambios ajenos. No empezar con menos de 10 GB
+   libres y mantener huella propia de lote ≤ 2 GB. Dependencias, builds, descargas, capturas y cachés propios se retiran
+   después de comprobar respaldo remoto. No usar Codespaces, Packages, Git LFS ni créditos de IA de pago.
+4. **Publicación:** Git normal para fuente y deploy manual desde un resultado validado, máximo uno al día. Commits de
+   documentación con `[skip ci]`. Los workflows de web quedan deshabilitados; las comprobaciones siguen siendo obligatorias
+   con salida/versiones/evidencia guardadas en el PR. No alterar presupuestos ni protecciones para saltarse un control.
+5. **Cloudflare:** comprobar configuración/cuota/coste antes de publicar, sin contratación ni consumo facturable nuevo.
+   La ruta unificada de §4b utiliza assets sin script por petición y el plan ya existente solo si se verifica vigente.
 
 ---
 
@@ -158,8 +149,9 @@ todo el sitio. Así cada visita es una petición de asset gratuita. Nada de Page
    (Rules → Redirect Rules, incluida gratis): `https://tools.usefulverse.com/*` → `https://usefulverse.com/${1}`, **301**,
    conservando la ruta y la query. El registro DNS de `tools` sigue con proxy activo (naranja) para que la regla actúe.
    Verificar con 200 URLs: 301 → 200 en la ruta equivalente.
-8. **Despliegue:** el workflow pasa de `pages deploy` (dos proyectos) a **`wrangler deploy`** del Worker en cada push a
-   `main` (sin el `workflow_dispatch` manual del hub). Wrangler solo sube los archivos que cambian.
+8. **Despliegue manual (decisión 28-oct):** validar localmente, guardar fuente/evidencia con Git y ejecutar
+   **`wrangler deploy`** desde el resultado verificado, sin GitHub Actions de web ni builds automáticos nuevos.
+   Antes se verifica el plan existente y ausencia de coste adicional. Wrangler sube solo archivos que cambian.
 9. **Después:** reenviar el índice de sitemaps de `usefulverse.com` en Search Console (la propiedad de dominio ya cubre ambos
    hosts; no hace falta ningún «cambio de dirección») y en Bing. Mantener los dos proyectos de Pages **2 semanas** como
    vuelta atrás. Borrarlos solo con el OK de Pedro.
@@ -238,7 +230,7 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 | 12 | RTL (`ar`) y textos largos (`de`) sin cortes, a 390 px | Captura |
 | 13 | 37 idiomas presentes (o los que hayan pasado el piloto), con `hreflang` recíproco | Test de cobertura |
 | 14 | `npm run check` y `npm run locale:release-check` verdes | Salida del comando |
-| 15 | **Las 7 capas de `docs/quality/PRUEBAS.md`**: ≥10 valores de referencia con fuente, propiedades o aleatorios, regresión, Playwright (Chromium, Firefox y WebKit; móvil 390 px; en/es/de/ar/ja/hi/nb), axe y Lighthouse | Salida de los tests + enlace al run de Actions |
+| 15 | **Las 7 capas de `docs/quality/PRUEBAS.md`**: ≥10 valores de referencia con fuente, propiedades o aleatorios, regresión, Playwright (Chromium, Firefox y WebKit; móvil 390 px; en/es/de/ar/ja/hi/nb), axe y Lighthouse | Salida de los tests y evidencia de ejecución local/manual en el PR |
 | 17 | **Peso** dentro del presupuesto de `PESO-Y-DISENO.md` §2 (test de CI) | Informe de peso del PR |
 | 18 | **Diseño responsive**: 320-1920 px, zoom al 200 %, sin desbordamiento, márgenes ≥ 16 px en móvil, zonas táctiles ≥ 44 px, RTL y textos largos (`PESO-Y-DISENO.md` §4) | Capturas + test visual |
 | 16 | Lo que no se puede automatizar está en `PRUEBAS-PEDRO.md`, y **ninguna prueba de Pedro de esta herramienta está pendiente o en `FALLA`** | Filas de PRUEBAS-PEDRO |
