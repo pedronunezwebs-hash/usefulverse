@@ -56,3 +56,9 @@ Se mantiene la exigencia de significado y datos; Pedro acepta algo más de CPU g
 ## Consumo en vista previa aislada · 28-oct
 
 El adaptador ya se conecta al build optativo de los 300 noindex mediante `GROWTH600_AUTOMATIC_PREVIEW_PACKAGES` y los hashes `GROWTH600_PREVIEW_SEMANTIC_POLICY`/`GROWTH600_PREVIEW_QUALITY_POLICY`. `validate-staged.yml` lee la rama de datos y `prepare-preview-packages.py` revalida registros/semillas con Python 3.11, sin modelos ni red, en una salida temporal separada. Solo se aplican hojas válidas; lo pendiente usa inglés normalizado. Las entradas aprobadas para esta vista previa no son aprobaciones de publicación ni revisión nativa. El build publicado continúa sin consumir paquetes. [Evidencia, CI pendiente y siguiente paso](../lotes/2026-10-28-preview-traducciones.md).
+
+## Puerta automática antes de los modelos · 28-oct
+
+Cada futura campaña con cola pendiente llama a `translation-preflight.yml` con su SHA resuelto antes de `wave-1`. Exige 45 pruebas Python y seis Node; ante fallo/señal/runtime ausente no se programan modelos y el vigilante clasifica el fallo. No carga modelos ni cambia políticas/memoria. [Prueba 40648113707](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40648113707): correcta, 24 s y cero ms facturables, sin artifacts. Primera llamada desde una campaña aún no observada; la actual sigue fijada a su fuente anterior. CI completa del adaptador 40646366137 resuelta correctamente. [Informe y límites](../lotes/2026-10-28-puerta-automatica-traducciones.md).
+
+El cron del vigilante tiene dos ejecuciones reales correctas (40595965237/40616437013); el cron diario del controlador de generación aún no tiene evento observado. No se garantiza cadencia exacta, 24/7 ni avisos durante una indisponibilidad de GitHub. Los paquetes tampoco aprueban idiomas ni sustituyen los 18 controles/siete capas por herramienta. P-001–P-008 son pruebas físicas, no toda la mejora del sitio.

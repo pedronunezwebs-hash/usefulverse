@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-10-28T07:15:21.735636+00:00",
+  "method": "Five GET plus two XML reads; no deployment",
+  "requests": [
+    {
+      "url": "https://usefulverse.com/",
+      "status": 200,
+      "final_url": "https://usefulverse.com/",
+      "bytes": 223202,
+      "title": "Everyday Online Tools \u2014 Free \u00b7 no limits \u2014 Free | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/",
+      "status": 200,
+      "final_url": "https://tools.usefulverse.com/",
+      "bytes": 98535,
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz/",
+      "status": 200,
+      "final_url": "https://tools.usefulverse.com/tools/zzz/",
+      "bytes": 98535,
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200,
+      "final_url": "https://tools.usefulverse.com/es/zzz/",
+      "bytes": 98535,
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200,
+      "final_url": "https://tools.usefulverse.com/zzz.html",
+      "bytes": 98535,
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "status": 200,
+      "final_url": "https://usefulverse.com/sitemap.xml",
+      "bytes": 786404,
+      "sitemap_urls": 10260
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "status": 200,
+      "final_url": "https://tools.usefulverse.com/sitemap.xml",
+      "bytes": 1431497,
+      "sitemap_urls": 15365
+    }
+  ],
+  "sitemap_urls": 25625,
+  "deployment_performed": false
+}

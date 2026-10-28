@@ -1,0 +1,122 @@
+{
+  "checkedAt": "2026-10-28T07:20:18.399Z",
+  "method": "Ordinary isolated Chrome, initial document 200; same-origin fetch with default browser settings",
+  "branchVersionVerified": false,
+  "rows": [
+    {
+      "kind": "tool",
+      "route": "/tools/text-translator/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/text-translator/",
+      "robots": "noindex,follow",
+      "h1": "On-Device Text Translator",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/tools/internet-speed-test/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/internet-speed-test/",
+      "robots": "noindex,follow",
+      "h1": "Internet Speed Test",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/es/tools/truth-or-dare/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/es/tools/truth-or-dare/",
+      "robots": "noindex,follow",
+      "h1": "Truth or Dare Game",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/es/tools/uk-stamp-duty/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/es/tools/uk-stamp-duty/",
+      "robots": "noindex,follow",
+      "h1": "UK Stamp Duty Calculator",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/de/tools/tower-defense/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/de/tools/tower-defense/",
+      "robots": "noindex,follow",
+      "h1": "Tower Defense",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/de/tools/virtual-drum-kit/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/de/tools/virtual-drum-kit/",
+      "robots": "noindex,follow",
+      "h1": "Virtual Drum Kit",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/ar/tools/ptsd-questionnaire/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ar/tools/ptsd-questionnaire/",
+      "robots": "noindex,follow",
+      "h1": "Personal After-Event Reflection",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/ar/tools/singapore-cpf/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ar/tools/singapore-cpf/",
+      "robots": "noindex,follow",
+      "h1": "Singapore CPF Ordinary Wage Estimate",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/ja/tools/hdr-merger/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ja/tools/hdr-merger/",
+      "robots": "noindex,follow",
+      "h1": "HDR Photo Merger",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "tool",
+      "route": "/ja/tools/pet-feeding-calculator/",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/ja/tools/pet-feeding-calculator/",
+      "robots": "noindex,follow",
+      "h1": "Pet Food Portion Calculator",
+      "hreflangCount": 37,
+      "inSitemap": false
+    },
+    {
+      "kind": "robots",
+      "route": "/robots.txt",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/robots.txt",
+      "blocksRoot": false
+    },
+    {
+      "kind": "sitemap",
+      "route": "/sitemap.xml",
+      "status": 200,
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/sitemap.xml",
+      "parseError": false,
+      "urlCount": 0
+    }
+  ]
+}
