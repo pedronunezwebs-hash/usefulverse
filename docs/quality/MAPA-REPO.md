@@ -32,7 +32,7 @@ El controlador `translation-autopilot.yml` ejecuta la fuente fijada de `feat/new
 - Corpus: 1.000 propietarios; 120 con solo metadatos, sin certificar UI completa. Ningún idioma ni herramienta se aprueba por generar un paquete.
 - `scripts/localization/prepare-preview-packages.py`: revalida memoria/semillas con Python 3.11 y exporta a un directorio temporal separado, sin red, inferencia ni escritura en la rama de datos.
 - `automatic-packages.mjs` / `automatic-preview.mjs`: enlazan hash/contexto/políticas a hojas de copia. Solo preview optativo de los 300 `indexable:false`, con respaldo inglés normalizado; se comprueba el JSON renderizado de las 10.800 rutas. El build normal no consume paquetes ni modifica copias de las 700 existentes.
-- `validate-staged.yml`: CI manual sin despliegue. [40599566567](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40599566567) ya pasó revalidación y preview; suite completa/builds normales pendientes al guardar este relevo. No usarlo como aprobación de producción. [Detalle](lotes/2026-10-28-preview-traducciones.md).
+- `validate-staged.yml`: CI manual sin despliegue. [40646366137](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137) ya pasó regresión temprana y revalidación/preview; suite completa/builds normales pendientes. La primera CI falló por un fixture del entorno ya corregido. No usarlo como aprobación de producción. [Detalle](lotes/2026-10-28-preview-traducciones.md).
 - `translation-drafts.yml` y sus checkpoints siguen preservados como sistema anterior; no relanzarlos para sustituir el controlador autónomo ni cancelar la campaña activa 40565692987.
 
 ## Carpetas clave

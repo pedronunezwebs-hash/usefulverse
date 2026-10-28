@@ -1,0 +1,24 @@
+{
+  "run_id": 40599566567,
+  "source_commit": "f0960a31dea95a2daec2c4c0bd90bb33a422edc8",
+  "conclusion": "failure",
+  "node_tests": 3053,
+  "node_passed": 3053,
+  "python_tests": 448,
+  "python_errors": 1,
+  "python_failures": 0,
+  "python_skipped": 2,
+  "python_seconds": 1320.245,
+  "failure_case": "test_translation_preview.PreviewPackagesTest.test_only_candidates_are_reexported_without_network_inference_or_input_writes",
+  "error": "KeyError: semantic_policy when GITHUB_OUTPUT is inherited by a mock report without policy fields",
+  "regression_fix": "1d67bdf80d5081ab005bc945c03feef5bf708cc5",
+  "billable_ubuntu_total_ms": 0,
+  "artifacts": 0,
+  "preview": {
+    "checked_routes": 10800,
+    "translated_entries": 20,
+    "translated_routes": 20,
+    "fallback_routes": 10480,
+    "over_budget_entries": 2
+  }
+}

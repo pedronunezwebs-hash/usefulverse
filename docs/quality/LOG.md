@@ -1,3 +1,9 @@
+## 2026-10-28 · Codex · Regresión del entorno GitHub corregida
+
+Primera CI: 3.053 Node correctas; 448 Python, un error de fixture por GITHUB_OUTPUT heredado, dos omisiones. Se completan las políticas simuladas, se aísla/verifica el archivo de salida y se ejecuta esta regresión al principio. [Fix 1d67bdf](https://github.com/pedronunezwebs-hash/usefulverse/commit/1d67bdf80d5081ab005bc945c03feef5bf708cc5). [Nueva CI 40646366137](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137): contratos/regresión y preview real correctos; suite completa/builds normales pendientes. Primera preview: 20 entradas, dos metadatos largos retenidos, 10.800 rutas verificadas.
+
+Traductor: dos vueltas completas y cuatro jobs en vuelta 3; 34,566 auditadas, 16,437 retenidas, 895,386 pendientes. No equivalen a herramientas/idiomas terminados; revalidar política reforzada al consumir. [Informe](lotes/2026-10-28-preview-traducciones.md). Sin despliegues ni verificación nueva de producción, IDs físicos nuevos o avance de fase. Fuente/docs online, cero clones/temporales nuevos y 43.46 GiB libres antes de LIBRE.
+
 ## 2026-10-28 · Codex · Traducciones verificadas en el build aislado
 
 [Informe y relevo](lotes/2026-10-28-preview-traducciones.md), [código f0960a3](https://github.com/pedronunezwebs-hash/usefulverse/commit/f0960a31dea95a2daec2c4c0bd90bb33a422edc8), [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136). La memoria y las semillas se revalidan sin inferencia/API para aplicar solo entradas vigentes a las 300 noindex; respaldo inglés normalizado ante faltantes y límites de metadatos. Uso prohibido en build publicado o herramientas indexables; las 700 existentes conservan sus copias. Se compara el payload real de cada página con la copia preparada y se comprueba noindex/sitemap.

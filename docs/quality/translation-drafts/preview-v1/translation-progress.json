@@ -1,0 +1,18 @@
+{
+  "run_id": 40565692987,
+  "source_targets": 929952,
+  "generated": 47211,
+  "audited": 34566,
+  "exported_entries": 47316,
+  "quarantined": 16437,
+  "pending": 895386,
+  "source_digest": "054c95cbe93531d6ac5a0d49ee5cb327aa2bd121a5f7c1cc77e0820d0f5df8d7",
+  "checked_at": "2026-10-28T06:54:26.647277+00:00",
+  "current_semantic_usable": 18129,
+  "current_wave": 3,
+  "completed_waves": 2,
+  "approved_languages": 0,
+  "active_jobs": 4,
+  "uses_older_pinned_policy": true,
+  "requires_current_policy_revalidation": true
+}
