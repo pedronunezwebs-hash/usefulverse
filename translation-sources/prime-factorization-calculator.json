@@ -1,0 +1,67 @@
+{
+  "toolId": "prime-factorization-calculator",
+  "sourceCopy": {
+    "name": "Prime Factorization Calculator",
+    "title": "Prime Factorization Calculator Free | UsefulVerse",
+    "description": "Factor positive integers into primes, show division steps and count divisors. Free, exact browser calculator with no sign-up.",
+    "intro": "Break a positive whole number into prime factors. See prime powers, repeated factors, the division ladder and how many positive divisors it has. The arithmetic runs locally in your browser.",
+    "howQuestion": "How do you find the prime factorization of a number?",
+    "howAnswer": "Divide by the smallest prime that divides the number, then repeat with the quotient until the remaining value is prime. For example, 360 = 2³ × 3² × 5.",
+    "privacyQuestion": "Are my numbers uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser and this tool does not upload or save your input.",
+    "fields": {
+      "integer": "Positive whole number",
+      "limitsNote": "Enter an integer from 1 to 1,000,000,000,000. Factorization uses exact integer arithmetic in this browser.",
+      "primePowers": "Prime factorization with exponents",
+      "expandedFactors": "Repeated prime factors",
+      "distinctPrimeCount": "Distinct prime factors",
+      "totalPrimeFactors": "Prime factors counted with repetition",
+      "divisorCount": "Number of positive divisors",
+      "divisionSteps": "Repeated division steps",
+      "oneHasNoPrimeFactors": "1 has no prime factors.",
+      "tableCaption": "Prime factorization results"
+    },
+    "actions": {
+      "calculate": "Factor the number",
+      "example": "Load 360 example",
+      "reset": "Reset",
+      "result": "Result",
+      "copy": "Copy results"
+    },
+    "messages": {
+      "calculated": "Prime factorization calculated.",
+      "checkInputs": "Enter a positive whole number from 1 to 1,000,000,000,000.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the prime factorization of 360?",
+        "answer": "360 = 2³ × 3² × 5. Its repeated-prime form is 2 × 2 × 2 × 3 × 3 × 5."
+      },
+      {
+        "question": "How many divisors does a number have?",
+        "answer": "If its prime powers are pᵃ × qᵇ, the divisor count is (a + 1)(b + 1). This calculator shows the count for the supported positive integer."
+      },
+      {
+        "question": "Can it factor any size of number?",
+        "answer": "This browser tool accepts whole numbers from 1 through 1,000,000,000,000. Larger values are outside its stated range."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/prime-factorization-calculator/index.html",
+    "htmlSha256": "5452dafd7566cf07fd0fc870cc4ef258d16c29877996456aa13e597fea6dd1f9",
+    "payloadSha256": "8eb9bb65ee34f470d18fb057895eb9f6e9666a8994c8c28a79e85c842a16798e",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/prime-factorization-calculator.js",
+    "controllerSha256": "3293e4dad7fd621d48b12b7eb81e1f5bca4140698bdb9e204d3d3467104e4301",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

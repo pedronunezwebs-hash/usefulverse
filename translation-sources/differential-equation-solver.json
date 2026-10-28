@@ -1,0 +1,77 @@
+{
+  "toolId": "differential-equation-solver",
+  "sourceCopy": {
+    "name": "Differential Equation Solver",
+    "title": "Differential Equation Solver Free | UsefulVerse",
+    "description": "Solve a first-order differential equation numerically with RK4. Set an initial value, view a graph and export sample points for free.",
+    "intro": "Approximate a first-order initial-value problem y′ = f(x,y) with fixed-step Runge–Kutta 4. Enter the derivative, starting point and value, endpoint, and step count. Everything runs in this browser.",
+    "howQuestion": "How does the RK4 differential equation solver work?",
+    "howAnswer": "RK4 estimates the solution using four slope evaluations per step. Smaller steps often improve accuracy for smooth solutions, but this numerical estimate is not a symbolic or exact solution.",
+    "privacyQuestion": "Are my equation and values uploaded?",
+    "privacyAnswer": "No. The calculation, graph and CSV are created in this browser. This tool does not upload or save your inputs.",
+    "fields": {
+      "derivative": "Derivative f(x, y)",
+      "derivativeHint": "Use x and y, numbers, + − × ÷ and ^. Supported functions: sin, cos, tan, exp, ln, log, sqrt and abs. Write multiplication explicitly, such as x*y.",
+      "initialX": "Starting x (x₀)",
+      "initialY": "Initial value y₀",
+      "endX": "End x",
+      "steps": "Integration steps",
+      "accuracyNote": "Fixed-step classical RK4 for a first-order initial-value ODE only. Supports up to 10,000 steps; x must stay within ±1,000,000 and y within ±1,000,000,000,000. The graph and CSV show up to about 101 sampled points. Numerical results can be inaccurate near discontinuities, singularities or for stiff equations. It does not find symbolic general solutions or certify error.",
+      "resultFinalX": "Final x",
+      "resultFinalY": "Estimated y at final x",
+      "resultStepSize": "Step size",
+      "resultSamples": "Points shown",
+      "chartDescription": "Numerical solution graph for the initial-value problem",
+      "tableCaption": "Sample points from the numerical solution",
+      "sample": "Sample",
+      "xValue": "x",
+      "yValue": "Estimated y"
+    },
+    "actions": {
+      "calculate": "Solve numerically",
+      "reset": "Reset",
+      "example": "Load y′ = y example",
+      "result": "Numerical solution",
+      "copy": "Copy sample table",
+      "downloadCsv": "Download CSV",
+      "downloadSvg": "Download SVG"
+    },
+    "messages": {
+      "calculated": "Numerical solution calculated.",
+      "checkInputs": "Check the expression, initial values and step count.",
+      "copied": "Sample table copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "downloadedCsv": "CSV downloaded.",
+      "downloadedSvg": "SVG downloaded.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does the Runge–Kutta method calculate?",
+        "answer": "It estimates the path of a solution from a starting point by repeatedly using several derivative samples in each step. This page uses the classical fourth-order RK method."
+      },
+      {
+        "question": "How many steps should I use?",
+        "answer": "Start with the example and compare results using more steps. A smaller step may improve a smooth solution, but it cannot fix a singularity or make a stiff equation suitable for this basic method."
+      },
+      {
+        "question": "Can it solve every differential equation exactly?",
+        "answer": "No. It numerically approximates supported first-order initial-value problems. It does not provide a symbolic general solution, prove uniqueness or guarantee an error bound."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/differential-equation-solver/index.html",
+    "htmlSha256": "baab55dcea7b969d3be98f2f0f443ef31445afa301ee0528173ef9d6b4f63e41",
+    "payloadSha256": "9ea8a2c5735dc9a7c0312ffd4bf8137c672dfa4fcc79c917e250257436adadf3",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/differential-equation-solver.js",
+    "controllerSha256": "044927e2ccd8748b93a4c7b69a695896f2b5715a0aba33ed1189d971c6b47b65",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

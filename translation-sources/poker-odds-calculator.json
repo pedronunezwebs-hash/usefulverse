@@ -1,0 +1,100 @@
+{
+  "toolId": "poker-odds-calculator",
+  "sourceCopy": {
+    "name": "Poker Odds Calculator",
+    "title": "Poker Odds Calculator Free | UsefulVerse",
+    "description": "Estimate Texas Hold’em win, tie and equity odds free. Run exact river odds or seeded local simulations; no account or uploads.",
+    "intro": "Enter your two hole cards, any community cards and the number of opponents. A complete river board uses exact enumeration against one opponent; other situations use reproducible simulations in this browser.",
+    "howQuestion": "How are Texas Hold’em odds calculated?",
+    "howAnswer": "The calculator removes your cards and the visible board from a standard 52-card deck, then compares the best five-card poker hand each player can make. A complete board with one opponent checks every possible two-card hand. Other cases use a seeded Monte Carlo sample, so the same inputs and seed give the same estimate. Equity includes your share of split pots.",
+    "privacyQuestion": "Are my poker cards uploaded?",
+    "privacyAnswer": "No. Card validation and all calculations run locally in this browser. No account, betting service, network lookup or saved hand history is used.",
+    "howTo": [
+      "Enter two hole cards, such as As Kd. Use s for spades, h for hearts, d for diamonds and c for clubs.",
+      "Enter zero to five visible community cards, choose 1–8 opponents and set the simulation count and seed.",
+      "Run the estimate. Wins, ties and losses are separate outcomes; equity also counts your fraction of a split pot."
+    ],
+    "example": {
+      "label": "Load example"
+    },
+    "actions": {
+      "calculate": "Calculate odds",
+      "example": "Load example",
+      "reset": "Clear",
+      "cancel": "Cancel simulation",
+      "result": "Odds result"
+    },
+    "fields": {
+      "hero": "Your two hole cards",
+      "heroHint": "Example: As Kd. Rank then suit; use 10 or T for ten.",
+      "board": "Community cards",
+      "boardHint": "Enter 0–5 known cards, separated by spaces or commas.",
+      "opponents": "Opponents",
+      "trials": "Simulation count",
+      "seed": "Repeatable seed",
+      "accuracyNote": "Educational probability estimate only, not gambling or financial advice. One opponent on a complete five-card board is enumerated exactly (990 possible hands). Other cases use a seeded local simulation. Results do not predict a real hand or guarantee a win.",
+      "resultSummary": "Estimated outcome",
+      "win": "Win",
+      "tie": "Tie",
+      "loss": "Loss",
+      "equity": "Pot equity",
+      "method": "Method",
+      "exactMethod": "Exact enumeration",
+      "simulationMethod": "Monte Carlo simulation",
+      "uncertainty": "Approximate 95% sampling range"
+    },
+    "messages": {
+      "calculated": "Odds estimate ready.",
+      "checkInputs": "Check the cards and settings.",
+      "exampleLoaded": "Example loaded.",
+      "progress": "Simulating {done} of {total} hands…",
+      "cancelled": "Simulation cancelled.",
+      "cardFormat": "Enter cards as rank plus suit, such as As Kd 10h.",
+      "exactTwoCards": "Enter exactly two hole cards.",
+      "tooManyBoardCards": "Enter no more than five community cards.",
+      "duplicateCards": "A card cannot appear more than once.",
+      "opponentsRange": "Choose between one and eight opponents.",
+      "trialsRange": "Choose between 1,000 and 25,000 simulations.",
+      "seedRange": "Enter a whole-number seed from 1 to 4,294,967,295.",
+      "notEnoughCards": "There are not enough cards for that scenario."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does poker equity mean?",
+        "answer": "Equity is the estimated share of the pot: a win counts as one full share, and a tie counts as an equal fraction for each tied player. It is not the same as win percentage."
+      },
+      {
+        "question": "When are poker odds exact?",
+        "answer": "With all five community cards visible and one opponent, the tool checks every two-card opponent hand not already visible. Other situations use a seeded Monte Carlo estimate and can vary from the real outcome."
+      },
+      {
+        "question": "Can I use this for betting advice?",
+        "answer": "No. It only compares card combinations under standard Texas Hold’em rules. It does not model betting, opponent behavior, rake, tournament strategy or future decisions."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": {
+        "hero": "As Ad",
+        "board": "2c 7d 9h",
+        "opponents": "1",
+        "trials": "5000",
+        "seed": "20261014"
+      }
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/poker-odds-calculator/index.html",
+    "htmlSha256": "f94564e2e8fa538ff9f54709bde49f7fce6b13b7bc647ad3a59c3327c869ab12",
+    "payloadSha256": "5e29deac7f994d16f003eb3bae7d3fdbfafedf049d56bf04d62ccb0969ac6046",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/poker-odds-calculator.js",
+    "controllerSha256": "4bb196a5668e1866f68a8fb7fe980af4482eb3350def1eda6916e0dae24138d6",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

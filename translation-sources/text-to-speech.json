@@ -1,0 +1,84 @@
+{
+  "toolId": "text-to-speech",
+  "sourceCopy": {
+    "name": "Text to Speech",
+    "title": "Text to Speech Free Online | UsefulVerse",
+    "description": "Read text aloud with a voice on your device. Free, no account, no upload to this site. Voice availability depends on your browser.",
+    "intro": "Turn written text into speech with a voice available in your browser or device. Choose a voice, adjust speed and pitch, then pause, resume or stop.",
+    "howQuestion": "How do I convert text to speech online?",
+    "howAnswer": "Enter or paste text, choose an available voice and press Play. You can pause, continue or stop at any time. Playback uses the speech service selected in your browser or device.",
+    "privacyQuestion": "Is my text uploaded or saved?",
+    "privacyAnswer": "This site does not upload or save your text. The text is passed to the speech service selected in your browser or device. A voice marked local may process on your device; an unknown or remote voice may send text to its provider. Read that provider’s privacy terms before choosing that voice.",
+    "fields": {
+      "textLabel": "Text to read aloud",
+      "textPlaceholder": "Type or paste up to 30,000 characters here…",
+      "voiceLabel": "Voice",
+      "browserDefault": "Browser or device default voice",
+      "remoteToggle": "Show remote or unclassified voices",
+      "remoteNotice": "Some voices may send text to a third-party provider. They stay hidden unless you choose to show them, and playback asks you to confirm first.",
+      "rateLabel": "Speech rate",
+      "pitchLabel": "Voice pitch",
+      "localVoice": "Local voice",
+      "remoteVoice": "Remote or unclassified voice",
+      "voiceProgress": "Approximate reading progress",
+      "privacyNote": "Voice availability and processing depend on the browser, operating system and installed speech services. A “local” label is not a guarantee of how the operating system handles audio."
+    },
+    "actions": {
+      "play": "Play audio",
+      "pause": "Pause audio",
+      "resume": "Resume audio",
+      "stop": "Stop audio",
+      "example": "Load sample text",
+      "clear": "Clear text",
+      "result": "Speech playback"
+    },
+    "messages": {
+      "noVoices": "No speech voices are available yet. Check your device speech settings or try another browser.",
+      "unsupported": "This browser does not support speech synthesis. Try a current desktop browser.",
+      "selectVoice": "Choose a local voice, or choose to show remote voices.",
+      "emptyText": "Enter some text before playing.",
+      "tooLong": "Text is too long. Keep it within 30,000 characters.",
+      "remoteConfirm": "This voice may send your text to its provider. Continue only if you accept that provider’s privacy policy.",
+      "paused": "Playback paused.",
+      "resumed": "Playback resumed.",
+      "stopped": "Playback stopped.",
+      "finished": "Finished reading.",
+      "playbackError": "Could not play this text. Try a shorter passage or another voice.",
+      "exampleLoaded": "Example loaded.",
+      "textCleared": "Text cleared.",
+      "playbackStarted": "Reading aloud."
+    },
+    "example": {
+      "label": "Load a short reading example",
+      "text": "Try this free tool: it reads text aloud with a voice available on your device. You can change the speed, pause, continue or stop whenever you like."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this create an MP3 file?",
+        "answer": "No. Browser speech synthesis plays audio but does not provide a consistent audio-file export. Use a separate recording tool only if you have permission to record the audio."
+      },
+      {
+        "question": "Why do I see no voices?",
+        "answer": "Voices come from your browser and operating system. They may load after a short delay, or none may be installed for this language. Check device speech settings or try another browser."
+      },
+      {
+        "question": "Does a local voice guarantee that audio stays on my device?",
+        "answer": "No. This site does not upload your text, but the browser’s local label cannot guarantee how the operating system or speech service processes audio. An unknown or remote voice may send text to its provider."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/text-to-speech/index.html",
+    "htmlSha256": "afc8d908c779e472b7d98ec551b1eb8cc42097d42e9c774663e3f3818ff20992",
+    "payloadSha256": "95e59bf53b2116c0668329b23bbc5179620fdf6bc88ad3f5afe6a02ae545d141",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/text-to-speech.js",
+    "controllerSha256": "cc8608edf43a1935ad2752a88cb025da9381890740d0aa91fe0ceda54886aa40",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

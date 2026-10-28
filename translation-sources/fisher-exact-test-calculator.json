@@ -1,0 +1,100 @@
+{
+  "toolId": "fisher-exact-test-calculator",
+  "sourceCopy": {
+    "name": "Fisher Exact Test Calculator",
+    "title": "Fisher Exact Test Calculator Free | UsefulVerse",
+    "description": "Calculate a two-sided or one-sided Fisher exact test for a 2×2 table. See margins, p-value and odds ratio for free in your browser.",
+    "intro": "Enter the four counts in a 2×2 table to calculate Fisher’s exact test with fixed margins.",
+    "howQuestion": "When should I use Fisher’s exact test?",
+    "howAnswer": "It is an exact test of association for a 2×2 table, often used when expected counts are small. The result depends on the study design and does not prove causation.",
+    "privacyQuestion": "Are my counts uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Counts are not uploaded or stored by this tool.",
+    "howTo": [
+      "Enter nonnegative whole-number counts in all four cells.",
+      "Choose the alternative before interpreting results.",
+      "Review the fixed margins, p-value, odds ratio and method note."
+    ],
+    "example": {
+      "label": "Load example: 1, 9, 11, 3"
+    },
+    "actions": {
+      "calculate": "Calculate exact test",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Fisher exact test result"
+    },
+    "fields": {
+      "cellA": "Group 1 · outcome 1",
+      "cellB": "Group 1 · outcome 2",
+      "cellC": "Group 2 · outcome 1",
+      "cellD": "Group 2 · outcome 2",
+      "alternative": "Alternative hypothesis",
+      "twoSided": "Two-sided",
+      "greater": "Group 1 has greater odds",
+      "less": "Group 1 has lower odds",
+      "tableCaption": "Observed 2×2 count table",
+      "rowLabel": "Group",
+      "outcomeOne": "Outcome 1",
+      "outcomeTwo": "Outcome 2",
+      "rowOne": "Group 1",
+      "rowTwo": "Group 2",
+      "margins": "Fixed margins",
+      "rowTotals": "Row totals",
+      "columnTotals": "Column totals",
+      "total": "Total observations",
+      "pValue": "Exact p-value",
+      "oddsRatio": "Sample odds ratio",
+      "notEstimable": "Not estimable from these zero cells",
+      "oddsLess": "Less than 1",
+      "oddsGreater": "Greater than 1",
+      "oddsEqual": "1",
+      "method": "Method",
+      "accuracyNote": "Counts must be whole numbers. Maximum 10,000 per cell and 20,000 total. The two-sided test sums tables no more probable than the observed table under fixed margins.",
+      "designNote": "Choose a one-sided direction only when specified before examining the data. The odds ratio is the uncorrected cross-product ratio; zero cells may make it undefined or infinite. This is not a causal conclusion.",
+      "formulaNote": "The p-value is conditional on the observed row and column totals. It does not adjust for multiple tests, covariates or a complex sampling design."
+    },
+    "messages": {
+      "calculated": "Exact test calculated.",
+      "checkInputs": "Check all four counts and the alternative hypothesis.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "cellRange": "Enter whole counts from 0 to 10,000.",
+      "totalRange": "The table total must be between 1 and 20,000.",
+      "alternative": "Choose a supported alternative."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the null hypothesis?",
+        "answer": "The test evaluates whether the row and column classifications are independent, conditional on the observed margins. It does not explain why an association may exist."
+      },
+      {
+        "question": "How is a two-sided p-value calculated?",
+        "answer": "This calculator adds probabilities of all possible tables with the same margins whose conditional probability is no greater than that of the observed table. Other software conventions can differ."
+      },
+      {
+        "question": "Does a small p-value prove an effect?",
+        "answer": "No. A p-value is not an effect size or proof of causation. Review the odds ratio, study design, data quality, uncertainty and any multiple-testing plan."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/fisher-exact-test-calculator/index.html",
+    "htmlSha256": "5226300658db5a8808c0e87641c188fec2861a3d53c133bbb4af186e24c5b66a",
+    "payloadSha256": "e6163f2f48bf63ef5599cd34b8f79c10a4944b0fcc8f289525c3e267ba5bc636",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/fisher-exact-test-calculator.js",
+    "controllerSha256": "aae4d8a56bcf1a63558ac7cf159f80d9c3ab767e9f71e673e7751682e0c0f423",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

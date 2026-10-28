@@ -1,0 +1,78 @@
+{
+  "toolId": "mortgage-refinance-calculator",
+  "sourceCopy": {
+    "name": "Mortgage Refinance Calculator",
+    "title": "Mortgage Refinance Calculator Free | UsefulVerse",
+    "description": "Compare your remaining mortgage with a refinance, including closing costs, payment changes, total cost and break-even. Free, private, no account.",
+    "intro": "Estimate how a new mortgage rate, term and closing costs compare with your remaining loan. Use the same currency for every amount; this is an estimate, not a lender quote.",
+    "howQuestion": "How do I compare a mortgage refinance?",
+    "howAnswer": "Enter your current payoff balance, rate and months remaining, then the proposed refinance rate, term and closing costs. Choose whether fees are paid upfront or added to the new balance. Compare monthly payments, total modeled cost and the first month cumulative cash-flow savings cover upfront costs.",
+    "privacyQuestion": "Are my mortgage details uploaded?",
+    "privacyAnswer": "No. The estimate runs in this browser. Do not enter account numbers or other sensitive identifiers.",
+    "fields": {
+      "balance": "Current payoff balance",
+      "currentApr": "Current annual interest rate (%)",
+      "currentMonths": "Months remaining",
+      "newApr": "New annual interest rate (%)",
+      "newMonths": "New loan term (months)",
+      "closingCosts": "Refinance closing costs",
+      "feeTreatment": "How to handle closing costs",
+      "upfront": "Pay upfront",
+      "financed": "Add to new loan balance",
+      "closingCostsNote": "Use the same currency for balance and costs. Enter the lender’s estimated payoff amount, not the original loan amount.",
+      "accuracyNote": "Estimate only. Actual loan terms, APR, payment timing, escrow, taxes, insurance, points and fees may differ. This is not a quote or financial advice.",
+      "currentPayment": "Estimated current monthly payment",
+      "newPayment": "Estimated refinance monthly payment",
+      "paymentDifference": "Monthly payment decrease (negative means increase)",
+      "currentTotal": "Remaining current payments total",
+      "newTotal": "Refinance payments and fees total",
+      "totalSavings": "Estimated total-cost savings (negative means higher cost)",
+      "breakEven": "Cash-flow break-even",
+      "noBreakEven": "No break-even within either loan term",
+      "noFees": "No upfront fee to recover"
+    },
+    "actions": {
+      "calculate": "Compare loans",
+      "reset": "Reset",
+      "copy": "Copy comparison",
+      "example": "Load example",
+      "result": "Refinance comparison"
+    },
+    "messages": {
+      "calculated": "Mortgage refinance comparison calculated.",
+      "checkInputs": "Check balances, rates, terms and closing costs.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "monthCount": "{count} months"
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does a lower mortgage payment always mean I save money?",
+        "answer": "No. A longer term can lower the payment while increasing total interest or extending repayment. Compare both the monthly payment and total modeled cost."
+      },
+      {
+        "question": "How are closing costs handled?",
+        "answer": "Choose to pay them upfront or add them to the new balance. This estimate compares modeled cash flows and does not include escrow refunds, prepaid taxes, insurance or lender-specific charges."
+      },
+      {
+        "question": "Does this calculator use live mortgage rates?",
+        "answer": "No. You enter both rates and all fees. Results are estimates and are not an offer, approval decision or financial advice."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/mortgage-refinance-calculator/index.html",
+    "htmlSha256": "510cfa0f5eaefd526d62a8976175a032585afabc42ce9564e72ff7e4aacff780",
+    "payloadSha256": "bdf4d6a1e0c8464de82646e96461e3d924cda5b28228c3a675534f6fa27b9b06",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/mortgage-refinance-calculator.js",
+    "controllerSha256": "e52a5f4e4421c0222435dbda60579e406f08e2dafdbec7be3d350af1e39beef9",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

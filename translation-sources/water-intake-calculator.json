@@ -1,0 +1,88 @@
+{
+  "toolId": "water-intake-calculator",
+  "sourceCopy": {
+    "name": "Water Intake Calculator",
+    "title": "Water Intake Calculator Free | UsefulVerse",
+    "description": "Compare entered daily fluids and food water with a general adult reference. Free, private calculator with liters and US cups.",
+    "intro": "Compare water from drinks and food with a general reference for adults. Convert your entries between liters and US cups, without treating the result as personal medical advice.",
+    "howQuestion": "How much water is in my daily drinks and food?",
+    "howAnswer": "Enter the volume of beverages you consumed and, if known, an estimate of water from food. The calculator adds those entries and compares them with a population reference; it does not diagnose hydration or prescribe a personal amount.",
+    "privacyQuestion": "Are my intake amounts saved or uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser tab. Your entries are not uploaded or saved by this tool.",
+    "howTo": [
+      "Choose which adult reference scenario to display.",
+      "Enter beverages and, if you know it, water from food. Choose one volume unit for both fields.",
+      "Calculate to compare the combined amount with the source reference and see liters and US cups."
+    ],
+    "example": {
+      "label": "Load example: 2.2 L beverages + 0.5 L food water"
+    },
+    "actions": {
+      "calculate": "Compare amounts",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Reference comparison"
+    },
+    "fields": {
+      "referenceGroup": "Adult reference scenario",
+      "women": "Women, source category",
+      "men": "Men, source category",
+      "beverages": "Water and other beverages entered",
+      "foodWater": "Estimated water from food (optional)",
+      "unit": "Unit for both entries",
+      "milliliters": "Milliliters (mL)",
+      "liters": "Liters (L)",
+      "usCups": "US cups",
+      "usFluidOunces": "US fluid ounces (fl oz)",
+      "scopeNote": "The National Academies reference is 2.7 L/day for women and 3.7 L/day for men ages 19–30. It counts water in food, beverages and drinking water. These are population Adequate Intake values, not personal prescriptions or minimums for every person.",
+      "accuracyNote": "A comparison only—not a hydration test, diagnosis, safety limit or personal recommendation. Needs vary with age, pregnancy or breastfeeding, activity, climate, health and medicines. Ask a clinician about personal needs, especially if you have a fluid restriction or kidney or heart condition. Do not force fluids to reach a number.",
+      "sourceLinkText": "Read the National Academies reference",
+      "cdcLinkText": "CDC: water needs vary",
+      "resultSummary": "Entered amount compared with a general reference",
+      "totalWaterReference": "Total-water reference",
+      "enteredTotal": "Beverages plus food water entered",
+      "percentOfReference": "Entered amount as a share of reference",
+      "sourceNote": "In one U.S. dietary survey, food supplied about 19% of total water intake. This is historical population data, not an estimate of your meals; enter food water only if you have a reasonable estimate."
+    },
+    "messages": {
+      "calculated": "Comparison calculated. It is not a personal hydration recommendation.",
+      "checkInputs": "Check the reference, amounts and volume unit.",
+      "exampleLoaded": "Example loaded: 2.2 liters of beverages and 0.5 liters of food water.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does the reference mean I should drink that many liters of water?",
+        "answer": "No. The values are Adequate Intake references for total water from food and all beverages for a population group. They are not a personal prescription or a requirement to drink that amount as plain water."
+      },
+      {
+        "question": "Why does the calculator include water from food?",
+        "answer": "The source reference counts water from food, beverages and drinking water. Food contribution varies, so the calculator leaves it optional and does not guess it for you."
+      },
+      {
+        "question": "Can this tell whether I am dehydrated?",
+        "answer": "No. It only adds amounts you enter and compares the sum with a general reference. It does not assess symptoms or hydration status. Individual needs vary; contact a healthcare professional for personal advice."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/water-intake-calculator/index.html",
+    "htmlSha256": "1f4dbc69614d501a0a6aa1af68693e49e17ee1b10e91ef2deabf14d3b17cd2a8",
+    "payloadSha256": "79ede1cf25c7f425eb2e6e136efe95bb9dc7966ba8f72c46dbe7f154da619013",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/water-intake-calculator.js",
+    "controllerSha256": "380089283757434c879acf0bb99c314b1cb347d958036ae92952136b9ec8dfda",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

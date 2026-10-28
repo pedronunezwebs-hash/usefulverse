@@ -1,0 +1,93 @@
+{
+  "toolId": "statistical-power-calculator",
+  "sourceCopy": {
+    "name": "Statistical Power Calculator",
+    "title": "Statistical Power Calculator Free | UsefulVerse",
+    "description": "Estimate sample size or power for two balanced groups using Cohen’s d. Free, private, and calculated in your browser.",
+    "intro": "Plan a two-group comparison of means. Estimate power from a sample size, or estimate the participants needed for a target power.",
+    "howQuestion": "What does statistical power mean?",
+    "howAnswer": "Power is the chance that a planned test detects the specified effect when that effect is real. It depends on the effect size, sample size and significance level.",
+    "privacyQuestion": "Are my study assumptions uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Your assumptions are not uploaded or saved by this tool.",
+    "howTo": [
+      "Choose whether to estimate power or sample size.",
+      "Enter Cohen’s d, the significance level and the target power or group size.",
+      "For sample size, optionally allow for expected participant loss, then review the estimate and its limits."
+    ],
+    "example": {
+      "label": "Load example: d 0.5, 80% power"
+    },
+    "actions": {
+      "calculate": "Calculate estimate",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Planning estimate"
+    },
+    "fields": {
+      "mode": "Calculation",
+      "powerMode": "Estimate power from sample size",
+      "sampleSizeMode": "Estimate sample size for target power",
+      "nPerGroup": "Analyzed participants in each group",
+      "effectSize": "Standardized mean difference (Cohen’s d)",
+      "alphaPercent": "Significance level (%)",
+      "targetPowerPercent": "Target power (%)",
+      "alternative": "Hypothesis direction",
+      "twoSided": "Two-sided",
+      "oneSided": "One-sided",
+      "attritionPercent": "Expected participant loss (%)",
+      "accuracyNote": "Approximation for two independent, equally sized groups comparing means with a normal (z) model. It is not the exact small-sample t-test calculation.",
+      "designNote": "Cohen’s d is the expected difference between group means divided by the shared standard deviation. Use a defensible estimate from prior evidence or a meaningful minimum effect—not a result chosen after seeing the data.",
+      "resultSummary": "Estimated results",
+      "nPerGroupResult": "Analyzed participants per group",
+      "totalAnalyzed": "Total analyzed participants",
+      "estimatedPower": "Estimated power",
+      "targetPower": "Requested target power",
+      "recruitedPerGroup": "Recruit per group after expected loss",
+      "totalRecruitment": "Total recruitment target",
+      "formulaNote": "The sample-size estimate rounds up to a whole participant. Recruitment allowance is calculated separately from the analyzed sample.",
+      "sourceNote": "Model reference",
+      "sourceLinkText": "Statsmodels: two-sample normal power model"
+    },
+    "messages": {
+      "calculated": "Estimate calculated.",
+      "checkInputs": "Check the values and calculation mode.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "sampleSizeTooLarge": "The required sample is above this tool’s supported range."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does 80% power mean?",
+        "answer": "Under the assumptions entered, an 80% estimate means the planned test would detect the specified effect about 80% of the time if that effect were real. It is not an 80% chance that a result is true."
+      },
+      {
+        "question": "What is Cohen’s d?",
+        "answer": "Cohen’s d is a standardized difference between two means: the expected gap divided by the common standard deviation. The result depends strongly on the effect you choose."
+      },
+      {
+        "question": "Does this replace a full power analysis?",
+        "answer": "No. This browser estimate covers a balanced two-group means comparison with a normal approximation. It does not model unequal group sizes, paired data, proportions, ANOVA, clustered or repeated measures, covariates, exact t tests, multiple testing or study-specific design constraints."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/statistical-power-calculator/index.html",
+    "htmlSha256": "33b97f7f0301fd31402abd605e5c411f0f1dbf355d468ec9af5fa2f1a892ebf4",
+    "payloadSha256": "d5fa2e7e95712343456d436f42f3c5726e781986e389edc3b22f7b0850df9877",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/statistical-power-calculator.js",
+    "controllerSha256": "9b540e7392aa18f40525a831b940fc785a21d0698b7766e4a9306e9dbec9b917",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

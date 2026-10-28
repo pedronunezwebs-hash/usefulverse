@@ -1,0 +1,75 @@
+{
+  "toolId": "rhyme-finder",
+  "sourceCopy": {
+    "name": "Rhyme Finder",
+    "title": "Rhyme Finder Free Online | UsefulVerse",
+    "description": "Group words by matching written endings in a poem or custom list. Free, private, and no account. Spelling helper, not a pronunciation dictionary.",
+    "intro": "Paste a poem, verse, or word list to group words that share a written ending. Choose how many final letters to compare and whether to ignore accents.",
+    "howQuestion": "How does this rhyme finder work?",
+    "howAnswer": "It groups words by matching their final written letters. It does not compare pronunciation, stress, or syllables, so a shared spelling ending is not a guarantee that words rhyme when spoken.",
+    "privacyQuestion": "Are my words uploaded?",
+    "privacyAnswer": "No. Text is analyzed in this browser and is not uploaded or saved.",
+    "howTo": [
+      "Paste a poem, verse, or your own list of words.",
+      "Choose the number of final letters to match and whether to ignore accent marks.",
+      "Analyze the text to see repeated spelling endings; copy the groups if useful."
+    ],
+    "additionalFaqs": [
+      {
+        "question": "Does this check how words sound?",
+        "answer": "No. It compares written endings only and does not use a pronunciation dictionary or phonetic transcription."
+      },
+      {
+        "question": "Can I use words from any language?",
+        "answer": "Yes. Unicode letters are supported, but results are based on spelling and may not match how words sound in that language."
+      },
+      {
+        "question": "Can I paste a whole poem?",
+        "answer": "Yes. The local input is limited to 50,000 characters and 5,000 words."
+      }
+    ],
+    "fields": {
+      "text": "Poem, verse, or word list",
+      "textHint": "Paste your own text. Words are extracted in your browser.",
+      "suffixLength": "Final letters to compare",
+      "ignoreDiacritics": "Ignore written accent marks",
+      "ignoreDiacriticsHint": "Optional: café and cafe can match when enabled because the mark over é is ignored.",
+      "ending": "Written ending",
+      "results": "Matching spelling endings",
+      "groupCount": "Groups found",
+      "unmatchedCount": "Words without a matching group",
+      "privacyNote": "Runs locally; text is not uploaded or saved.",
+      "limitNote": "Limit: 50,000 characters and 5,000 words. Results compare spelling, not pronunciation."
+    },
+    "actions": {
+      "analyze": "Find matching endings",
+      "clear": "Clear",
+      "copy": "Copy groups",
+      "result": "Results"
+    },
+    "messages": {
+      "analyzed": "Analysis complete. These are matching written endings, not confirmed spoken rhymes.",
+      "emptyInput": "Enter a poem or at least one word first.",
+      "emptyResults": "There are no matching groups to copy.",
+      "copied": "Groups copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "cleared": "Text and results cleared.",
+      "invalidInput": "Check the text and try again.",
+      "inputLimit": "The text is over the local size limit."
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/rhyme-finder/index.html",
+    "htmlSha256": "f44eab42177d08db88f00a3e1a7505894fe6801148874b760d49eaab978bf136",
+    "payloadSha256": "882cfb14fdf60e109c38b672f8a7844344fe89f40b061b0331287d6d24392c2d",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/rhyme-finder.js",
+    "controllerSha256": "ce3665494b85bf4b86caf13ad63eb81544ae2f5731096847e56bb169134841e0",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

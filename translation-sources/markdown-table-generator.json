@@ -1,0 +1,86 @@
+{
+  "toolId": "markdown-table-generator",
+  "sourceCopy": {
+    "name": "Markdown Table Generator",
+    "title": "Markdown Table Generator Free | UsefulVerse",
+    "description": "Build Markdown tables online. Edit cells, align columns, import CSV or TSV, escape pipes, and copy the finished Markdown.",
+    "intro": "Create a Markdown table in a small editable grid. Import comma-separated, semicolon-separated, or tab-separated text, choose column alignment, and copy plain Markdown with pipes safely escaped.",
+    "howQuestion": "How do I make a Markdown table?",
+    "howAnswer": "Enter a header row and data rows, choose each column alignment, then copy the generated Markdown. Pipes are escaped and uneven imported rows are padded.",
+    "privacyQuestion": "Is my table uploaded?",
+    "privacyAnswer": "No. Your table is processed in this browser tab. Import, edits, and generated Markdown are not sent to a server or saved automatically.",
+    "fields": {
+      "grid": "Editable table cells",
+      "importData": "Paste CSV or TSV data",
+      "importHint": "Quoted CSV fields are supported. Import replaces the current grid; up to 100 rows, 20 columns, and 250,000 characters.",
+      "cellLabel": "Row {row}, column {column}",
+      "delimiter": "Input separator",
+      "autoDelimiter": "Detect automatically",
+      "comma": "Comma",
+      "semicolon": "Semicolon",
+      "tab": "Tab",
+      "alignment": "Column alignment",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "headerNote": "The first row becomes the Markdown header. Add at least one row and one column.",
+      "output": "Markdown output",
+      "preview": "Rendered table preview",
+      "accuracyNote": "Creates a standard pipe table with a header and separator row. Cell line breaks become <br>; Markdown pipes and backslashes are escaped.",
+      "privacyNote": "All processing stays in this tab. No upload, account, API, automatic save, or server processing.",
+      "exampleHint": "Example: a two-column table with a header and sample values.",
+      "exampleHeader": "Task",
+      "exampleColumn": "Status",
+      "exampleValue": "Draft",
+      "exampleDone": "Ready"
+    },
+    "actions": {
+      "import": "Import data",
+      "addRow": "Add row",
+      "removeRow": "Remove last row",
+      "addColumn": "Add column",
+      "removeColumn": "Remove last column",
+      "example": "Load example",
+      "generate": "Update Markdown",
+      "copy": "Copy Markdown",
+      "reset": "Clear table",
+      "result": "Generated Markdown"
+    },
+    "messages": {
+      "ready": "Markdown table updated.",
+      "imported": "Data imported into the editable grid.",
+      "copied": "Markdown copied.",
+      "copyUnavailable": "Clipboard access is unavailable. Select and copy the Markdown output.",
+      "cleared": "Table cleared.",
+      "exampleLoaded": "Example loaded.",
+      "emptyImport": "Paste CSV or TSV data before importing.",
+      "invalidImport": "Could not import this data. Check its quotes and separator.",
+      "emptyGrid": "Add a header row and at least one column.",
+      "limit": "The table limit is 100 rows, 20 columns, and 250,000 characters."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I import CSV or TSV?",
+        "answer": "Yes. Paste comma-separated, semicolon-separated, or tab-separated values, then import them into the editable grid. Quoted CSV fields and quoted separators are supported."
+      },
+      {
+        "question": "How are pipes and line breaks handled?",
+        "answer": "A pipe inside a cell is escaped so it does not split the Markdown table. Backslashes are escaped too, and cell line breaks are represented with <br>."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/markdown-table-generator/index.html",
+    "htmlSha256": "6a019b5636c9e6bf73f0a7604dda992bfcc7a251a44509fe26418f7777202b0c",
+    "payloadSha256": "e903809a1db8fb7f11c239574bbe68b66bde36de0b355967390a378db34fbf31",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/markdown-table-generator.js",
+    "controllerSha256": "70ccb3d0ac6e6bff97b1e507e0769b51da782f9f5159b2ded64ecfb2f2617dd5",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

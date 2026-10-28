@@ -1,0 +1,85 @@
+{
+  "toolId": "protein-calculator",
+  "sourceCopy": {
+    "name": "Protein Calculator",
+    "title": "Protein Calculator Free | UsefulVerse",
+    "description": "Estimate a daily protein amount from body weight and your chosen factor. Free calculator, no account, computed in your browser.",
+    "intro": "Estimate grams of protein per day from body weight and a grams-per-kilogram factor you choose. Split the result across meals or compare it with an intake you enter.",
+    "howQuestion": "How do I calculate a daily protein amount from body weight?",
+    "howAnswer": "Convert body weight to kilograms, then multiply it by the grams-per-kilogram factor you choose. Divide that daily estimate by the number of meals for an even arithmetic split.",
+    "privacyQuestion": "Is my weight uploaded or saved?",
+    "privacyAnswer": "No. The calculation runs in this browser. Your weight and intake are not uploaded or saved by this tool.",
+    "howTo": [
+      "Enter body weight and select kilograms or pounds.",
+      "Choose a grams-per-kilogram factor; 0.8 is shown as a general adult reference, not a personal prescription.",
+      "Optionally enter meals per day and your current daily intake, then calculate."
+    ],
+    "example": {
+      "label": "Load example: 70 kg, 1.2 g/kg, 3 meals"
+    },
+    "actions": {
+      "calculate": "Calculate estimate",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Arithmetic estimate"
+    },
+    "fields": {
+      "bodyWeight": "Body weight",
+      "weightUnit": "Weight unit",
+      "kilograms": "Kilograms (kg)",
+      "pounds": "Pounds (lb)",
+      "gramsPerKg": "Chosen factor (grams per kilogram per day)",
+      "mealsPerDay": "Meals per day for an even split",
+      "currentIntakeGrams": "Optional current daily protein (grams)",
+      "referenceNote": "0.8 g/kg/day is the general adult Recommended Dietary Allowance reference from the National Academies. Needs differ by person. This calculator lets you choose a factor and does not prescribe one.",
+      "accuracyNote": "Arithmetic estimate only, not a diet plan or medical advice. Protein needs may differ with age, health, pregnancy, activity, and other factors. Ask a qualified clinician or dietitian about your needs. The per-meal value is an equal division, not a recommended meal target.",
+      "resultSummary": "Protein estimate",
+      "dailyTarget": "Daily amount from your selected factor",
+      "perMeal": "Equal amount per meal",
+      "selectedFactor": "Factor used",
+      "currentIntake": "Current intake entered",
+      "difference": "Estimate minus current intake",
+      "sourceLinkText": "Read the National Academies reference"
+    },
+    "messages": {
+      "calculated": "Estimate calculated from your selected factor.",
+      "checkInputs": "Check the body weight, factor, meal count, and optional intake.",
+      "exampleLoaded": "Example loaded: 70 kg, 1.2 g/kg, 3 meals, and 80 g current intake.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does 0.8 grams per kilogram mean?",
+        "answer": "It means multiplying body weight in kilograms by 0.8 to get grams per day. The National Academies lists 0.8 g/kg/day as the Recommended Dietary Allowance for adults; it is a general reference, not an individualized target."
+      },
+      {
+        "question": "Does this calculator tell me how much protein I personally need?",
+        "answer": "No. It performs arithmetic with the factor you enter. Age, health, pregnancy, activity, and other circumstances can affect needs, so ask a qualified clinician or dietitian for personal guidance."
+      },
+      {
+        "question": "Is the amount per meal a recommended serving?",
+        "answer": "No. It simply divides the selected daily estimate evenly by your meal count. Real meals do not have to contain equal amounts."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/protein-calculator/index.html",
+    "htmlSha256": "465275d906f536ef0ea2a8154febcdb7ea74af1b3e64390144f3584176b0420b",
+    "payloadSha256": "9723ff69acab05b8f325a6fefb8ff9a7acb2901e92a2e2c7ae2a2644e6d72f1f",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/protein-calculator.js",
+    "controllerSha256": "425ccfff287d429a5a626e347bb84cc2506b2660b256de39f3011c10f0de0ad0",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

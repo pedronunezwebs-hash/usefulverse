@@ -1,0 +1,81 @@
+{
+  "toolId": "circle-calculator",
+  "sourceCopy": {
+    "name": "Circle Calculator",
+    "title": "Circle Calculator Free | UsefulVerse",
+    "description": "Find circle area, circumference, diameter, arcs, sectors and segments. Free online calculator with clear formulas and examples.",
+    "intro": "Calculate a circle from its radius, diameter, area or circumference. Explore central-angle arc and sector measurements, or calculate a circular segment with its chord and sagitta.",
+    "howQuestion": "How do you calculate a circle?",
+    "howAnswer": "For radius r, diameter is 2r, circumference is 2πr and area is πr². For a central angle θ in radians, arc length is rθ and sector area is r²θ/2. This calculator converts an entered angle in degrees to radians for those formulas.",
+    "privacyQuestion": "Are my measurements uploaded?",
+    "privacyAnswer": "No. The formulas run in this browser and this tool does not upload or save your measurements.",
+    "fields": {
+      "mode": "Choose a calculation",
+      "circleMode": "Circle measurements",
+      "arcMode": "Arc and sector",
+      "segmentMode": "Circular segment",
+      "knownMeasure": "Known circle measurement",
+      "radiusOption": "Radius",
+      "diameterOption": "Diameter",
+      "areaOption": "Area",
+      "circumferenceOption": "Circumference",
+      "measureValue": "Measurement value",
+      "radius": "Radius",
+      "centralAngle": "Central angle in degrees",
+      "angleHint": "Use an angle from 0 to 360 degrees. The formulas convert it to radians.",
+      "resultRadius": "Radius",
+      "resultDiameter": "Diameter",
+      "resultArea": "Area",
+      "resultCircumference": "Circumference",
+      "resultArc": "Arc length",
+      "resultSector": "Sector area",
+      "resultChord": "Chord length",
+      "resultSagitta": "Sagitta (segment height)",
+      "resultSegment": "Circular segment area",
+      "accuracyNote": "Uses exact circle formulas with the JavaScript value of π; displayed decimals are rounded. A circular segment uses the selected central angle: below 180° it is the minor segment, above 180° it is the major segment. Inputs are limited to positive values up to 10¹² and angles from 0° to 360°.",
+      "resultSummary": "Circle results"
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "example": "Load an example",
+      "reset": "Reset the form",
+      "copy": "Copy results",
+      "result": "Results"
+    },
+    "messages": {
+      "calculated": "Calculation complete.",
+      "checkInputs": "Check the selected mode, measurements and angle.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What are the area and circumference of a circle with radius 1?",
+        "answer": "The area is π (about 3.14159) and the circumference is 2π (about 6.28318). Results are rounded for display."
+      },
+      {
+        "question": "How do I calculate arc length?",
+        "answer": "Multiply the radius by the central angle in radians. This tool accepts degrees and converts them before calculating."
+      },
+      {
+        "question": "What is the difference between a sector and a segment?",
+        "answer": "A sector is bounded by two radii and an arc. A segment is bounded by a chord and its arc; its area is calculated here from the central angle."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/circle-calculator/index.html",
+    "htmlSha256": "33b559a69001c01223f33c7981a3ad469eb7185aaf62966531e19e428b68a802",
+    "payloadSha256": "6857fc8b58f1084912f4e1e18061619482913a1fe51f37381bb1c5528d2156cf",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/circle-calculator.js",
+    "controllerSha256": "083038fa23a64951d5c3c8692a0bdd5c7147a484c361931f3145d80fad64256f",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "toolId": "dividend-calculator",
+  "sourceCopy": {
+    "name": "Dividend Calculator",
+    "title": "Dividend Calculator Free & DRIP Projection | UsefulVerse",
+    "description": "Estimate dividend income, payout yield and reinvestment growth with your own assumptions. Free, local and no signup. No live market data.",
+    "intro": "Estimate what your shares could pay using the annual dividend you enter. Compare payout frequency, dividend growth and optional reinvestment. No stock prices are fetched, and every result is a model—not a promise.",
+    "howQuestion": "How do I calculate dividend income?",
+    "howAnswer": "Enter your share count, share price and annual dividend per share. Choose how often dividends are paid, then add any growth assumptions and projection length. Turn on reinvestment to model buying fractional shares with each payout.",
+    "privacyQuestion": "Does this calculator use live stock or dividend data?",
+    "privacyAnswer": "No. It only uses the numbers you enter. Nothing is sent to a server or saved by this tool.",
+    "fields": {
+      "shares": "Shares owned",
+      "sharePrice": "Share price",
+      "annualDividendPerShare": "Annual dividend per share",
+      "paymentsPerYear": "Payments per year",
+      "annual": "Annual (1)",
+      "semiannual": "Semiannual (2)",
+      "quarterly": "Quarterly (4)",
+      "monthly": "Monthly (12)",
+      "dividendGrowthPercent": "Assumed annual dividend growth (%)",
+      "priceGrowthPercent": "Assumed annual share-price growth (%)",
+      "years": "Projection years (1–50)",
+      "reinvestDividends": "Reinvest each dividend payment (DRIP)",
+      "currencyCode": "Currency code (for example, USD)",
+      "accuracyNote": "Use a three-letter currency code such as USD, EUR or GBP. Illustration only: no live prices, taxes, fees or inflation. Dividends and share prices can fall; projections are not guarantees or investment advice.",
+      "startingInvestment": "Starting share value",
+      "currentAnnualIncome": "Estimated annual dividend now",
+      "currentIncomePerPayment": "Estimated amount per payment",
+      "currentYield": "Current yield from entered values",
+      "yieldOnCost": "Yield on starting cost",
+      "projectedShares": "Projected shares",
+      "projectedSharePrice": "Modeled share price at end",
+      "projectedAnnualIncome": "Projected annual dividend at end",
+      "projectedPortfolioValue": "Modeled portfolio value at end",
+      "totalReinvested": "Dividends reinvested",
+      "year": "Year"
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Estimate"
+    },
+    "messages": {
+      "calculated": "Estimate calculated.",
+      "checkInputs": "Check the values and try again.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Is the dividend amount annual or per payment?",
+        "answer": "Enter the total dividend per share for one year. The calculator divides it by your selected payment frequency."
+      },
+      {
+        "question": "What does DRIP mean here?",
+        "answer": "It models reinvesting each payout into fractional shares at an estimated share price. Real brokers, prices, fees and fractional-share rules may differ."
+      },
+      {
+        "question": "Are the projected returns guaranteed?",
+        "answer": "No. Growth rates are assumptions. Companies can change or stop dividends, and share prices can fall. This is not investment advice."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/dividend-calculator/index.html",
+    "htmlSha256": "2afc7fc08d41ea986f6fc5f3c44a49151d9fd6c4b739f8ca26eb49a068602829",
+    "payloadSha256": "a7e9ab0d01a5dc1a03ae97616a9380be6bdd4089d3c10290d65a686eebfab21a",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/dividend-calculator.js",
+    "controllerSha256": "ce9e734ed2bf71271d6c612651298758a0348135e7adae5cafa2764c7dc099e8",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

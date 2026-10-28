@@ -1,0 +1,77 @@
+{
+  "toolId": "wilks-calculator",
+  "sourceCopy": {
+    "name": "Wilks & DOTS Powerlifting Calculator",
+    "title": "Wilks & DOTS Powerlifting Calculator Free | UsefulVerse",
+    "description": "Compare Wilks, Wilks-2 and DOTS powerlifting scores from bodyweight and a lift total. Free, private, and calculated in your browser.",
+    "intro": "Enter a lifter bodyweight and a powerlifting total or single-lift result. Select a named scoring model to see a comparable score; each model is shown separately.",
+    "howQuestion": "How is a Wilks or DOTS score calculated?",
+    "howAnswer": "Each model applies its published bodyweight coefficients to the entered bodyweight, then scales the entered lift result by that model’s denominator. The result is only comparable when the same formula, coefficient group, and event type are used.",
+    "privacyQuestion": "Are my numbers uploaded or saved?",
+    "privacyAnswer": "No. The calculation runs in this browser; entered values are not uploaded or saved.",
+    "fields": {
+      "bodyweight": "Lifter bodyweight",
+      "weightUnit": "Weight unit",
+      "kgOption": "Kilograms",
+      "lbOption": "Pounds",
+      "lift": "Total or single-lift result",
+      "coefficientGroup": "Coefficient group",
+      "men": "Men coefficients",
+      "women": "Women coefficients",
+      "formula": "Scoring model",
+      "wilks": "Wilks (classic)",
+      "wilks-2": "Wilks-2 (2020)",
+      "dots": "DOTS",
+      "kg": "kg",
+      "score": "Relative score",
+      "tableCaption": "Powerlifting score estimate",
+      "modelNote": "Comparison estimate only. Not the current official IPF Goodlift score. Compare results using the same model, coefficient group, and event format; rules and model suitability vary.",
+      "sourcesLabel": "Coefficient and model references",
+      "sourceLinkClassic": "Original Wilks coefficient table (European Powerlifting Federation)",
+      "sourceLinkModels": "Wilks-2 and DOTS coefficient document (IPF evaluation report)",
+      "accuracyNote": "Models are not interchangeable and can rank lifters differently. Choose the coefficient group required by the model’s published table; this is a formula setting, not an identity label. For a fair comparison, use results from the same event format (full powerlifting total or the same single lift), units, and model. This is not an official federation result or a prediction of competition placing."
+    },
+    "actions": {
+      "calculate": "Calculate score",
+      "reset": "Clear form",
+      "example": "Load published example",
+      "result": "Score estimate",
+      "copy": "Copy score"
+    },
+    "messages": {
+      "calculated": "Score estimate ready.",
+      "checkInputs": "Check bodyweight, lift result, coefficient group and scoring model.",
+      "copied": "Score copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Published example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between Wilks, Wilks-2 and DOTS?",
+        "answer": "They are separate bodyweight-adjustment models with different published coefficients. Their scores are not interchangeable, and two models can order lifters differently."
+      },
+      {
+        "question": "Is this the official IPF score?",
+        "answer": "No. This calculator displays Wilks, Wilks-2 and DOTS estimates. IPF competitions use the current federation scoring system and its rules; check the organizer’s official results."
+      },
+      {
+        "question": "Can I compare a bench press result with a full powerlifting total?",
+        "answer": "Use the same event format for both athletes. The arithmetic can calculate a score from either input, but comparing a single lift with a three-lift total is not a like-for-like competition comparison."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/wilks-calculator/index.html",
+    "htmlSha256": "962bbd80dd20069b8b69675bb2b737a0d385b3b568ad8a6966760007fff115cc",
+    "payloadSha256": "c8d7e757222dbd19b633d0688562f5911d45537d0bf7e092ab8f44fe1b13a2ab",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/wilks-calculator.js",
+    "controllerSha256": "22e55e4eaa2db9b0e9a1ecfa12fb32f791358e64341369822ed0b71661cb9b3c",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

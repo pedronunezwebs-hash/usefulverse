@@ -1,0 +1,80 @@
+{
+  "toolId": "sleep-debt-calculator",
+  "sourceCopy": {
+    "name": "Sleep Debt Calculator",
+    "title": "Sleep Debt Calculator Free | UsefulVerse",
+    "description": "Estimate sleep shortfalls for 1–14 nights against your own reference, compare nightly hours and optionally save your log on this device.",
+    "intro": "Enter recent sleep hours and choose the nightly reference you want to compare against. See shortfalls and above-reference nights separately; this estimate is not a diagnosis or sleep plan.",
+    "howQuestion": "How is this sleep shortfall estimate calculated?",
+    "howAnswer": "For each night, the calculator compares entered sleep with your chosen reference and adds only nights below that reference. Nights above it are reported separately rather than subtracted from the shortfall. Sleep needs vary, and this arithmetic is not a clinical measure.",
+    "privacyQuestion": "Is my sleep log uploaded?",
+    "privacyAnswer": "No. Calculations run in this browser. The log is saved in this browser on this device only if you check the optional save box; you can clear it here.",
+    "fields": {
+      "sleepInput": "Sleep hours, oldest night first",
+      "sleepHint": "Enter 1–14 nightly durations in hours, separated by semicolons, spaces or new lines. Decimal hours are allowed; for example, 7.5 means 7 hours 30 minutes. Entries are rounded to the nearest minute.",
+      "targetHours": "Your nightly reference (hours)",
+      "targetHint": "Choose your own comparison reference from 3 to 12 hours. The default is only an editable starting value, not a recommendation.",
+      "accuracyNote": "This adds each below-reference gap; it does not model sleep physiology or predict recovery. Nights above the reference are shown separately and do not erase earlier shortfalls. Sleep needs vary by person and context. Seek qualified care for persistent sleep problems; this tool does not diagnose or prescribe.",
+      "saveConsent": "Save this log on this device",
+      "privacyNote": "Optional local save uses this browser only; it is never uploaded. Uncheck to calculate without saving, or clear saved data below.",
+      "summaryShortfall": "Total below-reference time",
+      "summaryAverage": "Average sleep per night",
+      "summaryNightsBelow": "Nights below reference",
+      "summaryAbove": "Time above reference (separate)",
+      "targetReference": "Your reference",
+      "night": "Night",
+      "sleep": "Sleep",
+      "shortfall": "Below reference",
+      "aboveReference": "Above reference",
+      "none": "None",
+      "tableCaption": "Night-by-night sleep comparison",
+      "chartDescription": "Bar chart of entered sleep hours by night and the user-selected reference line"
+    },
+    "actions": {
+      "calculate": "Calculate comparison",
+      "reset": "Clear form",
+      "example": "Load 7-night example",
+      "result": "Your comparison",
+      "copy": "Copy summary",
+      "clearSaved": "Clear saved log"
+    },
+    "messages": {
+      "calculated": "Sleep comparison calculated.",
+      "checkInputs": "Check the nightly hours and your reference.",
+      "copied": "Summary copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded.",
+      "saved": "Log saved on this device.",
+      "saveUnavailable": "This browser could not save local data.",
+      "deleted": "Saved log cleared from this device."
+    },
+    "additionalFaqs": [
+      {
+        "question": "How much sleep debt do seven nights one hour below my reference add?",
+        "answer": "They add seven hours of below-reference time in this calculator. It is a simple arithmetic comparison, not a measure of how the body recovers sleep."
+      },
+      {
+        "question": "Do longer nights cancel earlier shortfalls?",
+        "answer": "No. The tool displays above-reference time separately and does not subtract it from the shortfall total. It does not estimate how much recovery sleep a person needs."
+      },
+      {
+        "question": "Is the default eight-hour reference medical advice?",
+        "answer": "No. The reference is editable and is used only for comparison. Sleep needs vary by person and circumstances; this tool cannot assess health or diagnose a sleep disorder."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/sleep-debt-calculator/index.html",
+    "htmlSha256": "b694915f0129891f7393c79d53fe540ca155a240baa06019b0f91ac40948c0ce",
+    "payloadSha256": "ed2d267882f8104479d465087355da3d6755e052b118b4706a4aadd904c168fa",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/sleep-debt-calculator.js",
+    "controllerSha256": "8b98b6569f81b033e7cf76720056cc00661a0415cf439870a2b3cca9b5130248",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

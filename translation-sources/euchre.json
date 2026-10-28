@@ -1,0 +1,95 @@
+{
+  "toolId": "euchre",
+  "sourceCopy": {
+    "name": "Euchre",
+    "title": "Euchre Card Game Online Free | UsefulVerse",
+    "description": "Play Euchre online against three local bots. Bid, choose trump, follow suit and track the score. Free, no account or upload.",
+    "intro": "Play a full four-seat Euchre match in your browser. You are South; three simple local bots handle the other seats. No account, upload or network opponent.",
+    "howQuestion": "How do you play Euchre here?",
+    "howAnswer": "Pass or order up the turned-up suit in round one. If everyone passes, name a different trump suit in round two. The dealer takes the upcard and discards one card. Play five tricks while following the effective suit; the left bower counts as trump. The first team to 10 points wins.",
+    "privacyQuestion": "Does this Euchre game connect to other players?",
+    "privacyAnswer": "No. The opponents are simple bots running in this browser. Cards and scores are not uploaded or saved by UsefulVerse.",
+    "fields": {
+      "score": "Score",
+      "target": "Points to win",
+      "you": "You (South)",
+      "dealer": "Dealer",
+      "maker": "Trump maker",
+      "trump": "Trump",
+      "upcard": "Upcard",
+      "yourHand": "Your hand",
+      "currentTrick": "Current trick",
+      "tricksWon": "Tricks won this hand",
+      "biddingRound": "Bidding round",
+      "roundOne": "1 — order up the turned-up suit or pass",
+      "roundTwo": "2 — name a different trump suit or pass",
+      "chooseTrump": "Choose trump suit",
+      "clubs": "Clubs",
+      "diamonds": "Diamonds",
+      "hearts": "Hearts",
+      "spades": "Spades",
+      "rules": "Rules and scoring",
+      "accuracyNote": "Standard 24-card North American scoring: a made contract earns 1 point, a march earns 2 and a euchred team gives opponents 2. This version does not offer loner bids or online multiplayer. Bot decisions are deliberately simple.",
+      "rulesText": "Each hand uses 9, 10, Jack, Queen, King and Ace in all four suits. The right bower is the Jack of trump; the left bower is the Jack of the same color and also counts as trump. Players must follow the effective suit led when able. A team that makes trump takes at least three tricks. First to the selected target wins.",
+      "localBot": "Local bot",
+      "playerSouth": "You (South)",
+      "seatNorth": "North",
+      "seatEast": "East",
+      "seatWest": "West"
+    },
+    "actions": {
+      "newGame": "New game",
+      "pass": "Pass",
+      "orderUp": "Order up",
+      "nameTrump": "Name trump",
+      "discard": "Discard selected card",
+      "play": "Play card",
+      "result": "Match result",
+      "rules": "Show rules",
+      "closeRules": "Hide rules"
+    },
+    "messages": {
+      "bidding": "Round {round}: {player} to bid.",
+      "chooseDiscard": "You are the dealer. Choose a card to discard after picking up the upcard.",
+      "chooseCard": "Your turn. Select a legal card to play.",
+      "botTurn": "{player} is thinking.",
+      "cardPlayed": "Card played.",
+      "invalidAction": "That action is not legal in this turn.",
+      "handScored": "Hand complete: {maker} team scored {points} point(s).",
+      "redealt": "Everyone passed twice. A new hand was dealt.",
+      "teamWins": "{team} wins the match with {score} points.",
+      "southTeam": "Your team",
+      "northTeam": "Opponents",
+      "roundLabel": "Round {round}",
+      "noTrump": "No trump chosen yet."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the left bower in Euchre?",
+        "answer": "It is the Jack of the same color as trump. It moves into the trump suit for both ranking and following suit, and ranks just below the right bower."
+      },
+      {
+        "question": "How does Euchre scoring work in this game?",
+        "answer": "The makers earn one point for taking three or four tricks, two for all five, and the defenders earn two if the makers take fewer than three. The selected target is 5, 7 or 10 points."
+      },
+      {
+        "question": "Can I play Euchre with people online here?",
+        "answer": "No. This version is a local single-player game against three simple bots; it has no online matchmaking or multiplayer connection."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/euchre/index.html",
+    "htmlSha256": "5823d457db6f45adde85b0f6e513a4ba8916292a0c540f08d03834b1915d6b74",
+    "payloadSha256": "7962a72c887ff6ef7cccf2e99a75c63a474a62c87d16edee686fa1d83ce603ec",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/euchre.js",
+    "controllerSha256": "91a1ca3101d330822d9ef559a32dd42b4e2b091c00ea7b1e57e9b48ab6a24221",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

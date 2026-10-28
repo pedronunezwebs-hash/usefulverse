@@ -1,0 +1,94 @@
+{
+  "toolId": "effect-size-calculator",
+  "sourceCopy": {
+    "name": "Effect Size Calculator",
+    "title": "Effect Size Calculator Free | UsefulVerse",
+    "description": "Calculate Cohen’s d and Hedges’ g from two independent groups’ means, standard deviations and sample sizes. Free and local.",
+    "intro": "Enter summary statistics for two independent groups to calculate their signed standardized mean difference, pooled standard deviation and small-sample corrected Hedges’ g.",
+    "howQuestion": "What does an effect size calculator measure?",
+    "howAnswer": "It expresses the difference between two group means in pooled standard-deviation units. Cohen’s d is the uncorrected standardized difference; Hedges’ g applies a small-sample correction.",
+    "privacyQuestion": "Are my study statistics uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Your summary statistics are not sent to a server or saved by this tool.",
+    "howTo": [
+      "Enter each group’s mean, sample standard deviation and sample size.",
+      "Select Calculate to see the signed Cohen’s d and Hedges’ g.",
+      "Review the pooled-SD assumption and copy the results if useful."
+    ],
+    "example": {
+      "label": "Load example: means 105 and 100, SD 10, n 25 each"
+    },
+    "actions": {
+      "calculate": "Calculate effect size",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Effect size results"
+    },
+    "fields": {
+      "group1": "Group 1",
+      "group2": "Group 2",
+      "mean1": "Mean",
+      "sd1": "Sample standard deviation",
+      "n1": "Sample size",
+      "mean2": "Mean",
+      "sd2": "Sample standard deviation",
+      "n2": "Sample size",
+      "meanDifference": "Mean difference (group 1 − group 2)",
+      "pooledSd": "Pooled standard deviation",
+      "degreesOfFreedom": "Degrees of freedom",
+      "cohensD": "Cohen’s d",
+      "hedgesG": "Hedges’ g",
+      "correctionJ": "Small-sample correction J",
+      "direction": "Direction",
+      "equal": "Group means are equal",
+      "group1-higher": "Group 1 mean is higher",
+      "group2-higher": "Group 2 mean is higher",
+      "designNote": "For independent groups, this version uses the conventional pooled-SD definition and assumes a shared population variance. Enter sample (n−1) standard deviations, not standard errors.",
+      "accuracyNote": "Each sample size must be 2–1,000,000; means and SDs are limited to ±1,000,000,000 (SDs cannot be negative). At least one SD must be above zero.",
+      "formulaNote": "d = (mean₁ − mean₂) / pooled SD. Hedges’ g = J(df) × d, with df = n₁ + n₂ − 2. The sign depends on group order. A magnitude is not automatically “small”, “medium” or “large”; interpret it in the subject area and study design."
+    },
+    "messages": {
+      "calculated": "Effect size calculated.",
+      "checkInputs": "Check the group summary values.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "inputRange": "Enter finite values within the supported range.",
+      "sampleSize": "Sample sizes must be whole numbers from 2 to 1,000,000.",
+      "zeroVariance": "At least one group must have non-zero standard deviation.",
+      "resultRange": "The result exceeds the supported numeric range."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between Cohen’s d and Hedges’ g?",
+        "answer": "Both standardize the mean difference by a pooled standard deviation. Hedges’ g multiplies d by a small-sample correction, which reduces bias when samples are small."
+      },
+      {
+        "question": "Can I enter standard errors instead of standard deviations?",
+        "answer": "No. This calculator expects each group’s sample standard deviation. A standard error describes uncertainty in a sample estimate and is not interchangeable with the SD here."
+      },
+      {
+        "question": "Does a larger effect size prove that a result is important?",
+        "answer": "No. Effect size describes a standardized difference, not statistical significance, causation or practical importance. Context, uncertainty, study design and the measurement scale matter."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/effect-size-calculator/index.html",
+    "htmlSha256": "b0f8bbb71ed92aa188f007184dd603d6f7cf91a8b65c9acbc3df2e5f261db7ec",
+    "payloadSha256": "7fcb4ae0b7454d91a034d3277bbcfd05d20e8338a3cc18c509ab1ec06cac136c",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/effect-size-calculator.js",
+    "controllerSha256": "0c8b5e939738b8ee190b21f552123e7a3f6fd92f352c8ae0154e62f53cd0ad07",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

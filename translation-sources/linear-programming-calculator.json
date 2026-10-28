@@ -1,0 +1,99 @@
+{
+  "toolId": "linear-programming-calculator",
+  "sourceCopy": {
+    "name": "Linear Programming Calculator",
+    "title": "Linear Programming Calculator Free | UsefulVerse",
+    "description": "Solve 2-variable linear programs with the simplex method. Find max or min, feasible status and pivot steps. Free, local and no sign-up.",
+    "intro": "Enter a linear objective and up to eight constraints to solve a two-variable linear program with x and y nonnegative. The two-phase simplex method reports an optimum, infeasibility or unboundedness and shows each pivot.",
+    "howQuestion": "How does the two-variable simplex calculator work?",
+    "howAnswer": "It converts constraints into a feasible tableau, uses a Phase I objective when needed, then applies primal simplex pivots to optimize the requested objective. Variables x and y are constrained to be nonnegative.",
+    "privacyQuestion": "Are my objective and constraints uploaded?",
+    "privacyAnswer": "No. The solver runs in this browser. Your objective and constraints are not sent to a server or saved by this tool.",
+    "howTo": [
+      "Choose whether to maximize or minimize, then enter the coefficients of x and y in the objective.",
+      "Enter one constraint per line as a,b <= rhs, a,b >= rhs or a,b = rhs. Variables are nonnegative.",
+      "Solve and review the status, objective value, solution point, active constraints and simplex pivot steps."
+    ],
+    "example": {
+      "label": "Load example: maximize x + y with x + y ≤ 5"
+    },
+    "actions": {
+      "calculate": "Solve linear program",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Linear program results"
+    },
+    "fields": {
+      "direction": "Objective direction",
+      "maximize": "Maximize",
+      "minimize": "Minimize",
+      "objective": "Objective coefficients (x, y)",
+      "objectiveX": "Coefficient of x",
+      "objectiveY": "Coefficient of y",
+      "constraints": "Constraints",
+      "constraintsHint": "One per line: a,b <= rhs, a,b >= rhs or a,b = rhs",
+      "status": "Solver status",
+      "optimum": "Optimal objective value",
+      "solutionX": "Optimal x",
+      "solutionY": "Optimal y",
+      "activeConstraints": "Active constraints",
+      "none": "None",
+      "pivotCount": "Simplex pivots",
+      "pivotSteps": "Pivot steps",
+      "pivotStep": "entering",
+      "leaving": "leaving",
+      "method": "Method",
+      "accuracyNote": "Uses at most eight constraints and coefficients/right-hand sides within ±1,000,000. Both decision variables have x ≥ 0 and y ≥ 0. Use a comma between x and y coefficients; enter one inequality or equality per line.",
+      "designNote": "A two-phase primal simplex solver for two variables. Numerical tolerance is used for floating-point pivots; near-degenerate problems can be sensitive to rounding. Infeasible, unbounded and iteration-limit cases are reported instead of an invented optimum.",
+      "formulaNote": "The result is only for the mathematical model you entered. It does not validate whether the objective, constraints, units or assumptions are appropriate for a real decision."
+    },
+    "messages": {
+      "calculated": "Linear program solved.",
+      "checkInputs": "Check the objective and constraint lines.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "constraintFormat": "Use each line as a,b <= rhs, a,b >= rhs or a,b = rhs.",
+      "constraintCount": "Enter from 1 to 8 constraints.",
+      "inputRange": "Use finite objective and constraint numbers within the stated limits.",
+      "direction": "Choose maximize or minimize.",
+      "resultRange": "The solution is outside the supported numeric range.",
+      "infeasible": "No feasible point satisfies all constraints.",
+      "unbounded": "The objective can improve without a finite bound.",
+      "iteration-limit": "The solver reached its pivot limit before proving an optimum."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What format should I use for constraints?",
+        "answer": "Enter one row per line, such as 1,1 <= 5 or 2,1 >= 4. The first number multiplies x, the second multiplies y, and both variables must be nonnegative."
+      },
+      {
+        "question": "What do infeasible and unbounded mean?",
+        "answer": "Infeasible means no point satisfies every entered constraint. Unbounded means a feasible direction lets the requested objective keep improving without a finite optimum."
+      },
+      {
+        "question": "Does the result prove my real-world model is correct?",
+        "answer": "No. It solves only the equations you entered. Check units, assumptions and whether the constraints properly describe your decision."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/linear-programming-calculator/index.html",
+    "htmlSha256": "6bc5ccf4090f1b1f47cd1097fce550e000fba64b48313a1560968f11f1008b5a",
+    "payloadSha256": "b2e2cffb854242f221e987286d6392fb24d3d28e04b2e7a317ed78328c3ecb76",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/linear-programming-calculator.js",
+    "controllerSha256": "52dc02619db1650c9e199fcb4a81ed6791394a84a6155394b8fa538547b77731",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

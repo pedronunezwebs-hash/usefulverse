@@ -1,0 +1,93 @@
+{
+  "toolId": "memory-test",
+  "sourceCopy": {
+    "name": "Memory Test",
+    "title": "Memory Test Online Free | UsefulVerse",
+    "description": "Try a free memory test with digit-span and visual sequence rounds. Difficulty grows after correct answers; no account or IQ claims.",
+    "intro": "Practice remembering a growing sequence of digits or positions on a 3×3 grid. Each correct round adds one item.",
+    "howQuestion": "How does this memory test work?",
+    "howAnswer": "Choose digits or a visual grid and a display speed. Watch or listen to the sequence once, then enter it in the same order. Correct rounds get longer, up to 12 items. This is a casual practice game, not a standardized memory assessment.",
+    "privacyQuestion": "Does this memory test save my score?",
+    "privacyAnswer": "No. The sequence and score stay in this page while it is open. Nothing is uploaded, and there is no account or online ranking.",
+    "howTo": [
+      "Choose digit span or visual pattern and set a comfortable display speed.",
+      "Start a round and watch the sequence. In digit mode, each digit is also announced to assist screen-reader users.",
+      "Enter every item in order and submit. Correct answers increase the sequence length by one; one wrong answer ends the run."
+    ],
+    "example": {
+      "label": "Start a memory test"
+    },
+    "actions": {
+      "start": "Start round",
+      "submit": "Check sequence",
+      "backspace": "Remove last",
+      "clearAnswer": "Clear answer",
+      "nextRound": "Continue",
+      "newTest": "New test",
+      "result": "Test result"
+    },
+    "fields": {
+      "mode": "Practice mode",
+      "digitsMode": "Digit span",
+      "patternMode": "Visual pattern",
+      "speed": "Display speed",
+      "slow": "Slow",
+      "standard": "Standard",
+      "fast": "Fast",
+      "level": "Next sequence length: {length}",
+      "rounds": "Correct rounds: {rounds}",
+      "display": "Sequence item",
+      "answer": "Your answer",
+      "digitPad": "Digit buttons",
+      "patternGrid": "Pattern positions",
+      "cell": "Cell {position}",
+      "accessibilityNote": "For screen readers, choose Digit span: each digit is announced once during playback. The visual pattern mode depends on sight.",
+      "scopeNote": "Practice only. This is not an IQ test, diagnosis or validated cognitive assessment. Results have no clinical or population meaning.",
+      "correctSequence": "Sequence shown",
+      "emptyAnswer": "No items entered yet.",
+      "readyTip": "Choose a mode and speed, then start."
+    },
+    "messages": {
+      "ready": "Ready when you are.",
+      "showing": "Remember the sequence.",
+      "recall": "Now enter the sequence in the same order.",
+      "correct": "Correct. You completed {rounds} rounds. Continue when ready.",
+      "incorrect": "Not quite. The correct sequence was {sequence}. You completed {rounds} rounds.",
+      "finished": "Maximum sequence length reached. You completed {rounds} rounds.",
+      "answerComplete": "Enter {length} items before checking.",
+      "cancelled": "Round stopped. Start a new test when ready."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does this memory test measure?",
+        "answer": "It is a casual sequence-recall practice game. It is not standardized and cannot diagnose a condition or measure IQ."
+      },
+      {
+        "question": "How do digit span and pattern mode differ?",
+        "answer": "Digit span shows digits one at a time and announces them for screen-reader access. Pattern mode flashes positions on a 3×3 grid and requires sight."
+      },
+      {
+        "question": "Are scores saved or compared with other people?",
+        "answer": "No. Scores exist only while this page remains open. There is no leaderboard, account or server upload."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/memory-test/index.html",
+    "htmlSha256": "23527f39fb0cdc0a01c4924054dcd976c3618e565bbf56ab2893102e252cf0e6",
+    "payloadSha256": "d83f093b560ff7e64bdbd7b78ab5dd7f9b46c9da67d46ad4fdb709d5745bd8b2",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/memory-test.controller.js",
+    "controllerSha256": "9d761dcc9531eaa0ce7c197e1edc5082fc8afadfb605c4b85ec3147304409c1a",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

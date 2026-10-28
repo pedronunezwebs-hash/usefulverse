@@ -1,0 +1,62 @@
+{
+  "toolId": "cpm-calculator",
+  "sourceCopy": {
+    "name": "CPM calculator",
+    "title": "CPM Calculator Free Unlimited | UsefulVerse",
+    "description": "Calculate CPM, ad spend or impressions from two values. Free, unlimited and local to your browser.",
+    "intro": "CPM means cost per thousand ad impressions. Enter two values to estimate the third; change them to compare simple campaign scenarios.",
+    "howQuestion": "How do I calculate CPM?",
+    "howAnswer": "Divide the ad spend by the number of impressions, then multiply by 1,000. For example, $10 over 1,000 impressions gives a CPM of $10. The currency is whatever you used for spend.",
+    "privacyQuestion": "Are my campaign values uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Your spend, CPM and impression values are not sent to a server.",
+    "additionalFaqs": [
+      {
+        "question": "Can I calculate spend or impressions instead?",
+        "answer": "Yes. Choose the value to find, then enter the other two. Spend equals impressions divided by 1,000 times CPM. Impressions equal spend divided by CPM times 1,000."
+      },
+      {
+        "question": "Does CPM predict clicks or campaign results?",
+        "answer": "No. CPM is cost per thousand ad impressions. It does not tell you clicks, unique people, viewability, conversions or the results an advertising platform will deliver."
+      }
+    ],
+    "fields": {
+      "mode": "What do you want to find?",
+      "findCpm": "CPM",
+      "findSpend": "Ad spend",
+      "findImpressions": "Impressions",
+      "spend": "Ad spend (use one currency)",
+      "impressions": "Impressions",
+      "cpm": "CPM in that currency",
+      "accuracyNote": "Estimate only. CPM does not include platform fees or guarantee delivered impressions.",
+      "formula": "Formula",
+      "resultSummary": "Estimated campaign values"
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Campaign estimate"
+    },
+    "messages": {
+      "calculated": "Estimate calculated.",
+      "checkInputs": "Check the two values and make sure they are within the supported range.",
+      "exampleLoaded": "Example loaded: 10 spend for 1,000 impressions.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/cpm-calculator/index.html",
+    "htmlSha256": "f5b80805cec538d457d65c368077805abcc99dde9a1cecdd5ec76e234f38a0b5",
+    "payloadSha256": "76d39ff3947dcce6196403e4ff46bae8af82f967b938d3f79f5e161137cc5ad8",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/cpm-calculator.js",
+    "controllerSha256": "8104dcdb6128c71c96f59610ee9022fa477184ad504fcfe4e8bcc2f999bf99b9",
+    "discardedMetadata": [
+      "copyLanguage"
+    ]
+  }
+}

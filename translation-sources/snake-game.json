@@ -1,0 +1,81 @@
+{
+  "toolId": "snake-game",
+  "sourceCopy": {
+    "name": "Snake Game",
+    "title": "Snake Game Online Free | UsefulVerse",
+    "description": "Play a free snake game with keyboard or touch controls, pause, three speeds and a fresh board each round. No account or download.",
+    "category": "Games & practice",
+    "intro": "Guide the snake to food, grow longer and avoid the walls and your own tail. Play with arrow keys, WASD or the on-screen controls.",
+    "summary": "A simple browser snake game with pause, three speed settings, touch controls, score and new randomized food positions each round.",
+    "howQuestion": "How do you play the snake game?",
+    "howAnswer": "Start the round, steer toward the food using arrow keys, WASD or the touch buttons, and avoid the walls and your body. Pause any time. Eating food grows the snake and adds one point.",
+    "privacyQuestion": "Does the snake game save my score or use an account?",
+    "privacyAnswer": "No account or download is needed. Your current score and session best stay in memory in this tab only; they are not uploaded or saved after you leave.",
+    "fields": {
+      "boardLabel": "Snake game board",
+      "instructions": "Use arrow keys, W A S D, or the direction buttons. Avoid the wall and your own body. Pause to stop the game clock.",
+      "score": "Score",
+      "best": "Best this session",
+      "speed": "Game speed",
+      "slow": "Relaxed",
+      "normal": "Classic",
+      "fast": "Fast",
+      "up": "Move up",
+      "right": "Move right",
+      "down": "Move down",
+      "left": "Move left",
+      "canvasLabel": "Snake game board. The score and game status are shown in text below.",
+      "startHint": "Choose Start to begin.",
+      "highScoreNote": "The best score lasts only while this tab is open; no score is stored or sent."
+    },
+    "actions": {
+      "start": "Start game",
+      "pause": "Pause",
+      "resume": "Resume",
+      "newGame": "New game",
+      "up": "Move up",
+      "right": "Move right",
+      "down": "Move down",
+      "left": "Move left"
+    },
+    "messages": {
+      "ready": "Ready when you are.",
+      "started": "Game started. Guide the snake to the food.",
+      "paused": "Game paused.",
+      "resumed": "Game resumed.",
+      "score": "Score {score}.",
+      "gameOver": "Game over. Final score: {score}.",
+      "won": "Board cleared! Final score: {score}.",
+      "newGame": "A new board is ready.",
+      "best": "New session best: {score}."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I play on a phone or tablet?",
+        "answer": "Yes. Use the on-screen direction buttons. A keyboard with arrow keys or WASD also works on a computer."
+      },
+      {
+        "question": "Can I pause the game?",
+        "answer": "Yes. Select Pause at any time; the snake stops moving until you resume."
+      },
+      {
+        "question": "Will I get the same game every time?",
+        "answer": "The board layout stays familiar, but the food position is randomized for each new round. The current and best session scores are not saved after you leave."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/snake-game/index.html",
+    "htmlSha256": "1565440d9b29e37b5c70c520927f3435fe59471dae2c2c882eae94be2fe4a0bc",
+    "payloadSha256": "7437743febe2f225306a2937542ae21d3a1ae37fde25538196752413251b48b7",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/snake-game.js",
+    "controllerSha256": "456ad45ce0e0dad139a7722b6c6ee54589d156486afd8a278f0cd8ac77604786",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

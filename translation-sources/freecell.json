@@ -1,0 +1,94 @@
+{
+  "toolId": "freecell",
+  "sourceCopy": {
+    "name": "FreeCell",
+    "title": "FreeCell Solitaire Online Free | UsefulVerse",
+    "description": "Play FreeCell online with legal supermoves, hints, undo and replayable deals. Free in your browser, no account or download.",
+    "category": "Games & practice",
+    "intro": "Move all 52 cards to their suit foundations. Use four free cells as temporary space, build descending alternating-color columns, and plan each supermove around the open cells and columns.",
+    "summary": "Play a full FreeCell solitaire game with four free cells, eight tableau columns, suit foundations, rule-based supermoves, undo, hints and optional replay seeds.",
+    "howQuestion": "How do you play FreeCell?",
+    "howAnswer": "Build each foundation from Ace to King in one suit. On the tableau, build downward in alternating colors. A free cell can hold one card. You may move a valid descending alternating-color run as a supermove only when the available empty cells and helper columns can support it.",
+    "privacyQuestion": "Does FreeCell save my game?",
+    "privacyAnswer": "No. The game runs in this browser tab. It does not use an account, upload moves or save a game automatically. A replay seed is optional and stays only in this page.",
+    "fields": {
+      "seed": "Optional replay seed",
+      "seedHint": "Leave blank for a fresh random deal. Use the same seed to recreate the same deal; it stays only in this page.",
+      "board": "FreeCell game board",
+      "freeCells": "Free cells",
+      "foundations": "Suit foundations",
+      "column": "Column",
+      "emptyCell": "Empty free cell",
+      "emptyFoundation": "Empty foundation",
+      "emptyColumn": "Empty tableau column",
+      "selectCard": "Select this card and the valid run below it.",
+      "dropHere": "Select this column as the move destination.",
+      "foundationFor": "Move the selected card to the {suit} foundation.",
+      "ace": "Ace",
+      "jack": "Jack",
+      "queen": "Queen",
+      "king": "King",
+      "spades": "Spades",
+      "hearts": "Hearts",
+      "clubs": "Clubs",
+      "diamonds": "Diamonds",
+      "moves": "Moves",
+      "capacity": "Current supermove capacity",
+      "capacityValue": "You can move up to {count} cards in one supermove with the current empty spaces.",
+      "note": "Tableau cards build downward in alternating colors. A selected run must already alternate colors and descend by one rank. A supermove is limited by the currently empty free cells and helper columns.",
+      "foundationNote": "Foundations build up from Ace to King in the same suit. Only the top card of a column or a card in a free cell can be moved.",
+      "emptySelection": "Select an exposed card, then choose a free cell, foundation, or legal tableau destination.",
+      "selected": "Selected {count} card(s) from column {column}. Choose a legal destination.",
+      "hintText": "Move {count} card(s) from column {from} to column {to}.",
+      "noGame": "Start a new deal to play."
+    },
+    "actions": {
+      "newDeal": "New shuffled deal",
+      "undo": "Undo",
+      "hint": "Hint",
+      "cancelSelection": "Clear selection"
+    },
+    "messages": {
+      "ready": "A shuffled FreeCell deal is ready.",
+      "selected": "Card selection is ready. Choose a legal destination.",
+      "moved": "Move made.",
+      "invalidMove": "That move is not legal. Check the rank, color and available supermove space.",
+      "undone": "Previous move restored.",
+      "nothingToUndo": "There is no move to undo.",
+      "hint": "Try moving {count} card(s) from column {from} to column {to}.",
+      "foundationHint": "Move the available {suit} card to its foundation.",
+      "noHint": "No simple legal move was found. You can still inspect the board or start a new deal.",
+      "newDeal": "A new shuffled FreeCell deal is ready.",
+      "seedError": "Use a replay seed from 1 to 48 characters, or leave it blank.",
+      "won": "All four foundations are complete. You win!"
+    },
+    "additionalFaqs": [
+      {
+        "question": "How many cards can a FreeCell supermove move?",
+        "answer": "The upper limit is (empty free cells + 1) multiplied by 2 to the power of the empty helper columns. The destination column is not counted as a helper when it is empty. The run must also be descending and alternate red and black."
+      },
+      {
+        "question": "Can I move a sequence directly in FreeCell?",
+        "answer": "Yes, if the cards already form a descending alternating-color run and its size does not exceed the capacity provided by the empty free cells and helper columns. The game enforces this limit."
+      },
+      {
+        "question": "Are FreeCell deals replayable?",
+        "answer": "Yes. Enter the same optional seed and choose a new deal to recreate its layout in this browser. Leave the seed blank for a random shuffle. No seed or game is sent to a server."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/freecell/index.html",
+    "htmlSha256": "e2b2cc975b36fd962afcdaca22002b7cfaa9298d8e758cdb35503b02cb7a5899",
+    "payloadSha256": "a7d256126ba4822e6496943b5a4191e8c447eddf1707fad512c29bf5cc7c7f5c",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/freecell.js",
+    "controllerSha256": "082cd2e8117220c05cde231f833f5e31d17c3041e5c3851e5aa34591d5ccfc7e",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

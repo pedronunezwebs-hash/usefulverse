@@ -1,0 +1,63 @@
+{
+  "toolId": "epub-to-pdf",
+  "sourceCopy": {
+    "name": "EPUB to PDF Converter",
+    "title": "EPUB to PDF Converter Free | UsefulVerse",
+    "description": "Convert an EPUB ebook to a clean, printable PDF locally. Free, no account; save as PDF from your browser’s print dialog.",
+    "intro": "Open a DRM-free EPUB on this device, then use your browser’s print dialog to save a text-first PDF. Chapter order follows the book. Original layout, images and embedded fonts are not preserved.",
+    "howQuestion": "How do I save an EPUB as a PDF?",
+    "howAnswer": "Choose a DRM-free EPUB up to 25 MB. After the book is read locally, select Prepare PDF. In the print dialog choose Save as PDF, then choose a destination on your device.",
+    "privacyQuestion": "Is my EPUB uploaded?",
+    "privacyAnswer": "No. The file is read in this browser and is not sent to UsefulVerse. Your browser opens a local print document that you can save as PDF.",
+    "fields": {
+      "file": "Choose an EPUB file",
+      "maxSize": "Maximum file size: 25 MB. Expanded book content is limited to protect browser memory.",
+      "author": "Author",
+      "chapter": "Chapter",
+      "previewTitle": "Print preview",
+      "accuracyNote": "Text-first conversion: chapter order and readable text are kept. Original page design, pictures, tables, footnotes, embedded fonts and interactive content may not be preserved. DRM-protected or malformed EPUB files are not supported. Large books may use significant memory; a computer is recommended."
+    },
+    "actions": {
+      "choose": "Choose EPUB",
+      "print": "Prepare PDF",
+      "clear": "Remove book",
+      "result": "Ready to print"
+    },
+    "messages": {
+      "fileTooLarge": "Choose an EPUB no larger than 25 MB.",
+      "reading": "Reading the book on this device…",
+      "ready": "Book ready. Prepare the printable PDF when you are ready.",
+      "chapterCount": "{count} chapters in reading order.",
+      "invalid": "This EPUB could not be read. It may be DRM-protected, damaged or unsupported.",
+      "chooseFile": "Choose a readable EPUB first.",
+      "popupBlocked": "Your browser blocked the print window. Allow a new window for this action and try again.",
+      "printNote": "Use the print dialog and select Save as PDF. This is a text-first version; the original EPUB layout and images may be omitted.",
+      "printOpened": "Print document opened in a new tab. Choose Save as PDF in the browser dialog.",
+      "cleared": "Book removed from this page."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Will the PDF look exactly like the EPUB?",
+        "answer": "No. This creates a clean, text-first printable copy in chapter order. Original styling, images, tables, footnotes and embedded fonts may be omitted."
+      },
+      {
+        "question": "Can it convert a DRM-protected book?",
+        "answer": "No. DRM removal is not supported. Use only books you are allowed to convert. The browser print dialog opens; choose Save as PDF and pick where to save it."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/epub-to-pdf/index.html",
+    "htmlSha256": "f7327e9a6014743ceabf09e883ec53c43cc878964f8b12f5bc0bd52897c82577",
+    "payloadSha256": "87cf3eb9b7f0e5234604e554747566e694a998c175e4f4318529f8a8050ee166",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/epub-to-pdf.js",
+    "controllerSha256": "dbfefac16e9ffefef71a43c0bec22c8dca3168c7e4a4e64617071fa565e385bd",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

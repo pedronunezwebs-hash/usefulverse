@@ -1,0 +1,65 @@
+{
+  "toolId": "pdf-flattener",
+  "sourceCopy": {
+    "name": "PDF Form Flattener",
+    "title": "PDF Form Flattener Free | Keep Page Text | UsefulVerse",
+    "description": "Flatten supported PDF form fields into a new local copy. Page text remains searchable; form fields become non-interactive.",
+    "intro": "Make a separate PDF copy with supported AcroForm fields flattened into their visible page appearance. Text on the page remains selectable and searchable.",
+    "howQuestion": "What does flattening a PDF form do?",
+    "howAnswer": "It draws supported interactive form-field appearances into the page content and removes those interactive fields from the new copy. This does not flatten general comments, links, stamps or other markup annotations.",
+    "privacyQuestion": "Is my PDF uploaded?",
+    "privacyAnswer": "No. Processing runs in this browser. Your selected PDF is not sent to a server or automatically saved.",
+    "fields": {
+      "pdfFile": "Choose a PDF with filled form fields",
+      "warning": "Flattening removes form interactivity in the new copy. Keep your original. Existing digital signatures may be invalidated or removed; this is not a signature validation tool.",
+      "limits": "Local limits: 25 MiB input, 300 pages, 2,500 fields and 50 MiB output. Complex, encrypted or XFA forms may not be supported. A computer is recommended for large files.",
+      "scope": "Only supported AcroForm fields are flattened. Other comments, highlights, links, stamps, metadata and accessibility structure are not flattened or guaranteed to remain unchanged.",
+      "sourceNote": "Uses the open-source pdf-lib library in this browser. The original file is never modified."
+    },
+    "actions": {
+      "choose": "Choose PDF",
+      "flatten": "Flatten form fields",
+      "reset": "Reset",
+      "download": "Download flattened copy",
+      "result": "Your new copy is ready"
+    },
+    "messages": {
+      "fileReady": "PDF selected",
+      "noFile": "Choose a PDF first.",
+      "tooLarge": "This PDF is larger than the 25 MiB local limit.",
+      "noFields": "No supported interactive form fields were found.",
+      "unsupported": "This PDF form type is not supported.",
+      "tooManyPages": "This PDF has more than 300 pages or no pages.",
+      "working": "Flattening a new copy on this device…",
+      "success": "New copy ready: {pages} pages and {fields} form fields flattened. Your original was not changed.",
+      "flattenFailed": "Could not flatten this PDF. The original was not changed."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I still edit the fields in the flattened copy?",
+        "answer": "No. Supported fields become part of the page appearance and are no longer interactive. Keep the original if you may need to edit it later."
+      },
+      {
+        "question": "Does this flatten comments, highlights or digital signatures?",
+        "answer": "No. This tool targets supported AcroForm fields only. Other markup annotations are not flattened, and digital signatures may be invalidated or removed by editing. Do not use this for certified or legally signed documents."
+      },
+      {
+        "question": "Will the page text remain searchable?",
+        "answer": "The page content is not converted to an image, so existing page text remains searchable. Form-field appearances are flattened into page content."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/pdf-flattener/index.html",
+    "htmlSha256": "1877524782c1cb9875137b1ac0e296f02d04653a92deabeab1baeda9b12e985f",
+    "payloadSha256": "cae525a13ddd645e938b2fc1849a5885336286814a2609010dafce3a6bc2d61b",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/pdf-flattener.js",
+    "controllerSha256": "7661e5bb76e59f2e48480c5464f44c0d78e576d25d615f9cfdbe867542b38d01",
+    "discardedMetadata": [
+      "copyLanguage"
+    ]
+  }
+}

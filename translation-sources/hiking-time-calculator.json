@@ -1,0 +1,82 @@
+{
+  "toolId": "hiking-time-calculator",
+  "sourceCopy": {
+    "name": "Hiking Time Calculator",
+    "title": "Hiking Time Calculator Free | UsefulVerse",
+    "description": "Estimate hiking hours from total route distance, uphill gain, a Naismith baseline or your own pace, and planned breaks.",
+    "intro": "Enter the total route distance and cumulative uphill gain. Compare a simple Naismith-style baseline with a pace you choose, then add planned rest breaks.",
+    "howQuestion": "How does this hiking time estimate work?",
+    "howAnswer": "Moving time is total distance divided by your chosen pace. The Naismith-style baseline uses 5 km/h plus 10 minutes per 100 m of cumulative ascent. Custom mode uses your entered pace and climb allowance. Planned breaks are added separately.",
+    "privacyQuestion": "Is my route uploaded or saved?",
+    "privacyAnswer": "No. The estimate runs in this browser and your route inputs are not uploaded or saved.",
+    "fields": {
+      "distance": "Total route distance",
+      "distanceUnit": "Distance unit",
+      "kilometers": "Kilometers",
+      "miles": "Miles",
+      "ascent": "Cumulative uphill gain",
+      "ascentUnit": "Elevation unit",
+      "meters": "Meters",
+      "feet": "Feet",
+      "method": "Estimate method",
+      "naismith": "Naismith-style baseline",
+      "custom": "Custom pace",
+      "pace": "Walking pace",
+      "paceUnit": "Pace unit",
+      "kmh": "Kilometers per hour",
+      "mph": "Miles per hour",
+      "climbRate": "Added minutes per 100 m of ascent",
+      "breakRate": "Planned break minutes per hiking hour",
+      "breakHint": "Breaks are estimated from moving time and shown separately; add only the rest you plan to take.",
+      "accuracyNote": "A planning estimate, not a route-specific prediction. It does not model descent, terrain, surface, weather, navigation stops, fitness, load, altitude, or trail conditions. The total distance should cover the whole outing; uphill gain means cumulative ascent, not net elevation change. Add a personal safety margin and check local trail conditions.",
+      "movingTime": "Moving time",
+      "climbTime": "Ascent allowance",
+      "breakTime": "Planned breaks",
+      "totalTime": "Estimated total time",
+      "hours": "h",
+      "tableCaption": "Hiking time components"
+    },
+    "actions": {
+      "calculate": "Estimate hiking time",
+      "reset": "Clear form",
+      "example": "Load example",
+      "result": "Your estimate",
+      "copy": "Copy estimate"
+    },
+    "messages": {
+      "calculated": "Hiking time estimate ready.",
+      "checkInputs": "Check the route distance, uphill gain, pace and break allowance.",
+      "copied": "Estimate copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What pace does the Naismith-style baseline use?",
+        "answer": "It uses 5 km/h for distance plus 10 minutes for every 100 m of cumulative uphill ascent. This traditional rule is only a simple baseline, not a guarantee for a particular trail or hiker."
+      },
+      {
+        "question": "Does the estimate include downhill terrain and trail difficulty?",
+        "answer": "No. It accounts for distance, cumulative ascent, the selected pace and planned breaks. It does not model descent, rough surfaces, technical terrain, weather, stops, fitness, altitude or trail conditions."
+      },
+      {
+        "question": "Should I enter one-way distance or the full outing?",
+        "answer": "Enter the total distance for the entire outing. For an out-and-back hike, include both directions in the distance and enter cumulative uphill gain for the full planned outing."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/hiking-time-calculator/index.html",
+    "htmlSha256": "0603cff8264b09e97992c3a8fe6d672384ab871b6d39d428fc129b6dc04ce92c",
+    "payloadSha256": "d7a7e87881a7282500dbbfba52f6a30f1b9d6d6fbd9f7249f37c0fc81bdd8c32",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/hiking-time-calculator.js",
+    "controllerSha256": "2ba2b2fba503d6c65bd18582a63ab94692f10cdb4281a2eb4ad40eaaeaac2031",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

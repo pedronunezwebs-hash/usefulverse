@@ -1,0 +1,98 @@
+{
+  "toolId": "stock-profit-calculator",
+  "sourceCopy": {
+    "name": "Stock Profit Calculator",
+    "title": "Stock Profit Calculator Free & Unlimited | UsefulVerse",
+    "description": "Estimate stock sale profit after fees with FIFO or average cost, multiple buy lots and break-even price. Free, unlimited and private in your browser.",
+    "intro": "Estimate the realized gain or loss on one stock sale using your purchase lots, sale price and transaction fees.",
+    "howQuestion": "How do I calculate profit on a stock sale?",
+    "howAnswer": "Add the shares you bought as separate lots, enter the amount sold and sale price, and include any buy or sell fees. Choose weighted-average cost or FIFO to allocate the purchase basis. The result is an estimate before tax, not a broker statement or tax calculation.",
+    "privacyQuestion": "Are my stock details uploaded?",
+    "privacyAnswer": "No. The calculation runs locally in this browser. Your prices, share amounts and fees are not sent to a processing service.",
+    "howTo": [
+      "Enter each purchase lot, including its quantity, price and fee.",
+      "Enter shares sold, sale price, sale fee, currency code and cost-basis method.",
+      "Calculate and review realized profit, allocated basis, remaining shares and break-even price."
+    ],
+    "example": {
+      "label": "Load 10 shares bought at 20 and sold at 30"
+    },
+    "actions": {
+      "calculate": "Calculate profit",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Estimated sale results"
+    },
+    "fields": {
+      "lotCount": "Number of purchase lots",
+      "purchaseLot": "Purchase lot",
+      "quantity": "Shares bought",
+      "purchasePrice": "Purchase price per share",
+      "purchaseFee": "Buy fee for this lot",
+      "saleMethod": "Cost-basis method",
+      "averageCost": "Weighted-average cost",
+      "fifo": "FIFO (oldest shares first)",
+      "sharesSold": "Shares sold",
+      "salePrice": "Sale price per share",
+      "saleFee": "Sell fee",
+      "currencyCode": "Display currency code (3 letters)",
+      "accuracyNote": "Estimate only, not investment, tax or accounting advice. One long position and one sale; no shorts, wash sales, dividends, corporate actions, currency conversion or taxes. FIFO/average-cost rules can differ by broker and jurisdiction. Verify your records and local tax treatment. Currency changes formatting only; it does not convert values.",
+      "resultSummary": "Estimated stock sale results",
+      "sharesOwned": "Shares before sale",
+      "sharesRemaining": "Shares remaining",
+      "purchaseCost": "Total purchase cost including buy fees",
+      "costBasis": "Cost basis allocated to this sale",
+      "grossProceeds": "Gross sale proceeds",
+      "netProceeds": "Net proceeds after sell fee",
+      "realizedProfit": "Estimated realized profit or loss before tax",
+      "returnPercent": "Return on allocated cost basis",
+      "averageCostPerShare": "Average cost per share including buy fees",
+      "remainingBasis": "Remaining purchase cost basis",
+      "breakevenSalePrice": "Break-even sale price per share including sell fee"
+    },
+    "messages": {
+      "calculated": "Sale estimate calculated.",
+      "exampleLoaded": "Example loaded: 10 shares bought at 20 and sold at 30, before fees.",
+      "checkInputs": "Check the share amounts, prices, fees, currency and sale method.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "How much profit is 10 shares bought at 20 and sold at 30?",
+        "answer": "Before fees and taxes, 10 × (30 − 20) equals 100 in the same currency. This calculator shows 100 when all 10 shares are sold and fees are zero."
+      },
+      {
+        "question": "What is the difference between FIFO and average cost?",
+        "answer": "FIFO allocates the cost of the earliest purchase lots first. Weighted-average cost uses the average cost of all entered shares, including their buy fees. Broker and tax rules may require a different method; verify before filing."
+      },
+      {
+        "question": "Does this calculate taxes or include dividends?",
+        "answer": "No. It estimates one sale before tax and does not include dividends, tax rates, wash sales, corporate actions or local reporting rules."
+      },
+      {
+        "question": "What does the break-even sale price mean?",
+        "answer": "It is the sale price per share that would cover the cost basis assigned to the shares sold plus the entered sale fee. It excludes taxes and other charges not entered here."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/stock-profit-calculator/index.html",
+    "htmlSha256": "0853cd048e735b4cd39a0a7ead7a91f919ae1b5075b6408e8b6b1ca958360fdb",
+    "payloadSha256": "f5620d628ab30f5cabec476bf28b98dc04923538a0f2005ac186b46007e5b326",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/stock-profit-calculator.js",
+    "controllerSha256": "0da406108ffe4fe89e77cf75bf752338ae446ff8231a332bd65eb0e076e81c35",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "toolId": "moon-phase-calculator",
+  "sourceCopy": {
+    "name": "Moon Phase Calculator",
+    "title": "Moon Phase Calculator: Free Lunar Calendar | UsefulVerse",
+    "description": "Estimate the Moon phase, illuminated fraction and primary phase dates for a month. Free calculation in your browser, with no account.",
+    "intro": "Choose a date to estimate the Moon’s phase and illumination, then see the approximate new moon, quarter and full moon moments for that UTC month.",
+    "howQuestion": "How do I check the Moon phase for a date?",
+    "howAnswer": "Choose a date from 1900 through 2100 and calculate. The page estimates the phase, approximate illuminated percentage and primary phase moments for that calendar month.",
+    "privacyQuestion": "Is my date uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. It does not use your location, call an astronomy service or save your date.",
+    "fields": {
+      "date": "Date",
+      "phase": "Estimated Moon phase",
+      "illumination": "Approximate illumination",
+      "age": "Approximate days since new moon",
+      "monthHeading": "Primary phases this UTC month",
+      "phaseColumn": "Phase",
+      "momentColumn": "Approximate date and time (UTC)",
+      "nextPhase": "Next primary phase",
+      "method": "Method and limits",
+      "methodNote": "Uses a mean synodic cycle anchored to a reference new moon, not a full astronomical ephemeris. Individual phase times can differ by hours and the displayed UTC date can differ from a local calendar date. This global phase estimate does not calculate local moonrise, moonset, visibility, or religious calendar dates.",
+      "privacyNote": "No location permission, upload, account, API or automatic saving."
+    },
+    "actions": {
+      "calculate": "Calculate phase",
+      "today": "Use today",
+      "result": "Moon phase estimate"
+    },
+    "messages": {
+      "invalid": "Choose a valid date from 1900 through 2100.",
+      "calculated": "Approximate lunar phase calculated.",
+      "phaseNew": "New Moon",
+      "phaseWaxingCrescent": "Waxing Crescent",
+      "phaseFirstQuarter": "First Quarter",
+      "phaseWaxingGibbous": "Waxing Gibbous",
+      "phaseFull": "Full Moon",
+      "phaseWaningGibbous": "Waning Gibbous",
+      "phaseLastQuarter": "Last Quarter",
+      "phaseWaningCrescent": "Waning Crescent",
+      "illuminationValue": "{value}% illuminated",
+      "ageValue": "{value} days",
+      "noNextPhase": "No phase estimate available."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Are the phase times exact?",
+        "answer": "No. This lightweight tool uses a mean lunar cycle. Actual primary phase times can differ by several hours, so do not use it as an ephemeris or for time-critical observation."
+      },
+      {
+        "question": "Does the Moon phase depend on my location?",
+        "answer": "The geocentric phase is broadly the same worldwide at a given instant. Local moonrise, moonset, visibility and the local calendar date depend on location and are not calculated here."
+      },
+      {
+        "question": "Does this show religious lunar dates?",
+        "answer": "No. It does not predict crescent visibility or determine the beginning of a religious month. Follow the relevant local authority or calendar."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/moon-phase-calculator/index.html",
+    "htmlSha256": "86737bd5e3051685e87790259b01c69e727bb166006c763b564e10733e5745b5",
+    "payloadSha256": "8a90922acf3ed95a4c6c88130bf9ddff4390fcc27cdf3b91ddf0aed27f939fc1",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/moon-phase-calculator.js",
+    "controllerSha256": "503e0595191723c8a0345f8b2917b4bb464d4969de0b60ee6ff406befee866e3",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

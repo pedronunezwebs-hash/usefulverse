@@ -1,0 +1,81 @@
+{
+  "toolId": "lease-vs-buy-car-calculator",
+  "sourceCopy": {
+    "name": "Lease vs Buy Car Calculator",
+    "title": "Lease vs Buy Car Calculator Free | UsefulVerse",
+    "description": "Compare car lease and purchase costs over your use period, including mileage, maintenance and resale value. Free, private, no account.",
+    "intro": "Compare estimated cash costs over the same vehicle-use period. Enter matching assumptions; financing, insurance and fuel are not modeled.",
+    "howQuestion": "How do I compare leasing and buying a car?",
+    "howAnswer": "For a lease, add payments, money due at signing, end fees, excess-mile charges and maintenance. For buying, subtract expected resale value from purchase price, taxes/fees and maintenance. Compare totals over the same number of months.",
+    "privacyQuestion": "Are my car and cost details uploaded?",
+    "privacyAnswer": "No. The estimate runs in this browser and does not request quotes or contact a dealer.",
+    "additionalFaqs": [
+      {
+        "question": "How does the mileage allowance affect a lease?",
+        "answer": "Only miles above the annual allowance are multiplied by the per-mile fee. This simplified estimate assumes annual mileage is steady over the selected term."
+      },
+      {
+        "question": "Does the buy estimate include resale value?",
+        "answer": "Yes. It subtracts your entered expected resale value from purchase price, taxes/fees and maintenance. Resale value is uncertain, so try a range of estimates."
+      },
+      {
+        "question": "Does this include financing or loan interest?",
+        "answer": "No. It compares cash ownership costs and depreciation, not loan amortization, lease money factor, insurance, fuel, registration differences or taxes beyond the purchase amount you enter."
+      }
+    ],
+    "fields": {
+      "months": "Months you expect to use the car",
+      "annualMiles": "Expected miles driven per year",
+      "leaseMonthlyPayment": "Lease payment per month",
+      "leaseDueAtStart": "Lease cash due at signing",
+      "leaseEndFees": "Lease-end fees",
+      "leaseMileageAllowance": "Allowed lease miles per year",
+      "excessPerMileFee": "Fee per excess mile",
+      "leaseMaintenance": "Lease-period maintenance total",
+      "purchasePrice": "Purchase price",
+      "purchaseTaxesFees": "Purchase taxes and fees",
+      "buyMaintenance": "Ownership maintenance total",
+      "resaleValue": "Expected resale value at end",
+      "assumptions": "Use the same time period and currency for both choices. Enter your best estimate for end value and mileage.",
+      "accuracyNote": "Estimate only. Financing interest, loan balance, lease money factor, insurance, fuel, taxes not entered, wear charges and changing values are excluded. Not a quote or financial advice.",
+      "leaseTotal": "Estimated total lease cost",
+      "buyTotal": "Estimated net buy cost",
+      "leaseMonthly": "Lease cost per month (average)",
+      "buyMonthly": "Buy cost per month (average)",
+      "mileageCharge": "Estimated excess-mile charge",
+      "cheaper": "Lower modeled cost",
+      "difference": "Cost difference",
+      "tie": "Same modeled cost"
+    },
+    "actions": {
+      "calculate": "Compare costs",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "example": "Load example",
+      "result": "Lease vs buy comparison"
+    },
+    "messages": {
+      "calculated": "Vehicle cost comparison calculated.",
+      "checkInputs": "Check terms, mileage, costs and resale value.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "lease": "Lease",
+      "buy": "Buy"
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/lease-vs-buy-car-calculator/index.html",
+    "htmlSha256": "f8f95dcb4c2633f76cdead239f8f723810d2f7e358becdd1f30da5f6b888f0d3",
+    "payloadSha256": "e9ca311784716ff860d7d7f37acf3aced629295f19232f357c5f777f9068be6a",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/lease-vs-buy-car-calculator.js",
+    "controllerSha256": "9e88fced43986c613d50e0df1619a47712d2bbec0bc90b2f3db0018f6f8bacec",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

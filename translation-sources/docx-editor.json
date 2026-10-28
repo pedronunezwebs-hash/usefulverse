@@ -1,0 +1,70 @@
+{
+  "toolId": "docx-editor",
+  "sourceCopy": {
+    "name": "DOCX Editor",
+    "title": "Edit DOCX Online Free | UsefulVerse",
+    "description": "Edit text in a modern DOCX document on your device, keep other package parts, preview changes, and download a new Word file.",
+    "intro": "Make focused text edits to a modern Word DOCX file in this browser. The editor changes existing text runs in the main document and keeps other document parts unchanged. It is not a full Word replacement, and complex formatting may not preview here.",
+    "howQuestion": "What can I edit in a DOCX file?",
+    "howAnswer": "You can edit existing text segments in paragraphs and table cells in a modern .docx file, preview the text and download an edited copy. This editor does not add or remove paragraphs, change formatting, edit headers or footers, or support tracked changes.",
+    "privacyQuestion": "Is my Word document uploaded?",
+    "privacyAnswer": "No. The file is processed in this browser after you choose it. It is not uploaded, saved automatically or sent to a server.",
+    "fields": {
+      "file": "Choose a DOCX file",
+      "fileHint": "Modern .docx only. Maximum 25 MiB, 80 MiB expanded package, 8 MiB document XML, 500 text segments and 250,000 characters. Large documents work better on a computer.",
+      "scopeNote": "This focused editor changes only existing text runs in the main document. It preserves styles, images and other package-part contents, but repacks the DOCX ZIP container. It does not edit headers, footers, comments, footnotes, formatting, paragraph structure or tracked changes. Macros and digitally signed packages are not supported.",
+      "editTitle": "Existing document text",
+      "previewTitle": "Text preview",
+      "paragraph": "Paragraph {paragraph}",
+      "segment": "Text segment {segment}",
+      "originalCount": "Editable text segments",
+      "privacyNote": "Processing happens on your device after you choose a file. No upload, account, API, autosave or server processing."
+    },
+    "actions": {
+      "open": "Open for editing",
+      "save": "Download edited DOCX",
+      "copy": "Copy preview text",
+      "reset": "Clear document",
+      "result": "Edited Word file"
+    },
+    "messages": {
+      "noFile": "Choose a DOCX file first.",
+      "loading": "Opening the document locally…",
+      "ready": "Document opened. Edit the existing text segments below, then download a new copy.",
+      "invalid": "This file is not a supported modern DOCX document.",
+      "tooLarge": "The file or its expanded contents exceed this device-side limit.",
+      "noText": "No editable text segments were found in the main document.",
+      "unsupported": "This document uses tracked changes, which this focused editor does not support.",
+      "failed": "The DOCX could not be opened safely in this browser.",
+      "changed": "Text preview updated. Download the new DOCX when ready.",
+      "downloaded": "The edited DOCX download is ready.",
+      "copied": "Preview text copied.",
+      "copyUnavailable": "Clipboard access is unavailable. Select the preview text to copy it.",
+      "cleared": "Document and edits cleared."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Will the edited file keep my existing formatting?",
+        "answer": "Text styles and other package-part contents are preserved. When a text segment is replaced, its existing run formatting is retained; this tool does not offer rich text formatting controls or guarantee that every Word feature renders identically."
+      },
+      {
+        "question": "Can this edit tracked changes, headers, or signed documents?",
+        "answer": "No. The focused editor changes text runs in the main document only. Tracked-change workflows, headers and footers, macros and digitally signed files are not supported."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/docx-editor/index.html",
+    "htmlSha256": "3b94d29e7c2fd9c942e355759f56f3bf3276892b52c0c2345c0ca0274d59310c",
+    "payloadSha256": "92f67aa07e0b59bd193ce38a8fb2de44fd9eb6e8978dfb7401b2893b21fb8430",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/docx-editor.js",
+    "controllerSha256": "94d03de85c91a775b47199d8079c091269e39b7c7c35bb5873176ebec9c354c0",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

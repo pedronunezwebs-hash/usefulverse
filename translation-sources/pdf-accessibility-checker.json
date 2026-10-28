@@ -1,0 +1,82 @@
+{
+  "toolId": "pdf-accessibility-checker",
+  "sourceCopy": {
+    "name": "PDF Accessibility Checker",
+    "title": "PDF Accessibility Checker Free | UsefulVerse",
+    "description": "Check a PDF for basic accessibility signals: tags, title, language, selectable text, figures without alt text, and heading order.",
+    "intro": "Inspect a PDF locally for a few machine-detectable accessibility signals, including document tags, metadata, selectable text, figures without alternate text, and heading-level jumps. This is only a first-pass checker, not a PDF/UA validator or a substitute for assistive-technology testing.",
+    "howQuestion": "What can this PDF accessibility checker detect?",
+    "howAnswer": "It reports whether the PDF exposes structure tags, a document title and language, selectable text on each page, figures with alternative text, and possible jumps in heading levels. It cannot decide if reading order or alternative text is meaningful.",
+    "privacyQuestion": "Is my PDF uploaded for checking?",
+    "privacyAnswer": "No. The selected PDF is inspected in this browser tab. The file and its text are not uploaded, saved automatically, or sent to a server.",
+    "fields": {
+      "file": "Choose a PDF",
+      "fileHint": "Maximum 25 MiB and 300 pages. Inspection may use device memory; a computer is recommended for large files.",
+      "title": "Document title",
+      "language": "Document language",
+      "tagged": "Tagged structure found on every page",
+      "text": "Selectable text found on every page",
+      "figureAlt": "Figures have alternate text",
+      "headingSequence": "No detected heading-level jumps",
+      "signalPresent": "Signal found",
+      "signalMissing": "Signal missing or incomplete",
+      "pages": "Pages inspected",
+      "textCharacters": "Selectable text characters",
+      "figures": "Figures detected",
+      "figuresWithoutAlt": "Figures without alternate text",
+      "headingJumps": "Possible heading-level jumps",
+      "reportTitle": "First-pass signals",
+      "scopeNote": "These checks are heuristic. They cannot confirm correct reading order, meaningful descriptions, color contrast, keyboard use, form labels, table-header relationships, or PDF/UA/Section 508/WCAG conformance. Review manually and test with assistive technology.",
+      "manualTitle": "What still needs a person to review",
+      "manualOrder": "Check the reading order with a screen reader or PDF reading-order tool.",
+      "manualAlt": "Confirm every alternative description communicates the image purpose in context.",
+      "manualContrast": "Check color contrast, link meaning, keyboard operation, form labels, table headers, and document language.",
+      "privacyNote": "Inspection runs on your device after you choose a file. No upload, account, API, automatic save, or server processing."
+    },
+    "actions": {
+      "choose": "Choose PDF",
+      "inspect": "Check accessibility signals",
+      "cancel": "Cancel inspection",
+      "reset": "Clear file and report",
+      "copy": "Copy report",
+      "result": "Inspection report"
+    },
+    "messages": {
+      "noFile": "Choose a PDF first.",
+      "progress": "Checking page {page} of {pages}…",
+      "success": "The first-pass report is ready. Review the limitations below.",
+      "invalid": "This file could not be read as a PDF. Try another file.",
+      "tooLarge": "The PDF is over the local limit of 25 MiB or 300 pages.",
+      "textLimit": "This PDF contains more than 2,000,000 extracted text characters; inspection stopped to protect device memory.",
+      "failed": "The PDF could not be inspected in this browser.",
+      "cancelled": "Inspection cancelled.",
+      "copied": "Report copied.",
+      "copyUnavailable": "Clipboard access is unavailable. Select the report text to copy it.",
+      "cleared": "File and report cleared."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does a positive result mean the PDF is accessible?",
+        "answer": "No. These are limited automated signals only. A tagged PDF can still have incorrect reading order, poor descriptions, inaccessible forms, low contrast, or other barriers. Manual and assistive-technology testing is still needed."
+      },
+      {
+        "question": "Can it confirm PDF/UA or WCAG compliance?",
+        "answer": "No. This first-pass checker does not test every requirement and cannot certify PDF/UA, WCAG, Section 508, or legal compliance."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/pdf-accessibility-checker/index.html",
+    "htmlSha256": "f432fc5bf39a911b385711ec31d9fa4935bac15fa8e4dcc39ac2b19b593b23d4",
+    "payloadSha256": "eb1de02dc695c2b5234a3f5ee9b617353529ca8ceea96071597e28eb7e002220",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/pdf-accessibility-checker.js",
+    "controllerSha256": "092cf17fa234c368c5ecdbe868e18d8bed333e86ca335fc84a2bd6f15ac59675",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

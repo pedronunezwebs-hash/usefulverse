@@ -1,0 +1,85 @@
+{
+  "toolId": "annuity-calculator",
+  "sourceCopy": {
+    "name": "Annuity Calculator",
+    "title": "Annuity Calculator Free | UsefulVerse",
+    "description": "Calculate an annuity’s future value, present value or required periodic payment. Compare payment timing and frequencies with a free local estimate.",
+    "intro": "Model a stream of equal payments with a starting amount, rate and schedule. Results are estimates, not a quote or financial advice.",
+    "skipToTool": "Skip to calculator",
+    "home": "Home",
+    "languageLabel": "Language",
+    "breadcrumbLabel": "Breadcrumb",
+    "freeLabel": "FREE TO USE, NO ACCOUNT",
+    "faqLabel": "Frequently asked questions",
+    "footerFree": "Free browser tools. Your data stays on your device where the tool allows it.",
+    "howQuestion": "How does an annuity calculator work?",
+    "howAnswer": "It applies a fixed nominal annual rate divided by the payment frequency to a series of equal payments. Ordinary payments happen at each period’s end; annuity-due payments happen at the beginning. It does not model fees, taxes, variable rates or a specific insurer’s contract.",
+    "privacyQuestion": "Are my values uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser tab and values are not uploaded or saved by this tool.",
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between present and future value?",
+        "answer": "Present value estimates what a payment stream is worth now. Future value estimates how an initial balance and recurring contributions may accumulate by the end of the schedule."
+      },
+      {
+        "question": "Does this predict an annuity contract payout?",
+        "answer": "No. It is general arithmetic with the assumptions you enter. Actual products may include fees, guarantees, taxes and terms this calculator does not model."
+      }
+    ],
+    "fields": {
+      "mode": "What do you want to calculate?",
+      "futureMode": "Future value",
+      "presentMode": "Present value of payments",
+      "paymentMode": "Payment needed for a target",
+      "initial": "Initial amount",
+      "payment": "Periodic payment",
+      "target": "Target future value",
+      "annualRate": "Nominal annual rate (%)",
+      "years": "Years",
+      "frequency": "Payments per year",
+      "annual": "Annually",
+      "semiannual": "Semiannually",
+      "quarterly": "Quarterly",
+      "monthly": "Monthly",
+      "timing": "Payment timing",
+      "ordinary": "End of each period (ordinary)",
+      "due": "Beginning of each period (annuity due)",
+      "accuracyNote": "Assumes a fixed nominal annual rate divided by payment frequency; excludes fees, taxes and changing rates.",
+      "formula": "Formula",
+      "resultSummary": "Annuity estimate",
+      "futureValue": "Future value",
+      "presentValue": "Present value of payments",
+      "requiredPayment": "Required payment per period",
+      "initialGrowth": "Initial amount grown to the end",
+      "targetAlreadyReached": "The initial amount alone already meets the target."
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Result"
+    },
+    "messages": {
+      "calculated": "Estimate calculated.",
+      "checkInputs": "Check the values and try again.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/annuity-calculator/index.html",
+    "htmlSha256": "945f75a90a0f6db9cbeaea6987db2bb21933cc9b9fb8c9568ed44b704d6545e1",
+    "payloadSha256": "b931e988c2c6ef1a1eb1d2c6eedd442af799cd242d76270dedcb0504b8ee7d3b",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/annuity-calculator.js",
+    "controllerSha256": "5c1c4bc0a678e6dcedc23f4c407c4e59d9fc2857f970f7e1f71975df6834092d",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

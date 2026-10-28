@@ -1,0 +1,94 @@
+{
+  "toolId": "eisenhower-matrix",
+  "sourceCopy": {
+    "name": "Eisenhower Matrix",
+    "title": "Eisenhower Matrix Free Online | UsefulVerse",
+    "description": "Sort tasks in a free Eisenhower Matrix. Set importance, urgency and due dates; move, complete, print or back up tasks privately.",
+    "intro": "Turn a task list into four clear choices: do, schedule, delegate or drop. You decide what is important and urgent; dates are reminders, not automatic judgments.",
+    "howQuestion": "How do you use the Eisenhower Matrix?",
+    "howAnswer": "Choose one of four quadrants for each task: urgent and important to do, important but not urgent to schedule, urgent but less important to delegate, or neither to consider dropping. You can change a task’s quadrant at any time.",
+    "privacyQuestion": "Are my Eisenhower Matrix tasks private?",
+    "privacyAnswer": "Tasks stay in this browser tab and are not uploaded or saved automatically. Export a JSON backup if you want to keep them, and import that file later on this device.",
+    "fields": {
+      "title": "Task",
+      "notes": "Notes (optional)",
+      "dueDate": "Due date (optional)",
+      "quadrant": "Quadrant",
+      "addTask": "Add a task",
+      "importantRule": "Important means it meaningfully affects a goal, responsibility or outcome you care about.",
+      "urgentRule": "Urgent means it needs attention soon because of a real deadline or consequence; a due date alone does not decide importance.",
+      "doTitle": "Do first",
+      "doNote": "Urgent and important: act on it now.",
+      "scheduleTitle": "Schedule",
+      "scheduleNote": "Important, not urgent: reserve time before it becomes urgent.",
+      "delegateTitle": "Delegate",
+      "delegateNote": "Urgent, less important: hand it off when appropriate and track the follow-up.",
+      "dropTitle": "Consider dropping",
+      "dropNote": "Neither urgent nor important: remove it or leave it off your plan.",
+      "activeTasks": "Active tasks",
+      "completedTasks": "Completed tasks",
+      "empty": "No tasks in this quadrant yet.",
+      "accuracyNote": "Classify tasks using your own context; the matrix does not decide importance for you. Data stays in memory in this tab and clears when you close or reload it unless you export a backup. Import accepts this tool’s JSON backup only, up to 1 MB and 300 tasks.",
+      "showCompleted": "Show completed tasks",
+      "due": "Due",
+      "notesLabel": "Notes"
+    },
+    "actions": {
+      "add": "Add task",
+      "done": "Mark complete",
+      "reopen": "Reopen",
+      "move": "Move task",
+      "remove": "Delete",
+      "export": "Export JSON backup",
+      "import": "Import backup",
+      "print": "Print matrix",
+      "sample": "Load example",
+      "clear": "Clear all",
+      "chooseFile": "Choose JSON backup"
+    },
+    "messages": {
+      "added": "Task added to the matrix.",
+      "duplicate": "A task with this title is already on the matrix.",
+      "invalid": "Enter a task title and choose a quadrant.",
+      "date": "Enter a valid due date.",
+      "removed": "Task deleted.",
+      "completed": "Task marked complete.",
+      "reopened": "Task reopened.",
+      "moved": "Task moved to another quadrant.",
+      "exported": "JSON backup downloaded.",
+      "imported": "Backup imported into this tab.",
+      "confirmImport": "Replace the tasks currently in this tab with the backup?",
+      "importInvalid": "This file is not a valid Eisenhower Matrix backup.",
+      "importLarge": "Backup is too large. The limit is 1 MB and 300 tasks.",
+      "importFailed": "The selected file could not be read.",
+      "cleared": "All tasks cleared from this tab.",
+      "exampleLoaded": "Example tasks loaded.",
+      "confirmClear": "Clear every task from this tab? Export a backup first if you need one.",
+      "nothingToExport": "There are no tasks to export."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What goes in each Eisenhower Matrix quadrant?",
+        "answer": "Do urgent and important work first. Schedule important work that is not urgent. Delegate urgent work that is less important when someone else can handle it. Consider dropping tasks that are neither urgent nor important."
+      },
+      {
+        "question": "Does a due date automatically make a task urgent or important?",
+        "answer": "No. A due date can help you judge urgency, but you decide urgency and importance based on real deadlines, consequences and goals."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/eisenhower-matrix/index.html",
+    "htmlSha256": "5530a94258a5b19936b8971f15db56859b5b61566bd7ae8784eb0b547b5b1e97",
+    "payloadSha256": "9292b9e77518b109a846e213d872f9dce13bb49bae919e2ef997cf72475c0bd4",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/eisenhower-matrix.js",
+    "controllerSha256": "20d90595e03e3de478eda81be979db5d8b392cd3d5300a9f24fabd4a9d30719e",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "toolId": "limit-calculator",
+  "sourceCopy": {
+    "name": "Limit Calculator",
+    "title": "Limit Calculator Free | UsefulVerse",
+    "description": "Estimate two-sided, one-sided and infinite limits for supported expressions. Free online limit solver with a worked sin(x)/x example.",
+    "intro": "Explore a limit by numerically sampling a supported expression near a target or toward positive or negative infinity. Compare one-sided behavior and inspect the estimates.",
+    "howQuestion": "How do you estimate a limit?",
+    "howAnswer": "Enter an expression using x, such as sin(x)/x, then choose a finite target and direction. The calculator samples nearby values and compares both sides. This is a numerical estimate, not a symbolic proof; narrow or oscillating behavior may need a different method.",
+    "privacyQuestion": "Are my expressions uploaded?",
+    "privacyAnswer": "No. Expression parsing and limit sampling run locally in this browser. This tool does not upload or save your inputs.",
+    "fields": {
+      "expression": "Expression in x",
+      "expressionHint": "Use x, numbers, parentheses, + − * / ^, pi, e, and sin, cos, tan, sqrt, abs, exp, ln or log. Write multiplication explicitly, for example sin(x)/x.",
+      "target": "Target x value",
+      "direction": "Approach direction",
+      "bothSides": "Both sides",
+      "fromLeft": "From the left",
+      "fromRight": "From the right",
+      "positiveInfinity": "As x approaches positive infinity",
+      "negativeInfinity": "As x approaches negative infinity",
+      "tolerance": "Comparison tolerance",
+      "toleranceHint": "Controls when nearby values count as converged; it does not guarantee mathematical accuracy.",
+      "accuracyNote": "Numerical sampling only. Supported expressions are limited to 120 characters and the parser supports real-valued arithmetic and listed functions. Near a finite target it samples progressively closer values; at infinity it samples only through |x| = 10,000. It cannot prove a limit, reliably resolve every oscillation, or certify behavior between samples.",
+      "resultSummary": "Limit estimate",
+      "resultLimit": "Estimated limit",
+      "leftLimit": "Left-hand estimate",
+      "rightLimit": "Right-hand estimate",
+      "methodNote": "Method",
+      "sampledNote": "Numerical samples; not a symbolic proof.",
+      "undefinedResult": "Not defined for the sampled values",
+      "noLimit": "The two-sided limit does not exist",
+      "notConverged": "The samples did not show reliable convergence"
+    },
+    "actions": {
+      "calculate": "Estimate the limit",
+      "example": "Load sin(x)/x example",
+      "reset": "Reset the form",
+      "copy": "Copy result",
+      "result": "Limit estimate"
+    },
+    "messages": {
+      "calculated": "Limit estimate calculated.",
+      "checkInputs": "Check the expression, target, direction and tolerance.",
+      "exampleLoaded": "The sin(x)/x example is ready.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "notConverged": "The samples did not show reliable convergence; treat the estimate cautiously."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the limit of sin(x)/x as x approaches zero?",
+        "answer": "In radians, this calculator samples values from both sides and estimates 1. The familiar result is a standard limit; the tool itself reports a numerical estimate, not a proof."
+      },
+      {
+        "question": "Can I calculate a one-sided limit?",
+        "answer": "Yes. Choose an approach from the left or right. The calculator displays only that side’s samples."
+      },
+      {
+        "question": "Does this prove a limit exists?",
+        "answer": "No. It compares a finite set of numerical samples. Oscillation, sharp behavior or a discontinuity between sample points can require symbolic reasoning or another method."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/limit-calculator/index.html",
+    "htmlSha256": "c9046ab84a5ca234a9bcff0dd6b4028249876bba77f6a1e150695887eeee1b6c",
+    "payloadSha256": "4e423bd9697bba3dda98c4ba1c1ae77932fe0a2834c8cfcdd207a0ab135210ee",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/limit-calculator.js",
+    "controllerSha256": "ee087ffbbc9d774e90cb52e91b98cc0549f19e500c0848a8993873d1214f42e5",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

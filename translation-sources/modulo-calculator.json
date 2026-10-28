@@ -1,0 +1,70 @@
+{
+  "toolId": "modulo-calculator",
+  "sourceCopy": {
+    "name": "Modulo Calculator",
+    "title": "Modulo Calculator Free | UsefulVerse",
+    "description": "Find an exact modulo and quotient, including negative numbers, or check congruence. Free, private browser calculator with no sign-up.",
+    "intro": "Calculate the Euclidean quotient and remainder for whole numbers. Negative inputs are handled consistently, and the division identity shows how the answer is formed.",
+    "howQuestion": "How do you calculate a modulo with a negative number?",
+    "howAnswer": "This calculator uses a non-negative remainder smaller than the absolute divisor. For example, −7 mod 3 is 2 because −7 = (−3 × 3) + 2.",
+    "privacyQuestion": "Are my numbers uploaded?",
+    "privacyAnswer": "No. The exact calculation runs in this browser. Numbers are not uploaded or saved.",
+    "fields": {
+      "dividend": "Dividend",
+      "dividendHint": "The number to divide; it may be negative.",
+      "divisor": "Divisor or modulus",
+      "divisorHint": "Use any non-zero whole number; its absolute value defines the modulus.",
+      "compare": "Optional comparison value",
+      "compareHint": "Check whether this value is congruent to the dividend modulo the divisor.",
+      "limitsNote": "Accepts signed whole numbers up to 50 digits. No fractions or decimals. The result uses Euclidean modulo; some programming languages use a different remainder rule for negatives.",
+      "quotient": "Euclidean quotient",
+      "remainder": "Euclidean remainder",
+      "identity": "Division identity",
+      "range": "Remainder range",
+      "congruence": "Congruence check",
+      "tableCaption": "Modulo calculation results"
+    },
+    "actions": {
+      "calculate": "Calculate modulo",
+      "example": "Load −7 mod 3 example",
+      "reset": "Reset",
+      "result": "Result",
+      "copy": "Copy results"
+    },
+    "messages": {
+      "calculated": "Modulo calculated.",
+      "checkInputs": "Enter whole numbers and a non-zero divisor within the stated limit.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is −7 mod 3?",
+        "answer": "Using the Euclidean convention, −7 mod 3 is 2: −7 = (−3 × 3) + 2, and 0 ≤ 2 < 3."
+      },
+      {
+        "question": "What does congruent modulo m mean?",
+        "answer": "Two integers are congruent modulo m when their difference is divisible by |m|. The optional comparison checks this exactly."
+      },
+      {
+        "question": "Why can this differ from a programming language’s % operator?",
+        "answer": "Some languages keep the sign of a negative dividend in the remainder. This calculator instead returns a remainder from 0 up to, but not including, the absolute divisor."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/modulo-calculator/index.html",
+    "htmlSha256": "b6db425361c9d0861a075ace9ee5bc5ffc82431ba571da91238476272d758c14",
+    "payloadSha256": "969ce1150c7e57c2c8796974d839ec6556a303184bc093bcfccf495d274f8379",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/modulo-calculator.js",
+    "controllerSha256": "275beda7fa18873ac807808f1cd63a2532702b474b8b047a101191df11f80e17",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

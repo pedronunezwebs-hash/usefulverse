@@ -1,0 +1,92 @@
+{
+  "toolId": "extract-images-from-pdf",
+  "sourceCopy": {
+    "name": "Extract Images from PDF",
+    "title": "Extract Images from PDF Free | UsefulVerse",
+    "description": "Extract embedded PDF image objects as PNG files at decoded image size. Preview and download individually or together as a ZIP, locally.",
+    "category": "PDF tools",
+    "intro": "Select a PDF to find embedded raster images, preview them, and save separate PNG copies or one ZIP. Pages are not rasterized into screenshots.",
+    "summary": "Extract embedded raster image objects from a PDF into separate PNG files. Review page and pixel dimensions, preview up to 12, and download images individually or as a ZIP.",
+    "howQuestion": "How do I extract images from a PDF?",
+    "howAnswer": "Choose a PDF and select Extract images. This browser reads supported embedded raster image objects and converts their decoded pixels to PNG files. Download individual images or one ZIP.",
+    "privacyQuestion": "Are my PDF or images uploaded?",
+    "privacyAnswer": "No. Your PDF is processed in this browser tab. The tool does not upload the file or save it to an account.",
+    "howTo": [
+      "Choose a PDF file from this device.",
+      "Select Extract images and wait while the browser scans its pages for supported embedded raster image objects.",
+      "Preview the first images, review page and pixel dimensions, then download a PNG or the ZIP. The original PDF is unchanged."
+    ],
+    "example": {
+      "label": "Choose a PDF"
+    },
+    "actions": {
+      "choose": "Choose PDF",
+      "extract": "Extract images",
+      "cancel": "Cancel",
+      "downloadZip": "Download all images (ZIP)",
+      "reset": "Clear",
+      "downloadImage": "Download PNG",
+      "result": "Extracted PDF images"
+    },
+    "fields": {
+      "file": "PDF file",
+      "scopeNote": "Extracts supported embedded raster image objects; it does not turn whole PDF pages into images. Vector drawings and page text are not separate raster images.",
+      "deviceNote": "Local limits: 25 MiB PDF, 300 pages, 200 images, 8 megapixels per image, 16 megapixels total and 25 MiB ZIP. Large PDFs use device memory; a computer is recommended.",
+      "privacyNote": "Your file stays on this device and is not uploaded. Extracted pixels are re-encoded as PNG, so the original embedded file format and metadata are not preserved.",
+      "resultsHeading": "Images found",
+      "imageCount": "{count} images found in a {pages}-page PDF.",
+      "previewLabel": "Preview of image",
+      "previewLimit": "Previews are shown for up to the first 12 images; every listed image can still be downloaded.",
+      "pageLabel": "Page",
+      "dimensions": "Pixel dimensions",
+      "empty": "No extracted images yet.",
+      "progressLabel": "PDF scan progress"
+    },
+    "messages": {
+      "fileReady": "PDF selected",
+      "noFile": "Choose a PDF first.",
+      "tooLarge": "This PDF is larger than the local 25 MiB limit.",
+      "invalidPdf": "This file is not a readable PDF.",
+      "noImages": "No supported embedded raster images were found. Vector artwork and page content are not extracted as images.",
+      "password": "Password-protected PDFs are not supported. The original file was not changed.",
+      "limits": "This PDF or its images exceed a local processing limit. Try a smaller PDF or fewer images; nothing was uploaded.",
+      "working": "Scanning PDF pages and decoding embedded images on this device…",
+      "progress": "Page {page} of {pages} scanned; {images} images found.",
+      "success": "Extracted {count} PNG images from {pages} pages. Download individually or as one ZIP.",
+      "cancelled": "Extraction cancelled. The original PDF is unchanged.",
+      "failed": "Could not extract images from this PDF in this browser. The original file is unchanged."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this tool turn every PDF page into a picture?",
+        "answer": "No. It looks for supported embedded raster image objects. Use a PDF-to-image tool if you want a rendered image of each whole page."
+      },
+      {
+        "question": "Will an extracted PNG be byte-for-byte identical to the embedded file?",
+        "answer": "No. The browser decodes supported image objects and re-encodes their pixels as PNG at the decoded object dimensions. Original compression, file format and metadata are not preserved."
+      },
+      {
+        "question": "Why might some PDF images not appear?",
+        "answer": "Vector artwork, image masks, unusual encodings, password protection, malformed files and browser memory limits can prevent extraction. The tool reports supported objects only and does not upload your file."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/extract-images-from-pdf/index.html",
+    "htmlSha256": "4d35092212d4ba780564ab35f3b44e5cadcb4c7c6a31db027b47c7bfce13248e",
+    "payloadSha256": "0d0b3202ace818713e4b99bea5501110f6e59d3dbfdbdb5a6c3e7892c0080f79",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/extract-images-from-pdf.js",
+    "controllerSha256": "06b03e1833bb4b9ea2ecb55a62ea803ce745f4a7318b9482608ea56d870ed953",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

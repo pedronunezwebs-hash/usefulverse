@@ -1,0 +1,90 @@
+{
+  "toolId": "ideal-weight-calculator",
+  "sourceCopy": {
+    "name": "Ideal Weight Calculator",
+    "title": "Ideal Weight Calculator Free | UsefulVerse",
+    "description": "Compare four historical weight equations and an adult BMI reference range by height. Free, private, and calculated in your browser.",
+    "intro": "Compare four historical height-based reference equations with a separate adult BMI-based weight interval. They can disagree; none defines a personal ideal or goal.",
+    "howQuestion": "How does this ideal weight calculator work?",
+    "howAnswer": "Enter height and choose the historical coefficient set to compare Devine, Robinson, Miller and Hamwi estimates. A separate interval converts adult BMI values 18.5–24.9 to weights at that height.",
+    "privacyQuestion": "Is my height sent or saved?",
+    "privacyAnswer": "No. The calculation runs in this browser. The height you enter is not uploaded or saved by this tool.",
+    "howTo": [
+      "Enter adult height in centimeters or inches.",
+      "Choose the coefficient set only if you want to view the older sex-specific equations.",
+      "Compare the four historical estimates with the separate adult BMI reference interval."
+    ],
+    "example": {
+      "label": "Load example: 5 ft 10 in"
+    },
+    "actions": {
+      "calculate": "Compare references",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Reference estimates"
+    },
+    "fields": {
+      "height": "Height",
+      "heightUnit": "Height unit",
+      "centimeters": "Centimeters (cm)",
+      "inches": "Inches (in)",
+      "equationSet": "Historical equation coefficients",
+      "maleSet": "Male coefficients",
+      "femaleSet": "Female coefficients",
+      "method": "Method",
+      "estimatedWeight": "Equation estimate",
+      "kilograms": "Kilograms",
+      "pounds": "Pounds",
+      "bmiRange": "Separate adult BMI reference interval (18.5–24.9)",
+      "bmiMinimum": "Lower endpoint",
+      "bmiMaximum": "Upper endpoint",
+      "extrapolationNote": "Below 5 ft (152.4 cm), the historical equations are mathematical extrapolations beyond their five-foot reference point.",
+      "accuracyNote": "These historical equations are not individualized health targets or medical advice. Their original coefficients are binary and sex-specific; they may not fit everyone. The BMI interval is a screening reference for adults, not a diagnosis, and BMI does not describe body composition. Not for children, pregnancy, or clinical dosing.",
+      "resultSummary": "Comparison",
+      "sourceLinks": "Research references",
+      "sourceRobinson": "Robinson et al. (1983)",
+      "sourcePeterson": "Peterson et al. (2016)",
+      "sourceOrigin": "Pai & Paloucek (2000)"
+    },
+    "messages": {
+      "calculated": "Reference comparison calculated.",
+      "checkInputs": "Check the height and coefficient set.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Is there one correct ideal weight for my height?",
+        "answer": "No. Historical equations produce different estimates, and a BMI-based interval is a separate screening reference. Neither determines a personal goal or accounts for body composition or individual health."
+      },
+      {
+        "question": "Why do the male and female equation sets differ?",
+        "answer": "The historical equations use separate binary coefficient sets. They may not be appropriate for everyone; the BMI interval does not use this selection."
+      },
+      {
+        "question": "Can I use this for a child or medication dose?",
+        "answer": "No. This page is an educational comparison for adults only. Do not use it to choose a weight goal, diagnose a condition, or calculate medication doses; ask a qualified healthcare professional."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/ideal-weight-calculator/index.html",
+    "htmlSha256": "4b0445dc52a13fe171573d93f3721f5c889703373d51c4d2bdfbaf47b643419a",
+    "payloadSha256": "16f2b8fc46d397136ff77a56b0a6fae18e384d72bae4c383c3094e4d6fd300a0",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/ideal-weight-calculator.js",
+    "controllerSha256": "a8d84ee9b122e8a68f37599efc5e105f573d95dc466fc7ba0175d990e5d8d9dd",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

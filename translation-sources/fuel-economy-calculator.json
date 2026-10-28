@@ -1,0 +1,105 @@
+{
+  "toolId": "fuel-economy-calculator",
+  "sourceCopy": {
+    "name": "Fuel Economy Calculator",
+    "title": "Fuel Economy Calculator Free | UsefulVerse",
+    "description": "Measure real fuel economy in L/100 km, km/L or MPG. Log full-to-full refills, track cost per distance and export a CSV.",
+    "intro": "Measure what your vehicle actually uses. Add each complete full-to-full refill to compare fuel economy and cost over time.",
+    "howQuestion": "How do I calculate fuel economy from a refill?",
+    "howAnswer": "Enter the distance driven since the previous full tank, the fuel added at this refill and the total price paid. For a useful result, start and end each interval with a full tank. The calculator converts the same entry to L/100 km, km/L, US MPG and imperial MPG.",
+    "privacyQuestion": "Does the fuel log leave this page?",
+    "privacyAnswer": "No. Entries stay in this browser tab and are cleared when you clear them or close the page. Export a CSV yourself if you want a separate copy. No account, upload or fuel-price service is used.",
+    "howTo": [
+      "Choose the distance and fuel-volume units used for your receipt or odometer.",
+      "Add the distance since the last full tank, fuel added and total amount paid. Use full-to-full intervals for a comparable average.",
+      "Review the interval and weighted totals, remove entries if needed, or export the table to CSV."
+    ],
+    "example": {
+      "label": "Use 100 km, 5 L and $8"
+    },
+    "actions": {
+      "add": "Add refill",
+      "remove": "Remove",
+      "clear": "Clear history",
+      "export": "Export CSV",
+      "result": "Fuel economy log"
+    },
+    "fields": {
+      "date": "Refill date",
+      "distance": "Distance since last full tank",
+      "distanceUnit": "Distance unit",
+      "kilometers": "Kilometres (km)",
+      "miles": "Miles (mi)",
+      "fuel": "Fuel added",
+      "volumeUnit": "Fuel-volume unit",
+      "liters": "Litres (L)",
+      "usGallons": "US gallons (US gal)",
+      "imperialGallons": "Imperial gallons (Imp gal)",
+      "cost": "Total paid for this refill",
+      "currency": "Currency for display",
+      "fullToFull": "Log only complete full-to-full intervals for a reliable average.",
+      "sessionNote": "History stays in this tab only, up to 100 entries. It is not saved automatically. Use one currency for all entries; it stays locked while entries remain.",
+      "empty": "No refills logged yet.",
+      "totalDistance": "Total distance",
+      "totalFuel": "Total fuel",
+      "totalCost": "Total cost",
+      "interval": "This refill interval",
+      "overall": "Weighted overall average",
+      "litersPer100Km": "Litres per 100 km",
+      "kmPerLiter": "Kilometres per litre",
+      "usMpg": "US miles per gallon",
+      "imperialMpg": "Imperial miles per gallon",
+      "costPerDistance": "Cost per distance",
+      "tableDate": "Date",
+      "tableDistance": "Distance",
+      "tableFuel": "Fuel",
+      "tableCost": "Cost",
+      "tableEconomy": "L/100 km",
+      "tableCostRate": "Cost/km",
+      "resultsHeading": "Your results",
+      "sourceNote": "This is a calculation from your entries, not an official vehicle rating. Odometer readings, pump shut-off, terrain, traffic, weather, load, driving style and fuel type can change real-world results."
+    },
+    "messages": {
+      "added": "Refill added to this tab.",
+      "invalid": "Check the date, distance, fuel and cost, then try again.",
+      "removed": "Refill removed.",
+      "cleared": "History cleared from this tab.",
+      "exported": "CSV downloaded.",
+      "exportUnavailable": "Your browser could not create the CSV file.",
+      "emptyExport": "Add a refill before exporting.",
+      "maximum": "The log already has 100 refills. Export or clear it before adding more."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does L/100 km mean?",
+        "answer": "It is the litres of fuel used to travel 100 kilometres. A lower number means less fuel for the same distance."
+      },
+      {
+        "question": "How do I convert fuel economy to US MPG?",
+        "answer": "Choose the distance and fuel units for your entry. The calculator converts the same measured interval to US MPG and imperial MPG; those gallon sizes are different."
+      },
+      {
+        "question": "Why should I use full-to-full refills?",
+        "answer": "Starting and ending with a full tank makes the fuel added a closer measure of what was used over that distance. One partial refill can make an interval less accurate."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/fuel-economy-calculator/index.html",
+    "htmlSha256": "dfe45ef0381e43e9f8cd9c09d5bda0e4d78ab8fd0faae7deb35e081e7ebba290",
+    "payloadSha256": "c8334c373a99626ac4025175304d1dc4e89791f00f7ea57fbb9bc569d36c02f4",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/fuel-economy-calculator.js",
+    "controllerSha256": "d9434b108e8d24faf169523dca302f0ea39a337770029f34acaa9d056a2cd8da",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

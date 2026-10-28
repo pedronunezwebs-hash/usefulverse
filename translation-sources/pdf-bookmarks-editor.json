@@ -1,0 +1,91 @@
+{
+  "toolId": "pdf-bookmarks-editor",
+  "sourceCopy": {
+    "name": "PDF Bookmarks Editor",
+    "title": "Add Bookmarks to PDF Free | UsefulVerse",
+    "description": "Add, organize and edit PDF bookmarks locally. Set page destinations, arrange sections and export a separate PDF without uploading it.",
+    "intro": "Add a navigable table of contents to a PDF or organize its existing bookmarks. Create nested sections, assign page destinations, reorder entries, and save a separate copy in your browser.",
+    "howQuestion": "How do I add bookmarks to a PDF?",
+    "howAnswer": "Choose a PDF and read its supported internal page bookmarks. Add or edit a title, page and optional parent section, arrange entries, then save a separate PDF copy. You can also import or export the outline as JSON.",
+    "privacyQuestion": "Are my PDF or bookmarks uploaded?",
+    "privacyAnswer": "No. The selected document is processed in this browser after you choose it. UsefulVerse does not upload the PDF or send its bookmark data to a server.",
+    "fields": {
+      "pdfFile": "Choose a PDF file",
+      "warning": "Editing creates a new PDF copy. Some readers may display bookmarks differently; review the saved copy before sharing it.",
+      "limits": "Local limits: 25 MiB input, 300 pages, 500 bookmarks, 20 nesting levels and 50 MiB output. Large files may use substantial device memory; a computer is recommended.",
+      "scope": "Creates internal page destinations and nested outline entries. Existing external links, named destinations or unsupported bookmark actions are rejected instead of silently discarded. Page content is not edited. Digital signatures may become invalid after saving.",
+      "bookmarksHeading": "PDF bookmarks",
+      "empty": "No bookmarks yet. Add one to start a table of contents.",
+      "newBookmark": "New bookmark",
+      "title": "Bookmark title",
+      "page": "Page number",
+      "parent": "Parent section",
+      "topLevel": "Top level",
+      "closed": "Start this section collapsed",
+      "up": "Move up",
+      "down": "Move down",
+      "remove": "Remove",
+      "jsonLabel": "Bookmark JSON",
+      "jsonHint": "Export writes the current outline here. Import replaces the current outline after validation. Keep a backup of the source PDF; JSON does not contain page content.",
+      "pages": "Pages",
+      "bookmarkCount": "Bookmarks"
+    },
+    "actions": {
+      "read": "Read PDF bookmarks",
+      "add": "Add bookmark",
+      "importJson": "Import JSON",
+      "exportJson": "Export JSON",
+      "save": "Save edited PDF",
+      "reset": "Start over",
+      "download": "Download PDF copy",
+      "result": "Saved PDF copy"
+    },
+    "messages": {
+      "fileReady": "PDF selected",
+      "noFile": "Choose a PDF file first.",
+      "tooLarge": "The PDF exceeds the local 25 MiB input or 50 MiB output limit.",
+      "invalid": "This file does not appear to be a valid PDF.",
+      "tooManyPages": "This editor supports PDFs with 1–300 pages.",
+      "reading": "Reading internal bookmarks…",
+      "readSuccess": "PDF read. You can now organize its bookmarks.",
+      "readFailed": "Could not safely read this PDF outline. The original file was not changed.",
+      "invalidBookmarks": "Check bookmark titles, page numbers and parent sections.",
+      "imported": "Bookmark JSON imported.",
+      "importFailed": "Bookmark JSON is invalid or exceeds the local limit.",
+      "saving": "Writing a separate PDF copy…",
+      "saved": "PDF copy is ready to download.",
+      "saveFailed": "Could not save this outline. Your original PDF remains unchanged.",
+      "downloadReady": "PDF download started.",
+      "jsonExported": "Current bookmark outline exported to the JSON box.",
+      "jsonInvalid": "Bookmark JSON is invalid or refers to a page outside this PDF."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can bookmarks be nested under sections?",
+        "answer": "Yes. Set a parent section to create a hierarchy. The document page itself remains unchanged; each bookmark points to the page number you choose."
+      },
+      {
+        "question": "Will this preserve bookmarks that open external links?",
+        "answer": "This editor currently supports internal page destinations. It rejects files with unsupported external actions or named destinations rather than silently dropping them."
+      },
+      {
+        "question": "Does it change the PDF pages or signature?",
+        "answer": "It edits the document outline and saves a new copy, not the page content. Any edit can invalidate a digital signature, so check the result and do not treat this tool as signature preservation."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/pdf-bookmarks-editor/index.html",
+    "htmlSha256": "8594701e0ba138d9244e8c5e888c374bf8144f41e95041519125fbc5b0bb165d",
+    "payloadSha256": "08e37c8c8efe69e2971ca4db3776fd8ac98ce201e188b53bd566cf1b64105db1",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/pdf-bookmarks-editor.js",
+    "controllerSha256": "f9ba31ca6a94e89576929d404354c4893b2cc85a7f58043a5ef1c0806d7a86f7",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

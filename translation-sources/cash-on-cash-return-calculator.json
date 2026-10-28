@@ -1,0 +1,69 @@
+{
+  "toolId": "cash-on-cash-return-calculator",
+  "sourceCopy": {
+    "name": "Cash-on-Cash Return Calculator",
+    "title": "Cash-on-Cash Return Calculator Free | UsefulVerse",
+    "description": "Estimate rental property cash-on-cash return from rent, monthly costs, debt service and cash invested. Free, private, no account.",
+    "intro": "Estimate annual rental-property cash flow divided by the cash you put in. Use one currency unit for every amount; this is a simple estimate, not investment advice.",
+    "howQuestion": "How do you calculate cash-on-cash return?",
+    "howAnswer": "Subtract monthly operating costs and debt service from rent, multiply net monthly cash flow by 12, then divide by down payment plus closing costs and initial repairs. For example, 6,000 annual cash flow divided by 60,000 invested cash equals 10%.",
+    "privacyQuestion": "Are my property figures uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Do not enter account numbers, addresses or other sensitive details.",
+    "additionalFaqs": [
+      {
+        "question": "What does cash-on-cash return measure?",
+        "answer": "It compares modeled annual pre-tax property cash flow with the initial cash you invested. It is not the same as cap rate, which does not divide by equity invested or include mortgage debt service."
+      },
+      {
+        "question": "Which costs should I include?",
+        "answer": "Include recurring operating expenses in monthly costs and include the initial down payment, closing costs and repair budget in cash invested. Taxes, vacancy, maintenance and other costs matter; enter realistic estimates for your situation."
+      },
+      {
+        "question": "Does a negative result mean the property will lose money overall?",
+        "answer": "It means the entered monthly rent minus operating costs and debt service is negative in this simplified model. It does not include appreciation, tax treatment, sale proceeds or every property expense."
+      }
+    ],
+    "fields": {
+      "monthlyRent": "Monthly rental income",
+      "monthlyOperatingCosts": "Monthly operating costs",
+      "monthlyDebtService": "Monthly mortgage debt service",
+      "downPayment": "Cash down payment",
+      "closingCosts": "Cash closing costs",
+      "initialRepairs": "Initial repairs or improvements",
+      "costNote": "Use the same currency unit for all inputs. Include recurring property expenses such as taxes, insurance, maintenance and vacancy in operating costs.",
+      "accuracyNote": "Illustrative pre-tax estimate. Excludes appreciation, tax effects, future sale proceeds, changing rents, financing changes and any cost you do not enter. Not a property valuation, guaranteed return or financial advice.",
+      "monthlyNet": "Estimated monthly net cash flow",
+      "annualCashFlow": "Estimated annual cash flow",
+      "cashInvested": "Total initial cash invested",
+      "returnPercent": "Cash-on-cash return"
+    },
+    "actions": {
+      "calculate": "Calculate return",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "example": "Load example",
+      "result": "Cash-on-cash estimate"
+    },
+    "messages": {
+      "calculated": "Cash-on-cash estimate calculated.",
+      "checkInputs": "Check income, costs and initial investment amounts.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/cash-on-cash-return-calculator/index.html",
+    "htmlSha256": "b693a98ea93d68c463eca9c92230b3876da19cabed4f42be53725a9426a2fb1f",
+    "payloadSha256": "e58e17aab23ea2e5e2213c2b90f2c332c28f844ef1b2747c8dd48c8f253427d7",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/cash-on-cash-return-calculator.js",
+    "controllerSha256": "0be8923d75e2944baaf177441b6a2e2a8733ddd24b9b06886b0c78245b08a21a",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

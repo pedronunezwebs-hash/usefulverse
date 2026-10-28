@@ -1,0 +1,93 @@
+{
+  "toolId": "word-puzzle-solver",
+  "sourceCopy": {
+    "name": "Word Puzzle Solver",
+    "title": "Word Finder & Anagram Solver Free | UsefulVerse",
+    "description": "Find anagrams and crossword-pattern words with letter filters. Use a small local word list or paste your own. Free, private and no sign-up.",
+    "category": "Writing & language",
+    "intro": "Find words you can spell from letter tiles, solve anagrams, or match a crossword pattern. Use the compact built-in starter list or paste a larger word list; everything is searched in this tab.",
+    "summary": "A local word finder for anagrams, blank tiles, crossword-style letter patterns, word length and excluded-letter filters. It does not guess meanings from clues.",
+    "howQuestion": "How does this word finder work?",
+    "howAnswer": "Choose anagram mode to find words that can be made from your letters, or pattern mode to match fixed letters and ? or . placeholders. Results come only from the selected compact built-in list and/or the word list you paste.",
+    "privacyQuestion": "Are my letters or word list uploaded?",
+    "privacyAnswer": "No. Searches run locally in this page. Your letters and pasted word list are not uploaded, saved to an account or sent to a server.",
+    "fields": {
+      "mode": "Search type",
+      "anagram": "Anagram / letter tiles",
+      "patternMode": "Crossword letter pattern",
+      "letters": "Letters available",
+      "lettersHint": "Enter letters only. Use ? for a blank tile. Unless “use every tile” is checked, a result may use only some letters.",
+      "pattern": "Letter pattern",
+      "patternHint": "Enter known letters and use ? or . for each unknown position. Each placeholder matches one letter.",
+      "wordList": "Optional custom word list",
+      "wordListHint": "Paste one word per line. Only these words are used in custom-only mode. Maximum 250,000 characters and 50,000 words.",
+      "source": "Word source",
+      "builtInOnly": "Small built-in starter list",
+      "customOnly": "My pasted list only",
+      "builtInAndCustom": "Starter list plus my list",
+      "minLength": "Minimum word length",
+      "maxLength": "Maximum word length",
+      "excluded": "Letters to exclude",
+      "excludedHint": "Any word containing one of these letters is removed.",
+      "mustUseAll": "Use every letter tile",
+      "resultLimit": "Maximum results",
+      "compactListNote": "The included multilingual starter vocabulary is intentionally small, not a complete dictionary or official crossword/Scrabble word list. Paste a larger list when you need broad coverage.",
+      "privacyNote": "All processing stays in this browser tab. Pasted words are not stored after leaving the page.",
+      "resultsTitle": "Matching words",
+      "resultCount": "{count} match(es)",
+      "truncated": "Showing the first {count} matches. Narrow your filters to see more specific results.",
+      "noResults": "No matching words were found in the selected list. Try another pattern, adjust the filters or paste a larger word list.",
+      "wordColumn": "Word",
+      "lengthColumn": "Letters",
+      "emptySelection": "Choose a search type and enter letters or a pattern."
+    },
+    "actions": {
+      "solve": "Find words",
+      "example": "Load example",
+      "copy": "Copy results",
+      "clear": "Clear"
+    },
+    "messages": {
+      "ready": "Word finder is ready. Choose a list and enter letters or a pattern.",
+      "exampleLoaded": "Example loaded. Find words to see matching results.",
+      "solved": "Found {count} matching word(s).",
+      "noResults": "No matches in the selected word list.",
+      "copied": "Matching words copied.",
+      "copyFailed": "Could not copy. Select and copy the results manually.",
+      "dictionaryLoading": "Loading the small built-in word list only because you chose to search it…",
+      "dictionaryUnavailable": "No built-in starter list is available for this language. Paste a word list or choose another supported language.",
+      "invalidQuery": "Enter letters or a pattern using letters and ? or . placeholders.",
+      "invalidFilters": "Check the minimum and maximum word lengths and the excluded letters.",
+      "listTooLarge": "That pasted list is over the 250,000-character limit.",
+      "tooManyWords": "That list contains over 50,000 words."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I use blank tiles in an anagram?",
+        "answer": "Yes. Enter ? for each blank tile. Each ? can stand for one letter. “Use every letter tile” requires a match to use all entered tiles."
+      },
+      {
+        "question": "Can this solve a crossword clue by meaning?",
+        "answer": "No. It only matches letter patterns and filters words in the selected list; it does not understand clue meanings or provide semantic answers."
+      },
+      {
+        "question": "Does the built-in list contain every word?",
+        "answer": "No. It is a small multilingual starter vocabulary, not a complete dictionary or official game-word list. Paste your own word list for broader coverage."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/word-puzzle-solver/index.html",
+    "htmlSha256": "de8176d2cfcd71b2ca17886d95868d32c5f9040a22f699346c868ac2019f4b26",
+    "payloadSha256": "05fcfdd2af2f54d995e89a240ef50372fd2935547832a68c07e2a9d45fea4813",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/word-puzzle-solver.js",
+    "controllerSha256": "a57c1679248bae8a64648697e16b68450c27fd59bc0c67ee4f6de139183e265b",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}
