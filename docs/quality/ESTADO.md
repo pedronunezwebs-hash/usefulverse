@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T12:29:46.381891+00:00 · DOMPurify y composición local del Paso A; traductor intacto
+**Turno actual (candado):** LIBRE
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -203,3 +203,5 @@ Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpo
 **Cierre del lote UI-14:** Cierre UI-14 2026-10-28T09:20:26.426094+00:00: código/reportes comprobados en GitHub antes de eliminar el clon y todos los temporales propios (811 MB); servidor detenido y pestaña propia en blanco. 43.15 GiB libres. Candado LIBRE; 106 fuentes recuperadas y revisión manual DOMPurify PR #135 pendientes; cero despliegues, activaciones o Actions de web. [Recibo](market-ui-v1/closure.json).
 
 **Cierre del lote UI-106:** Cierre UI-106 2026-10-28T12:16:25.210032+00:00: 106 JSON/código/evidencias comprobados en GitHub antes de eliminar clon y temporales propios (466 MB); 43.49 GiB libres. Candado LIBRE. 48.403 unidades, cero solo metadatos; Paso A y puertas globales/integrales pendientes, cero despliegues/activaciones/Actions de web/modelos iniciados por el agente. [Recibo](recovered-ui-v1/closure.json).
+
+**Cierre del lote seguridad/composición:** 2026-10-28T14:08:33.074916+00:00: código/evidencias respaldados y árbol Git remoto verificado en [0c8b95a](https://github.com/pedronunezwebs-hash/usefulverse/commit/0c8b95adf21783cff229afab2e05eb5d236cad2a); clon, builds, dependencias y cachés propios eliminados, servidor/página QA cerrados; 43.24 GiB libres. Candado LIBRE. Paso A/gates/publicación pendientes; traductor intacto. [Recibo](composition-v1/closure.json).
