@@ -1,0 +1,42 @@
+name: Measure Step A release capacity without publishing
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: usefulverse-capacity-measurement
+  cancel-in-progress: false
+jobs:
+  measure:
+    if: github.repository == 'pedronunezwebs-hash/usefulverse' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: feat/new-tools-batch-1
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+      - name: Test measurement boundaries, collisions and input preservation
+        run: node --test scripts/release-capacity.test.mjs
+      - name: Install pinned dependencies without hooks
+        run: npm ci --ignore-scripts
+      - name: Build the existing main site
+        run: npm run check
+      - name: Check the existing locale release gate
+        run: npm run locale:release-check
+      - name: Build the existing tools hub
+        run: npm run build:growth600
+      - name: Build the separate candidate preview for capacity only
+        env:
+          GROWTH600_NOINDEX_DRAFT_RELEASE: '1'
+          GROWTH600_PREVIEW_ONLY: '1'
+          GROWTH600_DIST: dist-new-tools-noindex
+        run: npm run build:growth600
+      - name: Measure separate deployments and hypothetical path unions without assembling them
+        run: |
+          export CAPACITY_SOURCE_SHA="$(git rev-parse HEAD)"
+          node scripts/release-capacity.mjs --main dist --hub dist-growth600 \
+            --preview dist-new-tools-noindex --output "$RUNNER_TEMP/capacity-report.json"
