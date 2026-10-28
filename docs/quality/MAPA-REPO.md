@@ -36,6 +36,10 @@ El controlador `translation-autopilot.yml` ejecuta la fuente fijada de `feat/new
 - `translation-preflight.yml` / `translation-preflight.py`: puerta reutilizable de 45 Python/seis Node antes de la primera vuelta, con el mismo SHA de fuente. Runner estándar/solo lectura, Python 3.11/Node fijado; falla antes de los modelos. Prueba real [40648113707](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40648113707) correcta, 24 s y cero ms facturables. No carga modelos ni altera políticas/memoria. [Lote](lotes/2026-10-28-puerta-automatica-traducciones.md).
 - `translation-drafts.yml` y sus checkpoints siguen preservados como sistema anterior; no relanzarlos para sustituir el controlador autónomo ni cancelar la campaña activa 40565692987.
 
+## Capacidad del Paso A
+
+`measure-release-capacity.yml` ejecuta tests y tres builds en Actions estándar, sin publicar. `scripts/release-capacity.mjs` inventaría bytes/hash/ruta, rechaza entradas vacías/symlinks y salidas que modifiquen builds, y distingue capacidad de aprobación de despliegue. [40652759818](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818): principal 10.728 archivos, hub 16.354, preview 11.293. Unión hipotética del hub y las 300: 27.470 y 73 conflictos (36 portadas/metadatos). Presupuesto conservador Pages Free 20.000/25 MiB; ningún cambio o consulta del plan real. Mantener la preview existente separada mientras siga abierta la integración definitiva. [Informe y fingerprints](capacity-v1/report.json), [decisión provisional](lotes/2026-10-28-capacidad-paso-a.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |

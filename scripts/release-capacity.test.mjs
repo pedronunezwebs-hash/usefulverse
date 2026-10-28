@@ -58,6 +58,15 @@ test('an oversized conflicting variant cannot disappear behind a smaller shared-
   assert.equal(result.fitsFileAndAssetBudget, false); assert.equal(result.oversizedAssetCount, 1);
 });
 
+test('the measured sitemap collision cannot silently replace published URLs with the empty draft sitemap', () => {
+  const published = new Map([['sitemap.xml', entry('<urlset><url><loc>https://tools.usefulverse.com/tools/existing/</loc></url></urlset>')]]);
+  const saved = published.get('sitemap.xml').sha256;
+  const result = pathUnion([published, new Map([['sitemap.xml', entry('<urlset/>')]])]);
+  assert.deepEqual(result.conflictSample, ['sitemap.xml']);
+  assert.equal(result.conflictingPaths, 1); assert.equal(result.assemblyApproved, false);
+  assert.equal(published.get('sitemap.xml').sha256, saved);
+});
+
 test('a real tree includes metadata/empty files and fingerprints file bytes rather than timestamps', async () => fixture(async ({ builds }) => {
   await writeFile(resolve(builds.main, '_headers'), '');
   const first = summarize(await inventory(builds.main));

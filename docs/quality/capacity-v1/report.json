@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-28T07:53:07.115Z",
+  "sourceCommit": "d1a7429f76e6bb4ba157bc38ad5dbb0a36ee8d72",
+  "limits": {
+    "maxFiles": 20000,
+    "maxAssetBytes": 26214400,
+    "reference": "https://developers.cloudflare.com/pages/platform/limits/",
+    "checkedAt": "2026-10-28"
+  },
+  "countPolicy": "All regular files including config/metadata; no deduplication across distinct paths",
+  "separate": {
+    "main": {
+      "files": 10728,
+      "htmlFiles": 10263,
+      "bytes": 486992641,
+      "treeSha256": "ea3048f391d613c0b16336f5503d48c2c9676fb7036fb709dd5e3599d05d1e75",
+      "largest": [
+        {
+          "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+          "bytes": 14264838
+        },
+        {
+          "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+          "bytes": 6632188
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js",
+          "bytes": 3905767
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm.js",
+          "bytes": 3899472
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm.js",
+          "bytes": 3896484
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm",
+          "bytes": 2862266
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm",
+          "bytes": 2857601
+        },
+        {
+          "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm",
+          "bytes": 2855361
+        },
+        {
+          "path": "assets/ocr-languages-4.0.0/tur.traineddata.gz",
+          "bytes": 2031682
+        },
+        {
+          "path": "assets/ocr-languages-4.0.0/eng.traineddata.gz",
+          "bytes": 1984273
+        }
+      ],
+      "fitsFileAndAssetBudget": true,
+      "excessFiles": 0,
+      "oversizedAssetCount": 0,
+      "oversizedAssetSample": []
+    },
+    "hub": {
+      "files": 16354,
+      "htmlFiles": 15365,
+      "bytes": 776381613,
+      "treeSha256": "50d0faaa8069d6b24fcdcdf6216ccadcd7e6d6e1eec2cb973efb0900e9e169ff",
+      "largest": [
+        {
+          "path": "assets/market-tools/vocal-remover/ort-wasm-simd-threaded.wasm",
+          "bytes": 14264838
+        },
+        {
+          "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+          "bytes": 14264838
+        },
+        {
+          "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+          "bytes": 10872779
+        },
+        {
+          "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+          "bytes": 9598218
+        },
+        {
+          "path": "assets/market-tools/occt-import-js.wasm",
+          "bytes": 7604031
+        },
+        {
+          "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+          "bytes": 6632188
+        },
+        {
+          "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+          "bytes": 6154144
+        },
+        {
+          "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+          "bytes": 5675089
+        },
+        {
+          "path": "assets/ipa-transcriber/cmudict-2026-10-20.dict",
+          "bytes": 3618488
+        },
+        {
+          "path": "assets/pyodide-314.0.7/python_stdlib.zip",
+          "bytes": 2545637
+        }
+      ],
+      "fitsFileAndAssetBudget": true,
+      "excessFiles": 0,
+      "oversizedAssetCount": 0,
+      "oversizedAssetSample": []
+    },
+    "preview": {
+      "files": 11293,
+      "htmlFiles": 10836,
+      "bytes": 241869934,
+      "treeSha256": "3325fa2af07b2881eaf587c0469dbabc54d0d5b13033d876ea55cdeaccb56d21",
+      "largest": [
+        {
+          "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+          "bytes": 14264838
+        },
+        {
+          "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+          "bytes": 10872779
+        },
+        {
+          "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+          "bytes": 9598218
+        },
+        {
+          "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+          "bytes": 6632188
+        },
+        {
+          "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+          "bytes": 6154144
+        },
+        {
+          "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+          "bytes": 5675089
+        },
+        {
+          "path": "assets/ipa-transcriber/cmudict-2026-10-20.dict",
+          "bytes": 3618488
+        },
+        {
+          "path": "assets/pyodide-314.0.7/python_stdlib.zip",
+          "bytes": 2545637
+        },
+        {
+          "path": "assets/vendor/stockfish-19.0.0/stockfish-19-lite-single.wasm",
+          "bytes": 1787571
+        },
+        {
+          "path": "assets/openchemlib-9.25.1/resources.json",
+          "bytes": 1351963
+        }
+      ],
+      "fitsFileAndAssetBudget": true,
+      "excessFiles": 0,
+      "oversizedAssetCount": 0,
+      "oversizedAssetSample": []
+    }
+  },
+  "existingSeparateLayoutFitsBudget": true,
+  "hubWithCandidates": {
+    "files": 27470,
+    "htmlFiles": 26165,
+    "bytes": 937235034,
+    "treeSha256": "1a5ce3aaaaca5cc8c9563c6b5f4d9f92ff45874a3fba40e9603a79269198eeec",
+    "largest": [
+      {
+        "path": "assets/market-tools/vocal-remover/ort-wasm-simd-threaded.wasm",
+        "bytes": 14264838
+      },
+      {
+        "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+        "bytes": 14264838
+      },
+      {
+        "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+        "bytes": 10872779
+      },
+      {
+        "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+        "bytes": 9598218
+      },
+      {
+        "path": "assets/market-tools/occt-import-js.wasm",
+        "bytes": 7604031
+      },
+      {
+        "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+        "bytes": 6632188
+      },
+      {
+        "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+        "bytes": 6154144
+      },
+      {
+        "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+        "bytes": 5675089
+      },
+      {
+        "path": "assets/ipa-transcriber/cmudict-2026-10-20.dict",
+        "bytes": 3618488
+      },
+      {
+        "path": "assets/pyodide-314.0.7/python_stdlib.zip",
+        "bytes": 2545637
+      }
+    ],
+    "fitsFileAndAssetBudget": false,
+    "excessFiles": 7470,
+    "oversizedAssetCount": 0,
+    "oversizedAssetSample": [],
+    "fileCountIsLowerBound": true,
+    "bytesUseLargestConflictingVariant": true,
+    "identicalPathOccurrences": 104,
+    "conflictingPaths": 73,
+    "conflictingHtmlPaths": 36,
+    "conflictSample": [
+      "am/index.html",
+      "am/llms.txt",
+      "ar/index.html",
+      "ar/llms.txt",
+      "bg/index.html",
+      "bg/llms.txt",
+      "bn/index.html",
+      "bn/llms.txt",
+      "ca/index.html",
+      "ca/llms.txt",
+      "de/index.html",
+      "de/llms.txt",
+      "el/index.html",
+      "el/llms.txt",
+      "es/index.html",
+      "es/llms.txt",
+      "fa/index.html",
+      "fa/llms.txt",
+      "fr/index.html",
+      "fr/llms.txt"
+    ],
+    "assemblyApproved": false
+  },
+  "singleOriginReferenceOnly": {
+    "files": 38117,
+    "htmlFiles": 36392,
+    "bytes": 1394578017,
+    "treeSha256": "7128673b7da972782ade429dab45a3b2c0e72db6065ae5f759a2302701f7415d",
+    "largest": [
+      {
+        "path": "assets/market-tools/vocal-remover/ort-wasm-simd-threaded.wasm",
+        "bytes": 14264838
+      },
+      {
+        "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+        "bytes": 14264838
+      },
+      {
+        "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+        "bytes": 10872779
+      },
+      {
+        "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+        "bytes": 9598218
+      },
+      {
+        "path": "assets/market-tools/occt-import-js.wasm",
+        "bytes": 7604031
+      },
+      {
+        "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+        "bytes": 6632188
+      },
+      {
+        "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+        "bytes": 6154144
+      },
+      {
+        "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+        "bytes": 5675089
+      },
+      {
+        "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js",
+        "bytes": 3905767
+      },
+      {
+        "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm.js",
+        "bytes": 3899472
+      }
+    ],
+    "fitsFileAndAssetBudget": false,
+    "excessFiles": 18117,
+    "oversizedAssetCount": 0,
+    "oversizedAssetSample": [],
+    "fileCountIsLowerBound": true,
+    "bytesUseLargestConflictingVariant": true,
+    "identicalPathOccurrences": 109,
+    "conflictingPaths": 75,
+    "conflictingHtmlPaths": 36,
+    "conflictSample": [
+      "_headers",
+      "am/index.html",
+      "am/llms.txt",
+      "ar/index.html",
+      "ar/llms.txt",
+      "bg/index.html",
+      "bg/llms.txt",
+      "bn/index.html",
+      "bn/llms.txt",
+      "ca/index.html",
+      "ca/llms.txt",
+      "de/index.html",
+      "de/llms.txt",
+      "el/index.html",
+      "el/llms.txt",
+      "es/index.html",
+      "es/llms.txt",
+      "fa/index.html",
+      "fa/llms.txt",
+      "fr/index.html"
+    ],
+    "assemblyApproved": false
+  },
+  "measurementOnly": true,
+  "deploymentApproved": false,
+  "deploymentsPerformed": 0
+}
