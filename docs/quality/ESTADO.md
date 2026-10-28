@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T09:27:01.549104+00:00 · extracción inglesa de las 106 recuperadas, sin cambios del motor traductor
+**Turno actual (candado):** LIBRE · Codex · 2026-10-28T12:16:25.210032+00:00 · 106 fuentes conectadas, 147 Node/15 Python; respaldo y retirada verificados
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -196,3 +196,5 @@ Antes de CI, tras cada recolección: `python3 scripts/localization/pilot-checkpo
 **Cierre calidad 28-oct:** código, doce semillas y evidencias recuperables online; retirada propia verificada antes de LIBRE. Correo confirmado por Pedro (P-009 OK); ocho pruebas físicas pendientes, cero FALLA y push no probado. La campaña activa continúa y la mejora entra en la siguiente. [Recibo](translation-drafts/quality-v1/closure.json).
 
 **Cierre del lote UI-14:** Cierre UI-14 2026-10-28T09:20:26.426094+00:00: código/reportes comprobados en GitHub antes de eliminar el clon y todos los temporales propios (811 MB); servidor detenido y pestaña propia en blanco. 43.15 GiB libres. Candado LIBRE; 106 fuentes recuperadas y revisión manual DOMPurify PR #135 pendientes; cero despliegues, activaciones o Actions de web. [Recibo](market-ui-v1/closure.json).
+
+**Cierre del lote UI-106:** Cierre UI-106 2026-10-28T12:16:25.210032+00:00: 106 JSON/código/evidencias comprobados en GitHub antes de eliminar clon y temporales propios (466 MB); 43.49 GiB libres. Candado LIBRE. 48.403 unidades, cero solo metadatos; Paso A y puertas globales/integrales pendientes, cero despliegues/activaciones/Actions de web/modelos iniciados por el agente. [Recibo](recovered-ui-v1/closure.json).
