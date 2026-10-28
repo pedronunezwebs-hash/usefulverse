@@ -29,3 +29,7 @@ No se ejecutaron el `npm test` global, los builds completos principal/hub, el ga
 Sin despliegue ni comprobación de una versión nueva en producción; delta de URLs indexables **0**, cero activaciones, cero idiomas aprobados, cero nuevos tests físicos para Pedro. P-006 de micrófono se conserva; ocho pendientes/cero FALLA en total. Fuente solamente en `feat/new-tools-batch-1`, PR #136 borrador; `main` recibe el relevo y la evidencia, sin las 300 ni este runtime. No se inicia ningún Action de web ni se toca Cloudflare.
 
 **Siguiente:** extraer la UI inglesa de los 106 recuperados, empezando por `radical-calculator` en `live-only-106.manifest.json`: inventariar HTML/JS inglés y separar texto de fórmulas/datos antes de conectar una fuente reutilizable con pruebas. Mantener la preview separada y Paso A abierto. Después siguen los gates de Paso A; todavía no avanzar a fase 0 ni ejecutar la migración del dominio.
+
+**Código respaldado:** [ee9035d](https://github.com/pedronunezwebs-hash/usefulverse/commit/ee9035d5b5c40cbb8b6b1f5001bfb58a44d3a3db).
+
+**Alertas existentes antes de publicar:** el push notificó tres alertas abiertas de DOMPurify en la rama por defecto (crítica/alta/baja); la API confirma que las tres indican 3.4.17 como primera versión corregida. Existe PR #135 para revisión manual. Este lote no modifica dependencias ni afirma que la aplicación esté expuesta a todos esos modos de uso; revisar usos y regresiones antes de integrar/publicar. [Datos de GitHub](../market-ui-v1/security-alerts.json).
