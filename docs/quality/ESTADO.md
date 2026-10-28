@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T14:57:51.141204+00:00 · construcción secuencial recuperable de Paso A; cobertura nb nuevas; traductor intacto
+**Turno actual (candado):** LIBRE · Codex · 2026-10-28T18:25:51.951Z · lote secuencial respaldado y retirada verificada
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -183,6 +183,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** cierre del lote en curso; fuente/evidencias pendientes de respaldo final y limpieza antes de LIBRE. Recibos históricos: LOG.md y lotes/.
+**Retirada actual:** Cierre 2026-10-28T18:25:51.951Z: fuente y árbol remoto verificados en [900621a](https://github.com/pedronunezwebs-hash/usefulverse/commit/900621a9fe95265b40ae38dfd1d05b633354f587); clon, builds, dependencias, descargas y cachés propios eliminados antes de LIBRE. 42.94 GiB libres. Servidores detenidos; pestaña QA en blanco/emulación restablecida. Cero deploy/activaciones/Actions web/Cloudflare; traductor intacto. [Recibo](sequential-v1/closure.json).
 
 Antes de CI del traductor, si se recogen checkpoints: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Actualiza solo inventario/total derivados; no crudos, juicios ni procedencia. No hace falta ejecutarlo para un lote de web sin recolección.
