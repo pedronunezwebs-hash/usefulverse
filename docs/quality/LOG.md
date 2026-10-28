@@ -8,9 +8,13 @@ Un dominio usefulverse.com confirmado: §4b prevé assets sin script por visita 
 
 Cierre verificado 2026-10-28T08:51:09.331706+00:00: refs/estados/árboles protegidos comprobados; siete workflows del traductor activos y sin cambios de bytes, tres de web deshabilitados, configuración automática de dependencias retirada y alertas conservadas. No se creó clon, descarga, build o caché de QA local; 43.18 GiB libres. Candado LIBRE. [Recibo](ops-manual-v1/closure.json).
 
-## 2026-10-28 · Codex · Seguridad y composición del Paso A (en curso)
+## 2026-10-28 · Codex · Seguridad y composición local del Paso A
 
-[Informe](lotes/2026-10-28-seguridad-y-composicion-paso-a.md). DOMPurify 3.4.17 en rama, tres regresiones nativas fallan antes/pasan después, URL vendor nueva; 153 Node correctos. Build parcial Markdown y 27 muestras en/es/ar: se corrigen skip link RTL, márgenes y blancos táctiles. Motor/modelos/workflows/memoria y datos ingleses intactos. Sin publicación ni cierre de alertas/PR. Continúa composición local, candado EN CURSO.
+[Informe](lotes/2026-10-28-seguridad-y-composicion-paso-a.md). DOMPurify 3.4.17 en rama y vendor con URL nueva: tres regresiones nativas fallan antes/pasan después. Skip link RTL, márgenes y controles Markdown arreglados. Compositor local sin despliegue, fail-closed ante pérdida de rutas/noindex, sitemaps/hreflang inseguros, colisiones, cabeceras/redirects no revisados y exceso de disco/archivos/peso. Genera índices por idioma, conserva 404 y enlaces; no es la migración publicada.
+
+Primero se reprodujeron márgenes 12–14 px del principal y 59.117 bytes Brotli de home con vocabulario en línea; después 16 px e índice de búsqueda bajo demanda con respaldo offline. Plantilla principal con 277 tarjetas de origen y 1.000 nombres ingleses: 23.684 bytes Brotli. **193 Node/108 muestras Chrome/25 comprobaciones** correctas. Build parcial real de 38 archivos/900.144 bytes en tres herramientas/tres locales; no full build ni gate integral. La primera maqueta parcial omitió locale-es/ar.js: corregida usando localeBundleSource real, y comprobación permanente de recursos.
+
+Producción solo lectura: word-counter 200; tools./tools/zzz/ sigue 200 con home; preview grammar-checker 200/noindex; Markdown no confirmado tras 403 en el sondeo. Sin despliegue/activación/corte; delta indexable 0. Traductor intacto, siete workflows activos y tres de web deshabilitados; campaña en ejecución y siguiente pendiente. Ninguna prueba física nueva; ocho pendientes y cero FALLA. Siguiente: composición completa 700+300 secuencial ≤2 GB, 37 locales nuevos con nb exigido, gates globales y plan/coste real. Candado continúa EN CURSO hasta verificar respaldo/retirada. [Evidencias](composition-v1/evidence.json).
 
 ## 2026-10-28 · Codex · UI inglesa de las 106 recuperadas
 

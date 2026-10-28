@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-28T13:56:58.089948+00:00",
+  "kind": "read-only-production-baseline-no-deployment",
+  "rows": [
+    {
+      "url": "https://usefulverse.com/tools/word-counter/",
+      "status": 200,
+      "canonical": "https://usefulverse.com/tools/word-counter/",
+      "robots": null,
+      "title": "Word Counter for Google Docs &amp; Text — Free | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/markdown-editor/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/tools/markdown-editor/",
+      "title": "Free Markdown Editor with Live Preview | UsefulVerse",
+      "controllerURL": "https://tools.usefulverse.com/assets/markdown-editor.9839c5b56e70.js",
+      "controllerError": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/",
+      "robots": null,
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://draft-300-noindex.usefulverse-tools.pages.dev/tools/grammar-checker/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/tools/grammar-checker/",
+      "robots": "noindex,follow",
+      "title": "Grammar Checker Free | UsefulVerse"
+    }
+  ],
+  "markdownFollowupAt": "2026-10-28T14:03:53.171939+00:00"
+}

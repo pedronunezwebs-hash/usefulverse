@@ -1,0 +1,27 @@
+{
+  "scope": "security-and-partial-step-a-composition-not-deployment",
+  "nodeTests": 193,
+  "nodeFailures": 0,
+  "compositionTests": 40,
+  "responsiveSamples": 108,
+  "browserTasks": 25,
+  "realEnglishDirectoryBrotliBytes": 23684,
+  "fullBuildCompleted": false,
+  "globalGateCompleted": false,
+  "toolOrLanguageApprovals": 0,
+  "newPedroTests": [],
+  "deployments": 0,
+  "indexableURLDelta": 0,
+  "newBillableResources": 0,
+  "cloudflareAccountQueriedOrModified": false,
+  "translatorModified": false,
+  "stepAComplete": false,
+  "remaining": [
+    "Full 700+300 build/composition within 2 GB; current three-tree plus copy approach exceeds it",
+    "Require 37 draft locales including nb; current common localeEntries has only 36",
+    "Review any home without a primary template; do not invent an indexable nb home",
+    "Rebuild source assets containing an old host; do not rewrite hashed scripts",
+    "Full routing/noindex/quality/security gate, current account plan/cost and publication verification",
+    "Phase 0/G1/domain cutover remain pending"
+  ]
+}

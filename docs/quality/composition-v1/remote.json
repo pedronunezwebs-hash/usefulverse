@@ -1,0 +1,88 @@
+{
+  "main": "e0e10eea4a0823205c46db095a4580e0c909fe29",
+  "feat/new-tools-batch-1": "a81dacd181063388042ad3dd5140b0015e059144",
+  "prs": [
+    {
+      "html_url": "https://github.com/pedronunezwebs-hash/usefulverse/pull/135",
+      "number": 135,
+      "state": "open",
+      "draft": false
+    },
+    {
+      "html_url": "https://github.com/pedronunezwebs-hash/usefulverse/pull/136",
+      "number": 136,
+      "state": "open",
+      "draft": true
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Validate and deploy UsefulVerse",
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Measure Step A release capacity without publishing",
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "UsefulVerse translation autopilot",
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "name": "Background translation drafts",
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation safety preflight",
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "name": "Automatic translation quality check",
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation semantic model check",
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation alerts",
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation bounded wave",
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    },
+    {
+      "name": "Validate staged UsefulVerse without publishing",
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translator_runs": [
+    {
+      "id": 40565692987,
+      "head_sha": "ac5358931cd4277b453cd83e25eb32e49f3b6311",
+      "status": "in_progress",
+      "conclusion": null,
+      "html_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987",
+      "updated_at": "2026-10-28T11:44:12Z"
+    },
+    {
+      "id": 40658885003,
+      "head_sha": "ed2670a55ff7da1c7a27e909f70bfa67bcc5665f",
+      "status": "pending",
+      "conclusion": null,
+      "html_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40658885003",
+      "updated_at": "2026-10-28T08:43:49Z"
+    }
+  ]
+}

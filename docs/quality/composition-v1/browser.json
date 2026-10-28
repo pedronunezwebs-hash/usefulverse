@@ -1,0 +1,2004 @@
+{
+  "scope": "partial-composition-not-full-tool-or-release-gate",
+  "initialGeometry": {
+    "scope": "partial-composition-not-full-gate",
+    "rows": [
+      {
+        "route": "/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": false,
+        "pass": false
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      }
+    ],
+    "tasks": [
+      {
+        "route": "/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "type": "primary-runtime",
+        "ready": "complete",
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "type": "draft-runtime-loaded",
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/es/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "type": "primary-runtime",
+        "ready": "complete",
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "type": "draft-runtime-loaded",
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/ar/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "type": "primary-runtime",
+        "ready": "complete",
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "type": "draft-runtime-loaded",
+        "pass": true
+      }
+    ],
+    "pass": false
+  },
+  "final": {
+    "scope": "partial-composition-not-full-gate",
+    "rows": [
+      {
+        "route": "/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 320,
+        "scrollWidth": 320,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 360,
+        "scrollWidth": 360,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 390,
+        "scrollWidth": 390,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 414,
+        "scrollWidth": 414,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 768,
+        "scrollWidth": 768,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1280,
+        "scrollWidth": 1280,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "width": 1920,
+        "scrollWidth": 1920,
+        "metaOK": true,
+        "marginsOK": true,
+        "pass": true
+      }
+    ],
+    "tasks": [
+      {
+        "route": "/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "type": "search-index-on-demand",
+        "beforeQueries": 0,
+        "afterQueries": 1,
+        "pass": true
+      },
+      {
+        "route": "/",
+        "type": "retained-search-keywords",
+        "vocabulary": [
+          "/tools/word-counter/"
+        ],
+        "pass": true
+      },
+      {
+        "route": "/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "type": "primary-count",
+        "words": "3",
+        "characters": "13",
+        "pass": true
+      },
+      {
+        "route": "/tools/word-counter/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/tools/markdown-editor/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "type": "draft-mechanical-review",
+        "findings": 3,
+        "pass": true
+      },
+      {
+        "route": "/tools/grammar-checker/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/es/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "type": "search-index-on-demand",
+        "beforeQueries": 0,
+        "afterQueries": 1,
+        "pass": true
+      },
+      {
+        "route": "/es/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "type": "primary-count",
+        "words": "3",
+        "characters": "13",
+        "pass": true
+      },
+      {
+        "route": "/es/tools/word-counter/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/es/tools/markdown-editor/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "type": "draft-mechanical-review",
+        "findings": 3,
+        "pass": true
+      },
+      {
+        "route": "/es/tools/grammar-checker/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "type": "directory-search",
+        "cards": 3,
+        "found": [
+          "/ar/tools/grammar-checker/"
+        ],
+        "emptyOK": true,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "type": "search-index-on-demand",
+        "beforeQueries": 0,
+        "afterQueries": 1,
+        "pass": true
+      },
+      {
+        "route": "/ar/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "type": "primary-count",
+        "words": "3",
+        "characters": "13",
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/word-counter/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/markdown-editor/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "type": "draft-mechanical-review",
+        "findings": 3,
+        "pass": true
+      },
+      {
+        "route": "/ar/tools/grammar-checker/",
+        "type": "initial-resource-status",
+        "failedAssets": [],
+        "pass": true
+      }
+    ],
+    "pass": true
+  },
+  "markdownTask": {
+    "version": "3.4.17",
+    "sandbox": "",
+    "bold": true,
+    "scriptRemoved": true,
+    "status": [
+      "Preview updated safely."
+    ]
+  },
+  "visualReview": {
+    "viewports": [
+      390,
+      768,
+      1440
+    ],
+    "locale": "ar",
+    "result": "spacing and centered last row inspected; no phase-1 design approval",
+    "initialHarnessIssue": "locale-es/ar.js missing from first partial harness; real localeBundleSource added and final initial-resource-status checks pass"
+  },
+  "limitations": [
+    "Chromium only; no Firefox/WebKit/axe/Lighthouse or real device verification",
+    "Three tools and three locales, not the complete 700+300 release",
+    "Native Markdown interaction preceded search-index-only change; vendor/Markdown bytes unchanged"
+  ]
+}
