@@ -1,0 +1,561 @@
+{
+  "status": "centralized-english-ui-connected-not-tool-approved",
+  "catalogTools": 1000,
+  "sourceLocale": "en",
+  "destinationLocales": 36,
+  "before": {
+    "sourceUnits": 42685,
+    "sourceDigest": "412d3db7929b84aa2d0b161f3b7dd8b3e73dbecf805ed53d5ad81516aea5456d",
+    "metadataOnly": 106
+  },
+  "after": {
+    "sourceUnits": 48403,
+    "sourceDigest": "05bd0145ba07362f43d8b4d0a0df6cdc9d375aee5adba973b8c3cbb15325f3f7",
+    "metadataOnly": 0
+  },
+  "netNewUnits": 5718,
+  "unchangedOwnerDocuments": 896,
+  "changedUnitsOutsideRecoveredOwners": 0,
+  "owners": [
+    {
+      "id": "radical-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "limit-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 46
+    },
+    {
+      "id": "inequality-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 44
+    },
+    {
+      "id": "rref-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "histogram-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 57
+    },
+    {
+      "id": "differential-equation-solver",
+      "previousUnits": 3,
+      "sourceUnits": 43
+    },
+    {
+      "id": "prime-factorization-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 34
+    },
+    {
+      "id": "rational-expression-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 33
+    },
+    {
+      "id": "modulo-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 37
+    },
+    {
+      "id": "stem-and-leaf-plot-generator",
+      "previousUnits": 3,
+      "sourceUnits": 45
+    },
+    {
+      "id": "box-plot-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 52
+    },
+    {
+      "id": "sleep-debt-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 47
+    },
+    {
+      "id": "push-up-test",
+      "previousUnits": 3,
+      "sourceUnits": 50
+    },
+    {
+      "id": "sobriety-counter",
+      "previousUnits": 3,
+      "sourceUnits": 54
+    },
+    {
+      "id": "bac-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 46
+    },
+    {
+      "id": "hiking-time-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "pdf-flattener",
+      "previousUnits": 3,
+      "sourceUnits": 33
+    },
+    {
+      "id": "pdf-metadata-editor",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "pdf-bookmarks-editor",
+      "previousUnits": 3,
+      "sourceUnits": 58
+    },
+    {
+      "id": "pdf-page-size-converter",
+      "previousUnits": 3,
+      "sourceUnits": 56
+    },
+    {
+      "id": "ics-viewer",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "wilks-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 43
+    },
+    {
+      "id": "circle-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "family-tree-maker",
+      "previousUnits": 3,
+      "sourceUnits": 38
+    },
+    {
+      "id": "stock-profit-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 55
+    },
+    {
+      "id": "pension-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 43
+    },
+    {
+      "id": "lifetime-value-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 38
+    },
+    {
+      "id": "polar-graphing-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "boolean-algebra-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 34
+    },
+    {
+      "id": "week-number-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 34
+    },
+    {
+      "id": "statistical-power-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 52
+    },
+    {
+      "id": "fisher-exact-test-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 58
+    },
+    {
+      "id": "taylor-series-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 53
+    },
+    {
+      "id": "effect-size-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 53
+    },
+    {
+      "id": "ellipse-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 40
+    },
+    {
+      "id": "mann-whitney-u-test-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 50
+    },
+    {
+      "id": "linear-programming-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 58
+    },
+    {
+      "id": "xml-to-csv-converter",
+      "previousUnits": 3,
+      "sourceUnits": 60
+    },
+    {
+      "id": "csv-merge",
+      "previousUnits": 3,
+      "sourceUnits": 66
+    },
+    {
+      "id": "sitemap-validator",
+      "previousUnits": 3,
+      "sourceUnits": 58
+    },
+    {
+      "id": "bcrypt-generator",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "retirement-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 42
+    },
+    {
+      "id": "required-minimum-distribution-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "protein-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 44
+    },
+    {
+      "id": "mortgage-affordability-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 52
+    },
+    {
+      "id": "401k-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 37
+    },
+    {
+      "id": "inflation-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 37
+    },
+    {
+      "id": "text-to-speech",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "world-clock",
+      "previousUnits": 3,
+      "sourceUnits": 35
+    },
+    {
+      "id": "euchre",
+      "previousUnits": 3,
+      "sourceUnits": 62
+    },
+    {
+      "id": "spades-game",
+      "previousUnits": 3,
+      "sourceUnits": 66
+    },
+    {
+      "id": "name-generator",
+      "previousUnits": 3,
+      "sourceUnits": 35
+    },
+    {
+      "id": "random-word-generator",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "breathing-exercise",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "alarm-clock",
+      "previousUnits": 3,
+      "sourceUnits": 35
+    },
+    {
+      "id": "dividend-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 47
+    },
+    {
+      "id": "net-worth-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "body-surface-area-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 123
+    },
+    {
+      "id": "weekly-planner",
+      "previousUnits": 3,
+      "sourceUnits": 144
+    },
+    {
+      "id": "overtime-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 133
+    },
+    {
+      "id": "meeting-minutes-template",
+      "previousUnits": 3,
+      "sourceUnits": 133
+    },
+    {
+      "id": "color-mixer",
+      "previousUnits": 3,
+      "sourceUnits": 154
+    },
+    {
+      "id": "debt-to-income-ratio-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 170
+    },
+    {
+      "id": "car-lease-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 172
+    },
+    {
+      "id": "fire-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 172
+    },
+    {
+      "id": "email-signature-generator",
+      "previousUnits": 3,
+      "sourceUnits": 175
+    },
+    {
+      "id": "image-vectorizer",
+      "previousUnits": 3,
+      "sourceUnits": 38
+    },
+    {
+      "id": "vo2-max-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 52
+    },
+    {
+      "id": "calories-burned-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 64
+    },
+    {
+      "id": "rhyme-finder",
+      "previousUnits": 3,
+      "sourceUnits": 40
+    },
+    {
+      "id": "water-intake-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 47
+    },
+    {
+      "id": "cpm-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 32
+    },
+    {
+      "id": "annuity-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 54
+    },
+    {
+      "id": "options-profit-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 54
+    },
+    {
+      "id": "cribbage",
+      "previousUnits": 3,
+      "sourceUnits": 69
+    },
+    {
+      "id": "gin-rummy",
+      "previousUnits": 3,
+      "sourceUnits": 55
+    },
+    {
+      "id": "gold-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 45
+    },
+    {
+      "id": "mortgage-refinance-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 45
+    },
+    {
+      "id": "cash-on-cash-return-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 36
+    },
+    {
+      "id": "forex-position-size-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 35
+    },
+    {
+      "id": "lease-vs-buy-car-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "epub-to-pdf",
+      "previousUnits": 3,
+      "sourceUnits": 32
+    },
+    {
+      "id": "spider-solitaire",
+      "previousUnits": 3,
+      "sourceUnits": 64
+    },
+    {
+      "id": "freecell",
+      "previousUnits": 3,
+      "sourceUnits": 61
+    },
+    {
+      "id": "snake-game",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "gomoku",
+      "previousUnits": 3,
+      "sourceUnits": 44
+    },
+    {
+      "id": "poker-odds-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 53
+    },
+    {
+      "id": "heart-rate-zone-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 59
+    },
+    {
+      "id": "ideal-weight-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 49
+    },
+    {
+      "id": "eisenhower-matrix",
+      "previousUnits": 3,
+      "sourceUnits": 63
+    },
+    {
+      "id": "social-security-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 53
+    },
+    {
+      "id": "word-puzzle-solver",
+      "previousUnits": 3,
+      "sourceUnits": 60
+    },
+    {
+      "id": "ludo-game",
+      "previousUnits": 3,
+      "sourceUnits": 54
+    },
+    {
+      "id": "memory-test",
+      "previousUnits": 3,
+      "sourceUnits": 52
+    },
+    {
+      "id": "fuel-economy-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 64
+    },
+    {
+      "id": "timeline-maker",
+      "previousUnits": 3,
+      "sourceUnits": 54
+    },
+    {
+      "id": "crossword-online",
+      "previousUnits": 3,
+      "sourceUnits": 48
+    },
+    {
+      "id": "extract-images-from-pdf",
+      "previousUnits": 3,
+      "sourceUnits": 51
+    },
+    {
+      "id": "business-letter-generator",
+      "previousUnits": 3,
+      "sourceUnits": 45
+    },
+    {
+      "id": "markdown-table-generator",
+      "previousUnits": 3,
+      "sourceUnits": 55
+    },
+    {
+      "id": "pdf-accessibility-checker",
+      "previousUnits": 3,
+      "sourceUnits": 51
+    },
+    {
+      "id": "docx-editor",
+      "previousUnits": 3,
+      "sourceUnits": 39
+    },
+    {
+      "id": "vcard-generator",
+      "previousUnits": 3,
+      "sourceUnits": 59
+    },
+    {
+      "id": "meeting-planner",
+      "previousUnits": 3,
+      "sourceUnits": 40
+    },
+    {
+      "id": "moon-phase-calculator",
+      "previousUnits": 3,
+      "sourceUnits": 41
+    },
+    {
+      "id": "vcard-converter",
+      "previousUnits": 3,
+      "sourceUnits": 63
+    }
+  ],
+  "engineModified": false,
+  "modelOrPolicyModified": false,
+  "workflowModified": false,
+  "translationDataModified": false,
+  "legacyRuntimeLiteralsAudited": false,
+  "gameDataTranslated": false,
+  "toolsCompleted": 0,
+  "languagesApproved": 0,
+  "toolsActivated": 0,
+  "deployments": 0
+}

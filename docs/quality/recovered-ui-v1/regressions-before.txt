@@ -1,0 +1,120 @@
+ℹ tests 107
+ℹ suites 0
+ℹ pass 0
+ℹ fail 107
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 807.299541
+  AssertionError [ERR_ASSERTION]: radical-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: limit-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: inequality-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: rref-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: histogram-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: differential-equation-solver: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: prime-factorization-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: rational-expression-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: modulo-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: stem-and-leaf-plot-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: box-plot-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: sleep-debt-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: push-up-test: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: sobriety-counter: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: bac-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: hiking-time-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pdf-flattener: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pdf-metadata-editor: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pdf-bookmarks-editor: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pdf-page-size-converter: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: ics-viewer: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: wilks-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: circle-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: family-tree-maker: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: stock-profit-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pension-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: lifetime-value-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: polar-graphing-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: boolean-algebra-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: week-number-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: statistical-power-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: fisher-exact-test-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: taylor-series-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: effect-size-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: ellipse-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: mann-whitney-u-test-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: linear-programming-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: xml-to-csv-converter: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: csv-merge: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: sitemap-validator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: bcrypt-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: retirement-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: required-minimum-distribution-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: protein-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: mortgage-affordability-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: 401k-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: inflation-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: text-to-speech: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: world-clock: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: euchre: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: spades-game: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: name-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: random-word-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: breathing-exercise: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: alarm-clock: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: dividend-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: net-worth-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: body-surface-area-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: weekly-planner: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: overtime-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: meeting-minutes-template: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: color-mixer: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: debt-to-income-ratio-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: car-lease-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: fire-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: email-signature-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: image-vectorizer: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: vo2-max-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: calories-burned-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: rhyme-finder: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: water-intake-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: cpm-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: annuity-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: options-profit-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: cribbage: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: gin-rummy: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: gold-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: mortgage-refinance-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: cash-on-cash-return-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: forex-position-size-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: lease-vs-buy-car-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: epub-to-pdf: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: spider-solitaire: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: freecell: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: snake-game: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: gomoku: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: poker-odds-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: heart-rate-zone-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: ideal-weight-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: eisenhower-matrix: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: social-security-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: word-puzzle-solver: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: ludo-game: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: memory-test: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: fuel-economy-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: timeline-maker: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: crossword-online: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: extract-images-from-pdf: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: business-letter-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: markdown-table-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: pdf-accessibility-checker: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: docx-editor: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: vcard-generator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: meeting-planner: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: moon-phase-calculator: metadata alone is not UI coverage
+  AssertionError [ERR_ASSERTION]: vcard-converter: metadata alone is not UI coverage
+
+Category split regression: visible category labels were excluded before the fix; 1 failure / 15 tests.
+FAIL: test_visible_category_label_is_prose_but_example_category_is_an_internal_value (test_extract_recovered_copy.RecoveredCopyTests.test_visible_category_label_is_prose_but_example_category_is_an_internal_value)
+AssertionError: None != 'Writing & language'
+Ran 15 tests in 0.024s
+FAILED (failures=1)

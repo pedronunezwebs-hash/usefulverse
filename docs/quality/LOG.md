@@ -8,6 +8,12 @@ Un dominio usefulverse.com confirmado: §4b prevé assets sin script por visita 
 
 Cierre verificado 2026-10-28T08:51:09.331706+00:00: refs/estados/árboles protegidos comprobados; siete workflows del traductor activos y sin cambios de bytes, tres de web deshabilitados, configuración automática de dependencias retirada y alertas conservadas. No se creó clon, descarga, build o caché de QA local; 43.18 GiB libres. Candado LIBRE. [Recibo](ops-manual-v1/closure.json).
 
+## 2026-10-28 · Codex · UI inglesa de las 106 recuperadas
+
+[Informe](lotes/2026-10-28-ui-inglesa-106-recuperadas.md). 42.685→48.403 unidades (+5.718); propietarios solo metadatos 106→0. JSON de UI vinculado a idioma/ID/HTML/controlador; los otros 896 documentos conservan sus hashes. Datos estructurados/juegos separados, siete etiquetas visibles conservadas como prosa y 103 aprobaciones antiguas descartadas. Primero 107 fallos de cobertura; después **147 Node/15 Python correctos**. Recuperador reproduce los 106 sin red/ejecución y rechaza sobrescritura o fuentes mezcladas/obsoletas.
+
+No cambia el motor/umbrales/modelos/workflows/memoria, ni HTML/JS publicado; solo test de cobertura actualizado y regresiones añadidas. Cero Actions de web, modelos iniciados, despliegues, activaciones, nuevos tests físicos o cambios Cloudflare; delta indexable 0, producción no revalidada. Estados/capas/IDs de progress.csv conservados; notas actualizadas en 106 herramientas + fase 0. Paso A sigue abierto; siguiente: revisión manual DOMPurify #135 y composición local/capacidad/noindex con colisiones resueltas, sin corte ni avance de fase.
+
 ## 2026-10-28 · Codex · UI inglesa de los 14 mercados y contratos de mensajes
 
 [Informe](lotes/2026-10-28-ui-inglesa-14-mercados.md). 42.053→42.685 unidades (+632); propietarios solo con metadatos 120→106, todos recuperados. Fuentes originales expuestas por alias; cero cambios del recolector/motor/umbrales/modelos/workflows/memoria. Se reproducen y arreglan mensajes/ejemplos undefined en seis formularios, asunto fijo en inglés y compatibilidad de mensajes de ortografía/guionado. 478 tests locales correctos, build parcial 518 rutas/37 locales, 378 muestras Chrome sin overflow/error de consola; tres tareas reales verificadas.
