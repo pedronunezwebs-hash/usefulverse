@@ -28,11 +28,15 @@ class PreviewPackagesTest(unittest.TestCase):
 
     def test_only_candidates_are_reexported_without_network_inference_or_input_writes(self):
         before = (self.memory / 'manifest.json').read_bytes()
-        report = dict(catalog_tools=300, exported_entries=4, quarantined=8, refined_adopted=4, approved=False)
+        output = self.root / 'github-output'
+        report = dict(catalog_tools=300, exported_entries=4, quarantined=8, refined_adopted=4, approved=False,
+                      semantic_policy='a' * 64, quality_policy='b' * 64)
         with patch.object(preview.pipeline, 'memory', return_value=({}, {})), patch.object(preview.pipeline, 'read_lines'), \
              patch.object(preview.pipeline, 'export', return_value=report) as export, \
-             patch.object(preview.pipeline.client, 'api', side_effect=AssertionError('No network')):
+             patch.object(preview.pipeline.client, 'api', side_effect=AssertionError('No network')), \
+             patch.dict(preview.os.environ, {'GITHUB_OUTPUT': str(output)}):
             with contextlib.redirect_stdout(io.StringIO()): preview.prepare(self.corpus, self.memory, self.root / 'out')
+        self.assertEqual(output.read_text(), f"semantic_policy={report['semantic_policy']}\nquality_policy={report['quality_policy']}\n")
         corpus = export.call_args.args[0]
         self.assertEqual({document['toolId'] for document in corpus['documents']}, set(self.ids))
         self.assertEqual(len(corpus['units']), 300)
