@@ -1,0 +1,48 @@
+{
+  "scope": "real-three-tool-three-locale-partial-not-release",
+  "existingTools": 2,
+  "draftTools": 1,
+  "existingToolRoutes": 6,
+  "draftToolRoutes": 3,
+  "requiredDraftLocales": 3,
+  "inputSitemapURLs": 12,
+  "outputSitemapURLs": 9,
+  "deduplicatedFiles": 2,
+  "resolvedHomeCollisions": 6,
+  "resolvedLlmsCollisions": 6,
+  "files": 38,
+  "estimatedBytes": 900144,
+  "inputBytes": 912990,
+  "sitemapLanguages": 3,
+  "homeBudgets": [
+    {
+      "path": "ar/index.html",
+      "bytes": 15901,
+      "brotliBytes": 3025
+    },
+    {
+      "path": "es/index.html",
+      "bytes": 15081,
+      "brotliBytes": 2915
+    },
+    {
+      "path": "index.html",
+      "bytes": 14664,
+      "brotliBytes": 2762
+    }
+  ],
+  "resources": {
+    "footprintBeforeBytes": 585104969,
+    "projectedWorkingBytes": 586005113,
+    "maxWorkingBytes": 2000000000,
+    "freeBytes": 45820579840,
+    "minFreeBytes": 10000000000
+  },
+  "homePolicy": "primary-template-compact-directory-all-links-search-index-on-first-query",
+  "categoryPolicy": "preserve-primary-categories-other-tools-searchable-under-existing-all-label",
+  "deployments": 0,
+  "toolsActivated": 0,
+  "deploymentApproved": false,
+  "cloudflarePlanVerified": false,
+  "written": true
+}

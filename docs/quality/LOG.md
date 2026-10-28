@@ -8,6 +8,14 @@ Un dominio usefulverse.com confirmado: §4b prevé assets sin script por visita 
 
 Cierre verificado 2026-10-28T08:51:09.331706+00:00: refs/estados/árboles protegidos comprobados; siete workflows del traductor activos y sin cambios de bytes, tres de web deshabilitados, configuración automática de dependencias retirada y alertas conservadas. No se creó clon, descarga, build o caché de QA local; 43.18 GiB libres. Candado LIBRE. [Recibo](ops-manual-v1/closure.json).
 
+## 2026-10-28 · Codex · Seguridad y composición local del Paso A
+
+[Informe](lotes/2026-10-28-seguridad-y-composicion-paso-a.md). DOMPurify 3.4.17 en rama y vendor con URL nueva: tres regresiones nativas fallan antes/pasan después. Skip link RTL, márgenes y controles Markdown arreglados. Compositor local sin despliegue, fail-closed ante pérdida de rutas/noindex, sitemaps/hreflang inseguros, colisiones, cabeceras/redirects no revisados y exceso de disco/archivos/peso. Genera índices por idioma, conserva 404 y enlaces; no es la migración publicada.
+
+Primero se reprodujeron márgenes 12–14 px del principal y 59.117 bytes Brotli de home con vocabulario en línea; después 16 px e índice de búsqueda bajo demanda con respaldo offline. Plantilla principal con 277 tarjetas de origen y 1.000 nombres ingleses: 23.684 bytes Brotli. **193 Node/108 muestras Chrome/25 comprobaciones** correctas. Build parcial real de 38 archivos/900.144 bytes en tres herramientas/tres locales; no full build ni gate integral. La primera maqueta parcial omitió locale-es/ar.js: corregida usando localeBundleSource real, y comprobación permanente de recursos.
+
+Producción solo lectura: word-counter 200; tools./tools/zzz/ sigue 200 con home; preview grammar-checker 200/noindex; Markdown no confirmado tras 403 en el sondeo. Sin despliegue/activación/corte; delta indexable 0. Traductor intacto, siete workflows activos y tres de web deshabilitados; campaña en ejecución y siguiente pendiente. Ninguna prueba física nueva; ocho pendientes y cero FALLA. Siguiente: composición completa 700+300 secuencial ≤2 GB, 37 locales nuevos con nb exigido, gates globales y plan/coste real. Candado LIBRE tras verificar respaldo/retirada. [Evidencias](composition-v1/evidence.json).
+
 ## 2026-10-28 · Codex · UI inglesa de las 106 recuperadas
 
 [Informe](lotes/2026-10-28-ui-inglesa-106-recuperadas.md). 42.685→48.403 unidades (+5.718); propietarios solo metadatos 106→0. JSON de UI vinculado a idioma/ID/HTML/controlador; los otros 896 documentos conservan sus hashes. Datos estructurados/juegos separados, siete etiquetas visibles conservadas como prosa y 103 aprobaciones antiguas descartadas. Primero 107 fallos de cobertura; después **147 Node/15 Python correctos**. Recuperador reproduce los 106 sin red/ejecución y rechaza sobrescritura o fuentes mezcladas/obsoletas.
@@ -717,3 +725,5 @@ Producción revisada con cinco GET y dos XML: 25.625 URLs, tres soft404 siguen e
 Se sincronizan instrucciones/resultados con main usando [skip ci], sin integrar el código de las 300 ni publicar. Retirada efectiva y liberación del candado se documentan después de eliminar el clon.
 
 Retirada efectiva verificada el 28-oct: clon propio eliminado antes de liberar el candado; 42.27 GiB libres. El código y los 16 registros iniciales están en GitHub y los documentos coinciden en ambas ramas. La tanda 40523422271 sigue deliberadamente en Actions, independiente del Mac/chat; recoger su salida cuando termine. Comprobante: `translation-drafts/closure.json`.
+
+Cierre seguridad/composición 2026-10-28T14:08:33.074916+00:00: árbol de [0c8b95a](https://github.com/pedronunezwebs-hash/usefulverse/commit/0c8b95adf21783cff229afab2e05eb5d236cad2a) comprobado en GitHub; retirada propia completa, 43.24 GiB libres; servidor/página QA cerrados. Sin trabajo único local; candado LIBRE. [Recibo](composition-v1/closure.json).
