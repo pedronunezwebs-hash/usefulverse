@@ -8,6 +8,10 @@ Un dominio usefulverse.com confirmado: §4b prevé assets sin script por visita 
 
 Cierre verificado 2026-10-28T08:51:09.331706+00:00: refs/estados/árboles protegidos comprobados; siete workflows del traductor activos y sin cambios de bytes, tres de web deshabilitados, configuración automática de dependencias retirada y alertas conservadas. No se creó clon, descarga, build o caché de QA local; 43.18 GiB libres. Candado LIBRE. [Recibo](ops-manual-v1/closure.json).
 
+## 2026-10-28 · Codex · Seguridad y composición del Paso A (en curso)
+
+[Informe](lotes/2026-10-28-seguridad-y-composicion-paso-a.md). DOMPurify 3.4.17 en rama, tres regresiones nativas fallan antes/pasan después, URL vendor nueva; 153 Node correctos. Build parcial Markdown y 27 muestras en/es/ar: se corrigen skip link RTL, márgenes y blancos táctiles. Motor/modelos/workflows/memoria y datos ingleses intactos. Sin publicación ni cierre de alertas/PR. Continúa composición local, candado EN CURSO.
+
 ## 2026-10-28 · Codex · UI inglesa de las 106 recuperadas
 
 [Informe](lotes/2026-10-28-ui-inglesa-106-recuperadas.md). 42.685→48.403 unidades (+5.718); propietarios solo metadatos 106→0. JSON de UI vinculado a idioma/ID/HTML/controlador; los otros 896 documentos conservan sus hashes. Datos estructurados/juegos separados, siete etiquetas visibles conservadas como prosa y 103 aprobaciones antiguas descartadas. Primero 107 fallos de cobertura; después **147 Node/15 Python correctos**. Recuperador reproduce los 106 sin red/ejecución y rechaza sobrescritura o fuentes mezcladas/obsoletas.

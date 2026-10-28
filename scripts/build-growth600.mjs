@@ -327,7 +327,7 @@ for (let index = 0; index < speedProbe.length; index += 1) {
 }
 extraAssets['speed-test-probe.bin'] = speedProbe;
 extraAssets['vendor/marked-18.0.14.umd.js'] = await readFile(resolve(root, 'node_modules/marked/lib/marked.umd.js'));
-extraAssets['vendor/purify-3.4.16.min.js'] = await readFile(resolve(root, 'node_modules/dompurify/dist/purify.min.js'));
+extraAssets['vendor/purify-3.4.17.min.js'] = await readFile(resolve(root, 'node_modules/dompurify/dist/purify.min.js'));
 extraAssets['licenses/marked-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/marked/LICENSE'));
 extraAssets['licenses/DOMPurify-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/dompurify/LICENSE'));
 const cubejsVendor = resolve(root, 'src/growth600/tools/rubiks-cube-solver/vendor');

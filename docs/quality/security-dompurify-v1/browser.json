@@ -1,0 +1,59 @@
+{
+  "before": {
+    "version": "3.4.16",
+    "checks": [
+      {
+        "id": "ordinary-html-preserves-content-and-removes-executable-markup",
+        "passed": true
+      },
+      {
+        "id": "GHSA-cg2g-xh64-v4q7-shadow-text-is-scrubbed-after-merging",
+        "passed": false,
+        "error": "a template expression survived in the shadow tree"
+      },
+      {
+        "id": "GHSA-mrv2-3pqr-j5jr-detached-subtrees-are-neutralized",
+        "passed": false,
+        "error": "parent: a detached element kept its handler"
+      },
+      {
+        "id": "GHSA-c6gr-qvv4-5v3f-xhtml-svg-animation-cannot-rewrite-href",
+        "passed": false,
+        "error": "an animation can still change the link destination"
+      }
+    ],
+    "passed": false
+  },
+  "after": {
+    "version": "3.4.17",
+    "checks": [
+      {
+        "id": "ordinary-html-preserves-content-and-removes-executable-markup",
+        "passed": true
+      },
+      {
+        "id": "GHSA-cg2g-xh64-v4q7-shadow-text-is-scrubbed-after-merging",
+        "passed": true
+      },
+      {
+        "id": "GHSA-mrv2-3pqr-j5jr-detached-subtrees-are-neutralized",
+        "passed": true
+      },
+      {
+        "id": "GHSA-c6gr-qvv4-5v3f-xhtml-svg-animation-cannot-rewrite-href",
+        "passed": true
+      }
+    ],
+    "passed": true,
+    "declared": "3.4.17",
+    "versionMatches": true
+  },
+  "sources": [
+    "https://github.com/cure53/DOMPurify/releases/tag/3.4.17",
+    "https://github.com/advisories/GHSA-cg2g-xh64-v4q7",
+    "https://github.com/advisories/GHSA-mrv2-3pqr-j5jr",
+    "https://github.com/advisories/GHSA-c6gr-qvv4-5v3f"
+  ],
+  "environment": "Real Chrome DOM on localhost; payloads inspected, never evaluated or clicked",
+  "productionChecked": false
+}
