@@ -41,3 +41,5 @@ Continuar la UI inglesa de los 14 propietarios de mercado y después los 106 rec
 no reactivar Actions como atajo. Mantener los 18 controles/siete capas, pruebas físicas solo aplicables y sin nuevas activaciones.
 La migración y el corte de dominio no se han realizado. Cero comprobaciones nuevas de producción, nuevas pruebas de Pedro o
 cambios de estado de herramientas. El traductor continúa por la excepción autorizada.
+
+Cierre: árbol de workflows, scripts, src y datos históricos del traductor idénticos a antes del lote; siete workflows activos. Se conservan para revisión manual las PR de dependencias #133/#134/#135, sin cerrarlas. Configuración/alertas comprobadas de nuevo; no hay ejecuciones no traductoras activas al verificar. Sin temporales propios creados. [Recibo](../ops-manual-v1/closure.json).

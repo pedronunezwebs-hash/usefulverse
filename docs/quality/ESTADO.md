@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-28 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T08:27:14.997648+00:00 · webs sin Actions; traductor intacto y dominio único previsto
+**Turno actual (candado):** LIBRE · Codex · 2026-10-28T08:51:09.331706+00:00 · Actions de web deshabilitadas; traductor intacto; respaldo verificado
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -130,7 +130,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 - Paso B: activadas **0** (máximo 30 por semana) · semana actual: 0 / 30
 
 ### Fase 8 · Piloto automático y anuncios (REVISION-FINAL §3-5)
-- [ ] Action semanal de vigilancia (URLs, 404, sitemaps, alarma de Search Console → Issue)
+- [ ] Vigilancia semanal de la web por método local/manual sin Actions; conservar comprobaciones y evidencia, sin presentarla como servicio activo
 - [ ] Aviso de datos caducados + Issue del 2 de enero
 - [ ] Activación automática semanal de hasta 30 nuevas ya aprobadas
 - [ ] Huecos de anuncio reservados y apagados, CMP certificado preparado, `ads.txt`, privacidad con sección de anuncios

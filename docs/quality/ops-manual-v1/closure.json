@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-10-28T08:51:09.331706+00:00",
+  "free_gib": 43.18,
+  "local_clone_created": false,
+  "own_temporaries_created": false,
+  "web_workflows": [
+    {
+      "id": 369445095,
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 399137042,
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 398638861,
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translation_workflows": [
+    {
+      "id": 398606956,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "id": 398339103,
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "id": 399105429,
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "id": 398688124,
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "id": 398574055,
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "id": 398574056,
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "id": 398606958,
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    }
+  ],
+  "protected_trees_unchanged": true,
+  "protected_tree_shas": {
+    "src": "8ef1ffaa2eb426ceba9b4fe90e683efc1bd00b4c",
+    "scripts": "caf92096b8a3c7f7d6324109670f6ffa68418e26",
+    "workflows": "5b4671a2059aebc444c722e687a722f611f6ea2c",
+    "translation_drafts": "31695f8593e1a6c8ecf381832c0b4c19d4714c27"
+  },
+  "active_runs": [
+    {
+      "id": 40658885003,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "status": "pending",
+      "event": "schedule"
+    },
+    {
+      "id": 40565692987,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "status": "in_progress",
+      "event": "workflow_dispatch"
+    }
+  ],
+  "dependabot_config_missing": true,
+  "automatic_security_prs_enabled": false,
+  "vulnerability_alerts_enabled": true,
+  "existing_dependency_prs_preserved": [
+    135,
+    134,
+    133
+  ],
+  "cloudflare_changed": false,
+  "cloudflare_plan_reverified": false,
+  "domain_migration_performed": false,
+  "new_action_runs_dispatched": 0,
+  "translation_jobs_cancelled": false,
+  "translation_data_modified_by_agent": false,
+  "deployments": 0,
+  "tools_activated": 0
+}

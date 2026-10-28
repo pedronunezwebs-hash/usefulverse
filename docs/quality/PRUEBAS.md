@@ -1,7 +1,7 @@
 # UsefulVerse · Protocolo de pruebas (obligatorio en cada herramienta)
 
 20-oct-2026 · Decisión de Pedro: **toda herramienta se verifica de forma exhaustiva antes de darla por terminada, y se
-vuelve a verificar de forma automática cada semana.** Lo que un agente no puede probar (dispositivo real, permisos,
+vuelve a verificar cada semana (desde el 28-oct, local/manualmente para las herramientas).** Lo que un agente no puede probar (dispositivo real, permisos,
 sensaciones) se apunta en `docs/quality/PRUEBAS-PEDRO.md` para que Pedro lo haga, con los pasos exactos.
 
 Motivo: la auditoría del 20-oct encontró 26 errores reales (cálculos, juegos y conversiones) que habían pasado los tests
