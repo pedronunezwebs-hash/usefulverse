@@ -1,14 +1,12 @@
 {
-  "id": 40599566567,
-  "html_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40599566567",
-  "head_sha": "f0960a31dea95a2daec2c4c0bd90bb33a422edc8",
+  "checked_at": "2026-10-28T06:54:26.647277+00:00",
+  "source_commit": "1d67bdf80d5081ab005bc945c03feef5bf708cc5",
+  "run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40646366137",
   "status": "in_progress",
   "conclusion": null,
-  "created_at": "2026-10-27T23:04:51Z",
-  "updated_at": "2026-10-27T23:04:56Z",
   "jobs": [
     {
-      "id": 122524016163,
+      "id": 122676010173,
       "name": "validate",
       "status": "in_progress",
       "conclusion": null,
@@ -18,79 +16,79 @@
           "status": "completed",
           "conclusion": "success",
           "number": 1,
-          "started_at": "2026-10-27T23:04:56Z",
-          "completed_at": "2026-10-27T23:04:57Z"
+          "started_at": "2026-10-28T06:51:03Z",
+          "completed_at": "2026-10-28T06:51:05Z"
         },
         {
           "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
           "status": "completed",
           "conclusion": "success",
           "number": 2,
-          "started_at": "2026-10-27T23:04:57Z",
-          "completed_at": "2026-10-27T23:05:05Z"
+          "started_at": "2026-10-28T06:51:05Z",
+          "completed_at": "2026-10-28T06:51:15Z"
         },
         {
           "name": "Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1",
           "status": "completed",
           "conclusion": "success",
           "number": 3,
-          "started_at": "2026-10-27T23:05:05Z",
-          "completed_at": "2026-10-27T23:05:06Z"
+          "started_at": "2026-10-28T06:51:15Z",
+          "completed_at": "2026-10-28T06:51:19Z"
         },
         {
           "name": "Check historical workflow integrity and autopilot contracts first",
           "status": "completed",
           "conclusion": "success",
           "number": 4,
-          "started_at": "2026-10-27T23:05:06Z",
-          "completed_at": "2026-10-27T23:05:07Z"
+          "started_at": "2026-10-28T06:51:19Z",
+          "completed_at": "2026-10-28T06:51:21Z"
         },
         {
           "name": "Install pinned dependencies without hooks",
           "status": "completed",
           "conclusion": "success",
           "number": 5,
-          "started_at": "2026-10-27T23:05:07Z",
-          "completed_at": "2026-10-27T23:05:15Z"
+          "started_at": "2026-10-28T06:51:21Z",
+          "completed_at": "2026-10-28T06:51:32Z"
         },
         {
           "name": "Read saved translation memory without publishing or inference",
           "status": "completed",
           "conclusion": "success",
           "number": 6,
-          "started_at": "2026-10-27T23:05:15Z",
-          "completed_at": "2026-10-27T23:05:17Z"
+          "started_at": "2026-10-28T06:51:32Z",
+          "completed_at": "2026-10-28T06:51:39Z"
         },
         {
           "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
           "status": "completed",
           "conclusion": "success",
           "number": 7,
-          "started_at": "2026-10-27T23:05:17Z",
-          "completed_at": "2026-10-27T23:05:17Z"
+          "started_at": "2026-10-28T06:51:39Z",
+          "completed_at": "2026-10-28T06:51:40Z"
         },
         {
           "name": "Revalidate saved proofs for the 300-tool preview",
           "status": "completed",
           "conclusion": "success",
           "number": 8,
-          "started_at": "2026-10-27T23:05:17Z",
-          "completed_at": "2026-10-27T23:05:25Z"
+          "started_at": "2026-10-28T06:51:40Z",
+          "completed_at": "2026-10-28T06:51:59Z"
         },
         {
           "name": "Build isolated 300-tool noindex preview",
           "status": "completed",
           "conclusion": "success",
           "number": 9,
-          "started_at": "2026-10-27T23:05:25Z",
-          "completed_at": "2026-10-27T23:05:37Z"
+          "started_at": "2026-10-28T06:51:59Z",
+          "completed_at": "2026-10-28T06:52:14Z"
         },
         {
           "name": "Run complete Node and Python suites",
           "status": "in_progress",
           "conclusion": null,
           "number": 10,
-          "started_at": "2026-10-27T23:05:37Z",
+          "started_at": "2026-10-28T06:52:14Z",
           "completed_at": null
         },
         {
@@ -152,11 +150,10 @@
       ]
     }
   ],
-  "deployments": 0,
-  "artifacts_created_by_workflow": 0,
-  "runner": "ubuntu-latest",
+  "focused_regression_passed": true,
+  "preview_build_passed": true,
+  "verified_tool_routes": 10800,
   "full_suite_pending": true,
-  "local_node_tests": 6,
-  "local_python_tests": 24,
+  "deployments": 0,
   "quality_gate_approved": false
 }
