@@ -6,6 +6,28 @@
 Reglas para cualquier agente (Codex, ChatGPT, Claude u otro) que trabaje en este repositorio.
 Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`).
 
+## Operación vigente · Pedro, 28-oct-2026 · webs sin Actions
+
+Esta decisión prevalece sobre las instrucciones anteriores de ejecución del repo. **GitHub Actions solo se autoriza
+para el traductor ya configurado**, incluidas sus comprobaciones, entrega de checkpoints y avisos. Sus siete workflows
+`translation-*.yml`, modelos, memoria y campaña activa se conservan intactos.
+
+Las pruebas, builds, mediciones y despliegues de las herramientas/webs se hacen **fuera de Actions**, de forma local/manual.
+No lanzar ni reactivar `deploy-cloudflare.yml`, `validate-staged.yml`, `measure-release-capacity.yml` ni crear un sustituto
+para esas tareas. Sus definiciones se conservan como histórico; están deshabilitados en GitHub. Subir código mediante Git
+normal sigue permitido. Mantener presupuestos GitHub a 0 y no usar Codespaces, Packages, Git LFS ni créditos de IA de pago.
+
+Las PR automáticas de Dependabot se pausan para evitar su flujo dinámico de Actions; las alertas de vulnerabilidades
+permanecen activas y las dependencias se revisan manualmente. No se cierran PR existentes. El flujo dinámico puede seguir
+apareciendo como histórico activo en la API; no se relanza. Las protecciones, escaneo de secretos y bloqueo de push no cambian.
+
+Objetivo confirmado: todas las herramientas bajo **`https://usefulverse.com`**, con redirecciones 301 de `tools.` al cortar
+la migración, conservando rutas/query e indexación. RUNBOOK §4b mantiene el Worker solo de assets y despliegue manual;
+antes de publicar hay que verificar el plan ya existente y demostrar que no añade costes. No contratar/subir planes,
+activar productos facturables ni usar Containers. El plan existente de Cloudflare no se modifica en este lote.
+Las siete capas/18 controles siguen siendo obligatorios. En local se conservan el umbral de 10 GB libres y la huella de
+2 GB por lote; diseñar builds parciales/secuenciales antes de un build completo. Los modelos no se trasladan al Mac.
+
 ## Catálogo en pausa · decisión del dueño (20-oct-2026)
 
 - **Pausa (no límite definitivo):** por ahora no se crean herramientas ni idiomas nuevos más allá de las 300 ya hechas y de

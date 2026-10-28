@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-28T08:40:57.694107+00:00",
+  "web_workflows": [
+    {
+      "id": 369445095,
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 399137042,
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 398638861,
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translation_workflows": [
+    {
+      "id": 398606956,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "id": 398339103,
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "id": 399105429,
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "id": 398688124,
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "id": 398574055,
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "id": 398574056,
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "id": 398606958,
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    }
+  ],
+  "protected_trees_before": {
+    "feat/new-tools-batch-1": {
+      "src": "723d4b1982c123ad9fffafb501d3b8f304d06a5c",
+      "scripts": "41796878815adfcf91bdc3439de6da0917197704",
+      "workflows": "b8f29e6e3bd6dad899c16ca4316e4965e79e5642",
+      "translation_drafts": "ca1d5dd9eb51475f7751cc419d4a5d622d4cd051"
+    },
+    "main": {
+      "src": "8ef1ffaa2eb426ceba9b4fe90e683efc1bd00b4c",
+      "scripts": "caf92096b8a3c7f7d6324109670f6ffa68418e26",
+      "workflows": "5b4671a2059aebc444c722e687a722f611f6ea2c",
+      "translation_drafts": "31695f8593e1a6c8ecf381832c0b4c19d4714c27"
+    }
+  },
+  "automatic_security_update_prs_enabled": false,
+  "vulnerability_alerts_enabled": true,
+  "dependabot_version_config": "archived and removed",
+  "managed_workflow_disable_response": "HTTP 422; scheduler disabled through supported configuration instead",
+  "existing_dependency_prs_closed": false,
+  "cloudflare_changed": false,
+  "cloudflare_account_plan_reverified": false,
+  "new_action_runs_dispatched": 0,
+  "translation_data_written_by_agent": false,
+  "translation_campaign_cancelled": false,
+  "tools_activated": 0,
+  "deployments": 0
+}

@@ -1,3 +1,11 @@
+## 2026-10-28 · Codex · Webs sin Actions, traductor intacto
+
+[Decisión y comprobaciones](lotes/2026-10-28-webs-manuales-traductor-intacto.md). Nueva instrucción de Pedro: no usar Actions para herramientas/webs, excepto el traductor que se configuró deliberadamente con sus controles/avisos. Deshabilitados deploy-cloudflare, validate-staged y measure-release-capacity; sus definiciones siguen intactas. Los siete translation-*.yml mantienen estado activo y no se cancela/relanza la campaña. No se toca memoria, modelos, scripts, fuentes ni checkpoints.
+
+Dependabot dinámico rechaza disable normal (422); PR de seguridad automáticas pausadas y configuración de versiones archivada/retirada, alertas de vulnerabilidades conservadas. No se cierran PR previas. Los registros dinámicos históricos pueden seguir apareciendo. Verificación por API/estados/hashes, sin ejecutar nuevas Actions/builds. QA/publicación de web pasa a local/manual y siguen los 18 controles/siete capas.
+
+Un dominio usefulverse.com confirmado: §4b prevé assets sin script por visita y 301 de tools. Antes del corte hay que comprobar plan/coste y composición correcta; no se afirma migración realizada. No se toca Cloudflare, billing ni presupuestos y no se contrata nada. Cero nuevos tests físicos/activaciones/cambios de estado de herramienta. Siguiente: UI inglesa de los 14/106 y build/manual de la ruta unificada dentro de presupuestos.
+
 ## 2026-10-28 · Codex · Capacidad medida y pruebas físicas solo aplicables
 
 [Informe](lotes/2026-10-28-capacidad-paso-a.md), [código d1a7429](https://github.com/pedronunezwebs-hash/usefulverse/commit/d1a7429f76e6bb4ba157bc38ad5dbb0a36ee8d72), [Actions 40652759818](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818). 13 tests/tres builds/gate correctos en 113 s; cero ms facturables y artifacts. Principal 10.728 archivos, hub 16.354, preview 11.293; caben separados en el presupuesto conservador de Pages Free (20.000/25 MiB). Unión hipotética hub+300: 27.470, exceso mínimo 7.470, 73 conflictos/36 portadas y sitemap. No se ensamblan/sobrescriben builds ni se cambia cuenta/dominio/plan. Ruta provisional: dos sitios de las 700 y preview existente de las 300; publicación definitiva pendiente.

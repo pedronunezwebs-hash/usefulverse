@@ -4,6 +4,15 @@ Estado, candado, métricas y siguiente paso: **[ESTADO.md](ESTADO.md)**. Histori
 
 Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo en AGENTS.md. Código del Paso A y piloto actual solo en `feat/new-tools-batch-1`, [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. Main recibe el relevo y los controladores/workflows del traductor con `[skip ci]`, sin publicar las 300 ni cambiar la web.
 
+## Operación vigente · 28-oct
+
+Actions solo para el traductor y sus verificaciones/avisos. Los tres workflows de web (`deploy-cloudflare.yml`,
+`validate-staged.yml`, `measure-release-capacity.yml`) están deshabilitados; se conserva su código histórico.
+QA/build/deploy de las herramientas: local/manual, Git normal, sin servicios facturables nuevos. Dependabot automático
+pausado y alertas de vulnerabilidades conservadas. El destino sigue siendo un sitio en `usefulverse.com` con assets sin
+script por visita; antes del corte se verifican plan/coste/collisiones y 301 de `tools.`. La web publicada sigue dividida.
+[Decisión y recibo](lotes/2026-10-28-webs-manuales-traductor-intacto.md).
+
 ## Dos sitios, dos builds
 
 | Sitio | Proyecto de Cloudflare Pages | Build | Salida | Catálogo | Plantilla |
@@ -15,14 +24,14 @@ Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo
 > división fue el límite de 20.000 archivos de Pages en el plan gratuito; Workers Static Assets admite 100.000 y la cuenta ya
 > tiene Workers Paid.
 
-## Despliegue y CI (`.github/workflows/deploy-cloudflare.yml`)
+## Despliegue y CI históricos (`.github/workflows/deploy-cloudflare.yml`, ahora deshabilitado)
 
 - Push a main sin `[skip ci]`: tests, build principal, gate de idiomas, build del hub y publicación solo de usefulverse.com.
 - El hub tools. se publica solo mediante workflow_dispatch en main y publish_growth600=true. No activarlo durante el piloto.
 - PR a main: validación completa y preview aislada de las 300 en noindex; no publica.
 - Piloto: workflow_dispatch, translation_pilot=true, perfil context-v33, engine madlad, locale ru y scope references/full; full exige referencias y avisos aprobados. No repetir los runs cerrados.
 - Solo ubuntu-latest estándar. Sitio: 45 min; piloto: 90 min. Permisos contents:read, acciones por SHA. No usar runners de pago, artefactos ni cachés persistentes de modelos.
-- Pipeline local ligero: pruebas enfocadas, extracción de corpus y análisis estático. Modelos/builds completos exclusivamente en Actions. No usar Codespaces ni Containers.
+- Operación actual: modelos del traductor en Actions; pruebas/builds/deploys de web locales/manuales y dentro de presupuesto. No usar Codespaces ni Containers.
 - CI histórica v33: <!-- V33_CHECK -->CI final [40509319243](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40509319243), fuente `660bb37d294ce392e3353ac4973e20521bb7baeb`: 3.045 Node y 396 Python (394 correctas, 2 omisiones opcionales), cero fallos/errores; Python 1632.236 s en cuatro procesos, cada ID una vez. Builds principal/hub, gate existente y preview noindex correctos; modelo y publicaciones omitidos. No acredita 37 locales ni revisión nativa.<!-- /V33_CHECK -->
 
 ## Traducción automática y vista previa · 28-oct

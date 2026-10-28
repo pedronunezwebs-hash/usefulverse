@@ -20,19 +20,21 @@ Después del cierre se mantienen las regresiones y la vigilancia semanal.
 | **1. Valores de referencia** | El resultado es **correcto**, no solo «que sale algo» | Mínimo 10 casos con la respuesta conocida de una **fuente externa** (libro, fuente oficial, líder del sector); se anota la fuente junto al caso. Incluye ceros, negativos, decimales, números enormes, coma decimal, unidades, años bisiestos y horario de verano | `npm test` (Node) |
 | **2. Propiedades y casos aleatorios** | No se rompe con entradas raras | Pruebas con miles de entradas generadas (`fast-check`): ida y vuelta (A→B→A ≈ A), sin `NaN`, `Infinity` ni bloqueos; juegos: cada partida es válida y resoluble, y 1.000 generaciones no se repiten | `npm test` |
 | **3. Regresión** | Un error arreglado no vuelve nunca | **Cada error encontrado se convierte en un test permanente** con el caso exacto que lo provocó (los 26 de la auditoría, los primeros) | `npm test` |
-| **4. Navegador de extremo a extremo** | Funciona como lo usa una persona | Playwright: carga sin errores de consola; tarea principal con datos de ejemplo → resultado esperado; archivos de prueba (pequeño, grande, dañado, varios a la vez, arrastrar y pegar); botones copiar, descargar y siguiente paso | GitHub Actions |
-| **5. Dispositivos e idiomas** | Funciona en todas partes | Viewport móvil 390 px con táctil, tablet y escritorio; solo teclado; **Chromium, Firefox y WebKit**; idiomas `en`, `es`, `de` (textos largos), `ar` (derecha a izquierda), `ja`, `hi` y `nb`; ningún texto en inglés en las páginas traducidas; sin desbordamiento horizontal; **regresión visual** con capturas en 320-1920 px (`PESO-Y-DISENO.md` §4); **presupuesto de peso** por página (§2) | GitHub Actions |
-| **6. Accesibilidad y rendimiento** | Se puede usar y es rápido | axe-core sin errores; Lighthouse móvil dentro del presupuesto (LCP < 1,8 s, CLS < 0,05, INP < 150 ms) | GitHub Actions |
+| **4. Navegador de extremo a extremo** | Funciona como lo usa una persona | Playwright: carga sin errores de consola; tarea principal con datos de ejemplo → resultado esperado; archivos de prueba (pequeño, grande, dañado, varios a la vez, arrastrar y pegar); botones copiar, descargar y siguiente paso | Ejecución local/manual |
+| **5. Dispositivos e idiomas** | Funciona en todas partes | Viewport móvil 390 px con táctil, tablet y escritorio; solo teclado; **Chromium, Firefox y WebKit**; idiomas `en`, `es`, `de` (textos largos), `ar` (derecha a izquierda), `ja`, `hi` y `nb`; ningún texto en inglés en las páginas traducidas; sin desbordamiento horizontal; **regresión visual** con capturas en 320-1920 px (`PESO-Y-DISENO.md` §4); **presupuesto de peso** por página (§2) | Ejecución local/manual |
+| **6. Accesibilidad y rendimiento** | Se puede usar y es rápido | axe-core sin errores; Lighthouse móvil dentro del presupuesto (LCP < 1,8 s, CLS < 0,05, INP < 150 ms) | Ejecución local/manual |
 | **7. Revisión humana o de agente** | La experiencia es buena, no solo correcta | Test del niño de 8 años, comparación con el líder del sector y lectura del contenido. Lo que solo una persona con un dispositivo real puede juzgar → `PRUEBAS-PEDRO.md` | Agente + Pedro |
 
-El repo es público, así que todo esto corre gratis en GitHub Actions (máquinas estándar).
+Decisión vigente de Pedro (28-oct): estas pruebas de herramientas se ejecutan local/manualmente, sin Actions.
+Solo el traductor conserva sus Actions, incluidos sus propios controles y avisos; esa canalización no cambia.
 
 ## 2. Cuándo se ejecutan
 
 - **En cada PR:** capas 1-3 completas y capas 4-6 de las herramientas que cambian.
 - **Cada semana, sobre producción, las 700 (luego 1.000) herramientas:** capa 4 en modo rápido (carga sin errores
-  y tarea principal) y capa 5 en Chromium móvil y WebKit. Si algo falla, **la Action abre un Issue** (email a Pedro).
-  Forma parte del piloto automático (REVISION-FINAL §3).
+  y tarea principal) y capa 5 en Chromium móvil y WebKit. La revisión se ejecutará local/manualmente mientras rija el
+  veto de Actions para webs; guardar el resultado y comunicar fallos sin afirmar que existe un vigilante web activo.
+  La automatización futura debe respetar esta restricción y conservar los controles de calidad.
 - **Antes de activar** una herramienta nueva (las 300) o de marcar una existente como terminada: las 7 capas, con la evidencia
   en el PR.
 

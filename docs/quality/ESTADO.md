@@ -7,11 +7,18 @@
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
+**Decisión vigente de Pedro (28-oct): Actions solo para el traductor**, con sus controles/entrega/avisos intactos.
+Pruebas/builds/mediciones/deploys de herramientas y webs: local/manual, sin Actions ni contratación/gasto adicional.
+Los tres workflows de web están deshabilitados; PR de dependencias automáticas pausadas, alertas de seguridad conservadas.
+Objetivo confirmado: `usefulverse.com` como único dominio público, con 301 de `tools.` en el corte validado; todavía no migrado.
+[Operación y comprobaciones](lotes/2026-10-28-webs-manuales-traductor-intacto.md). Esta decisión sustituye las referencias previas
+que exigían Actions para la web; no modifica la excepción del traductor ni las puertas de calidad.
+
 ## 1. Siguiente paso exacto
 
 **Paso A sigue abierto** en [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`. Las 300 nuevas conservan `indexable:false`: 0 en main, 0 activadas. Las 700 existentes se conservan. No avanzar a fase 0 sin verificar Paso A.
 
-**Siguiente paso exacto:** continuar la extracción de UI inglesa de los 14 propietarios de mercado que solo tienen metadatos, después los 106 recuperados, según [listado](translation-drafts/preflight-v1/source-coverage.json). La medición de capacidad ya terminó: principal 10.728 archivos, hub 16.354 y preview 11.293; caben separados. Hub + 300 tendría al menos 27.470 archivos (7.470 sobre el presupuesto de 20.000) y 73 colisiones, incluidas 36 portadas y sitemap. Conservar la preview existente separada; la publicación definitiva/integración en main sigue pendiente, sin adelantar unificación de dominio ni fase 0. [Informe, ruta provisional y límites](lotes/2026-10-28-capacidad-paso-a.md). Seguir mejorando fuentes/web sin esperar traducciones ni releer frases una a una en el chat.
+**Siguiente paso exacto:** continuar la extracción de UI inglesa de los 14 propietarios de mercado y después los 106 recuperados, con pruebas locales/manuales. Preparar la publicación y el build único de RUNBOOK §4b para `usefulverse.com` sin Actions de web. Verificar el plan de Cloudflare ya existente y ausencia de costes nuevos antes de publicar; respetar 10 GB libres/2 GB de huella local, dividir trabajo si hace falta. Mantener la preview separada hasta resolver colisiones y verificar el corte; no dar la migración por hecha ni activar herramientas. Git normal sigue permitido. El traductor y sus siete workflows continúan intactos; no cambiar sus fuentes/modelos/checkpoints/avisos por esta restricción.
 
 **Capacidad medida:** [40652759818](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818), fuente d1a7429: 13 tests, tres builds/gate correctos, 113 s, cero ms facturables/artifacts. El medidor solo lee los builds y escribe un informe separado; una medición correcta no aprueba publicar. Caso posterior del sitemap: 14 tests locales correctos, sin cambio del algoritmo. Presupuesto conservador de Pages Free, no plan real de la cuenta consultado ni modificado. [Datos](capacity-v1/report.json), [evidencia](capacity-v1/evidence.json).
 
@@ -44,6 +51,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [x] Dónde ejecutar la traducción masiva → **repo público + GitHub Actions** (decidido el 20-oct-2026)
 - [ ] Opcional: revocar en Cloudflare el token antiguo que usaba el repo antes del 20-oct, si no lo usa nada más (hay varios
       tokens de Zenith y Joseph en la misma cuenta: no tocar sin identificarlo).
+- [x] Operación de herramientas/webs sin Actions; excepción explícita del traductor preservada y dominio único confirmado.
 - [ ] Confirmar que la tarjeta de Cloudflare sigue válida (dominio con renovación automática el 28-sep-2027 + Workers Paid mensual).
 - [ ] Publicar en Product Hunt, Reddit o directorios cuando el agente deje los textos preparados (fase 7).
 
