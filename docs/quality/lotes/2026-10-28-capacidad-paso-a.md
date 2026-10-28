@@ -40,3 +40,5 @@ No se ha verificado una nueva versión en producción: se han medido builds en A
 ## Siguiente paso exacto
 
 Continuar dentro del Paso A con la extracción de UI inglesa de los 14 propietarios de mercado que solo tienen metadatos y después los 106 recuperados, usando el listado de `translation-drafts/preflight-v1/source-coverage.json`. Mantener separada la preview hasta que exista una integración de publicación compatible y verificada. La fase 0 sigue pendiente. GitHub continúa su campaña sin revisión frase a frase del agente; los contadores no son aprobaciones de herramientas.
+
+Cierre: fuentes/informes/documentación respaldados, clon y caché de logs propios eliminados antes de LIBRE; sin estados de herramienta modificados. [Recibo de retirada](../capacity-v1/closure.json).

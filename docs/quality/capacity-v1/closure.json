@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-28T08:10:39.616328+00:00",
+  "clone_exists": false,
+  "own_log_cache_removed": "40652759818",
+  "free_gib": 43.11,
+  "source_commit": "d1a7429f76e6bb4ba157bc38ad5dbb0a36ee8d72",
+  "source_and_docs_backup": "77a570d2bf62e871fe61f8b5146c329617383453",
+  "main_docs_backup": "c32717a10237d620185d211fc23a38f0f15082d7",
+  "measurement_run": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40652759818",
+  "measurement_conclusion": "success",
+  "native_node_tests": 13,
+  "local_node_tests_after_sitemap_case": 14,
+  "physical_cases_linked": 8,
+  "physical_cases_added": 0,
+  "tool_status_changes": 0,
+  "deployments": 0,
+  "tools_activated": 0,
+  "quality_gate_approved": false,
+  "translation_campaign": {
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40565692987",
+    "status": "in_progress",
+    "conclusion": null
+  }
+}
