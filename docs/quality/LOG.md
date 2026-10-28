@@ -6,6 +6,8 @@ Regresiones previas al arreglo para alias de salida/symlink a HTML y resumen/JSO
 
 No se despliega ni se verifica una versión nueva en producción. Sin cambios de estados de herramientas, capas aprobadas, activaciones o avance de fase. El traductor continúa en vuelta 4; datos observados en capacity-v1/translation-progress.json. Siguiente: UI inglesa de los 14 de mercado y después los 106 recuperados; preview separada mientras se resuelve integración definitiva.
 
+Cierre verificado 2026-10-28T08:10:39.616328+00:00: fuente, informes y refs comprobados online antes de retirar el clon y ZIP de logs propio; 43.11 GiB libres. Candado LIBRE; medición correcta, campaña de traducción sin interrumpir y sin despliegues. [Recibo](capacity-v1/closure.json).
+
 ## 2026-10-28 · Codex · Puerta automática antes de modelos y CI completa resuelta
 
 [Informe](lotes/2026-10-28-puerta-automatica-traducciones.md). [Código 24fac63](https://github.com/pedronunezwebs-hash/usefulverse/commit/24fac631fce983baef04e87499643b17cda7e29f); controlador en main 81cb8b4, sin código de las 300. Futuras campañas deben pasar la puerta con el mismo SHA antes de los modelos. Seis regresiones nuevas verifican ejecución, bloqueo, señales/estados inválidos, fuente/dependencias, permisos y aviso ante fallo. Cinco archivos críticos/políticas/memoria conservan sus bytes.
