@@ -1,0 +1,77 @@
+{
+  "closedAt": "2026-10-28T09:20:26.426094+00:00",
+  "codeCommit": "ee9035d5b5c40cbb8b6b1f5001bfb58a44d3a3db",
+  "featureBackupVerified": "b8e3388171994a913cc6ca7d23f8a8f8d036c6e9",
+  "mainHandoffVerified": "3081cc6ecf8b8c4a456f3fd5d789f5f5c8338199",
+  "cloneRemoved": true,
+  "ownDependenciesCacheBuildsLogsRemoved": true,
+  "ownServerPID19225Stopped": true,
+  "browser": "own isolated page about:blank; DevTools refuses to close the last page",
+  "freeGiB": 43.15,
+  "tests": 478,
+  "partialBuildRoutes": 518,
+  "browserSamples": 378,
+  "newNetEnglishUnits": 632,
+  "metadataOnlyRemaining": 106,
+  "newPedroTests": [],
+  "deployments": 0,
+  "productionChecked": false,
+  "indexableURLDelta": 0,
+  "toolsCompleted": 0,
+  "activated": 0,
+  "cloudflareChanged": false,
+  "webWorkflows": [
+    {
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translationWorkflows": [
+    {
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    }
+  ],
+  "translatorScriptsWorkflowsPoliciesModelsDataUnchanged": true,
+  "existingSecurityAlerts": {
+    "dompurify": 3,
+    "critical": 1,
+    "high": 1,
+    "low": 1,
+    "manualPR": 135,
+    "fixedVersion": "3.4.17",
+    "dependencyChangesThisLot": false
+  }
+}
