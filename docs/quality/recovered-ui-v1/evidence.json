@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-28T12:03:32.272819+00:00",
+  "baseCommit": "9af689142018277612dba701bcb3e0e1272697fb",
+  "execution": "local/manual; no web Actions",
+  "node": "v25.9.0",
+  "python": "Python 3.14.7",
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s scripts/recovery -p 'test_*.py'",
+      "passed": 15,
+      "failed": 0
+    },
+    {
+      "command": "node --test src/growth600/recovered-copy-source.test.mjs scripts/localization/autopilot-source.test.mjs scripts/localization/extract-tool-copy-units.test.mjs scripts/localization/prepare-candidate-sources.test.mjs scripts/localization/automatic-packages.test.mjs scripts/localization/automatic-preview.test.mjs src/markets-no-ch/market-ui-source.test.mjs src/markets-no-ch/remaining-tools-copy.test.mjs",
+      "passed": 147,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "python3 scripts/recovery/extract-recovered-copy.py --write; same command with --check",
+      "owners": 106,
+      "packageBytes": 540394,
+      "historicalApprovalFlagsDiscarded": 103
+    }
+  ],
+  "sourceInputDigest": "2c7d66ef507db1ddf789acd489d190f6bed293ee9df92415953555de9242e22c",
+  "preservedTrees": {
+    ".github/workflows": "b8f29e6e3bd6dad899c16ca4316e4965e79e5642",
+    "src/growth600/live-only-106-source": "e468ceb46739310ef0c2a90ab77b76565223ed3e",
+    "docs/quality/translation-drafts": "ca1d5dd9eb51475f7751cc419d4a5d622d4cd051",
+    "src/markets-no-ch": "00c0732c0e036d11a5802e3764974806d0e8e8e0"
+  },
+  "translatorProductionCodeChanged": false,
+  "translatorTestChange": "Only the old expectation of 106 metadata-only owners becomes zero, with a new independent 106-owner round-trip/provenance regression. The legacy-runtime audit caveat remains tested.",
+  "publishedHTMLOrJSChanged": false,
+  "newWebActions": 0,
+  "modelRunsDispatched": 0,
+  "cloudflareChanged": false,
+  "deployments": 0,
+  "productionChecked": false,
+  "indexableURLDelta": 0,
+  "newPedroTests": [],
+  "toolsCompleted": 0,
+  "languagesApproved": 0,
+  "notPerformed": [
+    "full npm test",
+    "complete site/hub builds",
+    "global locale gate",
+    "live production verification",
+    "full runtime literal audit",
+    "localized game dataset validation",
+    "browser/device/a11y/performance gates"
+  ],
+  "diskFreeGiB": 43.03,
+  "generatorSHA256": "4f45212dc1531ab8ddb845ac940fada5fe239d2ed082bff5006595bd0e5ee773",
+  "regressionAddedDuringReview": "Visible category labels stay translatable, while example.category is an internal value; reproduced before fixing the split.",
+  "translationRunObservation": {
+    "checkedAt": "2026-10-28T12:07:36.915569+00:00",
+    "40565692987": {
+      "status": "in_progress",
+      "event": "workflow_dispatch"
+    },
+    "40658885003": {
+      "status": "pending",
+      "event": "schedule"
+    },
+    "cancelledOrRestartedByAgent": false
+  },
+  "verifiedSourceCommit": "47c1adc7db351cfd76ffbddd0fcdeb1dd494da85",
+  "verifiedSourceDirectorySHA": "04f89479f194e64c987b98bd82c6e3e00f1ec658",
+  "remoteSourcePackagesVerified": 106
+}
