@@ -1,0 +1,25 @@
+✔ the two captured home responses must be quarantined rather than served as JavaScript (4.359459ms)
+✔ a different response or a new caller never inherits the quarantine review (0.258916ms)
+✔ known WASM module keys and comments pass only with their complete reviewed bytes (9.346833ms)
+✔ a guides index stays a guide, preserving its bytes and sitemap entry (28.720709ms)
+✔ pagination follows its results before unrelated home sections (0.212709ms)
+✔ static pagination preserves every tool link and keeps auxiliary pages out of indexation (0.67725ms)
+✔ valid multiline description attributes survive metadata inspection (1.430334ms)
+✔ multiline parsing still rejects duplicate attributes (0.186166ms)
+✔ packed build verifies and restores every byte, including empty files, without changing source (27.474667ms)
+✔ Brotli repacks an existing build without extraction and preserves all file hashes (15.836208ms)
+✔ damaged archive, unsafe manifest, fake decoded size and hash never pass verification (8.976458ms)
+✔ space limits, output overlap and source links fail without creating archive (3.89875ms)
+✔ local staging shares immutable files while mutable metadata remains independent (5.566917ms)
+✔ complete search reaches another static page, restores pagination and downloads once (3.479792ms)
+✔ offline and malformed indexes preserve name/slug fallback without retry storms (1.121375ms)
+✔ cross-origin index cannot send a request (0.32625ms)
+✔ category selection loads the complete directory before filtering (0.981709ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.313334

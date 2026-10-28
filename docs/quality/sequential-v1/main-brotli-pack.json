@@ -1,0 +1,16 @@
+{
+  "files": 10728,
+  "rawBytes": 486993584,
+  "packedBytes": 134758860,
+  "compression": "brotli",
+  "packSha256": "30cfa7b7754538633c0cd283ad9a945aeca664652856bd400b6e9a30222902ca",
+  "resources": {
+    "footprintBeforeBytes": 579122131,
+    "projectedWorkingBytes": 715821758,
+    "maxWorkingBytes": 2000000000,
+    "freeBytes": 45535657984,
+    "minFreeBytes": 10000000000
+  },
+  "sourcePreserved": true,
+  "verifiedEveryFile": true
+}

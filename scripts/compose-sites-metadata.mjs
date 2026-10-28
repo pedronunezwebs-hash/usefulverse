@@ -24,7 +24,7 @@ export function rewriteOrigins(text) {
 }
 export function hasOldHost(text) { return OLD_HOSTS.some(host => text.includes(host)); }
 export function attribute(tag, name) {
-  const matches = [...tag.matchAll(new RegExp(`(?:\\s|^)${name}\\s*=\\s*(["'])(.*?)\\1`, 'giu'))];
+  const matches = [...tag.matchAll(new RegExp(`(?:\\s|^)${name}\\s*=\\s*(["'])(.*?)\\1`, 'gisu'))];
   if (matches.length > 1) throw Error(`Duplicate ${name} attribute`);
   return matches[0] ? unescape(matches[0][2]) : undefined;
 }

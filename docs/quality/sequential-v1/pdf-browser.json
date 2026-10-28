@@ -1,0 +1,24 @@
+{
+  "fixtureBytes": 1755,
+  "images": 1,
+  "dimensions": [
+    [
+      120,
+      80
+    ]
+  ],
+  "pixel": [
+    254,
+    0,
+    0,
+    255
+  ],
+  "workers": [
+    {
+      "url": "http://127.0.0.1:54536/assets/recovered-live-only-106/published/assets/vendor/extract-images-pdf-worker.mjs",
+      "status": 200
+    }
+  ],
+  "bad": [],
+  "pass": true
+}

@@ -1,0 +1,52 @@
+✔ the two captured home responses must be quarantined rather than served as JavaScript (5.02525ms)
+✔ a different response or a new caller never inherits the quarantine review (0.279458ms)
+✔ known WASM module keys and comments pass only with their complete reviewed bytes (7.897ms)
+✔ a guides index stays a guide, preserving its bytes and sitemap entry (47.836ms)
+✔ pagination follows its results before unrelated home sections (0.231291ms)
+✔ static pagination preserves every tool link and keeps auxiliary pages out of indexation (0.708083ms)
+✔ valid multiline description attributes survive metadata inspection (3.093041ms)
+✔ multiline parsing still rejects duplicate attributes (0.191375ms)
+✔ composes every route, preserves inputs, noindex, metadata and asset bytes (125.0765ms)
+✔ rejects asset collision without creating output (20.92975ms)
+✔ rejects duplicate tool route without creating output (20.432125ms)
+✔ rejects draft loses noindex without creating output (20.391417ms)
+✔ rejects existing tool noindex without creating output (20.054917ms)
+✔ rejects draft in sitemap without creating output (21.725917ms)
+✔ rejects tool absent from sitemap without creating output (25.179333ms)
+✔ rejects sitemap references absent page without creating output (21.293417ms)
+✔ rejects bad canonical without creating output (19.076667ms)
+✔ rejects indexable hreflang to draft without creating output (20.774667ms)
+✔ rejects global noindex without creating output (21.918083ms)
+✔ rejects robots block without creating output (19.96875ms)
+✔ rejects hashed legacy-host asset without creating output (49.258708ms)
+✔ rejects redirect rewrite without creating output (22.168042ms)
+✔ rejects sitemap cycle without creating output (19.611292ms)
+✔ rejects missing draft locale without creating output (24.614291ms)
+✔ rejects unknown draft locale without creating output (21.58325ms)
+✔ rejects linked files, overlapping trees, existing outputs and budget violations (199.439833ms)
+✔ rejects a renderer which loses tools without leaving output or staging files (22.848375ms)
+✔ strict sitemap/URL parsing and header conflict handling (0.413542ms)
+✔ a required nb destination cannot be silently omitted from the release (20.840125ms)
+✔ packed and ordinary builds compose to identical output with all inputs preserved (141.542541ms)
+✔ preserves an already-indexed nb hub directory when the main build has no nb home (63.345792ms)
+✔ cannot invent an indexed nb home from a draft-only template (45.699ms)
+✔ real primary home remains within 25 KiB Brotli with 1000 directory links (866.901208ms)
+✔ home keeps primary search vocabulary and current English titles of all 1000 owners (298.630334ms)
+ℹ Real 1000-owner English directory: 23684 Brotli bytes; search vocabulary is separate
+✔ packed build verifies and restores every byte, including empty files, without changing source (27.455ms)
+✔ Brotli repacks an existing build without extraction and preserves all file hashes (15.698041ms)
+✔ damaged archive, unsafe manifest, fake decoded size and hash never pass verification (11.326125ms)
+✔ space limits, output overlap and source links fail without creating archive (3.568125ms)
+✔ local staging shares immutable files while mutable metadata remains independent (6.081042ms)
+✔ complete search reaches another static page, restores pagination and downloads once (2.354292ms)
+✔ offline and malformed indexes preserve name/slug fallback without retry storms (1.128125ms)
+✔ cross-origin index cannot send a request (0.330541ms)
+✔ category selection loads the complete directory before filtering (0.523417ms)
+ℹ tests 43
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2753.861083

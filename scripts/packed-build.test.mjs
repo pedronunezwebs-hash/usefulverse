@@ -21,6 +21,19 @@ test('packed build verifies and restores every byte, including empty files, with
   finally { await reader.close(); }
   await assert.rejects(packBuild(c.options), /already exists/u);
 }));
+test('Brotli repacks an existing build without extraction and preserves all file hashes', () => fixture(async c => {
+  const original = await packBuild(c.options), output = join(c.root, 'brotli.uvpack');
+  const compressed = await packBuild({ ...c.options, input: c.output, output, compression: 'brotli' });
+  assert.equal(compressed.rawBytes, original.rawBytes); assert.ok(compressed.packedBytes < original.packedBytes);
+  const reader = await openPackedBuild(output);
+  try { for (const [path, file] of reader.files) assert.deepEqual(await file.read(), await readFile(join(c.input, path))); }
+  finally { await reader.close(); }
+  const meta = JSON.parse(await readFile(output + '.json', 'utf8'));
+  meta.rawBytes -= meta.files[0].bytes - 1; meta.files[0].bytes = 1;
+  await writeFile(output + '.json', JSON.stringify(meta));
+  const invalid = await openPackedBuild(output);
+  try { await assert.rejects(invalid.files.values().next().value.read()); } finally { await invalid.close(); }
+}));
 test('damaged archive, unsafe manifest, fake decoded size and hash never pass verification', () => fixture(async c => {
   await packBuild(c.options);
   const pack = await readFile(c.output), text = await readFile(c.output + '.json', 'utf8');

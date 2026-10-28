@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { brotliCompressSync } from 'node:zlib';
 import { openBuildSource } from './packed-build.mjs';
 import { checkResources } from './local-resources.mjs';
+import { capturedSoft404, checkQuarantinedReferences } from './captured-assets.mjs';
 import { attribute, hasOldHost, inspectHTML, mergeHeaders, mergeRedirects, normalizeURL, parseSitemap, rewriteOrigins, sitemapXML, TARGET, unescape, xml } from './compose-sites-metadata.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
@@ -12,8 +13,9 @@ const roles = ['main', 'hub', 'preview'];
 const sha = data => createHash('sha256').update(data).digest('hex');
 const inside = (parent, child) => { const p = relative(parent, child); return !p || !isAbsolute(p) && p !== '..' && !p.startsWith('../'); };
 const toolRoute = path => path.match(/^(?:([a-z\d-]+)\/)?tools\/([a-z\d-]+)\/index\.html$/iu);
-const homeRoute = path => /^(?:[a-z\d-]+\/)?index\.html$/iu.test(path);
-const llmsRoute = path => /^(?:[a-z\d-]+\/)?llms\.txt$/iu.test(path);
+const homeRoute = (path, prefixes) => path === 'index.html' || /^[a-z\d-]+\/index\.html$/iu.test(path) &&
+  (prefixes.has(path.split('/')[0]) || /^[a-z]{2,3}(?:-[a-z\d]{2,8})*\/index\.html$/iu.test(path));
+const llmsRoute = (path, prefixes) => path === 'llms.txt' || prefixes.has(path.split('/')[0]) && /^[a-z\d-]+\/llms\.txt$/iu.test(path);
 const generated = path => ['_headers', '_redirects', 'robots.txt'].includes(path) || /^sitemap(?:-[\w-]+)?\.xml$/u.test(path);
 const routeFile = url => { const p = new URL(url).pathname.slice(1); return p.endsWith('/') || !p ? p + 'index.html' : p; };
 const fileURL = path => TARGET + '/' + path.replace(/index\.html$/u, '');
@@ -28,6 +30,48 @@ export function homeSearchIndex(primary, tools) {
     return [path, [old.get(path)?.search, tool.title, tool.id, tool.description].filter(Boolean).join(' ')];
   }));
 }
+export function homeIndexData(primary, tools) {
+  const search = homeSearchIndex(primary, tools), old = primaryCards(primary);
+  const all = attribute(primary.match(/<button\b[^>]*data-category-filter=[^>]*>/u)?.[0] ?? '', 'data-category-filter') ?? '';
+  return { schemaVersion: 2, cards: [...tools].sort((a, b) => a.id < b.id ? -1 : 1).map(tool => {
+    const href = new URL(tool.url).pathname;
+    return { href, title: tool.title, category: old.get(href)?.category ?? all, language: tool.language ?? '', search: search[href] };
+  }) };
+}
+function pageMetadata(html, url) {
+  return html.replace(/<link\b[^>]*>/giu, tag => {
+    if (attribute(tag, 'rel') === 'canonical') return `<link rel="canonical" href="${xml(url)}">`;
+    return attribute(tag, 'hreflang') ? '' : tag;
+  }).replace(/<meta\b[^>]*>/giu, tag => {
+    if (attribute(tag, 'name') === 'robots') return '';
+    return attribute(tag, 'property') === 'og:url' ? `<meta property="og:url" content="${xml(url)}">` : tag;
+  }).replace('</head>', '<meta name="robots" content="noindex,follow"></head>');
+}
+export function placeDirectoryNavigation(html, navigation) {
+  // Keep the next page beside its results, before unrelated home sections.
+  const empty = /<p\b[^>]*id="empty-state"[^>]*>[\s\S]*?<\/p>/u;
+  if (empty.test(html)) return html.replace(empty, '$&' + navigation);
+  const hubDirectory = /<ul\b[^>]*class="tool-directory tool-directory--composed"[^>]*>[\s\S]*?<\/ul>/u;
+  if (hubDirectory.test(html)) return html.replace(hubDirectory, '$&' + navigation);
+  return html.replace('</main>', navigation + '</main>');
+}
+export function homeDirectoryPages(template, tools, homePath, assets, renderer = compactHome) {
+  const sorted = [...tools].sort((a, b) => a.id < b.id ? -1 : 1), count = Math.max(1, Math.ceil(sorted.length / 100));
+  const prefix = homePath === 'index.html' ? '' : homePath.split('/')[0] + '/';
+  const labelSource = template.includes('id="tools"') ? template.slice(template.indexOf('id="tools"')) : template;
+  const label = unescape(labelSource.match(/<h2\b[^>]*>([^<]+)<\/h2>/iu)?.[1] ?? template.match(/<h1\b[^>]*>([^<]+)<\/h1>/iu)?.[1] ?? 'UsefulVerse');
+  const css = '<style>.directory-pages{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 16px}.directory-pages a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;border:1px solid currentColor;border-radius:8px;text-decoration:none}.directory-pages [aria-current]{font-weight:800}</style>';
+  return Array.from({ length: count }, (_, index) => {
+    const path = index ? `${prefix}directory/${index + 1}/index.html` : homePath;
+    let html = renderer(template, sorted.slice(index * 100, (index + 1) * 100), assets);
+    if (count > 1) {
+      const nav = `<nav class="directory-pages" data-directory-pages aria-label="${xml(label)}">${Array.from({ length: count }, (_, n) => `<a href="/${prefix}${n ? `directory/${n + 1}/` : ''}#tools"${n === index ? ' aria-current="page"' : ''}>${n + 1}</a>`).join('')}</nav>`;
+      html = placeDirectoryNavigation(html, nav).replace('</head>', css + '</head>');
+    }
+    if (index) html = pageMetadata(html, fileURL(path));
+    return { path, html, noindex: index > 0 };
+  });
+}
 export function compactHome(primary, tools, { indexURL, runtimeURL } = {}) {
   if (inspectHTML(primary).noindex) throw Error('The primary home must remain indexable');
   // The live hub already has an indexed nb directory; main has no nb home.
@@ -36,7 +80,7 @@ export function compactHome(primary, tools, { indexURL, runtimeURL } = {}) {
     const directory = /<ul class="tool-directory">[\s\S]*?<\/ul>/gu;
     if ([...primary.matchAll(directory)].length !== 1) throw Error('Existing hub directory contract changed');
     const links = [...tools].sort((a, b) => a.id < b.id ? -1 : 1).map(tool => `<li><a href="${xml(new URL(tool.url).pathname)}"${tool.language ? ` lang="${xml(tool.language)}"` : ''}><h2>${xml(tool.title)}</h2></a></li>`).join('');
-    return primary.replace(directory, `<ul class="tool-directory tool-directory--composed">${links}</ul>`).replace('</head>', '<style>.tool-directory--composed li a{min-height:44px;overflow-wrap:anywhere}.tool-directory--composed h2{margin:0}</style></head>');
+    return primary.replace(directory, `<ul class="tool-directory tool-directory--composed" id="tools">${links}</ul>`).replace('</head>', '<style>.tool-directory--composed li a{min-height:44px;overflow-wrap:anywhere}.tool-directory--composed h2{margin:0}</style></head>');
   }
   const all = attribute(primary.match(/<button\b[^>]*data-category-filter=[^>]*>/u)?.[0] ?? '', 'data-category-filter');
   if (!all) throw Error('Primary home has no category/search contract');
@@ -88,6 +132,10 @@ async function composeSources({ sources, output, existingIds, draftIds, draftPre
   try { await lstat(target); throw Error('Refusing to overwrite an existing output'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
 
   const maps = {}, files = new Map(), homes = new Map(), llms = new Map(), toolsByPrefix = new Map();
+  const knownPrefixes = new Set(draftPrefixes);
+  for (const source of Object.values(sources)) for (const path of source.files.keys()) {
+    const prefix = toolRoute(path)?.[1]; if (prefix) knownPrefixes.add(prefix);
+  }
   const normalizedRecords = new Map(), sourceRecords = [], draftRoutes = new Set(), existingRoutes = new Set();
   let sameFiles = 0, homeConflicts = 0, llmsConflicts = 0, inputBytes = 0;
   for (const role of roles) {
@@ -97,8 +145,8 @@ async function composeSources({ sources, output, existingIds, draftIds, draftPre
       inputBytes += file.bytes;
       const entry = { ...file, path, role };
       if (generated(path)) continue;
-      if (llmsRoute(path)) { const list = llms.get(path) ?? []; if (list.length) llmsConflicts++; list.push(entry); llms.set(path, list); continue; }
-      if (homeRoute(path)) { const list = homes.get(path) ?? []; if (list.length) homeConflicts++; list.push(entry); homes.set(path, list); continue; }
+      if (llmsRoute(path, knownPrefixes)) { const list = llms.get(path) ?? []; if (list.length) llmsConflicts++; list.push(entry); llms.set(path, list); continue; }
+      if (homeRoute(path, knownPrefixes)) { const list = homes.get(path) ?? []; if (list.length) homeConflicts++; list.push(entry); homes.set(path, list); continue; }
       const match = toolRoute(path);
       if (match) {
         const [, prefix = '', id] = match, isDraft = role === 'preview';
@@ -181,17 +229,24 @@ async function composeSources({ sources, output, existingIds, draftIds, draftPre
     if (!primary) throw Error(`Home without a primary template: ${path}`);
     const prefix = path === 'index.html' ? '' : path.split('/')[0];
     const template = rewriteOrigins((await readEntry(primary)).toString('utf8')), links = toolsByPrefix.get(prefix) ?? [];
-    const searchIndex = JSON.stringify(homeSearchIndex(template, links));
+    const searchIndex = JSON.stringify(homeIndexData(template, links));
     const indexPath = `assets/search-index-${prefix || 'en'}.${sha(searchIndex).slice(0, 12)}.json`;
     metadata.set(indexPath, searchIndex);
-    const text = renderHome(template, links, { indexURL: '/' + indexPath, runtimeURL: '/' + runtimePath });
-    const info = inspectHTML(text);
-    if (info.noindex || info.canonical !== fileURL(path) || info.alternates.some(url => draftRoutes.has(url)) || hasOldHost(text)) throw Error('Unified home metadata is unsafe');
-    for (const tool of toolsByPrefix.get(prefix) ?? []) if (!text.includes(`href="${new URL(tool.url).pathname}"`)) throw Error(`Home lost a tool link: ${tool.id}`);
-    const brotliBytes = brotliCompressSync(text).length;
-    if (brotliBytes > maxHomeBrotliBytes) throw Error(`Home exceeds Brotli budget: ${path}`);
-    homeBudgets.push({ path, bytes: Buffer.byteLength(text), brotliBytes });
-    metadata.set(path, text);
+    const pages = homeDirectoryPages(template, links, path, { indexURL: '/' + indexPath, runtimeURL: '/' + runtimePath }, renderHome);
+    const hrefs = new Set(pages.flatMap(page => [...page.html.matchAll(/href="([^"]+)"/gu)].map(m => m[1])));
+    for (const tool of links) if (!hrefs.has(new URL(tool.url).pathname)) throw Error(`Directory lost a tool link: ${tool.id}`);
+    for (const page of pages) {
+      const info = inspectHTML(page.html);
+      if (info.noindex !== page.noindex || info.canonical !== fileURL(page.path) || info.alternates.some(url => draftRoutes.has(url)) || page.noindex && info.alternates.length || hasOldHost(page.html)) throw Error('Unified directory metadata is unsafe');
+      const brotliBytes = brotliCompressSync(page.html).length;
+      if (brotliBytes > maxHomeBrotliBytes) throw Error(`Directory exceeds Brotli budget: ${page.path}`);
+      homeBudgets.push({ path: page.path, bytes: Buffer.byteLength(page.html), brotliBytes, noindex: page.noindex });
+      metadata.set(page.path, page.html);
+    }
+  }
+  const quarantinedAssets = [];
+  for (const [path, entry] of files) if (/\.(?:m?js|css)$/iu.test(path) && capturedSoft404(path, await readEntry(entry))) {
+    quarantinedAssets.push({ path, sha256: entry.sha256, reason: 'captured-home-HTML-not-JavaScript' }); files.delete(path);
   }
   for (const [path, text] of metadata) {
     if (files.has(path)) throw Error(`Generated metadata collides with an asset: ${path}`);
@@ -200,7 +255,8 @@ async function composeSources({ sources, output, existingIds, draftIds, draftPre
   // Dry runs enforce the same content rules as writes; only the filesystem
   // mutation differs. Hashed scripts/styles must be rebuilt, never rewritten.
   for (const [path, entry] of files) if (/\.(?:html?|m?js|css|json|svg)$/iu.test(path)) {
-    let text = (await readEntry(entry)).toString('utf8');
+    const bytes = await readEntry(entry); checkQuarantinedReferences(path, bytes, quarantinedAssets);
+    let text = bytes.toString('utf8');
     if (/\.html?$/iu.test(path)) text = rewriteOrigins(text);
     if (hasOldHost(text)) throw Error(`Rebuild old-host asset in its source before composing: ${path}`);
   }
@@ -216,8 +272,9 @@ async function composeSources({ sources, output, existingIds, draftIds, draftPre
     draftToolRoutes: draftRoutes.size, requiredDraftLocales: draftPrefixes.length, inputSitemapURLs: sourceRecords.length, outputSitemapURLs: normalizedRecords.size,
     deduplicatedFiles: sameFiles, resolvedHomeCollisions: homeConflicts, resolvedLlmsCollisions: llmsConflicts,
     files: files.size + metadata.size, estimatedBytes, inputBytes, sitemapLanguages: byLanguage.size, homeBudgets,
-    resources,
-    homePolicy: 'primary-template-compact-directory-all-links-search-index-on-first-query',
+    resources, quarantinedAssets,
+    homePolicy: '100-links-per-page-static-noindex-pagination-complete-search-on-demand',
+    auxiliaryDirectoryPages: homeBudgets.filter(page => page.noindex).length,
     categoryPolicy: 'preserve-primary-categories-other-tools-searchable-under-existing-all-label',
     deployments: 0, toolsActivated: 0, deploymentApproved: false, cloudflarePlanVerified: false, written: false };
   if (!write) return report;

@@ -1,0 +1,134 @@
+{
+  "workflows": [
+    {
+      "name": "Validate and deploy UsefulVerse",
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Measure Step A release capacity without publishing",
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "UsefulVerse translation autopilot",
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "name": "Background translation drafts",
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation safety preflight",
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "name": "Automatic translation quality check",
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation semantic model check",
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation alerts",
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation bounded wave",
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    },
+    {
+      "name": "Validate staged UsefulVerse without publishing",
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Dependabot Updates",
+      "path": "dynamic/dependabot/dependabot-updates",
+      "state": "active"
+    }
+  ],
+  "translationRuns": [
+    {
+      "id": 40706243406,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-watch.yml",
+      "created_at": "2026-10-28T14:28:18Z"
+    },
+    {
+      "id": 40658885003,
+      "status": "pending",
+      "conclusion": null,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "created_at": "2026-10-28T08:43:48Z"
+    },
+    {
+      "id": 40649760623,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-watch.yml",
+      "created_at": "2026-10-28T07:23:29Z"
+    },
+    {
+      "id": 40648113707,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-preflight.yml",
+      "created_at": "2026-10-28T07:07:59Z"
+    },
+    {
+      "id": 40616437013,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-watch.yml",
+      "created_at": "2026-10-28T01:40:25Z"
+    },
+    {
+      "id": 40595965237,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-watch.yml",
+      "created_at": "2026-10-27T22:35:21Z"
+    },
+    {
+      "id": 40578541656,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-quality-check.yml",
+      "created_at": "2026-10-27T20:29:44Z"
+    },
+    {
+      "id": 40577463823,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-quality-check.yml",
+      "created_at": "2026-10-27T20:22:30Z"
+    },
+    {
+      "id": 40571740997,
+      "status": "completed",
+      "conclusion": "success",
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "created_at": "2026-10-27T19:43:57Z"
+    },
+    {
+      "id": 40565692987,
+      "status": "in_progress",
+      "conclusion": null,
+      "path": ".github/workflows/translation-autopilot.yml",
+      "created_at": "2026-10-27T19:03:55Z"
+    }
+  ],
+  "translatorFilesChanged": false,
+  "webActionsStarted": 0,
+  "cloudflareCalls": 0
+}

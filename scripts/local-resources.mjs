@@ -15,6 +15,7 @@ export async function checkResources(root, reserveBytes, { maxWorkingBytes = 2_0
   root = await realpath(root);
   const footprintBeforeBytes = await footprint(root), disk = await statfs(root);
   const freeBytes = disk.bavail * disk.bsize, projectedWorkingBytes = footprintBeforeBytes + reserveBytes;
-  if (!Number.isSafeInteger(reserveBytes) || reserveBytes < 0 || projectedWorkingBytes > maxWorkingBytes || freeBytes - reserveBytes < minFreeBytes) throw Error('Working-space/free-disk budget exceeded');
-  return { footprintBeforeBytes, projectedWorkingBytes, maxWorkingBytes, freeBytes, minFreeBytes };
+  const resources = { footprintBeforeBytes, projectedWorkingBytes, maxWorkingBytes, freeBytes, minFreeBytes };
+  if (!Number.isSafeInteger(reserveBytes) || reserveBytes < 0 || projectedWorkingBytes > maxWorkingBytes || freeBytes - reserveBytes < minFreeBytes) throw Object.assign(Error('Working-space/free-disk budget exceeded'), { resources });
+  return resources;
 }

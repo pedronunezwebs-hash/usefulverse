@@ -1,0 +1,90 @@
+{
+  "scope": "local-final-source-not-production-or-tool-approval",
+  "timestamp": "2026-10-28T18:21:54.391079+00:00",
+  "generalNodeTests": {
+    "pass": 3251,
+    "fail": 0,
+    "skip": 0
+  },
+  "finalCompositionTests": 43,
+  "dependencyPythonTests": 3,
+  "nativeBuilds": {
+    "mainFiles": 10728,
+    "mainBytes": 486993584,
+    "mainSitemapURLs": 10260,
+    "hubFiles": 16354,
+    "hubBytes": 776283573,
+    "hubSitemapURLs": 15365,
+    "hubCompletion": "resumed-after-path-space-regression-fix",
+    "previewFiles": 11593,
+    "previewToolRoutes": 11100,
+    "previewLocales": 37,
+    "previewNorwegianSourceFallbacks": 300,
+    "previewNorwegianApproved": 0
+  },
+  "written": {
+    "existingTools": 25300,
+    "draftTools": 11100,
+    "directories": 327,
+    "files": 38817,
+    "bytes": 1425287923,
+    "missingAssets": [],
+    "errors": [],
+    "sitemapURLs": 25589,
+    "sitemapFiles": 38,
+    "footprintBytes": 1565171547,
+    "passed": true,
+    "deploymentApproved": false
+  },
+  "browser": {
+    "draftGeometries": 126,
+    "draftChecks": 21,
+    "directoryGeometries": 63,
+    "directoryChecks": 32,
+    "widths": [
+      320,
+      360,
+      390,
+      414,
+      768,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "locales": [
+      "en",
+      "es",
+      "de",
+      "ar",
+      "ja",
+      "hi",
+      "nb"
+    ],
+    "visualReviewed": [
+      "390-ar",
+      "768-es",
+      "1440-en"
+    ],
+    "pdfSyntheticImage": "120x80 red extracted with correct worker",
+    "physicalDevices": false,
+    "firefoxWebkit": false,
+    "axeLighthouse": false
+  },
+  "maxProjectedWorkingBytes": 1996857176,
+  "translatorProtectedPathsUnchanged": true,
+  "webActionsStarted": 0,
+  "cloudflareCalls": 0,
+  "deployments": 0,
+  "activatedTools": 0,
+  "approvedTools": 0,
+  "approvedTranslationLocales": 0,
+  "newPedroTests": [],
+  "deploymentApproved": false,
+  "cloudflarePlanVerified": false,
+  "nodeVersion": "25.9.0",
+  "npmVersion": "11.12.1",
+  "finalMainCheckPassed": true,
+  "finalLocaleReleaseCheckPassed": true,
+  "generalNodeDurationMs": 113245.970542
+}
