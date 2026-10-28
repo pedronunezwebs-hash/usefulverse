@@ -73,8 +73,14 @@ jobs:
         run: |
           node scripts/localization/autopilot-source.mjs "$RUNNER_TEMP/corpus.json"
           python3 scripts/localization/translation-autopilot.py ready --corpus "$RUNNER_TEMP/corpus.json" --memory "$GITHUB_WORKSPACE/results"
-  wave-1:
+  preflight:
     needs: ready
+    if: needs.ready.outputs.run_models == 'true'
+    uses: ./.github/workflows/translation-preflight.yml
+    with:
+      source_sha: ${{ needs.ready.outputs.source_sha }}
+  wave-1:
+    needs: [ready, preflight]
     if: needs.ready.outputs.run_models == 'true'
     permissions:
       contents: write # Only the reusable publisher uses write; model jobs reduce to read.
