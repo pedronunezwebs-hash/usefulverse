@@ -1,6 +1,7 @@
+import { qualitySourceCopy } from '../shared/source-copy.mjs';
 import document from '../../../translation-sources/time-duration-calculator.json' with {type:'json'};
 import {renderQualityPage,esc,planet} from '../shared/page.mjs';
-export const timeCopy=document.sourceCopy,timeExamples=document.nonTranslatableCopy.examples;
+export const timeCopy=qualitySourceCopy(document),timeExamples=document.nonTranslatableCopy.examples;
 export function renderTimeQuality({copy=timeCopy,...options}){
   const u=copy.ui;
   const field=(id,label,type,value)=>`<label class="field" for="${id}"><span>${esc(label)}</span><input id="${id}" type="${type}" value="${value}" ${type==='date'?'min="0001-01-01"':''} step="1" required></label>`;
