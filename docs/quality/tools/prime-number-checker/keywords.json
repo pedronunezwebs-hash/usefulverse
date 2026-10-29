@@ -1,0 +1,86 @@
+{
+  "toolId": "prime-number-checker",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks and first-party products; no current keyword volume, SERP rank or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "prime number checker",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Check a number",
+      "section": "calculator"
+    },
+    {
+      "phrase": "exact prime number checker",
+      "section": "calculator"
+    },
+    {
+      "phrase": "prime number checker with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "prime number checker free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "prime number checker online",
+      "section": "calculator"
+    },
+    {
+      "phrase": "prime number checker no upload",
+      "section": "calculator"
+    },
+    {
+      "phrase": "prime number checker large numbers",
+      "section": "examples"
+    },
+    {
+      "phrase": "prime number checker examples",
+      "section": "examples"
+    },
+    {
+      "phrase": "Is 1 a prime number?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is 2 the only even prime?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How large can my input be?",
+      "section": "questions"
+    },
+    {
+      "phrase": "When is a Prime result deterministic?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What does Probably prime mean?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is a witness base a factor?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is a composite shown without a divisor?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter a negative number or fraction?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does it round large inputs?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I use this for security keys?",
+      "section": "questions"
+    }
+  ]
+}

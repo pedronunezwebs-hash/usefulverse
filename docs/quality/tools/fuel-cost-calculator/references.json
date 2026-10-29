@@ -1,0 +1,162 @@
+{
+  "source": "https://www.calculator.net/fuel-cost-calculator.html",
+  "method": "Independent Python exact distance/efficiency/price formulas, matched units",
+  "cases": [
+    {
+      "state": {
+        "mode": "metric",
+        "a": "100",
+        "b": "8",
+        "c": "1.5",
+        "d": "2",
+        "trip": "oneway",
+        "currency": "USD"
+      },
+      "expected": "12.00 USD",
+      "fuel": "8"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "100",
+        "b": "8",
+        "c": "1.5",
+        "d": "2",
+        "trip": "roundtrip",
+        "currency": "USD"
+      },
+      "expected": "24.00 USD",
+      "fuel": "16"
+    },
+    {
+      "state": {
+        "mode": "us",
+        "a": "300",
+        "b": "30",
+        "c": "3.5",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "USD"
+      },
+      "expected": "35.00 USD",
+      "fuel": "10"
+    },
+    {
+      "state": {
+        "mode": "imperial",
+        "a": "200",
+        "b": "40",
+        "c": "7",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "GBP"
+      },
+      "expected": "35.00 GBP",
+      "fuel": "5"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "0",
+        "b": "8",
+        "c": "1.5",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "EUR"
+      },
+      "expected": "0.00 EUR",
+      "fuel": "0"
+    },
+    {
+      "state": {
+        "mode": "us",
+        "a": "300",
+        "b": "30",
+        "c": "0",
+        "d": "2",
+        "trip": "oneway",
+        "currency": "USD"
+      },
+      "expected": "0.00 USD",
+      "fuel": "10"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "1",
+        "b": "0.1",
+        "c": "0.1",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "EUR"
+      },
+      "expected": "0.00 EUR",
+      "fuel": "1/1000"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "500",
+        "b": "6.5",
+        "c": "1.8",
+        "d": "3",
+        "trip": "oneway",
+        "currency": "EUR"
+      },
+      "expected": "58.50 EUR",
+      "fuel": "65/2"
+    },
+    {
+      "state": {
+        "mode": "us",
+        "a": "1000",
+        "b": "25",
+        "c": "4",
+        "d": "4",
+        "trip": "roundtrip",
+        "currency": "USD"
+      },
+      "expected": "320.00 USD",
+      "fuel": "80"
+    },
+    {
+      "state": {
+        "mode": "imperial",
+        "a": "10",
+        "b": "50",
+        "c": "8",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "GBP"
+      },
+      "expected": "1.60 GBP",
+      "fuel": "1/5"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "9007199254740993",
+        "b": "1",
+        "c": "1",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "USD"
+      },
+      "expected": "90071992547409.93 USD",
+      "fuel": "9007199254740993/100"
+    },
+    {
+      "state": {
+        "mode": "metric",
+        "a": "100",
+        "b": "10",
+        "c": "1.005",
+        "d": "1",
+        "trip": "oneway",
+        "currency": "USD"
+      },
+      "expected": "10.05 USD",
+      "fuel": "10"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "toolId": "age-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks; primary product/reference pages reviewed. No measured query volume, position or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "age calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Calendar age",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator examples",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator online",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator no upload",
+      "section": "calculator"
+    },
+    {
+      "phrase": "age calculator exact values",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this use my birth time?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why not divide total days by 365?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How are February 29 birthdays treated?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What happens on my birthday?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Are total days inclusive?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I choose a future reference date?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Where does the default comparison date come from?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can daylight saving change the total days?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why can month-end results look unusual?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this determine my legal age?",
+      "section": "questions"
+    }
+  ]
+}

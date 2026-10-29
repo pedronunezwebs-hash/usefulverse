@@ -1,0 +1,6549 @@
+{
+  "scope": "ten unpublished existing-tool candidates",
+  "physicalDevices": false,
+  "clipboard": "mocked success and denied fallback; system clipboard unchanged",
+  "browsers": [
+    {
+      "name": "chromium",
+      "tools": [
+        {
+          "id": "fraction-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "prime-number-checker",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema",
+            "real large-prime cancellation and next-job isolation"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "percentage-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "number-to-words-converter",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "ratio-proportion-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "discount-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "random-number-generator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "average-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "age-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "fuel-cost-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        }
+      ]
+    },
+    {
+      "name": "firefox",
+      "tools": [
+        {
+          "id": "fraction-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "prime-number-checker",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema",
+            "real large-prime cancellation and next-job isolation"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "percentage-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "number-to-words-converter",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "ratio-proportion-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "discount-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "random-number-generator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "average-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "age-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "fuel-cost-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "tools": [
+        {
+          "id": "fraction-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "prime-number-checker",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema",
+            "real large-prime cancellation and next-job isolation"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "percentage-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "number-to-words-converter",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "ratio-proportion-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "large or mode-specific case retains precision",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "discount-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "random-number-generator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "average-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "age-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        },
+        {
+          "id": "fuel-cost-calculator",
+          "checks": [
+            "canonical and isolated noindex",
+            "four worked examples through actual controls",
+            "every mode changes labels and clears stale answers",
+            "audit or invalid case clears previous answer and download",
+            "second-group stress cases preserve complete results",
+            "mocked copy, denied permission fallback and exact share restore",
+            "text download contains the complete answer and working",
+            "offline calculation after initial load",
+            "duplicate share state cannot inject markup",
+            "keyboard skip and ten visible FAQ match schema"
+          ],
+          "geometries": [
+            {
+              "theme": "light",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "light",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 320,
+              "scrollWidth": 320,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 360,
+              "scrollWidth": 360,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 390,
+              "scrollWidth": 390,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 414,
+              "scrollWidth": 414,
+              "margins": [
+                16,
+                16
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 768,
+              "scrollWidth": 768,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1024,
+              "scrollWidth": 1024,
+              "margins": [
+                24,
+                24
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1280,
+              "scrollWidth": 1280,
+              "margins": [
+                84,
+                84
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1440,
+              "scrollWidth": 1440,
+              "margins": [
+                164,
+                164
+              ],
+              "axeViolations": 0
+            },
+            {
+              "theme": "dark",
+              "width": 1920,
+              "scrollWidth": 1920,
+              "margins": [
+                404,
+                404
+              ],
+              "axeViolations": 0
+            }
+          ],
+          "stress": [
+            "rtl",
+            "long-text",
+            "text200",
+            {
+              "landscape": 568
+            },
+            {
+              "landscape": 844
+            },
+            {
+              "landscape": 1024
+            },
+            {
+              "landscape": 1920
+            }
+          ],
+          "consoleErrors": [],
+          "pageErrors": [],
+          "thirdPartyRequests": []
+        }
+      ]
+    }
+  ],
+  "completedAt": "2026-10-29T12:27:27.006Z",
+  "captionCorrection": "Original caption said five; actual report contains ten tools in each of three engines.",
+  "toolIds": [
+    "fraction-calculator",
+    "prime-number-checker",
+    "percentage-calculator",
+    "number-to-words-converter",
+    "ratio-proportion-calculator",
+    "discount-calculator",
+    "random-number-generator",
+    "average-calculator",
+    "age-calculator",
+    "fuel-cost-calculator"
+  ]
+}

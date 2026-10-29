@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "toolId": "random-number-generator",
+  "sourceCopy": {
+    "title": "Random Number Generator — Large Ranges & No Repeats",
+    "description": "Generate random integers or decimal-grid values with browser cryptography. Choose no repeats, large bounds and downloadable lists. Free, no upload.",
+    "heading": "Random Number Generator",
+    "intro": "Draw one number or a complete list. Choose whole numbers or a decimal grid, and decide whether repeats are allowed.",
+    "category": "Numbers & relationships",
+    "eyebrow": "Your range. A fresh draw.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style",
+        "exact": "Exact value before display rounding",
+        "saved": "Amount saved",
+        "discountRate": "Effective discount",
+        "count": "Count",
+        "range": "Usable range",
+        "sum": "Sum",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "median": "Median",
+        "mode": "Mode",
+        "totalWeight": "Total weight",
+        "gradeStatus": "Target status",
+        "totalDays": "Total elapsed days",
+        "nextBirthday": "Next birthday",
+        "birthdayCountdown": "Days until birthday",
+        "litres": "Litres used",
+        "usGallons": "US gallons used",
+        "imperialGallons": "Imperial gallons used",
+        "perPerson": "Cost per person",
+        "distance": "Complete distance"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser.",
+        "POSITIVE": "Enter a positive original price.",
+        "PERCENT_RANGE": "Use a discount percentage from 0 to 100.",
+        "AMOUNT_RANGE": "The sale price or fixed reduction must lie from zero to the original price.",
+        "WEIGHTS": "Use matching value and weight lists. Weights must be nonnegative with a positive total.",
+        "GRADE_RANGE": "Use grades from 0 to 100 and a final weight above zero up to 100.",
+        "DATE": "Choose a valid calendar date in the supported range.",
+        "DATE_ORDER": "The comparison date must be on or after the birth date.",
+        "FUEL_RANGE": "Use nonnegative distance and price, positive efficiency and a positive whole number of people.",
+        "RANDOM_OPTIONS": "Use a positive whole-number count and choose whether repeats are allowed.",
+        "RANGE": "Check the bounds. The selected integer or decimal grid must contain at least one value.",
+        "NOT_ENOUGH": "The range contains fewer different values than you requested. Widen it or allow repeats."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples",
+      "noRepeated": "No repeated value",
+      "targetMet": "Target already secured with a zero final score",
+      "unattainable": "Above 100%; target unattainable in this model",
+      "withinRange": "Within the entered 0–100 grade scale",
+      "dateRange": "Outside the supported calendar range"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "One ordinary die",
+        "text": "Draw one integer from 1 through 6. Any of the six faces is a valid result."
+      },
+      {
+        "heading": "Every face without a repeat",
+        "text": "Draw six unique integers from 1 through 6. Every face appears once, in a random order."
+      },
+      {
+        "heading": "Hundredths from zero to one",
+        "text": "Draw three values on the 0.01 grid between 0 and 1. Both endpoints are possible."
+      },
+      {
+        "heading": "A range above Number precision",
+        "text": "Draw two unique integers from 9007199254740993 through 9007199254741993 without rounding the bounds."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches your task. The input labels follow that choice."
+        },
+        {
+          "heading": "Enter the values",
+          "text": "Both usable endpoints are included. Integer bounds round inward; decimals use the selected grid. Count must be a positive integer."
+        },
+        {
+          "heading": "Check the result",
+          "text": "Calculate, inspect the working and save the result if needed. Cancel stops a long job."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The method behind this result",
+      "paragraphs": [
+        "Random bytes come from the browser’s cryptographic random generator. A rejection step discards values outside the required range. Applying a remainder directly to an arbitrary range can favour some outcomes, so this implementation avoids that modulo bias.",
+        "Whole-number mode includes the first and last usable integers. A lower bound of 1.2 becomes 2, while an upper bound of 5.8 becomes 5. If the inward-rounded interval contains no integer, the page explains that the range is empty.",
+        "Decimal mode samples a uniform grid, not every possible real number. Two decimal places define steps of 0.01. The bounds are rounded inward to that grid, and both usable endpoints are included. Decimal-grid spacing is an explicit output choice rather than an input-digit ceiling.",
+        "Prevent repeats uses a sparse shuffle of the available positions. It keeps only positions needed by the requested draw instead of constructing the entire range. Asking for more unique values than the range contains is impossible and is rejected immediately.",
+        "Large bounds remain exact integer or rational values. A range above 4.29 billion is not rejected merely because it exceeds a 32-bit counter. There is no one-hundred-result quota. List storage and output still depend on the device’s real memory.",
+        "The generator runs in a worker and can be cancelled. Output appears only after a complete result is ready. A copied share link restores the settings, not a random seed or the same draw. Generate again to obtain a fresh result."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right assumptions",
+      "paragraphs": [
+        "Use a single draw for a die, a sample position or a classroom prompt. Use a no-repeat draw when every selected position should be different. Repeated values are expected when repeats are allowed and the range is small.",
+        "For fair decisions involving real participants, agree the range, participant mapping and draw procedure before generating. This page does not provide an independently audited draw record or prove what settings a person used earlier.",
+        "Browser cryptography supplies the random bytes, but the page is not a password or cryptographic-key format generator. Use the dedicated password tool when its task is what you need. No paid entropy service or calculation API is contacted."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Are both endpoints included?",
+        "answer": "Yes, when they lie on the usable integer or decimal grid. Bounds are rounded inward to the selected grid."
+      },
+      {
+        "question": "Can I prevent duplicates?",
+        "answer": "Yes. Choose Prevent repeats. The requested count must not exceed the number of available grid values."
+      },
+      {
+        "question": "Why is my unique request rejected?",
+        "answer": "The range contains fewer distinct values than the count requested. Widen the bounds, reduce the count or allow repeats."
+      },
+      {
+        "question": "Is this a continuous decimal distribution?",
+        "answer": "No. Decimal mode samples a fixed grid, such as hundredths. Each available grid position has the same draw probability."
+      },
+      {
+        "question": "Where does the randomness come from?",
+        "answer": "The browser’s cryptographic random generator supplies bytes. Rejection sampling maps those bytes to the selected range without modulo bias."
+      },
+      {
+        "question": "Can it generate more than 100 results?",
+        "answer": "Yes. There is no fixed result-count quota. Large lists consume device memory and can be cancelled before completion."
+      },
+      {
+        "question": "Can the range exceed 32-bit integers?",
+        "answer": "Yes. Large bounds use exact integers, including values beyond the safe JavaScript Number range."
+      },
+      {
+        "question": "Will a share link reproduce my draw?",
+        "answer": "No. It restores the settings. A fresh random draw occurs when the page calculates again."
+      },
+      {
+        "question": "Can all values in a unique draw appear?",
+        "answer": "Yes. Requesting every value gives a random ordering of the finite range, with each value occurring once."
+      },
+      {
+        "question": "Does this prove an official prize draw was fair?",
+        "answer": "No. It supplies a local random calculation, not an independent audit trail or a verified public draw procedure."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Password Generator",
+        "text": "Continue with password generator."
+      },
+      {
+        "title": "Random Name Picker",
+        "text": "Continue with random name picker."
+      },
+      {
+        "title": "Percentage Calculator",
+        "text": "Continue with percentage calculator."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "integers": "Whole numbers",
+        "decimals": "Decimal grid"
+      },
+      "fields": {
+        "a": "Lower bound",
+        "b": "Upper bound",
+        "c": "How many numbers",
+        "unique": "Prevent repeats",
+        "places": "Decimal places"
+      },
+      "modeLabels": {},
+      "options": {
+        "yes": "Yes, no repeats",
+        "no": "No, allow repeats",
+        "0": "0",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "6": "6",
+        "12": "12",
+        "15": "15"
+      },
+      "hint": "Both usable endpoints are included. Integer bounds round inward; decimals use the selected grid. Count must be a positive integer."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "die",
+        "mode": "integers",
+        "a": "1",
+        "b": "6",
+        "c": "1",
+        "unique": "no",
+        "expected": {
+          "count": 1,
+          "min": "1",
+          "max": "6"
+        }
+      },
+      {
+        "id": "shuffle",
+        "mode": "integers",
+        "a": "1",
+        "b": "6",
+        "c": "6",
+        "unique": "yes",
+        "expected": {
+          "count": 6,
+          "min": "1",
+          "max": "6",
+          "unique": true
+        }
+      },
+      {
+        "id": "grid",
+        "mode": "decimals",
+        "a": "0",
+        "b": "1",
+        "c": "3",
+        "unique": "yes",
+        "places": "2",
+        "expected": {
+          "count": 3,
+          "min": "0",
+          "max": "1",
+          "unique": true
+        }
+      },
+      {
+        "id": "large",
+        "mode": "integers",
+        "a": "9007199254740993",
+        "b": "9007199254741993",
+        "c": "2",
+        "unique": "yes",
+        "expected": {
+          "count": 2,
+          "min": "9007199254740993",
+          "max": "9007199254741993",
+          "unique": true
+        }
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/random-number-generator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "password-generator"
+      },
+      {
+        "id": "random-name-picker"
+      },
+      {
+        "id": "percentage-calculator"
+      }
+    ]
+  }
+}

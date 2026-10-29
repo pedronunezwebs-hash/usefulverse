@@ -1,0 +1,98 @@
+{
+  "toolId": "discount-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks; primary product/reference pages reviewed. No measured query volume, position or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "discount calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Percent off",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Find the discount",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Fixed amount off",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Recover original price",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Successive discounts",
+      "section": "calculator"
+    },
+    {
+      "phrase": "discount calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "discount calculator examples",
+      "section": "questions"
+    },
+    {
+      "phrase": "discount calculator free",
+      "section": "questions"
+    },
+    {
+      "phrase": "discount calculator online",
+      "section": "questions"
+    },
+    {
+      "phrase": "discount calculator no upload",
+      "section": "questions"
+    },
+    {
+      "phrase": "discount calculator exact values",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I find the sale price from a percentage?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I find the percentage from two prices?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Do two discounts add together?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter a fixed coupon?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How do I recover the original price?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this include sales tax?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why does an exact value contain a fraction?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How are half-cent ties rounded?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can the sale price be higher than the original?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is there a limit on stacked offers?",
+      "section": "questions"
+    }
+  ]
+}

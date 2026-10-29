@@ -1,0 +1,90 @@
+{
+  "toolId": "average-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks; primary product/reference pages reviewed. No measured query volume, position or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "average calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Mean and summary",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Weighted average",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Required final grade",
+      "section": "calculator"
+    },
+    {
+      "phrase": "average calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "average calculator examples",
+      "section": "calculator"
+    },
+    {
+      "phrase": "average calculator free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "average calculator online",
+      "section": "questions"
+    },
+    {
+      "phrase": "average calculator no upload",
+      "section": "questions"
+    },
+    {
+      "phrase": "average calculator exact values",
+      "section": "questions"
+    },
+    {
+      "phrase": "Which separators can I paste?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does zero count in the mean?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How does the median work?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can there be several modes?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can weights be zero?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Must the weight list match the value list?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What does final grade mode assume?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What if the required final score exceeds 100?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter exact fractions?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this replace my school\u2019s grading policy?",
+      "section": "questions"
+    }
+  ]
+}

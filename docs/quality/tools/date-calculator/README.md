@@ -110,3 +110,5 @@ El navegador instalado de Chrome evita otra descarga. El harness crea y retira s
 No iniciar tres builds completos ni descargar modelos. Las capturas aprobadas serán la referencia visual tras la decisión de Pedro.
 
 [Recibo de respaldo y retirada](closure.json). Candado operativo en ESTADO.
+
+**Actualización de inglés29-oct:** [PR149](https://github.com/pedronunezwebs-hash/usefulverse/pull/149) integrada y fuente automática alineada. La indicación anterior de estar fuera del corpus queda sustituida: el inglés ya está conectado; traducciones/publicación siguen pendientes. [Datos técnicos separados y salida idéntica](../../english-quality-v1/README.md). Sin repetición de pruebas físicas ni cambios al traductor.

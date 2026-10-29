@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "prime-number-checker",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/prime-number-checker/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 35934,
+    "htmlBrotli": 8544,
+    "cssBrotli": 3885,
+    "jsBrotli": 2819,
+    "font": 40784
+  }
+}

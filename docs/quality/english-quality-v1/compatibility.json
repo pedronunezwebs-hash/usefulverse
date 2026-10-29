@@ -1,0 +1,120 @@
+{
+  "checkedAt": "2026-10-29T16:07:28.913Z",
+  "scope": "10 actual branch-specific HTML renderings unchanged; helper/source-only compatibility",
+  "branches": [
+    {
+      "branch": "feat/date-calculator-planeta",
+      "parent": "b1fc4098791c30eba105a00e5465942d952a9396",
+      "commit": "c88276d7ce6c96a6fe6e6147bcaf4d6b7c7d0941",
+      "files": [
+        "src/quality/date-calculator/render.mjs",
+        "src/quality/shared/source-copy.mjs",
+        "src/quality/shared/source-copy.test.mjs",
+        "translation-sources/date-calculator.json"
+      ],
+      "proofs": [
+        {
+          "id": "date-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "61fdb120eb80b18378aeeb3d965b64a7cec8d8042025f73dc8fe723f83d4a437"
+        }
+      ]
+    },
+    {
+      "branch": "feat/time-duration-planeta",
+      "parent": "75539c1eafd3d848ca94fc25db095a31620299bb",
+      "commit": "c64b54b4a37918aecf81050e0d76222072c0b92f",
+      "files": [
+        "src/quality/date-calculator/render.mjs",
+        "src/quality/shared/source-copy.mjs",
+        "src/quality/shared/source-copy.test.mjs",
+        "src/quality/time-duration-calculator/render.mjs",
+        "translation-sources/date-calculator.json",
+        "translation-sources/time-duration-calculator.json"
+      ],
+      "proofs": [
+        {
+          "id": "date-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "61fdb120eb80b18378aeeb3d965b64a7cec8d8042025f73dc8fe723f83d4a437"
+        },
+        {
+          "id": "time-duration-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "8e4eccc98c22f7d506d953063a25a521a2059882cc71107a1a02b902597dfc13"
+        }
+      ]
+    },
+    {
+      "branch": "feat/roman-numeral-planeta",
+      "parent": "76a23a94037a3405d174f4da51d87bdf0da105f6",
+      "commit": "a690a7eb5878419445384c470a90e04de3ed115f",
+      "files": [
+        "src/quality/date-calculator/render.mjs",
+        "src/quality/roman-numeral-converter/render.mjs",
+        "src/quality/shared/source-copy.mjs",
+        "src/quality/shared/source-copy.test.mjs",
+        "src/quality/time-duration-calculator/render.mjs",
+        "translation-sources/date-calculator.json",
+        "translation-sources/roman-numeral-converter.json",
+        "translation-sources/time-duration-calculator.json"
+      ],
+      "proofs": [
+        {
+          "id": "date-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "61fdb120eb80b18378aeeb3d965b64a7cec8d8042025f73dc8fe723f83d4a437"
+        },
+        {
+          "id": "time-duration-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "8e4eccc98c22f7d506d953063a25a521a2059882cc71107a1a02b902597dfc13"
+        },
+        {
+          "id": "roman-numeral-converter",
+          "exactHTMLUnchanged": true,
+          "sha256": "c187bc6204e8d03a8c75b9b4f60b534e066cd239d618417740ec5195d7370ced"
+        }
+      ]
+    },
+    {
+      "branch": "feat/barcode-planeta",
+      "parent": "716e71b09b20092dd0d11c4ed8321a6fe64ef2b1",
+      "commit": "3e10843b2fc0432a53995c70dfaa7e66f6a68e08",
+      "files": [
+        "src/quality/barcode-generator/render.mjs",
+        "src/quality/date-calculator/render.mjs",
+        "src/quality/roman-numeral-converter/render.mjs",
+        "src/quality/shared/source-copy.mjs",
+        "src/quality/shared/source-copy.test.mjs",
+        "src/quality/time-duration-calculator/render.mjs",
+        "translation-sources/barcode-generator.json",
+        "translation-sources/date-calculator.json",
+        "translation-sources/roman-numeral-converter.json",
+        "translation-sources/time-duration-calculator.json"
+      ],
+      "proofs": [
+        {
+          "id": "date-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "61fdb120eb80b18378aeeb3d965b64a7cec8d8042025f73dc8fe723f83d4a437"
+        },
+        {
+          "id": "time-duration-calculator",
+          "exactHTMLUnchanged": true,
+          "sha256": "8e4eccc98c22f7d506d953063a25a521a2059882cc71107a1a02b902597dfc13"
+        },
+        {
+          "id": "roman-numeral-converter",
+          "exactHTMLUnchanged": true,
+          "sha256": "c187bc6204e8d03a8c75b9b4f60b534e066cd239d618417740ec5195d7370ced"
+        },
+        {
+          "id": "barcode-generator",
+          "exactHTMLUnchanged": true,
+          "sha256": "c99f9b2d5c931d5a5d1b51f333a325650a5a3b8c2e71a428dcdddeff27a55a18"
+        }
+      ]
+    }
+  ]
+}

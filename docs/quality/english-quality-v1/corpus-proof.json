@@ -1,0 +1,528 @@
+{
+  "checkedAt": "2026-10-29T16:01:25.549Z",
+  "inputTools": 1000,
+  "destinationLocales": 36,
+  "before": {
+    "sourceUnits": 48403,
+    "sourceDigest": "05bd0145ba07362f43d8b4d0a0df6cdc9d375aee5adba973b8c3cbb15325f3f7",
+    "metadataOnly": 0
+  },
+  "after": {
+    "sourceUnits": 50530,
+    "sourceDigest": "617349bf5c872ad4344467bf4a8cdb6d701847e477eac35a36454ae390f44ac8",
+    "metadataOnly": 0,
+    "memoryUnits": 32834
+  },
+  "technicalTargetsExcluded": 99,
+  "rows": [
+    {
+      "id": "date-calculator",
+      "sourceUnits": 151,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "date-calculator.copy.examples.0.id",
+          "source": "elapsed"
+        },
+        {
+          "key": "date-calculator.copy.examples.1.id",
+          "source": "leap"
+        },
+        {
+          "key": "date-calculator.copy.examples.2.id",
+          "source": "month"
+        },
+        {
+          "key": "date-calculator.copy.examples.3.id",
+          "source": "ninety"
+        },
+        {
+          "key": "date-calculator.copy.related.0.id",
+          "source": "business-days-calculator"
+        },
+        {
+          "key": "date-calculator.copy.related.1.id",
+          "source": "time-duration-calculator"
+        },
+        {
+          "key": "date-calculator.copy.related.2.id",
+          "source": "age-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "time-duration-calculator",
+      "sourceUnits": 162,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "time-duration-calculator.copy.examples.0.id",
+          "source": "overnight"
+        },
+        {
+          "key": "time-duration-calculator.copy.examples.1.id",
+          "source": "leap"
+        },
+        {
+          "key": "time-duration-calculator.copy.examples.2.id",
+          "source": "spring"
+        },
+        {
+          "key": "time-duration-calculator.copy.examples.3.id",
+          "source": "flight"
+        },
+        {
+          "key": "time-duration-calculator.copy.related.0.id",
+          "source": "date-calculator"
+        },
+        {
+          "key": "time-duration-calculator.copy.related.1.id",
+          "source": "time-zone-converter"
+        },
+        {
+          "key": "time-duration-calculator.copy.related.2.id",
+          "source": "business-days-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "roman-numeral-converter",
+      "sourceUnits": 154,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "roman-numeral-converter.copy.examples.0.id",
+          "source": "year"
+        },
+        {
+          "key": "roman-numeral-converter.copy.examples.1.id",
+          "source": "subtractive"
+        },
+        {
+          "key": "roman-numeral-converter.copy.examples.2.id",
+          "source": "date"
+        },
+        {
+          "key": "roman-numeral-converter.copy.examples.3.id",
+          "source": "large"
+        },
+        {
+          "key": "roman-numeral-converter.copy.related.0.id",
+          "source": "number-to-words-converter"
+        },
+        {
+          "key": "roman-numeral-converter.copy.related.1.id",
+          "source": "binary-converter"
+        },
+        {
+          "key": "roman-numeral-converter.copy.related.2.id",
+          "source": "date-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "barcode-generator",
+      "sourceUnits": 142,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "barcode-generator.copy.examples.0.id",
+          "source": "stock"
+        },
+        {
+          "key": "barcode-generator.copy.examples.1.id",
+          "source": "ean"
+        },
+        {
+          "key": "barcode-generator.copy.examples.2.id",
+          "source": "upc"
+        },
+        {
+          "key": "barcode-generator.copy.examples.3.id",
+          "source": "short"
+        },
+        {
+          "key": "barcode-generator.copy.related.0.id",
+          "source": "qr-code-generator"
+        },
+        {
+          "key": "barcode-generator.copy.related.1.id",
+          "source": "qr-code-reader"
+        },
+        {
+          "key": "barcode-generator.copy.related.2.id",
+          "source": "image-resizer-compressor"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "fraction-calculator",
+      "sourceUnits": 150,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "fraction-calculator.copy.examples.0.id",
+          "source": "add"
+        },
+        {
+          "key": "fraction-calculator.copy.examples.1.id",
+          "source": "mixed"
+        },
+        {
+          "key": "fraction-calculator.copy.examples.2.id",
+          "source": "decimal"
+        },
+        {
+          "key": "fraction-calculator.copy.examples.3.id",
+          "source": "list"
+        },
+        {
+          "key": "fraction-calculator.copy.related.0.id",
+          "source": "repeating-decimal-to-fraction"
+        },
+        {
+          "key": "fraction-calculator.copy.related.0.host",
+          "source": "tools.usefulverse.com"
+        },
+        {
+          "key": "fraction-calculator.copy.related.1.id",
+          "source": "percentage-calculator"
+        },
+        {
+          "key": "fraction-calculator.copy.related.2.id",
+          "source": "ratio-proportion-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "prime-number-checker",
+      "sourceUnits": 139,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "prime-number-checker.copy.examples.0.id",
+          "source": "small"
+        },
+        {
+          "key": "prime-number-checker.copy.examples.1.id",
+          "source": "factor"
+        },
+        {
+          "key": "prime-number-checker.copy.examples.2.id",
+          "source": "large"
+        },
+        {
+          "key": "prime-number-checker.copy.examples.3.id",
+          "source": "neither"
+        },
+        {
+          "key": "prime-number-checker.copy.related.0.id",
+          "source": "scientific-calculator"
+        },
+        {
+          "key": "prime-number-checker.copy.related.1.id",
+          "source": "binary-converter"
+        },
+        {
+          "key": "prime-number-checker.copy.related.2.id",
+          "source": "fraction-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "percentage-calculator",
+      "sourceUnits": 163,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "percentage-calculator.copy.examples.0.id",
+          "source": "of"
+        },
+        {
+          "key": "percentage-calculator.copy.examples.1.id",
+          "source": "change"
+        },
+        {
+          "key": "percentage-calculator.copy.examples.2.id",
+          "source": "difference"
+        },
+        {
+          "key": "percentage-calculator.copy.examples.3.id",
+          "source": "whole"
+        },
+        {
+          "key": "percentage-calculator.copy.related.0.id",
+          "source": "discount-calculator"
+        },
+        {
+          "key": "percentage-calculator.copy.related.1.id",
+          "source": "ratio-proportion-calculator"
+        },
+        {
+          "key": "percentage-calculator.copy.related.2.id",
+          "source": "fraction-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "number-to-words-converter",
+      "sourceUnits": 145,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "number-to-words-converter.copy.examples.0.id",
+          "source": "whole"
+        },
+        {
+          "key": "number-to-words-converter.copy.examples.1.id",
+          "source": "decimal"
+        },
+        {
+          "key": "number-to-words-converter.copy.examples.2.id",
+          "source": "digits"
+        },
+        {
+          "key": "number-to-words-converter.copy.examples.3.id",
+          "source": "money"
+        },
+        {
+          "key": "number-to-words-converter.copy.related.0.id",
+          "source": "roman-numeral-converter"
+        },
+        {
+          "key": "number-to-words-converter.copy.related.1.id",
+          "source": "binary-converter"
+        },
+        {
+          "key": "number-to-words-converter.copy.related.2.id",
+          "source": "percentage-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "ratio-proportion-calculator",
+      "sourceUnits": 144,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "ratio-proportion-calculator.copy.examples.0.id",
+          "source": "reduce"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.examples.1.id",
+          "source": "solve"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.examples.2.id",
+          "source": "decimals"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.examples.3.id",
+          "source": "scale"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.related.0.id",
+          "source": "fraction-calculator"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.related.1.id",
+          "source": "percentage-calculator"
+        },
+        {
+          "key": "ratio-proportion-calculator.copy.related.2.id",
+          "source": "unit-converter"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "discount-calculator",
+      "sourceUnits": 185,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "discount-calculator.copy.examples.0.id",
+          "source": "sale"
+        },
+        {
+          "key": "discount-calculator.copy.examples.1.id",
+          "source": "reverse"
+        },
+        {
+          "key": "discount-calculator.copy.examples.2.id",
+          "source": "stack"
+        },
+        {
+          "key": "discount-calculator.copy.examples.3.id",
+          "source": "recover"
+        },
+        {
+          "key": "discount-calculator.copy.related.0.id",
+          "source": "percentage-calculator"
+        },
+        {
+          "key": "discount-calculator.copy.related.1.id",
+          "source": "tip-calculator"
+        },
+        {
+          "key": "discount-calculator.copy.related.2.id",
+          "source": "ratio-proportion-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "random-number-generator",
+      "sourceUnits": 182,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "random-number-generator.copy.examples.0.id",
+          "source": "die"
+        },
+        {
+          "key": "random-number-generator.copy.examples.1.id",
+          "source": "shuffle"
+        },
+        {
+          "key": "random-number-generator.copy.examples.2.id",
+          "source": "grid"
+        },
+        {
+          "key": "random-number-generator.copy.examples.3.id",
+          "source": "large"
+        },
+        {
+          "key": "random-number-generator.copy.related.0.id",
+          "source": "password-generator"
+        },
+        {
+          "key": "random-number-generator.copy.related.1.id",
+          "source": "random-name-picker"
+        },
+        {
+          "key": "random-number-generator.copy.related.2.id",
+          "source": "percentage-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "average-calculator",
+      "sourceUnits": 182,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "average-calculator.copy.examples.0.id",
+          "source": "mean"
+        },
+        {
+          "key": "average-calculator.copy.examples.1.id",
+          "source": "weight"
+        },
+        {
+          "key": "average-calculator.copy.examples.2.id",
+          "source": "final"
+        },
+        {
+          "key": "average-calculator.copy.examples.3.id",
+          "source": "fractions"
+        },
+        {
+          "key": "average-calculator.copy.related.0.id",
+          "source": "standard-deviation-calculator"
+        },
+        {
+          "key": "average-calculator.copy.related.1.id",
+          "source": "percentage-calculator"
+        },
+        {
+          "key": "average-calculator.copy.related.2.id",
+          "source": "fraction-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "age-calculator",
+      "sourceUnits": 180,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "age-calculator.copy.examples.0.id",
+          "source": "birthday"
+        },
+        {
+          "key": "age-calculator.copy.examples.1.id",
+          "source": "before"
+        },
+        {
+          "key": "age-calculator.copy.examples.2.id",
+          "source": "leap"
+        },
+        {
+          "key": "age-calculator.copy.examples.3.id",
+          "source": "march"
+        },
+        {
+          "key": "age-calculator.copy.related.0.id",
+          "source": "date-calculator"
+        },
+        {
+          "key": "age-calculator.copy.related.1.id",
+          "source": "time-duration-calculator"
+        },
+        {
+          "key": "age-calculator.copy.related.2.id",
+          "source": "business-days-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "sourceUnits": 204,
+      "oldTechnicalTargetsExcluded": [
+        {
+          "key": "fuel-cost-calculator.copy.examples.0.id",
+          "source": "metric"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.examples.1.id",
+          "source": "return"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.examples.2.id",
+          "source": "us"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.examples.3.id",
+          "source": "imperial"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.related.0.id",
+          "source": "unit-converter"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.related.1.id",
+          "source": "percentage-calculator"
+        },
+        {
+          "key": "fuel-cost-calculator.copy.related.2.id",
+          "source": "ratio-proportion-calculator"
+        }
+      ],
+      "examples": 4,
+      "related": 3
+    }
+  ],
+  "note": "English source input only. No inference, model/workflow/policy/memory changes, language approval or publication."
+}

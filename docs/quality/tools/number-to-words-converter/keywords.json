@@ -1,0 +1,94 @@
+{
+  "toolId": "number-to-words-converter",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks and first-party products; no current keyword volume, SERP rank or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "number to words converter",
+      "section": "calculator"
+    },
+    {
+      "phrase": "English words",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Read each digit",
+      "section": "calculator"
+    },
+    {
+      "phrase": "US dollar amount",
+      "section": "calculator"
+    },
+    {
+      "phrase": "exact number to words converter",
+      "section": "calculator"
+    },
+    {
+      "phrase": "number to words converter with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "number to words converter free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "number to words converter online",
+      "section": "examples"
+    },
+    {
+      "phrase": "number to words converter no upload",
+      "section": "examples"
+    },
+    {
+      "phrase": "number to words converter large numbers",
+      "section": "examples"
+    },
+    {
+      "phrase": "number to words converter examples",
+      "section": "examples"
+    },
+    {
+      "phrase": "Which language does this candidate write?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter a decimal?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can it keep leading zeroes?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What does one billion mean here?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How are dollar amounts rounded?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why did a huge value switch to digit reading?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this lose precision above a trillion?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I paste thousands separators?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I change capitalization?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is this a certified check-writing service?",
+      "section": "questions"
+    }
+  ]
+}

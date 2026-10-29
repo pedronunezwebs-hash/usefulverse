@@ -1,0 +1,114 @@
+{
+  "source": "https://docs.python.org/3/library/fractions.html",
+  "method": "Python Fraction from strings; independent exact arithmetic",
+  "cases": [
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "1/2",
+        "b": "1/3",
+        "operation": "add"
+      },
+      "expected": "5/6"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "-3/4",
+        "b": "-5/8",
+        "operation": "add"
+      },
+      "expected": "-11/8"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "7/3",
+        "b": "3/4",
+        "operation": "multiply"
+      },
+      "expected": "7/4"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "0.1",
+        "b": "0.2",
+        "operation": "add"
+      },
+      "expected": "3/10"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "9/5",
+        "b": "3/10",
+        "operation": "divide"
+      },
+      "expected": "6"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "5/6",
+        "b": "7/9",
+        "operation": "subtract"
+      },
+      "expected": "1/18"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "0",
+        "b": "1/9",
+        "operation": "multiply"
+      },
+      "expected": "0"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "-7",
+        "b": "3",
+        "operation": "divide"
+      },
+      "expected": "-7/3"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "9007199254740993",
+        "b": "2",
+        "operation": "multiply"
+      },
+      "expected": "18014398509481986"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "999/1000",
+        "b": "1/1000",
+        "operation": "add"
+      },
+      "expected": "1"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "2/7",
+        "b": "3/14",
+        "operation": "add"
+      },
+      "expected": "1/2"
+    },
+    {
+      "state": {
+        "mode": "calculate",
+        "a": "1000000000000000000000000001",
+        "b": "1/3",
+        "operation": "subtract"
+      },
+      "expected": "3000000000000000000000000002/3"
+    }
+  ]
+}

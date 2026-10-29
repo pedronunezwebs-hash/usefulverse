@@ -1,0 +1,90 @@
+{
+  "toolId": "fuel-cost-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks; primary product/reference pages reviewed. No measured query volume, position or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "fuel cost calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Kilometres and litres",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Miles and US gallons",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Miles and imperial gallons",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fuel cost calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fuel cost calculator examples",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fuel cost calculator free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fuel cost calculator online",
+      "section": "questions"
+    },
+    {
+      "phrase": "fuel cost calculator no upload",
+      "section": "questions"
+    },
+    {
+      "phrase": "fuel cost calculator exact values",
+      "section": "questions"
+    },
+    {
+      "phrase": "Which units can I use?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Are US and imperial gallons interchangeable?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Should I enter one-way or total distance?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I split the cost between passengers?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why do rounded shares not always sum exactly?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does changing the currency convert the price?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this fetch current fuel prices?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter a free-fuel or zero-distance case?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does the estimate include tolls or vehicle wear?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Will the car use exactly this amount?",
+      "section": "questions"
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "toolId": "prime-number-checker",
+  "sourceCopy": {
+    "title": "Prime Number Checker — Exact 64-bit & Larger Tests",
+    "description": "Check whole numbers with exact 64-bit results and labelled probable-prime tests for larger values. See factors or witnesses. Free in your browser.",
+    "heading": "Prime Number Checker",
+    "intro": "Find out whether a whole number is prime. See a factor when one is found, with a clear label for very large tests.",
+    "category": "Numbers & relationships",
+    "eyebrow": "A number. A reason. No guess disguised as proof.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "A small prime",
+        "text": "97 has only 1 and itself as positive divisors. It is prime."
+      },
+      {
+        "heading": "A familiar composite",
+        "text": "561 = 3 × 187. A small divisor gives a direct proof that the number is composite."
+      },
+      {
+        "heading": "Beyond safe JavaScript numbers",
+        "text": "9007199254740993 = 3 × 3002399751580331. The input remains an exact integer."
+      },
+      {
+        "heading": "One is a separate case",
+        "text": "1 is neither prime nor composite. A prime must be greater than 1."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches the task. The field labels change with the question."
+        },
+        {
+          "heading": "Enter your values",
+          "text": "Use digits 0–9, without commas, decimal points or exponent notation. Large tests can be cancelled."
+        },
+        {
+          "heading": "Read the working",
+          "text": "Calculate, check the result and inspect the steps. Copy the answer or download the complete result."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The rules behind the result",
+      "paragraphs": [
+        "A prime is an integer greater than one with exactly two positive divisors: one and itself. Composite numbers have another divisor. Zero and one belong to neither category. This page accepts nonnegative integer digits and rejects decimals, signs below zero and exponent notation.",
+        "The first stage checks small prime divisors through 997. If a divisor is found, the result shows it and its paired factor. It is the smallest divisor in that search. A large composite may instead be detected by a witness test without finding a divisor.",
+        "The next stage writes n - 1 as an odd number times a power of two. Modular exponentiation then checks Miller–Rabin witness bases. A failed round proves the number is composite. The witness base is evidence of compositeness; it is not necessarily a factor.",
+        "For numbers below 2^64, seven documented bases give a deterministic primality result. The upper boundary is 18,446,744,073,709,551,616, excluded. The calculation uses BigInt throughout, so integers above the usual safe Number range do not lose their final digits.",
+        "At or above that boundary, the test uses 32 independently selected random bases from browser cryptography. A passing result is labelled Probably prime. It is not a mathematical primality certificate. This distinction remains visible rather than silently calling every passing large input prime.",
+        "No twelve-digit ceiling is imposed. Very large modular arithmetic still needs time and memory. The worker protects the interface while a test runs. Cancel terminates the current computation, and an old response cannot overwrite the next input."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right context",
+      "paragraphs": [
+        "Use this checker to examine exercises, divisibility patterns or a large integer copied from a document. Compare a displayed factor by multiplying it with the paired factor. A successful multiplication is a direct and independently checkable reason.",
+        "Do not treat this page as a cryptographic key generator or certification service. Random test bases are chosen for primality checking, not for generating private keys. A probably-prime result is useful evidence, but high-assurance systems need their own reviewed procedures.",
+        "The checker does not list every factor or the neighbouring primes. Its main job is one explained primality decision. Keeping that task explicit avoids promising a full factorization when a witness alone has detected a composite."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Is 1 a prime number?",
+        "answer": "No. A prime must be greater than 1 and have exactly two positive divisors. One is neither prime nor composite."
+      },
+      {
+        "question": "Is 2 the only even prime?",
+        "answer": "Yes. Every larger even integer has 2 as another divisor, so it is composite."
+      },
+      {
+        "question": "How large can my input be?",
+        "answer": "There is no fixed digit ceiling. Your device memory and calculation time determine what is practical. You can cancel a long test."
+      },
+      {
+        "question": "When is a Prime result deterministic?",
+        "answer": "For values below 2^64, the documented seven-base Miller–Rabin test is deterministic. Small divisors are checked first."
+      },
+      {
+        "question": "What does Probably prime mean?",
+        "answer": "A number at or above 2^64 passed 32 random-base rounds. It is strong evidence, but it is not a primality certificate."
+      },
+      {
+        "question": "Is a witness base a factor?",
+        "answer": "Not necessarily. A failed modular test proves compositeness without requiring the base to divide the number."
+      },
+      {
+        "question": "Why is a composite shown without a divisor?",
+        "answer": "The small-divisor search may find none, while a Miller–Rabin witness still proves the number is composite."
+      },
+      {
+        "question": "Can I enter a negative number or fraction?",
+        "answer": "No. This checker uses the usual positive-integer definition. Enter nonnegative whole-number digits; zero and one are classified separately."
+      },
+      {
+        "question": "Does it round large inputs?",
+        "answer": "No. Inputs are parsed as BigInt strings. The final digits remain exact above Number.MAX_SAFE_INTEGER."
+      },
+      {
+        "question": "Can I use this for security keys?",
+        "answer": "Do not rely on this page as a key-generation or certification system. Use a reviewed cryptographic implementation for that purpose."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Scientific Calculator",
+        "text": "Continue with arithmetic on the number you checked."
+      },
+      {
+        "title": "Binary Converter",
+        "text": "Write an exact integer in another base."
+      },
+      {
+        "title": "Fraction Calculator",
+        "text": "Work with exact fractions and mixed numbers."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "check": "Check a number"
+      },
+      "fields": {
+        "a": "Nonnegative whole number"
+      },
+      "modeLabels": {},
+      "options": {},
+      "hint": "Use digits 0–9, without commas, decimal points or exponent notation. Large tests can be cancelled."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "small",
+        "mode": "check",
+        "a": "97",
+        "expected": "prime"
+      },
+      {
+        "id": "factor",
+        "mode": "check",
+        "a": "561",
+        "expected": "composite"
+      },
+      {
+        "id": "large",
+        "mode": "check",
+        "a": "9007199254740993",
+        "expected": "composite"
+      },
+      {
+        "id": "neither",
+        "mode": "check",
+        "a": "1",
+        "expected": "neither"
+      }
+    ],
+    "referenceLinks": [
+      "https://miller-rabin.appspot.com/",
+      "https://www.calculatorsoup.com/calculators/math/prime-number-calculator.php"
+    ],
+    "related": [
+      {
+        "id": "scientific-calculator"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "fraction-calculator"
+      }
+    ]
+  }
+}

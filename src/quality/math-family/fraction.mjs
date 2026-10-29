@@ -1,0 +1,6 @@
+import{parse,rational,add,sub,mul,div,gcd,text,result,fail}from'./exact.mjs';
+export function calculate(s){const a=s.mode==='sum'?rational(0n):parse(s.a,'a'),b=['calculate','compare'].includes(s.mode)?parse(s.b,'b'):null;
+if(s.mode==='simplify')return result(a,[s.a+' = '+text(a)]);
+if(s.mode==='compare'){const cmp=a.n*b.d-b.n*a.d,sign=cmp<0n?'<':cmp>0n?'>':'=';return {answer:text(a)+' '+sign+' '+text(b),details:[],steps:[`${a.n} × ${b.d} ${sign} ${b.n} × ${a.d}`]};}
+if(s.mode==='sum'){const values=s.a.split(/\r?\n/u).filter(x=>x.trim());if(!values.length)fail('NUMBER');let total=rational(0n);const steps=[];for(const v of values){const a=parse(v,'a'),before=text(total);total=add(total,a);steps.push(before+' + '+text(a)+' = '+text(total));}return result(total,steps);}
+if(s.mode!=='calculate'||!['add','subtract','multiply','divide'].includes(s.operation))fail('OPTIONS');const c={add,subtract:sub,multiply:mul,divide:div}[s.operation](a,b),symbol={add:'+',subtract:'−',multiply:'×',divide:'÷'}[s.operation];let steps=[text(a)+' '+symbol+' '+text(b)+' = '+text(c)];if(['add','subtract'].includes(s.operation)){const d=a.d/gcd(a.d,b.d)*b.d;steps.unshift(`${a.n*(d/a.d)}/${d} ${symbol} ${b.n*(d/b.d)}/${d}`);}return result(c,steps);}

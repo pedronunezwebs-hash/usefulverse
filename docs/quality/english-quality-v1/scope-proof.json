@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-29T16:07:54.925Z",
+  "base": "f354ef7fb57c4ac17a71a981a3dee4c3e20b2855",
+  "inputCommit": "4e69d8aa7f3e2d3bfb21ccf8e3dd9e9daf3ef585",
+  "paths": [
+    "docs/quality/english-quality-v1/README.md",
+    "docs/quality/english-quality-v1/build-equivalence.json",
+    "docs/quality/english-quality-v1/corpus-after.log",
+    "docs/quality/english-quality-v1/corpus-before.log",
+    "docs/quality/english-quality-v1/corpus-proof.json",
+    "docs/quality/english-quality-v1/node-after-source.log",
+    "docs/quality/english-quality-v1/render-equivalence.json",
+    "scripts/localization/quality-copy-source.test.mjs",
+    "translation-sources/age-calculator.json",
+    "translation-sources/average-calculator.json",
+    "translation-sources/barcode-generator.json",
+    "translation-sources/date-calculator.json",
+    "translation-sources/discount-calculator.json",
+    "translation-sources/fraction-calculator.json",
+    "translation-sources/fuel-cost-calculator.json",
+    "translation-sources/number-to-words-converter.json",
+    "translation-sources/percentage-calculator.json",
+    "translation-sources/prime-number-checker.json",
+    "translation-sources/random-number-generator.json",
+    "translation-sources/ratio-proportion-calculator.json",
+    "translation-sources/roman-numeral-converter.json",
+    "translation-sources/time-duration-calculator.json"
+  ],
+  "unchangedRootEntries": [
+    {
+      "path": ".github",
+      "sha": "c81c9ec1ee7573a8f4b8333498b153e88854cf64"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "2e1760dc3de732142a07b22d76d1aebe2e36bc57"
+    },
+    {
+      "path": ".node-version",
+      "sha": "a45fd52cc5891570d6299fab38643103c3955474"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha": "fe3b318238a2240d1d4864db4cf4b1d811237aa3"
+    },
+    {
+      "path": "README.md",
+      "sha": "f8cf7c7870ccbea82da18c09c03aeb4af0210713"
+    },
+    {
+      "path": "package-lock.json",
+      "sha": "0602843a13d43533b0c4309cf23d9fc660c06e8d"
+    },
+    {
+      "path": "package.json",
+      "sha": "93ee3c32d03f4fdbba9e73bbe596f69f505f7a92"
+    },
+    {
+      "path": "public",
+      "sha": "f1c18fd0974f914dbb5c1107725934fd26eb899e"
+    },
+    {
+      "path": "src",
+      "sha": "192b6b69156cb84ba5b564de70f96c0885ea438b"
+    },
+    {
+      "path": "test",
+      "sha": "771d798c1d2b28b9bd0591fda619d6a1222a0337"
+    },
+    {
+      "path": "tests",
+      "sha": "8e9febf896a03ddcce5c7c934a1c0e55ac8c0753"
+    }
+  ],
+  "runtimeChanged": false,
+  "translatorConfigurationChanged": false,
+  "indexableURLDelta": 0,
+  "manualWorkflowDispatches": 0,
+  "nativeBuildRepeated": false,
+  "reason": "Input-only corpus files and a test; no existing runtime/builder/workflow/dependency file modified."
+}
