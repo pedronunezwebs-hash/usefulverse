@@ -1,0 +1,25 @@
+✔ all 1000 catalog owners have English copy without claiming a full legacy runtime audit (163.8665ms)
+✔ technical constants, formulas and URLs are not sent as prose (0.127834ms)
+✔ date-calculator English quality copy reaches the corpus without translating controls or routes (5.535333ms)
+✔ time-duration-calculator English quality copy reaches the corpus without translating controls or routes (2.657375ms)
+✔ roman-numeral-converter English quality copy reaches the corpus without translating controls or routes (2.217416ms)
+✔ barcode-generator English quality copy reaches the corpus without translating controls or routes (2.041084ms)
+✔ fraction-calculator English quality copy reaches the corpus without translating controls or routes (2.0915ms)
+✔ prime-number-checker English quality copy reaches the corpus without translating controls or routes (2.056792ms)
+✔ percentage-calculator English quality copy reaches the corpus without translating controls or routes (2.048291ms)
+✔ number-to-words-converter English quality copy reaches the corpus without translating controls or routes (2.084ms)
+✔ ratio-proportion-calculator English quality copy reaches the corpus without translating controls or routes (6.103167ms)
+✔ discount-calculator English quality copy reaches the corpus without translating controls or routes (2.164584ms)
+✔ random-number-generator English quality copy reaches the corpus without translating controls or routes (2.4315ms)
+✔ average-calculator English quality copy reaches the corpus without translating controls or routes (2.016458ms)
+✔ age-calculator English quality copy reaches the corpus without translating controls or routes (1.990542ms)
+✔ fuel-cost-calculator English quality copy reaches the corpus without translating controls or routes (2.001334ms)
+✔ translated example/related text cannot change stable controls or routes (0.847083ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 729.469166

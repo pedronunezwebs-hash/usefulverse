@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "toolId": "roman-numeral-converter",
+  "sourceCopy": {
+    "title": "Roman Numeral Converter — Numbers & Dates | UsefulVerse",
+    "description": "Convert numbers, Roman numerals and dates. Check reading rules, use grouped thousands or process a list with CSV export. Free, entirely in your browser.",
+    "heading": "Roman Numeral Converter",
+    "intro": "Read a Roman numeral or write a number as one. Convert a date or a whole list with clear rules.",
+    "category": "Numbers & notation",
+    "eyebrow": "A little order for your numerals",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "number": "To Roman",
+      "roman": "To number",
+      "date": "Date",
+      "batch": "Batch",
+      "calculation": "Choose a conversion",
+      "numberLabel": "Whole number",
+      "numberHint": "Use digits 0–9, without commas or decimal points.",
+      "romanLabel": "Roman numeral",
+      "romanHint": "Letters I, V, X, L, C, D, M. Lowercase and Unicode Roman characters are accepted.",
+      "dateLabel": "Calendar date",
+      "orderLabel": "Date order",
+      "dmy": "Day / month / year",
+      "mdy": "Month / day / year",
+      "ymd": "Year / month / day",
+      "batchLabel": "One number or Roman numeral per line",
+      "batchHint": "Numbers and Roman numerals can be mixed. Blank lines are skipped.",
+      "extendedLabel": "Allow grouped thousands",
+      "extendedHint": "In this tool, each (...) multiplies its contents by 1,000.",
+      "calculate": "Convert",
+      "cancel": "Cancel",
+      "result": "Your number, made clear",
+      "empty": "Enter a value to see its conversion.",
+      "romanOutput": "Roman numeral",
+      "numberOutput": "Decimal number",
+      "dateOutput": "Roman date",
+      "breakdown": "How the parts add up",
+      "groupNote": "Grouped thousands use this tool’s text convention. Other converters may expect an overline instead.",
+      "dateNote": "Each date part is converted separately. This does not change the calendar.",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "working": "Converting in the background…",
+      "processed": "Processed {done} of {total} lines.",
+      "completed": "Processed {count} rows. Check any errors before using the results.",
+      "cancelled": "Stopped. No complete result was saved. Change the input or convert again.",
+      "download": "Download CSV",
+      "batchPreview": "Batch conversion preview",
+      "previewNote": "The preview shows the first 50 rows. CSV contains every processed row.",
+      "line": "Line",
+      "input": "Input",
+      "numberColumn": "Number",
+      "romanColumn": "Roman",
+      "status": "Status",
+      "ok": "OK",
+      "noScript": "Turn on JavaScript to convert. The examples and reading rules remain available.",
+      "pythonSource": "Unicode: Roman compatibility characters",
+      "temporalSource": "MathWorld: symbols, subtractive forms and historical variations",
+      "errors": {
+        "NUMBER_INVALID": "Enter a positive whole number using digits 0–9. Do not use fractions, commas or exponent notation.",
+        "ZERO": "This notation has no zero. Enter a positive whole number.",
+        "STANDARD_RANGE": "Use grouped thousands for values above 3,999, or enter a smaller value in ordinary notation.",
+        "ROMAN_INVALID": "Use modern subtractive notation, such as IV, IX or XL. Check the letters and any parentheses.",
+        "DATE_INVALID": "Choose a real calendar date. Check the day, month and year.",
+        "OPTIONS_INVALID": "Check the conversion options and try again.",
+        "LINK_INVALID": "This link contains invalid values or options. Enter a value below to start again.",
+        "WORKER_FAILED": "Background conversion could not start. Try a current browser and reload the page.",
+        "BATCH_EMPTY": "Enter at least one number or Roman numeral."
+      },
+      "errorColumn": "Error",
+      "dateParts": "Date parts, in your chosen order"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Counting rules",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "No hidden calendar rules",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four ways to check your notation",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "Write a year",
+        "text": "2026 becomes MMXXVI: 2,000 + 20 + 6. The converter shows those parts separately."
+      },
+      {
+        "heading": "Read a subtractive form",
+        "text": "MCMXCIX is 1999: 1,000 + 900 + 90 + 9. Each smaller-before-larger pair has a specific meaning."
+      },
+      {
+        "heading": "Keep the date order clear",
+        "text": "October 29, 2026 becomes XXIX / X / MMXXVI in day/month/year order. Month/day/year puts X first."
+      },
+      {
+        "heading": "Go beyond ordinary notation",
+        "text": "4000 becomes (IV) with grouped thousands enabled. Here, parentheses multiply the enclosed value by 1,000."
+      }
+    ],
+    "how": {
+      "heading": "Choose a task. Check the result.",
+      "steps": [
+        {
+          "heading": "Pick your conversion",
+          "text": "Choose To Roman, To number, Date or Batch. Each task has its own clearly labelled input."
+        },
+        {
+          "heading": "Enter a value",
+          "text": "Type the number or numeral. For a list, put one entry on each line. Choose grouped thousands when needed."
+        },
+        {
+          "heading": "Convert and use it",
+          "text": "Read the result and its rules. Copy one result, share its link or download every batch row as CSV."
+        }
+      ]
+    },
+    "method": {
+      "heading": "Read the symbols in useful groups",
+      "paragraphs": [
+        "The common modern symbols are I, V, X, L, C, D and M. Their values are 1, 5, 10, 50, 100, 500 and 1,000. Ordinary output uses modern subtractive notation within each place value.",
+        "IV means four and IX means nine. The other subtractive pairs are XL, XC, CD and CM. For example, XLIV combines forty and four. The converter checks the complete spelling instead of blindly subtracting any smaller letter.",
+        "That check rejects forms such as IIV, IL and VX. It also rejects repeated V, L or D. IIII is not accepted in this modern mode. You may still see IIII on clocks or in historical material; those are different conventions.",
+        "Ordinary notation in this tool covers 1 through 3,999. Larger values use an explicit text convention: each pair of parentheses multiplies its contents by 1,000. Thus (IV) is 4,000 and ((IV)) is 4,000,000. This recursive text format is not a universal historical standard.",
+        "The same large value can have other historical or modern spellings. Some systems use an overline or special archaic symbols. This tool does not interpret those spellings or apostrophus notation. Use the displayed grouped form when copying a value back here."
+      ]
+    },
+    "uses": {
+      "heading": "For dates, books and labels you can check",
+      "paragraphs": [
+        "Read a book chapter, check a year in film credits, or prepare a label with a Roman numeral. For a date, choose the order before copying it. A numeral date is only a different display of the same calendar parts.",
+        "Batch mode accepts decimal numbers and Roman numerals in one list. It reports invalid entries separately instead of losing the entire list. Blank lines are skipped, and original line numbers remain in the CSV. The on-page preview shows 50 rows; the download contains all processed entries.",
+        "Large integers are read as exact digit strings. They are not rounded to JavaScript’s ordinary floating-point number range. A background worker performs conversions so the interface can remain usable. Cancel stops the worker; a cancelled list is not presented as a complete result."
+      ]
+    },
+    "privacy": {
+      "heading": "Clear notation. Local processing.",
+      "paragraphs": [
+        "Conversions do not send entries to an API or save them automatically. The page, font and worker load from this site. A shared link contains its single input and options. Opening that link puts the input in the page address. Avoid sharing private entries.",
+        "There is no daily conversion quota or fixed batch-row limit. Very large inputs still depend on your device’s memory and processing time. The preview limit controls display size, not the number of rows converted. A very long share link may exceed browser or server address limits; use copied text or CSV instead.",
+        "Zero, negative values and fractions have no representation in the notation used here. Unicode Roman compatibility characters are converted to their Latin-letter equivalents. Archaic characters and overline input need a different convention. Historical lettering should be checked against its own context, not labelled universally wrong."
+      ]
+    },
+    "faqHeading": "Questions that help you read the result",
+    "faq": [
+      {
+        "question": "How do I convert a number into Roman numerals?",
+        "answer": "Choose To Roman, enter a positive whole number and convert. Values through 3,999 use ordinary modern notation. Larger values use grouped thousands when that option is enabled."
+      },
+      {
+        "question": "How do I read a Roman numeral as a number?",
+        "answer": "Choose To number and enter its letters. Lowercase is accepted. The converter checks the spelling against its modern output rules, then shows the decimal value and a place-value breakdown."
+      },
+      {
+        "question": "What are the seven Roman numeral symbols?",
+        "answer": "I is 1, V is 5 and X is 10. L is 50, C is 100, D is 500 and M is 1,000. Ordinary modern numerals combine these letters with a limited set of subtractive pairs."
+      },
+      {
+        "question": "Why is IV four instead of six?",
+        "answer": "I before V is the subtractive pair for four. VI puts the smaller value after the larger one and means six. Position matters, but not every smaller-before-larger combination is accepted."
+      },
+      {
+        "question": "Can I convert dates?",
+        "answer": "Yes. Date mode converts the day, month and year separately. Choose day/month/year, month/day/year or year/month/day. A Roman date does not change the calendar or establish an ancient historical date format."
+      },
+      {
+        "question": "What do parentheses mean in the large-number output?",
+        "answer": "In this tool’s grouped-thousands convention, each (...) multiplies its contents by 1,000. (IV) means 4,000; ((IV)) means 4,000,000. Other systems may use overlines or different historical groupings, so keep the convention with the value."
+      },
+      {
+        "question": "Why does this reject IIII if my clock uses it?",
+        "answer": "This converter checks modern subtractive notation, where four is IV. Some clock faces and historical examples use IIII. The rejection describes this tool’s selected rules, not every way people have written Roman numerals."
+      },
+      {
+        "question": "Can I paste Unicode Roman numeral characters?",
+        "answer": "Yes, compatibility characters such as Ⅻ are accepted and normalized to Latin letters. Ⅻ becomes XII and means 12. Archaic symbols such as ↀ and combining overlines are outside this input convention."
+      },
+      {
+        "question": "Can I convert a whole list and download it?",
+        "answer": "Choose Batch and place one number or numeral on each line. The preview shows the first 50 rows; CSV includes every processed row and its error, if any. Spreadsheet-formula prefixes in untrusted entries are escaped in the export."
+      },
+      {
+        "question": "Can I convert zero, negative numbers or decimals?",
+        "answer": "No. This tool uses a positive-whole-number notation. It does not invent a Roman zero, minus sign or fractional convention. Use another number format for those values."
+      }
+    ],
+    "relatedHeading": "Other ways to work with your number",
+    "related": [
+      {
+        "title": "Number to Words",
+        "text": "Write a supported number using words instead of digits."
+      },
+      {
+        "title": "Binary Converter",
+        "text": "Convert numbers and text with the selected binary operation."
+      },
+      {
+        "title": "Date Calculator",
+        "text": "Count calendar days or move a date before formatting it."
+      }
+    ],
+    "sourcesHeading": "How the reading rules are checked",
+    "sourcesText": "Compatibility characters are checked against Unicode numeric values and normalization. Ordinary symbols and published examples are cross-checked with MathWorld. Grouped thousands are defined here as a tool-specific text convention and tested by exact round-trips.",
+    "footer": "Small tools. A little more space to think."
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "year",
+        "mode": "number",
+        "input": "2026",
+        "extended": true,
+        "expected": "MMXXVI"
+      },
+      {
+        "id": "subtractive",
+        "mode": "roman",
+        "input": "MCMXCIX",
+        "extended": true,
+        "expected": "1999"
+      },
+      {
+        "id": "date",
+        "mode": "date",
+        "input": "2026-10-29",
+        "order": "dmy",
+        "extended": true,
+        "expected": "XXIX / X / MMXXVI"
+      },
+      {
+        "id": "large",
+        "mode": "number",
+        "input": "4000",
+        "extended": true,
+        "expected": "(IV)"
+      }
+    ],
+    "related": [
+      {
+        "id": "number-to-words-converter"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "date-calculator"
+      }
+    ]
+  }
+}
