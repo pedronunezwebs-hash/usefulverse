@@ -1,7 +1,7 @@
 # Barcode Generator · candidato nivel A
 
 29-oct-2026 · [PR147](https://github.com/pedronunezwebs-hash/usefulverse/pull/147), sobre PR146→145→144.
-Fuente [1434a77](https://github.com/pedronunezwebs-hash/usefulverse/commit/1434a7743610a0c380b8aa72dc4a7e2393aed480), más ajuste final de anchura de pestañas.
+Fuente [1434a77](https://github.com/pedronunezwebs-hash/usefulverse/commit/1434a7743610a0c380b8aa72dc4a7e2393aed480), más [ajuste final75cade4](https://github.com/pedronunezwebs-hash/usefulverse/commit/75cade48db4684ab30424c894c4c170752f18b9b) de anchura de pestañas.
 **Preparado, sin publicar ni terminar.** Prioridad4:1.942 impresiones/cero clics históricos (1–15 oct).
 25.625 URLs públicas antes/después, delta0;300 nuevas conservan noindex, cero activaciones.
 
@@ -110,4 +110,4 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.qa-barcode/browsers" node scripts/security/barco
 node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/barcode-generator/ .qa-barcode/lighthouse.json
 ```
 
-El cierre y retirada se documentarán aquí tras comprobar el respaldo remoto.
+[Recibo de respaldo y retirada](closure.json). Candado LIBRE; consultar ESTADO antes de retomar.
