@@ -1,0 +1,54 @@
+{
+  "closedAt": "2026-10-29T11:36:02.226Z",
+  "scope": "Barcode Generator quality preparation; no deployment/approval",
+  "pullRequest": "https://github.com/pedronunezwebs-hash/usefulverse/pull/147",
+  "dependsOnPullRequest": 146,
+  "sourceCommit": "75cade48db4684ab30424c894c4c170752f18b9b",
+  "initialSourceCommit": "1434a7743610a0c380b8aa72dc4a7e2393aed480",
+  "backedUpHead": "75cade48db4684ab30424c894c4c170752f18b9b",
+  "backedUpTree": "163528b59bb6ee1cad4e9564c5fffa4c6e3aaca9",
+  "remoteTreeMatchedLocal": true,
+  "verifiedDocBlobs": 26,
+  "nativeBuildersRuntimeWorkflowsUnchanged": true,
+  "sharedPrototypeSourceUnchanged": true,
+  "cloneRemoved": true,
+  "removed": [
+    "owned sparse clone",
+    "build outputs",
+    "test dependencies and QA-only decoder",
+    "Firefox/WebKit downloads",
+    "npm cache",
+    "own browser profiles",
+    "unselected captures and raw QA logs"
+  ],
+  "serversStopped": true,
+  "ownBrowserProcessesRemaining": 0,
+  "ownBrowserPageBlank": true,
+  "footprintBeforeCleanupBytes": 1676652421,
+  "freeBytes": 46254469120,
+  "freeGiB": 43.1,
+  "newBillableServices": 0,
+  "webActionsDispatched": 0,
+  "deployments": 0,
+  "indexableURLDelta": 0,
+  "activations": 0,
+  "approvedTools": 0,
+  "approvedTranslationDestinations": 0,
+  "pedro": {
+    "pending": 10,
+    "failures": 0,
+    "newIDs": [
+      "P-011"
+    ],
+    "shared": "P-010 common template; P-011 Barcode print/compatible scanner, blocked until candidate URL, no purchases"
+  },
+  "translator": {
+    "currentRun": 40843674935,
+    "lastReadStatus": "wave-1 four drafts in_progress",
+    "lastNotificationExportedEntries": 105639,
+    "configurationChanged": false,
+    "manualDispatches": 0,
+    "approved": false
+  },
+  "next": "Prepare fraction-calculator; publish/verify phase0 within its window before delivering later phases. Complete candidate gates, real languages and physical print check; incorporate reviewed English into active corpus in a separate batch preserving public UI, without reconfiguring translator."
+}

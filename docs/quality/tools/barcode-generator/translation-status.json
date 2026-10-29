@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-29T11:31:35.053Z",
+  "currentRun": 40843674935,
+  "status": "in_progress",
+  "conclusion": null,
+  "jobs": [
+    {
+      "name": "ready",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "preflight / safety",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / drafts (3)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-1 / drafts (2)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-1 / drafts (1)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-1 / drafts (0)",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "configurationChanged": false,
+  "manualDispatches": 0,
+  "approvedTranslationDestinations": 0,
+  "previousRun": 40658885003,
+  "previousConclusion": "success",
+  "lastNotificationExportedEntries": 105639,
+  "note": "Counts from previous notification, not a fresh full report; not language/page approval. New prototype English not yet in active corpus."
+}
