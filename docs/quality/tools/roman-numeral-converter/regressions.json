@@ -1,0 +1,20 @@
+{
+  "prototypeOnly": true,
+  "cases": [
+    {
+      "case": "Noncanonical numerals and imprecise large integers",
+      "coverage": "strict canonical validation, 3999 exhaustive and5000 exact big-integer round trips; not a production fix claim"
+    },
+    {
+      "case": "Date parts labelled as an additive sum during prototype review",
+      "fix": "separate date-parts label",
+      "test": "three-browser date-order task asserts date-parts wording"
+    },
+    {
+      "case": "Odd final place-value row aligned left",
+      "fix": "centered flex rows; odd final label centered",
+      "test": "lastMetricCenterOffset<=1px in all54 geometries"
+    }
+  ],
+  "environment": "Playwright fill of a very long multiline string timed out. Large cancellation fixture now asserts editable/visible and preloads the textarea via DOM input event; actual1000-line fill, worker and CSV download still tested. Failure logs are bounded, avoiding giant fixture dumps."
+}

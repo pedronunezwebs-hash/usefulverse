@@ -1,0 +1,38 @@
+✔ every worked example is executable and its published answer is correct (2.119ms)
+✔ metadata is specific, honest and unique among other native tools (0.506458ms)
+✔ prototype remains isolated, noindex and on the existing canonical (0.810584ms)
+✔ editorial body shares fewer than 30% of its five-word phrases with other tool sources (40.4815ms)
+ℹ {"uniqueOwnPhrases":988,"max":{"file":"date-calculator.json","shared":3,"ratio":0.003036437246963563}}
+✔ query coverage describes real tasks without claiming measured keyword volumes (0.693209ms)
+✔ Unicode reference Ⅰ = 1 (0.933875ms)
+✔ Unicode reference Ⅱ = 2 (0.075916ms)
+✔ Unicode reference Ⅲ = 3 (0.045375ms)
+✔ Unicode reference Ⅳ = 4 (0.048959ms)
+✔ Unicode reference Ⅴ = 5 (0.066834ms)
+✔ Unicode reference Ⅵ = 6 (0.04575ms)
+✔ Unicode reference Ⅶ = 7 (0.0475ms)
+✔ Unicode reference Ⅷ = 8 (0.037917ms)
+✔ Unicode reference Ⅸ = 9 (0.045333ms)
+✔ Unicode reference Ⅹ = 10 (0.092625ms)
+✔ Unicode reference Ⅺ = 11 (0.043667ms)
+✔ Unicode reference Ⅻ = 12 (0.0355ms)
+✔ Unicode reference Ⅼ = 50 (0.036208ms)
+✔ Unicode reference Ⅽ = 100 (0.025416ms)
+✔ Unicode reference Ⅾ = 500 (0.034ms)
+✔ Unicode reference Ⅿ = 1000 (0.022375ms)
+✔ external MathWorld examples use ordinary subtractive notation (0.064417ms)
+✔ all 3,999 ordinary numerals round-trip, lower case included (5.161208ms)
+✔ 5,000 generated large integers round-trip exactly, above Number.MAX_SAFE_INTEGER (98.074125ms)
+✔ explicit grouped-thousands convention has no numerical cap or recursive stack dependency (27.783875ms)
+✔ noncanonical numerals, zero, fractions, unsafe coercion and malformed groups fail explicitly (0.304708ms)
+✔ date mode keeps DMY/MDY/YMD and rejects impossible dates (0.720833ms)
+✔ 1,000 mixed batch rows preserve all results and per-row errors; CSV shields formulas (2.698333ms)
+✔ share links preserve the exact integer and all date options (1.174417ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 229.851584
