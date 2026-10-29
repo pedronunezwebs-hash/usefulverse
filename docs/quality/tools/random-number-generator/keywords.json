@@ -1,0 +1,86 @@
+{
+  "toolId": "random-number-generator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks; primary product/reference pages reviewed. No measured query volume, position or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "random number generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Whole numbers",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Decimal grid",
+      "section": "calculator"
+    },
+    {
+      "phrase": "random number generator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "random number generator examples",
+      "section": "calculator"
+    },
+    {
+      "phrase": "random number generator free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "random number generator online",
+      "section": "calculator"
+    },
+    {
+      "phrase": "random number generator no upload",
+      "section": "questions"
+    },
+    {
+      "phrase": "random number generator exact values",
+      "section": "questions"
+    },
+    {
+      "phrase": "Are both endpoints included?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I prevent duplicates?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is my unique request rejected?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is this a continuous decimal distribution?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Where does the randomness come from?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can it generate more than 100 results?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can the range exceed 32-bit integers?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Will a share link reproduce my draw?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can all values in a unique draw appear?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this prove an official prize draw was fair?",
+      "section": "questions"
+    }
+  ]
+}

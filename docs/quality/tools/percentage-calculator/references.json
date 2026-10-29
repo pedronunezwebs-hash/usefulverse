@@ -1,0 +1,102 @@
+{
+  "source": "https://www.calculator.net/percent-calculator.html",
+  "method": "Published formulas calculated independently with Python Fraction; fixtures are derived, not claimed as quoted examples",
+  "cases": [
+    {
+      "state": {
+        "mode": "of",
+        "a": "15",
+        "b": "200"
+      },
+      "expected": "30"
+    },
+    {
+      "state": {
+        "mode": "of",
+        "a": "0.1",
+        "b": "0.2"
+      },
+      "expected": "1/5000"
+    },
+    {
+      "state": {
+        "mode": "share",
+        "a": "1",
+        "b": "3"
+      },
+      "expected": "100/3%"
+    },
+    {
+      "state": {
+        "mode": "share",
+        "a": "25",
+        "b": "50"
+      },
+      "expected": "50%"
+    },
+    {
+      "state": {
+        "mode": "whole",
+        "a": "30",
+        "b": "15"
+      },
+      "expected": "200"
+    },
+    {
+      "state": {
+        "mode": "change",
+        "a": "80",
+        "b": "100"
+      },
+      "expected": "25%"
+    },
+    {
+      "state": {
+        "mode": "change",
+        "a": "-10",
+        "b": "-5"
+      },
+      "expected": "50%"
+    },
+    {
+      "state": {
+        "mode": "difference",
+        "a": "80",
+        "b": "120"
+      },
+      "expected": "40%"
+    },
+    {
+      "state": {
+        "mode": "increase",
+        "a": "100",
+        "b": "15"
+      },
+      "expected": "115"
+    },
+    {
+      "state": {
+        "mode": "decrease",
+        "a": "100",
+        "b": "15"
+      },
+      "expected": "85"
+    },
+    {
+      "state": {
+        "mode": "error",
+        "a": "9",
+        "b": "10"
+      },
+      "expected": "10%"
+    },
+    {
+      "state": {
+        "mode": "change",
+        "a": "100",
+        "b": "0"
+      },
+      "expected": "-100%"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "source": "https://www.calculator.net/discount-calculator.html",
+  "method": "Python Fraction formulas; independently rounded half away from zero",
+  "cases": [
+    {
+      "state": {
+        "mode": "percent",
+        "a": "100",
+        "b": "20"
+      },
+      "expected": "80.00"
+    },
+    {
+      "state": {
+        "mode": "percent",
+        "a": "45",
+        "b": "10"
+      },
+      "expected": "40.50"
+    },
+    {
+      "state": {
+        "mode": "percent",
+        "a": "0.05",
+        "b": "10"
+      },
+      "expected": "0.05"
+    },
+    {
+      "state": {
+        "mode": "amount",
+        "a": "95",
+        "b": "20"
+      },
+      "expected": "75.00"
+    },
+    {
+      "state": {
+        "mode": "reverse",
+        "a": "80",
+        "b": "60"
+      },
+      "expected": "60.00"
+    },
+    {
+      "state": {
+        "mode": "reverse",
+        "a": "100",
+        "b": "0"
+      },
+      "expected": "0.00"
+    },
+    {
+      "state": {
+        "mode": "recover",
+        "a": "72",
+        "b": "20"
+      },
+      "expected": "90.00"
+    },
+    {
+      "state": {
+        "mode": "stack",
+        "a": "100",
+        "b": "20,10"
+      },
+      "expected": "72.00"
+    },
+    {
+      "state": {
+        "mode": "stack",
+        "a": "200",
+        "b": "10,10,10"
+      },
+      "expected": "145.80"
+    },
+    {
+      "state": {
+        "mode": "percent",
+        "a": "123.45",
+        "b": "0"
+      },
+      "expected": "123.45"
+    },
+    {
+      "state": {
+        "mode": "percent",
+        "a": "100",
+        "b": "100"
+      },
+      "expected": "0.00"
+    },
+    {
+      "state": {
+        "mode": "amount",
+        "a": "10.01",
+        "b": "0.01"
+      },
+      "expected": "10.00"
+    }
+  ]
+}

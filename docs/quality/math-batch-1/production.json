@@ -1,0 +1,552 @@
+{
+  "checkedAt": "2026-10-29T12:34:13.306Z",
+  "scope": "Current production widgets only; prototype not deployed",
+  "reads": [
+    {
+      "id": "fraction-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/fraction-calculator/\",\"title\":\"Fraction Calculator – Add, Subtract & Simplify | UsefulVerse\",\"h1\":\"Fraction Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=79 GET https://usefulverse.com/tools/fraction-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "prime-number-checker",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/prime-number-checker/\",\"title\":\"Prime Number Checker Online — Free · no limits | UsefulVerse\",\"h1\":\"Prime Number Checker\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=87 GET https://usefulverse.com/tools/prime-number-checker/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "percentage-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/percentage-calculator/\",\"title\":\"Percentage Calculator – Percent & Change — Free | UsefulVerse\",\"h1\":\"Percentage Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=92 GET https://usefulverse.com/tools/percentage-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "number-to-words-converter",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/number-to-words-converter/\",\"title\":\"Number to Words Converter Online — Free · no limits | UsefulVerse\",\"h1\":\"Number to Words Converter\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=97 GET https://usefulverse.com/tools/number-to-words-converter/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ratio-proportion-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/ratio-proportion-calculator/\",\"title\":\"Ratio & Proportion Calculator — Free · no limits | UsefulVerse\",\"h1\":\"Ratio & Proportion Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=102 GET https://usefulverse.com/tools/ratio-proportion-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "discount-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/discount-calculator/\",\"title\":\"Discount Calculator – Sale Price & Percent Off | UsefulVerse\",\"h1\":\"Discount Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=107 GET https://usefulverse.com/tools/discount-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "random-number-generator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/random-number-generator/\",\"title\":\"Random Number Generator 1–100 & More — Free | UsefulVerse\",\"h1\":\"Random Number Generator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=114 GET https://usefulverse.com/tools/random-number-generator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "average-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/average-calculator/\",\"title\":\"Weighted Average Calculator for Grades — Free | UsefulVerse\",\"h1\":\"Average Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=119 GET https://usefulverse.com/tools/average-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "age-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/age-calculator/\",\"title\":\"Age Calculator – Exact Years, Months & Days — Free | UsefulVerse\",\"h1\":\"Age Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=124 GET https://usefulverse.com/tools/age-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/fuel-cost-calculator/\",\"title\":\"Fuel Cost Calculator – Estimate Trip Gas Cost | UsefulVerse\",\"h1\":\"Fuel Cost Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=133 GET https://usefulverse.com/tools/fuel-cost-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/repeating-decimal-to-fraction/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://tools.usefulverse.com/tools/repeating-decimal-to-fraction/\",\"title\":\"Repeating Decimal to Fraction Calculator | UsefulVerse\",\"h1\":\"Repeating Decimal to Fraction Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=141 GET https://tools.usefulverse.com/tools/repeating-decimal-to-fraction/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/binary-converter/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/binary-converter/\",\"title\":\"Hexadecimal to Binary & Base Converter — Free | UsefulVerse\",\"h1\":\"Binary Converter\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=147 GET https://usefulverse.com/tools/binary-converter/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/business-days-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/business-days-calculator/\",\"title\":\"Business Days Calculator – Exclude Holidays — Free | UsefulVerse\",\"h1\":\"Business Days Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=152 GET https://usefulverse.com/tools/business-days-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/date-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/date-calculator/\",\"title\":\"Date Calculator – Days Between Dates — Free | UsefulVerse\",\"h1\":\"Date Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=161 GET https://usefulverse.com/tools/date-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/password-generator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/password-generator/\",\"title\":\"Password Generator – Strong Random Passwords — Free | UsefulVerse\",\"h1\":\"Password Generator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=167 GET https://usefulverse.com/tools/password-generator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/random-name-picker/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/random-name-picker/\",\"title\":\"Random Name Picker – Pick a Winner from a List | UsefulVerse\",\"h1\":\"Random Name Picker\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=172 GET https://usefulverse.com/tools/random-name-picker/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/roman-numeral-converter/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/roman-numeral-converter/\",\"title\":\"Roman Numeral Converter for Dates — Free | UsefulVerse\",\"h1\":\"Roman Numeral Converter\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=180 GET https://usefulverse.com/tools/roman-numeral-converter/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/scientific-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/scientific-calculator/\",\"title\":\"Scientific Calculator – Trigonometry & More — Free | UsefulVerse\",\"h1\":\"Scientific Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=186 GET https://usefulverse.com/tools/scientific-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/standard-deviation-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/standard-deviation-calculator/\",\"title\":\"Standard Deviation Calculator – Sample & Population | UsefulVerse\",\"h1\":\"Standard Deviation Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=192 GET https://usefulverse.com/tools/standard-deviation-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/time-duration-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/time-duration-calculator/\",\"title\":\"Time Duration Calculator – Hours & Days — Free | UsefulVerse\",\"h1\":\"Time Duration Calculator\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=199 GET https://usefulverse.com/tools/time-duration-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/tip-calculator/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/tip-calculator/\",\"title\":\"Tip Calculator & Bill Splitter Online — Free | UsefulVerse\",\"h1\":\"Tip Calculator & Bill Splitter\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=205 GET https://usefulverse.com/tools/tip-calculator/ [200]"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://usefulverse.com/tools/unit-converter/",
+      "doc": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Script ran on page and returned:\n```json\n{\"url\":\"https://usefulverse.com/tools/unit-converter/\",\"title\":\"Unit Converter – Length, Weight & More — Free | UsefulVerse\",\"h1\":\"Unit Converter\"}\n```"
+          }
+        ]
+      },
+      "network": {
+        "content": [
+          {
+            "type": "text",
+            "text": "## Network requests\nShowing 1-1 of 1 (Page 1 of 1).\nreqid=212 GET https://usefulverse.com/tools/unit-converter/ [200]"
+          }
+        ]
+      }
+    }
+  ],
+  "legacy": {
+    "mathLegacyPercentage": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Script ran on page and returned:\n```json\n{\"normal\":\"30\",\"zeroChange\":\"—\",\"status\":\"Calculation complete.\"}\n```"
+        }
+      ]
+    },
+    "mathLegacyPrime": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Script ran on page and returned:\n```json\n{\"normal\":\"Prime number\",\"largeResult\":\"—\",\"status\":\"Enter a whole number from 0 to 1,000,000,000,000.\"}\n```"
+        }
+      ]
+    },
+    "mathLegacyWords": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Script ran on page and returned:\n```json\n{\"normal\":\"one million two hundred thirty four thousand five hundred sixty seven\",\"large\":\"\",\"status\":\"Use a number between -999,999,999,999 and 999,999,999,999.\"}\n```"
+        }
+      ]
+    },
+    "mathLegacyRatio": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Script ran on page and returned:\n```json\n{\"result\":\"6\",\"simplified\":\"2:3\",\"status\":\"Proportion solved locally.\"}\n```"
+        }
+      ]
+    },
+    "mathLegacySecondFive": [
+      {
+        "slug": "discount-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"final\":\"—\",\"saved\":\"—\"}\n```"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "random-number-generator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"normal\":\"1\",\"limit\":\"Choose a number from 1 to 100.\"}\n```"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "average-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"mean\":\"12\"}\n```"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "age-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"feb28\":\"—\",\"march1\":\"2 Years, 7 Months, 28 Days\"}\n```"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "fuel-cost-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"fuel\":\"8 L\",\"cost\":\"$12.00\",\"share\":\"$6.00\"}\n```"
+            }
+          ]
+        }
+      }
+    ],
+    "mathLegacyDelayedReady": [
+      {
+        "slug": "discount-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n{\"final\":\"80\",\"saved\":\"20\",\"status\":\"Discount calculated locally.\"}\n```"
+            }
+          ]
+        }
+      },
+      {
+        "slug": "age-calculator",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "Script ran on page and returned:\n```json\n[{\"policy\":\"feb28\",\"asOf\":\"2025-02-28\",\"age\":\"1 Years, 0 Months, 0 Days\"},{\"policy\":\"march1\",\"asOf\":\"2025-02-28\",\"age\":\"0 Years, 11 Months, 30 Days\"}]\n```"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "fractionObservation": {
+    "input": "1/2 + 1/3",
+    "result": "5/6",
+    "then": "1/2 / 0",
+    "retainedResult": "5/6",
+    "status": "Check your input and try again.",
+    "candidatePermanentRegression": "Browser invalid input clears old output and disables export"
+  },
+  "limitations": [
+    "Programmatic form interactions in a real Chrome session; no physical device certification",
+    "Initial age/discount attempt preceded deferred controller readiness; repeated after readiness and passed",
+    "All 22 document navigations returned HTTP 200; production remains old widgets"
+  ]
+}

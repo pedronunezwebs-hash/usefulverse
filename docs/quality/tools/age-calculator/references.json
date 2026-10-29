@@ -1,0 +1,126 @@
+{
+  "source": "https://docs.python.org/3/library/datetime.html",
+  "method": "Independent Python datetime/calendar with explicit February29 convention",
+  "cases": [
+    {
+      "state": {
+        "mode": "age",
+        "a": "2000-01-15",
+        "b": "2025-01-15",
+        "policy": "feb28"
+      },
+      "expected": "25 / 0 / 0",
+      "totalDays": 9132
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2000-01-15",
+        "b": "2025-01-14",
+        "policy": "feb28"
+      },
+      "expected": "24 / 11 / 30",
+      "totalDays": 9131
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2024-02-29",
+        "b": "2025-02-28",
+        "policy": "feb28"
+      },
+      "expected": "1 / 0 / 0",
+      "totalDays": 365
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2024-02-29",
+        "b": "2025-02-28",
+        "policy": "march1"
+      },
+      "expected": "0 / 11 / 30",
+      "totalDays": 365
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2024-02-29",
+        "b": "2025-03-01",
+        "policy": "march1"
+      },
+      "expected": "1 / 0 / 0",
+      "totalDays": 366
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2020-01-31",
+        "b": "2020-02-29",
+        "policy": "feb28"
+      },
+      "expected": "0 / 1 / 0",
+      "totalDays": 29
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2020-01-31",
+        "b": "2021-03-01",
+        "policy": "feb28"
+      },
+      "expected": "1 / 1 / 1",
+      "totalDays": 395
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "1900-03-01",
+        "b": "2000-03-01",
+        "policy": "feb28"
+      },
+      "expected": "100 / 0 / 0",
+      "totalDays": 36525
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2000-02-29",
+        "b": "2100-02-28",
+        "policy": "feb28"
+      },
+      "expected": "100 / 0 / 0",
+      "totalDays": 36524
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "2000-02-29",
+        "b": "2100-02-28",
+        "policy": "march1"
+      },
+      "expected": "99 / 11 / 27",
+      "totalDays": 36524
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "0001-01-01",
+        "b": "0001-01-01",
+        "policy": "feb28"
+      },
+      "expected": "0 / 0 / 0",
+      "totalDays": 0
+    },
+    {
+      "state": {
+        "mode": "age",
+        "a": "1999-12-31",
+        "b": "2000-01-01",
+        "policy": "feb28"
+      },
+      "expected": "0 / 0 / 1",
+      "totalDays": 1
+    }
+  ]
+}

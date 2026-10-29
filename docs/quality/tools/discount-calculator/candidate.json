@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "discount-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/discount-calculator/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 38382,
+    "htmlBrotli": 9130,
+    "cssBrotli": 3885,
+    "jsBrotli": 3154,
+    "font": 40784
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "fuel-cost-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/fuel-cost-calculator/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 40553,
+    "htmlBrotli": 9578,
+    "cssBrotli": 3885,
+    "jsBrotli": 3119,
+    "font": 40784
+  }
+}

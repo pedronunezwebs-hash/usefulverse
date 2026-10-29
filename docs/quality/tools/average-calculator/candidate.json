@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "average-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/average-calculator/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 38314,
+    "htmlBrotli": 9239,
+    "cssBrotli": 3885,
+    "jsBrotli": 3525,
+    "font": 40784
+  }
+}

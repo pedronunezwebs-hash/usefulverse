@@ -1,0 +1,126 @@
+{
+  "fullNode": {
+    "pass": 3542,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 50090.498209
+  },
+  "focusedNode": {
+    "pass": 160,
+    "fail": 0,
+    "skipped": 0,
+    "includedInFullSuite": true
+  },
+  "browserChecks": 303,
+  "browserGeometries": 540,
+  "landscapeChecks": 120,
+  "releaseApproved": false,
+  "publicIndexableURLsBefore": 25625,
+  "publicIndexableURLsAfter": 25625,
+  "newActivations": 0,
+  "physicalTestsAdded": 0,
+  "commonPedroTest": "P-010",
+  "source": "c056ff18c7b3fe8b6c89b15e3669518762a34f5f",
+  "tools": [
+    {
+      "id": "fraction-calculator",
+      "references": 12,
+      "intents": 22,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 56609,
+      "lcpMs": 935,
+      "cls": 0
+    },
+    {
+      "id": "prime-number-checker",
+      "references": 13,
+      "intents": 19,
+      "checks": 33,
+      "geometries": 54,
+      "firstLoadBytes": 56032,
+      "lcpMs": 934,
+      "cls": 0.01260703588309521
+    },
+    {
+      "id": "percentage-calculator",
+      "references": 12,
+      "intents": 26,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 56424,
+      "lcpMs": 936,
+      "cls": 0.005681698250724666
+    },
+    {
+      "id": "number-to-words-converter",
+      "references": 12,
+      "intents": 21,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 56445,
+      "lcpMs": 935,
+      "cls": 0.002522772313152134
+    },
+    {
+      "id": "ratio-proportion-calculator",
+      "references": 12,
+      "intents": 21,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 56440,
+      "lcpMs": 935,
+      "cls": 0.01017709285419327
+    },
+    {
+      "id": "discount-calculator",
+      "references": 12,
+      "intents": 22,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 56953,
+      "lcpMs": 934,
+      "cls": 0.003373252373267816
+    },
+    {
+      "id": "random-number-generator",
+      "references": 12,
+      "intents": 19,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 57249,
+      "lcpMs": 936,
+      "cls": 0
+    },
+    {
+      "id": "average-calculator",
+      "references": 12,
+      "intents": 20,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 57433,
+      "lcpMs": 936,
+      "cls": 0.009326612794077586
+    },
+    {
+      "id": "age-calculator",
+      "references": 12,
+      "intents": 18,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 57001,
+      "lcpMs": 941,
+      "cls": 0.001786963721816095
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "references": 12,
+      "intents": 20,
+      "checks": 30,
+      "geometries": 54,
+      "firstLoadBytes": 57366,
+      "lcpMs": 935,
+      "cls": 0
+    }
+  ]
+}

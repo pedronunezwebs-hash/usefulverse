@@ -1,0 +1,94 @@
+{
+  "toolId": "ratio-proportion-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks and first-party products; no current keyword volume, SERP rank or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "ratio & proportion calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Simplify a ratio",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Find a missing value",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Scale a ratio",
+      "section": "calculator"
+    },
+    {
+      "phrase": "exact ratio & proportion calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "ratio & proportion calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "ratio & proportion calculator free",
+      "section": "calculator"
+    },
+    {
+      "phrase": "ratio & proportion calculator online",
+      "section": "examples"
+    },
+    {
+      "phrase": "ratio & proportion calculator no upload",
+      "section": "examples"
+    },
+    {
+      "phrase": "ratio & proportion calculator large numbers",
+      "section": "examples"
+    },
+    {
+      "phrase": "ratio & proportion calculator examples",
+      "section": "examples"
+    },
+    {
+      "phrase": "How do I enter several terms?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can ratio terms be decimals?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How do I find a missing term?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can the unknown be in any position?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is an all-zero ratio rejected?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can B or D be zero?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does Scale also simplify the result?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does order matter?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is this for inverse proportion too?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is a result shown as a fraction?",
+      "section": "questions"
+    }
+  ]
+}

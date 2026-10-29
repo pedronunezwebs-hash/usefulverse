@@ -36,3 +36,5 @@ El despliegue del 29-oct ya se consumió con la preview del Paso A. Respetar **u
 5. Para servir el hub completo bajo 2 GB, retirar dependencias de build después de verificarlo e instalar solo el runtime local. Guardar evidencia, push verificado y retirar todo el material propio antes de LIBRE. Sin Actions web, modelos locales, activaciones ni servicios nuevos.
 
 Pruebas Pedro: ocho pendientes anteriores, cero FALLA y **ningún ID nuevo**; este lote no necesita cámara/micrófono ni archivos físicos. Firefox/WebKit, dispositivos reales, zoom real del navegador al 200%, INP y revisión integral de las herramientas no se certifican aquí.
+
+**Preflight29-oct16:32UTC:** acceso Pages/WorkersPaid existente y uso actual bajo techo10 comprobados solo lectura; producción sigue18oct/preview29oct. [Registro sin facturación privada](preflight-20261029-1632.json). No despliegue todavía, ventana30-oct00:00+07. [Receta de lectura](preflight-recipe.mjs), ejecutar desde clon con OUTPUT bajo .qa-; se comprueba la API con paginación10. Antes de publicar aún hay que inventariar toda la cuota mensual y comprobar el árbol exacto sin Functions/Worker.

@@ -1,0 +1,49 @@
+{
+  "toolId": "pdf-ocr",
+  "stage": "planned content; foundation only",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEO": false,
+    "measuredVolumes": false,
+    "observedSERPRanking": false,
+    "PAAObserved": false,
+    "note": "Product pages reviewed, not claimed as current top3 search results; phrases are inferred tasks."
+  },
+  "primary": "PDF OCR",
+  "intents": [
+    "OCR PDF",
+    "extract text from scanned PDF",
+    "make PDF searchable",
+    "searchable PDF in browser",
+    "PDF OCR without upload",
+    "PDF OCR free without account",
+    "OCR selected PDF pages",
+    "OCR long PDFs",
+    "OCR English PDF",
+    "OCR Spanish PDF",
+    "extract existing PDF text",
+    "force OCR on a PDF",
+    "scanned invoice to text",
+    "download OCR as TXT",
+    "cancel PDF OCR",
+    "OCR mixed text and scanned pages",
+    "OCR rotated PDF pages",
+    "PDF OCR language selection",
+    "search and copy text in scanned PDF",
+    "why OCR makes mistakes"
+  ],
+  "reviewedProducts": [
+    {
+      "url": "https://www.ilovepdf.com/ocr-pdf",
+      "focus": "searchable scanned PDF"
+    },
+    {
+      "url": "https://tools.pdf24.org/en/ocr-pdf",
+      "focus": "searchable output, force OCR, language, deskew/cleanup and combination options"
+    },
+    {
+      "url": "https://www.adobe.com/acrobat/online/ocr-pdf.html",
+      "focus": "recognition for searchable PDF"
+    }
+  ]
+}

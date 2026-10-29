@@ -1,0 +1,103 @@
+{
+  "source": "https://github.com/mastermunj/to-words",
+  "version": "to-words@7.1.0 en-US",
+  "method": "Independent library; compare words with hyphens treated as spaces, case-insensitive",
+  "cases": [
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "0"
+      },
+      "expected": "zero"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1"
+      },
+      "expected": "one"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "21"
+      },
+      "expected": "twenty one"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "105"
+      },
+      "expected": "one hundred five"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "999"
+      },
+      "expected": "nine hundred ninety nine"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1001"
+      },
+      "expected": "one thousand one"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1000000"
+      },
+      "expected": "one million"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1234567"
+      },
+      "expected": "one million two hundred thirty four thousand five hundred sixty seven"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1000000000"
+      },
+      "expected": "one billion"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "1000000000000"
+      },
+      "expected": "one trillion"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "-105"
+      },
+      "expected": "minus one hundred five"
+    },
+    {
+      "state": {
+        "mode": "cardinal",
+        "letterCase": "lower",
+        "a": "9007199254740991"
+      },
+      "expected": "nine quadrillion seven trillion one hundred ninety nine billion two hundred fifty four million seven hundred forty thousand nine hundred ninety one"
+    }
+  ]
+}
