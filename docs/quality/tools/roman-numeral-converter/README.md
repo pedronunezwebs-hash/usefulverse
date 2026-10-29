@@ -1,6 +1,6 @@
 # Roman Numeral Converter · candidato nivel A
 
-29-oct-2026 · rama `feat/roman-numeral-planeta`, sobre [PR145](https://github.com/pedronunezwebs-hash/usefulverse/pull/145).
+29-oct-2026 · [PR146](https://github.com/pedronunezwebs-hash/usefulverse/pull/146), fuente [26c8f59](https://github.com/pedronunezwebs-hash/usefulverse/commit/26c8f59dbe197f0295be1d81a6ccb7f44796712e). Rama `feat/roman-numeral-planeta`, sobre [PR145](https://github.com/pedronunezwebs-hash/usefulverse/pull/145).
 **Preparado, sin publicar ni terminar.** Prioridad3: 2.040 impresiones/tres clics históricos y28 idiomas con impresiones (1–15 oct).
 Una URL existente; delta0 URLs públicas, 300 nuevas conservan noindex, cero activaciones.
 
@@ -88,6 +88,13 @@ la UI pública antes de esperar sus nuevas traducciones. No reconfigurar el trad
 | 16 Pedro | P-010 compartida; URL candidata/portapapeles/descarga móvil pendientes |
 | 17 Peso |58.077B total; todas las partidas dentro de presupuesto |
 | 18 Responsive | Nueve anchos/temas/apaisados/estrés; zoom real200/diseño pendientes |
+
+## Traductor
+
+[Lectura por API](translation-status.json):40658885003 terminó `success`, seis vueltas entregadas.
+La siguiente40843674935 arrancó automáticamente y mantiene cuatro jobs en su primera vuelta.
+Aviso141 actualizado:105.639 entradas exportadas; contadores de unidades solapados, no páginas/idiomas aprobados.
+Siete workflows del traductor activos/tres de web deshabilitados; ninguna reconfiguración ni disparo manual.
 
 ## Relevo y reproducción
 
