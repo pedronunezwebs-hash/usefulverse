@@ -1,0 +1,84 @@
+{
+  "source": "ReportLab4 synthetic fixtures, independently read by pypdf; not OCR quality certification",
+  "documents": [
+    {
+      "name": "native-121.pdf",
+      "pages": 121,
+      "sha256": "d922f115c0e95b219f62399b51843376858667d33067eedf7d9eb392163242ed",
+      "dimensions": [
+        576.0,
+        720.0
+      ]
+    },
+    {
+      "name": "scanned-one.pdf",
+      "pages": 1,
+      "sha256": "4ee296f2f1e6e981bb62d49acd1f30e63a991ab9c2723d9c5225951207699a1b",
+      "dimensions": [
+        576.0,
+        720.0
+      ]
+    },
+    {
+      "name": "mixed-three.pdf",
+      "pages": 3,
+      "sha256": "8f6b9a35536c68007a4423084ecdbf7547010213ce25d662df7f824acc737482",
+      "dimensions": [
+        576.0,
+        720.0
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "file": "native-121.pdf",
+      "page": 1,
+      "nativeText": "UsefulVerse OCR check page 001.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "native-121.pdf",
+      "page": 10,
+      "nativeText": "UsefulVerse OCR check page 010.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "native-121.pdf",
+      "page": 50,
+      "nativeText": "UsefulVerse OCR check page 050.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "native-121.pdf",
+      "page": 100,
+      "nativeText": "UsefulVerse OCR check page 100.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "native-121.pdf",
+      "page": 120,
+      "nativeText": "UsefulVerse OCR check page 120.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "native-121.pdf",
+      "page": 121,
+      "nativeText": "UsefulVerse OCR check page 121.\nLocal processing. Synthetic test document."
+    },
+    {
+      "file": "scanned-one.pdf",
+      "page": 1,
+      "nativeText": ""
+    },
+    {
+      "file": "mixed-three.pdf",
+      "page": 1,
+      "nativeText": "A"
+    },
+    {
+      "file": "mixed-three.pdf",
+      "page": 2,
+      "nativeText": ""
+    },
+    {
+      "file": "mixed-three.pdf",
+      "page": 3,
+      "nativeText": ""
+    }
+  ]
+}
