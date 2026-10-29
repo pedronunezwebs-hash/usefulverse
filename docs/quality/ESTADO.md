@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-28T18:29:55.353Z · ensayo local Static Assets/cabeceras/a11y; aviso #141 revisado; traductor intacto
+**Turno actual (candado):** LIBRE · Codex · 2026-10-29T00:35:03.889Z · Paso A inicial integrado/entregado; retirada verificada
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -179,6 +179,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** cierre de entrega en curso; fuente, publicación y evidencia comprobadas. Falta respaldo final de metadatos y retirar clon/dependencias/QA antes de LIBRE.
+**Retirada actual:** Cierre 2026-10-29T00:35:03.889Z: fuente/publicación y árbol remoto verificados; clon, builds, dependencias, descargas y cachés propios retirados antes de LIBRE. 43.32 GiB libres; servidor detenido y pestaña QA en blanco. Paso A inicial completado, 0 activaciones; un despliegue estático, sin cargo adicional. [Recibo](runtime-v1/closure.json).
 
 Antes de CI del traductor, si se recogen checkpoints: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Actualiza solo inventario/total derivados; no crudos, juicios ni procedencia. No hace falta ejecutarlo para un lote de web sin recolección.

@@ -13,3 +13,5 @@ Cloudflare: cuota y coste actuales comprobados antes de publicar; entrega estát
 300 filas de progress.csv pasan a subida-noindex; ninguna capa se aprueba. Los 700 existentes no cambian. Se conserva el alias de seguimiento iching-cast→i-ching-oracle; no se cambia ningún slug público. Paso A inicial de §7 completado. La unificación pertenece a §4b y sigue después de fase 0. Próximo: rama nueva fase0+G1, tests antes del arreglo; preparar sin Actions y publicar desde 30-oct 00:00 Asia/Saigon (un despliegue diario ya consumido).
 
 [Evidencia y recetas](../runtime-v1/README.md), [diez lecturas públicas](../runtime-v1/public-preview.json), [deploy/producción conservada](../runtime-v1/deployment.json). El recibo de retirada se añade tras verificar respaldo y borrar los temporales propios.
+
+Cierre 2026-10-29T00:35:03.889Z: fuente/publicación y árbol remoto verificados; clon, builds, dependencias, descargas y cachés propios retirados antes de LIBRE. 43.32 GiB libres; servidor detenido y pestaña QA en blanco. Paso A inicial completado, 0 activaciones; un despliegue estático, sin cargo adicional. [Recibo](../runtime-v1/closure.json).
