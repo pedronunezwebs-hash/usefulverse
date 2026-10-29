@@ -75,3 +75,5 @@ node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/fracti
 
 Repetir Lighthouse por cada herramienta. El servidor Python no representa cabeceras/compresión de Cloudflare.
 Recibo final de retirada se añade al liberar candado; no interpretar la preparación como aprobación/publicación.
+
+**Seguimiento inglés:** separación de datos técnicos/prosa y3.557 Node finales correctas; catorce renderizados y47 archivos del build idénticos. Ver [entrega al corpus](../english-quality-v1/README.md). La QA previa conserva validez porque no cambia la salida.

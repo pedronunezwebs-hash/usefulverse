@@ -129,22 +129,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "mean",
         "heading": "A simple mean",
         "text": "10, 12 and 14 have a sum of 36 and a mean of 12. Their median is also 12."
       },
       {
-        "id": "weight",
         "heading": "Different credits",
         "text": "Grades 90 and 80 with weights 3 and 1 give 87.5, exactly 175/2."
       },
       {
-        "id": "final",
         "heading": "A final worth one quarter",
         "text": "A current grade of 80, target 85 and final weight 25% require 100% on the final."
       },
       {
-        "id": "fractions",
         "heading": "Keep decimal values exact",
         "text": "The mean of 0.1 and 0.2 is exactly 0.15, or 3/20, without binary floating-point noise."
       }
@@ -239,17 +235,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "standard-deviation-calculator",
         "title": "Standard Deviation Calculator",
         "text": "Continue with standard deviation calculator."
       },
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Continue with percentage calculator."
       },
       {
-        "id": "fraction-calculator",
         "title": "Fraction Calculator",
         "text": "Continue with fraction calculator."
       }
@@ -312,6 +305,17 @@
     "referenceLinks": [
       "https://www.calculator.net/average-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "standard-deviation-calculator"
+      },
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "fraction-calculator"
+      }
     ]
   }
 }

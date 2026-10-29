@@ -93,22 +93,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "whole",
         "heading": "A number for a document",
         "text": "1234567 becomes one million two hundred thirty-four thousand five hundred sixty-seven."
       },
       {
-        "id": "decimal",
         "heading": "Keep a small decimal clear",
         "text": "-0.05 reads minus zero point zero five. Each fractional digit is spoken separately."
       },
       {
-        "id": "digits",
         "heading": "An identifier with leading zeroes",
         "text": "0012 reads zero zero one two in digit mode. Ordinary number words would instead describe twelve."
       },
       {
-        "id": "money",
         "heading": "Round a dollar amount explicitly",
         "text": "1.995 rounds to 2.00 USD. The words are two dollars and zero cents."
       }
@@ -203,17 +199,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "roman-numeral-converter",
         "title": "Roman Numeral Converter",
         "text": "Represent a number with Roman symbols."
       },
       {
-        "id": "binary-converter",
         "title": "Binary Converter",
         "text": "Write an exact integer in another base."
       },
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Separate percentage change, difference and share."
       }
@@ -274,6 +267,17 @@
     "referenceLinks": [
       "https://github.com/mastermunj/to-words",
       "https://www.calculatorsoup.com/calculators/conversions/numberstowords.php"
+    ],
+    "related": [
+      {
+        "id": "roman-numeral-converter"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "percentage-calculator"
+      }
     ]
   }
 }

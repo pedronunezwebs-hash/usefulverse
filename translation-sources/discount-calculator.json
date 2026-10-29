@@ -129,22 +129,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "sale",
         "heading": "A straightforward offer",
         "text": "20% off 100 gives a sale price of 80.00 and savings of 20.00."
       },
       {
-        "id": "reverse",
         "heading": "Check a claimed discount",
         "text": "A price reduced from 80 to 60 is a 25% discount, with savings of 20.00."
       },
       {
-        "id": "stack",
         "heading": "Two successive offers",
         "text": "20% off, followed by 10% off, takes 100 to 72.00. The combined saving is 28%, not 30%."
       },
       {
-        "id": "recover",
         "heading": "Recover the original price",
         "text": "A sale price of 72 after a 20% discount came from an original price of 90.00."
       }
@@ -239,17 +235,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Continue with percentage calculator."
       },
       {
-        "id": "tip-calculator",
         "title": "Tip Calculator",
         "text": "Continue with tip calculator."
       },
       {
-        "id": "ratio-proportion-calculator",
         "title": "Ratio Proportion Calculator",
         "text": "Continue with ratio proportion calculator."
       }
@@ -322,6 +315,17 @@
     "referenceLinks": [
       "https://www.calculator.net/discount-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "tip-calculator"
+      },
+      {
+        "id": "ratio-proportion-calculator"
+      }
     ]
   }
 }

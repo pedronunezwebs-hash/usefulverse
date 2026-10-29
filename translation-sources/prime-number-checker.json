@@ -93,22 +93,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "small",
         "heading": "A small prime",
         "text": "97 has only 1 and itself as positive divisors. It is prime."
       },
       {
-        "id": "factor",
         "heading": "A familiar composite",
         "text": "561 = 3 × 187. A small divisor gives a direct proof that the number is composite."
       },
       {
-        "id": "large",
         "heading": "Beyond safe JavaScript numbers",
         "text": "9007199254740993 = 3 × 3002399751580331. The input remains an exact integer."
       },
       {
-        "id": "neither",
         "heading": "One is a separate case",
         "text": "1 is neither prime nor composite. A prime must be greater than 1."
       }
@@ -203,17 +199,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "scientific-calculator",
         "title": "Scientific Calculator",
         "text": "Continue with arithmetic on the number you checked."
       },
       {
-        "id": "binary-converter",
         "title": "Binary Converter",
         "text": "Write an exact integer in another base."
       },
       {
-        "id": "fraction-calculator",
         "title": "Fraction Calculator",
         "text": "Work with exact fractions and mixed numbers."
       }
@@ -263,6 +256,17 @@
     "referenceLinks": [
       "https://miller-rabin.appspot.com/",
       "https://www.calculatorsoup.com/calculators/math/prime-number-calculator.php"
+    ],
+    "related": [
+      {
+        "id": "scientific-calculator"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "fraction-calculator"
+      }
     ]
   }
 }

@@ -93,22 +93,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "reduce",
         "heading": "A simpler pair",
         "text": "12:18 reduces to 2:3 by dividing both terms by 6. The relative amounts remain unchanged."
       },
       {
-        "id": "solve",
         "heading": "Find the fourth term",
         "text": "2:3 = 4:? gives 6. Both ratios have the exact value 2/3."
       },
       {
-        "id": "decimals",
         "heading": "Three exact decimal terms",
         "text": "0.5:1.25:2 becomes 2:5:8. Clearing decimal denominators avoids rounding the relationship."
       },
       {
-        "id": "scale",
         "heading": "Double every amount",
         "text": "Scaling 2:3:5 by 2 gives 4:6:10. Each term receives the same multiplier."
       }
@@ -203,17 +199,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "fraction-calculator",
         "title": "Fraction Calculator",
         "text": "Work with exact fractions and mixed numbers."
       },
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Separate percentage change, difference and share."
       },
       {
-        "id": "unit-converter",
         "title": "Unit Converter",
         "text": "Make units consistent before comparing quantities."
       }
@@ -283,6 +276,17 @@
     "referenceLinks": [
       "https://www.calculator.net/ratio-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "fraction-calculator"
+      },
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "unit-converter"
+      }
     ]
   }
 }

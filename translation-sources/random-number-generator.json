@@ -129,22 +129,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "die",
         "heading": "One ordinary die",
         "text": "Draw one integer from 1 through 6. Any of the six faces is a valid result."
       },
       {
-        "id": "shuffle",
         "heading": "Every face without a repeat",
         "text": "Draw six unique integers from 1 through 6. Every face appears once, in a random order."
       },
       {
-        "id": "grid",
         "heading": "Hundredths from zero to one",
         "text": "Draw three values on the 0.01 grid between 0 and 1. Both endpoints are possible."
       },
       {
-        "id": "large",
         "heading": "A range above Number precision",
         "text": "Draw two unique integers from 9007199254740993 through 9007199254741993 without rounding the bounds."
       }
@@ -239,17 +235,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "password-generator",
         "title": "Password Generator",
         "text": "Continue with password generator."
       },
       {
-        "id": "random-name-picker",
         "title": "Random Name Picker",
         "text": "Continue with random name picker."
       },
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Continue with percentage calculator."
       }
@@ -346,6 +339,17 @@
     "referenceLinks": [
       "https://www.calculator.net/random-number-generator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "password-generator"
+      },
+      {
+        "id": "random-name-picker"
+      },
+      {
+        "id": "percentage-calculator"
+      }
     ]
   }
 }

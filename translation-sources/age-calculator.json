@@ -130,22 +130,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "birthday",
         "heading": "On the birthday itself",
         "text": "From 2000-01-15 to 2025-01-15, the age is 25 years, 0 months and 0 days. The birthday countdown is zero."
       },
       {
-        "id": "before",
         "heading": "The day before a birthday",
         "text": "From 2000-01-15 to 2025-01-14, the calendar age is 24 years, 11 months and 30 days."
       },
       {
-        "id": "leap",
         "heading": "February 28 convention",
         "text": "For a 2024-02-29 birth, 2025-02-28 counts as the first birthday when February 28 is selected."
       },
       {
-        "id": "march",
         "heading": "March 1 convention",
         "text": "With March 1 selected, the same 2025-02-28 reference is still 0 years, 11 months and 30 days."
       }
@@ -240,17 +236,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "date-calculator",
         "title": "Date Calculator",
         "text": "Continue with date calculator."
       },
       {
-        "id": "time-duration-calculator",
         "title": "Time Duration Calculator",
         "text": "Continue with time duration calculator."
       },
       {
-        "id": "business-days-calculator",
         "title": "Business Days Calculator",
         "text": "Continue with business days calculator."
       }
@@ -313,6 +306,17 @@
     "referenceLinks": [
       "https://www.calculator.net/age-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "date-calculator"
+      },
+      {
+        "id": "time-duration-calculator"
+      },
+      {
+        "id": "business-days-calculator"
+      }
     ]
   }
 }

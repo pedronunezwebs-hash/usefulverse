@@ -129,22 +129,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "metric",
         "heading": "A short metric trip",
         "text": "100 km at 8 L/100 km uses 8 litres. At 1.50 per litre, the cost is 12.00 USD."
       },
       {
-        "id": "return",
         "heading": "Include the return journey",
         "text": "The same one-way inputs with Return journey selected use 16 litres and cost 24.00 USD."
       },
       {
-        "id": "us",
         "heading": "Keep US gallons consistent",
         "text": "300 miles at 30 US MPG uses 10 US gallons. At 3.50 per gallon, the cost is 35.00 USD."
       },
       {
-        "id": "imperial",
         "heading": "Use an imperial pump price",
         "text": "200 miles at 40 imperial MPG uses 5 imperial gallons. At 7.00 per gallon, the cost is 35.00 GBP."
       }
@@ -239,17 +235,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "unit-converter",
         "title": "Unit Converter",
         "text": "Continue with unit converter."
       },
       {
-        "id": "percentage-calculator",
         "title": "Percentage Calculator",
         "text": "Continue with percentage calculator."
       },
       {
-        "id": "ratio-proportion-calculator",
         "title": "Ratio Proportion Calculator",
         "text": "Continue with ratio proportion calculator."
       }
@@ -354,6 +347,17 @@
     "referenceLinks": [
       "https://www.calculator.net/fuel-cost-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "unit-converter"
+      },
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "ratio-proportion-calculator"
+      }
     ]
   }
 }

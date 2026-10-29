@@ -93,22 +93,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "of",
         "heading": "A percentage of an amount",
         "text": "15% of 200 is 30. Divide 15 by 100, then multiply by 200."
       },
       {
-        "id": "change",
         "heading": "A rise from 80 to 100",
         "text": "The increase is 20. Relative to the original 80, that is a 25% change."
       },
       {
-        "id": "difference",
         "heading": "Two values without an original",
         "text": "80 and 120 have a percentage difference of 40%, using their average of 100 as the reference."
       },
       {
-        "id": "whole",
         "heading": "Recover the full amount",
         "text": "If 30 is 15% of the whole, the whole is 200. This is not the same question as 15% of 30."
       }
@@ -203,17 +199,14 @@
     "relatedHeading": "A useful next calculation",
     "related": [
       {
-        "id": "discount-calculator",
         "title": "Discount Calculator",
         "text": "Apply discounts to a price."
       },
       {
-        "id": "ratio-proportion-calculator",
         "title": "Ratio Proportion Calculator",
         "text": "Simplify related quantities and solve proportions."
       },
       {
-        "id": "fraction-calculator",
         "title": "Fraction Calculator",
         "text": "Work with exact fractions and mixed numbers."
       }
@@ -308,6 +301,17 @@
     "referenceLinks": [
       "https://www.calculator.net/percent-calculator.html",
       "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "discount-calculator"
+      },
+      {
+        "id": "ratio-proportion-calculator"
+      },
+      {
+        "id": "fraction-calculator"
+      }
     ]
   }
 }
