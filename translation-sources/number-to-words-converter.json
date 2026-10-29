@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "toolId": "number-to-words-converter",
+  "sourceCopy": {
+    "title": "Number to Words — English Text, Digits & Dollar Checks",
+    "description": "Write numbers as English words, read decimal digits or format dollar amounts. Keep large integers exact and choose letter case. Free in your browser.",
+    "heading": "Number to Words Converter",
+    "intro": "Write a number in English without losing its digits. Choose ordinary words, digit reading or a dollar amount.",
+    "category": "Numbers & relationships",
+    "eyebrow": "The same value. A clearer way to write it.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use plain digits with an optional minus sign and decimal point. Fractions and separators are not accepted.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "A number for a document",
+        "text": "1234567 becomes one million two hundred thirty-four thousand five hundred sixty-seven."
+      },
+      {
+        "heading": "Keep a small decimal clear",
+        "text": "-0.05 reads minus zero point zero five. Each fractional digit is spoken separately."
+      },
+      {
+        "heading": "An identifier with leading zeroes",
+        "text": "0012 reads zero zero one two in digit mode. Ordinary number words would instead describe twelve."
+      },
+      {
+        "heading": "Round a dollar amount explicitly",
+        "text": "1.995 rounds to 2.00 USD. The words are two dollars and zero cents."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches the task. The field labels change with the question."
+        },
+        {
+          "heading": "Enter your values",
+          "text": "Use digits, an optional minus sign and a decimal point. Do not use thousands separators or exponent notation."
+        },
+        {
+          "heading": "Read the working",
+          "text": "Calculate, check the result and inspect the steps. Copy the answer or download the complete result."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The rules behind the result",
+      "paragraphs": [
+        "Ordinary mode uses English short-scale names. One billion means a thousand million, or 10^9. Groups of three digits are read from the highest nonzero group down to the units. This output uses US-style wording without an extra and inside ordinary whole numbers.",
+        "Tens between twenty-one and ninety-nine use a hyphen when they include a units digit. Hundreds are written as one hundred, two hundred and so on. Regional punctuation and style guides may prefer different connectors, even when the numeric value is the same.",
+        "Decimal digits are read one at a time after point. The input 1.05 becomes one point zero five. Trailing decimal zeroes remain audible: 1.50 reads one point five zero. Ordinary mode treats leading whole-number zeroes as formatting rather than a change of value.",
+        "Digit mode keeps those leading zeroes because each entered digit is part of the reading. That makes it more appropriate for an identifier or a code. A negative nonzero value receives minus. A numeric negative zero is not presented as a different amount.",
+        "US dollar mode rounds to the nearest cent, with half-cent ties away from zero. Rounding is performed using integer digits, rather than binary floating-point arithmetic. The rounded numeric amount is shown in the working. Verify the wording and rounding policy before using it on a financial document.",
+        "Named scales are provided through vigintillion, or 10^63. Larger whole numbers switch to an explicitly labelled digit-by-digit reading. The converter does not invent unfamiliar scale names or silently drop groups beyond a trillion. There is no fixed input-digit quota; practical output size depends on the device."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right context",
+      "paragraphs": [
+        "Copy the result into a document, lesson or draft amount description. Select lowercase, title case or uppercase to suit the destination. Letter case changes presentation only; it does not alter the number or rounding.",
+        "For a code with meaningful leading zeroes, choose Read each digit rather than ordinary words. For a mathematical decimal, ordinary mode retains the fractional digits. The two modes answer different questions and make that choice visible.",
+        "This candidate produces English computational output. Interface translations and other languages need their own reviewed number-word rules. A translated button alone would not make an English algorithm correct for another language. Existing published language implementations are not replaced by this isolated prototype."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Which language does this candidate write?",
+        "answer": "English, using short-scale names and US-style whole-number wording. It does not claim translated number grammar for other languages."
+      },
+      {
+        "question": "Can I enter a decimal?",
+        "answer": "Yes. Use a decimal point. Ordinary mode reads each fractional digit separately, including any trailing zeroes."
+      },
+      {
+        "question": "Can it keep leading zeroes?",
+        "answer": "Choose Read each digit. The input 0012 becomes zero zero one two instead of the ordinary number twelve."
+      },
+      {
+        "question": "What does one billion mean here?",
+        "answer": "It means 1,000,000,000 in the English short scale. Other historical or regional scale conventions may differ."
+      },
+      {
+        "question": "How are dollar amounts rounded?",
+        "answer": "They are rounded to the nearest cent using integer arithmetic. Half-cent ties round away from zero."
+      },
+      {
+        "question": "Why did a huge value switch to digit reading?",
+        "answer": "Named scales stop at vigintillion. Larger values use an explicit digit-by-digit reading to preserve every digit without inventing a scale name."
+      },
+      {
+        "question": "Does this lose precision above a trillion?",
+        "answer": "No. Whole-number digits remain strings or BigInt values. The old twelve-digit restriction is not applied."
+      },
+      {
+        "question": "Can I paste thousands separators?",
+        "answer": "No. Enter plain digits with an optional decimal point. This avoids guessing whether a comma means a decimal or a group separator."
+      },
+      {
+        "question": "Can I change capitalization?",
+        "answer": "Yes. Lowercase, title case and uppercase are available. Hyphens and the numeric meaning remain the same."
+      },
+      {
+        "question": "Is this a certified check-writing service?",
+        "answer": "No. It creates draft wording. Check the amount, currency, rounding and your bank’s requirements before using a financial document."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Roman Numeral Converter",
+        "text": "Represent a number with Roman symbols."
+      },
+      {
+        "title": "Binary Converter",
+        "text": "Write an exact integer in another base."
+      },
+      {
+        "title": "Percentage Calculator",
+        "text": "Separate percentage change, difference and share."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "cardinal": "English words",
+        "digits": "Read each digit",
+        "usd": "US dollar amount"
+      },
+      "fields": {
+        "a": "Number to write",
+        "letterCase": "Letter case"
+      },
+      "modeLabels": {},
+      "options": {
+        "lower": "lowercase",
+        "title": "Title Case",
+        "upper": "UPPERCASE"
+      },
+      "hint": "Use digits, an optional minus sign and a decimal point. Do not use thousands separators or exponent notation."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "whole",
+        "mode": "cardinal",
+        "a": "1234567",
+        "letterCase": "lower",
+        "expected": "one million two hundred thirty-four thousand five hundred sixty-seven"
+      },
+      {
+        "id": "decimal",
+        "mode": "cardinal",
+        "a": "-0.05",
+        "letterCase": "lower",
+        "expected": "minus zero point zero five"
+      },
+      {
+        "id": "digits",
+        "mode": "digits",
+        "a": "0012",
+        "letterCase": "lower",
+        "expected": "zero zero one two"
+      },
+      {
+        "id": "money",
+        "mode": "usd",
+        "a": "1.995",
+        "letterCase": "lower",
+        "expected": "two dollars and zero cents"
+      }
+    ],
+    "referenceLinks": [
+      "https://github.com/mastermunj/to-words",
+      "https://www.calculatorsoup.com/calculators/conversions/numberstowords.php"
+    ],
+    "related": [
+      {
+        "id": "roman-numeral-converter"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "percentage-calculator"
+      }
+    ]
+  }
+}

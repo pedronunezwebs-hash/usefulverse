@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "toolId": "ratio-proportion-calculator",
+  "sourceCopy": {
+    "title": "Ratio Calculator — Simplify, Scale & Solve Proportions",
+    "description": "Simplify ratios with exact decimals, scale several terms or solve one missing value in A:B = C:D. See the working. Free, entirely in your browser.",
+    "heading": "Ratio & Proportion Calculator",
+    "intro": "Simplify a ratio, scale its terms or find one missing value. Keep the calculation exact and see the proportion checked.",
+    "category": "Numbers & relationships",
+    "eyebrow": "Different amounts. The same relationship.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "A simpler pair",
+        "text": "12:18 reduces to 2:3 by dividing both terms by 6. The relative amounts remain unchanged."
+      },
+      {
+        "heading": "Find the fourth term",
+        "text": "2:3 = 4:? gives 6. Both ratios have the exact value 2/3."
+      },
+      {
+        "heading": "Three exact decimal terms",
+        "text": "0.5:1.25:2 becomes 2:5:8. Clearing decimal denominators avoids rounding the relationship."
+      },
+      {
+        "heading": "Double every amount",
+        "text": "Scaling 2:3:5 by 2 gives 4:6:10. Each term receives the same multiplier."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches the task. The field labels change with the question."
+        },
+        {
+          "heading": "Enter your values",
+          "text": "Separate ratio terms with a colon. In A:B = C:D, replace exactly one value with ?. Use a dot for decimals."
+        },
+        {
+          "heading": "Read the working",
+          "text": "Calculate, check the result and inspect the steps. Copy the answer or download the complete result."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The rules behind the result",
+      "paragraphs": [
+        "A ratio compares quantities in a fixed order. The pair 2:3 means two parts of the first quantity for three parts of the second. Reversing the terms gives a different relationship. Keep the labels and units in the same order throughout your calculation.",
+        "To simplify a ratio of integers, divide every term by their greatest common divisor. A ratio of decimals is first converted into exact fractions. Their denominators are cleared together, then the resulting integer terms are reduced. No decimal rounding is needed.",
+        "A multi-term ratio follows the same process. For example, 0.5:1.25:2 becomes 2:5:8. The calculator accepts any practical number of colon-separated terms. An all-zero ratio has no unique simplest form, so it is rejected explicitly.",
+        "A proportion A:B = C:D states that A/B equals C/D. Cross-multiplication gives A × D = B × C. Put a question mark in exactly one field. The calculator rearranges the cross-product equation to solve that position, then shows the completed proportion.",
+        "The denominator terms B and D cannot be zero in this fraction interpretation. Some other zero combinations also fail to determine a unique missing value. The page reports the undefined division rather than manufacturing a number from a degenerate proportion.",
+        "Scaling multiplies every ratio term by the same factor. It does not simplify the result automatically, because the scaled amounts may be the quantities you actually need. A zero scale produces zero quantities; it does not claim that the new all-zero ratio preserves a meaningful fraction."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right context",
+      "paragraphs": [
+        "Use simplified ratios to compare mixtures, share quantities or check an exercise. Convert incompatible units before entering terms. A ratio of centimetres to metres can look wrong if the units are not made consistent first.",
+        "Use Scale when you want actual new amounts, such as doubling every part of a recipe. If a recipe contains three ingredients, enter three terms in their original order. The working shows the same multiplier applied to each term.",
+        "Use Find a missing value for a direct proportion. An inverse proportion is a different model and is not inferred automatically. Decide whether one amount should rise or fall with the other before treating a real-world problem as A:B = C:D."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "How do I enter several terms?",
+        "answer": "Separate them with colons, such as 2:3:5. Simplify and Scale support more than two terms within your device memory."
+      },
+      {
+        "question": "Can ratio terms be decimals?",
+        "answer": "Yes. A decimal point is accepted and converted to an exact fraction. The simplification clears denominators before reducing the integers."
+      },
+      {
+        "question": "How do I find a missing term?",
+        "answer": "Choose Find a missing value. Enter three numbers and place ? in exactly one of A, B, C or D."
+      },
+      {
+        "question": "Can the unknown be in any position?",
+        "answer": "Yes. The calculator rearranges the cross-product equation for A, B, C or D and checks the completed proportion."
+      },
+      {
+        "question": "Why is an all-zero ratio rejected?",
+        "answer": "There is no unique reduced relationship when every term is zero. At least one nonzero term is needed for simplification."
+      },
+      {
+        "question": "Can B or D be zero?",
+        "answer": "Not in A/B = C/D. Those denominator positions must be nonzero, or the proportion is undefined."
+      },
+      {
+        "question": "Does Scale also simplify the result?",
+        "answer": "No. It multiplies each quantity by the selected factor and keeps the scaled amounts. Choose Simplify when reduction is the task."
+      },
+      {
+        "question": "Does order matter?",
+        "answer": "Yes. A:B and B:A refer to opposite relationships. Keep your quantity labels in a consistent order."
+      },
+      {
+        "question": "Is this for inverse proportion too?",
+        "answer": "The missing-value mode solves direct proportions only. An inverse relationship needs a different model and is not guessed from the numbers."
+      },
+      {
+        "question": "Why is a result shown as a fraction?",
+        "answer": "The exact missing value may not have a terminating decimal. Its fraction stays exact; the decimal panel gives a rounded companion."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Fraction Calculator",
+        "text": "Work with exact fractions and mixed numbers."
+      },
+      {
+        "title": "Percentage Calculator",
+        "text": "Separate percentage change, difference and share."
+      },
+      {
+        "title": "Unit Converter",
+        "text": "Make units consistent before comparing quantities."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "simplify": "Simplify a ratio",
+        "solve": "Find a missing value",
+        "scale": "Scale a ratio"
+      },
+      "fields": {
+        "a": "Ratio terms",
+        "b": "Scale factor",
+        "c": "C",
+        "d": "D"
+      },
+      "modeLabels": {
+        "solve": {
+          "a": "A",
+          "b": "B",
+          "c": "C",
+          "d": "D"
+        },
+        "scale": {
+          "a": "Ratio terms",
+          "b": "Scale factor"
+        }
+      },
+      "options": {},
+      "hint": "Separate ratio terms with a colon. In A:B = C:D, replace exactly one value with ?. Use a dot for decimals."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "reduce",
+        "mode": "simplify",
+        "a": "12:18",
+        "expected": "2 : 3"
+      },
+      {
+        "id": "solve",
+        "mode": "solve",
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "?",
+        "expected": "6"
+      },
+      {
+        "id": "decimals",
+        "mode": "simplify",
+        "a": "0.5:1.25:2",
+        "expected": "2 : 5 : 8"
+      },
+      {
+        "id": "scale",
+        "mode": "scale",
+        "a": "2:3:5",
+        "b": "2",
+        "expected": "4 : 6 : 10"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/ratio-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "fraction-calculator"
+      },
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "unit-converter"
+      }
+    ]
+  }
+}

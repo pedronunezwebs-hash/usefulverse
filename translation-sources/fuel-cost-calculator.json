@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "toolId": "fuel-cost-calculator",
+  "sourceCopy": {
+    "title": "Fuel Cost Calculator — Trip Cost & Passenger Share",
+    "description": "Estimate trip fuel and cost using L/100 km, US MPG or imperial MPG. Add a return trip and split the cost by passengers. Free in your browser.",
+    "heading": "Fuel Cost Calculator",
+    "intro": "Enter the distance, fuel use and pump price. Estimate the trip cost, including a return journey or a passenger share.",
+    "category": "Numbers & relationships",
+    "eyebrow": "A useful trip estimate, with the units in view.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style",
+        "exact": "Exact value before display rounding",
+        "saved": "Amount saved",
+        "discountRate": "Effective discount",
+        "count": "Count",
+        "range": "Usable range",
+        "sum": "Sum",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "median": "Median",
+        "mode": "Mode",
+        "totalWeight": "Total weight",
+        "gradeStatus": "Target status",
+        "totalDays": "Total elapsed days",
+        "nextBirthday": "Next birthday",
+        "birthdayCountdown": "Days until birthday",
+        "litres": "Litres used",
+        "usGallons": "US gallons used",
+        "imperialGallons": "Imperial gallons used",
+        "perPerson": "Cost per person",
+        "distance": "Complete distance"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser.",
+        "POSITIVE": "Enter a positive original price.",
+        "PERCENT_RANGE": "Use a discount percentage from 0 to 100.",
+        "AMOUNT_RANGE": "The sale price or fixed reduction must lie from zero to the original price.",
+        "WEIGHTS": "Use matching value and weight lists. Weights must be nonnegative with a positive total.",
+        "GRADE_RANGE": "Use grades from 0 to 100 and a final weight above zero up to 100.",
+        "DATE": "Choose a valid calendar date in the supported range.",
+        "DATE_ORDER": "The comparison date must be on or after the birth date.",
+        "FUEL_RANGE": "Use nonnegative distance and price, positive efficiency and a positive whole number of people.",
+        "RANDOM_OPTIONS": "Use a positive whole-number count and choose whether repeats are allowed.",
+        "RANGE": "Check the bounds. The selected integer or decimal grid must contain at least one value.",
+        "NOT_ENOUGH": "The range contains fewer different values than you requested. Widen it or allow repeats."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples",
+      "noRepeated": "No repeated value",
+      "targetMet": "Target already secured with a zero final score",
+      "unattainable": "Above 100%; target unattainable in this model",
+      "withinRange": "Within the entered 0–100 grade scale",
+      "dateRange": "Outside the supported calendar range"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "A short metric trip",
+        "text": "100 km at 8 L/100 km uses 8 litres. At 1.50 per litre, the cost is 12.00 USD."
+      },
+      {
+        "heading": "Include the return journey",
+        "text": "The same one-way inputs with Return journey selected use 16 litres and cost 24.00 USD."
+      },
+      {
+        "heading": "Keep US gallons consistent",
+        "text": "300 miles at 30 US MPG uses 10 US gallons. At 3.50 per gallon, the cost is 35.00 USD."
+      },
+      {
+        "heading": "Use an imperial pump price",
+        "text": "200 miles at 40 imperial MPG uses 5 imperial gallons. At 7.00 per gallon, the cost is 35.00 GBP."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches your task. The input labels follow that choice."
+        },
+        {
+          "heading": "Enter the values",
+          "text": "Match the pump-price unit to the selected fuel unit. Currency is a label, not a live exchange-rate conversion."
+        },
+        {
+          "heading": "Check the result",
+          "text": "Calculate, inspect the working and save the result if needed. Cancel stops a long job."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The method behind this result",
+      "paragraphs": [
+        "Metric consumption states litres used per one hundred kilometres. Fuel used is distance × consumption / 100. Multiply that fuel quantity by the price per litre to estimate the cost. A higher L/100 km figure therefore means more fuel for the same trip.",
+        "MPG states miles travelled per gallon. Fuel used is distance / MPG, then cost is gallons × price per gallon. A higher MPG figure means less fuel for the same distance. This is the inverse direction of a litres-per-distance measure.",
+        "US gallons and imperial gallons are different quantities. Select the correct MPG mode and use a pump price for the same gallon type. The calculator does not silently mix one gallon definition with another or convert a price whose unit is unknown.",
+        "Return journey doubles the entered one-way distance before calculating fuel. Enter the one-way distance even when that option is selected. If the return route has a different length or consumption, calculate each leg separately and combine the amounts.",
+        "Passenger share divides the complete trip cost by the positive whole number of people sharing it. Include the driver when the driver pays a share. Displayed money and shares round independently to two places, so rounded shares may differ from the total by a small remainder.",
+        "The arithmetic is exact for the entered decimals, but a trip estimate is only as realistic as its assumptions. Traffic, route, load, weather and driving style can change consumption. No live fuel prices, route service or exchange-rate API is used."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right assumptions",
+      "paragraphs": [
+        "Use a recent consumption figure from the relevant driving conditions rather than assuming a laboratory rating will match every journey. Check whether a vehicle display uses US or imperial MPG before choosing the mode.",
+        "For a shared trip, agree what costs are included. This estimate covers the entered fuel only, not tolls, parking, wear, insurance or a formal reimbursement rate. Add other agreed costs separately rather than disguising them as extra fuel consumption.",
+        "Zero distance or a zero pump price is valid and gives zero cost. Efficiency must remain positive, and the number of people must be a positive whole number. Impossible inputs clear the old result instead of leaving an unrelated estimate visible."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Which units can I use?",
+        "answer": "Kilometres with L/100 km, miles with US MPG, or miles with imperial MPG. The pump-price unit must match the chosen mode."
+      },
+      {
+        "question": "Are US and imperial gallons interchangeable?",
+        "answer": "No. Select the correct gallon type and use a price for that same unit. A mismatched price gives a wrong trip estimate."
+      },
+      {
+        "question": "Should I enter one-way or total distance?",
+        "answer": "Enter one-way distance when using Return journey. That option doubles it. Enter the full journey only when One-way journey is selected."
+      },
+      {
+        "question": "Can I split the cost between passengers?",
+        "answer": "Yes. Enter the number of people sharing the complete cost, including the driver if the driver pays a share."
+      },
+      {
+        "question": "Why do rounded shares not always sum exactly?",
+        "answer": "Each share is rounded independently to two places. Splitting a total into several parts can leave a small rounding remainder."
+      },
+      {
+        "question": "Does changing the currency convert the price?",
+        "answer": "No. It changes the currency label only. Enter the actual pump price in the currency you intend to use."
+      },
+      {
+        "question": "Does this fetch current fuel prices?",
+        "answer": "No. All prices and consumption values come from your inputs. There is no route, price or exchange-rate API call."
+      },
+      {
+        "question": "Can I enter a free-fuel or zero-distance case?",
+        "answer": "Yes. Zero price or distance gives zero cost. Fuel efficiency must still be positive, and the passenger count must be a positive integer."
+      },
+      {
+        "question": "Does the estimate include tolls or vehicle wear?",
+        "answer": "No. It estimates fuel only. Add other agreed costs separately for a complete travel budget."
+      },
+      {
+        "question": "Will the car use exactly this amount?",
+        "answer": "Not necessarily. Real consumption changes with conditions. The result is an estimate from the values you provide."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Unit Converter",
+        "text": "Continue with unit converter."
+      },
+      {
+        "title": "Percentage Calculator",
+        "text": "Continue with percentage calculator."
+      },
+      {
+        "title": "Ratio Proportion Calculator",
+        "text": "Continue with ratio proportion calculator."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "metric": "Kilometres and litres",
+        "us": "Miles and US gallons",
+        "imperial": "Miles and imperial gallons"
+      },
+      "fields": {
+        "a": "One-way distance (km)",
+        "b": "Consumption (L/100 km)",
+        "c": "Price per litre",
+        "d": "People sharing the cost",
+        "currency": "Currency label",
+        "trip": "Journey"
+      },
+      "modeLabels": {
+        "us": {
+          "a": "One-way distance (miles)",
+          "b": "Efficiency (US MPG)",
+          "c": "Price per US gallon"
+        },
+        "imperial": {
+          "a": "One-way distance (miles)",
+          "b": "Efficiency (imperial MPG)",
+          "c": "Price per imperial gallon"
+        }
+      },
+      "options": {
+        "oneway": "One-way journey",
+        "roundtrip": "Return journey",
+        "USD": "USD",
+        "EUR": "EUR",
+        "GBP": "GBP",
+        "CAD": "CAD",
+        "AUD": "AUD",
+        "INR": "INR",
+        "BDT": "BDT",
+        "CNY": "CNY",
+        "JPY": "JPY",
+        "KRW": "KRW",
+        "IDR": "IDR",
+        "RUB": "RUB",
+        "TRY": "TRY",
+        "VND": "VND"
+      },
+      "hint": "Match the pump-price unit to the selected fuel unit. Currency is a label, not a live exchange-rate conversion."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "metric",
+        "mode": "metric",
+        "a": "100",
+        "b": "8",
+        "c": "1.50",
+        "d": "2",
+        "currency": "USD",
+        "trip": "oneway",
+        "expected": "12.00 USD"
+      },
+      {
+        "id": "return",
+        "mode": "metric",
+        "a": "100",
+        "b": "8",
+        "c": "1.50",
+        "d": "2",
+        "currency": "USD",
+        "trip": "roundtrip",
+        "expected": "24.00 USD"
+      },
+      {
+        "id": "us",
+        "mode": "us",
+        "a": "300",
+        "b": "30",
+        "c": "3.50",
+        "d": "1",
+        "currency": "USD",
+        "trip": "oneway",
+        "expected": "35.00 USD"
+      },
+      {
+        "id": "imperial",
+        "mode": "imperial",
+        "a": "200",
+        "b": "40",
+        "c": "7",
+        "d": "1",
+        "currency": "GBP",
+        "trip": "oneway",
+        "expected": "35.00 GBP"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/fuel-cost-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "unit-converter"
+      },
+      {
+        "id": "percentage-calculator"
+      },
+      {
+        "id": "ratio-proportion-calculator"
+      }
+    ]
+  }
+}

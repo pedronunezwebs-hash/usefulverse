@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "toolId": "percentage-calculator",
+  "sourceCopy": {
+    "title": "Percentage Calculator — Change, Difference & More",
+    "description": "Find percentages, reverse a percentage, compare changes and calculate percentage error. Get exact fractions and clear steps. Free in your browser.",
+    "heading": "Percentage Calculator",
+    "intro": "Choose the percentage question you need to answer. Enter two values and see the formula as well as the result.",
+    "category": "Numbers & relationships",
+    "eyebrow": "The right reference makes the percentage clear.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "A percentage of an amount",
+        "text": "15% of 200 is 30. Divide 15 by 100, then multiply by 200."
+      },
+      {
+        "heading": "A rise from 80 to 100",
+        "text": "The increase is 20. Relative to the original 80, that is a 25% change."
+      },
+      {
+        "heading": "Two values without an original",
+        "text": "80 and 120 have a percentage difference of 40%, using their average of 100 as the reference."
+      },
+      {
+        "heading": "Recover the full amount",
+        "text": "If 30 is 15% of the whole, the whole is 200. This is not the same question as 15% of 30."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches the task. The field labels change with the question."
+        },
+        {
+          "heading": "Enter your values",
+          "text": "Use a decimal point or an exact fraction such as 1/3. Check which value is the reference."
+        },
+        {
+          "heading": "Read the working",
+          "text": "Calculate, check the result and inspect the steps. Copy the answer or download the complete result."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The rules behind the result",
+      "paragraphs": [
+        "A percentage expresses a ratio per hundred. Percent of a value divides the percentage by 100 and multiplies by the base. What percentage divides the part by the whole and multiplies by 100. Find the whole reverses that relationship when a nonzero percentage is known.",
+        "Percentage change compares a new value with an original reference. The formula is (new - original) / |original| × 100. The absolute denominator gives an explicit convention for negative starting values. A move from -10 to -5 therefore gives +50% in this tool.",
+        "A reference of zero makes relative change undefined. The page clears the result and explains the zero reference. It does not display a dash while announcing that a calculation succeeded. A zero numerator with a nonzero denominator is valid and gives zero.",
+        "Percentage difference is symmetric. It divides the absolute gap by the average of two nonnegative values, then multiplies by 100. Reversing the inputs gives the same result. Two zero values leave a zero reference and are rejected rather than assigned an invented percentage.",
+        "Percentage error compares an observation with an accepted value. It uses |observed - accepted| / |accepted| × 100. The accepted value cannot be zero. This is different from percentage change because the error magnitude does not preserve the direction of the gap.",
+        "Increasing or decreasing a value uses a multiplier. An increase of p percent multiplies by 1 + p/100. A decrease multiplies by 1 - p/100. Successive changes multiply; a 10% increase followed by a 10% decrease does not return to the original amount."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right context",
+      "paragraphs": [
+        "Use the mode names to separate similar questions before entering data. A percentage change has an original value. A percentage difference treats both values equally. A percentage error needs an accepted reference, such as a known measurement.",
+        "The main answer remains an exact fraction when necessary. Its decimal companion rounds to twelve places and uses an approximation sign when digits are lost. This is useful for thirds, repeated divisions and financial examples where a rounded display should not replace the exact calculation.",
+        "For actual invoices or taxes, apply the rounding rules required by the relevant transaction. This tool explains arithmetic; it does not select a legal tax rule or certify an amount for a particular jurisdiction."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "How do I find a percent of a number?",
+        "answer": "Choose Percent of a value. Enter the percentage first and the base amount second. For example, 15% of 200 is 30."
+      },
+      {
+        "question": "How do I find the original whole?",
+        "answer": "Choose Find the whole. Enter the known part and its percentage. A percentage of zero cannot determine a unique whole."
+      },
+      {
+        "question": "Why is change from zero undefined?",
+        "answer": "The original value is the denominator of relative change. Division by zero cannot give a meaningful finite percentage."
+      },
+      {
+        "question": "How do change and difference differ?",
+        "answer": "Change uses an original reference and keeps direction. Difference uses the average of two nonnegative values and is symmetric."
+      },
+      {
+        "question": "Can I use a negative original value?",
+        "answer": "Yes in Change. This tool divides by the absolute original value and shows that convention in the formula."
+      },
+      {
+        "question": "What is percentage error?",
+        "answer": "It is the absolute observation error divided by the absolute accepted value, multiplied by 100. The reference cannot be zero."
+      },
+      {
+        "question": "Does a percentage have to be below 100?",
+        "answer": "No. A percentage above 100 is valid. A decrease above 100 can produce a negative result, so interpret the context carefully."
+      },
+      {
+        "question": "Are percentage points the same as percent change?",
+        "answer": "No. Moving from 20% to 25% is five percentage points, but a 25% relative increase from the original rate."
+      },
+      {
+        "question": "Why does the answer sometimes contain a fraction?",
+        "answer": "Some exact percentages repeat as decimals. The fraction preserves the value; the decimal panel provides a rounded reading."
+      },
+      {
+        "question": "Can I undo a discount by adding the same percentage?",
+        "answer": "Usually no. The second percentage uses a different base. Reverse the original multiplier to recover the starting value."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "title": "Discount Calculator",
+        "text": "Apply discounts to a price."
+      },
+      {
+        "title": "Ratio Proportion Calculator",
+        "text": "Simplify related quantities and solve proportions."
+      },
+      {
+        "title": "Fraction Calculator",
+        "text": "Work with exact fractions and mixed numbers."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "of": "Percent of a value",
+        "share": "What percentage?",
+        "whole": "Find the whole",
+        "change": "Percentage change",
+        "difference": "Percentage difference",
+        "increase": "Increase by percent",
+        "decrease": "Decrease by percent",
+        "error": "Percentage error"
+      },
+      "fields": {
+        "a": "First value",
+        "b": "Second value"
+      },
+      "modeLabels": {
+        "of": {
+          "a": "Percentage",
+          "b": "Base value"
+        },
+        "share": {
+          "a": "Part",
+          "b": "Whole"
+        },
+        "whole": {
+          "a": "Part",
+          "b": "Percentage"
+        },
+        "change": {
+          "a": "Original value",
+          "b": "New value"
+        },
+        "difference": {
+          "a": "First nonnegative value",
+          "b": "Second nonnegative value"
+        },
+        "increase": {
+          "a": "Starting value",
+          "b": "Percentage increase"
+        },
+        "decrease": {
+          "a": "Starting value",
+          "b": "Percentage decrease"
+        },
+        "error": {
+          "a": "Observed value",
+          "b": "Accepted value"
+        }
+      },
+      "options": {},
+      "hint": "Use a decimal point or an exact fraction such as 1/3. Check which value is the reference."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "of",
+        "mode": "of",
+        "a": "15",
+        "b": "200",
+        "expected": "30"
+      },
+      {
+        "id": "change",
+        "mode": "change",
+        "a": "80",
+        "b": "100",
+        "expected": "25%"
+      },
+      {
+        "id": "difference",
+        "mode": "difference",
+        "a": "80",
+        "b": "120",
+        "expected": "40%"
+      },
+      {
+        "id": "whole",
+        "mode": "whole",
+        "a": "30",
+        "b": "15",
+        "expected": "200"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/percent-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ],
+    "related": [
+      {
+        "id": "discount-calculator"
+      },
+      {
+        "id": "ratio-proportion-calculator"
+      },
+      {
+        "id": "fraction-calculator"
+      }
+    ]
+  }
+}

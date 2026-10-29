@@ -1,0 +1,75 @@
+{
+  "scope": "14 isolated prototype renderers, fixed asset placeholders; no product output changed by source/data separation",
+  "rows": [
+    {
+      "id": "date-calculator",
+      "htmlSHA256": "61fdb120eb80b18378aeeb3d965b64a7cec8d8042025f73dc8fe723f83d4a437",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "time-duration-calculator",
+      "htmlSHA256": "8e4eccc98c22f7d506d953063a25a521a2059882cc71107a1a02b902597dfc13",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "roman-numeral-converter",
+      "htmlSHA256": "c187bc6204e8d03a8c75b9b4f60b534e066cd239d618417740ec5195d7370ced",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "barcode-generator",
+      "htmlSHA256": "c99f9b2d5c931d5a5d1b51f333a325650a5a3b8c2e71a428dcdddeff27a55a18",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "fraction-calculator",
+      "htmlSHA256": "c48de3b07d15bdbcee2358865c5c0b30f688f3983475111de70995812830fb1e",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "prime-number-checker",
+      "htmlSHA256": "4c878d30333f0c3ddabc12a5cb471721214881310622c84254bb350a03202cf5",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "percentage-calculator",
+      "htmlSHA256": "099ec725af003e722dd5389a2d38ad48d002ff31ed6ae625ee65433e90ac58c2",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "number-to-words-converter",
+      "htmlSHA256": "63d2f1c830a339cfefaaf930f8469ac129aed46c97e862741a2f95f4fe6925ad",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "ratio-proportion-calculator",
+      "htmlSHA256": "131f2d2509803521e25d7b9e7b7da4d2b0126c91591c713c1bd671dbd874e9a7",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "discount-calculator",
+      "htmlSHA256": "a5204430f609fb69cd9446eeda4251b1a327fd7bcb288c90489b3aa8d2aa2d7c",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "random-number-generator",
+      "htmlSHA256": "0bad3a5b46631758ed5e3cef9b27e7924c00b4f589e2bae06e4f3257b7c786f2",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "average-calculator",
+      "htmlSHA256": "d692bfe9173f947e24f9bb02dfbb9403c0e4e45dc83a6ccc28728f949e1104b6",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "age-calculator",
+      "htmlSHA256": "9765a2a062dc242726f361d60ca17466bd8c704ff51c96dc762b0bd66bb33725",
+      "exactHTMLUnchanged": true
+    },
+    {
+      "id": "fuel-cost-calculator",
+      "htmlSHA256": "fc577552934aa49d8f839096d30c0925120789e1e1ea3b6f8b8d2dc68c0fda82",
+      "exactHTMLUnchanged": true
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "toolId": "date-calculator",
+  "sourceCopy": {
+    "title": "Date Calculator — Days Between & Add Dates | UsefulVerse",
+    "description": "Count days between dates or add years, months, weeks and days. See calendar spans, weekdays and month-end rules. Free, with calculations in your browser.",
+    "heading": "Date Calculator",
+    "intro": "Count the days between two dates. Or move a date forward or backward, with every calendar rule explained.",
+    "category": "Date & time",
+    "eyebrow": "A little clarity for your calendar",
+    "ui": {
+      "between": "Between dates",
+      "shift": "Add or subtract",
+      "calculation": "Choose a calculation",
+      "start": "Start date",
+      "end": "End date",
+      "base": "Starting date",
+      "inclusive": "Count both dates",
+      "inclusiveHint": "Adds one day to the elapsed count.",
+      "swap": "Swap dates",
+      "calculate": "Calculate dates",
+      "today": "Use today",
+      "operation": "Direction",
+      "add": "Add",
+      "subtract": "Subtract",
+      "years": "Years",
+      "months": "Months",
+      "weeks": "Weeks",
+      "days": "Days",
+      "overflow": "When the target month is shorter",
+      "constrain": "Use its last valid day",
+      "reject": "Ask me to choose another date",
+      "advanced": "Month-end rule",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "reset": "Reset",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "shareNotice": "This link includes your dates. Share it only if you want others to see them.",
+      "result": "Your calendar, worked out",
+      "empty": "Choose your dates to see the result.",
+      "elapsed": "calendar days apart",
+      "counted": "days, counting both dates",
+      "newDate": "Your new date",
+      "weekSpan": "In weeks and days",
+      "calendarSpan": "Calendar span",
+      "periodNote": "Whole months first, then remaining days. The inclusive day does not change this span.",
+      "reversed": "Your end date is earlier. The total shows the distance between the dates.",
+      "clipped": "The target month is shorter. We used its last valid day, as selected.",
+      "notClipped": "The day exists in the target month. No month-end adjustment was needed.",
+      "calendarNote": "Calendar days include weekends and holidays.",
+      "unit": {
+        "day": "day",
+        "days": "days",
+        "week": "week",
+        "weeks": "weeks",
+        "month": "month",
+        "months": "months",
+        "year": "year",
+        "years": "years"
+      },
+      "errors": {
+        "DATE_INVALID": "Choose a real date. Check the day, month and year.",
+        "DATE_RANGE": "That date is outside the range supported by this browser's date engine.",
+        "OFFSET_INTEGER": "Enter zero or a positive whole number. Use Subtract to move backward.",
+        "MONTH_END": "That day does not exist in the target month. Change the date or the month-end rule.",
+        "OPTIONS_INVALID": "Check the calculation options and try again.",
+        "LINK_INVALID": "This link contains invalid dates or options. Choose dates below to start again."
+      },
+      "gregorian": "Gregorian calendar",
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "pythonSource": "Python: Gregorian date arithmetic",
+      "temporalSource": "MDN: calendar addition and month-end examples",
+      "noScript": "Turn on JavaScript to calculate. The examples and calendar rules remain readable without it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "workingDays": "Need working days?",
+      "featuresLabel": "Tool features"
+    },
+    "how": {
+      "heading": "From two dates to a clear answer",
+      "steps": [
+        {
+          "heading": "Pick your task",
+          "text": "Choose Between dates to measure a gap. Choose Add or subtract to find a future or past date."
+        },
+        {
+          "heading": "Enter the dates",
+          "text": "Use the date fields. For a date offset, enter whole years, months, weeks or days."
+        },
+        {
+          "heading": "Read the result",
+          "text": "Calculate once. Check the counting rule, copy the answer or share a link with the same inputs."
+        }
+      ]
+    },
+    "examplesHeading": "Try a real calendar question",
+    "examples": [
+      {
+        "heading": "A month is not always 30 days",
+        "text": "October 1 to November 1, 2026 is 31 elapsed days: four weeks and three days. Count both dates for 32."
+      },
+      {
+        "heading": "Crossing a leap day",
+        "text": "February 28 to March 1, 2024 is two days. In 2025, the same calendar dates are one day apart."
+      },
+      {
+        "heading": "One month after January 31",
+        "text": "January 31, 2026 plus one month becomes February 28. The chosen rule uses the last valid day."
+      },
+      {
+        "heading": "A 90-day planning window",
+        "text": "October 1, 2026 plus 90 calendar days is December 30, 2026. Weekends and holidays remain part of the count."
+      }
+    ],
+    "examplesAction": "Use this example",
+    "method": {
+      "heading": "Days, months and years mean different things",
+      "paragraphs": [
+        "For elapsed days, the calculator subtracts the two calendar dates. October 1 to October 2 is one day apart. Counting both dates adds one to that result. Two identical dates therefore give zero elapsed days, or one counted date.",
+        "A calendar month is not a fixed number of days. January 31 plus one month cannot keep day 31 in February. Our default rule chooses February's last valid day. You can instead ask the calculator to reject that result, so the adjustment is never hidden.",
+        "When you combine units, years and months are combined first. The day is adjusted once for the target month. Weeks and days are added afterward. For example, January 31, 2021 plus one month and 31 days is March 31, 2021. Changing the order can produce a different result.",
+        "The calendar span uses whole months first and then remaining days. A span from January 31 to February 28, 2026 is one calendar month and also 28 elapsed days. Neither number is an average. Read the label that matches your task.",
+        "Calculations use calendar dates, not times of day. A daylight-saving change does not turn one calendar day into a fraction here. For hours between times, use Time Duration Calculator. For working days, use Business Days Calculator and choose the holidays that apply."
+      ]
+    },
+    "uses": {
+      "heading": "Useful for the dates you actually plan around",
+      "paragraphs": [
+        "Check how many days separate a departure and return, count down to a personal event, or move a project date by six weeks. Use today for the device's current local date. The result includes the weekday, which helps you spot dates that fall on a weekend.",
+        "For a school activity, compare a leap year with an ordinary year. For a monthly reminder, check what happens at the end of a short month. If a deadline follows business-day rules, switch to the related calculator instead of treating every calendar day as a working day."
+      ]
+    },
+    "privacy": {
+      "heading": "Clear limits. Private calculations.",
+      "paragraphs": [
+        "This tool uses the proleptic Gregorian calendar: the same leap-year rules are applied across the date range. It does not model each country's historical switch from the Julian calendar. That matters when researching older historical dates.",
+        "There is no daily usage cap or account requirement. Dates must fit the browser's date engine. Invalid dates and results outside that range show an error. The tool does not silently replace February 30 with a date in March.",
+        "Calculations do not make network requests and are not saved automatically. The page and its font load from the site. Copying a share link puts your entered dates in that link. When someone opens it, those dates become part of the page address. Avoid sharing private dates."
+      ]
+    },
+    "faqHeading": "A few things worth knowing",
+    "faq": [
+      {
+        "question": "How many days are between two dates?",
+        "answer": "Enter a start and end date, then calculate. The default gives elapsed calendar days. The result also converts that count into full weeks and remaining days."
+      },
+      {
+        "question": "Should I count the start and end dates?",
+        "answer": "Use Count both dates when you want each calendar date in the range included. October 1 to October 2 gives two counted dates, but only one elapsed day."
+      },
+      {
+        "question": "Can I add 30, 60 or 90 days to a date?",
+        "answer": "Yes. Choose Add or subtract, enter the starting date and put the number in Days. Leave other units at zero. These are calendar days, including weekends and holidays."
+      },
+      {
+        "question": "Can I subtract weeks, months or years?",
+        "answer": "Yes. Choose Subtract and enter positive whole numbers for the units you need. One week always means seven calendar days. A month follows the calendar and the selected month-end rule."
+      },
+      {
+        "question": "Why does January 31 plus one month become February 28?",
+        "answer": "February has no day 31. The default rule uses the last valid day in the target month: February 28 in 2026 or February 29 in 2024. The alternative rule rejects the adjustment."
+      },
+      {
+        "question": "Does it account for leap years?",
+        "answer": "Yes. Years divisible by four are leap years, except century years that are not divisible by 400. The year 2000 has February 29; 1900 does not."
+      },
+      {
+        "question": "Will daylight saving time change the answer?",
+        "answer": "No. This tool compares date labels without times or time zones. It counts one calendar day between consecutive dates, including dates on either side of a clock change."
+      },
+      {
+        "question": "What if the end date is before the start date?",
+        "answer": "You still get the positive distance between the dates, with a note explaining the order. Swap dates if you want them shown chronologically."
+      },
+      {
+        "question": "Does this exclude weekends and public holidays?",
+        "answer": "No. Use Business Days Calculator for that task. Holidays depend on the place and the rules you choose, so they are not guessed by this calendar-date tool."
+      },
+      {
+        "question": "Can I save or share my calculation?",
+        "answer": "Copy the result as text, or copy a link that restores the same dates and options. The link contains the entered dates. Share it only when you are happy for others to see them."
+      }
+    ],
+    "relatedHeading": "Keep your plans moving",
+    "related": [
+      {
+        "title": "Business Days Calculator",
+        "text": "Count working days with your weekend and holiday rules."
+      },
+      {
+        "title": "Time Duration Calculator",
+        "text": "Measure hours and minutes between two times."
+      },
+      {
+        "title": "Age Calculator",
+        "text": "Work out an age with an explicit leap-day rule."
+      }
+    ],
+    "sourcesHeading": "How the calendar rules are checked",
+    "sourcesText": "Worked examples are recalculated in tests. Gregorian day counts are cross-checked with Python's date arithmetic. Month-end behavior is checked against published Temporal examples.",
+    "footer": "Small tools. A little more space to think.",
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Counting rules",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "No hidden calendar rules",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "elapsed",
+        "mode": "between",
+        "start": "2026-10-01",
+        "end": "2026-11-01",
+        "inclusive": false,
+        "expectedDays": 31
+      },
+      {
+        "id": "leap",
+        "mode": "between",
+        "start": "2024-02-28",
+        "end": "2024-03-01",
+        "inclusive": false,
+        "expectedDays": 2
+      },
+      {
+        "id": "month",
+        "mode": "shift",
+        "start": "2026-01-31",
+        "units": {
+          "years": 0,
+          "months": 1,
+          "weeks": 0,
+          "days": 0
+        },
+        "direction": 1,
+        "overflow": "constrain",
+        "expectedISO": "2026-02-28"
+      },
+      {
+        "id": "ninety",
+        "mode": "shift",
+        "start": "2026-10-01",
+        "units": {
+          "years": 0,
+          "months": 0,
+          "weeks": 0,
+          "days": 90
+        },
+        "direction": 1,
+        "overflow": "constrain",
+        "expectedISO": "2026-12-30"
+      }
+    ],
+    "related": [
+      {
+        "id": "business-days-calculator"
+      },
+      {
+        "id": "time-duration-calculator"
+      },
+      {
+        "id": "age-calculator"
+      }
+    ]
+  }
+}
