@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** LIBRE
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T11:42:57.832759+00:00 · lote matemático continuo prioridades5–9, rama propia sobre PR147, sin publicar
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -48,6 +48,8 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 
 **Cuarta preparación lista, sin publicar:** `barcode-generator`, prioridad4/nivelA, [PR147](https://github.com/pedronunezwebs-hash/usefulverse/pull/147), sobre PR146. Conserva Code128/EAN13/UPC y SVG/PNG; añade EAN8/Code39, tamaños, ZIP con manifiesto/errores y Worker cancelable. Cap80 eliminado, cuatro ejemplos/diez FAQ/20 intenciones dentro de URL existente. Node3.382/23 focalizadas,12 referencias GS1,5.000 aleatorios y1.016 decodificaciones independientes;48 tareas/54 geometrías axe0 en tres motores.30 SVG/PNG descargados/decodificados,ZIP1.000 etiquetas por motor;73.117B, Lighthouse100/100/100 LCP934ms/CLS0, traza877ms. [Capturas/18 controles](tools/barcode-generator/README.md). Producción antigua: tres formatos correctos y límite81 reproducido; cuatro URLs200 Chrome. Candidato no desplegado: idiomas/integración/lector/zoom/diseño/widget pendientes. P-010 común y P-011 impresión/lector real, ambas bloqueadas hasta URL;10 Pedro pendientes/0FALLA. Traductor40843674935 sigue automáticamente con cuatro jobs primera vuelta, sin reconfigurar. Próxima preparación: `fraction-calculator`; conservar pila PR144→145→146→147 e incorporar inglés revisado al corpus activo en lote separado que preserve UI pública.
+
+**Decisión de Pedro (29-oct, lote continuo):** encadenar varias herramientas sin cerrar el turno entre ellas. Reutilizar instalación, plantilla y controles comunes; mantener motores/contenido/pruebas propios y respaldos por lote. No rebajar puertas ni publicar antes de verificar fase0.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
