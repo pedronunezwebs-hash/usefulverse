@@ -1,0 +1,42 @@
+// Explicit unpublished prototype: this script does not alter either native build.
+import { mkdir, readFile, writeFile, stat, cp } from 'node:fs/promises';
+import { resolve, relative, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { brotliCompressSync } from 'node:zlib';
+import { build, transform } from 'esbuild';
+import { renderNotFoundPage } from '../src/template.mjs';
+import { checkResources } from './local-resources.mjs';
+const root=fileURLToPath(new URL('../',import.meta.url));
+export async function buildQualityPage({toolId,render,cssExtra='',licenses=[]}) {
+const output=resolve(process.argv[2]??'');
+if(!process.argv[2]||!relative(root,output).startsWith('.qa-')||relative(root,output).includes('..'))throw Error('Use a new owned .qa-.../ output directory');
+if(await stat(output).then(()=>true,()=>false))throw Error('Refusing to overwrite a build');
+await checkResources(root,5_000_000);
+const source=join(root,'src/quality',toolId),font=JSON.parse(await readFile(join(source,'../shared/font-source.json')));
+const fontBytes=await readFile(join(root,'public/quality-fonts',font.file));
+if(fontBytes.length!==font.bytes||font.bytes>40960||createHash('sha256').update(fontBytes).digest('hex')!==font.sha256)throw Error('Font checksum/weight mismatch');
+const hash=b=>createHash('sha256').update(b).digest('hex').slice(0,12);
+const js=(await build({entryPoints:[join(source,'controller.mjs')],bundle:true,format:'esm',target:['es2020'],minify:true,write:false})).outputFiles[0].contents;
+const fontURL='/assets/'+font.file;
+const cssSource=((await readFile(join(source,'../shared/style.css'),'utf8'))+'\n'+cssExtra).replace('__FONT__',fontURL);
+const css=(await transform(cssSource,{loader:'css',minify:true})).code;
+const criticalSource=toolId==='time-duration-calculator'?cssSource.replace(/\.on-page\{[\s\S]*?(?=\/\* examples:start \*\/)/,'').replace(/\/\* examples:start \*\/[\s\S]*?\/\* examples:end \*\//g,'').replace(/\.(?:units|date-pair|result-number|result-date|result-iso)[^{}]*\{[^{}]*\}/g,''):cssSource;
+const critical=(await transform(criticalSource.replace(/\/\* noncritical:start \*\/[\s\S]*?\/\* noncritical:end \*\//g,''),{loader:'css',minify:true})).code;
+if(Buffer.byteLength(critical)>14336)throw Error('Critical CSS exceeds 14 KiB');
+const assetPrefix=toolId==='date-calculator'?'date':toolId;
+const cssURL=`/assets/${assetPrefix}.${hash(css)}.css`,jsURL=`/assets/${assetPrefix}.${hash(js)}.js`;
+const html=render({css:cssURL,js:jsURL,font:fontURL,critical});
+const bytes={criticalCSS:Buffer.byteLength(critical),html:Buffer.byteLength(html),htmlBrotli:brotliCompressSync(html).length,cssBrotli:brotliCompressSync(css).length,jsBrotli:brotliCompressSync(js).length,font:font.bytes};
+if(bytes.htmlBrotli>25600||bytes.cssBrotli>30720||bytes.jsBrotli>51200||bytes.htmlBrotli+bytes.cssBrotli+bytes.jsBrotli+bytes.font>122880)throw Error('Page weight budget exceeded');
+await mkdir(join(output,'tools/'+toolId),{recursive:true});await mkdir(join(output,'assets'));
+await writeFile(join(output,'tools/'+toolId+'/index.html'),html);await writeFile(join(output,cssURL),css);await writeFile(join(output,jsURL),js);
+await cp(join(root,'public/quality-fonts',font.file),join(output,fontURL));
+await cp(join(root,'public/quality-fonts/OFL-BricolageGrotesque.txt'),join(output,'assets/OFL-BricolageGrotesque.txt'));
+for(const file of licenses)await cp(join(root,file),join(output,'assets',file.split('/').slice(-2).join('-')));
+await cp(join(root,'public/favicon.svg'),join(output,'favicon.svg'));await writeFile(join(output,'404.html'),renderNotFoundPage());
+await writeFile(join(output,'robots.txt'),'User-agent: *\nAllow: /\n');await writeFile(join(output,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n');
+await writeFile(join(output,'_headers'),'/*\n  X-Content-Type-Options: nosniff\n  Cache-Control: public, max-age=0, must-revalidate\n  X-Robots-Tag: noindex\n');
+await writeFile(join(output,'candidate.json'),JSON.stringify({scope:'unpublished-existing-url-prototype',tool:toolId,releaseApproved:false,indexableURLs:0,canonical:`https://usefulverse.com/tools/${toolId}/`,bytes},null,2)+'\n');
+console.log(JSON.stringify({output,scope:'unpublished-existing-url-prototype',bytes,firstLoadBytes:bytes.htmlBrotli+bytes.cssBrotli+bytes.jsBrotli+bytes.font,releaseApproved:false}));
+}

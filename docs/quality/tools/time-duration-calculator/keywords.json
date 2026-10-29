@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "toolId": "time-duration-calculator",
+  "status": "prepared-not-published",
+  "existingURL": "https://usefulverse.com/tools/time-duration-calculator/",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "observedDemand": {
+      "source": "docs/recovery/indexable-core-tools.csv",
+      "period": "2026-10-01/2026-10-15",
+      "impressions": 2511,
+      "clicks": 5,
+      "impressionLanguages": 14
+    },
+    "phraseEvidence": "Inferred tasks supported by the candidate, reviewed against three first-party reference products. No query-level Search Console export, live Google suggestions/PAA or SERP position measured. No keyword-volume claims.",
+    "paidSEOTools": false
+  },
+  "intents": [
+    {
+      "phrase": "time duration calculator",
+      "section": "page-heading"
+    },
+    {
+      "phrase": "hours between two times",
+      "section": "calculator"
+    },
+    {
+      "phrase": "minutes between two times",
+      "section": "calculator"
+    },
+    {
+      "phrase": "seconds between two dates and times",
+      "section": "calculator"
+    },
+    {
+      "phrase": "time between two dates",
+      "section": "calculator"
+    },
+    {
+      "phrase": "overnight time calculator",
+      "section": "examples"
+    },
+    {
+      "phrase": "time across midnight",
+      "section": "examples"
+    },
+    {
+      "phrase": "subtract lunch break from hours",
+      "section": "calculator"
+    },
+    {
+      "phrase": "time duration with breaks",
+      "section": "calculator"
+    },
+    {
+      "phrase": "decimal hours calculator",
+      "section": "questions"
+    },
+    {
+      "phrase": "1 hour 30 minutes in decimal hours",
+      "section": "questions"
+    },
+    {
+      "phrase": "24 hour time difference",
+      "section": "calculator"
+    },
+    {
+      "phrase": "elapsed time across time zones",
+      "section": "examples"
+    },
+    {
+      "phrase": "daylight saving time duration",
+      "section": "method"
+    },
+    {
+      "phrase": "23 hour day duration",
+      "section": "questions"
+    },
+    {
+      "phrase": "25 hour day duration",
+      "section": "questions"
+    },
+    {
+      "phrase": "repeated local hour calculator",
+      "section": "questions"
+    },
+    {
+      "phrase": "nonexistent daylight saving time",
+      "section": "questions"
+    },
+    {
+      "phrase": "leap day time duration",
+      "section": "examples"
+    },
+    {
+      "phrase": "share time calculation with time zones",
+      "section": "questions"
+    }
+  ],
+  "separateIntents": [
+    "Calendar-date counts: date-calculator",
+    "Working-day exclusions: business-days-calculator",
+    "Displaying an instant elsewhere: time-zone-converter",
+    "Pay/overtime rules: not inferred here"
+  ],
+  "sources": [
+    "https://www.timeanddate.com/date/timezoneduration.html",
+    "https://www.calculator.net/time-duration-calculator.html",
+    "https://www.calculatorsoup.com/calculators/time/time-date-difference-calculator.php",
+    "https://tc39.es/proposal-temporal/docs/zoneddatetime.html",
+    "https://docs.python.org/3/library/zoneinfo.html"
+  ]
+}

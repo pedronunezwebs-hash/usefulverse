@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "time-duration-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/time-duration-calculator/",
+  "bytes": {
+    "criticalCSS": 13560,
+    "html": 41175,
+    "htmlBrotli": 9372,
+    "cssBrotli": 3918,
+    "jsBrotli": 20915,
+    "font": 40784
+  }
+}
