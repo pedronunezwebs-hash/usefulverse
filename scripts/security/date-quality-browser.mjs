@@ -2,7 +2,7 @@
 import { chromium, firefox, webkit } from 'playwright';
 import assert from 'node:assert/strict';
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkResources } from '../local-resources.mjs';
 const root=fileURLToPath(new URL('../../',import.meta.url));
@@ -73,7 +73,7 @@ for(const [name,type]of Object.entries({chromium,firefox,webkit})){
       const overflow=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));
       assert.ok(overflow.scrollWidth<=overflow.width,JSON.stringify({name,fixture,...overflow}));
       result.stressLayouts.push({fixture,...overflow,note:'Synthetic layout fixture, not a translated-language approval or actual browser zoom'});
-      if(name==='chromium')await page.screenshot({path:join(root,'.qa-date',fixture+'.webp'),type:'webp',fullPage:false});
+      if(name==='chromium')await page.screenshot({path:join(dirname(output),fixture+'.webp'),type:'webp',fullPage:false});
     }
     for(const width of [568,844,1024,1920]){
       await open();await page.setViewportSize({width,height:390});
@@ -82,8 +82,8 @@ for(const [name,type]of Object.entries({chromium,firefox,webkit})){
     }
     await open();await page.setViewportSize({width:1440,height:1000});
     if(name==='chromium'){
-      await page.screenshot({path:join(root,'.qa-date','desktop.webp'),type:'webp',fullPage:false});
-      await page.setViewportSize({width:390,height:844});await page.screenshot({path:join(root,'.qa-date','mobile.webp'),type:'webp',fullPage:false});
+      await page.screenshot({path:join(dirname(output),'desktop.webp'),type:'webp',fullPage:false});
+      await page.setViewportSize({width:390,height:844});await page.screenshot({path:join(dirname(output),'mobile.webp'),type:'webp',fullPage:false});
     }
     assert.deepEqual(result.pageErrors,[]);assert.deepEqual(result.consoleErrors,[]);assert.deepEqual(result.thirdPartyRequests,[]);
     report.browsers.push(result);

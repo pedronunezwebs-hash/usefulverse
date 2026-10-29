@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "toolId": "time-duration-calculator",
+  "sourceCopy": {
+    "title": "Time Duration Calculator — Hours & Minutes | UsefulVerse",
+    "description": "Find hours, minutes and seconds between times or dates. Handle overnight spans, breaks, time zones and clock changes. Free calculations in your browser.",
+    "heading": "Time Duration Calculator",
+    "intro": "Find the time between two moments. Use clock times for a simple shift, or dates and time zones for exact elapsed time.",
+    "category": "Date & time",
+    "eyebrow": "A clearer view of your time",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "shareNotice": "This link includes your dates. Share it only if you want others to see them.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "unit": {
+        "day": "day",
+        "days": "days",
+        "week": "week",
+        "weeks": "weeks",
+        "month": "month",
+        "months": "months",
+        "year": "year",
+        "years": "years",
+        "hour": "hour",
+        "hours": "hours",
+        "minute": "minute",
+        "minutes": "minutes",
+        "second": "second",
+        "seconds": "seconds"
+      },
+      "between": "Dates & times",
+      "clock": "Clock times",
+      "calculation": "Choose a calculation",
+      "start": "Start date and time",
+      "end": "End date and time",
+      "startClock": "Start time",
+      "endClock": "End time",
+      "startZone": "Start time zone",
+      "endZone": "End time zone",
+      "zoneHint": "Choose each location. Clock changes follow the selected zones.",
+      "advanced": "Repeated hours & time zones",
+      "startOccurrence": "If the start time repeats",
+      "endOccurrence": "If the end time repeats",
+      "reject": "Ask me to choose",
+      "earlier": "First occurrence",
+      "later": "Second occurrence",
+      "nextDay": "End is the next day",
+      "nextDayHint": "Keep this off when both times are on the same day.",
+      "breakLabel": "Break to remove (whole minutes)",
+      "calculate": "Calculate duration",
+      "swap": "Swap dates and zones",
+      "deviceZone": "Use my time zone",
+      "result": "Your time, made clear",
+      "empty": "Enter two times to see the duration.",
+      "elapsed": "elapsed time after the break",
+      "totalHours": "Decimal hours (rounded)",
+      "totalMinutes": "Total minutes (rounded)",
+      "totalSeconds": "Total seconds",
+      "iso": "ISO duration",
+      "dayNote": "Each day shown here is a block of 24 hours.",
+      "reversed": "The end is earlier. This result shows the positive distance.",
+      "breakNote": "Break removed",
+      "beforeBreak": "Before the break",
+      "zoneNote": "The UTC times below show the exact instants used.",
+      "noScript": "Turn on JavaScript to calculate. Examples and counting rules remain readable.",
+      "pythonSource": "Python: zoneinfo and UTC comparisons",
+      "temporalSource": "Temporal: time zones and repeated hours",
+      "gregorian": "Calendar-aware, browser-only",
+      "errors": {
+        "DATE_INVALID": "Choose a real date and time. Check all parts of the field.",
+        "ZONE_INVALID": "Choose a time zone supported by this browser.",
+        "OPTIONS_INVALID": "Check the calculation options and try again.",
+        "TIME_GAP": "That local time does not exist because the clocks move forward. Choose another time.",
+        "TIME_REPEAT": "That local time happens twice. Open Repeated hours & time zones and choose its first or second occurrence.",
+        "CLOCK_INVALID": "Enter a valid time from 00:00:00 to 23:59:59.",
+        "CLOCK_ORDER": "The end time is earlier. Turn on End is the next day, or change the times.",
+        "BREAK_INVALID": "Enter zero or a positive whole number of break minutes.",
+        "BREAK_TOO_LONG": "The break cannot be longer than the duration.",
+        "LINK_INVALID": "This link contains invalid times or options. Enter times below to start again."
+      },
+      "dateLabel": "Date",
+      "timeLabel": "Time"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Counting rules",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "No hidden calendar rules",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Small examples, clear counting rules",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "heading": "Across midnight",
+        "text": "23:30 to 01:15 the next day is 1 hour 45 minutes. Remove a 15-minute break for 1 hour 30 minutes."
+      },
+      {
+        "heading": "A leap day belongs in the count",
+        "text": "February 28 at noon to March 1 at noon, 2024, is 48 hours in UTC. February 29 adds a full day."
+      },
+      {
+        "heading": "Four clock hours, three elapsed",
+        "text": "In New York on March 10, 2024, midnight to 04:00 is 3 elapsed hours. The clock skips one hour."
+      },
+      {
+        "heading": "Two locations, one timeline",
+        "text": "January 1, 2024 at 09:00 in New York to 16:00 in London is 2 elapsed hours. Local clock labels alone differ by 7 hours."
+      }
+    ],
+    "how": {
+      "heading": "Two times. One answer you can check.",
+      "steps": [
+        {
+          "heading": "Choose your task",
+          "text": "Use Clock times for a simple shift. Use Dates & times when dates, locations or clock changes matter."
+        },
+        {
+          "heading": "Enter the details",
+          "text": "Pick both times. Choose Next day for an overnight clock span. Add a break only if you want it removed."
+        },
+        {
+          "heading": "Calculate and check",
+          "text": "Read the hours, total seconds and counting notes. Copy the result or a link with the same options."
+        }
+      ]
+    },
+    "method": {
+      "heading": "Clock labels and elapsed time are different",
+      "paragraphs": [
+        "In Clock times mode, the calculator compares labels within a regular 24-hour day. Dates and time zones are unknown. End is the next day adds one full day. Without it, an earlier end time needs a correction instead of a hidden overnight assumption.",
+        "In Dates & times mode, each date and time is resolved in its chosen time zone. Both instants are then compared on the UTC timeline. This handles different locations and daylight-saving clock changes. The displayed UTC times let you inspect the instants used.",
+        "A spring clock change can remove an hour from the local clock. Some local times never occur. An autumn change can repeat an hour, making a label ambiguous. This calculator rejects missing times and asks which occurrence you mean for repeated times. It never silently moves your input.",
+        "The result separates complete 24-hour blocks, remaining hours, minutes and seconds. Decimal hours and minutes are rounded to six decimal places. Total seconds are exact for the whole-second inputs supported here. No average month or year is used.",
+        "Break minutes are removed once from the positive duration. A break longer than the duration is rejected. With dates, reversed inputs show the positive distance and an order note. Clock mode instead needs an explicit next-day choice."
+      ]
+    },
+    "uses": {
+      "heading": "For plans, shifts and moments across borders",
+      "paragraphs": [
+        "Check a shift, compare two event times, or measure a trip between locations. For payroll, round only according to the policy that applies to you. This calculator does not guess pay rules, paid breaks or overtime thresholds.",
+        "Use Date Calculator for a count of calendar dates. Use Business Days Calculator to exclude chosen weekends and holidays. To display one instant in another location without measuring a span, use Time Zone Converter. Keeping those tasks separate prevents a calendar-day count from being mistaken for elapsed hours."
+      ]
+    },
+    "privacy": {
+      "heading": "Your times stay under your control",
+      "paragraphs": [
+        "Calculations run in this browser without sending inputs to an API. The page, its font and its time library load from the site. Times are not saved automatically. Copying a link puts the inputs and zones in its address; anyone with the link can read them.",
+        "Time-zone rules come from the browser data used by the time library. Update your browser for newer rules. Future government changes and historical records can differ between data versions. This tool does not model leap seconds or each country's switch from the Julian calendar.",
+        "There is no daily calculation cap or sign-up requirement. Dates must fit the supported date engine. Invalid calendar dates, missing local hours and unsupported zones produce a clear error."
+      ]
+    },
+    "faqHeading": "Questions that change the answer",
+    "faq": [
+      {
+        "question": "How do I find hours and minutes between two times?",
+        "answer": "Choose Clock times and enter the start and end. Calculate to see the full duration and decimal hours. Use Dates & times when the interval spans known dates or crosses time zones."
+      },
+      {
+        "question": "How do I count a shift across midnight?",
+        "answer": "In Clock times, turn on End is the next day. For 23:30 to 01:15, the answer is 1 hour 45 minutes. For more than one day, use actual dates."
+      },
+      {
+        "question": "Do equal times mean zero hours or 24 hours?",
+        "answer": "With Clock times and Next day off, equal times give zero. With Next day on, they give 24 hours. Dates & times compares the two resolved instants, so repeated local hours need an occurrence choice."
+      },
+      {
+        "question": "How do I remove a lunch break?",
+        "answer": "Enter its length in whole minutes in Break to remove. A 30-minute break removes 1,800 seconds. The break cannot exceed the full duration. Whether a break is paid is a separate workplace rule."
+      },
+      {
+        "question": "Does daylight saving time change the duration?",
+        "answer": "Yes in Dates & times, when it changes the offset in the selected zone. A midnight-to-midnight interval can be 23 or 25 elapsed hours. Clock times mode uses regular 24-hour days and has no time-zone information."
+      },
+      {
+        "question": "Why does the calculator reject a time that does not exist?",
+        "answer": "When clocks move forward, some local labels are skipped. New York has no 02:30 on March 10, 2024. Choose a real local time instead. The calculator does not automatically move that label to 03:30."
+      },
+      {
+        "question": "What does first or second occurrence mean?",
+        "answer": "When clocks move backward, a local hour can occur twice. The first occurrence is the earlier instant; the second is later. Open Repeated hours & time zones and choose separately for the start and end."
+      },
+      {
+        "question": "Can the start and end be in different time zones?",
+        "answer": "Yes. In Dates & times, choose each zone separately. Each local time is converted to its own UTC instant before subtraction. The result lists the offsets and UTC times used."
+      },
+      {
+        "question": "How do decimal hours work?",
+        "answer": "Minutes are divided by 60. One hour 30 minutes is 1.5 hours, not 1.30 hours. Decimal totals are rounded to six places; the whole-second count and hours/minutes/seconds breakdown remain available."
+      },
+      {
+        "question": "Can I save or share my calculation?",
+        "answer": "Copy the result as text or copy a link with the dates, zones, break and occurrence choices. The link restores explicit zones, so another device does not silently substitute its own zone. Share private times only when you intend to."
+      }
+    ],
+    "relatedHeading": "Choose the right kind of time",
+    "related": [
+      {
+        "title": "Date Calculator",
+        "text": "Count calendar dates or move a date by days, months and years."
+      },
+      {
+        "title": "Time Zone Converter",
+        "text": "See the same moment in different locations."
+      },
+      {
+        "title": "Business Days Calculator",
+        "text": "Count working days with chosen weekends and holidays."
+      }
+    ],
+    "sourcesHeading": "How the timing rules are checked",
+    "sourcesText": "Reference intervals are independently checked with Python zoneinfo after conversion to UTC. Ambiguous and skipped hours follow explicit Temporal disambiguation rules. Every worked example is recalculated in tests.",
+    "footer": "Small tools. A little more space to think."
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "overnight",
+        "mode": "clock",
+        "start": "23:30",
+        "end": "01:15",
+        "nextDay": true,
+        "breakMinutes": "0",
+        "expectedSeconds": 6300
+      },
+      {
+        "id": "leap",
+        "mode": "dates",
+        "start": "2024-02-28T12:00",
+        "end": "2024-03-01T12:00",
+        "startZone": "UTC",
+        "endZone": "UTC",
+        "startOccurrence": "reject",
+        "endOccurrence": "reject",
+        "breakMinutes": "0",
+        "expectedSeconds": 172800
+      },
+      {
+        "id": "spring",
+        "mode": "dates",
+        "start": "2024-03-10T00:00",
+        "end": "2024-03-10T04:00",
+        "startZone": "America/New_York",
+        "endZone": "America/New_York",
+        "startOccurrence": "reject",
+        "endOccurrence": "reject",
+        "breakMinutes": "0",
+        "expectedSeconds": 10800
+      },
+      {
+        "id": "flight",
+        "mode": "dates",
+        "start": "2024-01-01T09:00",
+        "end": "2024-01-01T16:00",
+        "startZone": "America/New_York",
+        "endZone": "Europe/London",
+        "startOccurrence": "reject",
+        "endOccurrence": "reject",
+        "breakMinutes": "0",
+        "expectedSeconds": 7200
+      }
+    ],
+    "related": [
+      {
+        "id": "date-calculator"
+      },
+      {
+        "id": "time-zone-converter"
+      },
+      {
+        "id": "business-days-calculator"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+import { qualitySourceCopy } from '../shared/source-copy.mjs';
+import document from '../../../translation-sources/time-duration-calculator.json' with {type:'json'};
+import {renderQualityPage,esc,planet} from '../shared/page.mjs';
+export const timeCopy=qualitySourceCopy(document),timeExamples=document.nonTranslatableCopy.examples;
+export function renderTimeQuality({copy=timeCopy,...options}){
+  const u=copy.ui;
+  const field=(id,label,type,value)=>`<label class="field" for="${id}"><span>${esc(label)}</span><input id="${id}" type="${type}" value="${value}" ${type==='date'?'min="0001-01-01"':''} step="1" required></label>`;
+  const moment=(id,label,date,time)=>`<fieldset class="moment"><legend>${esc(label)}</legend><div class="moment-fields">${field(id+'-date',u.dateLabel,'date',date)}${field(id+'-time',u.timeLabel,'time',time)}</div></fieldset>`;
+  const zone=(id,label)=>`<label class="field" for="${id}"><span>${esc(label)}</span><select id="${id}"><option value="UTC">UTC</option></select></label>`;
+  const occurrence=(id,label)=>`<label class="field" for="${id}"><span>${esc(label)}</span><select id="${id}">${['reject','earlier','later'].map(v=>`<option value="${v}">${esc(u[v])}</option>`).join('')}</select></label>`;
+  const workspaceHTML=`<section class="workspace time-workspace" id="calculator" tabindex="-1" aria-label="${esc(copy.heading)}">
+  <div class="workspace-top"><fieldset class="mode"><legend class="sr-only">${esc(u.calculation)}</legend><label><input type="radio" name="mode" value="dates" checked><span>${esc(u.between)}</span></label><label><input type="radio" name="mode" value="clock"><span>${esc(u.clock)}</span></label></fieldset><span class="calendar-badge">${esc(u.gregorian)}</span></div>
+  <div class="workspace-body"><form id="time-form" novalidate><div id="dates-fields"><div class="time-pair">${moment('start',u.start,'2026-10-29','09:00')}${moment('end',u.end,'2026-10-29','17:30')}</div>
+  <div class="date-shortcuts"><button class="text-button" type="button" id="swap">${esc(u.swap)}</button><button class="text-button" type="button" id="device-zone">${esc(u.deviceZone)}</button></div>
+  <details class="advanced"><summary>${esc(u.advanced)}</summary><p class="field-note">${esc(u.zoneHint)}</p><div class="time-pair">${zone('start-zone',u.startZone)}${zone('end-zone',u.endZone)}${occurrence('start-occurrence',u.startOccurrence)}${occurrence('end-occurrence',u.endOccurrence)}</div></details></div>
+  <div id="clock-fields" hidden><div class="time-pair">${field('clock-start',u.startClock,'time','09:00')}${field('clock-end',u.endClock,'time','17:30')}</div><label class="check-label"><input type="checkbox" id="next-day"><span>${esc(u.nextDay)}<small>${esc(u.nextDayHint)}</small></span></label></div>
+  <label class="field break-field" for="break"><span>${esc(u.breakLabel)}</span><input id="break" type="number" min="0" step="1" value="0" inputmode="numeric"></label>
+  <p id="error" class="error" role="alert" hidden></p><div class="form-actions"><button class="button primary" type="submit">${esc(u.calculate)}<span aria-hidden="true">→</span></button><button type="button" id="reset" class="button ghost">${esc(u.reset)}</button></div><p class="field-note" id="zone-status"></p></form>
+  <div class="result-panel"><div class="result-top"><span class="eyebrow">${esc(u.result)}</span>${planet(40)}</div><div id="result" aria-live="polite" aria-atomic="true"><p>${esc(u.empty)}</p></div><div class="result-actions"><button class="button result-button" id="copy" type="button">${esc(u.copy)}</button><button class="button result-button" id="share" type="button">${esc(u.share)}</button></div><p class="copy-status" id="copy-status" role="status"></p><label class="fallback" id="copy-fallback" hidden><span>${esc(u.copyFallback)}</span><textarea id="copy-text" rows="3" readonly></textarea></label></div></div></section>`;
+  return renderQualityPage({...options,toolId:'time-duration-calculator',copy,workspaceHTML,dataId:'time-copy',examples:timeExamples,supportTool:{id:'time-zone-converter',label:copy.related[1].title},referenceLinks:['https://docs.python.org/3/library/zoneinfo.html','https://tc39.es/proposal-temporal/docs/zoneddatetime.html']});
+}
