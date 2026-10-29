@@ -1,0 +1,126 @@
+{
+  "source": "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues",
+  "method": "Degenerate single-value range identity; separate rejection-sampling properties and no-repeat tests validate non-degenerate draws",
+  "cases": [
+    {
+      "state": {
+        "mode": "integers",
+        "a": "0",
+        "b": "0",
+        "c": "1",
+        "unique": "no"
+      },
+      "expected": "0"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "1",
+        "b": "1",
+        "c": "2",
+        "unique": "no"
+      },
+      "expected": "1\n1"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "-7",
+        "b": "-7",
+        "c": "3",
+        "unique": "no"
+      },
+      "expected": "-7\n-7\n-7"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "9007199254740993",
+        "b": "9007199254740993",
+        "c": "1",
+        "unique": "no"
+      },
+      "expected": "9007199254740993"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "1000000000000000000000000000001",
+        "b": "1000000000000000000000000000001",
+        "c": "2",
+        "unique": "no"
+      },
+      "expected": "1000000000000000000000000000001\n1000000000000000000000000000001"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "-9007199254740993",
+        "b": "-9007199254740993",
+        "c": "1",
+        "unique": "no"
+      },
+      "expected": "-9007199254740993"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "99",
+        "b": "99",
+        "c": "4",
+        "unique": "no"
+      },
+      "expected": "99\n99\n99\n99"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "1000",
+        "b": "1000",
+        "c": "2",
+        "unique": "no"
+      },
+      "expected": "1000\n1000"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "13",
+        "b": "13",
+        "c": "1",
+        "unique": "no"
+      },
+      "expected": "13"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "-1",
+        "b": "-1",
+        "c": "5",
+        "unique": "no"
+      },
+      "expected": "-1\n-1\n-1\n-1\n-1"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "42",
+        "b": "42",
+        "c": "2",
+        "unique": "no"
+      },
+      "expected": "42\n42"
+    },
+    {
+      "state": {
+        "mode": "integers",
+        "a": "7",
+        "b": "7",
+        "c": "3",
+        "unique": "no"
+      },
+      "expected": "7\n7\n7"
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "toolId": "age-calculator",
+  "sourceCopy": {
+    "title": "Age Calculator — Exact Dates & Next Birthday",
+    "description": "Find calendar age in years, months and days, total days and the next birthday. Choose the February 29 convention. Free, entirely in your browser.",
+    "heading": "Age Calculator",
+    "intro": "Choose a birth date and the date to compare it with. See calendar age, total days and the next birthday.",
+    "category": "Numbers & relationships",
+    "eyebrow": "Years lived. Dates made clear.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style",
+        "exact": "Exact value before display rounding",
+        "saved": "Amount saved",
+        "discountRate": "Effective discount",
+        "count": "Count",
+        "range": "Usable range",
+        "sum": "Sum",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "median": "Median",
+        "mode": "Mode",
+        "totalWeight": "Total weight",
+        "gradeStatus": "Target status",
+        "totalDays": "Total elapsed days",
+        "nextBirthday": "Next birthday",
+        "birthdayCountdown": "Days until birthday",
+        "litres": "Litres used",
+        "usGallons": "US gallons used",
+        "imperialGallons": "Imperial gallons used",
+        "perPerson": "Cost per person",
+        "distance": "Complete distance"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser.",
+        "POSITIVE": "Enter a positive original price.",
+        "PERCENT_RANGE": "Use a discount percentage from 0 to 100.",
+        "AMOUNT_RANGE": "The sale price or fixed reduction must lie from zero to the original price.",
+        "WEIGHTS": "Use matching value and weight lists. Weights must be nonnegative with a positive total.",
+        "GRADE_RANGE": "Use grades from 0 to 100 and a final weight above zero up to 100.",
+        "DATE": "Choose a valid calendar date in the supported range.",
+        "DATE_ORDER": "The comparison date must be on or after the birth date.",
+        "FUEL_RANGE": "Use nonnegative distance and price, positive efficiency and a positive whole number of people.",
+        "RANDOM_OPTIONS": "Use a positive whole-number count and choose whether repeats are allowed.",
+        "RANGE": "Check the bounds. The selected integer or decimal grid must contain at least one value.",
+        "NOT_ENOUGH": "The range contains fewer different values than you requested. Widen it or allow repeats."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples",
+      "noRepeated": "No repeated value",
+      "targetMet": "Target already secured with a zero final score",
+      "unattainable": "Above 100%; target unattainable in this model",
+      "withinRange": "Within the entered 0–100 grade scale",
+      "dateRange": "Outside the supported calendar range",
+      "answerLabel": "Calendar age: years / months / days"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "id": "birthday",
+        "heading": "On the birthday itself",
+        "text": "From 2000-01-15 to 2025-01-15, the age is 25 years, 0 months and 0 days. The birthday countdown is zero."
+      },
+      {
+        "id": "before",
+        "heading": "The day before a birthday",
+        "text": "From 2000-01-15 to 2025-01-14, the calendar age is 24 years, 11 months and 30 days."
+      },
+      {
+        "id": "leap",
+        "heading": "February 28 convention",
+        "text": "For a 2024-02-29 birth, 2025-02-28 counts as the first birthday when February 28 is selected."
+      },
+      {
+        "id": "march",
+        "heading": "March 1 convention",
+        "text": "With March 1 selected, the same 2025-02-28 reference is still 0 years, 11 months and 30 days."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches your task. The input labels follow that choice."
+        },
+        {
+          "heading": "Enter the values",
+          "text": "Age is based on calendar dates, without birth times. Choose the leap-day birthday convention explicitly."
+        },
+        {
+          "heading": "Check the result",
+          "text": "Calculate, inspect the working and save the result if needed. Cancel stops a long job."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The method behind this result",
+      "paragraphs": [
+        "Calendar age counts completed birthday anniversaries, then complete months and remaining days. It is not total days divided by 365. Month lengths and leap years vary, so that division cannot reproduce an exact years-months-days interval.",
+        "All entered dates are Gregorian civil dates. They are represented at UTC midnight for arithmetic, so a daylight-saving clock change does not add or remove a calendar day. No birth time or time zone is inferred from the input.",
+        "A February 29 birth needs a convention in years without that date. February 28 and March 1 are both offered explicitly. The selected convention affects the anniversary anchor, completed years and the birthday countdown. The page does not choose a legal rule for a jurisdiction.",
+        "After the completed years, the calculation advances complete months from the anniversary anchor. A target month that lacks the anchor day uses its final day. The remaining difference is then counted in days. The working shows the month anchor used for that remainder.",
+        "Total days is the date difference without adding an extra inclusive day. The next birthday is today when the reference date is an anniversary, giving a zero countdown. Otherwise it is the next anniversary according to the selected leap-day convention.",
+        "The initial reference date comes from the device’s local calendar date. You can replace it with a historical or future reference. Dates use the browser’s native supported range; an unavailable later birthday is labelled rather than replaced with a fabricated date."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right assumptions",
+      "paragraphs": [
+        "Use this for a personal date comparison or a planning note where calendar years and remaining months matter. Verify the selected reference date, especially if the device clock is wrong or the page has been open across midnight.",
+        "The same date pair can have different year-month-day descriptions under different month-end conventions. Total elapsed calendar days remains a separate, useful check. The chosen method is described so the output is reproducible instead of merely appearing exact.",
+        "Legal eligibility, medical ages and jurisdiction-specific birthday rules require their own authoritative interpretation. This page performs calendar arithmetic and displays a convention; it does not establish an official age status."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Does this use my birth time?",
+        "answer": "No. It compares calendar dates only. Hours, time zones and the exact instant of birth are not part of this model."
+      },
+      {
+        "question": "Why not divide total days by 365?",
+        "answer": "Years and months have different lengths. Calendar age counts anniversaries and complete months before the remaining days."
+      },
+      {
+        "question": "How are February 29 birthdays treated?",
+        "answer": "Choose February 28 or March 1 for a non-leap year. The anniversary and countdown use that visible convention."
+      },
+      {
+        "question": "What happens on my birthday?",
+        "answer": "The completed-year count increases, and the birthday shown for the reference date has a countdown of zero."
+      },
+      {
+        "question": "Are total days inclusive?",
+        "answer": "No extra inclusive day is added. A birth date equal to the reference date gives zero elapsed days."
+      },
+      {
+        "question": "Can I choose a future reference date?",
+        "answer": "Yes. Any valid reference on or after the birth date is accepted within the supported calendar range."
+      },
+      {
+        "question": "Where does the default comparison date come from?",
+        "answer": "The browser reads the device’s local calendar date when the page loads. You can change the field explicitly."
+      },
+      {
+        "question": "Can daylight saving change the total days?",
+        "answer": "Not here. The arithmetic uses civil dates at UTC midnight, rather than local clock-hour differences."
+      },
+      {
+        "question": "Why can month-end results look unusual?",
+        "answer": "Missing target days are constrained to the end of the month. The working shows the anchor before the remaining days are counted."
+      },
+      {
+        "question": "Does this determine my legal age?",
+        "answer": "No. It shows calendar arithmetic with a chosen leap-day convention. Official eligibility rules require the relevant authoritative rule."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "id": "date-calculator",
+        "title": "Date Calculator",
+        "text": "Continue with date calculator."
+      },
+      {
+        "id": "time-duration-calculator",
+        "title": "Time Duration Calculator",
+        "text": "Continue with time duration calculator."
+      },
+      {
+        "id": "business-days-calculator",
+        "title": "Business Days Calculator",
+        "text": "Continue with business days calculator."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "age": "Calendar age"
+      },
+      "fields": {
+        "a": "Date of birth",
+        "b": "Age on this date",
+        "policy": "February 29 in a non-leap year"
+      },
+      "modeLabels": {},
+      "options": {
+        "feb28": "Use February 28",
+        "march1": "Use March 1"
+      },
+      "hint": "Age is based on calendar dates, without birth times. Choose the leap-day birthday convention explicitly."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "birthday",
+        "mode": "age",
+        "a": "2000-01-15",
+        "b": "2025-01-15",
+        "policy": "feb28",
+        "expected": "25 / 0 / 0"
+      },
+      {
+        "id": "before",
+        "mode": "age",
+        "a": "2000-01-15",
+        "b": "2025-01-14",
+        "policy": "feb28",
+        "expected": "24 / 11 / 30"
+      },
+      {
+        "id": "leap",
+        "mode": "age",
+        "a": "2024-02-29",
+        "b": "2025-02-28",
+        "policy": "feb28",
+        "expected": "1 / 0 / 0"
+      },
+      {
+        "id": "march",
+        "mode": "age",
+        "a": "2024-02-29",
+        "b": "2025-02-28",
+        "policy": "march1",
+        "expected": "0 / 11 / 30"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/age-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ]
+  }
+}

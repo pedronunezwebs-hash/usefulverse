@@ -1,0 +1,114 @@
+{
+  "source": "https://docs.python.org/3/library/statistics.html",
+  "method": "Independent Python exact mean/weight/final-grade arithmetic",
+  "cases": [
+    {
+      "state": {
+        "mode": "mean",
+        "a": "10,12,14",
+        "b": "",
+        "c": ""
+      },
+      "expected": "12"
+    },
+    {
+      "state": {
+        "mode": "mean",
+        "a": "0.1 0.2",
+        "b": "",
+        "c": ""
+      },
+      "expected": "3/20"
+    },
+    {
+      "state": {
+        "mode": "mean",
+        "a": "-2 0 2",
+        "b": "",
+        "c": ""
+      },
+      "expected": "0"
+    },
+    {
+      "state": {
+        "mode": "mean",
+        "a": "1/3 2/3",
+        "b": "",
+        "c": ""
+      },
+      "expected": "1/2"
+    },
+    {
+      "state": {
+        "mode": "mean",
+        "a": "9007199254740993 9007199254740995",
+        "b": "",
+        "c": ""
+      },
+      "expected": "9007199254740994"
+    },
+    {
+      "state": {
+        "mode": "weighted",
+        "a": "90 80",
+        "b": "3 1",
+        "c": ""
+      },
+      "expected": "175/2"
+    },
+    {
+      "state": {
+        "mode": "weighted",
+        "a": "1 2 3",
+        "b": "0 1 1",
+        "c": ""
+      },
+      "expected": "5/2"
+    },
+    {
+      "state": {
+        "mode": "weighted",
+        "a": "1/3 2/3",
+        "b": "1 3",
+        "c": ""
+      },
+      "expected": "7/12"
+    },
+    {
+      "state": {
+        "mode": "final",
+        "a": "80",
+        "b": "25",
+        "c": "85"
+      },
+      "expected": "100%"
+    },
+    {
+      "state": {
+        "mode": "final",
+        "a": "90",
+        "b": "20",
+        "c": "80"
+      },
+      "expected": "40%"
+    },
+    {
+      "state": {
+        "mode": "final",
+        "a": "50",
+        "b": "25",
+        "c": "90"
+      },
+      "expected": "210%"
+    },
+    {
+      "state": {
+        "mode": "mean",
+        "a": "2 7 19 24 25",
+        "b": "",
+        "c": ""
+      },
+      "expected": "77/5"
+    }
+  ]
+}

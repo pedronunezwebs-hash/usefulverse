@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "toolId": "average-calculator",
+  "sourceCopy": {
+    "title": "Average Calculator — Mean, Weights & Final Grades",
+    "description": "Calculate an exact mean, median, mode or weighted average. Work out a required final grade and inspect the steps. Free, entirely in your browser.",
+    "heading": "Average Calculator",
+    "intro": "Summarize a list, give values different weights or find the grade needed on a final. Keep the arithmetic exact.",
+    "category": "Numbers & relationships",
+    "eyebrow": "A useful summary, with the details still visible.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style",
+        "exact": "Exact value before display rounding",
+        "saved": "Amount saved",
+        "discountRate": "Effective discount",
+        "count": "Count",
+        "range": "Usable range",
+        "sum": "Sum",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "median": "Median",
+        "mode": "Mode",
+        "totalWeight": "Total weight",
+        "gradeStatus": "Target status",
+        "totalDays": "Total elapsed days",
+        "nextBirthday": "Next birthday",
+        "birthdayCountdown": "Days until birthday",
+        "litres": "Litres used",
+        "usGallons": "US gallons used",
+        "imperialGallons": "Imperial gallons used",
+        "perPerson": "Cost per person",
+        "distance": "Complete distance"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser.",
+        "POSITIVE": "Enter a positive original price.",
+        "PERCENT_RANGE": "Use a discount percentage from 0 to 100.",
+        "AMOUNT_RANGE": "The sale price or fixed reduction must lie from zero to the original price.",
+        "WEIGHTS": "Use matching value and weight lists. Weights must be nonnegative with a positive total.",
+        "GRADE_RANGE": "Use grades from 0 to 100 and a final weight above zero up to 100.",
+        "DATE": "Choose a valid calendar date in the supported range.",
+        "DATE_ORDER": "The comparison date must be on or after the birth date.",
+        "FUEL_RANGE": "Use nonnegative distance and price, positive efficiency and a positive whole number of people.",
+        "RANDOM_OPTIONS": "Use a positive whole-number count and choose whether repeats are allowed.",
+        "RANGE": "Check the bounds. The selected integer or decimal grid must contain at least one value.",
+        "NOT_ENOUGH": "The range contains fewer different values than you requested. Widen it or allow repeats."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples",
+      "noRepeated": "No repeated value",
+      "targetMet": "Target already secured with a zero final score",
+      "unattainable": "Above 100%; target unattainable in this model",
+      "withinRange": "Within the entered 0–100 grade scale",
+      "dateRange": "Outside the supported calendar range"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "id": "mean",
+        "heading": "A simple mean",
+        "text": "10, 12 and 14 have a sum of 36 and a mean of 12. Their median is also 12."
+      },
+      {
+        "id": "weight",
+        "heading": "Different credits",
+        "text": "Grades 90 and 80 with weights 3 and 1 give 87.5, exactly 175/2."
+      },
+      {
+        "id": "final",
+        "heading": "A final worth one quarter",
+        "text": "A current grade of 80, target 85 and final weight 25% require 100% on the final."
+      },
+      {
+        "id": "fractions",
+        "heading": "Keep decimal values exact",
+        "text": "The mean of 0.1 and 0.2 is exactly 0.15, or 3/20, without binary floating-point noise."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches your task. The input labels follow that choice."
+        },
+        {
+          "heading": "Enter the values",
+          "text": "Lists accept spaces, commas, tabs or new lines. Use a dot for decimals. Mixed numbers with spaces are not list entries."
+        },
+        {
+          "heading": "Check the result",
+          "text": "Calculate, inspect the working and save the result if needed. Cancel stops a long job."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The method behind this result",
+      "paragraphs": [
+        "The arithmetic mean is the sum divided by the number of entries. Each value contributes once, including zeroes and negative values. A blank list is not assigned an invented mean. Whitespace, commas and semicolons separate entries, while a dot marks a decimal.",
+        "The median is the middle value after exact sorting. With an even number of values, it is the mean of the two middle entries. The mode is any value tied for the highest repeated frequency. When no value repeats, the page says there is no repeated mode.",
+        "Equivalent fractions count as the same value for the mode. For example, 0.5 and 1/2 both normalize to 1/2. Sorting also compares exact fractions rather than rounded decimal strings. Very close values therefore keep their correct order.",
+        "A weighted average divides the sum of value × weight by the total weight. Enter one weight for every value in the same order. Weights must be nonnegative, and their total must be positive. A zero weight is allowed but contributes nothing to the weighted answer.",
+        "Required final grade assumes the current grade covers all work before the final. The formula is (target × 100 - current × (100 - final weight)) / final weight. The current and target grades lie from zero to one hundred, and the final weight is positive.",
+        "A required grade above one hundred is labelled unattainable under this model. A negative requirement means the target is already secured with a zero final score, so the displayed requirement is zero. Institutions may use other grading or rounding rules; verify the actual policy."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right assumptions",
+      "paragraphs": [
+        "Use the summary to compare the mean with the median before treating one number as typical. A small number of extreme values can move the mean while leaving the middle of the list less affected. The displayed count and sum help catch missing entries.",
+        "Use weighted mode for credits, quantities or contributions that are not equal. Keep values and weights paired in their original order. Sorting one list without the other changes the problem and may produce a plausible but wrong answer.",
+        "A mean is not a full distribution analysis. This page keeps its task distinct from standard deviation and other statistical tools. Use the related dispersion tool when you need spread, variability or a fuller uncertainty calculation."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Which separators can I paste?",
+        "answer": "Spaces, commas, tabs, semicolons and line breaks separate list entries. Use a dot for a decimal; a decimal comma is ambiguous here."
+      },
+      {
+        "question": "Does zero count in the mean?",
+        "answer": "Yes. Zero is a valid value and contributes to the count. An empty line is a separator, not a zero entry."
+      },
+      {
+        "question": "How does the median work?",
+        "answer": "Values are sorted exactly. The middle value is used, or the mean of the two middle values for an even count."
+      },
+      {
+        "question": "Can there be several modes?",
+        "answer": "Yes. Every value tied for the highest repeated frequency is listed. If none repeats, the page says so."
+      },
+      {
+        "question": "Can weights be zero?",
+        "answer": "Yes, but not every weight. Weights must be nonnegative and their total must be greater than zero."
+      },
+      {
+        "question": "Must the weight list match the value list?",
+        "answer": "Yes. There must be one weight for every value, in the same order."
+      },
+      {
+        "question": "What does final grade mode assume?",
+        "answer": "Your current grade covers all work before the final. The final weight is its percentage of the complete grade."
+      },
+      {
+        "question": "What if the required final score exceeds 100?",
+        "answer": "The target is unattainable under the entered model. The page keeps the required result and labels that limitation."
+      },
+      {
+        "question": "Can I enter exact fractions?",
+        "answer": "Yes, use a simple fraction such as 1/3. Mixed numbers containing spaces are not single entries in a whitespace-separated list."
+      },
+      {
+        "question": "Does this replace my school’s grading policy?",
+        "answer": "No. Check its weighting, extra-credit and rounding rules. This tool calculates the model you enter."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "id": "standard-deviation-calculator",
+        "title": "Standard Deviation Calculator",
+        "text": "Continue with standard deviation calculator."
+      },
+      {
+        "id": "percentage-calculator",
+        "title": "Percentage Calculator",
+        "text": "Continue with percentage calculator."
+      },
+      {
+        "id": "fraction-calculator",
+        "title": "Fraction Calculator",
+        "text": "Continue with fraction calculator."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "mean": "Mean and summary",
+        "weighted": "Weighted average",
+        "final": "Required final grade"
+      },
+      "fields": {
+        "a": "Values",
+        "b": "Matching weights",
+        "c": "Target grade (%)"
+      },
+      "modeLabels": {
+        "final": {
+          "a": "Current grade (%)",
+          "b": "Final exam weight (%)",
+          "c": "Target grade (%)"
+        }
+      },
+      "options": {},
+      "hint": "Lists accept spaces, commas, tabs or new lines. Use a dot for decimals. Mixed numbers with spaces are not list entries."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "mean",
+        "mode": "mean",
+        "a": "10,12,14",
+        "expected": "12"
+      },
+      {
+        "id": "weight",
+        "mode": "weighted",
+        "a": "90 80",
+        "b": "3 1",
+        "expected": "175/2"
+      },
+      {
+        "id": "final",
+        "mode": "final",
+        "a": "80",
+        "b": "25",
+        "c": "85",
+        "expected": "100%"
+      },
+      {
+        "id": "fractions",
+        "mode": "mean",
+        "a": "0.1 0.2",
+        "expected": "3/20"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/average-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ]
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "toolId": "discount-calculator",
+  "sourceCopy": {
+    "title": "Discount Calculator — Sale Price, Savings & Stacks",
+    "description": "Find a sale price, reverse a discount or combine several offers. See exact savings and rounded amounts with clear steps. Free in your browser.",
+    "heading": "Discount Calculator",
+    "intro": "Check a sale price or find the discount from two prices. Combine offers without adding percentages that use different bases.",
+    "category": "Numbers & relationships",
+    "eyebrow": "A better price starts with clear arithmetic.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style",
+        "exact": "Exact value before display rounding",
+        "saved": "Amount saved",
+        "discountRate": "Effective discount",
+        "count": "Count",
+        "range": "Usable range",
+        "sum": "Sum",
+        "minimum": "Minimum",
+        "maximum": "Maximum",
+        "median": "Median",
+        "mode": "Mode",
+        "totalWeight": "Total weight",
+        "gradeStatus": "Target status",
+        "totalDays": "Total elapsed days",
+        "nextBirthday": "Next birthday",
+        "birthdayCountdown": "Days until birthday",
+        "litres": "Litres used",
+        "usGallons": "US gallons used",
+        "imperialGallons": "Imperial gallons used",
+        "perPerson": "Cost per person",
+        "distance": "Complete distance"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser.",
+        "POSITIVE": "Enter a positive original price.",
+        "PERCENT_RANGE": "Use a discount percentage from 0 to 100.",
+        "AMOUNT_RANGE": "The sale price or fixed reduction must lie from zero to the original price.",
+        "WEIGHTS": "Use matching value and weight lists. Weights must be nonnegative with a positive total.",
+        "GRADE_RANGE": "Use grades from 0 to 100 and a final weight above zero up to 100.",
+        "DATE": "Choose a valid calendar date in the supported range.",
+        "DATE_ORDER": "The comparison date must be on or after the birth date.",
+        "FUEL_RANGE": "Use nonnegative distance and price, positive efficiency and a positive whole number of people.",
+        "RANDOM_OPTIONS": "Use a positive whole-number count and choose whether repeats are allowed.",
+        "RANGE": "Check the bounds. The selected integer or decimal grid must contain at least one value.",
+        "NOT_ENOUGH": "The range contains fewer different values than you requested. Widen it or allow repeats."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples",
+      "noRepeated": "No repeated value",
+      "targetMet": "Target already secured with a zero final score",
+      "unattainable": "Above 100%; target unattainable in this model",
+      "withinRange": "Within the entered 0–100 grade scale",
+      "dateRange": "Outside the supported calendar range"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "id": "sale",
+        "heading": "A straightforward offer",
+        "text": "20% off 100 gives a sale price of 80.00 and savings of 20.00."
+      },
+      {
+        "id": "reverse",
+        "heading": "Check a claimed discount",
+        "text": "A price reduced from 80 to 60 is a 25% discount, with savings of 20.00."
+      },
+      {
+        "id": "stack",
+        "heading": "Two successive offers",
+        "text": "20% off, followed by 10% off, takes 100 to 72.00. The combined saving is 28%, not 30%."
+      },
+      {
+        "id": "recover",
+        "heading": "Recover the original price",
+        "text": "A sale price of 72 after a 20% discount came from an original price of 90.00."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches your task. The input labels follow that choice."
+        },
+        {
+          "heading": "Enter the values",
+          "text": "Use one currency for both prices. Enter percentage numbers without %. Stacked rates use commas between offers."
+        },
+        {
+          "heading": "Check the result",
+          "text": "Calculate, inspect the working and save the result if needed. Cancel stops a long job."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The method behind this result",
+      "paragraphs": [
+        "Percent off uses sale price = original × (1 - rate/100). The savings are the difference between original and sale price. The original must be positive, and a discount rate lies from zero to one hundred percent.",
+        "Find the discount uses the original price and the actual sale price. The saved amount divided by the original gives the discount rate. A sale price above the original is an increase, so this discount mode rejects it rather than reporting negative savings.",
+        "Fixed amount off subtracts a stated coupon amount from the original. The reduction cannot exceed the original in this model. A coupon worth twenty off a price of ninety-five therefore gives seventy-five, independent of any percentage label.",
+        "Successive discounts apply one multiplier after another. Each percentage acts on the amount left by the previous offer. Multiplying 0.8 by 0.9 leaves 0.72 of the original. Adding the percentages would incorrectly treat both offers as reductions from the same base.",
+        "Recover original price divides the sale price by the remaining fraction. A one-hundred-percent discount leaves no information about the original, because every original could produce a free item. That case is rejected as undefined instead of guessed.",
+        "Calculations remain exact fractions until display. Amounts round to two decimal places, with half-cent ties away from zero. Exact final values are also shown. Tax, shipping, minimum-spend rules and store-specific coupon restrictions are not inferred."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right assumptions",
+      "paragraphs": [
+        "Use the reverse mode to compare the actual starting and final prices behind an offer. It checks the arithmetic only. It does not verify a retailer’s claimed previous price or decide whether a promotion complies with local rules.",
+        "Use successive discounts when a store applies offers in sequence. Confirm the order and whether each offer is actually eligible. A percentage and a fixed coupon are different operations, so a store’s stated sequence still matters.",
+        "For an actual transaction, follow the shop’s item-level and tax rounding policy. The page uses a transparent arithmetic convention and shows the exact result before display rounding. Small differences can arise when several items are rounded separately."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Can I find the sale price from a percentage?",
+        "answer": "Yes. Choose Percent off, enter the original price and rate, then read the sale price and saved amount."
+      },
+      {
+        "question": "Can I find the percentage from two prices?",
+        "answer": "Choose Find the discount. Enter a positive original price and a sale price from zero up to that original."
+      },
+      {
+        "question": "Do two discounts add together?",
+        "answer": "Usually no. Successive discounts act on changing bases. Twenty percent followed by ten percent gives a 28% total reduction."
+      },
+      {
+        "question": "Can I enter a fixed coupon?",
+        "answer": "Yes. Choose Fixed amount off. The coupon cannot exceed the original price in this calculation."
+      },
+      {
+        "question": "How do I recover the original price?",
+        "answer": "Choose Recover original price and enter the sale price and known percentage reduction. A 100% reduction cannot determine the original."
+      },
+      {
+        "question": "Does this include sales tax?",
+        "answer": "No. It calculates the entered prices before any tax or shipping rule you have not included yourself."
+      },
+      {
+        "question": "Why does an exact value contain a fraction?",
+        "answer": "Decimal prices and percentages are calculated exactly. The money display rounds to two places, while the exact value preserves any remainder."
+      },
+      {
+        "question": "How are half-cent ties rounded?",
+        "answer": "They round away from zero at the two-place money display. Store or invoice policies may use another convention."
+      },
+      {
+        "question": "Can the sale price be higher than the original?",
+        "answer": "Not in the discount modes. Use percentage change when you want to describe a price increase."
+      },
+      {
+        "question": "Is there a limit on stacked offers?",
+        "answer": "There is no fixed offer count. Separate the percentage numbers with commas; practical work is limited by device memory and time."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "id": "percentage-calculator",
+        "title": "Percentage Calculator",
+        "text": "Continue with percentage calculator."
+      },
+      {
+        "id": "tip-calculator",
+        "title": "Tip Calculator",
+        "text": "Continue with tip calculator."
+      },
+      {
+        "id": "ratio-proportion-calculator",
+        "title": "Ratio Proportion Calculator",
+        "text": "Continue with ratio proportion calculator."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "percent": "Percent off",
+        "reverse": "Find the discount",
+        "amount": "Fixed amount off",
+        "recover": "Recover original price",
+        "stack": "Successive discounts"
+      },
+      "fields": {
+        "a": "Original price",
+        "b": "Discount percentage"
+      },
+      "modeLabels": {
+        "reverse": {
+          "b": "Sale price"
+        },
+        "amount": {
+          "b": "Fixed amount off"
+        },
+        "recover": {
+          "a": "Sale price",
+          "b": "Discount percentage"
+        },
+        "stack": {
+          "b": "Discount percentages, separated by commas"
+        }
+      },
+      "options": {},
+      "hint": "Use one currency for both prices. Enter percentage numbers without %. Stacked rates use commas between offers."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "sale",
+        "mode": "percent",
+        "a": "100",
+        "b": "20",
+        "expected": "80.00"
+      },
+      {
+        "id": "reverse",
+        "mode": "reverse",
+        "a": "80",
+        "b": "60",
+        "expected": "60.00"
+      },
+      {
+        "id": "stack",
+        "mode": "stack",
+        "a": "100",
+        "b": "20,10",
+        "expected": "72.00"
+      },
+      {
+        "id": "recover",
+        "mode": "recover",
+        "a": "72",
+        "b": "20",
+        "expected": "90.00"
+      }
+    ],
+    "referenceLinks": [
+      "https://www.calculator.net/discount-calculator.html",
+      "https://docs.python.org/3/library/fractions.html"
+    ]
+  }
+}
