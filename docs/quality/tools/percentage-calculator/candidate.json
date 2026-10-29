@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "percentage-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/percentage-calculator/",
+  "bytes": {
+    "criticalCSS": 13152,
+    "html": 37158,
+    "htmlBrotli": 8586,
+    "cssBrotli": 3850,
+    "jsBrotli": 2987,
+    "font": 40784
+  }
+}

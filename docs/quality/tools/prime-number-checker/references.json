@@ -1,0 +1,97 @@
+{
+  "source": "https://mathworld.wolfram.com/PrimeNumber.html",
+  "method": "Definition independently implemented by Python trial division through math.isqrt, not Miller-Rabin",
+  "cases": [
+    {
+      "state": {
+        "mode": "check",
+        "a": "0"
+      },
+      "expected": "neither"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "1"
+      },
+      "expected": "neither"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "2"
+      },
+      "expected": "prime"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "3"
+      },
+      "expected": "prime"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "4"
+      },
+      "expected": "composite"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "97"
+      },
+      "expected": "prime"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "561"
+      },
+      "expected": "composite"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "1105"
+      },
+      "expected": "composite"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "1729"
+      },
+      "expected": "composite"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "7919"
+      },
+      "expected": "prime"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "104729"
+      },
+      "expected": "prime"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "1000000"
+      },
+      "expected": "composite"
+    },
+    {
+      "state": {
+        "mode": "check",
+        "a": "2147483647"
+      },
+      "expected": "prime"
+    }
+  ]
+}

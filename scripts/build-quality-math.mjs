@@ -1,0 +1,3 @@
+import{readFile}from'node:fs/promises';import{buildQualityPage}from'./build-quality-page.mjs';import{renderMathQuality}from'../src/quality/math-family/render.mjs';import{ids}from'../src/quality/math-family/definitions.mjs';
+const toolId=process.argv[3];if(!ids.includes(toolId))throw Error('Choose an explicit supported tool slug');
+const doc=JSON.parse(await readFile(new URL('../translation-sources/'+toolId+'.json',import.meta.url)));const cssExtra=await readFile(new URL('../src/quality/math-family/style.css',import.meta.url),'utf8');await buildQualityPage({toolId,render:opts=>renderMathQuality({...opts,doc}),cssExtra,workerEntry:'worker.mjs'});

@@ -1,0 +1,114 @@
+{
+  "toolId": "percentage-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks and first-party products; no current keyword volume, SERP rank or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "percentage calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Percent of a value",
+      "section": "calculator"
+    },
+    {
+      "phrase": "What percentage?",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Find the whole",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Percentage change",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Percentage difference",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Increase by percent",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Decrease by percent",
+      "section": "examples"
+    },
+    {
+      "phrase": "Percentage error",
+      "section": "examples"
+    },
+    {
+      "phrase": "exact percentage calculator",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator with steps",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator free",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator online",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator no upload",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator large numbers",
+      "section": "examples"
+    },
+    {
+      "phrase": "percentage calculator examples",
+      "section": "examples"
+    },
+    {
+      "phrase": "How do I find a percent of a number?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How do I find the original whole?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is change from zero undefined?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How do change and difference differ?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I use a negative original value?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What is percentage error?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does a percentage have to be below 100?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Are percentage points the same as percent change?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why does the answer sometimes contain a fraction?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I undo a discount by adding the same percentage?",
+      "section": "questions"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "source": "https://www.calculator.net/ratio-calculator.html",
+  "method": "Python Fraction/math.lcm/math.gcd independent simplification",
+  "cases": [
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "12:18"
+      },
+      "expected": "2 : 3"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "0.5:1.25:2"
+      },
+      "expected": "2 : 5 : 8"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "9:12:15"
+      },
+      "expected": "3 : 4 : 5"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "0:12"
+      },
+      "expected": "0 : 1"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "-4:8"
+      },
+      "expected": "-1 : 2"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "2/3:4/9"
+      },
+      "expected": "3 : 2"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "1.2:0.8"
+      },
+      "expected": "3 : 2"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "1000:250"
+      },
+      "expected": "4 : 1"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "0.01:0.02"
+      },
+      "expected": "1 : 2"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "4:6:8:10"
+      },
+      "expected": "2 : 3 : 4 : 5"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "99999999999999999999:3"
+      },
+      "expected": "33333333333333333333 : 1"
+    },
+    {
+      "state": {
+        "mode": "simplify",
+        "a": "7:11"
+      },
+      "expected": "7 : 11"
+    }
+  ]
+}

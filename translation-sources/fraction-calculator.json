@@ -1,0 +1,290 @@
+{
+  "schemaVersion": 1,
+  "toolId": "fraction-calculator",
+  "sourceCopy": {
+    "title": "Fraction Calculator — Exact Steps & Mixed Numbers",
+    "description": "Add, subtract, multiply or divide fractions with exact steps. Simplify, compare, convert decimals and add a list. Free, entirely in your browser.",
+    "heading": "Fraction Calculator",
+    "intro": "Work with fractions, decimals or mixed numbers. Get an exact simplified answer and the steps that lead to it.",
+    "category": "Numbers & relationships",
+    "eyebrow": "Parts of a whole. A clearer answer.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Calculated in your browser"
+      ],
+      "calculate": "Calculate",
+      "cancel": "Cancel",
+      "result": "The answer, with the working",
+      "empty": "Your result will appear here.",
+      "working": "Calculating in the background…",
+      "cancelled": "Stopped. Change the input or calculate again.",
+      "steps": "How the calculation works",
+      "download": "Download result",
+      "noScript": "Turn on JavaScript to calculate. The worked examples remain available.",
+      "decimalNote": "Decimal values are rounded to 12 places. The fraction stays exact.",
+      "labels": {
+        "decimal": "Decimal value",
+        "mixed": "Mixed number",
+        "factor": "Smallest divisor found",
+        "cofactor": "Paired factor",
+        "witness": "Composite witness base",
+        "rounds": "Test rounds",
+        "digitReading": "Reading style"
+      },
+      "answers": {
+        "prime": "Prime",
+        "composite": "Composite",
+        "neither": "Neither prime nor composite",
+        "probable": "Probably prime"
+      },
+      "digitNotice": "Digit-by-digit reading; named English scales are not used for this value.",
+      "errors": {
+        "NUMBER": "Use a whole number, decimal point, fraction, or a mixed number such as 2 1/3. Do not use thousands separators.",
+        "INTEGER": "Enter a nonnegative whole number using digits 0–9.",
+        "ZERO_DENOMINATOR": "A denominator cannot be zero. Check the fraction or proportion.",
+        "DIVIDE_ZERO": "Division by zero is undefined. Change the divisor.",
+        "ZERO_BASE": "This percentage is undefined because its reference value is zero.",
+        "NONNEGATIVE": "Percentage difference uses nonnegative values. Choose Change for signed values.",
+        "RATIO": "Separate at least two ratio terms with a colon, such as 2:3.",
+        "ALL_ZERO": "An all-zero ratio has no unique simplest form. Enter at least one nonzero term.",
+        "ONE_UNKNOWN": "Replace exactly one of A, B, C or D with a question mark.",
+        "OPTIONS": "Check the calculation mode and options.",
+        "LINK": "This link contains invalid options. Enter your values again.",
+        "WORKER_FAILED": "Background calculation could not start. Reload in a current browser."
+      },
+      "pythonSource": "Primary calculation reference",
+      "temporalSource": "Further rules and worked examples"
+    },
+    "navigation": {
+      "skip": "Skip to calculator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Method & meaning",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A small head start",
+      "how": "One simple task",
+      "method": "Understand the answer",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four useful ways to get started",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "id": "add",
+        "heading": "Different denominators",
+        "text": "1/2 + 1/3 = 5/6. Rewrite both values with denominator 6 before adding."
+      },
+      {
+        "id": "mixed",
+        "heading": "A mixed number",
+        "text": "2 1/3 × 3/4 = 7/4 = 1 3/4. The whole part and fraction use one sign."
+      },
+      {
+        "id": "decimal",
+        "heading": "An exact decimal input",
+        "text": "0.125 becomes 1/8. Reading the decimal digits directly avoids floating-point rounding."
+      },
+      {
+        "id": "list",
+        "heading": "More than two fractions",
+        "text": "1/2, 1/3 and 1/6 add to 1. Put each value on its own line."
+      }
+    ],
+    "how": {
+      "heading": "Choose, enter, check",
+      "steps": [
+        {
+          "heading": "Choose the question",
+          "text": "Select the mode that matches the task. The field labels change with the question."
+        },
+        {
+          "heading": "Enter your values",
+          "text": "Use 1/2, 0.5 or 2 1/3. Use a dot for decimals; thousands separators are not accepted."
+        },
+        {
+          "heading": "Read the working",
+          "text": "Calculate, check the result and inspect the steps. Copy the answer or download the complete result."
+        }
+      ]
+    },
+    "method": {
+      "heading": "The rules behind the result",
+      "paragraphs": [
+        "A fraction has a numerator above a nonzero denominator. The denominator names the equal-sized parts. The numerator counts those parts. Reducing both numbers by their greatest common divisor keeps the value unchanged. A positive denominator makes signs easier to compare.",
+        "To add or subtract, first use a common denominator. The least common multiple gives the smallest useful denominator. Rewrite each numerator by the same factor as its denominator. Then combine the numerators and reduce the result. The working shows that intermediate common-denominator step.",
+        "To multiply, multiply numerators and denominators, then simplify. To divide, multiply by the reciprocal of the second fraction. A zero divisor has no reciprocal. The page clears the previous answer and explains that case instead of leaving an old result visible.",
+        "Mixed numbers are converted to improper fractions before calculation. Here, -2 1/3 means -(2 + 1/3), which is -7/3. The sign applies to the whole mixed value. A decimal such as 0.125 becomes 125/1000 before reduction.",
+        "All arithmetic uses integers of arbitrary precision. The exact fraction is the main answer. The decimal panel rounds to twelve places and marks inexact values with an approximation sign. A repeating decimal therefore does not replace its exact fraction with misleading digits.",
+        "Add a list when a recipe or exercise has many terms. Blank lines are skipped. Each line is added in order, and the working keeps every intermediate sum. This mode adds values; it does not parse a general expression with operator precedence."
+      ]
+    },
+    "uses": {
+      "heading": "Use the result with the right context",
+      "paragraphs": [
+        "Check homework by comparing your denominator and reduction steps, rather than copying an unexplained decimal. Use Compare when you need to order two portions. The cross-products determine the comparison without rounding.",
+        "For recipe amounts, use the same unit before combining fractions. Adding half a cup to a third of a litre is not a valid unit conversion. Convert the units first, then use the resulting fractions.",
+        "A long list or enormous denominator can take more memory and time. The worker keeps calculation away from the interface, and Cancel stops it. There is no daily quota or fixed number of input lines."
+      ]
+    },
+    "privacy": {
+      "heading": "Private calculations, clear limits",
+      "paragraphs": [
+        "Your inputs and results stay in this browser. Calculation runs in a local worker, without a calculation API or uploaded data.",
+        "The page saves only your theme preference. A copied link contains the selected inputs and options, so share it deliberately.",
+        "Large calculations depend on device time and memory. Cancel stops the active job. An error clears old answers and disables their downloads."
+      ]
+    },
+    "faqHeading": "Questions about this calculation",
+    "faq": [
+      {
+        "question": "Can I enter a mixed number?",
+        "answer": "Yes. Write 2 1/3 with a space before the fraction. A leading minus applies to the entire mixed number."
+      },
+      {
+        "question": "Can I enter decimals?",
+        "answer": "Yes. Use a decimal point, such as 0.125. The digits become an exact fraction before any arithmetic."
+      },
+      {
+        "question": "Why is division by zero rejected?",
+        "answer": "Zero has no reciprocal. Dividing by zero cannot produce a finite fraction, so the previous answer is cleared."
+      },
+      {
+        "question": "How do I add more than two fractions?",
+        "answer": "Choose Add a list and put one value on each line. The working shows every intermediate sum."
+      },
+      {
+        "question": "Does the answer always simplify?",
+        "answer": "Yes. The numerator and denominator are divided by their greatest common divisor. A whole-number result is shown without /1."
+      },
+      {
+        "question": "Is the decimal exact?",
+        "answer": "Terminating values may be exact. Other decimals are rounded to twelve places and marked with ≈. The fraction remains exact."
+      },
+      {
+        "question": "Can the denominator be negative?",
+        "answer": "Yes. The calculation moves the sign to the numerator. A denominator of zero is always invalid."
+      },
+      {
+        "question": "What does -2 1/3 mean?",
+        "answer": "It means minus the whole quantity 2 + 1/3. Its improper fraction is -7/3, not -5/3."
+      },
+      {
+        "question": "Can I compare values without decimals?",
+        "answer": "Yes. Compare uses exact cross-products, so close fractions are not made equal by decimal rounding."
+      },
+      {
+        "question": "Does this handle repeating-decimal notation?",
+        "answer": "This page accepts finite decimal digits. Use the related repeating-decimal converter when a repeating block is part of the input."
+      }
+    ],
+    "relatedHeading": "A useful next calculation",
+    "related": [
+      {
+        "id": "repeating-decimal-to-fraction",
+        "title": "Repeating Decimal To Fraction",
+        "text": "Convert a repeating block into an exact fraction.",
+        "host": "tools.usefulverse.com"
+      },
+      {
+        "id": "percentage-calculator",
+        "title": "Percentage Calculator",
+        "text": "Separate percentage change, difference and share."
+      },
+      {
+        "id": "ratio-proportion-calculator",
+        "title": "Ratio Proportion Calculator",
+        "text": "Simplify related quantities and solve proportions."
+      }
+    ],
+    "sourcesHeading": "Calculation references",
+    "sourcesText": "Read the source rules and compare the worked examples. No external calculation service receives your input.",
+    "footer": "Useful tools. Clear results. Made for your browser.",
+    "form": {
+      "modes": {
+        "calculate": "Two fractions",
+        "simplify": "Simplify or convert",
+        "compare": "Compare",
+        "sum": "Add a list"
+      },
+      "fields": {
+        "a": "First value or list",
+        "b": "Second value",
+        "operation": "Operation"
+      },
+      "modeLabels": {
+        "simplify": {
+          "a": "Value to simplify"
+        },
+        "sum": {
+          "a": "One value per line"
+        }
+      },
+      "options": {
+        "add": "Add",
+        "subtract": "Subtract",
+        "multiply": "Multiply",
+        "divide": "Divide"
+      },
+      "hint": "Use 1/2, 0.5 or 2 1/3. Use a dot for decimals; thousands separators are not accepted."
+    }
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "add",
+        "mode": "calculate",
+        "a": "1/2",
+        "b": "1/3",
+        "operation": "add",
+        "expected": "5/6"
+      },
+      {
+        "id": "mixed",
+        "mode": "calculate",
+        "a": "2 1/3",
+        "b": "3/4",
+        "operation": "multiply",
+        "expected": "7/4"
+      },
+      {
+        "id": "decimal",
+        "mode": "simplify",
+        "a": "0.125",
+        "expected": "1/8"
+      },
+      {
+        "id": "list",
+        "mode": "sum",
+        "a": "1/2\n1/3\n1/6",
+        "expected": "1"
+      }
+    ],
+    "referenceLinks": [
+      "https://docs.python.org/3/library/fractions.html",
+      "https://www.calculator.net/fraction-calculator.html"
+    ]
+  }
+}

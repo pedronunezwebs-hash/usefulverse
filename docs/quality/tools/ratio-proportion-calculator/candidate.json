@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "ratio-proportion-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/ratio-proportion-calculator/",
+  "bytes": {
+    "criticalCSS": 13152,
+    "html": 36751,
+    "htmlBrotli": 8567,
+    "cssBrotli": 3850,
+    "jsBrotli": 3027,
+    "font": 40784
+  }
+}

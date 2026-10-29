@@ -1,0 +1,98 @@
+{
+  "toolId": "fraction-calculator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "phraseEvidence": "Inferred implemented tasks and first-party products; no current keyword volume, SERP rank or PAA claimed."
+  },
+  "intents": [
+    {
+      "phrase": "fraction calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Two fractions",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Simplify or convert",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Compare",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Add a list",
+      "section": "calculator"
+    },
+    {
+      "phrase": "exact fraction calculator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fraction calculator with steps",
+      "section": "calculator"
+    },
+    {
+      "phrase": "fraction calculator free",
+      "section": "examples"
+    },
+    {
+      "phrase": "fraction calculator online",
+      "section": "examples"
+    },
+    {
+      "phrase": "fraction calculator no upload",
+      "section": "examples"
+    },
+    {
+      "phrase": "fraction calculator large numbers",
+      "section": "examples"
+    },
+    {
+      "phrase": "fraction calculator examples",
+      "section": "examples"
+    },
+    {
+      "phrase": "Can I enter a mixed number?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I enter decimals?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Why is division by zero rejected?",
+      "section": "questions"
+    },
+    {
+      "phrase": "How do I add more than two fractions?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does the answer always simplify?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Is the decimal exact?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can the denominator be negative?",
+      "section": "questions"
+    },
+    {
+      "phrase": "What does -2 1/3 mean?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Can I compare values without decimals?",
+      "section": "questions"
+    },
+    {
+      "phrase": "Does this handle repeating-decimal notation?",
+      "section": "questions"
+    }
+  ]
+}

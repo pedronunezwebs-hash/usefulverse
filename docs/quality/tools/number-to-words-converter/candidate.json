@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "number-to-words-converter",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/number-to-words-converter/",
+  "bytes": {
+    "criticalCSS": 13152,
+    "html": 36897,
+    "htmlBrotli": 8683,
+    "cssBrotli": 3850,
+    "jsBrotli": 2910,
+    "font": 40784
+  }
+}
