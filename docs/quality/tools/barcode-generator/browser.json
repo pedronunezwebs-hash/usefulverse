@@ -1,7 +1,7 @@
 {
   "independentDecoder": "@zxing/library@0.21.3",
   "scope": "unpublished-barcode-generator",
-  "startedAt": "2026-10-29T11:26:46.155Z",
+  "startedAt": "2026-10-29T11:31:35.287Z",
   "physicalDevices": false,
   "clipboard": "mocked success and permission-denied fallback; OS clipboard not modified",
   "browsers": [
@@ -744,5 +744,5 @@
       ]
     }
   ],
-  "completedAt": "2026-10-29T11:27:16.984Z"
+  "completedAt": "2026-10-29T11:32:05.915Z"
 }

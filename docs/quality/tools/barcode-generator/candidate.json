@@ -5,10 +5,10 @@
   "indexableURLs": 0,
   "canonical": "https://usefulverse.com/tools/barcode-generator/",
   "bytes": {
-    "criticalCSS": 13506,
-    "html": 38839,
-    "htmlBrotli": 9328,
-    "cssBrotli": 3912,
+    "criticalCSS": 13553,
+    "html": 38886,
+    "htmlBrotli": 9350,
+    "cssBrotli": 3915,
     "jsBrotli": 19068,
     "font": 40784
   }

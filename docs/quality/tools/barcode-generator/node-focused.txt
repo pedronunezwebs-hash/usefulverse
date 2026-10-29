@@ -1,27 +1,27 @@
-✔ every worked example is executable and its published answer is correct (2.944375ms)
-✔ metadata is specific, honest and unique among other native tools (0.197625ms)
-✔ prototype remains isolated, noindex and on the existing canonical (0.780541ms)
-✔ editorial body shares fewer than 30% of its five-word phrases with other tool sources (39.367334ms)
+✔ every worked example is executable and its published answer is correct (2.971167ms)
+✔ metadata is specific, honest and unique among other native tools (0.194583ms)
+✔ prototype remains isolated, noindex and on the existing canonical (0.756042ms)
+✔ editorial body shares fewer than 30% of its five-word phrases with other tool sources (33.601083ms)
 ℹ {"uniqueOwnPhrases":922,"max":{"file":null,"shared":0,"ratio":0}}
-✔ query coverage describes real tasks without claiming measured keyword volumes (0.878541ms)
-✔ GS1 independent EAN13 941234554321 → 9412345543219 (0.7735ms)
-✔ GS1 independent EAN13 123456789012 → 1234567890128 (0.049583ms)
-✔ GS1 independent EAN13 629104150021 → 6291041500213 (0.037584ms)
-✔ GS1 independent EAN13 000000000000 → 0000000000000 (0.037625ms)
-✔ GS1 independent UPC 01234567890 → 012345678905 (0.043333ms)
-✔ GS1 independent UPC 03600029145 → 036000291452 (0.036333ms)
-✔ GS1 independent UPC 04210000526 → 042100005264 (0.040209ms)
-✔ GS1 independent UPC 00000000000 → 000000000000 (0.036542ms)
-✔ GS1 independent EAN8 1234567 → 12345670 (0.044ms)
-✔ GS1 independent EAN8 9638507 → 96385074 (0.071375ms)
-✔ GS1 independent EAN8 0000000 → 00000000 (0.040417ms)
-✔ GS1 independent EAN8 7654321 → 76543210 (0.036ms)
-✔ 5,000 generated retail bodies preserve zeroes and reject every changed check digit (204.991417ms)
-✔ 80-character cap removed; 1,000 distinct reference encodings and very wide SVG remain complete (7.002416ms)
-✔ format errors, negative/fractional sizes and Unicode fail explicitly (0.35275ms)
-✔ literal XML input stays text and never produces executable SVG nodes (0.154209ms)
-✔ hidden captions retain bars; size choices and links preserve every option (1.050792ms)
-✔ manifest cell escaping shields formulas without changing barcode values (0.085166ms)
+✔ query coverage describes real tasks without claiming measured keyword volumes (0.547875ms)
+✔ GS1 independent EAN13 941234554321 → 9412345543219 (0.790916ms)
+✔ GS1 independent EAN13 123456789012 → 1234567890128 (0.050875ms)
+✔ GS1 independent EAN13 629104150021 → 6291041500213 (0.03925ms)
+✔ GS1 independent EAN13 000000000000 → 0000000000000 (0.040833ms)
+✔ GS1 independent UPC 01234567890 → 012345678905 (0.044708ms)
+✔ GS1 independent UPC 03600029145 → 036000291452 (0.0375ms)
+✔ GS1 independent UPC 04210000526 → 042100005264 (0.042834ms)
+✔ GS1 independent UPC 00000000000 → 000000000000 (0.034792ms)
+✔ GS1 independent EAN8 1234567 → 12345670 (0.047125ms)
+✔ GS1 independent EAN8 9638507 → 96385074 (0.071125ms)
+✔ GS1 independent EAN8 0000000 → 00000000 (0.041916ms)
+✔ GS1 independent EAN8 7654321 → 76543210 (0.033875ms)
+✔ 5,000 generated retail bodies preserve zeroes and reject every changed check digit (203.908542ms)
+✔ 80-character cap removed; 1,000 distinct reference encodings and very wide SVG remain complete (7.068375ms)
+✔ format errors, negative/fractional sizes and Unicode fail explicitly (0.368833ms)
+✔ literal XML input stays text and never produces executable SVG nodes (0.168833ms)
+✔ hidden captions retain bars; size choices and links preserve every option (1.085792ms)
+✔ manifest cell escaping shields formulas without changing barcode values (0.088375ms)
 ℹ tests 23
 ℹ suites 0
 ℹ pass 23
@@ -29,4 +29,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 312.848209
+ℹ duration_ms 308.876708

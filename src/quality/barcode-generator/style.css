@@ -2,3 +2,4 @@
 .size-fields{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}.size-fields>.field{flex:1 1 130px;max-inline-size:100%;min-inline-size:0}.barcode-workspace .field select{inline-size:100%}.barcode-workspace .field input{min-inline-size:0}
 #single-fields,#batch-fields,.size-fields{margin-block:20px}
 .example p{overflow-wrap:anywhere}
+.barcode-workspace .mode span{inline-size:100%}

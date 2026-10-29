@@ -1,0 +1,88 @@
+{
+  "version": "13.6.0",
+  "fetchTime": "2026-10-29T11:32:08.509Z",
+  "scope": "local unpublished prototype; HTTP server may lack compression/Cloudflare headers",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "value": 933.7926,
+      "unit": "millisecond"
+    },
+    "largest-contentful-paint": {
+      "value": 933.7926,
+      "unit": "millisecond"
+    },
+    "cumulative-layout-shift": {
+      "value": 0,
+      "unit": "unitless"
+    },
+    "total-blocking-time": {
+      "value": 0,
+      "unit": "millisecond"
+    },
+    "speed-index": {
+      "value": 933.7926,
+      "unit": "millisecond"
+    }
+  },
+  "failedAudits": [
+    {
+      "id": "network-dependency-tree-insight",
+      "title": "Network dependency tree",
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "84E89DC3781B171099F77398AEED8082": {
+                  "url": "http://127.0.0.1:54839/tools/barcode-generator/",
+                  "navStartToEndTime": 7,
+                  "transferSize": 39074,
+                  "isLongest": true,
+                  "children": {
+                    "52963.4": {
+                      "url": "http://127.0.0.1:54839/assets/barcode-generator.908ba93404c6.js",
+                      "navStartToEndTime": 11,
+                      "transferSize": 6651,
+                      "isLongest": true,
+                      "children": {}
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 11
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "No origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "fieldINP": "not measured"
+}

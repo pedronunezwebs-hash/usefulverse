@@ -1,0 +1,22 @@
+{
+  "prototypeOnly": true,
+  "cases": [
+    {
+      "case": "Legacy Code128 rejects81 printable characters",
+      "publicObserved": true,
+      "test": "1,000-character exact output and independent decode; no80-character cap in candidate",
+      "productionFixDeployed": false
+    },
+    {
+      "case": "Example product digits overflow at doubled text size,390px",
+      "observedScrollWidth": 402,
+      "fix": "Allow wrapping within long digit runs in worked examples",
+      "test": "text-size-200 fixture checks page overflow in all three engines"
+    }
+  ],
+  "qaLimitations": [
+    "First decoder probe used two classes absent from the top-level package exports; explicit pinned submodule imports corrected the QA script.",
+    "urllib received403 from production; four fresh Chrome navigations returned200.",
+    "Real printer/scanner conditions, actual translated languages, reader and real browser zoom remain unverified."
+  ]
+}
