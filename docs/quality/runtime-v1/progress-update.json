@@ -1,0 +1,12 @@
+{
+  "rows": 1001,
+  "newRowsUpdated": 300,
+  "unchangedExistingRows": 700,
+  "trackingAliasPreserved": {
+    "iching-cast": "i-ching-oracle"
+  },
+  "qualityLayersPreserved": true,
+  "toolsActivated": 0,
+  "toolsApproved": 0,
+  "translationLocalesApproved": 0
+}

@@ -1,3 +1,11 @@
+## 2026-10-29 · Codex · Paso A inicial integrado y entregado en noindex
+
+[PR #136 integrada](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), [merge 6f96ec7](https://github.com/pedronunezwebs-hash/usefulverse/commit/6f96ec7d574aec09ace5b8aff96dbc5c0987df0b). 300 fuentes en main; preview existente actualizada: 11.593 archivos/11.100 rutas (300×37), todas noindex. Diez lecturas públicas correctas, sitemap vacío y robots sin bloqueo. nb inglés declarado/0 traducciones aprobadas. Las 300 filas pasan a subida-noindex; 700 filas existentes y todas las capas/IDs físicos conservados. Alias de seguimiento iching-cast→i-ching-oracle preservado. Cero activaciones/aprobaciones.
+
+Runtime 93 HTTP, axe32/104 tareas, Lighthouse5 100/100/100 y 3.255 Node finales/check/gate20 correctos. Conflictos de integración resueltos conservando las historias y los siete workflows activos; los workflows web permanecen deshabilitados. Un despliegue estático manual, sin Functions/script/gasto adicional ni cambio en los dos despliegues de las 700. Grafo de dependencias automático tras merge: 0 ms facturables; alertas DOMPurify en main cerradas automáticamente, PR #135 sin cierre manual; producción existente aún pendiente de parche. La siguiente tanda de traducción está en marcha tras acabar la anterior correctamente, sin intervención en modelos/memoria.
+
+Paso A inicial del RUNBOOK §7 cerrado. Dominio único sigue pendiente de §4b. Próximo: fase0+G1 con regresiones previas; hoy ya se usó el único despliegue, siguiente desde 30-oct 00:00 Asia/Saigon. [Datos/limitaciones](runtime-v1/README.md); respaldo/retirada/candado en cierre.
+
 ## 2026-10-29 · Codex · Runtime real, a11y y entrega del Paso A (en curso)
 
 [Datos y límites](runtime-v1/README.md). Wrangler local 4.154.0/compat 2026-10-01, sin recursos remotos ni script Worker. 93 checks HTTP/32 páginas correctos; 404, cabeceras/caché y redirects/query; axe32 sin infracciones y 104 tareas correctas. Lighthouse móvil cinco páginas 100/100/100, LCP 756–1.075 ms y CLS/TBT 0. Teclado/sanitización comprobados; no se certifica INP ni las siete capas de las 1.000.

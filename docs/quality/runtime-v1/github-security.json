@@ -1,0 +1,11 @@
+{
+  "automaticDependencyGraphRun": 40792857131,
+  "conclusion": "success",
+  "billableMs": 0,
+  "manuallyStarted": false,
+  "webTestsBuildsDeploysRun": false,
+  "openDependabotAlerts": 0,
+  "dompurifyMain": "3.4.17",
+  "existingProductionPatchDeployed": false,
+  "pr135ManuallyClosed": false
+}

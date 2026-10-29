@@ -1,0 +1,26 @@
+{
+  "deploymentsThisLot": 1,
+  "pureStatic": true,
+  "incrementalCostUSD": 0,
+  "records": [
+    {
+      "project": "usefulverse",
+      "productionUnchanged": true,
+      "productionCreatedOn": "2026-10-18T14:40:43.2856Z",
+      "latestEnvironment": "production",
+      "latestCreatedOn": "2026-10-18T14:40:43.2856Z"
+    },
+    {
+      "project": "usefulverse-tools",
+      "productionUnchanged": true,
+      "productionCreatedOn": "2026-10-18T20:38:58.280016Z",
+      "latestEnvironment": "preview",
+      "latestCreatedOn": "2026-10-29T00:18:21.886068Z",
+      "deploymentId": "413cf159-eb2e-41d0-8a80-29b7993c190b",
+      "url": "https://413cf159.usefulverse-tools.pages.dev",
+      "branch": "draft-300-noindex",
+      "sourceCommit": "6f96ec7d574aec09ace5b8aff96dbc5c0987df0b"
+    }
+  ],
+  "nextDeploymentNotBeforeLocal": "2026-10-30T00:00:00+07:00"
+}

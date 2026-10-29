@@ -2,7 +2,7 @@
 
 Estado, candado, métricas y siguiente paso: **[ESTADO.md](ESTADO.md)**. Historial: [LOG.md](LOG.md) e informes de lotes. Este mapa conserva solo estructura y operación.
 
-Repo público `pedronunezwebs-hash/usefulverse`; reglas de seguridad y catálogo en AGENTS.md. Código del Paso A y piloto actual solo en `feat/new-tools-batch-1`, [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. Main recibe el relevo y los controladores/workflows del traductor con `[skip ci]`, sin publicar las 300 ni cambiar la web.
+Repo público pedronunezwebs-hash/usefulverse; reglas en AGENTS.md. **PR #136 integrada en main el 29-oct**: fuente de las 300 en noindex y pipeline de preparación/QA disponibles. Preview existente actualizada (11.100 rutas/37 destinos), diez muestras públicas verificadas, cero activaciones. Las 700 publicadas siguen divididas entre los dos sitios; unificación §4b todavía pendiente. Conservar feat/new-tools-batch-1 mientras el traductor la use como source_ref; al cerrar este lote ambas ramas quedan alineadas. [Entrega](runtime-v1/README.md).
 
 ## Operación vigente · 28-oct
 
@@ -84,7 +84,7 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - No dejar trabajo solo en local o /tmp. Push y comprobación remota antes de eliminar originales únicos.
 - No empezar con menos de 10 GB libres. Clones superficiales con filtro blob:none; dependencias/QA/cachés dentro de su carpeta temporal y retirados al cerrar.
 - Los 106 JS recuperados siguen pendientes de hash. El hub no genera 404.html; tres rutas falsas responden 200.
-- La preview construida tiene 36 locales; no acredita 37 ni nb real. Ninguna muestra del piloto equivale a un idioma aprobado para publicar.
+- La preview vigente tiene 37 destinos de ruta; nb es respaldo inglés declarado, no traducción aprobada. Ninguna muestra del piloto ni subida-noindex equivale a herramienta/idioma aprobado.
 - 300 nuevas en noindex, fuera de sitemap/hreflang indexables y sin bloqueo robots; las 700 existentes se conservan indexables.
 - Si src/markets-no-ch se usa en sparse-checkout, incluir las seis fuentes copy-en/translations de voice-changer, shikaku y dxf-viewer: los contratos verifican sus bytes.
 

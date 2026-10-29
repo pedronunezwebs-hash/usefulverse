@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {
+      "url": "https://usefulverse.com/tools/word-counter/",
+      "status": 200,
+      "metaNoindex": false
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/",
+      "phase0StillPending": true
+    }
+  ],
+  "existingProductionDeploymentFingerprintsUnchanged": true
+}

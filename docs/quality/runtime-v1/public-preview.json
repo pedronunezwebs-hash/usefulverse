@@ -1,0 +1,127 @@
+{
+  "preview": "https://draft-300-noindex.usefulverse-tools.pages.dev",
+  "deployment": "https://413cf159.usefulverse-tools.pages.dev",
+  "sourceCommit": "6f96ec7d574aec09ace5b8aff96dbc5c0987df0b",
+  "checks": [
+    {
+      "path": "/tools/text-translator/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/tools/text-translator/",
+      "seoAlternates": 0,
+      "lang": "en",
+      "copyLanguage": "en",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/es/tools/internet-speed-test/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/es/tools/internet-speed-test/",
+      "seoAlternates": 0,
+      "lang": "es",
+      "copyLanguage": "es",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/de/tools/local-ai-chat/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/de/tools/local-ai-chat/",
+      "seoAlternates": 0,
+      "lang": "de",
+      "copyLanguage": "de",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/ar/tools/weather-dashboard/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/ar/tools/weather-dashboard/",
+      "seoAlternates": 0,
+      "lang": "ar",
+      "copyLanguage": "ar",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/ja/tools/dictionary/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/ja/tools/dictionary/",
+      "seoAlternates": 0,
+      "lang": "ja",
+      "copyLanguage": "ja",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/hi/tools/thesaurus/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/hi/tools/thesaurus/",
+      "seoAlternates": 0,
+      "lang": "hi",
+      "copyLanguage": "hi",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/nb/tools/fancy-text-generator/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/nb/tools/fancy-text-generator/",
+      "seoAlternates": 0,
+      "lang": "en",
+      "copyLanguage": "en",
+      "previewFallbackFor": "nb",
+      "releaseApproved": false,
+      "failedAssets": []
+    },
+    {
+      "path": "/nb/tools/grammar-checker/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/nb/tools/grammar-checker/",
+      "seoAlternates": 0,
+      "lang": "en",
+      "copyLanguage": "en",
+      "previewFallbackFor": "nb",
+      "releaseApproved": false,
+      "failedAssets": []
+    },
+    {
+      "path": "/es/tools/germany-net-salary/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/es/tools/germany-net-salary/",
+      "seoAlternates": 0,
+      "lang": "es",
+      "copyLanguage": "es",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    },
+    {
+      "path": "/tools/soundboard/",
+      "status": 200,
+      "robots": "noindex,follow",
+      "canonical": "https://tools.usefulverse.com/tools/soundboard/",
+      "seoAlternates": 0,
+      "lang": "en",
+      "copyLanguage": "en",
+      "previewFallbackFor": null,
+      "failedAssets": []
+    }
+  ],
+  "metadata": {
+    "sitemapStatus": 200,
+    "sitemapURLs": 0,
+    "robotsStatus": 200,
+    "robotsBlocksAny": false
+  },
+  "passed": true,
+  "scope": "Step A noindex delivery; no tool or language approved"
+}
