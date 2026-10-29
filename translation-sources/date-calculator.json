@@ -101,22 +101,18 @@
     "examplesHeading": "Try a real calendar question",
     "examples": [
       {
-        "id": "elapsed",
         "heading": "A month is not always 30 days",
         "text": "October 1 to November 1, 2026 is 31 elapsed days: four weeks and three days. Count both dates for 32."
       },
       {
-        "id": "leap",
         "heading": "Crossing a leap day",
         "text": "February 28 to March 1, 2024 is two days. In 2025, the same calendar dates are one day apart."
       },
       {
-        "id": "month",
         "heading": "One month after January 31",
         "text": "January 31, 2026 plus one month becomes February 28. The chosen rule uses the last valid day."
       },
       {
-        "id": "ninety",
         "heading": "A 90-day planning window",
         "text": "October 1, 2026 plus 90 calendar days is December 30, 2026. Weekends and holidays remain part of the count."
       }
@@ -193,17 +189,14 @@
     "relatedHeading": "Keep your plans moving",
     "related": [
       {
-        "id": "business-days-calculator",
         "title": "Business Days Calculator",
         "text": "Count working days with your weekend and holiday rules."
       },
       {
-        "id": "time-duration-calculator",
         "title": "Time Duration Calculator",
         "text": "Measure hours and minutes between two times."
       },
       {
-        "id": "age-calculator",
         "title": "Age Calculator",
         "text": "Work out an age with an explicit leap-day rule."
       }
@@ -280,6 +273,17 @@
         "direction": 1,
         "overflow": "constrain",
         "expectedISO": "2026-12-30"
+      }
+    ],
+    "related": [
+      {
+        "id": "business-days-calculator"
+      },
+      {
+        "id": "time-duration-calculator"
+      },
+      {
+        "id": "age-calculator"
       }
     ]
   }

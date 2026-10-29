@@ -1,5 +1,6 @@
+import { qualitySourceCopy } from '../shared/source-copy.mjs';
 import document from '../../../translation-sources/date-calculator.json' with { type: 'json' };
-export const dateCopy = document.sourceCopy;
+export const dateCopy = qualitySourceCopy(document);
 export const dateExamples = document.nonTranslatableCopy.examples;
 const esc = value => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 const json = value => JSON.stringify(value).replaceAll('<','\\u003c');
