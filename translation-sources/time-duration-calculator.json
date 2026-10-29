@@ -119,22 +119,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "overnight",
         "heading": "Across midnight",
         "text": "23:30 to 01:15 the next day is 1 hour 45 minutes. Remove a 15-minute break for 1 hour 30 minutes."
       },
       {
-        "id": "leap",
         "heading": "A leap day belongs in the count",
         "text": "February 28 at noon to March 1 at noon, 2024, is 48 hours in UTC. February 29 adds a full day."
       },
       {
-        "id": "spring",
         "heading": "Four clock hours, three elapsed",
         "text": "In New York on March 10, 2024, midnight to 04:00 is 3 elapsed hours. The clock skips one hour."
       },
       {
-        "id": "flight",
         "heading": "Two locations, one timeline",
         "text": "January 1, 2024 at 09:00 in New York to 16:00 in London is 2 elapsed hours. Local clock labels alone differ by 7 hours."
       }
@@ -227,17 +223,14 @@
     "relatedHeading": "Choose the right kind of time",
     "related": [
       {
-        "id": "date-calculator",
         "title": "Date Calculator",
         "text": "Count calendar dates or move a date by days, months and years."
       },
       {
-        "id": "time-zone-converter",
         "title": "Time Zone Converter",
         "text": "See the same moment in different locations."
       },
       {
-        "id": "business-days-calculator",
         "title": "Business Days Calculator",
         "text": "Count working days with chosen weekends and holidays."
       }
@@ -292,6 +285,17 @@
         "endOccurrence": "reject",
         "breakMinutes": "0",
         "expectedSeconds": 7200
+      }
+    ],
+    "related": [
+      {
+        "id": "date-calculator"
+      },
+      {
+        "id": "time-zone-converter"
+      },
+      {
+        "id": "business-days-calculator"
       }
     ]
   }

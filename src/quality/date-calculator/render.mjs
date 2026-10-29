@@ -1,5 +1,6 @@
+import { qualitySourceCopy } from '../shared/source-copy.mjs';
 import document from '../../../translation-sources/date-calculator.json' with { type: 'json' };
-export const dateCopy = document.sourceCopy;
+export const dateCopy = qualitySourceCopy(document);
 export const dateExamples = document.nonTranslatableCopy.examples;
 import { renderQualityPage, esc, planet } from '../shared/page.mjs';
 export function renderDateQuality({copy=dateCopy,...options}) {

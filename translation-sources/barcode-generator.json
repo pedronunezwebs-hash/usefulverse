@@ -94,22 +94,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "stock",
         "heading": "An internal stock label",
         "text": "UV-2026-001 stays UV-2026-001 in Code 128. Letters, digits and hyphens can share one reference."
       },
       {
-        "id": "ean",
         "heading": "Add a missing check digit",
         "text": "The documented example 941234554321 becomes 9412345543219 in EAN-13. Its final digit is 9."
       },
       {
-        "id": "upc",
         "heading": "Keep the leading zero",
         "text": "UPC-A input 01234567890 becomes 012345678905. The first zero remains part of the encoded identifier."
       },
       {
-        "id": "short",
         "heading": "A shorter retail symbol",
         "text": "EAN-8 input 1234567 becomes 12345670. A shorter format does not grant a valid product allocation."
       }
@@ -205,17 +201,14 @@
     "relatedHeading": "Keep your next task simple",
     "related": [
       {
-        "id": "qr-code-generator",
         "title": "QR Code Generator",
         "text": "Put a link or longer text into a square code."
       },
       {
-        "id": "qr-code-reader",
         "title": "QR Code Reader",
         "text": "Read an existing QR image. This reader is for QR, not these linear barcodes."
       },
       {
-        "id": "image-resizer-compressor",
         "title": "Image Resizer & Compressor",
         "text": "Prepare other label images. Keep barcode SVGs sharp and their margins intact."
       }
@@ -249,6 +242,17 @@
         "format": "EAN8",
         "input": "1234567",
         "expected": "12345670"
+      }
+    ],
+    "related": [
+      {
+        "id": "qr-code-generator"
+      },
+      {
+        "id": "qr-code-reader"
+      },
+      {
+        "id": "image-resizer-compressor"
       }
     ]
   }
