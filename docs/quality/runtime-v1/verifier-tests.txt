@@ -1,0 +1,12 @@
+✔ valid homepage headings can contain line breaks and styled spans (1.9695ms)
+✔ delivered HTML requires revalidation, canonical and security headers (0.47075ms)
+✔ noindex assertions cannot pass by normalizing an old host or an HTTP noindex on existing pages (0.156666ms)
+✔ runtime verifier refuses non-loopback, credentials and extra URL paths before any request (0.400083ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 104.785084

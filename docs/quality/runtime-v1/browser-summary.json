@@ -1,0 +1,40 @@
+{
+  "scope": "local-runtime-top-level-sample-not-full-tool-gate",
+  "axeVersion": "4.14.0",
+  "wcagTags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa"
+  ],
+  "pages": 32,
+  "axeViolations": 0,
+  "overflowFailures": 0,
+  "functionalChecks": 104,
+  "functionalFailures": 0,
+  "locales": [
+    "en",
+    "es",
+    "de",
+    "ar",
+    "ja",
+    "hi",
+    "nb"
+  ],
+  "tools": [
+    "word-counter",
+    "markdown-editor",
+    "grammar-checker",
+    "fancy-text-generator"
+  ],
+  "nbOnlyDrafts": [
+    "grammar-checker",
+    "fancy-text-generator"
+  ],
+  "perPageProbe": "tests/browser/static-delivery-page.js",
+  "fullRawBrowserObjectsRetained": false,
+  "physicalDevicesTested": false,
+  "firefoxWebkitTested": false,
+  "toolsApproved": 0,
+  "translationLocalesApproved": 0
+}

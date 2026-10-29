@@ -1,0 +1,668 @@
+[
+  {
+    "path": "/",
+    "lighthouseVersion": "13.6.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 758.7715000000001,
+      "largest-contentful-paint": 758.7715000000001,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1116.2285359985735
+    },
+    "warnings": [],
+    "failedAudits": [
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "77F2F3AD52EE4686EDCE747EC37A7374": {
+                    "url": "http://127.0.0.1:54829/",
+                    "navStartToEndTime": 8,
+                    "transferSize": 4145,
+                    "isLongest": true,
+                    "children": {
+                      "36282.3": {
+                        "url": "http://127.0.0.1:54829/assets/composed-search.dcbbdd12394f.mjs",
+                        "navStartToEndTime": 43,
+                        "transferSize": 1831,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "36282.2": {
+                        "url": "http://127.0.0.1:54829/assets/styles.css?v=composition-smoke",
+                        "navStartToEndTime": 18,
+                        "transferSize": 11782,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 43
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "No origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 100 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "http://127.0.0.1:54829/assets/styles.css?v=composition-smoke",
+              "totalBytes": 11782,
+              "wastedMs": 154
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    }
+  },
+  {
+    "path": "/tools/word-counter/",
+    "lighthouseVersion": "13.6.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 756.2962,
+      "largest-contentful-paint": 756.2962,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 756.2962
+    },
+    "warnings": [],
+    "failedAudits": [
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "71740ED4192A9608C1CDCC05FC23A321": {
+                    "url": "http://127.0.0.1:54829/tools/word-counter/",
+                    "navStartToEndTime": 8,
+                    "transferSize": 4577,
+                    "isLongest": true,
+                    "children": {
+                      "36290.2": {
+                        "url": "http://127.0.0.1:54829/assets/styles.css?v=composition-smoke",
+                        "navStartToEndTime": 13,
+                        "transferSize": 11782,
+                        "isLongest": true,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 13
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "No origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 110 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "http://127.0.0.1:54829/assets/styles.css?v=composition-smoke",
+              "totalBytes": 11782,
+              "wastedMs": 153
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    }
+  },
+  {
+    "path": "/es/tools/grammar-checker/",
+    "lighthouseVersion": "13.6.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 1074.7546,
+      "largest-contentful-paint": 1074.7546,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1074.7546
+    },
+    "warnings": [],
+    "failedAudits": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.99,
+        "displayValue": "1.1 s"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "59A94634E5BD8D488855EE76329520C2": {
+                    "url": "http://127.0.0.1:54829/es/tools/grammar-checker/",
+                    "navStartToEndTime": 8,
+                    "transferSize": 3435,
+                    "isLongest": true,
+                    "children": {
+                      "36292.3": {
+                        "url": "http://127.0.0.1:54829/assets/grammar-checker.39f3d35c8ec2.js",
+                        "navStartToEndTime": 13,
+                        "transferSize": 21415,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "36292.2": {
+                        "url": "http://127.0.0.1:54829/assets/growth600.b0cd0b27c7eb.css",
+                        "navStartToEndTime": 12,
+                        "transferSize": 4999,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 13
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "No origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 150 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "http://127.0.0.1:54829/assets/growth600.b0cd0b27c7eb.css",
+              "totalBytes": 4999,
+              "wastedMs": 153
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    }
+  },
+  {
+    "path": "/ar/tools/markdown-editor/",
+    "lighthouseVersion": "13.6.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 907.596,
+      "largest-contentful-paint": 907.596,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 907.596
+    },
+    "warnings": [],
+    "failedAudits": [
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "6449EA5E436383CF49E4698D67B4536E": {
+                    "url": "http://127.0.0.1:54829/ar/tools/markdown-editor/",
+                    "navStartToEndTime": 10,
+                    "transferSize": 4201,
+                    "isLongest": true,
+                    "children": {
+                      "36295.4": {
+                        "url": "http://127.0.0.1:54829/assets/markdown-editor.d8ad9a603f3a.js",
+                        "navStartToEndTime": 29,
+                        "transferSize": 3317,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "36295.3": {
+                        "url": "http://127.0.0.1:54829/assets/markdown-editor.a7a28913a272.css",
+                        "navStartToEndTime": 29,
+                        "transferSize": 953,
+                        "children": {}
+                      },
+                      "36295.2": {
+                        "url": "http://127.0.0.1:54829/assets/growth600.c4f25882ac10.css",
+                        "navStartToEndTime": 29,
+                        "transferSize": 4999,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 29
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "No origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 240 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "http://127.0.0.1:54829/assets/growth600.c4f25882ac10.css",
+              "totalBytes": 4999,
+              "wastedMs": 154
+            },
+            {
+              "url": "http://127.0.0.1:54829/assets/markdown-editor.a7a28913a272.css",
+              "totalBytes": 953,
+              "wastedMs": 304
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    }
+  },
+  {
+    "path": "/nb/tools/fancy-text-generator/",
+    "lighthouseVersion": "13.6.0",
+    "categories": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1
+    },
+    "metrics": {
+      "first-contentful-paint": 923.2683999999999,
+      "largest-contentful-paint": 923.2683999999999,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 923.2683999999999
+    },
+    "warnings": [],
+    "failedAudits": [
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "68A353F478CF7C2DDBA14546718FDFF7": {
+                    "url": "http://127.0.0.1:54829/nb/tools/fancy-text-generator/",
+                    "navStartToEndTime": 8,
+                    "transferSize": 3198,
+                    "isLongest": true,
+                    "children": {
+                      "36316.3": {
+                        "url": "http://127.0.0.1:54829/assets/fancy-text-generator.0b2eecd0d3b1.js",
+                        "navStartToEndTime": 11,
+                        "transferSize": 2515,
+                        "isLongest": true,
+                        "children": {}
+                      },
+                      "36316.2": {
+                        "url": "http://127.0.0.1:54829/assets/growth600.b0cd0b27c7eb.css",
+                        "navStartToEndTime": 10,
+                        "transferSize": 4999,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 11
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "No origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 150 ms",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Transfer Size"
+            },
+            {
+              "key": "wastedMs",
+              "valueType": "timespanMs",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "url": "http://127.0.0.1:54829/assets/growth600.b0cd0b27c7eb.css",
+              "totalBytes": 4999,
+              "wastedMs": 153
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    }
+  }
+]

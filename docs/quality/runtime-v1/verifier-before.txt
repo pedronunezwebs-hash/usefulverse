@@ -1,0 +1,37 @@
+✖ valid homepage headings can contain line breaks and styled spans (2.932416ms)
+✔ delivered HTML requires revalidation, canonical and security headers (0.495625ms)
+✔ noindex assertions cannot pass by normalizing an old host or an HTTP noindex on existing pages (0.154875ms)
+✔ runtime verifier refuses non-loopback, credentials and extra URL paths before any request (0.405333ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 106.66575
+
+✖ failing tests:
+
+test at scripts/verify-static-delivery.test.mjs:7:1
+✖ valid homepage headings can contain line breaks and styled spans (2.932416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+  + [
+  +   'metadata'
+  + ]
+  - []
+
+      at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-runtime-20261029/scripts/verify-static-delivery.test.mjs:8:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'metadata' ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
