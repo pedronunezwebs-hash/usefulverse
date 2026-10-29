@@ -1,7 +1,7 @@
 # Date Calculator · preparación nivel A / Planeta Infinito
 
 29-oct-2026 · **No publicada, no terminada, no apta todavía para integrar en producción.**
-Rama `feat/date-calculator-planeta`. Prioridad 1: 2.547 impresiones y dos clics históricos (1–15 oct),
+[PR144](https://github.com/pedronunezwebs-hash/usefulverse/pull/144) · [fuente e9e93b5](https://github.com/pedronunezwebs-hash/usefulverse/commit/e9e93b553cf077d0c120fc5278388dea1f8955b8). Rama `feat/date-calculator-planeta`. Prioridad 1: 2.547 impresiones y dos clics históricos (1–15 oct),
 24 idiomas con impresiones. Se mejora una URL existente; **delta de URLs indexables: 0**.
 
 ## Qué mejora
