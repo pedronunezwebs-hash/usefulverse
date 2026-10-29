@@ -1,0 +1,86 @@
+{
+  "source": "https://www.unicode.org/Public/UCD/latest/charts/nameslist/2150/",
+  "independentCheck": "Python unicodedata.numeric and NFKC; Unicode compatibility numerals I–XII,L,C,D,M",
+  "cases": [
+    {
+      "unicode": "Ⅰ",
+      "roman": "I",
+      "number": "1"
+    },
+    {
+      "unicode": "Ⅱ",
+      "roman": "II",
+      "number": "2"
+    },
+    {
+      "unicode": "Ⅲ",
+      "roman": "III",
+      "number": "3"
+    },
+    {
+      "unicode": "Ⅳ",
+      "roman": "IV",
+      "number": "4"
+    },
+    {
+      "unicode": "Ⅴ",
+      "roman": "V",
+      "number": "5"
+    },
+    {
+      "unicode": "Ⅵ",
+      "roman": "VI",
+      "number": "6"
+    },
+    {
+      "unicode": "Ⅶ",
+      "roman": "VII",
+      "number": "7"
+    },
+    {
+      "unicode": "Ⅷ",
+      "roman": "VIII",
+      "number": "8"
+    },
+    {
+      "unicode": "Ⅸ",
+      "roman": "IX",
+      "number": "9"
+    },
+    {
+      "unicode": "Ⅹ",
+      "roman": "X",
+      "number": "10"
+    },
+    {
+      "unicode": "Ⅺ",
+      "roman": "XI",
+      "number": "11"
+    },
+    {
+      "unicode": "Ⅻ",
+      "roman": "XII",
+      "number": "12"
+    },
+    {
+      "unicode": "Ⅼ",
+      "roman": "L",
+      "number": "50"
+    },
+    {
+      "unicode": "Ⅽ",
+      "roman": "C",
+      "number": "100"
+    },
+    {
+      "unicode": "Ⅾ",
+      "roman": "D",
+      "number": "500"
+    },
+    {
+      "unicode": "Ⅿ",
+      "roman": "M",
+      "number": "1000"
+    }
+  ]
+}

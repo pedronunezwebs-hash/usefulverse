@@ -1,0 +1,53 @@
+{
+  "fullNode": {
+    "passed": 3359,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 52007.935583,
+    "note": "Final changes after this full run only adjusted layout/date-result wording; functional browser tests and focused tests repeated."
+  },
+  "focused": {
+    "passed": 29,
+    "failed": 0
+  },
+  "references": {
+    "UnicodeNumericAndNFKC": 16,
+    "MathWorldExamples": 5
+  },
+  "properties": {
+    "ordinaryExhaustive": 3999,
+    "generatedBigInts": 5000,
+    "batchRows": 1000,
+    "decimalDigitsStress": 10001
+  },
+  "browser": {
+    "engines": [
+      "Chrome installed",
+      "Firefox",
+      "WebKit"
+    ],
+    "functionalChecks": 42,
+    "axeGeometries": 54,
+    "landscapeGeometries": 12,
+    "fixtures": [
+      "RTL synthetic",
+      "doubled text",
+      "text-size200"
+    ],
+    "clipboard": "mocked success/denied fallback; OS clipboard unchanged",
+    "cancelFixture": "10,000 lines preloaded via DOM input event; actual Convert/Cancel controls tested",
+    "realBatchPasteAndDownload": 1000
+  },
+  "nativeBuild": "Not repeated; native builders/runtime/indexability unchanged. Integrated check, CSP/cache and multilingual gates remain pending.",
+  "localeReleaseCheck": "20 existing expanded locales pass; not approval of this new source or translations",
+  "compatiblePrototypes": {
+    "date": {
+      "firstLoadBrotliBytes": 56676,
+      "bytesMatchPR144": true
+    },
+    "time": {
+      "firstLoadBrotliBytes": 74989,
+      "bytesMatchPR145": true
+    }
+  }
+}

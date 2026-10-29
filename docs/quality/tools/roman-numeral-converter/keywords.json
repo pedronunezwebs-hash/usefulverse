@@ -1,0 +1,110 @@
+{
+  "toolId": "roman-numeral-converter",
+  "status": "prepared-not-published",
+  "newIndexableURLs": 0,
+  "existingURL": "https://usefulverse.com/tools/roman-numeral-converter/",
+  "provenance": {
+    "observedDemand": {
+      "source": "docs/recovery/indexable-core-tools.csv",
+      "period": "2026-10-01/2026-10-15",
+      "impressions": 2040,
+      "clicks": 3,
+      "impressionLanguages": 28
+    },
+    "phraseEvidence": "Inferred task phrases from implemented capabilities and three first-party reference products. No current query volumes, SERP rank, Google suggestions or PAA measured. No paid SEO platform.",
+    "paidSEOTools": false
+  },
+  "intents": [
+    {
+      "phrase": "roman numeral converter",
+      "section": "page-heading"
+    },
+    {
+      "phrase": "number to roman numerals",
+      "section": "calculator"
+    },
+    {
+      "phrase": "roman numerals to numbers",
+      "section": "calculator"
+    },
+    {
+      "phrase": "roman numeral date converter",
+      "section": "calculator"
+    },
+    {
+      "phrase": "roman numeral year converter",
+      "section": "examples"
+    },
+    {
+      "phrase": "roman numerals 2026",
+      "section": "examples"
+    },
+    {
+      "phrase": "roman numeral 1999",
+      "section": "examples"
+    },
+    {
+      "phrase": "roman numeral 4000",
+      "section": "examples"
+    },
+    {
+      "phrase": "large roman numerals converter",
+      "section": "method"
+    },
+    {
+      "phrase": "roman numerals grouped thousands",
+      "section": "method"
+    },
+    {
+      "phrase": "roman numeral symbols chart",
+      "section": "method"
+    },
+    {
+      "phrase": "roman numeral subtractive rules",
+      "section": "method"
+    },
+    {
+      "phrase": "IV versus VI",
+      "section": "questions"
+    },
+    {
+      "phrase": "IIII on clocks",
+      "section": "questions"
+    },
+    {
+      "phrase": "roman numeral validator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "unicode roman numeral converter",
+      "section": "questions"
+    },
+    {
+      "phrase": "lowercase roman numeral converter",
+      "section": "questions"
+    },
+    {
+      "phrase": "batch roman numeral converter",
+      "section": "calculator"
+    },
+    {
+      "phrase": "roman numeral list to CSV",
+      "section": "calculator"
+    },
+    {
+      "phrase": "roman numeral date DMY MDY YMD",
+      "section": "calculator"
+    }
+  ],
+  "sources": [
+    "https://www.calculator.net/roman-numeral-converter.html",
+    "https://www.calculatorsoup.com/calculators/conversions/roman-numeral-converter.php",
+    "https://www.dcode.fr/roman-numerals",
+    "https://www.unicode.org/Public/UCD/latest/charts/nameslist/2150/",
+    "https://mathworld.wolfram.com/RomanNumerals.html"
+  ],
+  "excludedClaims": [
+    "Recursive parentheses are explicitly a tool convention, not universal historical notation.",
+    "No invented keyword volumes/rankings or native-language approval."
+  ]
+}

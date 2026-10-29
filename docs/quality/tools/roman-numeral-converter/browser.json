@@ -1,0 +1,795 @@
+{
+  "scope": "unpublished-roman-numeral-converter",
+  "startedAt": "2026-10-29T10:59:19.380Z",
+  "physicalDevices": false,
+  "clipboard": "mocked success and permission-denied fallback; OS clipboard not modified",
+  "browsers": [
+    {
+      "name": "chromium",
+      "checks": [
+        "default numeral and draft metadata on existing canonical",
+        "both directions, lowercase/Unicode and no stale result after invalid input",
+        "date conversion retains all three orders and validates empty dates",
+        "four worked examples are executable",
+        "grouped thousands and integers above safe Number precision",
+        "1,000 batch entries survive worker chunks and complete CSV download",
+        "batch row errors, formula-safe CSV and literal untrusted HTML",
+        "empty batch reports an error and cannot download an empty result",
+        "cancel stops a large job and cannot overwrite a newer result",
+        "mocked clipboard and denied-permission share restore exact input",
+        "malformed and duplicate share parameters cannot inject HTML",
+        "FAQ schema matches ten visible questions and answers",
+        "keyboard skip and native mode radio navigation",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0078125,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0078125,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    },
+    {
+      "name": "firefox",
+      "checks": [
+        "default numeral and draft metadata on existing canonical",
+        "both directions, lowercase/Unicode and no stale result after invalid input",
+        "date conversion retains all three orders and validates empty dates",
+        "four worked examples are executable",
+        "grouped thousands and integers above safe Number precision",
+        "1,000 batch entries survive worker chunks and complete CSV download",
+        "batch row errors, formula-safe CSV and literal untrusted HTML",
+        "empty batch reports an error and cannot download an empty result",
+        "cancel stops a large job and cannot overwrite a newer result",
+        "mocked clipboard and denied-permission share restore exact input",
+        "malformed and duplicate share parameters cannot inject HTML",
+        "FAQ schema matches ten visible questions and answers",
+        "keyboard skip and native mode radio navigation",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0083160400390625,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0083160400390625,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0.00832366943359375,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "checks": [
+        "default numeral and draft metadata on existing canonical",
+        "both directions, lowercase/Unicode and no stale result after invalid input",
+        "date conversion retains all three orders and validates empty dates",
+        "four worked examples are executable",
+        "grouped thousands and integers above safe Number precision",
+        "1,000 batch entries survive worker chunks and complete CSV download",
+        "batch row errors, formula-safe CSV and literal untrusted HTML",
+        "empty batch reports an error and cannot download an empty result",
+        "cancel stops a large job and cannot overwrite a newer result",
+        "mocked clipboard and denied-permission share restore exact input",
+        "malformed and duplicate share parameters cannot inject HTML",
+        "FAQ schema matches ten visible questions and answers",
+        "keyboard skip and native mode radio navigation",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0078125,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "lastMetricCenterOffset": 0.0078125,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "lastMetricCenterOffset": 0,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    }
+  ],
+  "completedAt": "2026-10-29T10:59:36.286Z"
+}
