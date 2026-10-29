@@ -1,6 +1,8 @@
 import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { versionRecoveredAssets } from './recovered-assets.mjs';
+import { phaseZeroContentDate } from './language-sitemaps.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const target = resolve(process.env.GROWTH600_DIST ?? 'dist-growth600');
@@ -155,8 +157,9 @@ for (const page of snapshot.pages) {
   }
 }
 
+const versioned = versionRecoveredAssets(assetMap);
 let copiedAssets = 0;
-for (const [rel, bytes] of assetMap) {
+for (const [rel, bytes] of versioned.assets) {
   const destination = join(target, rel);
   if (await stat(destination).then(() => true, () => false)) {
     const existing = await readFile(destination);
@@ -173,7 +176,7 @@ for (const page of snapshot.pages) {
   const destination = join(target, rel);
   if (await stat(destination).then(() => true, () => false)) throw new Error(`Refusing to replace a staged route: ${rel}`);
   await mkdir(dirname(destination), { recursive: true });
-  await writeFile(destination, page.html, { flag: 'wx' });
+  await writeFile(destination, versioned.rewrite(page.html), { flag: 'wx' });
 }
 
 for (const [prefix, cards] of homeCards) {
@@ -210,7 +213,7 @@ if (mergedUrls.size !== expectedUrls.size || [...expectedUrls].some((url) => !me
   const extra = [...mergedUrls].filter((url) => !expectedUrls.has(url));
   throw new Error(`Merged sitemap differs from the captured public sitemap: ${missing.length} missing, ${extra.length} extra.`);
 }
-const newEntries = [...sitemapUrls].map((url) => `  <url><loc>${url}</loc></url>`).join('\n');
+const newEntries = [...sitemapUrls].map((url) => `  <url><loc>${url}</loc><lastmod>${phaseZeroContentDate}</lastmod></url>`).join('\n');
 await writeFile(stagedSitemapPath, stagedSitemap.replace('</urlset>', `${newEntries}\n</urlset>`));
 
 const files = await walkFiles(target);
@@ -228,3 +231,5 @@ if (finalCount !== sourceInventory.sourceSitemapUrlCount) throw new Error(`Final
 console.log(`Restored ${expectedIds.size} live-only tools and ${expectedPages} localized pages; copied ${copiedAssets}/${assetMap.size} assets.`);
 console.log(`Homepage directories and llms.txt now include all ${expectedIds.size} recovered tools in ${localePrefixes.size} locales.`);
 console.log(`Sitemap exactly matches captured public inventory (${finalCount} URLs); build contains ${files.length} files (${totalBytes} bytes).`);
+
+console.log(`Recovered assets use dependency-tree content version ${versioned.version}; captured sources unchanged.`);

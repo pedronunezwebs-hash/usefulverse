@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build as bundle, transform } from 'esbuild';
+import { phaseZeroContentDate, writeLanguageSitemaps } from './language-sitemaps.mjs';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderGuidePage, renderGuidesIndex, renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
 import { guidePath, guides, guidesForLocale } from '../src/guides.mjs';
@@ -969,8 +970,10 @@ await deferFullStyles(dist);
 // alternates inside every sitemap URL made the XML grow quadratically; keep the
 // sitemap to its canonical URL inventory so future localized tools stay below
 // Cloudflare Pages' single-file limit.
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(({ path }) => `  <url><loc>https://usefulverse.com${path}</loc></url>`).join('\n')}\n</urlset>\n`;
-await writeFile(join(dist, 'sitemap.xml'), sitemap);
+await writeLanguageSitemaps(dist, 'https://usefulverse.com', pages.map(({ path }) => ({
+  loc: `https://usefulverse.com${path}`,
+  ...(!path.includes('/tools/') && !path.includes('/guides/') ? { lastmod: phaseZeroContentDate } : {}),
+})));
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
 await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Guides\n\n- [UsefulVerse Guides](https://usefulverse.com${guidePath()})\n${guides.map((guide) => `- [${guide.title}](https://usefulverse.com${guidePath(guide.slug)}): ${guide.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
 await writeFile(join(dist, '404.html'), renderNotFoundPage());

@@ -15,16 +15,18 @@ const reviewed = new Map([
   [prefix + 'extract-images-pdf-worker.mjs', 'f2870db902eaff8397442c912b69459980ac91f6f4b5ed827167b12cf7057930'],
 ]);
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+const unversion = text => text.replace(/(assets\/recovered-live-only-106\/)[a-f0-9]{24}\//gu, '$1');
 export function capturedSoft404(path, bytes) {
   if (!/\.(?:m?js|css)$/iu.test(path) || !/^\s*(?:<!doctype\s+html|<html\b)/iu.test(bytes.toString('utf8'))) return false;
-  if (!capturedHTML.has(path) || sha(bytes) !== responseSHA) throw Error(`Unexpected HTML response masquerading as an asset: ${path}`);
+  if (!capturedHTML.has(unversion(path)) || sha(bytes) !== responseSHA) throw Error(`Unexpected HTML response masquerading as an asset: ${path}`);
   return true;
 }
 export function checkQuarantinedReferences(path, bytes, quarantined) {
   if (!quarantined.length) return;
-  const text = bytes.toString('utf8');
+  const text = unversion(bytes.toString('utf8'));
+  const originalPath = unversion(path);
   for (const asset of quarantined) {
-    if (text.includes(asset.path)) throw Error(`Reference to quarantined HTML asset: ${path}`);
-    if (text.includes(basename(asset.path)) && reviewed.get(path) !== sha(bytes)) throw Error(`Unreviewed reference to quarantined asset: ${path}`);
+    if (text.includes(unversion(asset.path))) throw Error(`Reference to quarantined HTML asset: ${path}`);
+    if (text.includes(basename(asset.path)) && reviewed.get(originalPath) !== sha(Buffer.from(text))) throw Error(`Unreviewed reference to quarantined asset: ${path}`);
   }
 }

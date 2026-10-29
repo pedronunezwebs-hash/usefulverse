@@ -1,3 +1,4 @@
+import { readSitemapRecords } from '../../scripts/language-sitemaps.mjs';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { mkdtemp, readFile, readdir, rm, stat } from 'node:fs/promises';
@@ -1101,10 +1102,16 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   });
   assert.equal(result.pages, smallLocales.length * (growthPilotTools.filter((tool) => tool.indexable !== false).length + 1));
   assert.equal(result.sitemapUrls, result.pages);
+  await context.test('phase 0: hub has a noindex 404 page instead of SPA fallback', async () => {
+    assert.match(await readFile(join(outputDir, '404.html'), 'utf8'), /name="robots" content="noindex,follow"/u);
+  });
+  await context.test('phase 0: hub entry sitemap is a language index', async () => {
+    assert.match(await readFile(join(outputDir, 'sitemap.xml'), 'utf8'), /<sitemapindex/u);
+  });
   assert.equal(await readFile(join(outputDir, 'favicon.svg'), 'utf8'), '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
   assert.ok(result.files <= 19_500);
   assert.ok(result.assetFiles.length === growthPilotTools.length + 1 + Object.keys(toolStyles).length + Object.keys(workerBundles).length + Object.keys(extraAssets).length);
-  const sitemap = await readFile(join(outputDir, 'sitemap.xml'), 'utf8');
+  const sitemap = JSON.stringify(await readSitemapRecords(outputDir, 'https://tools.usefulverse.com'));
   assert.ok(sitemap.includes('https://tools.usefulverse.com/es/tools/gravel-calculator/'));
   assert.ok(!sitemap.includes('https://usefulverse.com/tools/gravel-calculator/'));
   const workerAsset = result.assetFiles.map(([path]) => path.split('/').at(-1)).find((name) => name.startsWith('image-upscaler-worker.'));
