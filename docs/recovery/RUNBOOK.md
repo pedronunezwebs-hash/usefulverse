@@ -82,6 +82,10 @@ nuevas** (la mejora de las existentes continúa) y se avisa a Pedro.
 
 ---
 
+### Preparación en paralelo · decisión de Pedro, 29-oct-2026
+
+Mientras se espera la ventana de publicación o la verificación de fase 0, preparar y probar en ramas propias las mejoras visuales, funciones, contenidos y búsquedas de las páginas existentes. Priorizar progress.csv, fuentes gratuitas y ejemplos reales; sin relleno ni URLs nuevas. Este permiso de preparación no autoriza publicar ni marcar herramientas terminadas antes de sus puertas, ni anticipar el corte de dominio sin sus verificaciones. La limitación diaria se aplica a la publicación; no obliga a dejar inactivo el trabajo de calidad. Traductor/configuración intactos.
+
 ## 4. Fase 0 · Arreglos urgentes (un PR, primero de todo)
 
 1. **404 real en `tools.usefulverse.com`:** el build del subdominio debe generar un `404.html` en la raíz de la salida

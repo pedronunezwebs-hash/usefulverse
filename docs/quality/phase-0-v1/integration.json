@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T05:57:36.845Z",
+  "pr": 143,
+  "mergedCommit": "e2286d965d70b9c441d7bdf38f1cb1f012f0d1a0",
+  "mergedTree": "aa9b8f0eeda615cb60bdf3c186c972606f214f95",
+  "reviewedTreeIdentical": true,
+  "runtimeMatchesTestedSource": "fdd7c20e1d1d49361f6500b2482fbba0709402c9",
+  "onlyExtraRuntimeTreeDifference": "test-only owner/reference coverage in scripts/phase-zero.test.mjs; final focused tests passed",
+  "protectedSourcesAndWorkflowsUnchanged": true,
+  "webActionsDispatched": 0,
+  "deployments": 0,
+  "parallelPreparationAuthorizedByPedro": true,
+  "phaseZeroProductionComplete": false,
+  "nextQualityTool": "date-calculator"
+}

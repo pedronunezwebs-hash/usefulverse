@@ -1,3 +1,9 @@
+## 2026-10-29 · Codex · Fase 0 integrada y preparación de calidad en paralelo
+
+PR143 integrada en main (e2286d9), árbol idéntico al revisado; código de runtime idéntico al candidato probado fdd7c20. Siete workflows/modelos y fuentes de traducción intactos. Cloudflare sin integración Git y producción del 18-oct; no hubo deploy ni Actions web. Se mantiene la publicación del hub desde 30-oct 00:00 Asia/Saigon y principal otro día (mínimo 31-oct).
+
+Pedro autoriza adelantar diseño, funciones y contenido mientras se espera, en ramas separadas y sin publicar antes de las puertas. Primer prototipo: date-calculator, prioridad 1/nivel A, 2.547 impresiones históricas; investigación gratuita, sin nuevas URLs ni relleno. Se añade columna nivel y se reserva la fila como en-curso; ninguna capa aprobada.
+
 ## 2026-10-29 · Codex · Fase 0 + G1 preparados, entrega pendiente
 
 [PR #143](https://github.com/pedronunezwebs-hash/usefulverse/pull/143), fuente [fdd7c20](https://github.com/pedronunezwebs-hash/usefulverse/commit/fdd7c20e1d1d49361f6500b2482fbba0709402c9). Regresiones antes del arreglo: 404 ausente, doble SEO, feeds planos y 106 controladores sin versión. Candidato corrige los cuatro, con fechas reales conocidas y omisión de fechas históricas desconocidas. Los 106 JS y 192 dependencias comparten namespace por contenido; 3.816 HTML comparados con originales, solo referencias cambiadas. Contraste, toque44px, selección de idioma por ruta y favicon del 404 tienen regresiones adicionales.
