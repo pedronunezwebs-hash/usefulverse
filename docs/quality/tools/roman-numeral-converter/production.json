@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-10-29T11:03:55.353Z",
+  "method": "Fresh Chrome navigation and local-only tasks in current public widget",
+  "reads": [
+    {
+      "id": "roman-numeral-converter",
+      "url": "https://usefulverse.com/tools/roman-numeral-converter/",
+      "title": "Roman Numeral Converter for Dates — Free | UsefulVerse",
+      "h1": "Roman Numeral Converter",
+      "status": 200
+    },
+    {
+      "id": "number-to-words-converter",
+      "url": "https://usefulverse.com/tools/number-to-words-converter/",
+      "title": "Number to Words Converter Online — Free · no limits | UsefulVerse",
+      "h1": "Number to Words Converter",
+      "status": 200
+    },
+    {
+      "id": "binary-converter",
+      "url": "https://usefulverse.com/tools/binary-converter/",
+      "title": "Hexadecimal to Binary & Base Converter — Free | UsefulVerse",
+      "h1": "Binary Converter",
+      "status": 200
+    },
+    {
+      "id": "date-calculator",
+      "url": "https://usefulverse.com/tools/date-calculator/",
+      "title": "Date Calculator – Days Between Dates — Free | UsefulVerse",
+      "h1": "Date Calculator",
+      "status": 200
+    }
+  ],
+  "tasks": {
+    "number2026": "MMXXVI",
+    "romanXIV": "14",
+    "dateDMY": "XXIX / X / MMXXVI",
+    "status": "Roman numeral date is ready."
+  },
+  "prototypePublished": false
+}
