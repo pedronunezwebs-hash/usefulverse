@@ -49,7 +49,7 @@ Revisión visual de las diez en móvil/tablet/escritorio; oscuro y fixtures son 
 | 10 Rendimiento | Laboratorio dentro del presupuesto; INP campo pendiente |
 | 11 Accesibilidad | axe/teclado; lector de pantalla real pendiente |
 | 12 RTL/largos | Fixtures correctos; ar/de reales pendientes |
-| 13 Idiomas | Inglés revisado; integración al corpus, piloto/cobertura/hreflang pendientes |
+| 13 Idiomas | Inglés conectado porPR149; traducciones reales/piloto/cobertura/hreflang pendientes |
 | 14 Check/release | Gate20 existente pasa; check/CSP/caché del sitio integrado pendientes |
 | 15 Siete capas |1–4 ejecutadas;5–7 parciales por integración/idiomas/dispositivos/revisión |
 | 16 Pedro | P-010 común, bloqueada hasta URL candidata; ningún ID ni hardware adicional |
@@ -68,3 +68,5 @@ node scripts/build-quality-math.mjs .qa-math/site ratio-proportion-calculator
 ```
 
 [Lote continuo y receta completa](../../math-batch-1/README.md).
+
+**Actualización de inglés29-oct:** [PR149](https://github.com/pedronunezwebs-hash/usefulverse/pull/149) integrada y fuente automática alineada. La indicación anterior de estar fuera del corpus queda sustituida: el inglés ya está conectado; traducciones/publicación siguen pendientes. [Datos técnicos separados y salida idéntica](../../english-quality-v1/README.md). Sin repetición de pruebas físicas ni cambios al traductor.

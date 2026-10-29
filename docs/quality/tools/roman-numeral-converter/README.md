@@ -116,3 +116,5 @@ node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/roman-
 
 Los perfiles propios se retiran al cerrar. Builds, modelos y cachés no se guardan en Git.
 [Recibo de respaldo y retirada](closure.json). Candado LIBRE; consultar ESTADO antes de retomar.
+
+**Actualización de inglés29-oct:** [PR149](https://github.com/pedronunezwebs-hash/usefulverse/pull/149) integrada y fuente automática alineada. La indicación anterior de estar fuera del corpus queda sustituida: el inglés ya está conectado; traducciones/publicación siguen pendientes. [Datos técnicos separados y salida idéntica](../../english-quality-v1/README.md). Sin repetición de pruebas físicas ni cambios al traductor.

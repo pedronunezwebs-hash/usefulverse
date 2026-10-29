@@ -46,3 +46,5 @@ node scripts/localization/autopilot-source.mjs .qa-source/corpus.json
 
 Crear primero una carpeta temporal propia; respetar≥10GB libres/≤2GB de huella. No conservar el corpus completo en Git.
 La prueba de ensamblado vive solo en las ramas de prototipos; allí se ejecuta además `node --test src/quality/shared/source-copy.test.mjs`.
+
+**Entrega verificada:** [PR149](https://github.com/pedronunezwebs-hash/usefulverse/pull/149) integrada mediante9eac161;[recibo](delivery.json). Fuente automática alineada sin force. [Compatibilidad de cuatro ramas](compatibility.json), con diez renderizados históricos idénticos; [alcance del PR](scope-proof.json). La campaña activa sigue usando suSHA anterior.
