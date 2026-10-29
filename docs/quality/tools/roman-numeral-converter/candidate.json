@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "roman-numeral-converter",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/roman-numeral-converter/",
+  "bytes": {
+    "criticalCSS": 13932,
+    "html": 41482,
+    "htmlBrotli": 9584,
+    "cssBrotli": 3957,
+    "jsBrotli": 3752,
+    "font": 40784
+  }
+}

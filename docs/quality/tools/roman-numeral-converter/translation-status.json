@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-10-29T11:10:31.455Z",
+  "previousRun": {
+    "id": 40658885003,
+    "status": "completed",
+    "conclusion": "success",
+    "finishedAt": "2026-10-29T08:38:42Z",
+    "wavesDelivered": 6
+  },
+  "automaticContinuation": {
+    "id": 40843674935,
+    "status": "in_progress",
+    "startedAt": "2026-10-29T08:39:08Z",
+    "jobs": [
+      {
+        "name": "ready",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "preflight / safety",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "wave-1 / drafts (3)",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "name": "wave-1 / drafts (2)",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "name": "wave-1 / drafts (1)",
+        "status": "in_progress",
+        "conclusion": null
+      },
+      {
+        "name": "wave-1 / drafts (0)",
+        "status": "in_progress",
+        "conclusion": null
+      }
+    ]
+  },
+  "latestNotificationSummary": {
+    "issue": 141,
+    "source": "https://github.com/pedronunezwebs-hash/usefulverse/issues/141",
+    "source_targets": 1105452,
+    "generated": 144594,
+    "audited": 96704,
+    "pending": 1027608,
+    "quarantined": 39571,
+    "exported_entries": 105639
+  },
+  "webWorkflows": [
+    {
+      "name": "Validate and deploy UsefulVerse",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Measure Step A release capacity without publishing",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Validate staged UsefulVerse without publishing",
+      "state": "disabled_manually"
+    }
+  ],
+  "translatorWorkflowsActive": 7,
+  "configurationChanged": false,
+  "manualDispatches": 0,
+  "approvedTranslationDestinations": 0,
+  "note": "Read-only snapshot. Counts are overlapping units, not completed pages or language approvals. No manual translation or workflow/model/policy change."
+}
