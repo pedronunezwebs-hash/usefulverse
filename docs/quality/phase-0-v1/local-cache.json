@@ -1,0 +1,23 @@
+{
+  "html": {
+    "status": 200,
+    "cacheControl": "public, max-age=0, must-revalidate"
+  },
+  "assets": [
+    {
+      "url": "/assets/growth600.c4f25882ac10.css",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "url": "/assets/markdown-editor.a7a28913a272.css",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "url": "/assets/markdown-editor.d8ad9a603f3a.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, immutable"
+    }
+  ]
+}

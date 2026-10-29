@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-29T01:16:58.795373+00:00",
+  "readOnly": true,
+  "projects": [
+    {
+      "project": "usefulverse",
+      "productionBranch": "main",
+      "gitIntegration": false,
+      "productionCreatedOn": "2026-10-18T14:40:43.2856Z"
+    },
+    {
+      "project": "usefulverse-tools",
+      "productionBranch": "main",
+      "gitIntegration": false,
+      "productionCreatedOn": "2026-10-18T20:38:58.280016Z"
+    }
+  ]
+}

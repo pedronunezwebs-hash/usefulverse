@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T00:41:50.105175+00:00 · fase 0 + G1: regresiones, 404/título/sitemaps/hash; sin deploy hoy
+**Turno actual (candado):** LIBRE · Codex · 2026-10-29T01:22:30.591Z · fase 0 + G1 preparados en PR143; retirada verificada; producción pendiente
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -18,7 +18,9 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Paso A inicial del RUNBOOK §7 completado (29-oct):** [PR #136 integrada](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), [merge 6f96ec7](https://github.com/pedronunezwebs-hash/usefulverse/commit/6f96ec7d574aec09ace5b8aff96dbc5c0987df0b). **300 / 300 fuentes en main, 300 subidas-noindex, 0 activadas.** Preview vigente: [draft-300-noindex](https://draft-300-noindex.usefulverse-tools.pages.dev); 11.100 rutas (300 × 37), 36 homes noindex, sitemap vacío, robots sin bloqueo. Diez URLs públicas correctas, siete destinos, sin recursos fallidos. nb conserva inglés explícito, 0 traducciones nb aprobadas. La integración bajo usefulverse.com sigue en §4b, después de fase 0: no se ha cortado ningún dominio ni publicado el candidato unificado. [Entrega y límites](runtime-v1/README.md), [lecturas públicas](runtime-v1/public-preview.json).
 
-**Siguiente paso exacto: fase 0 + G1**, en una rama propia desde main. Leer RUNBOOK §4/4a y AUDITORIA-CATALOGO (G1)/PESO-Y-DISENO. Primero regresiones, después: (1) 404.html en el hub y 404 real en las tres rutas falsas, (2) título de home sin Free duplicado, (3) sitemaps por idioma en ambos hosts, (4) hash de los 106 JS recuperados o caché corta con revalidación. Empezar por builds parciales; local/manual, sin Actions de web, ≥10 GB libres/≤2 GB de huella. El único despliegue de este día ya se usó para la preview: **siguiente publicación no antes del 30-oct-2026 00:00 Asia/Saigon (29-oct 17:00 UTC)**. Se puede preparar código/QA sin esperar. Revalidar cuota/coste antes de publicar. No anticipar fase 0b (26 errores), corte §4b o diseño sin verificar la fase anterior.
+**Siguiente paso exacto: entrega de fase 0 + G1**, candidato preparado en [PR #143](https://github.com/pedronunezwebs-hash/usefulverse/pull/143), rama `fix/phase-0-g1` (código base [fdd7c20](https://github.com/pedronunezwebs-hash/usefulverse/commit/fdd7c20e1d1d49361f6500b2482fbba0709402c9)). Cuatro arreglos implementados: 404 del hub, portada sin SEO duplicado, índices por idioma en ambos hosts y namespace por contenido de los 106 JS/dependencias. Suite completa 3.272 Node correcta + 18 regresiones focalizadas finales (solapadas); check principal/gate20 y build completo hub correctos. 10.260 + 15.365 = **25.625 URLs, delta 0**. Pages local confirma 404/caché real; 27 geometrías 320–1920 es/de/ar, axe0 y objetivos44px. Huella máxima muestreada 1.839.490.266 B. [Evidencia, fingerprints y receta](phase-0-v1/README.md). No repetir la investigación ni declarar la fase cerrada: **candidato aún sin integrar en main ni publicar**.
+
+**Publicación pendiente y orden exacto:** un solo despliegue por día Asia/Saigon. La preview del 29-oct ya consumió el de hoy; primero el hub no antes del **30-oct 00:00 +07 (29-oct 17:00 UTC)**; después el principal en otro día, como pronto **31-oct 00:00 +07**. Recuperar PR143, revisar/reconstruir el candidato desde su fuente remota con ≥10GB libres/≤2GB de huella; comprobar coste/cuota/Direct Upload antes de cada publicación. Verificar en vivo las tres rutas falsas, la URL/caché de JS, título y todos los feeds sin crecimiento; reenviar solo los sitemaps limpios. Mantener las 300 noindex y el traductor intacto. **No fase 0b, unificación o diseño hasta verificar los dos hosts.**
 
 **Pruebas de entrega:** **3.255 Node, cero fallos/omisiones**; 47 de entrega/composición incluidas. npm run check principal y gate de 20 idiomas existentes repetidos/correctos. Runtime Static Assets real local: 93 checks HTTP/32 páginas (cabeceras/caché/404/redirects/query). axe 4.14: cero infracciones A/AA en 32 páginas; 104 comprobaciones de tareas correctas. Lighthouse móvil 13.6: cinco muestras 100/100/100, LCP 756–1.075 ms, CLS/TBT 0. Traza separada CPU×4/Slow4G: LCP 1.292 ms/CLS0. Teclado y sanitización DOMPurify correctos; no se certifica INP, Firefox/WebKit, hardware ni las siete capas de las 1.000. **Ninguna herramienta/idioma se da por terminado.** [Evidencia](runtime-v1/README.md).
 
@@ -69,9 +71,9 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 - [x] Copia inglesa centralizada de las 1.000 conectada: 14 mercados y 106 recuperadas; 0 solo metadatos. Literales JS/datos de juegos y calidad integral pendientes.
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
-- [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
-- [ ] Título de la home sin «Free» repetido + test de títulos
-- [ ] Índice de sitemaps por idioma en ambos hosts
+- [ ] 404 hub: código/QA local listos en PR143; falta verificar las tres falsas en producción
+- [ ] Título de home: código/tests listos en PR143; falta producción
+- [ ] Sitemaps por idioma: ambos candidatos verificados, 25.625 URLs/delta0; falta publicar
 - [ ] Despliegue verificado + sitemaps reenviados
 
 ### Pruebas (`docs/quality/PRUEBAS.md`)
@@ -81,7 +83,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 - [x] Columnas de pruebas en `progress.csv` · 2026-10-20 (las siete capas de las 300 siguen pendientes)
 
 ### Fase 0b · Errores confirmados (`AUDITORIA-CATALOGO.md` §2) · arreglados: **0 / 26**
-- [ ] G1 · Hash en los 106 JS de `recovered-live-only-106` (o caché corta)
+- [ ] G1 · 106 JS/192 dependencias versionados y 3.816 páginas comparadas en PR143; falta entrega/verificación pública
 - [ ] Errores de cálculo y lógica (mates, finanzas, ciencia, otros, dev): test que lo reproduce + arreglo
 - [ ] Juegos rotos (sudoku, 2048 táctil, palabra de 5 letras en inglés, kakuro y mahjong reales)
 

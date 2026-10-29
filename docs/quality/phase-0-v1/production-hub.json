@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-29T00:58:34.526Z",
+  "deployed": false,
+  "readings": [
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz/",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "title": "Free everyday tools | UsefulVerse"
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/401k-calculator/",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "title": "401(k) Calculator Free | UsefulVerse",
+      "asset": "/assets/recovered-live-only-106/controllers/401k-calculator.js"
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "title": "",
+      "sitemap": {
+        "type": "urlset",
+        "urls": 15365
+      }
+    },
+    {
+      "url": "https://tools.usefulverse.com/assets/recovered-live-only-106/controllers/401k-calculator.js",
+      "status": 200,
+      "cacheControl": "public, max-age=31536000, must-revalidate, immutable"
+    }
+  ]
+}

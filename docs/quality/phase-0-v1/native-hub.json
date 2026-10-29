@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-10-29T01:13:55.998Z",
+  "files": 16392,
+  "htmlFiles": 15366,
+  "bytes": 776765871,
+  "treeSha256": "f3c7a647a4a7a8886798723cfaf29c7586b1f6b0ccc79d469803555c50f36eb8",
+  "largest": [
+    {
+      "path": "assets/market-tools/vocal-remover/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+      "bytes": 10872779
+    },
+    {
+      "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+      "bytes": 9598218
+    },
+    {
+      "path": "assets/market-tools/occt-import-js.wasm",
+      "bytes": 7604031
+    },
+    {
+      "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+      "bytes": 6632188
+    },
+    {
+      "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+      "bytes": 6154144
+    },
+    {
+      "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+      "bytes": 5675089
+    },
+    {
+      "path": "assets/ipa-transcriber/cmudict-2026-10-20.dict",
+      "bytes": 3618488
+    },
+    {
+      "path": "assets/pyodide-314.0.7/python_stdlib.zip",
+      "bytes": 2545637
+    }
+  ],
+  "fitsFileAndAssetBudget": true,
+  "excessFiles": 0,
+  "oversizedAssetCount": 0,
+  "oversizedAssetSample": [],
+  "indexedURLs": 15365,
+  "sitemapLanguages": {
+    "am": 424,
+    "ar": 424,
+    "bg": 424,
+    "bn": 424,
+    "ca": 424,
+    "de": 424,
+    "el": 424,
+    "en": 424,
+    "es": 424,
+    "fa": 424,
+    "fr": 424,
+    "gu": 424,
+    "ha": 424,
+    "hi": 424,
+    "id": 424,
+    "it": 424,
+    "ja": 424,
+    "ko": 424,
+    "mr": 424,
+    "ms": 424,
+    "nb": 101,
+    "nl": 424,
+    "pl": 424,
+    "pt-br": 424,
+    "ru": 424,
+    "sv": 424,
+    "sw": 424,
+    "ta": 424,
+    "te": 424,
+    "th": 424,
+    "tl": 424,
+    "tr": 424,
+    "uk": 424,
+    "ur": 424,
+    "vi": 424,
+    "zh-cn": 424,
+    "zh-tw": 424
+  },
+  "lastmodKnown": 7517,
+  "urlInventorySHA256": "285a38253c91bac8575556167667cd61d42d14605a616f7f3f356a3461515ac5",
+  "matchesCapturedPublicURLs": true,
+  "recoveredPages": 3816,
+  "controllerOwners": 106,
+  "versionedAssetFiles": 193,
+  "dependencyTreeVersion": "8dcb0a88a745596406d82318",
+  "exactRecoveredPageBytesAfterRemovingNamespace": true,
+  "exactAssetBytesAfterVersioning": true
+}
