@@ -82,3 +82,5 @@ Recetas de lectura/QA: `runtime-probe.mjs` desde la raíz del clon con origen lo
 La cuota y el preflight solo leen APIs, no crean recursos. El servidor local debe iniciarse sin credenciales/bindings remotos.
 Fuente/proofs respaldados antes de retirar cada clon; [retirada del primer entorno](math-retirement.json).
 Recibo final de retirada y LIBRE se añade al terminar, no antes de eliminar los temporales propios.
+
+[Lock exacto del QA ligero](qa-package-lock.json), además del lock principal usado por el instalador de build. Sin modelos ni credenciales.

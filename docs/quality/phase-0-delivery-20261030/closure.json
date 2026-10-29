@@ -1,0 +1,103 @@
+{
+  "closedAt": "2026-10-29T17:31:04.536Z",
+  "retirement": {
+    "removed": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-phase0-publish-20261030",
+    "existsAfter": false,
+    "previousMathExists": false,
+    "freeBytes": 42847920128
+  },
+  "source": "717f1b2cd102fd6f1f13c2a91965fbb16ab84c01",
+  "remoteTree": "1193ad6425744c7b01a8bd406e526aaed3025a2a",
+  "qualityTree": "27e6245de0743185c203d5f7c4c8d3802a5b052f",
+  "docsPR": 151,
+  "mainDeliveryMerge": "eeda3953490e73852dd830eedf781bebeea550a1",
+  "candidateActionRuns": [
+    {
+      "branch": "feat/math-quality-batch-1",
+      "total": 0
+    },
+    {
+      "branch": "feat/pdf-ocr-quality",
+      "total": 0
+    },
+    {
+      "branch": "verify/phase0-publish-20261030",
+      "total": 0
+    }
+  ],
+  "webWorkflows": [
+    {
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translatorWorkflows": [
+    {
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    }
+  ],
+  "englishBackfillPaths": [
+    "scripts/localization/quality-copy-source.test.mjs",
+    "translation-sources/age-calculator.json",
+    "translation-sources/average-calculator.json",
+    "translation-sources/barcode-generator.json",
+    "translation-sources/date-calculator.json",
+    "translation-sources/discount-calculator.json",
+    "translation-sources/fraction-calculator.json",
+    "translation-sources/fuel-cost-calculator.json",
+    "translation-sources/number-to-words-converter.json",
+    "translation-sources/percentage-calculator.json",
+    "translation-sources/prime-number-checker.json",
+    "translation-sources/random-number-generator.json",
+    "translation-sources/ratio-proportion-calculator.json",
+    "translation-sources/roman-numeral-converter.json",
+    "translation-sources/time-duration-calculator.json"
+  ],
+  "sourceBackups": {
+    "math": "a11d0bfd4520d24c45c89ab426e2ea5263e9068d",
+    "pdf": "153d7a69225e1e4ebc99eff8dc6ba617bcacfedd",
+    "delivery": "717f1b2cd102fd6f1f13c2a91965fbb16ab84c01",
+    "englishMerge": "9eac161466993e82fae904342d46abc23d530fe3"
+  },
+  "hubDeployment": "7e74ca2e-6d73-4cfd-957a-b700af9812d5",
+  "candadoReleasedAfterCleanup": true,
+  "ownProcessesObserved": 0,
+  "newToolApprovals": 0,
+  "newActivations": 0,
+  "newPhysicalTestIDs": [],
+  "principalEarliest": "2026-10-31T00:00:00+07:00",
+  "nextPreparation": "PR150 real PDF.js/Tesseract/pdf-lib adapters and independently validated selectable-text PDF"
+}

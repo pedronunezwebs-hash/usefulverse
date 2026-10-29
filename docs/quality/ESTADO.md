@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-30 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T16:35:00Z · PR148/150 respaldadas; preparar entrega del hub fase0 desde main, ventana30-oct00:00+07
+**Turno actual (candado):** LIBRE
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -208,6 +208,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** Cierre 2026-10-29T11:36:02.226Z: PR147/fuente75cade4 y árbol remoto verificados; clon, builds, dependencias, navegadores, perfiles, cachés y QA propios eliminados antes de LIBRE. Servidor detenido/pestaña en blanco/cero procesos propios; 43.1 GiB libres. Sin publicación ni activaciones; traductor sigue solo. [Recibo](tools/barcode-generator/closure.json).
+**Retirada actual:** Cierre 2026-10-29T17:31:04.536Z: diez candidatas PR148 y baseOCR PR150 respaldadas; inglés14 integradoPR149 y hubfase0 entregadoPR151/7e74ca2e. Ambos clones, builds, dependencias, navegadores/perfiles, cachés y QA propios eliminados antes deLIBRE; tres logs globales propios retirados, cero procesos propios en auditoría. 39.9GiB libres. Principal pendiente31-oct00:00+07;traductor sigue solo. [Recibo](phase-0-delivery-20261030/closure.json).
 
 Antes de CI del traductor, si se recogen checkpoints: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Actualiza solo inventario/total derivados; no crudos, juicios ni procedencia. No hace falta ejecutarlo para un lote de web sin recolección.
