@@ -1,0 +1,6 @@
+{
+  "secondCommandBlocked": true,
+  "secondChildNotStarted": true,
+  "blockingMode": "nonblocking flock",
+  "firstLockReleasedByContext": true
+}

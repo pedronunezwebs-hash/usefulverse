@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    ".qa-phase0/runtime-probe.mjs",
+    "http://127.0.0.1:54829",
+    ".qa-phase0/local-runtime.json"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1774534579,
+  "minSampledFreeBytes": 41922506752,
+  "samples": 4,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

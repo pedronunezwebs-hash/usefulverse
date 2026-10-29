@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "USEFULVERSE_DIST=.qa-phase0/main",
+    "npm",
+    "run",
+    "check"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1563110472,
+  "minSampledFreeBytes": 42158686208,
+  "samples": 24,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

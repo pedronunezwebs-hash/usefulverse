@@ -1,0 +1,5 @@
+
+> usefulverse@0.1.0 locale:release-check
+> node scripts/localization/check-release.mjs
+
+Release locale review passed for 20 expanded locales.

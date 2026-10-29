@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-10-29T16:49:54.532Z",
+  "readOnly": true,
+  "mutations": 0,
+  "existingProjects": 3,
+  "queryPages": 25,
+  "conservativeDeploymentEventsThisMonth": 229,
+  "conservativeFreeBuildBudget": 500,
+  "oneAdditionalEventWithinBudget": true,
+  "latestUsefulVerseEvents": [
+    {
+      "project": "usefulverse-tools",
+      "id": "413cf159-eb2e-41d0-8a80-29b7993c190b",
+      "created_on": "2026-10-29T00:18:21.886068Z",
+      "environment": "preview",
+      "branch": "draft-300-noindex",
+      "status": "success"
+    },
+    {
+      "project": "usefulverse-tools",
+      "id": "baaa90a9-acd7-4d3c-b8bf-ba2742ee8d79",
+      "created_on": "2026-10-20T05:37:11.344215Z",
+      "environment": "preview",
+      "branch": "draft-300-noindex",
+      "status": "success"
+    },
+    {
+      "project": "usefulverse-tools",
+      "id": "d200c441-2f2f-4ec8-b77d-d37ccaa28c0c",
+      "created_on": "2026-10-18T20:38:58.280016Z",
+      "environment": "production",
+      "branch": "main",
+      "status": "success"
+    },
+    {
+      "project": "usefulverse-tools",
+      "id": "d902a2dd-3b27-4c6e-872d-5b7bf35d5d16",
+      "created_on": "2026-10-18T15:12:39.942992Z",
+      "environment": "production",
+      "branch": "main",
+      "status": "success"
+    }
+  ],
+  "nextUsefulVerseDeploymentNotBefore": "2026-10-30T00:00:00+07:00",
+  "directUploadOnly": true,
+  "buildMinutesEstimated": 0,
+  "notes": [
+    "All deployment events counted conservatively; Git sources absent on UsefulVerse projects.",
+    "No quota change, paid plan or new service. Event count is not a billable-minute measurement."
+  ]
+}

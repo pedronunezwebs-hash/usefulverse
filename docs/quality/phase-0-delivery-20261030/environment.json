@@ -1,0 +1,18 @@
+{
+  "source": "75b010fb88579332896b96ad8fb00141ec19b891",
+  "wrangler": "4.155.0",
+  "qaPlaywright": "1.64.1",
+  "axe": "4.14.0",
+  "fullNode": {
+    "pass": 3287,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 53614.436333
+  },
+  "nativeBuildDependencies": "scripts/install-local-build-deps.py from unchanged root lock; native inference excluded",
+  "buildDependenciesRetiredBeforeBrowser": true,
+  "heavyProcessLockAdded": true,
+  "briefInitialTestsBuildOverlap": true,
+  "noResourceBudgetExceeded": true,
+  "deploymentState": "published hub only; verified twice in production"
+}

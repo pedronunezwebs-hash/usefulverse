@@ -1,0 +1,208 @@
+{
+  "checkedAt": "2026-10-29T16:59:20.619Z",
+  "readOnly": true,
+  "mutations": 0,
+  "newProductsOrPlans": 0,
+  "existingProjects": 3,
+  "projects": [
+    {
+      "name": "usefulverse",
+      "sourceType": null,
+      "productionBuildsEnabled": null,
+      "previewSetting": null,
+      "productionBranch": "main",
+      "productionDeployment": {
+        "id": "0bfcbf58-663e-4a79-b3e1-ca2ef3aa56ad",
+        "created_on": "2026-10-18T14:40:43.2856Z",
+        "environment": "production"
+      },
+      "recentDeployments": [
+        {
+          "id": "0bfcbf58-663e-4a79-b3e1-ca2ef3aa56ad",
+          "created_on": "2026-10-18T14:40:43.2856Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "95e87db2ba1bb8311ce10ad8991e803d077ad502",
+          "status": "success"
+        },
+        {
+          "id": "c6cfeec8-0ed0-4021-a233-b638b7be40d2",
+          "created_on": "2026-10-18T13:59:15.059045Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "58d1bb58af41c8c4cbd9cef39a62401125066310",
+          "status": "success"
+        },
+        {
+          "id": "6a067239-7358-48f7-8f05-e44dc2c9b74b",
+          "created_on": "2026-10-11T15:53:10.18827Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "2e0b22d076303da1d2c357106b0952290bf1121c",
+          "status": "success"
+        },
+        {
+          "id": "8100c95c-4c70-4654-a476-076470027624",
+          "created_on": "2026-10-11T15:06:46.630325Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "7df5d15d0cdf94d11bdfb150d89951b5ec23605c",
+          "status": "success"
+        },
+        {
+          "id": "0cd1e9b3-eaae-43d4-86e2-6919a473ddfe",
+          "created_on": "2026-10-11T14:29:18.928815Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "8e0213f53f1bb1eca6931cbe3f39da6401934814",
+          "status": "success"
+        },
+        {
+          "id": "ce9794f7-f7f7-40a8-afd9-f7e34135b73c",
+          "created_on": "2026-10-11T13:55:32.131651Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "07de655c845797e7dca9bb400ddfe0b56403fe85",
+          "status": "success"
+        },
+        {
+          "id": "b1089ca7-9227-4ae7-8206-a989de04cec7",
+          "created_on": "2026-10-11T13:09:03.202407Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "b68cfe3f539a3069a51568518c6c3c0cb9d0238b",
+          "status": "success"
+        },
+        {
+          "id": "81f0d8e1-2c51-41e4-87cf-2491cd5b158e",
+          "created_on": "2026-10-11T12:39:23.758113Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "1243db4aace7180742bd909fdb49add3440f3797",
+          "status": "success"
+        },
+        {
+          "id": "b6dad534-d0e0-4f36-9359-d267b3947318",
+          "created_on": "2026-10-11T12:12:23.451277Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "f5abdb60abc9d565fdc5d9e74a1019bc8c327f62",
+          "status": "success"
+        },
+        {
+          "id": "7c3fb02b-5c35-4f73-b19e-8af0430d6d3f",
+          "created_on": "2026-10-11T11:49:19.06248Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "13a866ef52a89167442886913b6b601699a32382",
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "name": "usefulverse-tools",
+      "sourceType": null,
+      "productionBuildsEnabled": null,
+      "previewSetting": null,
+      "productionBranch": "main",
+      "productionDeployment": {
+        "id": "d200c441-2f2f-4ec8-b77d-d37ccaa28c0c",
+        "created_on": "2026-10-18T20:38:58.280016Z",
+        "environment": "production"
+      },
+      "recentDeployments": [
+        {
+          "id": "413cf159-eb2e-41d0-8a80-29b7993c190b",
+          "created_on": "2026-10-29T00:18:21.886068Z",
+          "environment": "preview",
+          "branch": "draft-300-noindex",
+          "commit": "6f96ec7d574aec09ace5b8aff96dbc5c0987df0b",
+          "status": "success"
+        },
+        {
+          "id": "baaa90a9-acd7-4d3c-b8bf-ba2742ee8d79",
+          "created_on": "2026-10-20T05:37:11.344215Z",
+          "environment": "preview",
+          "branch": "draft-300-noindex",
+          "commit": "a5cdeeabfdf2908d91d7d5fd6bf880412459e5b8",
+          "status": "success"
+        },
+        {
+          "id": "d200c441-2f2f-4ec8-b77d-d37ccaa28c0c",
+          "created_on": "2026-10-18T20:38:58.280016Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "18a8dbc86d7a6aa705932ef3a94e7c1bc6dde5a4",
+          "status": "success"
+        },
+        {
+          "id": "d902a2dd-3b27-4c6e-872d-5b7bf35d5d16",
+          "created_on": "2026-10-18T15:12:39.942992Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "8dfcc147a34eb9442dc6e996f0da7ef2a3332818",
+          "status": "success"
+        },
+        {
+          "id": "667de5a1-b1b7-4707-bb25-7a27f3b9c1c5",
+          "created_on": "2026-10-18T14:45:50.283719Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "95e87db2ba1bb8311ce10ad8991e803d077ad502",
+          "status": "success"
+        },
+        {
+          "id": "07788162-59b0-41c1-83b3-63c40ecf50a5",
+          "created_on": "2026-10-18T14:05:43.492256Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "58d1bb58af41c8c4cbd9cef39a62401125066310",
+          "status": "success"
+        },
+        {
+          "id": "5065cf23-e2ad-4dac-b4ea-94113539627f",
+          "created_on": "2026-10-15T08:45:37.497451Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "8a7f357c7284ee90796210d7899129cfdd6bf86d",
+          "status": "success"
+        },
+        {
+          "id": "3031932f-3ab3-4e4b-8fc8-66255025ccf1",
+          "created_on": "2026-10-14T20:22:28.832837Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "2e0b22d076303da1d2c357106b0952290bf1121c",
+          "status": "success"
+        },
+        {
+          "id": "37e380dc-e691-41f1-a72f-4ff543a99483",
+          "created_on": "2026-10-14T20:19:21.064237Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "2e0b22d076303da1d2c357106b0952290bf1121c",
+          "status": "success"
+        },
+        {
+          "id": "f79ecf88-0934-4c2a-bfb1-02564c660acf",
+          "created_on": "2026-10-14T04:00:45.724807Z",
+          "environment": "production",
+          "branch": "main",
+          "commit": "d624a9bcef7c943c41bbbc00b6a689d57bf76f42",
+          "status": "success"
+        }
+      ]
+    }
+  ],
+  "currentCycleUsageReviewed": true,
+  "authorizedCeilingUSD": 10,
+  "billingReadPermissions": {
+    "subscriptions": true,
+    "usageInfo": true,
+    "usage": true
+  },
+  "workersPaidExistingConfirmed": true,
+  "existingMonthlyPlansWithinCeiling": true,
+  "observedTotalBelowAuthorizedCeiling": true,
+  "note": "Private billing rows and monetary details are not written. Static-only upload incremental cost must still be demonstrated; daily window not bypassed."
+}

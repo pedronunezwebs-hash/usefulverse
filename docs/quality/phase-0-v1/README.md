@@ -1,5 +1,7 @@
 # Fase 0 + G1 · candidato local · 29-oct-2026
 
+**Actualización30-oct:** hub publicado/verificado7e74ca2e;principal pendiente como pronto31-oct00:00+07. [Entrega actual](../phase-0-delivery-20261030/README.md). El resto conserva el informe histórico de preparación del29-oct.
+
 Fuente integrada en main por PR143, merge `e2286d9`; [recibo](integration.json). Rama histórica `fix/phase-0-g1`, desde main `911187d`. No es una publicación ni una aprobación de herramientas/idiomas.
 
 Cambios: 404 real del hub reutilizando la página existente; portada principal sin aplicar dos veces el SEO; sitemaps por idioma en ambos hosts; namespace de contenido para las dependencias de las 106 recuperadas. Fuentes capturadas, slugs, traducciones y workflows intactos. Las 300 siguen en noindex y fuera del sitemap.

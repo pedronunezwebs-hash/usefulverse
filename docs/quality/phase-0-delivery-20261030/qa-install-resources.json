@@ -1,0 +1,21 @@
+{
+  "command": [
+    "npm",
+    "install",
+    "--prefix",
+    ".qa-phase0/qa-deps",
+    "--ignore-scripts",
+    "--no-audit",
+    "--no-fund",
+    "--cache",
+    ".qa-phase0/qa-cache",
+    "wrangler@4.155.0"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1764118232,
+  "minSampledFreeBytes": 41921331200,
+  "samples": 7,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}
