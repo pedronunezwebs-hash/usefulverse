@@ -1,6 +1,6 @@
 # Time Duration Calculator · candidato nivel A
 
-29-oct-2026 · Rama `feat/time-duration-planeta`, sobre PR144. **No publicada ni terminada.**
+29-oct-2026 · [PR145](https://github.com/pedronunezwebs-hash/usefulverse/pull/145), fuente [196c73b](https://github.com/pedronunezwebs-hash/usefulverse/commit/196c73b813c7c8bfdbac050caa6a775e2b53393c). Rama `feat/time-duration-planeta`, sobre PR144. **No publicada ni terminada.**
 Prioridad 2: 2.511 impresiones/cinco clics históricos, 14 idiomas con impresiones (1–15 oct).
 Se mejora la URL existente; **25.625 URLs públicas antes/después, delta 0**. Las 300 siguen noindex.
 
@@ -52,7 +52,7 @@ La fuente WOFF2 existente se comparte, sin otro binario duplicado. Licencias aco
 - [Regresiones permanentes](regressions.json): Madrid 29-mar-2026 a las 02:30 se rechazó en el nuevo motor;
   la fuente legacy la acepta normalizada a 03:30. Etiquetas de unidades ausentes y campos nativos recortados se detectaron
   al inspeccionar capturas, se corrigieron y tienen tests. **Ningún arreglo se ha desplegado.**
-- [Lighthouse móvil](lighthouse.json) y [traza fría CPU×4/Slow4G](performance-trace.json) dentro del presupuesto.
+- [Lighthouse móvil](lighthouse.json): **100/100/100**, LCP1.255ms/CLS0/TBT3ms; y [traza fría CPU×4/Slow4G](performance-trace.json) dentro del presupuesto.
   Son laboratorio local, **no INP de campo ni certificación de dispositivos reales**.
 - [Peso final](candidate.json): HTML9.372 B Brotli, CSS3.918 B, JS20.915 B, fuente40.784 B: **74.989 B** estimados.
   CSS crítico13.560 B sin comprimir; sin JS bloqueante. Python sirve sin compresión/cabeceras de Cloudflare;
@@ -114,5 +114,7 @@ node scripts/build-quality-time.mjs .qa-time/site
 python3 -m http.server 54839 --bind 127.0.0.1 --directory .qa-time/site
 PLAYWRIGHT_BROWSERS_PATH="$PWD/.qa-time/browsers" node scripts/security/time-quality-browser.mjs http://127.0.0.1:54839/ .qa-time/browser.json
 ```
+
+Medición reutilizable, sin Actions: `node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/time-duration-calculator/ .qa-time/lighthouse.json`. Usa un perfil nuevo y lo retira al terminar; evita puertos DevTools obsoletos.
 
 Los perfiles del harness se retiran al cerrar. No se guardan builds, modelos ni cachés en Git.

@@ -1,7 +1,7 @@
 {
   "version": "13.6.0",
-  "fetchTime": "2026-10-29T07:41:52.653Z",
-  "scope": "local unpublished prototype; Python HTTP without compression/Cloudflare headers",
+  "fetchTime": "2026-10-29T07:51:49.914Z",
+  "scope": "local unpublished prototype; HTTP server may lack compression/Cloudflare headers",
   "scores": {
     "performance": 100,
     "accessibility": 100,
@@ -9,11 +9,11 @@
   },
   "metrics": {
     "first-contentful-paint": {
-      "value": 1262.439,
+      "value": 1254.5871,
       "unit": "millisecond"
     },
     "largest-contentful-paint": {
-      "value": 1262.439,
+      "value": 1254.5871,
       "unit": "millisecond"
     },
     "cumulative-layout-shift": {
@@ -21,11 +21,11 @@
       "unit": "unitless"
     },
     "total-blocking-time": {
-      "value": 7,
+      "value": 3,
       "unit": "millisecond"
     },
     "speed-index": {
-      "value": 1262.439,
+      "value": 1254.5871,
       "unit": "millisecond"
     }
   },
@@ -123,10 +123,10 @@
             "wastedBytes": 40973
           },
           {
-            "url": "http://127.0.0.1:54839/assets/time-duration-calculator.92231a7b6142.css",
+            "url": "http://127.0.0.1:54839/assets/time-duration-calculator.7b69981568c5.css",
             "cacheLifetimeMs": 0,
-            "totalBytes": 18453,
-            "wastedBytes": 18453
+            "totalBytes": 18488,
+            "wastedBytes": 18488
           }
         ],
         "sortedBy": [
@@ -137,7 +137,7 @@
         ],
         "debugData": {
           "type": "debugdata",
-          "wastedBytes": 126027
+          "wastedBytes": 126062
         }
       }
     },
@@ -152,15 +152,15 @@
             "value": {
               "type": "network-tree",
               "chains": {
-                "BFC5A6CC595CF220F518CA7CF1774181": {
+                "00C9B467A2B24E970C671565404516A3": {
                   "url": "http://127.0.0.1:54839/tools/time-duration-calculator/",
-                  "navStartToEndTime": 9,
-                  "transferSize": 41328,
+                  "navStartToEndTime": 8,
+                  "transferSize": 41363,
                   "isLongest": true,
                   "children": {
-                    "19797.4": {
+                    "21064.4": {
                       "url": "http://127.0.0.1:54839/assets/time-duration-calculator.1e6a9c772e33.js",
-                      "navStartToEndTime": 13,
+                      "navStartToEndTime": 11,
                       "transferSize": 66601,
                       "isLongest": true,
                       "children": {}
@@ -169,7 +169,7 @@
                 }
               },
               "longestChain": {
-                "duration": 13
+                "duration": 11
               }
             }
           },
