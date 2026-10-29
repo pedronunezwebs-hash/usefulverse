@@ -1,0 +1,22 @@
+{
+  "scope": "partial isolated foundation; no candidate UI or release approval",
+  "fullNode": {
+    "pass": 3579,
+    "fail": 0,
+    "skipped": 0,
+    "durationMs": 51564.253625
+  },
+  "newPipelineTests": 22,
+  "generatedRangeCases": 5000,
+  "sequentialPages": 1000,
+  "realOCRScope": "one English synthetic scan in old public pipeline; three exact lines",
+  "newUIBrowserTests": 0,
+  "newToolLighthouseRuns": 0,
+  "indexableURLDelta": 0,
+  "newPhysicalTestIDs": [],
+  "fixtureLibraries": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "Pillow": "12.3.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-10-29T16:21:47.999Z",
+  "scope": "Real OCR in old published widget, one synthetic English scan; no candidate integration or non-English approval",
+  "status": "Text is ready from 1 page. The original PDF is unchanged.",
+  "text": "--- Page 1 ---\nUSEFULVERSE OCR TEST\nInvoice number UV 2026 001\nTotal amount 123.45 USD",
+  "nonGETRequests": [],
+  "failedRequests": []
+}

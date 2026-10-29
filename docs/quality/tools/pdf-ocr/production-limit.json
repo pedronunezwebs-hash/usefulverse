@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-29T16:15:36.977Z",
+  "scope": "Old published widget; real synthetic121-page PDF, requested page1",
+  "httpStatus": 200,
+  "url": "https://usefulverse.com/tools/pdf-ocr/",
+  "title": "PDF OCR – Extract Text from Scanned PDFs — Free | UsefulVerse",
+  "selection": "1",
+  "status": "For safety, this tool supports up to 120 pages at a time. Use the page range to process a smaller section.",
+  "output": "",
+  "nonGETRequests": [],
+  "failedRequests": [],
+  "candidatePublished": false
+}
