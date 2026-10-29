@@ -1,0 +1,67 @@
+{
+  "source": "https://www.gs1nz.org/assets/Resources/Case-Studies/GS1-Bar-coding-basic-user-guide.pdf",
+  "page": 60,
+  "method": "Independent Python digit slicing using GS1 modulo-10 algorithm. First example explicitly printed by GS1; other fixtures derived from the published algorithm, not claimed as allocated product IDs.",
+  "cases": [
+    {
+      "format": "EAN13",
+      "body": "941234554321",
+      "expected": "9412345543219"
+    },
+    {
+      "format": "EAN13",
+      "body": "123456789012",
+      "expected": "1234567890128"
+    },
+    {
+      "format": "EAN13",
+      "body": "629104150021",
+      "expected": "6291041500213"
+    },
+    {
+      "format": "EAN13",
+      "body": "000000000000",
+      "expected": "0000000000000"
+    },
+    {
+      "format": "UPC",
+      "body": "01234567890",
+      "expected": "012345678905"
+    },
+    {
+      "format": "UPC",
+      "body": "03600029145",
+      "expected": "036000291452"
+    },
+    {
+      "format": "UPC",
+      "body": "04210000526",
+      "expected": "042100005264"
+    },
+    {
+      "format": "UPC",
+      "body": "00000000000",
+      "expected": "000000000000"
+    },
+    {
+      "format": "EAN8",
+      "body": "1234567",
+      "expected": "12345670"
+    },
+    {
+      "format": "EAN8",
+      "body": "9638507",
+      "expected": "96385074"
+    },
+    {
+      "format": "EAN8",
+      "body": "0000000",
+      "expected": "00000000"
+    },
+    {
+      "format": "EAN8",
+      "body": "7654321",
+      "expected": "76543210"
+    }
+  ]
+}
