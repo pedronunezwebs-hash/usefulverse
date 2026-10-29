@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T00:41:50.105175+00:00 · fase 0 + G1: regresiones, 404/título/sitemaps/hash; sin deploy hoy
+**Turno actual (candado):** LIBRE · Codex · 2026-10-29T01:22:30.591Z · fase 0 + G1 preparados en PR143; retirada verificada; producción pendiente
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
