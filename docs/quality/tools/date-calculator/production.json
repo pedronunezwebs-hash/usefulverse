@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-29T07:03:20.315Z",
+  "method": "Fresh Chrome navigation; document navigation responseStatus, title and H1",
+  "reads": [
+    {
+      "id": "business-days-calculator",
+      "url": "https://usefulverse.com/tools/business-days-calculator/",
+      "title": "Business Days Calculator – Exclude Holidays — Free | UsefulVerse",
+      "h1": "Business Days Calculator",
+      "status": 200
+    },
+    {
+      "id": "time-duration-calculator",
+      "url": "https://usefulverse.com/tools/time-duration-calculator/",
+      "title": "Time Duration Calculator – Hours & Days — Free | UsefulVerse",
+      "h1": "Time Duration Calculator",
+      "status": 200
+    },
+    {
+      "id": "age-calculator",
+      "url": "https://usefulverse.com/tools/age-calculator/",
+      "title": "Age Calculator – Exact Years, Months & Days — Free | UsefulVerse",
+      "h1": "Age Calculator",
+      "status": 200
+    },
+    {
+      "id": "date-calculator",
+      "url": "https://usefulverse.com/tools/date-calculator/",
+      "title": "Date Calculator – Days Between Dates — Free | UsefulVerse",
+      "h1": "Date Calculator",
+      "status": 200
+    }
+  ],
+  "prototypePublished": false
+}

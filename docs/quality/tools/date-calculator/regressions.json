@@ -1,0 +1,45 @@
+{
+  "status": "prototype fixes, not production fixes",
+  "cases": [
+    {
+      "id": "year-10000",
+      "before": "+010000-01",
+      "expected": "10000-01-01",
+      "source": "legacy src/app.js toISOString().slice(0,10), reproduced before replacement",
+      "tests": "logic.test.mjs and three-browser year10000 case"
+    },
+    {
+      "id": "native-incomplete-number",
+      "before": "incomplete minus token had empty .value, silently treated as zero",
+      "fix": "check validity.badInput before parsing values",
+      "tests": "three-browser native bad numeric input case"
+    },
+    {
+      "id": "control-contrast",
+      "beforeRatio": 1.2843,
+      "expectedMinimum": 3,
+      "fix": "separate light/dark input boundary token",
+      "tests": "three-browser computed non-text contrast check"
+    },
+    {
+      "id": "answer-below-fold",
+      "before": "after mobile submit, result number stayed below the viewport",
+      "fix": "scroll result into view after successful calculation, respecting reduced motion",
+      "tests": "visible answer rectangle after submit in three browsers"
+    },
+    {
+      "id": "text-200-header",
+      "before": {
+        "viewport": 390,
+        "scrollWidth": 402
+      },
+      "fix": "wrapping header and nonshrinking 44px theme control",
+      "tests": "three-browser doubled-text fixture, plus RTL/long-text fixtures"
+    }
+  ],
+  "notProductBugs": [
+    "Initial WebKit keyboard test assumed Tab focuses links under macOS defaults. Option-Tab corrected the harness using Apple documentation.",
+    "Full-page Chromium captures showed repeated raster tiles despite one H1 in the DOM. Replaced with inspected viewport captures.",
+    "Initial full suite lacked optional test dependencies/sparse documentation; after restoring them, all 3302 tests pass."
+  ]
+}

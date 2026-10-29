@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "toolId": "date-calculator",
+  "status": "prepared-not-published",
+  "existingURL": "https://usefulverse.com/tools/date-calculator/",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "observedDemand": {
+      "source": "docs/recovery/indexable-core-tools.csv",
+      "period": "2026-10-01/2026-10-15",
+      "impressions": 2547,
+      "clicks": 2,
+      "impressionLanguages": 24
+    },
+    "phraseEvidence": "Inferred task phrases from implemented capabilities and three first-party reference products. No query-level Search Console export, keyword volumes, rank or current SERP position were measured.",
+    "paidSEOTools": false
+  },
+  "intents": [
+    {
+      "phrase": "date calculator",
+      "section": "page-heading",
+      "capability": "both calendar tasks"
+    },
+    {
+      "phrase": "days between dates",
+      "section": "calculator",
+      "capability": "elapsed day count"
+    },
+    {
+      "phrase": "date difference calculator",
+      "section": "calculator",
+      "capability": "positive distance and reversed-date note"
+    },
+    {
+      "phrase": "weeks between dates",
+      "section": "calculator",
+      "capability": "whole weeks and remaining days"
+    },
+    {
+      "phrase": "years months and days between dates",
+      "section": "calculator",
+      "capability": "calendar span"
+    },
+    {
+      "phrase": "inclusive date calculator",
+      "section": "calculator",
+      "capability": "count both dates"
+    },
+    {
+      "phrase": "add days to a date",
+      "section": "calculator",
+      "capability": "shift mode"
+    },
+    {
+      "phrase": "subtract days from a date",
+      "section": "calculator",
+      "capability": "subtract direction"
+    },
+    {
+      "phrase": "add weeks to a date",
+      "section": "calculator",
+      "capability": "week input"
+    },
+    {
+      "phrase": "subtract weeks from a date",
+      "section": "calculator",
+      "capability": "subtract direction and week input"
+    },
+    {
+      "phrase": "add months to a date",
+      "section": "calculator",
+      "capability": "month input and clamp rule"
+    },
+    {
+      "phrase": "subtract months from a date",
+      "section": "calculator",
+      "capability": "subtract direction and month input"
+    },
+    {
+      "phrase": "add years to a date",
+      "section": "calculator",
+      "capability": "year input"
+    },
+    {
+      "phrase": "subtract years from a date",
+      "section": "calculator",
+      "capability": "subtract direction and year input"
+    },
+    {
+      "phrase": "30 days from a date",
+      "section": "questions",
+      "capability": "offset FAQ"
+    },
+    {
+      "phrase": "60 days from a date",
+      "section": "questions",
+      "capability": "offset FAQ"
+    },
+    {
+      "phrase": "90 days from a date",
+      "section": "examples",
+      "capability": "recalculable 90-day example"
+    },
+    {
+      "phrase": "days from today",
+      "section": "calculator",
+      "capability": "Use today plus shift mode"
+    },
+    {
+      "phrase": "days until a date",
+      "section": "calculator",
+      "capability": "Use today plus between mode"
+    },
+    {
+      "phrase": "weekday of a calculated date",
+      "section": "calculator",
+      "capability": "weekday in result"
+    },
+    {
+      "phrase": "date calculator leap year",
+      "section": "examples",
+      "capability": "leap-day example"
+    },
+    {
+      "phrase": "January 31 plus one month",
+      "section": "examples",
+      "capability": "month-end example and explicit policy"
+    },
+    {
+      "phrase": "calendar days versus working days",
+      "section": "method",
+      "capability": "distinction and business-day crosslink"
+    },
+    {
+      "phrase": "date calculator daylight saving time",
+      "section": "questions",
+      "capability": "civil-date explanation and DST tests"
+    }
+  ],
+  "separateIntents": [
+    {
+      "id": "business-days-calculator",
+      "reason": "Weekend and holiday rules belong to the dedicated calculator."
+    },
+    {
+      "id": "time-duration-calculator",
+      "reason": "Hours and minutes belong to the dedicated calculator."
+    },
+    {
+      "id": "age-calculator",
+      "reason": "Age-specific rules belong to the dedicated calculator."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.timeanddate.com/date/dateadd.php",
+      "use": "Reference capabilities, not copied prose"
+    },
+    {
+      "url": "https://www.calculator.net/date-calculator.html",
+      "use": "Reference capabilities, not copied prose"
+    },
+    {
+      "url": "https://www.calculatorsoup.com/calculators/time/date-day.php",
+      "use": "Reference capabilities, not copied prose"
+    },
+    {
+      "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+      "use": "People-first task coverage; no word-count or ranking promise"
+    }
+  ]
+}

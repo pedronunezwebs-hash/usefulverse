@@ -1,0 +1,11 @@
+{
+  "family": "Bricolage Grotesque",
+  "file": "bricolage-latin.42e4ecef4252.woff2",
+  "bytes": 40784,
+  "sha256": "42e4ecef42528527d8b1e1f22f1ebd2119bc753730060a1c6291e421c3973325",
+  "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bricolagegrotesque/BricolageGrotesque%5Bopsz,wdth,wght%5D.ttf",
+  "sourceSHA256": "413e7357809ddd12fd80a96a8a396de0e401638d4acd3cb3e37532f0472ac682",
+  "subset": "U+0020-00FF plus punctuation; width100; optical32; weight500..800",
+  "license": "OFL-1.1",
+  "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/bricolagegrotesque/OFL.txt"
+}

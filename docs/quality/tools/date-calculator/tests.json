@@ -1,0 +1,23 @@
+{
+  "command": "node --test",
+  "tests": 3302,
+  "passed": 3302,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 53711.36425,
+  "focusedTests": 30,
+  "generatedCases": 10000,
+  "referenceCases": {
+    "python": 14,
+    "publishedMDN": 5
+  },
+  "sourceSimilarity": {
+    "method": "shared unique five-word phrases / own editorial five-word phrases; other translation-sources owners",
+    "ownPhrases": 912,
+    "maxSharedPhrases": 3,
+    "maxRatio": 0.003289473684210526,
+    "maxOtherOwner": "timeline-maker.json"
+  },
+  "localeReleaseCheck": "20 expanded existing locales pass; not approval of this new English content or its translations",
+  "nativeBuild": "not rerun: native builders/runtime unchanged; main phase-0 evidence still applies. Pilot cannot be released until integrated build/check pass."
+}

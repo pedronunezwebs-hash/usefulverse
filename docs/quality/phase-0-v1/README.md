@@ -1,6 +1,6 @@
 # Fase 0 + G1 · candidato local · 29-oct-2026
 
-Rama `fix/phase-0-g1`, desde main `911187d`. No es una publicación ni una aprobación de herramientas/idiomas.
+Fuente integrada en main por PR143, merge `e2286d9`; [recibo](integration.json). Rama histórica `fix/phase-0-g1`, desde main `911187d`. No es una publicación ni una aprobación de herramientas/idiomas.
 
 Cambios: 404 real del hub reutilizando la página existente; portada principal sin aplicar dos veces el SEO; sitemaps por idioma en ambos hosts; namespace de contenido para las dependencias de las 106 recuperadas. Fuentes capturadas, slugs, traducciones y workflows intactos. Las 300 siguen en noindex y fuera del sitemap.
 
@@ -25,7 +25,7 @@ El namespace de 24 dígitos hexadecimales se deriva del inventario ordenado de r
 
 `production-main.json` y `production-hub.json`: lecturas desde Chrome normal, 29-oct. **10.260 + 15.365 = 25.625 URLs** en los XML públicos; las tres rutas falsas siguen 200, título duplicado y controlador 401k sin hash/caché de un año. La terminal recibió 403; sus respuestas no se usaron para certificar el sitio. No se ha desplegado este lote ni reenviado feeds.
 
-El despliegue del 29-oct ya se consumió con la preview del Paso A. Respetar **uno por día Asia/Saigon**: primero hub no antes del **30-oct 00:00 +07**; principal en un día posterior (como pronto **31-oct 00:00 +07**). Revalidar coste/cuota/Direct Upload y candidato completo antes de cada publicación. Verificar 404, HTML/indexación, inventario de sitemaps y URLs/caché de assets en producción; solo entonces cerrar fase 0 + G1 y reenviar únicamente los sitemaps limpios. No anticipar errores de fase 0b, corte de dominio ni diseño.
+El despliegue del 29-oct ya se consumió con la preview del Paso A. Respetar **uno por día Asia/Saigon**: primero hub no antes del **30-oct 00:00 +07**; principal en un día posterior (como pronto **31-oct 00:00 +07**). Revalidar coste/cuota/Direct Upload y candidato completo antes de cada publicación. Verificar 404, HTML/indexación, inventario de sitemaps y URLs/caché de assets en producción; solo entonces cerrar fase 0 + G1 y reenviar únicamente los sitemaps limpios. No publicar cambios de fase 0b, corte de dominio ni diseño hasta verificar ambos. Pedro autorizó preparar/probar mejoras en ramas separadas el 29-oct, sin esperar a esa publicación.
 
 ## Repetición sin Actions
 

@@ -1,0 +1,39 @@
+✔ every worked example is executable and its published answer is correct (2.059708ms)
+✔ metadata is specific, honest and unique among other native tools (0.648459ms)
+✔ prototype remains isolated, noindex and on the existing canonical (0.728167ms)
+✔ editorial body shares fewer than 30% of its five-word phrases with other tool sources (42.555834ms)
+ℹ {"uniqueOwnPhrases":912,"max":{"file":"timeline-maker.json","shared":3,"ratio":0.003289473684210526}}
+✔ query coverage describes real tasks without claiming measured keyword volumes (0.909958ms)
+✔ reference 2026-01-01 → 2026-01-31: 30 calendar days (1.531083ms)
+✔ reference 2026-01-31 → 2026-01-01: 30 calendar days (0.083333ms)
+✔ reference 2024-02-28 → 2024-03-01: 2 calendar days (0.07975ms)
+✔ reference 2025-02-28 → 2025-03-01: 1 calendar days (0.081833ms)
+✔ reference 1900-02-28 → 1900-03-01: 1 calendar days (0.079791ms)
+✔ reference 2000-02-28 → 2000-03-01: 2 calendar days (0.058ms)
+✔ reference 1999-12-31 → 2000-01-01: 1 calendar days (0.063583ms)
+✔ reference 0001-01-01 → 0001-01-02: 1 calendar days (0.046209ms)
+✔ reference 2026-10-01 → 2026-11-01: 31 calendar days (0.052541ms)
+✔ reference 9999-12-31 → 9999-12-31: 0 calendar days (0.0925ms)
+✔ reference 2026-03-08 → 2026-03-09: 1 calendar days (0.055042ms)
+✔ reference 2026-11-01 → 2026-11-02: 1 calendar days (0.041708ms)
+✔ reference 2020-01-01 → 2021-01-01: 366 calendar days (0.040542ms)
+✔ reference 2025-12-31 → 2026-01-01: 1 calendar days (0.03725ms)
+✔ calendar addition 2021-01-01 → 2022-03-26 (0.056542ms)
+✔ calendar addition 2021-01-01 → 2019-10-07 (0.022542ms)
+✔ calendar addition 2021-01-31 → 2021-02-28 (0.021791ms)
+✔ calendar addition 2021-01-31 → 2021-03-31 (0.030375ms)
+✔ calendar addition 2024-02-29 → 2025-02-28 (0.023125ms)
+✔ regression: year 10000 is not truncated to the legacy +010000-01 display (0.041583ms)
+✔ month-end policy is explicit, and reject never silently rolls into March (0.917583ms)
+✔ native range, impossible dates, fractions and overflow fail with stable codes (0.3015ms)
+✔ 5,000 generated date pairs: symmetry, inclusive count and exact calendar reconstruction (81.600834ms)
+✔ 5,000 offsets round-trip without timezone drift, including offsets beyond 3.65M days (39.301625ms)
+✔ share parameters round-trip and reject malformed input instead of producing NaN (10.059875ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 226.990042

@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "date-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/date-calculator/",
+  "bytes": {
+    "criticalCSS": 14169,
+    "html": 39604,
+    "htmlBrotli": 9063,
+    "cssBrotli": 3684,
+    "jsBrotli": 3145,
+    "font": 40784
+  }
+}

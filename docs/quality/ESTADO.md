@@ -30,19 +30,19 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Seguridad:** main ya contiene DOMPurify 3.4.17 y URL vendor corregida; GitHub devuelve cero alertas abiertas tras actualizar el grafo. Los sitios existentes conservan la versión anterior hasta el próximo despliegue verificado. PR #135 permanece abierta, sin cierre manual. GitHub ejecutó automáticamente update-graph 40792857131 al merge: 0 ms facturables; no fue un build/test/deploy de web ni una ejecución manual. Los tres workflows web siguen deshabilitados.
 
-**Traductor:** la campaña 40565692987 terminó correctamente; 40658885003 continúa automáticamente (último sondeo: cuatro jobs en vuelta 2). El aviso #141 de 28-oct 21:28 Asia/Saigon corresponde a esa segunda tanda mientras esperaba; coincide con lo comunicado por Pedro. Siete workflows activos conservan exactamente sus bytes; modelos/política/memoria/campañas no reconfigurados ni cancelados. source_ref sigue apuntando a feat/new-tools-batch-1: conservar esa rama y mantenerla alineada sin force mientras sea fuente; no borrarla al integrar PRs. Fuentes inglesas de las 1.000 (48.403 unidades/0 solo metadatos) ya están en main; 0 destinos de traducción aprobados para publicar. Sin servicio 24/7/SLA garantizado. [Operación](translation-drafts/README.md).
+**Traductor:** la campaña 40565692987 terminó correctamente; 40658885003 continúa automáticamente (último sondeo 29-oct: cuatro jobs en vuelta 3). El aviso #141 de 28-oct 21:28 Asia/Saigon corresponde a esa segunda tanda mientras esperaba; coincide con lo comunicado por Pedro. Siete workflows activos conservan exactamente sus bytes; modelos/política/memoria/campañas no reconfigurados ni cancelados. source_ref sigue apuntando a feat/new-tools-batch-1: conservar esa rama y mantenerla alineada sin force mientras sea fuente; no borrarla al integrar PRs. Fuentes inglesas de las 1.000 (48.403 unidades/0 solo metadatos) ya están en main; 0 destinos de traducción aprobados para publicar. Sin servicio 24/7/SLA garantizado. [Operación](translation-drafts/README.md).
 
-**Pedro:** ocho pruebas físicas P-001–P-008 pendientes, 0 FALLA; P-009 correo OK/push sin comprobar; 0 IDs nuevos. Solo hardware aplicable. Todo el catálogo conserva siete capas/18 controles; subida-noindex no equivale a herramienta terminada.
+**Pedro:** nueve pruebas pendientes: P-001–P-008 sobre producción y P-010 bloqueada hasta URL candidata del nuevo diseño; 0 FALLA. P-009 correo OK/push sin comprobar. Un ID nuevo, sin tareas de cámara/micrófono para la calculadora. Solo hardware aplicable. Todo el catálogo conserva siete capas/18 controles; subida-noindex no equivale a herramienta terminada.
 
 **Orden posterior:** verificar fase 0 + G1 → fase 0b (26 errores, test antes del arreglo) → unificar dominio §4b → Planeta Infinito y bucle por herramienta según progress.csv.
 
 **Decisión vigente de Pedro (29-oct): avanzar con inteligencia durante la espera.** El límite diario frena publicaciones, no preparar y probar mejoras visuales, funciones, contenido y cobertura de búsquedas en ramas separadas. Se autoriza adelantar ese trabajo sin plataformas SEO/API de pago ni aumento de URLs. Mantener pruebas, noindex de las 300, aprobación del diseño y puertas antes de publicar/cerrar. No convertir la espera de fase 0 en inactividad ni repetir QA ya válido sin cambios.
 
-**Preparación activa:** `date-calculator`, prioridad 1 y nivel A; diseño Planeta Infinito, suma/resta y diferencias de fechas, ejemplos/FAQ y búsquedas de la URL existente. Rama prevista `feat/date-calculator-planeta`. No terminada ni publicada; versiones traducidas actuales preservadas hasta que el nuevo inglés y sus traducciones pasen las puertas.
+**Preparación lista para revisión, sin publicar:** `date-calculator`, prioridad 1/nivel A, rama `feat/date-calculator-planeta` (PR pendiente de enlazar al cerrar). Planeta Infinito; diferencias y suma/resta años/meses/semanas/días; cuatro ejemplos, diez FAQ, privacidad y 24 intenciones dentro de la URL existente. Suite3.302/30 propias/10.000 casos aleatorios, tres motores/54 geometrías/axe0, Lighthouse100/100/100 LCP944ms y traza Slow4G CPU×4 LCP885ms/CLS0. Peso56.676B estimado; ninguna URL nueva/ninguna aprobación. [Fuente, capturas, 18 controles y pendientes](tools/date-calculator/README.md). Faltan integración/check/CSP del sitio, traducciones reales, zoom real200/lector de pantalla, aprobación visual y P-010 tras URL candidata. No repetir las pruebas de cálculo ni traducir manualmente. Mientras se espera fase0 se puede preparar la siguiente prioridad en otra rama; no publicar esta rama como candidato de fase0.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
-- [ ] **Pruebas para Pedro: 8 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
+- [ ] **Pruebas para Pedro: 9 pendientes (P-010 aún bloqueada) · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
 
 - [x] Limpieza de `/tmp` hecha el 20-oct con el OK de Pedro: 18 GB liberados (154 carpetas y archivos de usefulverse). Antes se
       respaldaron los restos sin commit de 5 reconstrucciones y 73 archivos de estado en el repo **privado**
@@ -148,6 +148,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
+| 29-oct | Preparación Date Calculator nivel A | Planeta Infinito/24 intenciones; Node3.302, tres motores/axe54, Lighthouse100; sin publicar | [Prototipo](tools/date-calculator/README.md) |
 | 29-oct | Entrega inicial del Paso A | PR #136 integrada; preview 300×37 noindex verificada; 3.255 Node/93 HTTP/axe32/Lighthouse5; 0 activaciones | [Lote](lotes/2026-10-29-entrega-inicial-paso-a.md) |
 | 29-oct | Construcción secuencial completa | 36.400 rutas; 3.251 Node; 189 geometrías; sin publicar | [Lote](lotes/2026-10-29-construccion-secuencial-paso-a.md) |
 | 28-oct | Seguridad y composición local | DOMPurify; 193 Node/108 muestras; unión parcial y home 23,7 KB; sin publicar | [Lote](lotes/2026-10-28-seguridad-y-composicion-paso-a.md) |
