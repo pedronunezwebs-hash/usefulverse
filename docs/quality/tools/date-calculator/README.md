@@ -108,3 +108,5 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.qa-date/browsers" node scripts/security/date-qua
 
 El navegador instalado de Chrome evita otra descarga. El harness crea y retira sus propios perfiles.
 No iniciar tres builds completos ni descargar modelos. Las capturas aprobadas serán la referencia visual tras la decisión de Pedro.
+
+[Recibo de respaldo y retirada](closure.json). Candado operativo en ESTADO.
