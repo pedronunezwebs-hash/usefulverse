@@ -1,0 +1,15 @@
+{
+  "mainParent": "f11e305592ae3be0d6322a0143c82f2e5b7c42d1",
+  "featureParent": "40d737d15a059a98ba92905574825231b36b628a",
+  "resolvedConflicts": [
+    ".github/workflows/validate-staged.yml",
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/progress.csv",
+    "docs/quality/ops-manual-v1/closure.json"
+  ],
+  "resolution": "Current feature source/quality gates and latest handoff; canonical main historical closure receipt. Both histories retained.",
+  "activeTranslatorWorkflowBytesMatchMain": true,
+  "disabledWebWorkflowDefinitions": "Preserve already-verified historical feature versions; do not reactivate.",
+  "toolsActivated": 0
+}

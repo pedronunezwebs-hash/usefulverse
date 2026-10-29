@@ -59,10 +59,10 @@
   ],
   "protected_trees_unchanged": true,
   "protected_tree_shas": {
-    "src": "723d4b1982c123ad9fffafb501d3b8f304d06a5c",
-    "scripts": "41796878815adfcf91bdc3439de6da0917197704",
-    "workflows": "b8f29e6e3bd6dad899c16ca4316e4965e79e5642",
-    "translation_drafts": "ca1d5dd9eb51475f7751cc419d4a5d622d4cd051"
+    "src": "8ef1ffaa2eb426ceba9b4fe90e683efc1bd00b4c",
+    "scripts": "caf92096b8a3c7f7d6324109670f6ffa68418e26",
+    "workflows": "5b4671a2059aebc444c722e687a722f611f6ea2c",
+    "translation_drafts": "31695f8593e1a6c8ecf381832c0b4c19d4714c27"
   },
   "active_runs": [
     {
