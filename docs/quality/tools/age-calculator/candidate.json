@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "age-calculator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/age-calculator/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 38482,
+    "htmlBrotli": 9120,
+    "cssBrotli": 3885,
+    "jsBrotli": 3212,
+    "font": 40784
+  }
+}

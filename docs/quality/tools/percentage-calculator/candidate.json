@@ -5,11 +5,11 @@
   "indexableURLs": 0,
   "canonical": "https://usefulverse.com/tools/percentage-calculator/",
   "bytes": {
-    "criticalCSS": 13152,
-    "html": 37158,
-    "htmlBrotli": 8586,
-    "cssBrotli": 3850,
-    "jsBrotli": 2987,
+    "criticalCSS": 13381,
+    "html": 37389,
+    "htmlBrotli": 8620,
+    "cssBrotli": 3885,
+    "jsBrotli": 3135,
     "font": 40784
   }
 }

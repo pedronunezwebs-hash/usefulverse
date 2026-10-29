@@ -5,11 +5,11 @@
   "indexableURLs": 0,
   "canonical": "https://usefulverse.com/tools/prime-number-checker/",
   "bytes": {
-    "criticalCSS": 13152,
-    "html": 35704,
-    "htmlBrotli": 8502,
-    "cssBrotli": 3850,
-    "jsBrotli": 2613,
+    "criticalCSS": 13381,
+    "html": 35934,
+    "htmlBrotli": 8544,
+    "cssBrotli": 3885,
+    "jsBrotli": 2819,
     "font": 40784
   }
 }

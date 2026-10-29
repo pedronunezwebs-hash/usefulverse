@@ -5,11 +5,11 @@
   "indexableURLs": 0,
   "canonical": "https://usefulverse.com/tools/fraction-calculator/",
   "bytes": {
-    "criticalCSS": 13152,
-    "html": 36519,
-    "htmlBrotli": 8677,
-    "cssBrotli": 3850,
-    "jsBrotli": 3068,
+    "criticalCSS": 13381,
+    "html": 36749,
+    "htmlBrotli": 8724,
+    "cssBrotli": 3885,
+    "jsBrotli": 3216,
     "font": 40784
   }
 }

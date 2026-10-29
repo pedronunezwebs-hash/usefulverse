@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "random-number-generator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/random-number-generator/",
+  "bytes": {
+    "criticalCSS": 13381,
+    "html": 39507,
+    "htmlBrotli": 9393,
+    "cssBrotli": 3885,
+    "jsBrotli": 3187,
+    "font": 40784
+  }
+}

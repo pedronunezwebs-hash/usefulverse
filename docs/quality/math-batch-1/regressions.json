@@ -1,0 +1,62 @@
+[
+  {
+    "tool": "fraction-calculator",
+    "observed": "Producción conserva 5/6 tras dividir por cero y muestra error genérico.",
+    "test": "engine.test.mjs division by zero; browser invalid clears previous answer/download",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "percentage-calculator",
+    "observed": "Producción muestra — para cambio de 0 a 5 y Calculation complete.",
+    "test": "engine.test.mjs ZERO_BASE; browser clears output",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "prime-number-checker",
+    "observed": "Producción rechaza 9007199254740993 por cupo 10^12.",
+    "test": "engine.test.mjs exact boundary/probable; real cancellation per engine",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "number-to-words-converter",
+    "observed": "Producción rechaza 1000000000000 por límite fijo.",
+    "test": "engine.test.mjs trillion and explicit digit fallback; browser trillion",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "random-number-generator",
+    "observed": "Producción rechaza 101 resultados.",
+    "test": "utilities.test.mjs 1000 unique and 5000 large-bound samples; browser 1000/TXT",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "shared prototype",
+    "observed": "Primera suma de lista intentaba parsear toda la entrada como un número.",
+    "test": "engine.test.mjs fraction addition list; browser list of 1000",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "shared prototype",
+    "observed": "Texto200 y ejemplo largo causaron scroll de página en Prime.",
+    "test": "browser text200/long-text at390; min-inline-size0/overflow-wrap",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "shared prototype",
+    "observed": "Recrear Worker al terminar rompía recálculo offline.",
+    "test": "browser offline calculation in all10/3engines",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "shared prototype",
+    "observed": "H1 seguido de H3 bajaba accesibilidad Lighthouse a99.",
+    "test": "browser sequential heading levels; final LH100",
+    "fixedInCandidate": true
+  },
+  {
+    "tool": "fraction-calculator",
+    "observed": "Enlace relacionado debía apuntar al host tools.; otro slug no estaba en catálogo.",
+    "test": "content.test.mjs known-related graph; 22 HTTP200 production reads",
+    "fixedInCandidate": true
+  }
+]

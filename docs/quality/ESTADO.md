@@ -51,7 +51,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Decisión de Pedro (29-oct, lote continuo):** encadenar varias herramientas sin cerrar el turno entre ellas. Reutilizar instalación, plantilla y controles comunes; mantener motores/contenido/pruebas propios y respaldos por lote. No rebajar puertas ni publicar antes de verificar fase0.
 
-**En preparación continua:** [PR148](https://github.com/pedronunezwebs-hash/usefulverse/pull/148) con primeras cinco (83 focalizadas/153 controles/270 geometrías axe0); se encadenan descuento, aleatorios, media, edad y combustible. Candidato sin publicar; no cierre entre herramientas.
+**Quinta preparación, lote continuo de diez:** [PR148](https://github.com/pedronunezwebs-hash/usefulverse/pull/148), prioridades5–14, sin publicar. Fracciones/primos/porcentajes/palabras/razones/descuentos/aleatorios/media/edad/combustible, motores propios y base compartida. Node3.542/160 focalizadas incluidas,121 referencias,303 controles/540 geometrías axe0 en tres motores; diezLH100/100/100,LCP934–941ms/CLS≤0,012608. [Capturas/18 controles/peso/relevo](math-batch-1/README.md). Cinco errores/límites públicos reproducidos y corregidos solo en candidato; fase0b no entregada. 0herramientas/idiomas terminados,0activaciones/delta0URLs. P-010 común,0IDs nuevos/10Pedro pendientes/0FALLA. Conservar pila PR144→145→146→147→148; alimentar inglés revisado al corpus activo en lote separado sin modificar UI pública ni traductor. Siguiente herramienta prioridad15pdf-ocr, después16binary-converter. Fase0 sigue pendiente de ventana y ambos hosts.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
@@ -161,6 +161,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
+| 29-oct | Diez matemáticas/cotidianas consecutivas | Node3.542/303 tareas/540 geometrías axe0/diezLH100; sin publicar | [PR148/evidencia](math-batch-1/README.md) |
 | 29-oct | Barcode Generator | Node3.382/48 tareas/54 geometrías axe0,30 descargas decodificadas/ZIP1.000 imágenes,LH100; sin publicar | [PR147/evidencia](tools/barcode-generator/README.md) |
 | 29-oct | Roman Numeral Converter | Node3.359/42 tareas/54 geometrías axe0, CSV1.000 filas, LH100; traductor continúa automáticamente; sin publicar | [PR146/evidencia](tools/roman-numeral-converter/README.md) |
 | 29-oct | Time Duration y base compartida | Node3.330, dos calculadoras/tres motores/axe108, LH100; aviso142 comprobado; sin publicar | [PR145/evidencia](tools/time-duration-calculator/README.md) |

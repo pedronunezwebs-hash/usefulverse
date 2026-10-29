@@ -1,0 +1,88 @@
+{
+  "version": "13.6.0",
+  "fetchTime": "2026-10-29T12:25:09.966Z",
+  "scope": "local unpublished prototype; HTTP server may lack compression/Cloudflare headers",
+  "scores": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100
+  },
+  "metrics": {
+    "first-contentful-paint": {
+      "value": 934.8442,
+      "unit": "millisecond"
+    },
+    "largest-contentful-paint": {
+      "value": 934.8442,
+      "unit": "millisecond"
+    },
+    "cumulative-layout-shift": {
+      "value": 0.002522772313152134,
+      "unit": "unitless"
+    },
+    "total-blocking-time": {
+      "value": 0,
+      "unit": "millisecond"
+    },
+    "speed-index": {
+      "value": 934.8442,
+      "unit": "millisecond"
+    }
+  },
+  "failedAudits": [
+    {
+      "id": "network-dependency-tree-insight",
+      "title": "Network dependency tree",
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "194E0CCEC3493FF58C91F3B31E96A9B5": {
+                  "url": "http://127.0.0.1:54839/tools/number-to-words-converter/",
+                  "navStartToEndTime": 7,
+                  "transferSize": 37311,
+                  "isLongest": true,
+                  "children": {
+                    "56917.4": {
+                      "url": "http://127.0.0.1:54839/assets/number-to-words-converter.fc02c9e6e53f.js",
+                      "navStartToEndTime": 10,
+                      "transferSize": 5732,
+                      "isLongest": true,
+                      "children": {}
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 10
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "No origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "fieldINP": "not measured"
+}

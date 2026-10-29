@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-10-29T15:50:12.680Z",
+  "run": {
+    "id": 40843674935,
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40843674935",
+    "status": "in_progress",
+    "conclusion": null,
+    "updated_at": "2026-10-29T12:50:54Z",
+    "head_sha": "e1f72394198c1a94fce448ea14cd79b496701273"
+  },
+  "jobs": [
+    {
+      "name": "ready",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "preflight / safety",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / drafts (3)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / drafts (2)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / drafts (1)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / drafts (0)",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-1 / deliver",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "wave-2 / drafts (3)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-2 / drafts (2)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-2 / drafts (0)",
+      "status": "in_progress",
+      "conclusion": null
+    },
+    {
+      "name": "wave-2 / drafts (1)",
+      "status": "in_progress",
+      "conclusion": null
+    }
+  ],
+  "workflows": [
+    {
+      "name": "Validate and deploy UsefulVerse",
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Measure Step A release capacity without publishing",
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "UsefulVerse translation autopilot",
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "name": "Background translation drafts",
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation safety preflight",
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "name": "Automatic translation quality check",
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation semantic model check",
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation alerts",
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "name": "Translation bounded wave",
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    },
+    {
+      "name": "Validate staged UsefulVerse without publishing",
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "name": "Dependabot Updates",
+      "path": "dynamic/dependabot/dependabot-updates",
+      "state": "active"
+    },
+    {
+      "name": "Dependency Graph",
+      "path": "dynamic/dependabot/update-graph",
+      "state": "active"
+    }
+  ],
+  "mutations": 0,
+  "note": "Read-only; no new export/language approval audit. Translator configuration unchanged."
+}
