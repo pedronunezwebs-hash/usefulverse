@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T07:23:19.212637+00:00 · verificar aviso142 y preparar time-duration-calculator, plantilla compartida, sin publicar
+**Turno actual (candado):** LIBRE · Codex · 2026-10-29T08:00:14.927Z · PR145 preparada sobre PR144, aviso142 verificado, respaldo/retirada completos
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -190,6 +190,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** Cierre 2026-10-29T07:11:49.523Z: [PR144](https://github.com/pedronunezwebs-hash/usefulverse/pull/144), fuente e9e93b5/árbol remoto verificados; clon, builds, dependencias, navegadores, descargas y cachés propios eliminados antes de LIBRE. 43.2 GiB libres; servidor detenido y pestaña QA en blanco. Prototipo no publicado, 0 activaciones/aprobaciones. [Recibo](tools/date-calculator/closure.json).
+**Retirada actual:** Cierre 2026-10-29T08:00:14.927Z: PR145/fuente196c73b y árbol remoto verificados; clon, builds, dependencias, navegadores, perfiles, descargas y cachés propios eliminados antes de LIBRE. 43.2 GiB libres; dos servidores detenidos y pestaña QA en blanco. Prototipos no publicados, 0 activaciones/aprobaciones; traductor intacto en vuelta4. [Recibo](tools/time-duration-calculator/closure.json).
 
 Antes de CI del traductor, si se recogen checkpoints: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Actualiza solo inventario/total derivados; no crudos, juicios ni procedencia. No hace falta ejecutarlo para un lote de web sin recolección.

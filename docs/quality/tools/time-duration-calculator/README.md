@@ -118,3 +118,5 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.qa-time/browsers" node scripts/security/time-qua
 Medición reutilizable, sin Actions: `node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/time-duration-calculator/ .qa-time/lighthouse.json`. Usa un perfil nuevo y lo retira al terminar; evita puertos DevTools obsoletos.
 
 Los perfiles del harness se retiran al cerrar. No se guardan builds, modelos ni cachés en Git.
+
+[Recibo de respaldo y retirada](closure.json). Candado LIBRE; consultar ESTADO antes de retomar.
