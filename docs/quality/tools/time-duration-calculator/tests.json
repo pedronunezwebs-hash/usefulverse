@@ -1,0 +1,47 @@
+{
+  "nodeFull": {
+    "command": "node --test",
+    "passed": 3330,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 60434.385334,
+    "note": "Final date/time field layout later verified in all three browsers; logic unchanged."
+  },
+  "focusedFinal": {
+    "passed": 58,
+    "dateTests": 30,
+    "timeTests": 28,
+    "failed": 0
+  },
+  "referencePythonZoneinfo": 14,
+  "generatedCases": {
+    "date": 10000,
+    "time": 6000
+  },
+  "similarity": [
+    {
+      "uniqueOwnPhrases": 912,
+      "max": {
+        "file": "time-duration-calculator.json",
+        "shared": 15,
+        "ratio": 0.01644736842105263
+      }
+    },
+    {
+      "uniqueOwnPhrases": 970,
+      "max": {
+        "file": "date-calculator.json",
+        "shared": 17,
+        "ratio": 0.01752577319587629
+      }
+    }
+  ],
+  "sharedExtraction": {
+    "dateHTMLByteIdenticalWithSameResourceURLs": true,
+    "dateCandidateBudgetsIdenticalToPR144": true,
+    "dateBrowserRegression": "3 engines / 36 functional checks /54 axe geometries"
+  },
+  "controlledEnglish": "All source sentences checked at <=20 space-separated words; not a translation approval",
+  "localeReleaseCheck": "20 existing expanded locales pass; no new translations approved",
+  "nativeBuild": "Not repeated; two native builders/runtime/indexation unchanged. Integrated check, CSP/cache and multilingual gates remain pending."
+}

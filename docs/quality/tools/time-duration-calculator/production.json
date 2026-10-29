@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-29T07:47:10.708Z",
+  "method": "Fresh Chrome navigation and local-only calculation in current public widget",
+  "reads": [
+    {
+      "id": "time-duration-calculator",
+      "url": "https://usefulverse.com/tools/time-duration-calculator/",
+      "title": "Time Duration Calculator – Hours & Days — Free | UsefulVerse",
+      "h1": "Time Duration Calculator",
+      "status": 200
+    },
+    {
+      "id": "date-calculator",
+      "url": "https://usefulverse.com/tools/date-calculator/",
+      "title": "Date Calculator – Days Between Dates — Free | UsefulVerse",
+      "h1": "Date Calculator",
+      "status": 200
+    },
+    {
+      "id": "time-zone-converter",
+      "url": "https://usefulverse.com/tools/time-zone-converter/",
+      "title": "Time Zone Converter – Compare Times — Free | UsefulVerse",
+      "h1": "Time Zone Converter",
+      "status": 200
+    },
+    {
+      "id": "business-days-calculator",
+      "url": "https://usefulverse.com/tools/business-days-calculator/",
+      "title": "Business Days Calculator – Exclude Holidays — Free | UsefulVerse",
+      "h1": "Business Days Calculator",
+      "status": 200
+    }
+  ],
+  "normalTask": {
+    "start": "2026-10-29T09:00",
+    "end": "2026-10-29T17:30",
+    "hours": "8.5",
+    "exact": "0d 8h 30m 0s",
+    "status": "Duration calculated locally."
+  },
+  "prototypePublished": false
+}
