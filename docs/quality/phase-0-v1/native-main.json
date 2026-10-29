@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-29T01:11:25.021Z",
+  "files": 10764,
+  "htmlFiles": 10263,
+  "bytes": 487000155,
+  "treeSha256": "cbbaa444ff53362c7fd1a24471b20ab89872d886ea475bba1772ee65b6c2788d",
+  "largest": [
+    {
+      "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+      "bytes": 6632188
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "bytes": 3905767
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm.js",
+      "bytes": 3899472
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm.js",
+      "bytes": 3896484
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm",
+      "bytes": 2862266
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm",
+      "bytes": 2857601
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm",
+      "bytes": 2855361
+    },
+    {
+      "path": "assets/ocr-languages-4.0.0/tur.traineddata.gz",
+      "bytes": 2031682
+    },
+    {
+      "path": "assets/ocr-languages-4.0.0/eng.traineddata.gz",
+      "bytes": 1984273
+    }
+  ],
+  "fitsFileAndAssetBudget": true,
+  "excessFiles": 0,
+  "oversizedAssetCount": 0,
+  "oversizedAssetSample": [],
+  "indexedURLs": 10260,
+  "sitemapLanguages": {
+    "am": 285,
+    "ar": 285,
+    "bg": 285,
+    "bn": 285,
+    "ca": 285,
+    "de": 285,
+    "el": 285,
+    "en": 285,
+    "es": 285,
+    "fa": 285,
+    "fr": 285,
+    "gu": 285,
+    "ha": 285,
+    "hi": 285,
+    "id": 285,
+    "it": 285,
+    "ja": 285,
+    "ko": 285,
+    "mr": 285,
+    "ms": 285,
+    "nl": 285,
+    "pl": 285,
+    "pt-br": 285,
+    "ru": 285,
+    "sv": 285,
+    "sw": 285,
+    "ta": 285,
+    "te": 285,
+    "th": 285,
+    "tl": 285,
+    "tr": 285,
+    "uk": 285,
+    "ur": 285,
+    "vi": 285,
+    "zh-cn": 285,
+    "zh-tw": 285
+  },
+  "lastmodKnown": 36,
+  "urlInventorySHA256": "b44826d319fb0a96859d784990380d26caa3a5dc1b604243988c5875897892f7",
+  "notFoundBrotliBytes": 3912
+}

@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-29T01:16:14.381Z",
+  "origin": "http://127.0.0.1:54829",
+  "title": "401(k) Calculator Free | UsefulVerse",
+  "canonical": "https://tools.usefulverse.com/tools/401k-calculator/",
+  "rows": [
+    {
+      "path": "/tools/zzz/",
+      "status": 404,
+      "noindex": true
+    },
+    {
+      "path": "/es/zzz/",
+      "status": 404,
+      "noindex": true
+    },
+    {
+      "path": "/zzz.html",
+      "status": 404,
+      "noindex": true
+    }
+  ],
+  "asset": {
+    "url": "/assets/recovered-live-only-106/8dcb0a88a745596406d82318/controllers/401k-calculator.js",
+    "status": 200,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "contentType": "application/javascript"
+  },
+  "sitemap": {
+    "type": "index",
+    "feeds": 37,
+    "urls": 15365
+  },
+  "resources": [
+    {
+      "url": "http://127.0.0.1:54829/tools/zzz/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:54829/es/zzz/",
+      "status": 404
+    },
+    {
+      "url": "http://127.0.0.1:54829/zzz.html",
+      "status": 404
+    }
+  ],
+  "controls": 11
+}

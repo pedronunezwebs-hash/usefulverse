@@ -34,6 +34,14 @@ test('G1: all 106 real captured controllers get content-versioned URLs', async (
     assert.match(fresh, /\/recovered-live-only-106\/[a-f0-9]{24}\//u);
     assert.ok(versioned.assets.has(fresh.slice(1)));
   }
+  const manifest = JSON.parse(await readFile(join(root, 'src/growth600/live-only-106.manifest.json')));
+  for (const { id } of manifest.tools) {
+    const html = await readFile(join(source, 'pages/tools', id, 'index.html'), 'utf8');
+    const path = html.match(/\/assets\/recovered-live-only-106\/controllers\/[^"']+\.js/u)?.[0];
+    assert.ok(path, id); // push-up-test and memory-test use *.controller.js.
+    assert.ok(versioned.assets.has(versioned.rewrite(path).slice(1)), id);
+    assert.ok(versioned.rewrite(html).includes(versioned.rewrite(path)), id);
+  }
 });
 test('G1: a transitive vendor edit invalidates every entry URL and preserves relative imports', () => {
   const prefix = 'assets/recovered-live-only-106/';

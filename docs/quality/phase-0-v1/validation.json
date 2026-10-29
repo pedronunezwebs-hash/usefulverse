@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-10-29T01:19:23.788898+00:00",
+  "runtimeSourceCommit": "fdd7c20e1d1d49361f6500b2482fbba0709402c9",
+  "pr": 143,
+  "nodeSuite": {
+    "tests": 3272,
+    "passed": 3272,
+    "failed": 0,
+    "skipped": 0,
+    "logSHA256": "ae0f55ae34e6bc0195595fc04fc90074530d7dbeffab0f51e7e86572e89123dc"
+  },
+  "finalFocusedRegressions": {
+    "tests": 18,
+    "passed": 18,
+    "failed": 0,
+    "note": "Includes the final favicon regression and all 106 English owner/controller references, including both .controller.js filenames."
+  },
+  "existingLocaleGate": {
+    "passed": true,
+    "locales": 20
+  },
+  "mainResources": {
+    "label": "main",
+    "exitCode": 0,
+    "samples": 17,
+    "sampleIntervalMs": 2000,
+    "peakSampledWorkingBytes": 1775943373,
+    "minFreeBytes": 44617699328,
+    "limitWorkingBytes": 2000000000,
+    "failure": null
+  },
+  "hubResources": {
+    "label": "hub",
+    "exitCode": 0,
+    "samples": 7,
+    "sampleIntervalMs": 2000,
+    "peakSampledWorkingBytes": 1839490266,
+    "minFreeBytes": 44564971520,
+    "limitWorkingBytes": 2000000000,
+    "failure": null
+  },
+  "indexableURLsBefore": 25625,
+  "indexableURLsAfterCandidate": 25625,
+  "indexableURLDelta": 0,
+  "toolsActivated": 0,
+  "toolsApproved": 0,
+  "translationDestinationsApproved": 0,
+  "newPedroTestIDs": [],
+  "webActionsDispatched": 0,
+  "deploymentsThisLot": 0,
+  "workflowStates": [
+    {
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/measure-release-capacity.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "path": ".github/workflows/translation-autopilot.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-drafts.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-preflight.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-quality-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-semantic-check.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-watch.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/translation-wave.yml",
+      "state": "active"
+    },
+    {
+      "path": ".github/workflows/validate-staged.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "translator": {
+    "run": 40658885003,
+    "status": "in_progress",
+    "configurationChanged": false
+  },
+  "limits": [
+    "No production delivery of phase 0 yet; both sites still on 18-Oct versions.",
+    "Legacy main _headers has three invalid double-wildcard CSP rules; unchanged here, normalized by the future compositor; G12 remains pending.",
+    "Firefox/WebKit, real devices, browser zoom 200%, INP and full per-tool gates not certified."
+  ]
+}
