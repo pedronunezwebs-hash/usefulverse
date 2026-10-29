@@ -1,0 +1,340 @@
+{
+  "checkedAt": "2026-10-29T17:09:39.950Z",
+  "origin": "https://tools.usefulverse.com",
+  "scope": "phase0 infrastructure; no tool/language approval",
+  "rows": [
+    {
+      "path": "/tools/zzz/",
+      "status": 404,
+      "title": "Page not found | UsefulVerse",
+      "lang": "en",
+      "noindex": "noindex,follow"
+    },
+    {
+      "path": "/es/zzz/",
+      "status": 404,
+      "title": "Página no encontrada | UsefulVerse",
+      "lang": "es",
+      "noindex": "noindex,follow"
+    },
+    {
+      "path": "/zzz.html",
+      "status": 404,
+      "title": "Page not found | UsefulVerse",
+      "lang": "en",
+      "noindex": "noindex,follow"
+    },
+    {
+      "path": "/tools/zzz-no-existe/",
+      "status": 404,
+      "title": "Page not found | UsefulVerse",
+      "lang": "en",
+      "noindex": "noindex,follow"
+    }
+  ],
+  "geometries": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "failedRequests": [],
+  "tool": {
+    "title": "401(k) Calculator Free | UsefulVerse",
+    "h1": "401(k) Calculator",
+    "canonical": "https://tools.usefulverse.com/tools/401k-calculator/",
+    "controls": 11,
+    "robots": null
+  },
+  "asset": {
+    "path": "/assets/recovered-live-only-106/8dcb0a88a745596406d82318/controllers/401k-calculator.js",
+    "status": 200,
+    "cacheControl": "public, max-age=31536000, immutable",
+    "contentType": "application/javascript"
+  },
+  "samples": [
+    {
+      "path": "/tools/radical-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/tools/radical-calculator/",
+      "lang": "en",
+      "h1": "Square Root Simplifier",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/es/tools/limit-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/es/tools/limit-calculator/",
+      "lang": "es",
+      "h1": "Calculadora de límites",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/ar/tools/inequality-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/ar/tools/inequality-calculator/",
+      "lang": "ar",
+      "h1": "حاسبة المتباينات",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/ja/tools/rref-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/ja/tools/rref-calculator/",
+      "lang": "ja",
+      "h1": "RREF 計算機",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/hi/tools/histogram-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/hi/tools/histogram-calculator/",
+      "lang": "hi",
+      "h1": "हिस्टोग्राम कैलकुलेटर",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/de/tools/differential-equation-solver/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/de/tools/differential-equation-solver/",
+      "lang": "de",
+      "h1": "Differentialgleichungslöser",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/fr/tools/prime-factorization-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/fr/tools/prime-factorization-calculator/",
+      "lang": "fr",
+      "h1": "Calculateur de factorisation première",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/ru/tools/modulo-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/ru/tools/modulo-calculator/",
+      "lang": "ru",
+      "h1": "Калькулятор по модулю",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/tools/401k-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/tools/401k-calculator/",
+      "lang": "en",
+      "h1": "401(k) Calculator",
+      "robots": "",
+      "namespace": true
+    },
+    {
+      "path": "/nb/tools/aquarium-water-mixing-calculator/",
+      "status": 200,
+      "canonical": "https://tools.usefulverse.com/nb/tools/aquarium-water-mixing-calculator/",
+      "lang": "nb-NO",
+      "h1": "Akvarievannblandekalkulator",
+      "robots": "index,follow",
+      "namespace": null
+    }
+  ],
+  "sitemap": {
+    "feeds": 37,
+    "urls": 15365,
+    "counts": [
+      {
+        "path": "/sitemap-am.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ar.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-bg.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-bn.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ca.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-de.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-el.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-en.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-es.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-fa.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-fr.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-gu.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ha.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-hi.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-id.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-it.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ja.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ko.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-mr.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ms.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-nb.xml",
+        "urls": 101
+      },
+      {
+        "path": "/sitemap-nl.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-pl.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-pt-br.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ru.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-sv.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-sw.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ta.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-te.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-th.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-tl.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-tr.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-uk.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-ur.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-vi.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-zh-cn.xml",
+        "urls": 424
+      },
+      {
+        "path": "/sitemap-zh-tw.xml",
+        "urls": 424
+      }
+    ],
+    "samples": [
+      {
+        "path": "/tools/radical-calculator/",
+        "present": true
+      },
+      {
+        "path": "/es/tools/limit-calculator/",
+        "present": true
+      },
+      {
+        "path": "/ar/tools/inequality-calculator/",
+        "present": true
+      },
+      {
+        "path": "/ja/tools/rref-calculator/",
+        "present": true
+      },
+      {
+        "path": "/hi/tools/histogram-calculator/",
+        "present": true
+      },
+      {
+        "path": "/de/tools/differential-equation-solver/",
+        "present": true
+      },
+      {
+        "path": "/fr/tools/prime-factorization-calculator/",
+        "present": true
+      },
+      {
+        "path": "/ru/tools/modulo-calculator/",
+        "present": true
+      },
+      {
+        "path": "/tools/401k-calculator/",
+        "present": true
+      },
+      {
+        "path": "/nb/tools/aquarium-water-mixing-calculator/",
+        "present": true
+      }
+    ]
+  }
+}

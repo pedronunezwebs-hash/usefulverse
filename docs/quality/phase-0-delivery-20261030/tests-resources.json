@@ -1,0 +1,16 @@
+{
+  "command": [
+    "nice",
+    "-n",
+    "10",
+    "node",
+    "--test"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1232225918,
+  "minSampledFreeBytes": 42308509696,
+  "samples": 25,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

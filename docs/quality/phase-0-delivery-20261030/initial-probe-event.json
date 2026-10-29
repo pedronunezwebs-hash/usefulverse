@@ -1,0 +1,12 @@
+{
+  "event": "First public probe failed parsing a sitemap child immediately after deployment",
+  "error": "Invalid XML",
+  "firstPathAndRawResponseCaptured": false,
+  "cause": "not identified; propagation is only an inference",
+  "followingCompletePasses": 2,
+  "eachPassFeeds": 37,
+  "eachPassURLs": 15365,
+  "finalHTMLSamples": 10,
+  "secondDeploymentUsed": false,
+  "permanentProbe": "runtime-probe.mjs validates all XML and now saves failure diagnostics and bounds fetch time"
+}

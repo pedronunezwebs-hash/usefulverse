@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-29T17:11:53.128Z",
+  "main": {
+    "id": "0bfcbf58-663e-4a79-b3e1-ca2ef3aa56ad",
+    "created_on": "2026-10-18T14:40:43.2856Z",
+    "unchanged": true
+  },
+  "preview300": {
+    "id": "413cf159-eb2e-41d0-8a80-29b7993c190b",
+    "commit": "6f96ec7d574aec09ace5b8aff96dbc5c0987df0b",
+    "branch": "draft-300-noindex",
+    "status": "success",
+    "unchanged": true
+  },
+  "newActivations": 0
+}

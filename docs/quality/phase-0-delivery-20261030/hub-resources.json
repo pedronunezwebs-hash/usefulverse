@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "GROWTH600_LOCAL_LINK_STAGING=1",
+    "GROWTH600_DIST=.qa-phase0/hub",
+    "npm",
+    "run",
+    "build:growth600"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1852879007,
+  "minSampledFreeBytes": 41814695936,
+  "samples": 11,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

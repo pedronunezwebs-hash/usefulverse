@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-29T16:47:39.733Z",
+  "source": "75b010fb88579332896b96ad8fb00141ec19b891",
+  "files": 10764,
+  "htmlFiles": 10263,
+  "bytes": 487000155,
+  "treeSha256": "cbbaa444ff53362c7fd1a24471b20ab89872d886ea475bba1772ee65b6c2788d",
+  "largest": [
+    {
+      "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+      "bytes": 6632188
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js",
+      "bytes": 3905767
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm.js",
+      "bytes": 3899472
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm.js",
+      "bytes": 3896484
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm",
+      "bytes": 2862266
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm",
+      "bytes": 2857601
+    },
+    {
+      "path": "assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm",
+      "bytes": 2855361
+    },
+    {
+      "path": "assets/ocr-languages-4.0.0/tur.traineddata.gz",
+      "bytes": 2031682
+    },
+    {
+      "path": "assets/ocr-languages-4.0.0/eng.traineddata.gz",
+      "bytes": 1984273
+    }
+  ],
+  "fitsFileAndAssetBudget": true,
+  "excessFiles": 0,
+  "oversizedAssetCount": 0,
+  "oversizedAssetSample": [],
+  "previousTree": "cbbaa444ff53362c7fd1a24471b20ab89872d886ea475bba1772ee65b6c2788d",
+  "identicalToPreviouslyVerified": true
+}

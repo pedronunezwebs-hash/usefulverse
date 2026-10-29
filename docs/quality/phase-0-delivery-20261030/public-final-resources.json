@@ -1,0 +1,15 @@
+{
+  "command": [
+    "node",
+    ".qa-phase0/runtime-probe.mjs",
+    "https://tools.usefulverse.com",
+    ".qa-phase0/production-final.json"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1775575903,
+  "minSampledFreeBytes": 41879908352,
+  "samples": 8,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

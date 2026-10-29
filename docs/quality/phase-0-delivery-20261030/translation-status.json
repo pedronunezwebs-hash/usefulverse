@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-29T17:15:26.191Z",
+  "run": {
+    "id": 40843674935,
+    "status": "in_progress",
+    "conclusion": null,
+    "updated_at": "2026-10-29T17:02:03Z",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40843674935"
+  },
+  "lastDelivered": {
+    "run_id": 40843674935,
+    "source_digest": "05bd0145ba07362f43d8b4d0a0df6cdc9d375aee5adba973b8c3cbb15325f3f7",
+    "generated": 175274,
+    "pending": 1011528,
+    "quarantined": 44001,
+    "exported_entries": 120294
+  },
+  "notices": [
+    {
+      "number": 141,
+      "title": "[Traducciones] tanda 40658885003: pending",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/issues/141",
+      "updated_at": "2026-10-29T08:38:54Z"
+    },
+    {
+      "number": 142,
+      "title": "[Traducciones] tanda 40565692987: pending",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/issues/142",
+      "updated_at": "2026-10-28T18:52:46Z"
+    },
+    {
+      "number": 140,
+      "title": "[Traducciones] tanda 40565169603: pending",
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/issues/140",
+      "updated_at": "2026-10-27T19:03:37Z"
+    }
+  ],
+  "mutations": 0,
+  "note": "Overlapping units/targets, not pages, language approval or a comparable percent. Current campaign remains pinned; English PR149 applies when a future campaign pins its source."
+}

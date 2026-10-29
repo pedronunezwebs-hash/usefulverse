@@ -1,0 +1,28 @@
+{
+  "command": [
+    "env",
+    "CLOUDFLARE_ACCOUNT_ID=c32922f3c1e392caba10a5727d770468",
+    "WRANGLER_SEND_METRICS=false",
+    "WRANGLER_LOG_PATH=/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-phase0-publish-20261030/.qa-phase0/wrangler-deploy.log",
+    ".qa-phase0/qa-deps/node_modules/.bin/wrangler",
+    "pages",
+    "deploy",
+    ".qa-phase0/hub",
+    "--project-name",
+    "usefulverse-tools",
+    "--branch",
+    "main",
+    "--commit-hash",
+    "75b010fb88579332896b96ad8fb00141ec19b891",
+    "--commit-message",
+    "Phase0 G1 verified static hub: real404 language sitemaps and hashed recovered assets",
+    "--commit-dirty=false"
+  ],
+  "exitCode": 0,
+  "resourceStop": false,
+  "maxSampledWorkingBytes": 1765890672,
+  "minSampledFreeBytes": 41885249536,
+  "samples": 65,
+  "workingBudgetBytes": 2000000000,
+  "minFreeBytes": 10000000000
+}

@@ -13,14 +13,14 @@ pausado y alertas de vulnerabilidades conservadas. El destino sigue siendo un si
 script por visita; antes del corte se verifican plan/coste/collisiones y 301 de `tools.`. La web publicada sigue dividida.
 [Decisión y recibo](lotes/2026-10-28-webs-manuales-traductor-intacto.md).
 
-**PR143 integrada en main (29-oct, e2286d9):** fuente de fase 0 + G1 lista, todavía sin publicar. Ambos builds generan sitemaps por idioma; el hub ya genera 404 en código y versiona las dependencias recuperadas. Producción conserva los despliegues del 18-oct. Preparación de mejoras en ramas separadas autorizada por Pedro el 29-oct mientras llega la ventana diaria.
+**PR143 integrada en main (29-oct, e2286d9):** fuente de fase0+G1 integrada;hub30-oct publicado/verificado yprincipal pendiente. Ambos builds generan sitemaps por idioma; el hub ya genera 404 en código y versiona las dependencias recuperadas. Hub publicado30-oct/7e74ca2e;principal conserva18-oct, entrega como pronto31-oct00+07. [Verificación](phase-0-delivery-20261030/README.md). Preparación de mejoras en ramas separadas autorizada por Pedro el 29-oct mientras llega la ventana diaria.
 
 ## Dos sitios, dos builds
 
 | Sitio | Proyecto de Cloudflare Pages | Build | Salida | Catálogo | Plantilla |
 |---|---|---|---|---|---|
 | `usefulverse.com` (277 herramientas) | `usefulverse` | `npm run check` (= `scripts/build.mjs` + `scripts/check-build.mjs`) | `dist/` | `src/catalog.mjs` | `src/template.mjs` (`renderToolPage`, `renderHome`, `renderNotFoundPage` → genera `404.html`) |
-| `tools.usefulverse.com` (423 herramientas, «hub Growth600») | `usefulverse-tools` | `npm run build:growth600` (= `scripts/build-growth600.mjs`) | `dist-growth600/` | `src/growth600/catalog.mjs` (+ `src/markets-no-ch/catalog.mjs`) | `src/growth600/render.mjs`, `build.mjs`, `site.css`, `rtl-fixes.css` — genera `404.html` desde PR143; pendiente publicarlo |
+| `tools.usefulverse.com` (423 herramientas, «hub Growth600») | `usefulverse-tools` | `npm run build:growth600` (= `scripts/build-growth600.mjs`) | `dist-growth600/` | `src/growth600/catalog.mjs` (+ `src/markets-no-ch/catalog.mjs`) | `src/growth600/render.mjs`, `build.mjs`, `site.css`, `rtl-fixes.css` — genera `404.html` desde PR143; publicado/verificado30-oct |
 
 > **Previsto:** unificar los dos sitios en un Worker de Static Assets en `usefulverse.com` (RUNBOOK §4b). El motivo de la
 > división fue el límite de 20.000 archivos de Pages en el plan gratuito; Workers Static Assets admite 100.000 y la cuenta ya
@@ -85,7 +85,7 @@ USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=ja npm run build   # build parcial
 - Clon/worktree propio; preservar cambios ajenos. Confirmar remoto, rama y estado antes de editar o sincronizar.
 - No dejar trabajo solo en local o /tmp. Push y comprobación remota antes de eliminar originales únicos.
 - No empezar con menos de 10 GB libres. Clones superficiales con filtro blob:none; dependencias/QA/cachés dentro de su carpeta temporal y retirados al cerrar.
-- Los 106 JS ya están versionados y el 404 está generado en main; entrega pendiente. En producción las tres rutas falsas siguen con la versión anterior.
+- Hub:106JS versionados y404 real ya publicados30-oct,37feeds/15.365URLs verificados. Principal sigue pendiente de otra ventana diaria.
 - La preview vigente tiene 37 destinos de ruta; nb es respaldo inglés declarado, no traducción aprobada. Ninguna muestra del piloto ni subida-noindex equivale a herramienta/idioma aprobado.
 - 300 nuevas en noindex, fuera de sitemap/hreflang indexables y sin bloqueo robots; las 700 existentes se conservan indexables.
 - Si src/markets-no-ch se usa en sparse-checkout, incluir las seis fuentes copy-en/translations de voice-changer, shikaku y dxf-viewer: los contratos verifican sus bytes.

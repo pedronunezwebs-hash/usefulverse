@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-29T16:51:58.255Z",
+  "source": "75b010fb88579332896b96ad8fb00141ec19b891",
+  "files": 16392,
+  "htmlFiles": 15366,
+  "bytes": 776765871,
+  "treeSha256": "f3c7a647a4a7a8886798723cfaf29c7586b1f6b0ccc79d469803555c50f36eb8",
+  "largest": [
+    {
+      "path": "assets/market-tools/vocal-remover/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/vendor/onnx/ort-wasm-simd-threaded.wasm",
+      "bytes": 14264838
+    },
+    {
+      "path": "assets/panorama-stitcher/opencv-4.12.0.js",
+      "bytes": 10872779
+    },
+    {
+      "path": "assets/pyodide-314.0.7/pyodide.asm.wasm",
+      "bytes": 9598218
+    },
+    {
+      "path": "assets/market-tools/occt-import-js.wasm",
+      "bytes": 7604031
+    },
+    {
+      "path": "assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx",
+      "bytes": 6632188
+    },
+    {
+      "path": "assets/local-ai-chat/web-llm-0.2.86.mjs",
+      "bytes": 6154144
+    },
+    {
+      "path": "assets/models-image-upscaler-92a21aca5713f20faf9a87590cdfbdce2e34112c/Xenova/swin2SR-lightweight-x2-64/onnx/model_q4.onnx",
+      "bytes": 5675089
+    },
+    {
+      "path": "assets/ipa-transcriber/cmudict-2026-10-20.dict",
+      "bytes": 3618488
+    },
+    {
+      "path": "assets/pyodide-314.0.7/python_stdlib.zip",
+      "bytes": 2545637
+    }
+  ],
+  "fitsFileAndAssetBudget": true,
+  "excessFiles": 0,
+  "oversizedAssetCount": 0,
+  "oversizedAssetSample": [],
+  "previousTree": "f3c7a647a4a7a8886798723cfaf29c7586b1f6b0ccc79d469803555c50f36eb8",
+  "identicalToPreviouslyVerified": true,
+  "noRootFunctions": true
+}
