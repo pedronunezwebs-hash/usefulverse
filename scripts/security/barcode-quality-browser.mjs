@@ -1,0 +1,98 @@
+// Manual, local-only browser checks. Never dispatches CI or deploys anything.
+import { chromium, firefox, webkit } from 'playwright';
+import {unzipSync,strFromU8} from 'fflate';
+import assert from 'node:assert/strict';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { join, resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { checkResources } from '../local-resources.mjs';
+const root=fileURLToPath(new URL('../../',import.meta.url));
+const origin=new URL(process.argv[2]??'');
+if(!['127.0.0.1','[::1]'].includes(origin.hostname)||origin.protocol!=='http:'||origin.username||origin.password||origin.pathname!=='/'||origin.search||origin.hash)throw Error('Use only a loopback HTTP origin');
+const output=resolve(process.argv[3]??'');if(!output.startsWith(root+'.qa-'))throw Error('Use a new owned .qa-... report');
+const copy=JSON.parse(await readFile(join(root,'translation-sources/barcode-generator.json'))).sourceCopy;
+const report={independentDecoder:'@zxing/library@0.21.3',scope:'unpublished-barcode-generator',startedAt:new Date().toISOString(),physicalDevices:false,clipboard:'mocked success and permission-denied fallback; OS clipboard not modified',browsers:[]};
+for(const [name,type]of Object.entries({chromium,firefox,webkit})){
+  await checkResources(root,80_000_000);
+  const profile=await mkdtemp(join(root,'.qa-barcode-profile-'));
+  let context;
+  const result={name,checks:[],geometries:[],consoleErrors:[],pageErrors:[],thirdPartyRequests:[]};
+  try{
+    context=await type.launchPersistentContext(profile,{headless:true,...(name==='chromium'?{executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}:{}),viewport:{width:390,height:844},locale:'en-US',timezoneId:'America/New_York',colorScheme:'light',reducedMotion:'reduce'});
+    const page=context.pages()[0]??await context.newPage();
+    page.on('console',m=>{if(m.type()==='error')result.consoleErrors.push(m.text());});page.on('pageerror',e=>result.pageErrors.push(e.message));
+    page.on('request',r=>{if(new URL(r.url()).origin!==origin.origin)result.thirdPartyRequests.push(r.url());});
+    const open=async query=>{await page.goto(origin.origin+'/tools/barcode-generator/'+(query??''));await page.evaluate(()=>document.fonts.ready);await page.waitForFunction(()=>document.querySelector('#answer')||!document.querySelector('#error').hidden);};
+    const check=async(label,fn)=>{await fn();result.checks.push(label);};
+    const calculate=async()=>{await page.getByRole('button',{name:'Generate',exact:true}).click();await page.waitForFunction(()=>document.getElementById('cancel').hidden);};
+    const answer=async value=>assert.equal(await page.locator('#answer').textContent(),value);
+    const switchMode=async m=>page.locator(`input[name=mode][value=${m}]`).check();
+    await open();
+    await check('default value and draft metadata',async()=>{await answer('UV-2026-001');assert.equal(await page.locator('meta[name=robots]').getAttribute('content'),'noindex,follow');});
+    await check('all formats and leading zeroes',async()=>{for(const [format,input,value]of [['CODE128',' A ',' A '],['EAN13','941234554321','9412345543219'],['UPC','01234567890','012345678905'],['EAN8','1234567','12345670'],['CODE39','ABC-123','ABC-123']]){await page.locator('#format').selectOption(format);await page.locator('#value').fill(input);await calculate();await answer(value);}});
+    await check('invalid input clears stale downloads and focuses the field',async()=>{await page.locator('#format').selectOption('EAN13');await page.locator('#value').fill('9412345543210');assert.equal(await page.locator('#svg').isDisabled(),true);await calculate();assert.equal(await page.locator('#error').textContent(),copy.ui.errors.CHECK_DIGIT);assert.equal(await page.evaluate(()=>document.activeElement.id),'value');assert.equal(await page.locator('#answer').count(),0);});
+    await check('four worked examples execute',async()=>{for(const [id,value]of [['stock','UV-2026-001'],['ean','9412345543219'],['upc','012345678905'],['short','12345670']]){await page.locator(`[data-example=${id}]`).click();await page.waitForFunction(()=>document.getElementById('cancel').hidden);await answer(value);}});
+    await check('SVG and PNG downloads decode independently in every format',async()=>{await page.addScriptTag({path:join(root,'node_modules/@zxing/library/umd/index.min.js')});for(const [format,input,value]of [['CODE128','UV-2026-001','UV-2026-001'],['EAN13','941234554321','9412345543219'],['UPC','01234567890','012345678905'],['EAN8','1234567','12345670'],['CODE39','ABC-123','ABC-123']]){await page.locator('#format').selectOption(format);await page.locator('#value').fill(input);await calculate();for(const kind of ['svg','png']){const promise=page.waitForEvent('download');await page.locator('#'+kind).click();const file=await promise,target=join(dirname(output),name+'-'+format+'.'+kind);await file.saveAs(target);const bytes=await readFile(target);const pixels=await page.evaluate(async({base64,type})=>{const blob=new Blob([Uint8Array.from(atob(base64),c=>c.charCodeAt(0))],{type}),url=URL.createObjectURL(blob);try{const img=new Image();img.src=url;await img.decode();return new ZXing.BrowserMultiFormatReader().decodeFromImage(img).then(r=>r.getText());}finally{URL.revokeObjectURL(url);}},{base64:bytes.toString('base64'),type:kind==='svg'?'image/svg+xml':'image/png'});assert.equal(pixels===('0'+value)&&format==='UPC'?pixels.slice(1):pixels,value);}}});
+    await check('1,000 batch images and complete manifest survive ZIP download',async()=>{await switchMode('batch');await page.locator('#format').selectOption('CODE128');await page.locator('#batch-input').fill(Array.from({length:1000},(_,i)=>'UV-'+i).join('\n'));await calculate();assert.equal(await page.locator('#batch-images article').count(),5);const promise=page.waitForEvent('download');await page.locator('#zip').click();const file=await promise,target=join(dirname(output),name+'-1000.zip');await file.saveAs(target);const files=unzipSync(await readFile(target));assert.equal(Object.keys(files).length,1001);const csv=strFromU8(files['manifest.csv']);assert.equal(csv.split('\r\n').length,1002);assert.ok(strFromU8(files['barcode-001000.svg']).includes('UV-999'));});
+    await check('batch errors, formula shielding and literal SVG text',async()=>{await page.locator('#batch-input').fill('=1+1\n<img>\né\nUV-3');await calculate();assert.equal(await page.locator('#batch-images script,#batch-images img').count(),0);assert.ok((await page.locator('#result').textContent()).includes('1 errors'));const promise=page.waitForEvent('download');await page.locator('#zip').click();const file=await promise,target=join(dirname(output),name+'-mixed.zip');await file.saveAs(target);const files=unzipSync(await readFile(target));assert.equal(Object.keys(files).length,4);assert.ok(strFromU8(files['manifest.csv']).includes("'=1+1"));});
+    await check('cancelled work cannot overwrite a newer result',async()=>{await page.locator('#batch-input').evaluate(e=>{e.value='UV-1\n'.repeat(10000);e.dispatchEvent(new Event('input',{bubbles:true}));});await page.getByRole('button',{name:'Generate',exact:true}).click();await page.locator('#cancel').click();assert.equal(await page.locator('#progress').textContent(),copy.ui.cancelled);await switchMode('single');await page.locator('#value').fill('NEW');await calculate();await answer('NEW');});
+    await check('empty batch is rejected',async()=>{await switchMode('batch');await page.locator('#batch-input').fill('');await calculate();assert.equal(await page.locator('#error').textContent(),copy.ui.errors.EMPTY_BATCH);});
+    await check('long Code128 value and hidden caption keep full SVG',async()=>{await switchMode('single');await page.locator('#value').fill('A'.repeat(1000));await calculate();assert.equal((await page.locator('#answer').textContent()).length,1000);await page.locator('#show-value').uncheck();await calculate();assert.equal(await page.locator('#result svg text').count(),0);assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));});
+    await check('mocked copy and denied share restore exact settings',async()=>{await page.locator('[data-example=stock]').click();await page.waitForFunction(()=>document.getElementById('cancel').hidden);await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>window.__copied=text}}));await page.locator('#copy').click();assert.equal(await page.evaluate(()=>window.__copied),'UV-2026-001');await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied')}}}));await page.locator('#share').click();const link=await page.locator('#copy-text').inputValue();assert.ok(link.includes('input=UV-2026-001'));await page.goto(link);await page.waitForSelector('#answer');await answer('UV-2026-001');});
+    await check('generation works offline after initial load',async()=>{await open();await context.setOffline(true);try{await page.locator('#value').fill('OFFLINE-7');await calculate();await answer('OFFLINE-7');}finally{await context.setOffline(false);}});
+    await check('invalid link has no result',async()=>{await open('?format=CODE128&format=EAN13');assert.equal(await page.locator('#error').textContent(),copy.ui.errors.LINK);assert.equal(await page.locator('#answer').count(),0);});
+    await open();
+    await check('FAQ schema matches visible answers',async()=>{const d=await page.evaluate(()=>({schema:JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent).find(s=>s['@type']==='FAQPage').mainEntity.map(q=>[q.name,q.acceptedAnswer.text]),visible:[...document.querySelectorAll('.faq details')].map(e=>[e.querySelector('summary').textContent,e.querySelector('p').textContent])}));assert.deepEqual(d.schema,d.visible);assert.equal(d.visible.length,10);});
+    await check('keyboard skip and radio navigation',async()=>{await page.keyboard.press(name==='webkit'?'Alt+Tab':'Tab');assert.equal(await page.evaluate(()=>document.activeElement.className),'skip');await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>document.activeElement.id),'calculator');await page.keyboard.press(name==='webkit'?'Alt+Tab':'Tab');await page.keyboard.press('ArrowRight');assert.equal(await page.locator('input[name=mode]:checked').inputValue(),'batch');});
+    await open();await page.addScriptTag({path:join(root,'node_modules/axe-core/axe.min.js')});
+    await check('input boundaries meet WCAG non-text contrast 3:1',async()=>{
+      const ratio=await page.locator('#value').evaluate(el=>{const s=getComputedStyle(el),lum=c=>{const a=c.match(/[\d.]+/g).slice(0,3).map(v=>Number(v)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return .2126*a[0]+.7152*a[1]+.0722*a[2];};const a=lum(s.borderTopColor),b=lum(s.backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05);});assert.ok(ratio>=3,String(ratio));
+    });
+    for(const theme of ['light','dark']){
+      await page.evaluate(theme=>document.documentElement.dataset.theme=theme,theme);
+      for(const width of [320,360,390,414,768,1024,1280,1440,1920]){
+        await page.setViewportSize({width,height:900});
+        const geometry=await page.evaluate(()=>{const w=document.querySelector('main>.wrap').getBoundingClientRect();return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,margins:[w.left+parseFloat(getComputedStyle(document.querySelector('main>.wrap')).paddingInlineStart),innerWidth-w.right+parseFloat(getComputedStyle(document.querySelector('main>.wrap')).paddingInlineEnd)]};});
+        assert.ok(geometry.scrollWidth<=width,JSON.stringify({name,theme,...geometry}));assert.ok(Math.min(...geometry.margins)>=16);
+        const violations=await page.evaluate(async()=> (await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa']}})).violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})));
+        assert.deepEqual(violations,[],JSON.stringify({name,theme,width,violations}));result.geometries.push({theme,...geometry,axeViolations:0});
+      }
+    }
+    result.stressLayouts=[];
+    for(const fixture of ['rtl','long-text','text-size-200']){
+      await open();await page.setViewportSize({width:390,height:844});
+      await page.evaluate(fixture=>{
+        if(fixture==='rtl')document.documentElement.dir='rtl';
+        if(fixture==='text-size-200'){
+          for(const el of document.querySelectorAll('body *')){
+            if(!el.matches('script,style,svg,svg *'))el.dataset.originalFontSize=getComputedStyle(el).fontSize;
+          }
+          for(const el of document.querySelectorAll('[data-original-font-size]'))el.style.fontSize=(parseFloat(el.dataset.originalFontSize)*2)+'px';
+        }else{
+          for(const el of document.querySelectorAll('h1,h2,h3,p,summary,button,.field>span,.mode span,.check-label>span')){
+            if(el.querySelector('svg,button,span,small,input')||el.closest('#result'))continue;
+            el.textContent=fixture==='rtl'?el.textContent+' — تفاصيل التقويم':el.textContent+' '+el.textContent;
+          }
+        }
+      },fixture);
+      const overflow=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth}));
+      assert.ok(overflow.scrollWidth<=overflow.width,JSON.stringify({name,fixture,...overflow}));
+      result.stressLayouts.push({fixture,...overflow,note:'Synthetic layout fixture, not a translated-language approval or actual browser zoom'});
+      if(name==='chromium')await page.screenshot({path:join(dirname(output),fixture+'.webp'),type:'webp',fullPage:false});
+    }
+    for(const width of [568,844,1024,1920]){
+      await open();await page.setViewportSize({width,height:390});
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      result.stressLayouts.push({fixture:'landscape',width,height:390});
+    }
+    await open();await page.setViewportSize({width:1440,height:1000});
+    if(name==='chromium'){
+      await page.screenshot({path:join(dirname(output),'desktop.webp'),type:'webp',fullPage:false});
+      await page.setViewportSize({width:390,height:844});await page.screenshot({path:join(dirname(output),'mobile.webp'),type:'webp',fullPage:false});
+    }
+    assert.deepEqual(result.pageErrors,[]);assert.deepEqual(result.consoleErrors,[]);assert.deepEqual(result.thirdPartyRequests,[]);
+    report.browsers.push(result);
+  }catch(error){result.failure=String(error.stack).slice(0,1800)+'\n'+String(error.stack).slice(-1200);report.browsers.push(result);report.failed=true;break;}
+  finally{await context?.close();await rm(profile,{recursive:true,force:true});}
+}
+report.completedAt=new Date().toISOString();await writeFile(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({browsers:report.browsers.map(b=>({name:b.name,checks:b.checks.length,geometries:b.geometries.length,failure:b.failure})),failed:!!report.failed}));if(report.failed)process.exitCode=1;
