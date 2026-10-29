@@ -26,9 +26,9 @@
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ date-calculator English quality copy reaches the corpus without translating controls or routes (3.663667ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
@@ -43,9 +43,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ time-duration-calculator English quality copy reaches the corpus without translating controls or routes (0.781375ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -60,9 +60,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ roman-numeral-converter English quality copy reaches the corpus without translating controls or routes (0.388041ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -77,9 +77,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ barcode-generator English quality copy reaches the corpus without translating controls or routes (0.393167ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -94,9 +94,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ fraction-calculator English quality copy reaches the corpus without translating controls or routes (0.475083ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -111,9 +111,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ prime-number-checker English quality copy reaches the corpus without translating controls or routes (0.323875ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -128,9 +128,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ percentage-calculator English quality copy reaches the corpus without translating controls or routes (0.347541ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -145,9 +145,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ number-to-words-converter English quality copy reaches the corpus without translating controls or routes (0.353959ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -162,9 +162,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ ratio-proportion-calculator English quality copy reaches the corpus without translating controls or routes (0.353792ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -179,9 +179,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ discount-calculator English quality copy reaches the corpus without translating controls or routes (0.342208ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -196,9 +196,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ random-number-generator English quality copy reaches the corpus without translating controls or routes (0.315375ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -213,9 +213,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ average-calculator English quality copy reaches the corpus without translating controls or routes (0.255625ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -230,9 +230,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ age-calculator English quality copy reaches the corpus without translating controls or routes (0.265083ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
@@ -247,9 +247,9 @@ test at scripts/localization/quality-copy-source.test.mjs:8:23
 test at scripts/localization/quality-copy-source.test.mjs:8:23
 ✖ fuel-cost-calculator English quality copy reaches the corpus without translating controls or routes (0.2465ms)
   AssertionError [ERR_ASSERTION]: routing belongs outside translated prose
-  
+
   undefined !== 3
-  
+
       at TestContext.<anonymous> (file:///Users/pedronunez/Desktop/agencia%20de%20desarrollo%20web/.usefulverse-math-batch-20261029/scripts/localization/quality-copy-source.test.mjs:15:10)
       at async Test.run (node:internal/test_runner/test:1208:7)
       at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
