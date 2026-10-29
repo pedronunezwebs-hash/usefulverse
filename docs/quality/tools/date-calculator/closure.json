@@ -1,0 +1,49 @@
+{
+  "closedAt": "2026-10-29T07:11:49.523Z",
+  "scope": "Date Calculator preparation only; not published or approved",
+  "pullRequest": "https://github.com/pedronunezwebs-hash/usefulverse/pull/144",
+  "sourceCommit": "e9e93b553cf077d0c120fc5278388dea1f8955b8",
+  "backedUpHead": "cd7c1351807111e5d4d3584c72d349771ccdc064",
+  "backedUpTree": "7649b1d1f711d2a6aa6d65aa0063f80b6056506b",
+  "remoteTreeMatchedLocal": true,
+  "verifiedDocumentationBlobs": 24,
+  "nativeRuntimeBuildersWorkflowsUnchanged": true,
+  "cloneRemoved": true,
+  "removed": [
+    "owned sparse clone",
+    "build outputs",
+    "test dependencies",
+    "Firefox/WebKit downloads",
+    "font original",
+    "npm cache",
+    "screenshots not selected as evidence",
+    "owned browser profiles"
+  ],
+  "serverStopped": true,
+  "ownBrowserProcessesRemaining": 0,
+  "ownBrowserPageBlank": true,
+  "footprintBeforeCleanupBytes": 1516644781,
+  "freeBytes": 46384943104,
+  "freeGiB": 43.2,
+  "indexableURLDelta": 0,
+  "activations": 0,
+  "approvedTools": 0,
+  "approvedTranslationDestinations": 0,
+  "webActionsDispatched": 0,
+  "deployments": 0,
+  "newBillableServices": 0,
+  "pedro": {
+    "pending": 9,
+    "failures": 0,
+    "newIDs": [
+      "P-010"
+    ],
+    "newTestBlockedUntilCandidateURL": true
+  },
+  "translator": {
+    "run": 40658885003,
+    "statusAtLastRead": "in_progress",
+    "configurationChanged": false
+  },
+  "next": "Publish/verify phase0 hub from2026-10-30T00:00+07, main another day; prepare further priorities in isolated branches meanwhile. Complete remaining Date Calculator gates before integration/release."
+}
