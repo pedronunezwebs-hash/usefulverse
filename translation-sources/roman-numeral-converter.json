@@ -108,22 +108,18 @@
     "examplesAction": "Use this example",
     "examples": [
       {
-        "id": "year",
         "heading": "Write a year",
         "text": "2026 becomes MMXXVI: 2,000 + 20 + 6. The converter shows those parts separately."
       },
       {
-        "id": "subtractive",
         "heading": "Read a subtractive form",
         "text": "MCMXCIX is 1999: 1,000 + 900 + 90 + 9. Each smaller-before-larger pair has a specific meaning."
       },
       {
-        "id": "date",
         "heading": "Keep the date order clear",
         "text": "October 29, 2026 becomes XXIX / X / MMXXVI in day/month/year order. Month/day/year puts X first."
       },
       {
-        "id": "large",
         "heading": "Go beyond ordinary notation",
         "text": "4000 becomes (IV) with grouped thousands enabled. Here, parentheses multiply the enclosed value by 1,000."
       }
@@ -217,17 +213,14 @@
     "relatedHeading": "Other ways to work with your number",
     "related": [
       {
-        "id": "number-to-words-converter",
         "title": "Number to Words",
         "text": "Write a supported number using words instead of digits."
       },
       {
-        "id": "binary-converter",
         "title": "Binary Converter",
         "text": "Convert numbers and text with the selected binary operation."
       },
       {
-        "id": "date-calculator",
         "title": "Date Calculator",
         "text": "Count calendar days or move a date before formatting it."
       }
@@ -266,6 +259,17 @@
         "input": "4000",
         "extended": true,
         "expected": "(IV)"
+      }
+    ],
+    "related": [
+      {
+        "id": "number-to-words-converter"
+      },
+      {
+        "id": "binary-converter"
+      },
+      {
+        "id": "date-calculator"
       }
     ]
   }

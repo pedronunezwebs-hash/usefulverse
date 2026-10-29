@@ -1,6 +1,7 @@
+import { qualitySourceCopy } from '../shared/source-copy.mjs';
 import doc from '../../../translation-sources/roman-numeral-converter.json' with {type:'json'};
 import {renderQualityPage,esc,planet,json} from '../shared/page.mjs';
-export const romanCopy=doc.sourceCopy,romanExamples=doc.nonTranslatableCopy.examples;
+export const romanCopy=qualitySourceCopy(doc),romanExamples=doc.nonTranslatableCopy.examples;
 export function renderRomanQuality({copy=romanCopy,worker,...options}){
   const u=copy.ui;
   const workspaceHTML=`<section class="workspace roman-workspace" id="calculator" tabindex="-1" aria-label="${esc(copy.heading)}"><div class="workspace-top"><fieldset class="mode"><legend class="sr-only">${esc(u.calculation)}</legend>${['number','roman','date','batch'].map((m,i)=>`<label><input type="radio" name="mode" value="${m}" ${i?'':'checked'}><span>${esc(u[m])}</span></label>`).join('')}</fieldset></div>
