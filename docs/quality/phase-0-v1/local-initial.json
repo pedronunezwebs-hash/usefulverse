@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-29T00:58:17.001Z",
+  "rows": [
+    {
+      "path": "/tools/zzz/",
+      "status": 404,
+      "cacheControl": "no-store",
+      "noindex": true,
+      "locCount": 0
+    },
+    {
+      "path": "/es/zzz/",
+      "status": 404,
+      "cacheControl": "no-store",
+      "noindex": true,
+      "locCount": 0
+    },
+    {
+      "path": "/zzz.html",
+      "status": 404,
+      "cacheControl": "no-store",
+      "noindex": true,
+      "locCount": 0
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "noindex": false,
+      "type": "index",
+      "locCount": 6
+    },
+    {
+      "path": "/sitemap-ar.xml",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "noindex": false,
+      "locCount": 2
+    },
+    {
+      "path": "/tools/markdown-editor/",
+      "status": 200,
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "noindex": false,
+      "locCount": 0
+    }
+  ],
+  "axe": [
+    {
+      "id": "color-contrast",
+      "nodes": 2
+    }
+  ],
+  "width": 1200,
+  "scrollWidth": 1200,
+  "title": "Página no encontrada | UsefulVerse"
+}

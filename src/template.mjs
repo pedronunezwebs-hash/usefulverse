@@ -641,20 +641,21 @@ export function renderNotFoundPage() {
     <meta name="robots" content="noindex,follow">
     <meta name="theme-color" content="#0b1324">
     <title>Page not found | UsefulVerse</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <style>
       :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f7f8fb; }
       * { box-sizing: border-box; }
       body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; }
       main { width: min(100%, 680px); padding: clamp(28px, 7vw, 64px); background: white; border: 1px solid #e5e8ef; border-radius: 28px; box-shadow: 0 18px 60px #1720330d; }
-      .brand { display: inline-flex; gap: 10px; align-items: center; color: inherit; text-decoration: none; font-size: 1.1rem; font-weight: 750; letter-spacing: -.04em; }
-      .mark { color: #536dfe; }
-      .code { margin: 54px 0 8px; color: #536dfe; font-size: .8rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+      .brand { min-height: 44px; display: inline-flex; gap: 10px; align-items: center; color: inherit; text-decoration: none; font-size: 1.1rem; font-weight: 750; letter-spacing: -.04em; }
+      .mark { color: #4254db; }
+      .code { margin: 54px 0 8px; color: #4254db; font-size: .8rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
       h1 { max-width: 12ch; margin: 0; font-size: clamp(2.4rem, 8vw, 4.8rem); line-height: .98; letter-spacing: -.065em; }
       .detail { max-width: 48ch; margin: 22px 0 28px; color: #596273; font-size: 1.08rem; line-height: 1.65; }
-      .home { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; color: white; background: #536dfe; text-decoration: none; font-weight: 700; }
+      .home { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; color: white; background: #4254db; text-decoration: none; font-weight: 700; }
       nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 38px; padding-top: 24px; border-top: 1px solid #e9ebf0; }
       nav p { flex-basis: 100%; margin: 0 0 2px; color: #596273; font-size: .85rem; }
-      nav a { color: #46546b; font-size: .9rem; text-underline-offset: 3px; }
+      nav a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; padding: 0 4px; color: #46546b; font-size: .9rem; text-underline-offset: 3px; }
       a:focus-visible { outline: 3px solid #f5a623; outline-offset: 4px; }
     </style>
   </head>
@@ -665,22 +666,25 @@ export function renderNotFoundPage() {
       <h1 id="not-found-heading">This page took a wrong turn.</h1>
       <p class="detail" id="not-found-detail">The address may be outdated or the page may have moved. Head back to the tools directory.</p>
       <a class="home" id="not-found-home" href="/">Browse all tools</a>
-      <nav aria-label="Choose a language"><p id="not-found-languages">Choose a language</p>${languageOptions}</nav>
+      <nav id="not-found-navigation" aria-label="Choose a language"><p id="not-found-languages">Choose a language</p>${languageOptions}</nav>
     </main>
     <script>
       const copy = ${JSON.stringify(messages)};
       const prefixes = ${JSON.stringify(Object.fromEntries(localeEntries.map(({ key, prefix }) => [key, prefix])))};
       const preferred = (navigator.languages || [navigator.language || 'en']).map((value) => value.toLowerCase());
-      const key = Object.keys(prefixes).find((language) => preferred.some((value) => value === language || value.startsWith(language + '-'))) || 'en';
-      const text = copy[key] || copy.en;
-      document.documentElement.lang = ({ pt: 'pt-BR', zh: 'zh-CN', bn: 'bn-BD', ru: 'ru-RU', ur: 'ur-PK' })[key] || key;
-      document.documentElement.dir = ['ar', 'ur', 'fa'].includes(key) ? 'rtl' : 'ltr';
+      const requested = Object.keys(prefixes).find((language) => prefixes[language] && (location.pathname === prefixes[language] || location.pathname.startsWith(prefixes[language] + '/')));
+      const key = requested || preferred.map((value) => Object.keys(prefixes).find((language) => value === language || value.startsWith(language + '-'))).find(Boolean) || 'en';
+      const textKey = copy[key] ? key : 'en';
+      const text = copy[textKey];
+      document.documentElement.lang = ({ pt: 'pt-BR', zh: 'zh-CN', bn: 'bn-BD', ru: 'ru-RU', ur: 'ur-PK' })[textKey] || textKey;
+      document.documentElement.dir = ['ar', 'ur', 'fa'].includes(textKey) ? 'rtl' : 'ltr';
       document.title = text.title + ' | UsefulVerse';
       document.getElementById('not-found-heading').textContent = text.heading;
       document.getElementById('not-found-detail').textContent = text.detail;
       document.getElementById('not-found-home').textContent = text.home;
       document.getElementById('not-found-home').href = prefixes[key] ? prefixes[key] + '/' : '/';
       document.getElementById('not-found-languages').textContent = text.languages;
+      document.getElementById('not-found-navigation').setAttribute('aria-label', text.languages);
     </script>
   </body>
 </html>`;
@@ -789,8 +793,8 @@ export function renderGuidePage(guide, assetVersion = '', language = 'en') {
   return language === 'en' ? rendered : translateStaticHtml(rendered, language);
 }
 
-export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website', localeRoute }) {
-  const positionedMetadata = positionSeoMetadata({ title, description }, lang);
+export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website', localeRoute, metadataPositioned = false }) {
+  const positionedMetadata = metadataPositioned ? { title, description } : positionSeoMetadata({ title, description }, lang);
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
   const homeHref = localeHomePath(lang);
   const languageLocales = pdfToolIds.includes(localeToolId) ? pdfLocaleEntries : localeEntries;
@@ -872,7 +876,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
 export function renderHome(tools, categories, assetVersion = '', language = 'en') {
   const homeUrl = `https://usefulverse.com${localePath(language)}`;
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key)}">`).join('\n    ');
-  const homeMetadata = positionSeoMetadata({ title: locales[language].homeTitle, description: locales[language].homeDescription }, language);
+  const homeMetadata = positionSeoMetadata({ title: locales[language].homeTitle, description: locales[language].homeDescription }, language, { titleLimit: 60 });
   const dynamicTranslations = {};
   const schema = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -885,6 +889,7 @@ export function renderHome(tools, categories, assetVersion = '', language = 'en'
   const rendered = shell({
     title: homeMetadata.title,
     description: homeMetadata.description,
+    metadataPositioned: true,
     canonical: homeUrl,
     schema,
     assetVersion,

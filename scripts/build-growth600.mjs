@@ -1,3 +1,4 @@
+import { readSitemapRecords, writeLanguageSitemaps } from './language-sitemaps.mjs';
 import { access, cp, readFile, readdir, rename, rm, writeFile } from 'node:fs/promises';
 import { execFile as execFileCallback } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -413,6 +414,7 @@ const photoBackgroundWorkerBuild = await build({
   bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true, write: false, logLevel: 'silent',
 });
 const result = await buildGrowthStaticSite({
+  sitemapMode: 'flat-staging',
   outputDir: growthOnlyDir,
   origin: 'https://tools.usefulverse.com',
   localeEntries,
@@ -498,6 +500,8 @@ try {
     }
     console.log(`Verified noindex on ${candidateToolIds.size * localeEntries.length} draft candidate pages; none appear in the sitemap.`);
   }
+  const sitemapRecords = await readSitemapRecords(mergedDir, 'https://tools.usefulverse.com');
+  await writeLanguageSitemaps(mergedDir, 'https://tools.usefulverse.com', sitemapRecords);
   const indexNowKey = (await readFile(resolve(root, 'src/growth600/indexnow-key.txt'), 'utf8')).trim();
   if (!/^[a-f0-9]{8,128}$/u.test(indexNowKey)) throw new Error('Growth600 IndexNow key must contain 8 to 128 lowercase hexadecimal characters.');
   await writeFile(resolve(mergedDir, `${indexNowKey}.txt`), `${indexNowKey}\n`, { flag: 'wx' });

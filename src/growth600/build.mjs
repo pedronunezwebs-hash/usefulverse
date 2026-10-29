@@ -6,6 +6,8 @@ import { growthPilotTools, assertGrowthCatalogIsAdditive } from './catalog.mjs';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { renderGrowthForm } from './forms.mjs';
 import { renderGrowthHomePage, renderGrowthToolPage } from './render.mjs';
+import { renderNotFoundPage } from '../template.mjs';
+import { readSitemapRecords, writeLanguageSitemaps } from '../../scripts/language-sitemaps.mjs';
 import { isDraftSourceFallback } from './draft-locales.mjs';
 
 const sha = (value) => createHash('sha256').update(value).digest('hex').slice(0, 12);
@@ -425,6 +427,7 @@ async function buildGrowthStaticSiteIntoDirectory({
   faviconSvg,
   currentTools, tools = growthPilotTools, maxFiles = 19_500,
   noindexToolIds = [], noindexHome = false, allowUnapprovedToolIds = [],
+  sitemapMode = 'language-index',
   maxAssetBytes = 24 * 1024, maxFileBytes = 25 * 1024 * 1024, maxToolStyleBytes = maxAssetBytes,
 }) {
   if (!outputDir || !Array.isArray(localeEntries) || !localeEntries.length || !styles || !faviconSvg) throw new TypeError('Build directory, locales, stylesheet and favicon are required.');
@@ -573,7 +576,10 @@ async function buildGrowthStaticSiteIntoDirectory({
   }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${canonicalUrls.map((url) => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`;
-  await writeFile(join(outputDir, 'sitemap.xml'), sitemap);
+  if (!['language-index', 'flat-staging'].includes(sitemapMode)) throw Error('Unsupported sitemap mode');
+  if (sitemapMode === 'flat-staging') await writeFile(join(outputDir, 'sitemap.xml'), sitemap);
+  else await writeLanguageSitemaps(outputDir, origin, canonicalUrls.map(loc => ({ loc })));
+  await writeFile(join(outputDir, '404.html'), renderNotFoundPage());
   await writeFile(join(outputDir, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${new URL('/sitemap.xml', origin)}\n`);
   const english = copyByLocale.en;
   const llms = `# UsefulVerse tools\n\n${english._home.intro}\n\n${tools.map((tool) => `- [${english[tool.id].name}](${new URL(localePath('en', tool.id), origin)}): ${english[tool.id].description}`).join('\n')}\n\n- [Sitemap](${new URL('/sitemap.xml', origin)})\n`;
@@ -583,14 +589,14 @@ async function buildGrowthStaticSiteIntoDirectory({
     const route = localePath(locale.key).replace(/^\/+|\/+$/gu, '');
     await writeFile(join(outputDir, route, 'llms.txt'), `# UsefulVerse — ${locale.name}\n\n${translated._home.intro}\n\n${tools.map((tool) => `- [${translated[tool.id].name}](${new URL(localePath(locale.key, tool.id), origin)}): ${translated[tool.id].description}`).join('\n')}\n\n- [Sitemap](${new URL('/sitemap.xml', origin)})\n`);
   }
-  await writeFile(join(outputDir, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n`);
+  await writeFile(join(outputDir, '_headers'), `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Cache-Control: public, max-age=0, must-revalidate\n/assets/*\n  ! Cache-Control\n  Cache-Control: public, max-age=31536000, immutable\n`);
 
   const files = await walkFiles(outputDir);
   if (files.length > maxFiles) throw new Error(`Growth Pages project would contain ${files.length} files; safety cap is ${maxFiles}.`);
   const sizes = await Promise.all(files.map(async (path) => ({ path, bytes: (await stat(path)).size })));
   const tooLarge = sizes.find(({ bytes }) => bytes > maxFileBytes);
   if (tooLarge) throw new Error(`Published asset exceeds Cloudflare's per-file maximum: ${tooLarge.path} (${tooLarge.bytes} bytes).`);
-  const actualUrls = (await readFile(join(outputDir, 'sitemap.xml'), 'utf8')).match(/<loc>/gu)?.length ?? 0;
+  const actualUrls = (await readSitemapRecords(outputDir, origin)).length;
   if (actualUrls !== canonicalUrls.length) throw new Error(`Sitemap has ${actualUrls} URLs; expected ${canonicalUrls.length}.`);
   return { files: files.length, pages: canonicalUrls.length, sitemapUrls: actualUrls, totalBytes: sizes.reduce((sum, file) => sum + file.bytes, 0), origin: new URL(origin).origin, version, assetFiles: [...assetFiles] };
 }

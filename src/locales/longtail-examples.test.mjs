@@ -78,8 +78,9 @@ test('The custom 404 selects a supported browser language and the matching home 
     ['tr-TR', 'tr', '/tr/'], ['vi-VN', 'vi', '/vi/'],
   ]) {
     const elements = new Map(['not-found-heading', 'not-found-detail', 'not-found-home', 'not-found-languages'].map((id) => [id, {}]));
+    elements.set('not-found-navigation', { setAttribute(name, value) { this[name] = value; } });
     const document = { documentElement: { lang: 'en' }, title: '', getElementById: (id) => elements.get(id) };
-    vm.runInNewContext(script, { document, navigator: { languages: [browserLanguage], language: browserLanguage } });
+    vm.runInNewContext(script, { document, location: { pathname: '/tools/missing/' }, navigator: { languages: [browserLanguage], language: browserLanguage } });
     assert.equal(document.documentElement.lang, pageLanguage, `${browserLanguage}: document language`);
     assert.equal(document.documentElement.dir, ['ar', 'ur-PK'].includes(pageLanguage) ? 'rtl' : 'ltr', `${browserLanguage}: text direction`);
     assert.equal(elements.get('not-found-home').href, href, `${browserLanguage}: home link`);

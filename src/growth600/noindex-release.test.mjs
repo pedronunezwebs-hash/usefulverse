@@ -1,3 +1,4 @@
+import { readSitemapRecords } from '../../scripts/language-sitemaps.mjs';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
@@ -54,10 +55,11 @@ test('mixed build excludes catalog noindex pages from sitemap without blocking c
       tools, currentTools, localeEntries: locales, copyByLocale, styles: 'body{margin:16px}',
       faviconSvg: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
       controllerBundles: Object.fromEntries(tools.map(({ id }) => [id, 'document.documentElement.dataset.ready="yes";'])) });
-    const sitemap = await readFile(join(root, 'site/sitemap.xml'), 'utf8');
+    const records = await readSitemapRecords(join(root, 'site'), 'https://tools.usefulverse.com');
+    const sitemap = JSON.stringify(records);
     assert.doesNotMatch(sitemap, /text-translator/u);
     assert.match(sitemap, /\/es\/tools\/gravel-calculator\//u);
-    assert.equal((sitemap.match(/<loc>/gu) ?? []).length, 4);
+    assert.equal(records.length, 4);
     const oldPage = await readFile(join(root, 'site/tools/gravel-calculator/index.html'), 'utf8');
     assert.doesNotMatch(oldPage, /noindex|rel="alternate"[^>]*text-translator/u);
     const draftPage = await readFile(join(root, 'site/es/tools/text-translator/index.html'), 'utf8');

@@ -1,3 +1,4 @@
+import { readSitemapRecords } from './language-sitemaps.mjs';
 import { access, readFile, readdir, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -320,8 +321,8 @@ for (const file of await readdir(dist, { recursive: true })) {
   const path = join(dist, file);
   if ((await stat(path)).isFile() && (await stat(path)).size > 25 * 1024 * 1024) throw new Error(`Cloudflare Pages asset exceeds 25 MiB: ${file}`);
 }
-const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
-const sitemapCount = [...sitemap.matchAll(/<loc>https:\/\/usefulverse\.com\//gu)].length;
+const sitemap = (await readSitemapRecords(dist, 'https://usefulverse.com')).map(({ loc }) => `<loc>${loc}</loc>`).join('\n');
+const sitemapCount = (sitemap.match(/<loc>/gu) ?? []).length;
 if (sitemapCount !== pages.length) throw new Error(`Sitemap expected ${pages.length} URLs, found ${sitemapCount}`);
 if (sitemap.includes('xhtml:link') || sitemap.includes('hreflang=')) throw new Error('Sitemap must stay compact; localized alternates belong in reciprocal HTML head tags');
 for (const language of languages) {

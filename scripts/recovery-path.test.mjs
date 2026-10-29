@@ -12,7 +12,7 @@ test('recovery locates source from a checkout with spaces and Unicode before val
   try {
     await mkdir(join(root, 'scripts'), { recursive: true }); await mkdir(join(root, 'src/growth600'), { recursive: true });
     await mkdir(join(root, 'output'));
-    await copyFile(new URL('./merge-live-only-106.mjs', import.meta.url), join(root, 'scripts/merge-live-only-106.mjs'));
+    for (const name of ['merge-live-only-106.mjs', 'recovered-assets.mjs', 'language-sitemaps.mjs', 'compose-sites-metadata.mjs']) await copyFile(new URL('./' + name, import.meta.url), join(root, 'scripts', name));
     await writeFile(join(root, 'src/growth600/live-only-106.manifest.json'), JSON.stringify({ tools: [] }));
     await assert.rejects(exec(process.execPath, [join(root, 'scripts/merge-live-only-106.mjs')], { env: { ...process.env, GROWTH600_DIST: join(root, 'output') } }), error => {
       assert.match(error.stderr, /recovery manifest is invalid or incomplete/u);

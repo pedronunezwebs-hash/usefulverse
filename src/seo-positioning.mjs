@@ -46,7 +46,7 @@ const shorten = (value, limit) => {
   return `${prefix.slice(0, boundary > limit * 0.6 ? boundary : limit - 1).replace(/[\s,;:—–-]+$/u, '')}…`;
 };
 
-export function positionSeoMetadata(metadata, language = 'en') {
+export function positionSeoMetadata(metadata, language = 'en', { titleLimit = 65 } = {}) {
   const [fullTitle, compactDescription] = positioning[language] ?? positioning.en;
   const inputTitle = String(metadata.title ?? '').trim();
   const title = inputTitle
@@ -59,13 +59,13 @@ export function positionSeoMetadata(metadata, language = 'en') {
   // when the complete title still fits the project's 65-character release gate.
   const candidateTitle = `${title} — ${fullTitle}${brandSuffix}`;
   const compactTitle = `${title} — ${language === 'en' ? 'Free' : fullTitle.split(/[·,]/u)[0].trim()}${brandSuffix}`;
-  const boundedTitle = candidateTitle.length <= 65
+  const boundedTitle = candidateTitle.length <= titleLimit
     ? candidateTitle
-    : compactTitle.length <= 65
+    : compactTitle.length <= titleLimit
       ? compactTitle
-      : `${title}${brandSuffix}`.length <= 65
+      : `${title}${brandSuffix}`.length <= titleLimit
         ? `${title}${brandSuffix}`
-        : `${shorten(title, 49)}${brandSuffix}`;
+        : `${shorten(title, Math.min(49, titleLimit - brandSuffix.length))}${brandSuffix}`;
 
   // Don't cut useful query-specific copy just to force a slogan into every snippet.
   const candidateDescription = `${description.replace(/[.。！？!？\s]+$/u, '')}. ${compactDescription}`;
