@@ -1,0 +1,13 @@
+{
+  "readOnly": true,
+  "workersPaidExistingConfirmed": true,
+  "fixedPlanPublicUSD": 5,
+  "currentCycleUsageReviewed": true,
+  "observedTotalBelowAuthorizedCeiling": true,
+  "authorizedCeilingUSD": 10,
+  "pureStaticPagesIncrementalUSD": 0,
+  "noFunctionsOrWorkerScript": true,
+  "existingProjectsNoGitAutoBuilds": true,
+  "noNewPlanOrProduct": true,
+  "noGuaranteeForUnrelatedOrFutureAccountUsage": true
+}

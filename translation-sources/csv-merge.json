@@ -1,0 +1,99 @@
+{
+  "toolId": "csv-merge",
+  "sourceCopy": {
+    "name": "CSV Merge",
+    "title": "CSV Merge Free | UsefulVerse",
+    "description": "Merge CSV files by column name, even when column order differs. Free in your browser, with no upload or account.",
+    "intro": "Combine several CSV files into one table. Matching column names line up even when their order differs, and extra columns are added with blank cells where needed. Files stay in this browser.",
+    "howQuestion": "How do I merge CSV files with different column orders?",
+    "howAnswer": "Select two or more CSV files and keep the header option on. Columns are matched by exact header text, using the first-seen order. Missing columns become empty cells; unmatched columns are added to the output.",
+    "privacyQuestion": "Are my CSV files uploaded?",
+    "privacyAnswer": "No. The selected files are read and merged locally in this browser. Up to 20 files are supported, with a 2 MiB per-file and 8 MiB combined input limit. No account or server processing is used.",
+    "fields": {
+      "files": "Choose CSV files",
+      "filesHint": "Select 2–20 files, up to 2 MiB each and 8 MiB total. Processing stays on this device.",
+      "inputDelimiter": "Input delimiter",
+      "autoDelimiter": "Detect each file",
+      "comma": "Comma (,)",
+      "semicolon": "Semicolon (;)",
+      "tab": "Tab",
+      "pipe": "Pipe (|)",
+      "hasHeader": "First row contains column headers",
+      "outputDelimiter": "Output delimiter",
+      "accuracyNote": "With headers, columns match exact names and new columns follow the order first found. Without headers, columns match by position. Formula-like headers or values are prefixed with an apostrophe for safer spreadsheet opening. Delimiters, file encoding and cell text are not otherwise normalized.",
+      "resultSummary": "Merged CSV",
+      "filesMerged": "files",
+      "rowsMerged": "data rows",
+      "columnsMerged": "columns",
+      "formulaCells": "formula-like cells protected",
+      "output": "CSV output",
+      "copyHint": "Review the merged CSV before using it in another application."
+    },
+    "actions": {
+      "merge": "Merge files",
+      "example": "Load example",
+      "reset": "Clear",
+      "copy": "Copy CSV",
+      "download": "Download CSV"
+    },
+    "messages": {
+      "merged": "CSV files merged locally.",
+      "select-two-files": "Select at least two CSV files.",
+      "too-many-files": "Select no more than 20 files.",
+      "file-too-large": "A file exceeds the 2 MiB per-file limit.",
+      "total-too-large": "Selected files exceed the 8 MiB combined limit.",
+      "empty-input": "One of the selected files is empty.",
+      "invalid-delimiter": "Choose a supported input and output delimiter.",
+      "invalidTable": "A CSV file has an unsupported table structure.",
+      "emptyInput": "A CSV file is empty.",
+      "tooLarge": "A file is too large.",
+      "tooManyRows": "A file exceeds the row limit.",
+      "tooManyColumns": "A file exceeds the column limit.",
+      "tooManyCells": "The merged table exceeds the cell limit.",
+      "cellTooLong": "A cell exceeds the supported length.",
+      "invalidDelimiter": "A delimiter is not supported.",
+      "unclosedQuote": "A CSV quoted field is not closed.",
+      "unexpectedQuote": "A CSV quote appears in an unquoted field.",
+      "textAfterQuote": "Unexpected text follows a closing CSV quote.",
+      "fileReadError": "A selected file could not be read.",
+      "empty-header": "Column headers cannot be blank when matching by name.",
+      "duplicate-headers": "Each file must have unique column headers.",
+      "too-many-rows": "The merged table exceeds 20,000 data rows.",
+      "too-many-columns": "The merged table exceeds 100 columns.",
+      "too-many-cells": "The merged table exceeds 200,000 cells.",
+      "output-too-large": "The generated CSV exceeds the safe output limit.",
+      "invalid": "The files could not be merged. Check that they are valid CSV files with compatible settings.",
+      "copied": "CSV copied.",
+      "copyUnavailable": "Clipboard access is unavailable in this browser.",
+      "downloaded": "Merged CSV downloaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I merge CSV files when their columns are in a different order?",
+        "answer": "Yes. With headers enabled, columns are aligned by exact header text, not position. New headers are added in the order first encountered, and missing values are left blank."
+      },
+      {
+        "question": "What happens if a CSV file has no header row?",
+        "answer": "Turn off the header option. Values then align by column position, and the output uses neutral names such as Column 1. Input rows with fewer cells are padded by the CSV parser."
+      },
+      {
+        "question": "Are formulas or spreadsheet commands changed?",
+        "answer": "Formula-like headers and values are prefixed with an apostrophe in the output CSV to reduce the risk of execution when opened in spreadsheet software. This intentionally changes those cell values."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/csv-merge/index.html",
+    "htmlSha256": "23b4e8750971633b44d2f39f7a51e16f12f94c687515830e3fa6937ae98db2d8",
+    "payloadSha256": "a3f344b1c2fc5c0fa294bc38c37e7a52051c431cecde0f4d846035a0526f50f4",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/csv-merge.js",
+    "controllerSha256": "667989ebcecea9494f3c546e6e04f116b9a441f14729651caf8a0824b8aaedd8",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

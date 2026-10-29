@@ -1,0 +1,809 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2 y RUNBOOK §8. Significado, cifras/negaciones y naturalidad0–3; cero errores botones/cifras; máximo1leve/20. Fuente/ida/vuelta actuales leídas directamente.",
+  "expected_rows": 27,
+  "inference_policy": "context-v19",
+  "reviewed_at_utc": "2026-10-24T01:11:51.370726+00:00",
+  "scope": "All current reference source/forward/back read directly; no native or backtranslation-only approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": false,
+  "rows": [
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "legacy",
+      "translation_hash": "780ea15c0ba0f491aa08d9d763ecaca228c9b6d7f6143277817c57956cb91757",
+      "record_ids": [
+        "017a753d728d73ad5d2f47a4857511d84a4e0cf667f6cc73723c1967e67c19be"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "diterjemahkan significa traducido y cambia decodificar audio por traducirlo. El marcador {duration} sí permanece exacto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "legacy",
+      "translation_hash": "6105fccd7f69664311fe1426c1d75df58a6cc8a89e8ea181c181020b6e2f0ca6",
+      "record_ids": [
+        "185109d86cedd08f3dec26f89fac701ee98b22c352e213833d779bc2fce64546"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pilih kotak awal elige la casilla inicial."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "legacy",
+      "translation_hash": "7bb0e0860c65a1a4f836d4b254601801cb115629a055d1ba179f3959f08b14f8",
+      "record_ids": [
+        "1e354a589d60058c86468a280fccd9e2e18422d9734a2ba32496532e5f64a05d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Hentikan pratinjau detiene la previsualización."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "legacy",
+      "translation_hash": "5a66ffd3b416bad7c68b6c3a1a6fb151a33d394f5770995009fcdace04b27659",
+      "record_ids": [
+        "1e769fe3ffb4afddcb20b23a7d54344b6d3fc6bfa4f7a2a194d3f1d8dce4f669"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Teka-teki harian conserva reto diario."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "legacy",
+      "translation_hash": "1b72f3d5ecafb03609b6db1f88756f8703baab1279c65d79b03de8f5ad332225",
+      "record_ids": [
+        "2ab9721840f47b76b97d1f71098372ee1fe61c4b9a7685761db8b6a2545bfa1d"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sustituye UsefulVerse por EffectiveVerse. La atribución de privacidad y el literal de marca son incorrectos aunque conserve ambas negaciones."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "legacy",
+      "translation_hash": "3e042820f428cea02b1baa2584bac7f49cbd98fecb5de9556bf94b13ed04b902",
+      "record_ids": [
+        "2ca958d1beda65ccba3c433193e7c9bfac07b20e28b1121d9622d0bbe5567db6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "memecahkan kode expresa decodificar; fallo y alternativas WAV/MP3 conservados."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "legacy",
+      "translation_hash": "90cf6b38ad95429782b4fa306c612960d6cb3f4709b3b9ebf9a1ee389f9c0be0",
+      "record_ids": [
+        "33c2feded6a60b1eb4f8d5ea8144e89298bb7cd7793d01f6caf02cb3ab052d79"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio jernih significa audio nítido/limpio como cualidad sonora. No ordena borrar el audio; la vuelta queda además sin traducir."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "legacy",
+      "translation_hash": "e9989731ff669ef00803384b27bb4af58493846c8c9ce76b84eb67a80a792011",
+      "record_ids": [
+        "3719cd7483cd2026168cb4e212f4435f2c6b8874975fb8417ca217864499c395"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "sudut yang berlawanan conserva esquina opuesta; angle es un defecto solo de vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "legacy",
+      "translation_hash": "c38781fc52db8064498c80ac7aadc5e27f11b070ebed43b8dd5d579188aa86a7",
+      "record_ids": [
+        "377d233d2ffc460ab88002f594ed49f63fd2456f129db27f633f7915576ebd50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Hapus permainan yang disimpan elimina la partida guardada."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "legacy",
+      "translation_hash": "f11ad538ebd00e354fa71bdfaa0db586860a53329fa4d72e51220647a5440fd6",
+      "record_ids": [
+        "3eb012c6528e8ae660ba874518638c45b6383714a0e3b30143222e8cf128502c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "tidak lebih besar dari 25 MB conserva límite inclusivo, valor y unidad."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "legacy",
+      "translation_hash": "72c5af5ad67561113ff6d46abec4500c4fec547a18c6c8aa4033b38c416f61ea",
+      "record_ids": [
+        "47da42ed0a860435c05c86e16dd0749bc789489e79c9595f27b170819a5e11fe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Membatalkan persegi panjang terakhir expresa deshacer el último rectángulo; la forma verbal no cambia la acción."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "legacy",
+      "translation_hash": "3a4b60deff49df052799919d54ab2aa19861e5429a6c1d95b32eb89e9450797d",
+      "record_ids": [
+        "4da1aa3a9893cd1a812d54db11311adcd738abf3f35d61e19d12f5a6e32c33ba"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tunjukkan solusi es mostrar la solución."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "fbb92778c23812d309cbe39bf0c77f97e0e96a32089f72423e55c0a643d49aa1",
+      "record_ids": [
+        "915eba2e09991f36341340ef565b16b0ffd77c8b96bdb7431b445ccbca48c278"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 3
+      },
+      "notes": [
+        "menerjemahkan vuelve a confundir decodificar con traducir y BermanfaatVerse traduce la marca UsefulVerse. No publicar aunque No y el procesamiento local sobrevivan."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "legacy",
+      "translation_hash": "8223ea77e1abfc05f0f25bb4d87aa9d28cbff85ea16647131136ba8530547abf",
+      "record_ids": [
+        "97327ddea6181ca994c6bade140a484031a1ca942f8d7c003b7ed86759c87d81"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Efek pratinjau nombra un efecto de previsualización; invierte la acción pratinjau efek. No queda un botón claro para escuchar el efecto. La vuelta Preview effect oculta el problema de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "legacy",
+      "translation_hash": "8f67226859b4a6c123ea89b463f00dbf03ef2ecb4fff303f79c45aa68b492cba",
+      "record_ids": [
+        "ac6e79b13a5e74c6d43df2c27cd4bf3e315e7571a90bb2a26e165b0081db4399"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pilih file audio terlebih dahulu conserva la selección previa."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "legacy",
+      "translation_hash": "df582daf2c6c4be53ec6a55e598f0abd6a8a8b71b716831bfd6eb2279d8cb343",
+      "record_ids": [
+        "b22d9b5ab0d06c8fe754216f6ca9d339c8ca289b367ae26e0049d89e3053621e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Muat audio secara lokal mantiene carga local."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "legacy",
+      "translation_hash": "bae9e3381b9043fea423e039aa4dc49eafa8dfd321755b34095cfc7c4d2a4be5",
+      "record_ids": [
+        "b3cd597732f389305a193b2b82a379a207c105da58f3365e8dedbe9a1f373c5f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lanjutkan continúa la partida en el contexto del control Resume; no introduce el sentido de currículum."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "legacy",
+      "translation_hash": "bd24a5c3b272570494bdd5016ee0696fae69711c134a46f7cf435d358598a42f",
+      "record_ids": [
+        "bd52e1ea36c498ccf0a02b605c2b401ffe584322be9b1a3a34b16997c418d6da"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Teka-teki baru conserva puzle nuevo."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "legacy",
+      "translation_hash": "a1ac12c43edbf7e1d6560dbd28e65b4f05a54a1243bf0d30378d75e4d132dfa4",
+      "record_ids": [
+        "bdd0192ab72145b65a255c4f98e2db67ca89a95a039d47479a2ad998df72a3ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tidak y tepat satu petunjuk nomor mantienen la negación y exactamente una pista numérica por rectángulo."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "legacy",
+      "translation_hash": "5ef93a40366331164e0d57115cc9ffb73641266e12c934add629394f9fd8a343",
+      "record_ids": [
+        "c412ea9a51ed87423089b1c079ee0f0f65a0296a1709d66018cd9b983a9d2dc6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Periksa teka-teki es comprobar el puzle."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "legacy",
+      "translation_hash": "5c9d9e1ff2700f4c19cddb8a91876ab4cd7ba907c8eba50c1baa9c7b06b42de4",
+      "record_ids": [
+        "cb196c82e985811bfd6db1eddde6c85a3b6e78dec6bafe9068c709216ea36ec7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Hapus persegi panjang borra rectángulos; el sustantivo indonesio no necesita una marca plural."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "9ad45019ab121b012e9c86886cf44dffc526605376fa5e4d8219661cc475aa03",
+      "record_ids": [
+        "cde0c826f971822f734225fa07659a23e5d60ca63b68885e7f31aa828c9b2d23"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Kontrol nada ... mengubah kecepatan pemutaran conserva tono ligado a velocidad, menor/mayor y ambas direcciones. ligera herramienta no es intensidad del efecto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "legacy",
+      "translation_hash": "0b18f2b698c865aa1a4522677fbcf81bde7b4b9a17995fecb552e1dbda8ffe27",
+      "record_ids": [
+        "d95f215504ddf23f056de20cd0da87546379ee7a25135ac68f78bb19985fefc0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pilih file audio elige archivo de audio."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "legacy",
+      "translation_hash": "f07f5ec0215c0b0492d5f32df568cac7d15e5f748e6ab4712cadda03bbe6e9f3",
+      "record_ids": [
+        "e7fe3b227ad3e039a6e0f5e51b4f01b48642a9fb20246281027152c58835205c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Una pista 6, un rectángulo y área exactamente de seis casillas se conservan sin duplicar cifras."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "legacy",
+      "translation_hash": "cfd59ea449aec3c327caf2930fd26ade522b833c46863f106e3c582dde498a92",
+      "record_ids": [
+        "ed3b1228e23483ecc56a9d99b3a98da4fc71c31e08d32ba1bfb1e6d55c566a72"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tunjukkan petunjuk muestra una pista en el contexto del tablero."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "legacy",
+      "translation_hash": "b53c71d9ae02701e5c388b01cc94e771e638c3073cb2000778fdc9a484b3d2ac",
+      "record_ids": [
+        "ef63396782f7f0e20c5ac5e5c16bb15b8d47dbc5734c69e20fd6c5947f83fe8a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ekspor WAV yang diproses mantiene exportar WAV procesado."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "legacy",
+      "translation_hash": "6ee8f22822ebffea7086e90439f0afc7a6750a5009706c595bf71c8c0f6b2afd",
+      "record_ids": [
+        "f323b5ec0fee5ac633ef18f87c25f4a9b0bc6273fb4e0aebd7ffccec0e4adfa8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "hingga 30 detik preserva máximo inclusivo; Pangkas y coba lagi son recortar y reintentar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "017a753d728d73ad5d2f47a4857511d84a4e0cf667f6cc73723c1967e67c19be",
+      "back_translation_hash": "2099a78db52a67ff0a0df30bc4be6852a626fbb42200ba5bfbfcf6bb220a572b",
+      "notes": [
+        "Audio translated locally confirma la confusión de decodificar con traducir de diterjemahkan."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "2ab9721840f47b76b97d1f71098372ee1fe61c4b9a7685761db8b6a2545bfa1d",
+      "back_translation_hash": "add231f32d980c009d32a7732d169c31721611fe9421ce2edc25f5e56e654d35",
+      "notes": [
+        "La vuelta mantiene EffectiveVerse en vez de UsefulVerse; el defecto de marca nace en la ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "33c2feded6a60b1eb4f8d5ea8144e89298bb7cd7793d01f6caf02cb3ab052d79",
+      "back_translation_hash": "90cf6b38ad95429782b4fa306c612960d6cb3f4709b3b9ebf9a1ee389f9c0be0",
+      "notes": [
+        "Audio jernih queda sin retrotraducir al inglés y no contiene la orden de eliminar el audio."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "3719cd7483cd2026168cb4e212f4435f2c6b8874975fb8417ca217864499c395",
+      "back_translation_hash": "a667cf11a2f6072e74200bafc8f9cc310c90ce764b0328fea00f3d41b301701b",
+      "notes": [
+        "Opposite angle convierte esquina en ángulo; el sudut del texto indonesio sí sirve para esquina del rectángulo."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "915eba2e09991f36341340ef565b16b0ffd77c8b96bdb7431b445ccbca48c278",
+      "back_translation_hash": "327b72f8b2af3591257ff71a8a5426a02a09fc761e07ecda3ee7b4d3e1783181",
+      "notes": [
+        "La vuelta conserva translates, cambia la marca errónea de nuevo a UseVerse y añade No, no. La ida ya había perdido decodificar y UsefulVerse."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "bdd0192ab72145b65a255c4f98e2db67ca89a95a039d47479a2ad998df72a3ae",
+      "back_translation_hash": "5175d0299494d871b3d07f6d05146a189cb994172a6f46b2996fdb30241f63b3",
+      "notes": [
+        "No, no. duplica la negación con énfasis no presente en el texto; la ida contiene un único Tidak y la regla exacta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "cde0c826f971822f734225fa07659a23e5d60ca63b68885e7f31aa828c9b2d23",
+      "back_translation_hash": "8d52d7fbf122263db1a9255dfd6f2f43e7287d76bd91ecd1f3ab2b0d58313202",
+      "notes": [
+        "No, no. añade énfasis y slight tone control cambia herramienta ligera por intensidad ligera del control. La ida mantiene relación tono/velocidad."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "017a753d728d73ad5d2f47a4857511d84a4e0cf667f6cc73723c1967e67c19be",
+      "translation_hash": "780ea15c0ba0f491aa08d9d763ecaca228c9b6d7f6143277817c57956cb91757",
+      "back_translation_hash": "2099a78db52a67ff0a0df30bc4be6852a626fbb42200ba5bfbfcf6bb220a572b",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "diterjemahkan significa traducido y cambia decodificar audio por traducirlo. El marcador {duration} sí permanece exacto. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Audio translated locally confirma la confusión de decodificar con traducir de diterjemahkan."
+        }
+      }
+    },
+    {
+      "record_id": "2ab9721840f47b76b97d1f71098372ee1fe61c4b9a7685761db8b6a2545bfa1d",
+      "translation_hash": "1b72f3d5ecafb03609b6db1f88756f8703baab1279c65d79b03de8f5ad332225",
+      "back_translation_hash": "add231f32d980c009d32a7732d169c31721611fe9421ce2edc25f5e56e654d35",
+      "warnings": {
+        "protected_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Sustituye UsefulVerse por EffectiveVerse. La atribución de privacidad y el literal de marca son incorrectos aunque conserve ambas negaciones. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Sustituye UsefulVerse por EffectiveVerse. La atribución de privacidad y el literal de marca son incorrectos aunque conserve ambas negaciones. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta mantiene EffectiveVerse en vez de UsefulVerse; el defecto de marca nace en la ida."
+        },
+        "back_protected_tokens": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta mantiene EffectiveVerse en vez de UsefulVerse; el defecto de marca nace en la ida."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Sustituye UsefulVerse por EffectiveVerse. La atribución de privacidad y el literal de marca son incorrectos aunque conserve ambas negaciones. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        }
+      }
+    },
+    {
+      "record_id": "33c2feded6a60b1eb4f8d5ea8144e89298bb7cd7793d01f6caf02cb3ab052d79",
+      "translation_hash": "90cf6b38ad95429782b4fa306c612960d6cb3f4709b3b9ebf9a1ee389f9c0be0",
+      "back_translation_hash": "90cf6b38ad95429782b4fa306c612960d6cb3f4709b3b9ebf9a1ee389f9c0be0",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Audio jernih significa audio nítido/limpio como cualidad sonora. No ordena borrar el audio; la vuelta queda además sin traducir. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Audio jernih queda sin retrotraducir al inglés y no contiene la orden de eliminar el audio."
+        }
+      }
+    },
+    {
+      "record_id": "3719cd7483cd2026168cb4e212f4435f2c6b8874975fb8417ca217864499c395",
+      "translation_hash": "e9989731ff669ef00803384b27bb4af58493846c8c9ce76b84eb67a80a792011",
+      "back_translation_hash": "a667cf11a2f6072e74200bafc8f9cc310c90ce764b0328fea00f3d41b301701b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Opposite angle convierte esquina en ángulo; el sudut del texto indonesio sí sirve para esquina del rectángulo."
+        }
+      }
+    },
+    {
+      "record_id": "915eba2e09991f36341340ef565b16b0ffd77c8b96bdb7431b445ccbca48c278",
+      "translation_hash": "fbb92778c23812d309cbe39bf0c77f97e0e96a32089f72423e55c0a643d49aa1",
+      "back_translation_hash": "327b72f8b2af3591257ff71a8a5426a02a09fc761e07ecda3ee7b4d3e1783181",
+      "warnings": {
+        "protected_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "menerjemahkan vuelve a confundir decodificar con traducir y BermanfaatVerse traduce la marca UsefulVerse. No publicar aunque No y el procesamiento local sobrevivan. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "menerjemahkan vuelve a confundir decodificar con traducir y BermanfaatVerse traduce la marca UsefulVerse. No publicar aunque No y el procesamiento local sobrevivan. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta conserva translates, cambia la marca errónea de nuevo a UseVerse y añade No, no. La ida ya había perdido decodificar y UsefulVerse."
+        },
+        "back_protected_tokens": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta conserva translates, cambia la marca errónea de nuevo a UseVerse y añade No, no. La ida ya había perdido decodificar y UsefulVerse."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "menerjemahkan vuelve a confundir decodificar con traducir y BermanfaatVerse traduce la marca UsefulVerse. No publicar aunque No y el procesamiento local sobrevivan. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        }
+      }
+    },
+    {
+      "record_id": "97327ddea6181ca994c6bade140a484031a1ca942f8d7c003b7ed86759c87d81",
+      "translation_hash": "8223ea77e1abfc05f0f25bb4d87aa9d28cbff85ea16647131136ba8530547abf",
+      "back_translation_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Efek pratinjau nombra un efecto de previsualización; invierte la acción pratinjau efek. No queda un botón claro para escuchar el efecto. La vuelta Preview effect oculta el problema de ida. Señal leída contra ambos textos actuales; no sustituye la lectura semántica."
+        }
+      }
+    },
+    {
+      "record_id": "bdd0192ab72145b65a255c4f98e2db67ca89a95a039d47479a2ad998df72a3ae",
+      "translation_hash": "a1ac12c43edbf7e1d6560dbd28e65b4f05a54a1243bf0d30378d75e4d132dfa4",
+      "back_translation_hash": "5175d0299494d871b3d07f6d05146a189cb994172a6f46b2996fdb30241f63b3",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no. duplica la negación con énfasis no presente en el texto; la ida contiene un único Tidak y la regla exacta."
+        }
+      }
+    },
+    {
+      "record_id": "cde0c826f971822f734225fa07659a23e5d60ca63b68885e7f31aa828c9b2d23",
+      "translation_hash": "9ad45019ab121b012e9c86886cf44dffc526605376fa5e4d8219661cc475aa03",
+      "back_translation_hash": "8d52d7fbf122263db1a9255dfd6f2f43e7287d76bd91ecd1f3ab2b0d58313202",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no. añade énfasis y slight tone control cambia herramienta ligera por intensidad ligera del control. La ida mantiene relación tono/velocidad."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "id": {
+      "rows": 27,
+      "sample": 27,
+      "points": 233,
+      "maximum": 243,
+      "button_errors": 2,
+      "number_negation_errors": 2,
+      "major_rows": 5,
+      "minor_rows": 0,
+      "passed": false,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current agent review; defects block. No native/unseen-text or language approval."
+    }
+  },
+  "evidence_sources": {
+    "inference_source_commit": "8e7ad90695d7b0c785588f17600c025fbe9c3fbb",
+    "checkpoint_capture_commit": "a009ed44a8d535128f8594b1c443114716f2390b",
+    "checkpoint_sha256_at_capture": "c805435228e6cf0bf8d72fd00ae2eec7b8a93cfcf34b5f165476bb2fc71afa0e",
+    "run_id": 40048103975
+  },
+  "decision": "Reject references; do not dispatch full. Correct exact observed forward defects in a new independent policy."
+}

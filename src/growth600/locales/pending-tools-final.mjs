@@ -24,18 +24,26 @@ function fit(value, limit) {
 function localize(value, translated) {
   if (typeof value === 'string') {
     const index = stringIndex.get(value);
-    return index === undefined ? value : translated[index].replaceAll('ZXBRANDTOKENZX', 'UsefulVerse');
+    return index === undefined || typeof translated[index] !== 'string' ? value : translated[index].replaceAll('ZXBRANDTOKENZX', 'UsefulVerse');
   }
   if (Array.isArray(value)) return value.map((item) => localize(item, translated));
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, localize(item, translated)]));
   return value;
 }
+// These 23 entries retain the owner acceptance already present on main (2026-10-15).
+const previouslyAcceptedIds = new Set(["sunrise-sunset-calculator", "moonrise-moonset-calculator", "persian-calendar-converter", "project-risk-matrix", "org-chart-maker", "sankey-diagram-generator", "event-budget-calculator", "decision-tree-maker", "shift-scheduler", "subscription-tracker", "radar-chart-maker", "packing-box-calculator", "car-running-cost-calculator", "bra-size-calculator", "logo-maker", "writing-prompt-generator", "color-palette-from-image", "text-summarizer", "speed-reading-app", "mockup-generator", "acrostic-poem-maker", "word-frequency-counter", "image-histogram"]);
 const copies = Object.fromEntries(Object.entries(stringsByLocale).map(([locale, translated]) => [locale, Object.fromEntries(Object.entries(pendingToolEnglishCopy).map(([id, original]) => {
   const copy = localize(original, translated);
   copy.copyLanguage = locale;
-  copy.localizationStatus = 'machine-accepted';
-  copy.localizationAcceptedBy = 'site-owner';
-  copy.localizationAcceptedAt = '2026-10-15';
+  if (previouslyAcceptedIds.has(id)) {
+    copy.localizationStatus = 'machine-accepted';
+    copy.localizationAcceptedBy = 'site-owner';
+    copy.localizationAcceptedAt = '2026-10-15';
+  } else {
+    copy.localizationStatus = locale === 'en' ? 'source-english' : 'machine-draft';
+    delete copy.localizationAcceptedBy;
+    delete copy.localizationAcceptedAt;
+  }
   copy.title = String(copy.title).replace(/ZX[A-Z]*TOKENZX/gu, 'UsefulVerse');
   if (!copy.title.endsWith('UsefulVerse')) copy.title = `${copy.title.replace(/[ |–—-]+$/u, '')} | UsefulVerse`;
   copy.title = fit(copy.title, 60);

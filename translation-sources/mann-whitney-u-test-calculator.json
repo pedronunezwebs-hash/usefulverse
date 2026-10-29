@@ -1,0 +1,91 @@
+{
+  "toolId": "mann-whitney-u-test-calculator",
+  "sourceCopy": {
+    "name": "Mann–Whitney U Test Calculator",
+    "title": "Mann–Whitney U Test Calculator Free | UsefulVerse",
+    "description": "Run a two-sided Mann–Whitney U test on independent samples. See U, p-value, ties and rank-biserial effect. Free and local.",
+    "intro": "Paste two independent numeric samples to compare their ranks. The tool reports both U statistics, a two-sided p-value, tie handling, method and signed rank-biserial effect.",
+    "howQuestion": "What does the Mann–Whitney U test compare?",
+    "howAnswer": "It compares the rank distributions of two independent samples. It is not automatically a test of medians unless additional distribution-shape assumptions hold.",
+    "privacyQuestion": "Are my sample values uploaded?",
+    "privacyAnswer": "No. Ranking and the test are calculated in this browser. Sample values are not sent to a server or saved by this tool.",
+    "howTo": [
+      "Enter at least two observations in each sample, separated by commas, spaces or line breaks.",
+      "Run the two-sided test and review the U statistics, p-value, method and rank-biserial effect.",
+      "Check whether the independence and interpretation assumptions fit your study."
+    ],
+    "example": {
+      "label": "Load example: samples 1, 2, 3 and 4, 5, 6"
+    },
+    "actions": {
+      "calculate": "Calculate test",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Mann–Whitney test results"
+    },
+    "fields": {
+      "sample1": "Sample 1 values",
+      "sample2": "Sample 2 values",
+      "sampleSize1": "Sample 1 size",
+      "sampleSize2": "Sample 2 size",
+      "rankSum1": "Sample 1 rank sum",
+      "u1": "U for sample 1",
+      "u2": "U for sample 2",
+      "pValue": "Two-sided p-value",
+      "rankBiserial": "Signed rank-biserial effect",
+      "direction": "Rank direction",
+      "group1-higher": "Sample 1 tends to have higher values",
+      "group2-higher": "Sample 2 tends to have higher values",
+      "no-rank-difference": "No rank direction difference",
+      "tieSummary": "Tied observations",
+      "tieGroups": "tie groups",
+      "method": "Calculation method",
+      "accuracyNote": "Enter 2–500 finite numbers per sample (up to ±1,000,000,000,000). Separate with commas, semicolons, spaces or new lines; use a dot for decimal places. Samples must be independent.",
+      "designNote": "This page runs a two-sided test only. It uses an exact permutation distribution for tie-free samples with at most 40 observations in total; otherwise it uses a tie-corrected normal approximation with continuity correction. All-equal pooled values return p=1.",
+      "formulaNote": "The test compares ranks, not necessarily medians: a median interpretation also needs similarly shaped distributions. The rank-biserial effect is signed by sample order and describes pairwise rank dominance. The p-value does not measure effect importance, prove a cause, or replace a study-design review."
+    },
+    "messages": {
+      "calculated": "Mann–Whitney test calculated.",
+      "checkInputs": "Check both samples and enter enough valid values.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "sampleFormat": "Enter each sample as a list of numbers.",
+      "sampleSize": "Each sample needs 2–500 observations.",
+      "valueRange": "Use finite values within the stated numeric range."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Is Mann–Whitney the same as the Wilcoxon signed-rank test?",
+        "answer": "No. Mann–Whitney (Wilcoxon rank-sum) compares two independent groups. The signed-rank test is for paired or matched observations."
+      },
+      {
+        "question": "Does Mann–Whitney always test whether medians differ?",
+        "answer": "No. It tests rank distributions. Interpreting it as a median comparison requires additional assumptions, including similarly shaped distributions."
+      },
+      {
+        "question": "How does the calculator handle ties?",
+        "answer": "It assigns average ranks to equal values and uses a tie-corrected normal approximation. Its exact permutation method is used only when pooled observations have no ties and the total sample size is at most 40."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/mann-whitney-u-test-calculator/index.html",
+    "htmlSha256": "b6c54f0dd552f106b82a643d30ef407cfba495cf5f16d8c9e1f65f3b6d0481f1",
+    "payloadSha256": "8c0459bf8c93d0dec8cae4a015fff964c5292e865e9748b7fd312a8e9b2fe921",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/mann-whitney-u-test-calculator.js",
+    "controllerSha256": "d9bf09b49abb9d1711905574114498ec39c88a83f3028182330ef22bb3bc6945",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

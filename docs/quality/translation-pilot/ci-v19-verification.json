@@ -1,0 +1,95 @@
+{
+  "runs": [
+    {
+      "run_id": 40048923585,
+      "job_id": 120736939169,
+      "source_commit": "27a2d46194e03eaca86c5d4ef16a047948e1a116",
+      "event": "pull_request",
+      "phase": "final",
+      "conclusion": "success",
+      "log_sha256": "79c2bfff1463b780063017da33990a9625dbde00eab4a6ffc99805d4baecb12b",
+      "artifacts": 0,
+      "at_utc": "2026-10-24T01:21:32.224528+00:00",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate all pages",
+          "conclusion": "success"
+        },
+        {
+          "name": "Require linguistic approval for expanded locales",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate the isolated tools hub",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate the 300 staged tools without publishing",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish to the existing Cloudflare Pages project",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Publish the separate static tools hub",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "evidence_lines": [
+        "validate-and-deploy\tRun tests\t2026-10-24T01:17:09.4665898Z ℹ tests 3045",
+        "validate-and-deploy\tRun tests\t2026-10-24T01:17:09.4666352Z ℹ pass 3045",
+        "validate-and-deploy\tRun tests\t2026-10-24T01:17:09.4666571Z ℹ fail 0",
+        "validate-and-deploy\tRun tests\t2026-10-24T01:18:26.9554770Z Ran 125 tests in 77.069s",
+        "validate-and-deploy\tRun tests\t2026-10-24T01:18:26.9555172Z OK (skipped=2)",
+        "validate-and-deploy\tBuild and validate all pages\t2026-10-24T01:19:47.0986969Z Build check passed: 9972 localized tool pages + 36 home pages; 10260 URLs in sitemap.",
+        "validate-and-deploy\tRequire linguistic approval for expanded locales\t2026-10-24T01:19:47.8680248Z Release locale review passed for 20 expanded locales.",
+        "validate-and-deploy\tBuild and validate the isolated tools hub\t2026-10-24T01:20:28.8004543Z Assembled additive release with 217 Growth tools, 100 market tools, and 106 editable recovered tools; publishing directory: /home/runner/work/usefulverse/usefulverse/dist-growth600.",
+        "validate-and-deploy\tValidate the 300 staged tools without publishing\t2026-10-24T01:20:39.4489430Z Built 0 Growth600 pages for 300 tools in 36 locales (11293 files, 241869934 bytes).",
+        "validate-and-deploy\tValidate the 300 staged tools without publishing\t2026-10-24T01:20:41.4197316Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs.",
+        "validate-and-deploy\tValidate the 300 staged tools without publishing\t2026-10-24T01:20:41.4197316Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs."
+      ],
+      "model_job": "skipped",
+      "deployment": false,
+      "preview_files": 11293,
+      "preview_tool_pages": 10800,
+      "preview_indexable_sitemap_urls": 0,
+      "python_tests": 125,
+      "python_passed": 123,
+      "python_dependency_skips": 2,
+      "node_tests": 3045
+    }
+  ]
+}

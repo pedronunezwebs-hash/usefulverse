@@ -1,0 +1,3 @@
+[data-pdf-signature-form] [data-signatures] { display: grid; gap: 1rem; padding-inline-start: 1.5rem; }
+[data-pdf-signature-form] [data-signatures] li { padding: 1rem; border: 1px solid var(--border, #cbd5e1); border-radius: .75rem; overflow-wrap: anywhere; }
+[data-pdf-signature-form] [data-signatures] p { margin-block: .5rem 0; }

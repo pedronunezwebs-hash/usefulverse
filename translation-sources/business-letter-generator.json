@@ -1,0 +1,76 @@
+{
+  "toolId": "business-letter-generator",
+  "sourceCopy": {
+    "name": "Business Letter Generator",
+    "title": "Business Letter Generator Free | UsefulVerse",
+    "description": "Create a free formal business letter with a clear layout. Edit, preview, copy, download, or print on A4 or Letter paper.",
+    "intro": "Build a straightforward business letter with sender and recipient addresses, date, subject, greeting, message, closing, and signature. Preview and print it in your browser.",
+    "howQuestion": "What goes in a formal business letter?",
+    "howAnswer": "A typical letter includes the sender and recipient addresses, date, optional subject, greeting, body, closing, and signature. Adapt the format and wording to your situation.",
+    "privacyQuestion": "Are my letter details uploaded or saved?",
+    "privacyAnswer": "No. Your draft stays in this browser tab. It is not automatically saved or uploaded. Copy, download, or print it when you choose.",
+    "fields": {
+      "sender": "Your name and address (one line per item)",
+      "recipient": "Recipient name and address (one line per item)",
+      "date": "Date",
+      "subject": "Subject (optional)",
+      "salutation": "Greeting",
+      "body": "Letter text",
+      "closing": "Closing",
+      "signature": "Your name / signature",
+      "paper": "Paper size",
+      "letter": "US Letter",
+      "a4": "A4",
+      "style": "Layout",
+      "classic": "Classic",
+      "compact": "Compact",
+      "modern": "Modern",
+      "accuracyNote": "A general correspondence template. You write and review the content; it does not provide legal advice or automatically draft a letter.",
+      "privacyNote": "Draft details stay in this tab unless you copy, download, or print them. Nothing is sent to a server.",
+      "previewTitle": "Letter preview",
+      "subjectLabel": "Subject"
+    },
+    "actions": {
+      "example": "Load example",
+      "generate": "Update preview",
+      "copy": "Copy as text",
+      "download": "Download text file",
+      "print": "Print / save as PDF",
+      "reset": "Clear letter",
+      "result": "Preview"
+    },
+    "messages": {
+      "ready": "Letter preview is ready.",
+      "invalid": "Check the required fields, date, and supported length.",
+      "copied": "Letter text copied.",
+      "copyUnavailable": "Clipboard access is unavailable; select the preview text instead.",
+      "downloaded": "Text file downloaded.",
+      "cleared": "Letter cleared.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I choose A4 or US Letter paper?",
+        "answer": "Yes. Select A4 or US Letter before updating the preview. Print uses the selected size; your browser print dialog may also offer its own settings."
+      },
+      {
+        "question": "Can this tool write a legal or job application letter for me?",
+        "answer": "No. It is a general business correspondence layout, not legal advice, a statutory form, or a cover-letter builder. You provide and review all wording."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/business-letter-generator/index.html",
+    "htmlSha256": "f1d273e31d8c1536d53dc7b63ad8a57d3ed6cb09aab1140dfe04e2515d2d6e52",
+    "payloadSha256": "622aba92cdee777209434abd0a2f2723e2c0b1726ec061f2b3585fb4d1da744c",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/business-letter-generator.js",
+    "controllerSha256": "842ec28720cf931766b022482b378e6ef2e4bdeae6abf8cc03b5c1de9f70bbb5",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

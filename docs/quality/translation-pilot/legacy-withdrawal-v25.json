@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "historical-legacy-perfect-forward-score-withdrawal-v25",
+  "review_file": "review-context-v24-full-legacy.json",
+  "review_file_sha256": "ea71fce4bdbc3d6261d1dc75d4eae9f106d2d352b02e767331df64cf7d8aab84",
+  "review_digest": "242572466650fde0120d95a4a945243208387e764550396c5d10e7949ae656c0",
+  "reviewer": "Codex (agente)",
+  "review_kind": "agent",
+  "native_review": false,
+  "reviewed_at_utc": "2026-10-25T01:29:52.235705+00:00",
+  "automatic_approval": false,
+  "approved_locales": [],
+  "reason": "Relectura v25 de la familia duplicada: la FAQ interna legacy tiene la misma fuente/ida que voice-changer.faq.4.a, cuya naturalidad ya era2. Se retira su nota perfecta inconsistente sin cambiar los bytes de la revisión ni su gate rechazado; no se copia este defecto a la memoria nueva.",
+  "entries": [
+    {
+      "record_id": "72c749f0c0258fc67ec37639d74df149dadfe52253891b3d5357694a78c0c247",
+      "key": "voice-changer.fields.faq5a",
+      "locale": "zh-CN",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "context": "fields.faq5a",
+      "inference_policy": "context-v24",
+      "translation_hash": "83bdde377ad78018a04e73d070763d9a60bc50b98f869c94d15dacec93bb5948",
+      "back_translation_hash": "af43419bf65e8f537762ddfa1b8c8f2ca219f123afa1c0a13b3aeb24d97b1e4c",
+      "original_scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "note": "Relectura v25 de la familia duplicada: la FAQ interna legacy tiene la misma fuente/ida que voice-changer.faq.4.a, cuya naturalidad ya era2. Se retira su nota perfecta inconsistente sin cambiar los bytes de la revisión ni su gate rechazado; no se copia este defecto a la memoria nueva.",
+      "warning": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Relectura v25 de la familia duplicada: la FAQ interna legacy tiene la misma fuente/ida que voice-changer.faq.4.a, cuya naturalidad ya era2. Se retira su nota perfecta inconsistente sin cambiar los bytes de la revisión ni su gate rechazado; no se copia este defecto a la memoria nueva."
+        }
+      }
+    }
+  ],
+  "source_checkpoint": "checkpoints/context-v24/madlad.jsonl",
+  "source_checkpoint_sha256": "5bb6591263a49a2946f14176555f50bda2d3aeb2af610e3d32b96bdb6001077c"
+}

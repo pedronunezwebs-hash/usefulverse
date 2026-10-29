@@ -1,0 +1,73 @@
+{
+  "toolId": "meeting-planner",
+  "sourceCopy": {
+    "name": "Meeting Planner",
+    "title": "Meeting Planner: Free Time Zone Scheduler | UsefulVerse",
+    "description": "Find shared meeting times across time zones, including daylight-saving changes and overnight hours. Download a local ICS invite.",
+    "intro": "Compare a repeating daily availability window across an organizer and participants in different time zones. Review each local date and time, then download an ICS invite for a matching slot.",
+    "howQuestion": "How do I find a meeting time across time zones?",
+    "howAnswer": "Enter the organizer’s IANA time zone, participant zones, a local date range, shared availability hours and meeting length. The planner checks real instants against local work windows, including date changes and daylight-saving offsets.",
+    "privacyQuestion": "Does this connect to my calendar?",
+    "privacyAnswer": "No. All calculations run in your browser. The planner does not sign in, read calendars, upload your schedule or save your choices.",
+    "fields": {
+      "organizerZone": "Organizer time zone (IANA name)",
+      "participantZones": "Participant time zones (one per line or comma-separated)",
+      "zonesHint": "Examples: America/New_York, Europe/London, Asia/Tokyo. The organizer is included automatically; use up to eight distinct zones total.",
+      "startDate": "First organizer-local date",
+      "days": "Search days (1–14)",
+      "availabilityStart": "Daily availability starts",
+      "availabilityEnd": "Daily availability ends",
+      "duration": "Meeting length (minutes)",
+      "meetingTitle": "Optional ICS event title",
+      "privacyNote": "Runs locally. No calendar connection, location request, upload, account, API or automatic save.",
+      "scopeNote": "Uses the same daily local-time window in every time zone. It does not know individual calendars, holidays, workdays or attendee preferences. Choose an actual slot with everyone before sending the invite.",
+      "resultsHeading": "Possible shared meeting times",
+      "organizerTime": "Organizer local time",
+      "participantTimes": "Participant local times",
+      "noResults": "No matching slots found for these zones and hours. Try a wider window, a different date range or shorter meeting.",
+      "dstNote": "Daylight-saving rules come from this browser’s time-zone database and may be stale. If a fall-back time repeats, the earlier occurrence is selected; an availability boundary that does not exist during a spring-forward gap is skipped."
+    },
+    "actions": {
+      "find": "Find shared times",
+      "example": "Load example",
+      "clear": "Reset",
+      "downloadIcs": "Download ICS invite",
+      "result": "Invite"
+    },
+    "messages": {
+      "invalid": "Check the date, time-zone names, participant list, hours and limits.",
+      "noResults": "No shared slots match. Try a longer range or broader availability.",
+      "found": "{count} possible slots found. Times are shown in each participant’s zone.",
+      "downloaded": "ICS invite downloaded. Review its date and time before sharing.",
+      "exampleLoaded": "Example loaded: New York, London and Tokyo zones."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does it check Google Calendar or Outlook availability?",
+        "answer": "No. It compares the same hours you enter for each time zone. It cannot see anyone’s appointments, holidays, working weekdays or personal preferences."
+      },
+      {
+        "question": "Does it account for daylight saving time?",
+        "answer": "It uses the browser’s IANA time-zone database to convert each candidate instant. A database may be out of date; verify important meeting times with participants."
+      },
+      {
+        "question": "Can I add the suggested meeting to a calendar?",
+        "answer": "Download an ICS event for a selected slot and import it yourself. The tool does not connect to or modify any calendar."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/meeting-planner/index.html",
+    "htmlSha256": "bbd7ebfa44aa80e3b6d91b32545375b622c97948798bc40810184f55fed4e97d",
+    "payloadSha256": "b8b91f7e2613df38395ff4f9931a47f0c3fb98f9bc6a23635c7291437f485cda",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/meeting-planner.js",
+    "controllerSha256": "4be3207a901c3823360d6d704a9843a3f7b929b41921c33cdc318570f0b26086",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

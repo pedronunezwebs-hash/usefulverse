@@ -1,0 +1,10 @@
+[data-mus-game] .mus-scoreboard { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; }
+[data-mus-game] .mus-scoreboard section { border: 1px solid var(--border,#cbd5e1); border-radius: .75rem; padding: .75rem 1rem; }
+[data-mus-game] .mus-scoreboard h2 { margin: 0; font-size: 1rem; }
+[data-mus-game] .mus-hand { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding-inline-start: 0; }
+[data-mus-game] .mus-hand li { list-style: none; }
+[data-mus-game] .mus-hand .button:disabled { color: #0f172a; opacity: 1; cursor: default; }
+[data-mus-game] .mus-hand .button[aria-pressed="true"] { outline: 3px solid #2563eb; }
+[data-mus-game] [data-players] { display: grid; gap: .5rem; }
+[data-mus-game] [data-players] li { overflow-wrap: anywhere; }
+@media(max-width:520px) { [data-mus-game] .mus-scoreboard { grid-template-columns: 1fr; } }

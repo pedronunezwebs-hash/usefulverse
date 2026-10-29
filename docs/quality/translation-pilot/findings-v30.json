@@ -1,0 +1,971 @@
+{
+  "schema_version": 1,
+  "native_review": false,
+  "approved_locales": [],
+  "cases": [
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "forward_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "back_translation": "Cancel Download",
+      "back_translation_hash": "c0c05b34c0b1ed98474b99e3b68f3e3d9a58be2fe838cf21afc61128f94c4472",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "3ea061efb328b91d977f079d14dd232710b0e23ceda7e3849a29f4f45c5105ea"
+      ],
+      "issue": "Cancel local loading becomes Cancel Download;the forward Russian loading verb is valid in local-file context."
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "forward_hash": "27b250b132fbe7ce7c36753823e342a487b774c025bfe3172367e133aea9b6f1",
+      "back_translation": "Insert drawing",
+      "back_translation_hash": "677e4851a0c047ed61e9fadcffd14677b6613ab07dba09780c82654ef2540af6",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "68dce77c9c07f7ba0ed40b7fba8521d22394d71a0897c32000311d13e9e93e2f"
+      ],
+      "issue": "Fit the drawing to the viewport becomes Insert drawing;view framing changes into adding content."
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "forward_hash": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+      "back_translation": "The audio remains in this browser. UsefulVerse does not load or save it.",
+      "back_translation_hash": "6cd056e2109159adaf4968fdcb8879e50432756d20a136e0e1d7ee177c36f10d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "30534f0f5b8945fe91a50bb5b687e354e908a34a768d911cf72176fbc9ea7f83",
+        "a770b7afe32bb2f9a5e6f71aee158d86631f5616ce78222d58c37c830625d230"
+      ],
+      "issue": "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+    },
+    {
+      "key": "dxf-viewer.fields.cancelled",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "54c69a2d32a0deefe7942d596ae015a43b475cf92cd346421f1b5eb8b2e7a7d6",
+      "forward_hash": "588c29cbe7b88ba2557ecf0b6c88a4d6c10a10b93b68da793669c386a48d0c4f",
+      "back_translation": "Upload canceled.",
+      "back_translation_hash": "b0ac4715557c36f323f2622e6b268220c2554914dd4550bb22ae43a8cae5e1f2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1faa77aa66f1ecf919cd762ef8d798b0e2c99b3552707fb28491213fcbe42800"
+      ],
+      "issue": "Local loading becomes Upload in the back,an incorrect network direction."
+    },
+    {
+      "key": "dxf-viewer.fields.clear",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "forward_hash": "e915c2df4a9b4a576642af82286306cc7562805c733f3a4fe57ac480e7f2b221",
+      "back_translation": "Delete uploaded drawing",
+      "back_translation_hash": "25fcdc5fee36c3c29c59c6f61df33e5a28c1fb9d0dccacfcb1310771aa4ed70b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "ebde8d2d9b7d16978d91ad190959b053e5df3bf90bcdedec68122f7821449b3e"
+      ],
+      "issue": "Loaded local drawing becomes uploaded drawing in the back."
+    },
+    {
+      "key": "dxf-viewer.fields.units.0",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+      "forward_hash": "663875cc10216703831a853dce6cd833e46784b072f2b84309a25ad36fbf5cc5",
+      "back_translation": "Non-singular",
+      "back_translation_hash": "5a4fa745c0030c7a20ada9ccab0597e07e143d075bbb91ff7cee4bd59115c53d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "89c9332dc650b131c39c74fab6639bc759d19dc22342813a8a1061670dfc656e"
+      ],
+      "issue": "Unitless becomes Non-singular,a different mathematical concept."
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "forward_hash": "199d6db958cdb81713e474a75baeddf7b70122aae0da9f96eb6a238caf738786",
+      "back_translation": "Decision",
+      "back_translation_hash": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "15d2ec413a40887d0998da2b2c82950cda2db69c4d9f6fc90bb298cad3224ad0",
+        "b725f6e8defc14d87fb5cd7caa09b69a9bb1bcf569f9c0054f9bae3b1996d0dd"
+      ],
+      "issue": "Puzzle solution becomes Decision,wrong sense of Russian решение."
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "forward_hash": "4f16ed31f9ab656d244ae98ccd6c44d6aa1d320880a16b62f4e661ac449d88b8",
+      "back_translation": "This browser creates puzzles. Large grids can take some time on slow devices. No account required. No need to download files.",
+      "back_translation_hash": "e18a04dbaf7ec8843500b9127680b7d5ca0168037db8ea2e16a7db279109c0e5",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "cb6fa29e856c1b31647f39f85fa9853942faea21a987196f5b02fc9f400875f2"
+      ],
+      "issue": "No file upload needed becomes no need to download files."
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "forward_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "back_translation": "Change the pitch, create radio or deep voice effects, preview echoes and export processed sound locally. Free, confidential and no download.",
+      "back_translation_hash": "3984e14c11293e270908c041a4bd6252b185f5ed67f884fe736a9ed9c244528b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62"
+      ],
+      "issue": "No upload becomes no download,contradicting local WAV export."
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "forward_hash": "12bccb9165a128497ea4530c4d2840b5924620cdb7899249350da0010d96b6f8",
+      "back_translation": "Try voice recording. Compare the original with the preset radio effect or with the preset lower level. Altitude changes also change the playback speed. It's not voice cloning or studio pitch correction.",
+      "back_translation_hash": "ea9326c877ddec9e92045c008487dcceba247167135faa5e31b865e583432aa2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "c341955af71b362eede17ac1a866eec595fe0d8f17b0985676cec22eee2d7187"
+      ],
+      "issue": "Audio pitch becomes Altitude in the back;this error is separate from the forward lower-level mistranslation."
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "forward_hash": "05da201ea12888a06c9e0b1afe1a53ab83fa00c4d2d8359a8fde76f36b89fcb8",
+      "back_translation": "The selected record is never loaded. This browser decrypts and processes the record locally. UsefulVerse is not receiving a record.",
+      "back_translation_hash": "43c3634dfcde47e229e6bc1ac1f22845760c03fff82db57e08adc73748db3bce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "dead12cd06b3c9ec6f372ec1a561c4a89d3445358917d919d8009af60dafe48c"
+      ],
+      "issue": "No upload becomes never loaded,and generic audio decoding is narrowed to decryption."
+    },
+    {
+      "key": "voice-changer.faq.0.q",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "forward_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation": "Is my recording loaded?",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "0195c53f176899e93c0a240b46c3ade91371a63160e88b1f58941f5a32e69ef6",
+        "2416a8ee638aa1e44084ad573a5d59da08d43df2eff377b5270ff9614ba5371f"
+      ],
+      "issue": "Recording uploaded becomes recording loaded,losing the privacy/network question."
+    },
+    {
+      "key": "voice-changer.fields.faq1q",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "forward_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation": "Is my recording loaded?",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "147396784979e360c5cfeb769e99952f48e121227e2517b5527fed42a6ea3277",
+        "8c825134a6ed0f4f31e5f781afa1e03df95ce4aa2a6faf165211c9273e05daa2"
+      ],
+      "issue": "Recording uploaded becomes recording loaded,losing the privacy/network question."
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "forward_hash": "62164bc12c5407b497bae588b3f55782625e1ce80c6c4cf263196133f2f9624f",
+      "back_translation": "Use a format that your browser can decrypt. Maximum 25 MB and 30 seconds.",
+      "back_translation_hash": "a87dd6adf3d7866648ff2c909ca954d4ea45702a2eaaf440223b3eb85a16c336",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "06c3a33077d5251d8bcbb4bc15753098e7c3d93730fb450f7e7e4460493ee05e"
+      ],
+      "issue": "Generic format decoding is narrowed to decryption;the Russian broad decoding verb does not require encryption."
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "forward_hash": "02eda071401a30984094d9ce4c23118d14dce0e3f496db7eee6ce6e0f4542cc0",
+      "back_translation": "Upload the audio clip before preview or export.",
+      "back_translation_hash": "f8a22d68b337667d4e34aad9b6750fb5202c60329c8e02e43ca9db228931c487",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1390c5790c1d2b6f7327f88fe0e59fdaa2a8a5165969b42d3a9b80ad694cc7bf"
+      ],
+      "issue": "Local audio loading becomes upload in the back."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "forward_hash": "3cd1f43b85ea9acb8019252fdd94f6ced07fee8ffb0d798da9d39614250baa36",
+      "back_translation": "Altitude displacement (poloniums)",
+      "back_translation_hash": "0bbd8765d0e0f3352ba0abc98491835d0ed3b9ab813209419ebdebd3f99450d9",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "013e9c497b9adb930aad942bd017ba580ef172466283cbbef40647cf7bdc613e"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "forward_hash": "32d8eb7bbac9e090670c9267081daf62978044439ae4da0512ea00c660763834",
+      "back_translation": "Sound pitch shift (polonium)",
+      "back_translation_hash": "995c72b915b18da2e850ad36241a470a724704521edbbdfa6db90708dfe85f61",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "66919c3daa069340a729eb8f0bef148e8a6017b673bc1af739c25ce57a45e4a9"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "forward_hash": "0e78039ef9e77ddda8c05a69870759a594bca961c17e16ff4797911880c22e20",
+      "back_translation": "Status of change of vote",
+      "back_translation_hash": "d818d4d98c7996bf3c9859bdc5c21161a0ef38ca7d61b7acb106c366ef8a56dc",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1d26e96c2daa735ef56e3a98fbc793ff7a12fd7cbbabbbc6c58a396cb5ad078c"
+      ],
+      "issue": "Voice becomes political vote in the back."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "forward_hash": "3fca24b9f1351228715c1d9cd4532d1e352adc84550efbf3aefdc3c83dec41ed",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "209f9f4245c0bd17274b62dc96288e8d2afc5c83663ba7db03e0807f6e695120"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "forward_hash": "6e596c39c74cd3d5553fa4a7756c7fdfa56fe42c5c1900f1a33dd6f36d4248a3",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2302f90f5ae330960d79907af1fc045491c16716ab1b2869df1f228abaab4ad0"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
+    }
+  ],
+  "forward_cases": [
+    {
+      "key": "dxf-viewer.faq.1.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+      "translation": "Этот инструмент рисует только геометрические типы объектов, перечисленные в разделе Поддерживаемое содержимое. В ней перечислены другие геометрические объекты по типу и номеру. Неподдерживаемые объекты не заменяются на приблизительные формы.",
+      "translation_hash": "3b9cb04cddf456a7fe7073f99b45076964a334902aa211875014979ad13b0260",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "789d4bf734721331bd79fae56b0cb0225c240e95c76668edbf59904c76e414a8"
+      ],
+      "issue": "Count is rendered номер(identifier),not количество;the report is by entity type and count."
+    },
+    {
+      "key": "dxf-viewer.faq.1.q",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "4d39dff72762b680ad873ba1dd0a29651ad241a48899d3de9bab5eb8b60a8893",
+      "translation": "Почему некоторые субъекты отсутствуют?",
+      "translation_hash": "96900c8dfc4406bb4ea7a3180f5c674556b0a749cddbd05b3241a301798dc847",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "a7b7678b3077eb44d123544bedf287e017f041e35bef9ce0f6b95fe3c03eb43b"
+      ],
+      "issue": "CAD entities become субъекты(subjects),wrong technical domain."
+    },
+    {
+      "key": "dxf-viewer.fields.bounds",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d9263fe0e96224c35916149562a4073403013737373c25cb4f0c3e941f930992",
+      "translation": "Рисование границ",
+      "translation_hash": "1d6dc723eba3ae858f5539578668cf7a6f99372d86b71f43051bd7311a4f4842",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "2f6f0bb0981744b700d4825e06a4b4967f437892949229c57c5e5d51ea8ef30e"
+      ],
+      "issue": "Drawing bounds/extents become Рисование границ,the action of drawing borders."
+    },
+    {
+      "key": "dxf-viewer.fields.entities",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "7fdb3ccec0e0d23662eb4c22eb63a64c5873e7c383efde354432152eed55c9ce",
+      "translation": "Организации",
+      "translation_hash": "9588f72f399d7324d38efeb3c3cfecfda3ee6d4d318cd0a094033fbcac7988f0",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "c4880f852a23865ee3b786b94c1ce48b5968e59bf07c7a65e50bc78c968b5172"
+      ],
+      "issue": "CAD entities become Организации(organizations)."
+    },
+    {
+      "key": "dxf-viewer.fields.geometryTooLarge",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "ddf09306b4cbde74345304dd855890c2dbcbe4ff352f4b374b797df1e7c1bbc7",
+      "translation": "Этот рисунок превышает поддерживаемый предел записи. Экспорт меньшего или более простого DXF.",
+      "translation_hash": "8ddbfd8c21da86bb732129eb6554029fd69a569d229d9fb819c51021a76a4152",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "089dd649f268a345320305367bc33e8629dacfef8fd660288145aa8cb6a1ea8d"
+      ],
+      "issue": "Record-count limit becomes предел записи,a write/individual-record limit;export instruction is an awkward noun fragment."
+    },
+    {
+      "key": "dxf-viewer.fields.licenseLoglevel",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2eb48ef5efc420cb12c000e15d078d46f93d4fe77c043d33d3b931f86d52e03b",
+      "translation": "Лицензия MIT",
+      "translation_hash": "bc07bb5b4288532f0a6e5a22f02d52d69e018a6f7c81e6c4e32b48a8ef37cac9",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "e59197c486da5faac356c3ade9be07f8f38ea8859b35703aea085c44a19ac880"
+      ],
+      "issue": "Required software identifier loglevel is omitted;MIT alone does not identify the licensed library."
+    },
+    {
+      "key": "dxf-viewer.fields.supportedEntities",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "94cb4aa3b62ab6eb8ef71f959ede71a3e5707fdc1481084cc90efbf984584656",
+      "translation": "Показанные субъекты",
+      "translation_hash": "799902ec3a94979319c588b69333b49041b094ed3aee567ffef846d7672f1da6",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "977f20a0ef4c919c37153edd5ad9fb1bd92c9af76153020b69f18c37a69544e2"
+      ],
+      "issue": "Shown CAD entities become Показанные субъекты(subjects)."
+    },
+    {
+      "key": "dxf-viewer.fields.units.9",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+      "translation": "Миля",
+      "translation_hash": "0dfaeaa059edcd1b17cb8c46352afa154667627c1693e0bcaacac4d625aa5be2",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "5616c8428d76b6cf3ea7da600897f382203e90e6d02080acd97e2de651172ed7"
+      ],
+      "issue": "Mils(thousandths of an inch) become Миля(mile),a different length unit."
+    },
+    {
+      "key": "dxf-viewer.freeBadge",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "a42fd0ccb0eaaec24035b53c6b9be1f43fb6b1882aa20de77f9a725f3d5ad618",
+      "translation": "Бесплатный браузер",
+      "translation_hash": "67c1ae8e1ac13c5f9fbdafb4ce9017a89ed5349552087702be4c81304a5451fc",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "96c68a0c1d06a59f44eb703f9d5459fb6591883a0291912c4ec2c602f7c5e332"
+      ],
+      "issue": "Free browser tool becomes Бесплатный браузер(free browser);the product is not a web browser."
+    },
+    {
+      "key": "dxf-viewer.limits",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+      "translation": "Поддержка предварительного просмотра и экспорта LINE, CIRCLE, ARC и прямой LWPOLYLINE/POLYLINE в плоскости XY. Изогнутые отрезки полилинии, текст, блоки, размеры, сплайны, 3D геометрические объекты и другие типы перечислены как неподдерживаемые. Они не учитываются при проведении измерений или при оценке экспорта. Максимальный размер файла: 10 МБ. Максимальное количество записей группы: 200 000.",
+      "translation_hash": "ce659d2527bec409a4268096fb98a8ed929c8a079a3b9e0a7ec3623f7e8cc5f8",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "528949e30b39db9f28a9b718c811e9e5c3d221b6559228b0207f668ca6cf0636"
+      ],
+      "issue": "Unsupported objects are excluded from exports,not from оценка экспорта(export evaluation/estimation)."
+    },
+    {
+      "key": "shikaku.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "translation": "Играть в Шикаку онлайн бесплатно. Разделите каждую сетку на прямоугольники, которые соответствуют пронумерованным областям. Получите ежедневную головоломку, подсказки и свежую доску; ваша игра остается на этом устройстве.",
+      "translation_hash": "f943170328da2cdbeeea1daf8eca37af415a47af1440b6d88143569866cb107c",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "2701b2962e58ddc6e4c64f5265521953a069ceccfa498e22a06b320a922e5aaf"
+      ],
+      "issue": "Свежая доска is a literal fresh-board calque in generated-grid copy;needs natural wording for a new game board."
+    },
+    {
+      "key": "shikaku.details",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "translation": "Выберите начальный квадрат, затем выберите конечный квадрат, чтобы нарисовать прямоугольник. Вы также можете перетаскивать по сетке. Каждый прямоугольник должен содержать ровно один цифровой подсказку. Это число должно быть равно числу квадратов внутри прямоугольника.",
+      "translation_hash": "57d3f466e579036f010d279988de89e8db2331e047260e4e6e9ec464b748b72f",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "e4a37a1b199b004a606c1325e7836617602de2a0033d1df8b5a13c36ddf5874d"
+      ],
+      "issue": "ровно один цифровой подсказку has incorrect gender/case agreement;the numeric rule itself is preserved."
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "translation": "Крытые площади",
+      "translation_hash": "c3b9b91746d742e0a868c97545c331137ecaa8a2a8a10fb1c6bdb2a2c4c20f63",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "b3c99592e6f9534f0e13264a419c01d24a92de74de37c378f8dde8bacecdaf41"
+      ],
+      "issue": "Covered grid squares become Крытые площади(indoor/roofed areas),losing the grid-square concept."
+    },
+    {
+      "key": "shikaku.fields.dragHelp",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "translation": "Щелкните два противоположных угла или перетащите, чтобы нарисовать прямоугольник. Клавиатура: Нажмите клавишу Tab на квадрат, затем нажмите клавишу Enter, чтобы выбрать его.",
+      "translation_hash": "49da8d0fdc3cf9680e1c4af4dacb67deea8084b6ec71a5cbccf3289395c511f2",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "5b59a21bd450bec14de80623d6cc6a698954857abd08ca4c411524860a0a6489"
+      ],
+      "issue": "Нажмите клавишу Tab на квадрат is malformed and does not state Tab navigation to a square clearly."
+    },
+    {
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "translation": "Сикаку",
+      "translation_hash": "a9254aea48a3b206a50f6fb84a54bcc35e681cc8247a316d148d8fe7aff5ad01",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "eacfa5f6f662155e7d136b118a282c74c940135e56d0d611deb9b2b0ae83f785"
+      ],
+      "issue": "The rule-reference title keeps Shikaku but omits rules."
+    },
+    {
+      "key": "shikaku.fields.statusInvalid",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "translation": "Этот прямоугольник не соответствует подсказке или перекрывает другую.",
+      "translation_hash": "8fa7990c8dea09a45f30ed09fe88200cfe119ef59ec456b02d8196894aa15788",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "302125ec1baa7cee81fd1bd393b5bd5e39ee51a5e8373a5848415cc1d140fd3c"
+      ],
+      "issue": "Feminine другую refers to another clue;the source overlap is with another rectangle(masculine)."
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "translation": "Проверьте области прямоугольника и подсказки.",
+      "translation_hash": "c39d123dc041ed1f7818a077a5d500f13693c5a448fb8e2205d22b970626c89d",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "5701c740eeb4087d44f6e629e38209648aa57623d8d8462efab44edbd1b87ee4"
+      ],
+      "issue": "Rectangle areas are numeric площади,not области(regions);the instruction loses the area-value sense."
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "translation": "Шикаку прямоугольник головоломка",
+      "translation_hash": "bc7e99096402faed82fcd58e34810b9e6043e284602f506c7d99156a79606a90",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "866a42d58f56461ce3d15ab6760d9c71c9904f0fb331b3f49104c6768d282e62"
+      ],
+      "issue": "Шикаку прямоугольник головоломка is an ungrammatical stack of uninflected nouns."
+    },
+    {
+      "key": "shikaku.privacy",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "6e1eec3cceb3260523ac5004e36aba6150bb58d19ea82378cc6ac78acce2a0c9",
+      "translation": "Свободно играть. Ваша головоломка и прогресс остаются в этом браузере.",
+      "translation_hash": "b98cf154f46c1f4bfccfac1c1e8524fee3d9d65185a2e89389caee37b3e09932",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "82c95c39e49b391c92ed2550b2a317a4513e5a4b566c30895c3ed5048de03903"
+      ],
+      "issue": "Свободно играть says freely play rather than that play is free of charge."
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "translation": "Изменить высоту звука на этом устройстве. Добавить радиоэффект или глубокий голос эффект. Послушайте эффект эха. Экспортировать обработанное аудио на этом устройстве. Этот инструмент является бесплатным и частным. Звук никогда не отправляется на сервер.",
+      "translation_hash": "107a5f9b38ac5fe2037d4b372f1dc4b68fd2cd631ebaec4726d6e189729bdcbb",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "5af150dda3a59d407d378bebc795cec7613c56ade92b33310d7cdb413710a717"
+      ],
+      "issue": "глубокий голос эффект has English noun order;частный means private ownership rather than confidentiality."
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "translation": "Этот браузер декодирует выбранный аудио файл локально. Использует веб-аудиофильтры. Он изменяет громкость, высоту и скорость воспроизведения. Он может добавить эхо. Он создает WAV-файл для загрузки. Звук не отправляется на сервер.",
+      "translation_hash": "02062801fd984ba9a01c5f70bcf561ed7698da4685877ac062ac069b603939a6",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "3d4d974c48b3c4a7fd081a59697cdbdd6fe9f61c3395bff8bc1ab0a6f9a68b1d"
+      ],
+      "issue": "Required literal Web Audio identifier is translated into веб-аудиофильтры;this is an identifier-contract defect,not a claim that Russian transliteration is grammatically invalid."
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "translation": "Попробуйте запись голоса. Сравните оригинал с предварительно установленным радиоэффектом или с предварительно установленным более низким уровнем. Изменения высоты также изменяют скорость воспроизведения. Это не клонирование голоса или студийная коррекция высоты.",
+      "translation_hash": "12bccb9165a128497ea4530c4d2840b5924620cdb7899249350da0010d96b6f8",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "c341955af71b362eede17ac1a866eec595fe0d8f17b0985676cec22eee2d7187"
+      ],
+      "issue": "Lower-pitch preset becomes a lower level(уровень),changing pitch into output level."
+    },
+    {
+      "key": "voice-changer.faq.2.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "translation": "Этот инструмент не может клонировать человека или изолировать звуковую дорожку. Он не может заставить голос звучать как другой реальный человек. Он только добавляет простые звуковые эффекты.",
+      "translation_hash": "f48db4c0addc9dc389932adb06cb47fbbcca763c3f554c375447f722844c9f3c",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "b902b45b9b4473d100e4beb597a084004454276f50d23f76401ee6dbb2acb461"
+      ],
+      "issue": "Vocals become a generic audio track;the specific vocal-isolation limitation is lost."
+    },
+    {
+      "key": "voice-changer.fields.faq3a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "translation": "Этот инструмент не может клонировать человека или изолировать звуковую дорожку. Он не может заставить голос звучать как другой реальный человек. Он только добавляет простые звуковые эффекты.",
+      "translation_hash": "f48db4c0addc9dc389932adb06cb47fbbcca763c3f554c375447f722844c9f3c",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "082dd88077214b3b611f1222b95a7e2d23cf1d115c7a05334bc4c8cebd0895a6"
+      ],
+      "issue": "Vocals become a generic audio track;the specific vocal-isolation limitation is lost."
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "translation": "Звуковое отображение использует память и процессор устройства. Короткие клипы и компьютер обычно работают более гладко, чем длинные клипы на телефоне.",
+      "translation_hash": "820468fb0c2996c36227be9f728f0dbf81e711c256a68c19520d8323be39a1e8",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "b06b2b57a0a8d5dd452158edca7d37870ac31ad47fc59f3df758322376e501b4"
+      ],
+      "issue": "Audio rendering/file generation becomes звуковое отображение(sound display)."
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "translation": "Звуковое отображение использует память и процессор устройства. Короткие клипы и компьютер обычно работают более гладко, чем длинные клипы на телефоне.",
+      "translation_hash": "820468fb0c2996c36227be9f728f0dbf81e711c256a68c19520d8323be39a1e8",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "13348ac24329f7f8a9349be84774c59338dcf0199d4f2cb69d9d0656f954ce2f"
+      ],
+      "issue": "Audio rendering/file generation becomes звуковое отображение(sound display)."
+    },
+    {
+      "key": "voice-changer.fields.effect",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+      "translation": "Эффект preset",
+      "translation_hash": "2d95f02181249fe0a60806f94308943bdb0e49e7db5f7c0a43fd3f2e14d6bc01",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "fb1cbf41c528fdff81a40ae64a0438faf1f9cd13fd9cbe8717d5f99a965d93f9"
+      ],
+      "issue": "Generic preset is left in English in Эффект preset;it is not a protected brand/identifier."
+    },
+    {
+      "key": "voice-changer.fields.processing",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "translation": "Отображение обработанного аудио…",
+      "translation_hash": "c466a8953cb4cc2b2aaf1a152f1e763cb5ea69db80e8a1d0696f68577ef04d23",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "4c4ae40d5b14674f968dd4bcf67c7257b4a73e23d051a0b9b35a800bdc45d12b"
+      ],
+      "issue": "Rendering processed audio becomes displaying it,an incorrect processing stage."
+    },
+    {
+      "key": "voice-changer.fields.volume",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "translation": "Уровень выпуска",
+      "translation_hash": "73d394339e4f32af6a1988e3e8dc0359eb0634f5552e4e3d2f6bad5cf5af684d",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "ed5084e0b6e856120feab4d9501445ec29fd3538ea34cfebf63cfa336a4d3ad9"
+      ],
+      "issue": "Audio output level becomes Уровень выпуска(release/production level)."
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "translation": "Придавайте короткому аудиоклипу более низкий, более высокий, радио-, яркий или эхо-эффект. Просмотрите результат, настроить его, и экспорт WAV-файл на вашем устройстве.",
+      "translation_hash": "0c40e26c874cf3f01784329d693d57a71298ed2c3350e21d00e4a101ca9e126c",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "702265689b4f216db7175d9cace0afded63481071941cd826dd778c88c011ec6"
+      ],
+      "issue": "Просмотрите…,настроить…,и экспорт WAV-файл mixes imperative,infinitive and noun with broken case;the actions remain identifiable."
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "translation": "Этот легкий инструмент предназначен для коротких клипов, а не полнометражных песен. Изменение высоты звучания путем регулировки скорости воспроизведения. Продолжительность клипа и тон голоса меняются вместе. Эффекты не могут создать естественную новую самобытность или изолировать голоса. Они не могут гарантировать одинаковый результат в каждом браузере.",
+      "translation_hash": "ed21c7a191ff6c769f4deff5d81f1bc8e7e27d6753f7f761d3e9d4e529f3be88",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "3e21c3a2f44754e91f0d29e2e8c7b3f37440b61d49b5b77699996c60b3a75bcb"
+      ],
+      "issue": "Voice identity becomes самобытность(originality);полнометражные песни is an inappropriate film-length collocation."
+    },
+    {
+      "key": "voice-changer.name",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d1518eabcadd5528e9274833eaad6891cb0eeeb91ff4dfb6d24a4bffe2b1f72c",
+      "translation": "Менеджер голоса и аудиоэффекты",
+      "translation_hash": "a3d7f6e946cacf26b5208d9b45ec91d1a5c016e9df817d5cf6dad64ab015bf79",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "2e5aaca87c63997fe1dca344702bf93bf31283209e70fd1a85e469e9b6c5cc3e"
+      ],
+      "issue": "Voice changer becomes a voice manager,losing the changing action in the tool name."
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "translation": "Voice Changer Online — Бесплатные голосовые эффекты в браузере",
+      "translation_hash": "36e14954e9074c641762f02724a2b597f18c257c3ebe60471416002c04820f6d",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "ae3fb1e3ed0caceedee78409501f69a621c65e92f98e86bdefeb926af2ae2bdb"
+      ],
+      "issue": "Voice Changer Online remains in English;these generic function words are not a protected brand."
+    },
+    {
+      "key": "shikaku.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "translation": "Играйте в Шикаку онлайн бесплатно. Разделите каждую сетку на прямоугольники, соответствующие пронумерованным областям. Получите ежедневную головоломку, подсказки и свежую доску; ваша игра останется на этом устройстве.",
+      "translation_hash": "1cbdea22efab246ae021430cda71af301357c320e5a982217e26f0d018bcc44e",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "fc24d7a2a9f9c6a07c8c8497610a1c2332ed0c76861837c6c9814e750f3b4d47"
+      ],
+      "issue": "Свежая доска is a fresh-board calque for a new generated grid."
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "translation": "Крытые квадраты",
+      "translation_hash": "716694e3998fb21ae724bca50bcc59406ab315df7f16413d143b0a04eeaea190",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "90554ed422244342e215440564cda02dfacda22a2c48c62fd28d462f66f8cc99"
+      ],
+      "issue": "Крытые квадраты is an unnatural roofed-square collocation for covered grid cells."
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "translation": "Сикаку — это головоломка с числами. Нарисуйте прямоугольники вокруг подсказок. Площадь каждого прямоугольника указана под его подсказкой, и все квадраты сетки необходимо использовать один раз.",
+      "translation_hash": "efb71b8b661a53fcb6b328a65c136e1cbeb17295c402676ca66d6f5aa516000b",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9"
+      ],
+      "issue": "Area shown by a clue becomes area shown below the clue,adding an incorrect placement relationship."
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "translation": "Проверьте области прямоугольника и подсказки.",
+      "translation_hash": "c39d123dc041ed1f7818a077a5d500f13693c5a448fb8e2205d22b970626c89d",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "c9767aa29a17a2d01b9876f4fd3ce917c51512983f4440ed8794c59742464ea8"
+      ],
+      "issue": "Numeric rectangle areas become regions(области),not площади."
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "translation": "Shikaku Puzzle Online — Бесплатная игра «Прямоугольник на каждый день»",
+      "translation_hash": "c968da96e40cd1e6db1c4bb891a3f83267a63af4982f2bd8b6122a9f3476a174",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "294c38695ff34fe382082a7a77e81197c9a2d7a3b2df15846c7914ca2c513da2"
+      ],
+      "issue": "Puzzle Online remains in English;Shikaku may stay a brand,but the generic title words need localization."
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "translation": "Изменяйте высоту звука, формируйте радио или эффекты глубокого голоса, просматривайте эхо и экспортируйте обработанный звук локально. Бесплатно, конфиденциально и без загрузки.",
+      "translation_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62"
+      ],
+      "issue": "Radio is detached from effect and preview echo uses visual viewing terminology in audio copy."
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "translation": "Ваш браузер декодирует выбранный звук, применяет фильтры веб-аудио, усиление, частоту тона и дополнительное эхо локально, а затем визуализирует файл WAV для загрузки. Звук не отправляется на сервер.",
+      "translation_hash": "e6d93893164a9cab45aa8886636b2ea643d60c146a44759070a2e6be78d6a1ff",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3"
+      ],
+      "issue": "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+    },
+    {
+      "key": "voice-changer.faq.3.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "translation": "Инструмент отображает стандартный несжатый файл WAV в вашем браузере. Входными данными может быть любой аудиоформат, который может декодировать ваш браузер.",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "72836152a3973c98de09a15272d83f1c2c8c2fff1aab9fcf2690b6961fd61c62"
+      ],
+      "issue": "Creating/rendering a WAV file becomes displaying it."
+    },
+    {
+      "key": "voice-changer.fields.faq4a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "translation": "Инструмент отображает стандартный несжатый файл WAV в вашем браузере. Входными данными может быть любой аудиоформат, который может декодировать ваш браузер.",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "e3466f525fc32f23b687492902ee9dbffbe0910af009826c1b7c7a84c126689e"
+      ],
+      "issue": "Creating/rendering a WAV file becomes displaying it."
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "translation": "Визуализация звука использует память и процессор вашего устройства. Короткие клипы и компьютер обычно работают более плавно, чем длинные клипы на телефоне.",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "129667d6452fcfa25c22e6d8631648cd3656123ec8559ca162a9a5f56aa7ba11"
+      ],
+      "issue": "Audio rendering becomes sound visualization,an incorrect operation."
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "translation": "Визуализация звука использует память и процессор вашего устройства. Короткие клипы и компьютер обычно работают более плавно, чем длинные клипы на телефоне.",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "8b04815dac15012a1a9f5ad3fda8bb9cb7efc7d60e2f2edaeda0d841ed0a9f4c"
+      ],
+      "issue": "Audio rendering becomes sound visualization,an incorrect operation."
+    },
+    {
+      "key": "voice-changer.fields.clean",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "translation": "Очистить",
+      "translation_hash": "8965271d3c97c79d9dd0daae5f1c022dfc544fadffff105619bf1b445a51ce72",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "68afa6d5b2f809dde8906af52d096184569e1b94fff7ab8c9e9dc567c32dd3cf"
+      ],
+      "issue": "Neutral Clean preset becomes the action Очистить(clear/delete)."
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "translation": "Придайте короткому аудиоклипу эффект ниже, выше, радио, яркость или эхо. Просмотрите результат, настройте его и экспортируйте файл WAV на свое устройство.",
+      "translation_hash": "bef5388e5e2daa5a5dc9b5af040f4aa8e13dc3d11c28972d3bb029d8b5f2b3cc",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "9d43f993ed0407dff7dad40c5277e40372e9e1fd69a157810cc27779dfe68760"
+      ],
+      "issue": "эффект ниже,выше is an unnatural adverb construction for lower/higher pitch effects."
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "ru",
+      "inference_policy": "context-v30",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "translation": "Этот легкий инструмент предназначен для коротких клипов, а не полноценных песен. Высота звука изменяется путем регулировки скорости воспроизведения, поэтому продолжительность клипа и тон голоса изменяются одновременно. Эффекты не могут создать естественную новую идентичность, отдельные голоса или гарантировать одинаковый результат в каждом браузере.",
+      "translation_hash": "253cf05a018a87c683413bf94ea3be07179cf927ab9598ae03eed415144217fc",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a"
+      ],
+      "issue": "Separate voices is attached as an object of create:cannot create separate voices,instead of cannot isolate voices."
+    }
+  ]
+}

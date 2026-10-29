@@ -1,0 +1,2 @@
+[data-origami-simulator] [data-canvas] { display: block; width: 100%; height: auto; border: 1px solid var(--border, #cbd5e1); border-radius: .75rem; touch-action: none; }
+[data-origami-simulator] [data-progress] { width: 100%; }

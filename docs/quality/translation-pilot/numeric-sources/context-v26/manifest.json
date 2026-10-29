@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "zh-CN-bound-lexical-v4",
+  "base_policy": "context-v25",
+  "base_manifest": "docs/quality/translation-pilot/numeric-sources/context-v25/manifest.json",
+  "checkpoint": "docs/quality/translation-pilot/checkpoints/context-v25/madlad.jsonl",
+  "corrections": "docs/quality/translation-pilot/correction-v26-plan.json",
+  "source_snapshot": "docs/quality/translation-pilot/numeric-sources/context-v24/source-snapshot.json",
+  "base_manifest_sha256": "216e41dd136880be632d4a6b2de54551a308fea534e80c64daebee0b79e23e7e",
+  "checkpoint_sha256": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3",
+  "corrections_sha256": "801b3a1075f4fafd9e9ca47420ef2021b0e33e12fca2874930e25f3218a70664",
+  "source_snapshot_sha256": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+  "contracts": "bound-contracts.json",
+  "contracts_sha256": "fc6d7efa9205244d3ab15ff29b38b34bc38986926991797103911a6fb9d9c50d",
+  "policy_entries_digest": "72549ddce082f6bab3d24d6880286f59bd2985ac7c2e673da8c44bbcfacd1dba",
+  "policy_memory_digest": "a14b0ac85c670a31e103e3a9db39a89bfe58b1bb3a33696281c1c0d61b836e7b",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "primary_style_corrections": 2,
+  "current_quantity_gaps": 7,
+  "expected_memory_targets": 334
+}

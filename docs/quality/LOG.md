@@ -1,3 +1,9 @@
+## 2026-10-29 · Codex · Runtime real, a11y y entrega del Paso A (en curso)
+
+[Datos y límites](runtime-v1/README.md). Wrangler local 4.154.0/compat 2026-10-01, sin recursos remotos ni script Worker. 93 checks HTTP/32 páginas correctos; 404, cabeceras/caché y redirects/query; axe32 sin infracciones y 104 tareas correctas. Lighthouse móvil cinco páginas 100/100/100, LCP 756–1.075 ms y CLS/TBT 0. Teclado/sanitización comprobados; no se certifica INP ni las siete capas de las 1.000.
+
+3.255 Node finales (47 de entrega/composición), check principal/gate20 correctos. Preview completa regenerada/11.100 payloads noindex/37 destinos; nb inglés declarado, cero aprobado. Cloudflare consultado solo en lectura: plan existente y cuota/coste para entrega estática sin gasto adicional comprobados; sin auto-builds Git. Aviso #141 coincide con 21:28 del 28-oct: tanda siguiente esperando, mientras la campaña previa tiene cuatro auditorías en vuelta 6. Sin cancelar/reiniciar ni modificar el traductor. Integración/preview pública aún pendientes, candado EN CURSO.
+
 ## 2026-10-29 · Codex · Unión local completa 700+300, Paso A abierto
 
 [Informe](lotes/2026-10-29-construccion-secuencial-paso-a.md), [evidencia](sequential-v1/evidence.json). Construcción secuencial/paquetes íntegros; 38.817 archivos, 36.400 rutas, 25.300 existentes indexables y 11.100 nuevas noindex en 37 destinos. nb nuevo conserva inglés declarado, cero traducciones aprobadas. Sitemap unificado 25.589 tras deduplicar 36 homes; producción sin cambios. 327 directorios auxiliares nuevos noindex y búsqueda completa bajo demanda, máximo home 10.024 B Brotli. Proyección máxima 1.996.857.176 B, sin relajar límite.

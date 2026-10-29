@@ -1,0 +1,93 @@
+{
+  "toolId": "sitemap-validator",
+  "sourceCopy": {
+    "name": "Sitemap Validator",
+    "title": "Sitemap Validator Free | UsefulVerse",
+    "description": "Check sitemap XML for duplicate URLs, invalid dates, namespaces and common field errors. Free local validation; no crawling.",
+    "intro": "Paste a sitemap XML document to check its structure, URL entries, dates and common fields. The XML is parsed in this browser only; listed pages are never fetched.",
+    "howQuestion": "What does this sitemap validator check?",
+    "howAnswer": "It checks urlset or sitemapindex entries, absolute HTTP or HTTPS locations, duplicate normalized URLs, lastmod dates, optional changefreq and priority values, and the sitemap namespace. Warnings and errors are listed by entry number.",
+    "privacyQuestion": "Does it upload or submit my sitemap?",
+    "privacyAnswer": "No. The XML is processed locally in your browser. The tool does not crawl URLs, fetch remote sitemap files, submit anything to a search engine, or confirm indexing.",
+    "fields": {
+      "xmlInput": "Paste sitemap XML",
+      "xmlHint": "Supports a standard urlset or sitemapindex. Maximum 1,000,000 characters and 5,000 direct entries.",
+      "accuracyNote": "Local XML checks only: this does not request listed URLs, crawl the site, submit the sitemap, or guarantee indexing.",
+      "summaryTitle": "Validation summary",
+      "entryCount": "entries",
+      "issuesTitle": "Findings",
+      "noIssues": "No issues found in the checks performed.",
+      "entryLabel": "Entry",
+      "validLabel": "No errors found",
+      "invalidLabel": "Errors found"
+    },
+    "actions": {
+      "validate": "Validate sitemap",
+      "example": "Load example",
+      "reset": "Clear",
+      "result": "Validation"
+    },
+    "messages": {
+      "validated": "Sitemap checks finished. Review the summary and findings.",
+      "validation-failed": "The sitemap has errors. Review the findings.",
+      "invalid": "The XML could not be validated.",
+      "empty-input": "Paste sitemap XML first.",
+      "input-too-large": "The XML exceeds the 1,000,000-character limit.",
+      "doctype-blocked": "DOCTYPE and entity declarations are blocked for safety.",
+      "xml-parser-unavailable": "XML parsing is not available in this browser.",
+      "invalid-xml": "The input is not well-formed XML.",
+      "invalid-root": "The root must be urlset or sitemapindex.",
+      "too-many-nodes": "The XML has too many elements for local validation.",
+      "too-deep": "The XML nesting exceeds the supported depth.",
+      "too-many-entries": "The sitemap has more than 5,000 direct entries.",
+      "missing-namespace": "The standard sitemap namespace is missing.",
+      "invalid-namespace": "The root uses an unexpected namespace.",
+      "no-entries": "No direct sitemap entries were found.",
+      "unexpected-entry": "This entry element does not match the sitemap root.",
+      "invalid-child-namespace": "An entry field uses an unexpected namespace.",
+      "duplicate-field": "A field occurs more than once.",
+      "duplicate-loc-field": "The entry has more than one loc field.",
+      "missing-loc": "The entry has no loc URL.",
+      "invalid-url": "The loc value is not an absolute HTTP or HTTPS URL.",
+      "url-too-long": "The loc URL exceeds 2,048 characters.",
+      "url-credentials": "The loc URL must not contain a username or password.",
+      "url-fragment": "The loc URL must not contain a fragment.",
+      "duplicate-url": "This normalized URL already appears in the sitemap.",
+      "invalid-lastmod": "The lastmod value is not a valid date or timezone-qualified date-time.",
+      "invalid-changefreq": "The changefreq value is not one of the allowed values.",
+      "invalid-priority": "Priority must be a number from 0 to 1.",
+      "unknown-field": "An unrecognized field was found and was not deeply validated.",
+      "issues-truncated": "Additional findings were omitted to keep the report concise."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this check whether a sitemap URL is live?",
+        "answer": "No. It checks URL syntax and duplicates within the pasted XML, but intentionally does not request URLs or crawl the site."
+      },
+      {
+        "question": "Does a valid sitemap mean Google indexed its pages?",
+        "answer": "No. XML validation is not a search-engine submission or indexing report. Submit a sitemap through the relevant search-engine webmaster tool and check its own status."
+      },
+      {
+        "question": "Can I validate a sitemap index?",
+        "answer": "Yes. The tool checks direct sitemapindex entries and their loc and lastmod fields, but does not download or recursively inspect referenced sitemap files."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "exampleText": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://example.com/</loc><lastmod>2026-10-14</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>\n  <url><loc>https://example.com/about</loc><lastmod>2026-02-30</lastmod></url>\n</urlset>"
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/sitemap-validator/index.html",
+    "htmlSha256": "103efad7b34206f96dedf350d5d54e0486adec8301cf86cc85fa1021a3d125bf",
+    "payloadSha256": "8f085e78ae74d86c35bf74dcce540412f30ea487c5d29036b879ba7a34e9796d",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/sitemap-validator.js",
+    "controllerSha256": "471fed6ffe99e4ce6585deaa06085ff4a74905d1377c6535f9d8b1230d424dcd",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

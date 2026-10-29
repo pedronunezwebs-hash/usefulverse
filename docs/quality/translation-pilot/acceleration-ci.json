@@ -1,0 +1,160 @@
+{
+  "source_commit": "a04f91355a4b071942a1d8bb6579b8774f077542",
+  "main_handoff_commit": "e05ae7690d9fc60f2f5e72450123e085a732228c",
+  "expected_python_tests": 300,
+  "run_id": 40219774134,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40219774134",
+  "complete": true,
+  "conclusion": "success",
+  "checked_at_utc": "2026-10-25T18:22:59.043466+00:00",
+  "log_sha256": "dc92166f69f37150ac311621d6c0c88c9f264164c0afd43d130f6fb5e8d23547",
+  "node_tests": 3045,
+  "python_tests": 300,
+  "python_passed": 298,
+  "python_dependency_skips": 2,
+  "python_seconds": 525.834,
+  "previous_python_tests": 276,
+  "previous_python_seconds": 642.837,
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-10-25T18:07:58Z",
+      "completed_at": "2026-10-25T18:08:00Z"
+    },
+    {
+      "name": "Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-10-25T18:08:00Z",
+      "completed_at": "2026-10-25T18:08:08Z"
+    },
+    {
+      "name": "Set up Node.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-10-25T18:08:08Z",
+      "completed_at": "2026-10-25T18:08:09Z"
+    },
+    {
+      "name": "Install dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-10-25T18:08:09Z",
+      "completed_at": "2026-10-25T18:08:19Z"
+    },
+    {
+      "name": "Run tests",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-10-25T18:08:19Z",
+      "completed_at": "2026-10-25T18:18:52Z"
+    },
+    {
+      "name": "Build and validate all pages",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-10-25T18:18:52Z",
+      "completed_at": "2026-10-25T18:20:12Z"
+    },
+    {
+      "name": "Require linguistic approval for expanded locales",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-10-25T18:20:12Z",
+      "completed_at": "2026-10-25T18:20:13Z"
+    },
+    {
+      "name": "Build and validate the isolated tools hub",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-10-25T18:20:13Z",
+      "completed_at": "2026-10-25T18:20:55Z"
+    },
+    {
+      "name": "Validate the 300 staged tools without publishing",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9,
+      "started_at": "2026-10-25T18:20:55Z",
+      "completed_at": "2026-10-25T18:21:07Z"
+    },
+    {
+      "name": "Publish to the existing Cloudflare Pages project",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 10,
+      "started_at": "2026-10-25T18:21:07Z",
+      "completed_at": "2026-10-25T18:21:07Z"
+    },
+    {
+      "name": "Publish the separate static tools hub",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 11,
+      "started_at": "2026-10-25T18:21:07Z",
+      "completed_at": "2026-10-25T18:21:07Z"
+    },
+    {
+      "name": "Post Set up Node.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 21,
+      "started_at": "2026-10-25T18:21:07Z",
+      "completed_at": "2026-10-25T18:21:08Z"
+    },
+    {
+      "name": "Post Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 22,
+      "started_at": "2026-10-25T18:21:08Z",
+      "completed_at": "2026-10-25T18:21:08Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 23,
+      "started_at": "2026-10-25T18:21:08Z",
+      "completed_at": "2026-10-25T18:21:08Z"
+    }
+  ],
+  "model_job": "skipped",
+  "publish_jobs": "both skipped",
+  "artifacts": 0,
+  "builds": {
+    "principal_sitemap_urls": 10260,
+    "principal_localized_tool_pages": 9972,
+    "principal_localized_homepages": 36,
+    "existing_expanded_locales_gate": 20,
+    "hub_growth_tools": 217,
+    "hub_market_tools": 100,
+    "hub_recovered_editable_tools": 106,
+    "preview_files": 11293,
+    "preview_tool_pages": 10800,
+    "preview_tools_noindex": true,
+    "preview_all_homepages_noindex": true,
+    "preview_indexable_sitemap_urls": 0,
+    "certifies_37_languages": false
+  },
+  "evidence_lines": [
+    "validate-and-deploy\tRun tests\t2026-10-25T18:10:03.0711950Z ℹ tests 3045",
+    "validate-and-deploy\tRun tests\t2026-10-25T18:18:51.8398011Z Ran 300 tests in 525.834s",
+    "validate-and-deploy\tRun tests\t2026-10-25T18:18:51.8398456Z OK (skipped=2)",
+    "validate-and-deploy\tBuild and validate all pages\t2026-10-25T18:20:12.5312303Z Build check passed: 9972 localized tool pages + 36 home pages; 10260 URLs in sitemap.",
+    "validate-and-deploy\tRequire linguistic approval for expanded locales\t2026-10-25T18:20:13.3095477Z Release locale review passed for 20 expanded locales.",
+    "validate-and-deploy\tBuild and validate the isolated tools hub\t2026-10-25T18:20:55.1820564Z Assembled additive release with 217 Growth tools, 100 market tools, and 106 editable recovered tools; publishing directory: /home/runner/work/usefulverse/usefulverse/dist-growth600.",
+    "validate-and-deploy\tValidate the 300 staged tools without publishing\t2026-10-25T18:21:05.8898975Z Built 0 Growth600 pages for 300 tools in 36 locales (11293 files, 241869934 bytes).",
+    "validate-and-deploy\tValidate the 300 staged tools without publishing\t2026-10-25T18:21:07.8278586Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "toolId": "forex-position-size-calculator",
+  "sourceCopy": {
+    "name": "Forex Position Size Calculator",
+    "title": "Forex Position Size Calculator Free | UsefulVerse",
+    "description": "Calculate forex lot size from account balance, risk, stop-loss pips and pip value. Free, private, no live FX data or account.",
+    "intro": "Estimate a position size from your chosen risk and stop distance. You supply the pip value in your account currency; this tool does not fetch exchange rates or broker data.",
+    "howQuestion": "How do I calculate forex position size?",
+    "howAnswer": "Risk amount equals account balance times risk percent. Divide it by stop-loss pips times the pip value per standard lot. For example, risking 100 with 10 pips of stop distance and pip value 1 per lot gives 10 standard lots. Confirm pip value and contract size with your broker.",
+    "privacyQuestion": "Does this calculator connect to a broker?",
+    "privacyAnswer": "No. It uses the figures you enter in this browser and does not connect to a broker, retrieve prices or place trades.",
+    "additionalFaqs": [
+      {
+        "question": "What is a pip value?",
+        "answer": "Pip value is the money gained or lost for a one-pip move at a specified position size. It depends on the currency pair, trade size and account currency. Enter the value for one standard lot using your broker’s convention."
+      },
+      {
+        "question": "Does this calculate a live currency conversion?",
+        "answer": "No. Enter pip value already converted to the same currency as your account balance. Exchange rates and broker contract conventions can change."
+      },
+      {
+        "question": "Is the position size a trading recommendation?",
+        "answer": "No. It is arithmetic based on your inputs, not a forecast or recommendation. Leverage, spread, slippage, commissions, gaps and broker minimum sizes can change actual losses."
+      }
+    ],
+    "fields": {
+      "accountBalance": "Account balance",
+      "riskPercent": "Risk per trade (%)",
+      "stopLossPips": "Stop-loss distance (pips)",
+      "pipValuePerStandardLot": "Pip value per standard lot in account currency",
+      "inputNote": "Use the same currency for balance and pip value. A standard lot is modeled as 100,000 units; broker definitions can differ.",
+      "accuracyNote": "Illustrative position-size math only. Does not include spread, commission, slippage, gaps, margin, leverage or broker minimums. Not trading advice; you can lose more than planned.",
+      "riskAmount": "Cash risk from chosen percent",
+      "lossPerLot": "Modeled loss per standard lot at stop",
+      "standardLots": "Standard lots",
+      "microLots": "Micro lots",
+      "units": "Base-currency units"
+    },
+    "actions": {
+      "calculate": "Calculate position size",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "example": "Load example",
+      "result": "Position size estimate"
+    },
+    "messages": {
+      "calculated": "Position size estimate calculated.",
+      "checkInputs": "Check balance, risk, stop distance and pip value.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    }
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/forex-position-size-calculator/index.html",
+    "htmlSha256": "75f55386b02887001751e7ca92ad4c52282449b734cc9d418dd3cbca7f0a2614",
+    "payloadSha256": "cb85677e604d3e395619f64ac52637ec45eff01b0c194a17ae74999c07009235",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/forex-position-size-calculator.js",
+    "controllerSha256": "9ed7b52110da1c0c5ef57b6a90430a700e84b25a1a77add16897c4b9e95acb15",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "kind": "unproved-observed-data-not-acceptance",
+  "policy": "context-v25",
+  "run_id": 40153243412,
+  "checkpoint_capture_commit": "e265796ba891b064624ab850f1ab23d4d5d4fa45",
+  "checkpoint_sha256": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3",
+  "approved_locales": [],
+  "native_review": false,
+  "rows": [
+    {
+      "record_id": "20ac9b270b944522a8d3df6d243831567a7ab4fd964ca1046e9ceab9df6eb0ec",
+      "key": "voice-changer.fields.faq3a",
+      "context": "fields.faq3a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "translation_hash": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "row_digest": "bdb0e1c2a4ed3fe589b819b9da7e57da4e196343da202cbb1f699a9b327c3201",
+      "forward_trace_digest": "afcb92b8123efa269777a33e697f03616c4406fa77dbcf2e7e8c9cca39892b60",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "42ad4aea10ce3c9853a511f9598a998dd2d14de0731e03bc462959a796eeb0c6",
+      "key": "voice-changer.fields.faq4a",
+      "context": "fields.faq4a",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "translation_hash": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "row_digest": "5c5da79cabd6f2636c6b0431815f8e45a56fed2db91672e5087fd91609e02206",
+      "forward_trace_digest": "507f582310acd2fa72f7c1d750c6c0127cbfa47803cdaa56f7f67fa64224ca08",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+      "key": "shikaku.intro",
+      "context": "intro",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "translation_hash": "16b69b994c022f1fd4c6f8ab61320b8fafd0ccacbcca91dc5fc6d897ef1c6f3b",
+      "row_digest": "4c3ff84977e768653ef81082b69bc39366fedb14d1f21b4a981c53ec24c24438",
+      "forward_trace_digest": "3324046b3f8c24bb7900d96351a22c3154e787a672c3349e10bf73dfd842a0ca",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "a562479f00f7f282f3cf4b1db1cb33313a1dd0e8929cfe443f34f846f4194f4c",
+      "key": "voice-changer.faq.2.a",
+      "context": "faq.2.a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "translation_hash": "1c04f1dc77bda4a08e37154745644ca9d44239abad5b894e88d63633c86ccd98",
+      "row_digest": "072c7960e36a64eb06b1e4ba03aab7d5cb468569c26e02f2f917b6c77fbbbf80",
+      "forward_trace_digest": "afcb92b8123efa269777a33e697f03616c4406fa77dbcf2e7e8c9cca39892b60",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "cc44a4e1cf583fdd1d783edb949c93b4356e91d501cc56e73f20b97aaef3785f",
+      "key": "dxf-viewer.fields.firstY",
+      "context": "fields.firstY",
+      "source_hash": "d1165dc80c11874215fad7b26ffefcc38c11c8a6e054f6e909d2f96450c2ac02",
+      "translation_hash": "2acb1408e1147c7d93d69dba558e4e1211ce0390e05310b2f8e7d56af2728479",
+      "row_digest": "86b2981827e54ae346206648be2fdc32f2c3df12138b334701b2702e2a3096da",
+      "forward_trace_digest": "b01b751035e59a09a41262772441a221a2acc0f4255b5b2a51d6e1c31c89f1f2",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "da25465993b15e769e92e3f17ab36aa34c429aecdc24b407eebbe986647e627a",
+      "key": "voice-changer.faq.3.a",
+      "context": "faq.3.a",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "translation_hash": "2c01f1ca6e8c2383e0b60673a1eeb4f7b7c9ba81de3e871a6a03d6dd91e0ee00",
+      "row_digest": "e846af34dfdaab732db3bf2605a725699775587360116aa77460b17778cfe8fb",
+      "forward_trace_digest": "507f582310acd2fa72f7c1d750c6c0127cbfa47803cdaa56f7f67fa64224ca08",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    },
+    {
+      "record_id": "f6d48ca27ef1dea06173b0d9e9d2ed5c11be24f3381cc662270cbf7d89567898",
+      "key": "shikaku.details",
+      "context": "details",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "translation_hash": "d9900013009990d2007cc074af09571cf27035e91deef83df83e9361edb07466",
+      "row_digest": "720caed0626675898b9c6f871f68059a95af597ffe72e802dde8f0f3c610db14",
+      "forward_trace_digest": "4c6a0160d23cb1303bbb76bc8a34a8bc9e2ef477ed410cee1507db5149802ae9",
+      "typed_evidence_digest": "f101cb3d1aa99894b49e7e7db80ab2a818634f9f1e718ecb4245f94031caba75",
+      "reason": "Nueva variante de inferencia sin memoria ni prueba finita. Se conserva y bloquea; no se inventa nota lingüística negativa."
+    }
+  ]
+}

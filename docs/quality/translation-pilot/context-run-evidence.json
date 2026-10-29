@@ -1,0 +1,2516 @@
+{
+  "at_utc": "2026-10-27T12:26:14.417467+00:00",
+  "approved_locales": [],
+  "runs": [
+    {
+      "inference_policy": "context-v2",
+      "run_id": 39434607232,
+      "job_id": 118668204682,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "model.bin": "eb3fd60ec655f8ebe50680262e3f1f4477b63e191e7d099fa91d8284b5d9a32f",
+          "shared_vocabulary.json": "7eb5d0ff184c6095c7c10f9911c0aea492250abd12854f9c3d787c64b1c6397e"
+        },
+        "engine": "m2m100",
+        "license": "MIT",
+        "minimum_free_gib": 5,
+        "repository": "facebook/m2m100_418M",
+        "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 34.107179363,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "m2m100",
+        "peak_rss_kib": 841480,
+        "scope": "references",
+        "total_seconds": 60.325732575
+      }
+    },
+    {
+      "inference_policy": "context-v2",
+      "run_id": 39434607232,
+      "job_id": 118668203605,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 84.342443573,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3662376,
+        "scope": "references",
+        "total_seconds": 259.269984583
+      }
+    },
+    {
+      "inference_policy": "context-v3",
+      "run_id": 39435208282,
+      "job_id": 118670913946,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 121.43904965299998,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3734340,
+        "scope": "references",
+        "total_seconds": 217.002813736
+      }
+    },
+    {
+      "inference_policy": "context-v4",
+      "run_id": 39436428601,
+      "job_id": 118674535266,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 75.30086836499999,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 7
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3732204,
+        "scope": "references",
+        "total_seconds": 250.86763277400001
+      }
+    },
+    {
+      "inference_policy": "context-v4",
+      "run_id": 39437391534,
+      "job_id": 118677942118,
+      "scope": "full",
+      "conclusion": "success",
+      "source_commit": "d79cde9c78ba48ca98f2c8636d913cbe7170709f",
+      "reused_records": 160,
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 74.971874498,
+        "counts": {
+          "legacy": 348,
+          "model": 348
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 4065256,
+        "scope": "full",
+        "total_seconds": 975.221506733
+      }
+    },
+    {
+      "inference_policy": "context-v5",
+      "run_id": 39452889204,
+      "job_id": 118732146251,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 170.284350034,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7144892,
+        "scope": "references",
+        "total_seconds": 331.568221182
+      }
+    },
+    {
+      "inference_policy": "context-v6",
+      "run_id": 39454358926,
+      "job_id": 118737179241,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 127.09038928599999,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 11
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3701724,
+        "scope": "references",
+        "total_seconds": 212.260957995
+      }
+    },
+    {
+      "inference_policy": "context-v6",
+      "run_id": 39455323981,
+      "job_id": 118740568261,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 91.889416426,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 60
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3852792,
+        "scope": "full",
+        "total_seconds": 930.066577378
+      }
+    },
+    {
+      "inference_policy": "context-v7",
+      "run_id": 39483290546,
+      "job_id": 118837137425,
+      "conclusion": "success",
+      "source_commit": "203422e55f561f8389c92a91229ab8ba8ddc691d",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 107.663778785,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 13
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3666636,
+        "scope": "references",
+        "total_seconds": 186.096035033
+      },
+      "cleanup_verified": true
+    },
+    {
+      "inference_policy": "context-v8",
+      "run_id": 39485133272,
+      "job_id": 118843472452,
+      "conclusion": "success",
+      "source_commit": "3c1faf3dc37a98e7f09109cd6a72fb0187e9bccd",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 96.95540306899998,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 16
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3681588,
+        "scope": "references",
+        "total_seconds": 268.07322554900003
+      },
+      "cleanup_verified": true
+    },
+    {
+      "inference_policy": "context-v9",
+      "run_id": 39547858733,
+      "job_id": 119050010742,
+      "source_commit": "9b430c35206eb2d758f5be5d74287544f9e2556c",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 100.437504534,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 20
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3670520,
+        "scope": "references",
+        "total_seconds": 250.006776175
+      },
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T05:13:34Z",
+        "completed_at": "2026-10-21T05:13:35Z"
+      },
+      "emitted_records": 160,
+      "checkpoint_sha256": "cbc02865b4effb5d7c7e8f821b5373d4a8e83d4ef2b49c1469dd411e27f9bcb0"
+    },
+    {
+      "inference_policy": "context-v9",
+      "run_id": 39548546424,
+      "job_id": 119052191086,
+      "source_commit": "13a2ae02371490fc0a5882a2e9d3bb5bd6181850",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 108.24792008100002,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 94
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3751080,
+        "scope": "full",
+        "total_seconds": 465.53242447099996
+      },
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T05:24:12Z",
+        "completed_at": "2026-10-21T05:24:12Z"
+      },
+      "emitted_records": 696,
+      "checkpoint_sha256": "5844a6d0b163089d4d7974c1035179e8199efac3de0eb5c84fd9041134a80dcf"
+    },
+    {
+      "inference_policy": "context-v10",
+      "run_id": 39624247518,
+      "job_id": 119305391793,
+      "source_commit": "f93027538b72d21ad518234809de847a95c95ab4",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 94.205285302,
+        "counts": {
+          "legacy": 80,
+          "model": 51,
+          "reviewed_memory_hits": 17
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3705872,
+        "scope": "references",
+        "total_seconds": 228.06571268100004
+      },
+      "resumed_records": 29,
+      "emitted_records": 131,
+      "checkpoint_sha256": "1168e6230168b532b0b9b0974fa5222948248bafdebeb27952971cbb87427c19",
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T15:22:07Z",
+        "completed_at": "2026-10-21T15:22:08Z"
+      },
+      "python_tests_with_actual_dependencies": 70,
+      "artifacts": 0,
+      "log_sha256": "39303b813898f5e0723ff9151b53a5511b9b2248ef7485735919963b3b74157b"
+    },
+    {
+      "inference_policy": "context-v11",
+      "run_id": 39629733667,
+      "job_id": 119324431040,
+      "source_commit": "fe2acf3f27b2105d979fa21853eaa53225fe7d6a",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 84.65766638000001,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 21
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3694240,
+        "scope": "references",
+        "total_seconds": 256.82852418799996
+      },
+      "resumed_records": 0,
+      "emitted_records": 160,
+      "checkpoint_sha256": "7f2ad088dabbcc7fc2e2ac20d6beb9775b208137a6b0166dceb106987a28cd46",
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T15:58:47Z",
+        "completed_at": "2026-10-21T15:58:48Z"
+      },
+      "python_tests_with_actual_dependencies": 77,
+      "artifacts": 0,
+      "log_sha256": "dcac6e27d78c62d0b05c86036bb12d50905464be46a72cedb89b7f85e7bff852"
+    },
+    {
+      "inference_policy": "context-v11",
+      "run_id": 39631325214,
+      "job_id": 119329982033,
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 116.987716561,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 94
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3782200,
+        "scope": "full",
+        "total_seconds": 629.133257619
+      },
+      "resumed_records": 160,
+      "emitted_records": 696,
+      "checkpoint_sha256": "9fdb2df8a76f0d3327d5ebc54a41cf1edd4a399792f14e93e495c2b24b0e66e1",
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T16:15:13Z",
+        "completed_at": "2026-10-21T16:15:13Z"
+      },
+      "python_tests_with_actual_dependencies": 77,
+      "artifacts": 0,
+      "log_sha256": "f14aa38dc23121df737cb75881e487d990b497fc206467b948e0b8c0365790ea"
+    },
+    {
+      "inference_policy": "context-v12",
+      "run_id": 39730859028,
+      "job_id": 119665328648,
+      "source_commit": "5801f4a6c8a4107d4c9812e090bf7bd04661e08d",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 74.708755171,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 110
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3748548,
+        "scope": "full",
+        "total_seconds": 800.09485931
+      },
+      "resumed_records": 160,
+      "emitted_records": 696,
+      "checkpoint_sha256_at_collection": "1482ef42bc4f37929ad4702ebeb32baa9da66dac4cc3b9c7bc742c38c7f39743",
+      "python_tests_with_actual_dependencies": 80,
+      "runner_cleanup": "success",
+      "artifacts": 0,
+      "log_sha256": "4859fd84c58d2e04398ab7606ddd0e45431b2852fae49529e32b98d65c59e277"
+    },
+    {
+      "inference_policy": "context-v12",
+      "run_id": 39730087914,
+      "job_id": 119662889174,
+      "source_commit": "32142e34766cd52fede4afba5b87a70b881fd9cf",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 84.58823496400001,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 21
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3692948,
+        "scope": "references",
+        "total_seconds": 242.500319743
+      },
+      "resumed_records": 0,
+      "emitted_records": 160,
+      "checkpoint_sha256_at_collection": "e38d50af93245c478b5c304d612d0601b5fa7f67e4b778d8269a2b16ca0d0427",
+      "python_tests_with_actual_dependencies": 80,
+      "runner_cleanup": "success",
+      "artifacts": 0,
+      "log_sha256": "8321bceb3c5759f6481429d7da62421bf51a862b0f9bc8ad8f92746c83edd7c7"
+    },
+    {
+      "inference_policy": "context-v13",
+      "run_id": 39736865789,
+      "job_id": 119684495493,
+      "source_commit": "717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 117.14415447499997,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 21
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 5980640,
+        "scope": "references",
+        "total_seconds": 233.510294341
+      },
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0
+    },
+    {
+      "inference_policy": "context-v13",
+      "run_id": 39737830473,
+      "job_id": 119687611534,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 133.641430665,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 133
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7516772,
+        "scope": "full",
+        "total_seconds": 799.118789418
+      },
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0
+    },
+    {
+      "inference_policy": "context-v14",
+      "run_id": 39768400364,
+      "job_id": 119789511256,
+      "source_commit": "48e0fcfffa0c19b83a1746c397718f7b9abdd13a",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 114.22386459100002,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 21
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3693972,
+        "scope": "references",
+        "total_seconds": 275.026014272
+      },
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0
+    },
+    {
+      "inference_policy": "context-v14",
+      "run_id": 39769512465,
+      "job_id": 119793226109,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 106.59977603799996,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 135
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3777264,
+        "scope": "full",
+        "total_seconds": 832.6409289359999
+      },
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0
+    },
+    {
+      "inference_policy": "context-v15",
+      "run_id": 39906585266,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266",
+      "source_commit": "63443a6fdc9bb97ce07ba9f872cf5d340d4d8321",
+      "created_at": "2026-10-23T05:35:17Z",
+      "status_at_recording": "queued",
+      "policy": "context-v15",
+      "scope": "full",
+      "locales": [
+        "es",
+        "nb-NO"
+      ],
+      "engine": "madlad",
+      "recover_before_relaunch": true,
+      "approved_locales": [],
+      "job_id": 120259840600,
+      "conclusion": "success",
+      "checkpoint_before": 160,
+      "checkpoint_after": 856,
+      "new_records": 696,
+      "checkpoint_sha256_at_collection": "098fb29f8380b896d242aacf45f7e5dc6a7eeb5c241c0ae8fbffdf1a4476a65e",
+      "log_sha256": "b6d26d8292b9f3b8dea276cdd9f2e491e2d5eceef10b1aacfe19d3613cd74f57",
+      "models": [
+        {
+          "converted_sha256": {
+            "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+            "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+            "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+          },
+          "engine": "madlad",
+          "license": "Apache-2.0",
+          "minimum_free_gib": 18,
+          "repository": "google/madlad400-3b-mt",
+          "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+        }
+      ],
+      "summary": [
+        {
+          "approved": 0,
+          "conversion_seconds": 74.96400251099999,
+          "counts": {
+            "legacy": 348,
+            "model": 348,
+            "reviewed_memory_hits": 136
+          },
+          "engine": "madlad",
+          "peak_rss_kib": 3758244,
+          "scope": "full",
+          "total_seconds": 800.95932365
+        }
+      ],
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0,
+      "actual_python_test_lines": [
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T05:36:59.7598826Z Ran 91 tests in 51.244s",
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T05:36:59.7599164Z OK"
+      ],
+      "collected_at_utc": "2026-10-23T05:51:16.118803+00:00"
+    },
+    {
+      "inference_policy": "context-v15",
+      "run_id": 39905785741,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741",
+      "source_commit": "a591e4bb7f92eaeae85bc762d7e6254b88b6ae33",
+      "created_at": "2026-10-23T05:26:42Z",
+      "status_at_recording": "in_progress",
+      "policy": "context-v15",
+      "scope": "references",
+      "locales": [
+        "es",
+        "nb-NO"
+      ],
+      "engine": "madlad",
+      "recover_before_relaunch": true,
+      "approved_locales": [],
+      "job_id": 120257322574,
+      "conclusion": "success",
+      "checkpoint_before": 0,
+      "checkpoint_after": 160,
+      "new_records": 160,
+      "checkpoint_sha256_at_collection": "851c28bac65c1a35af85f4e0fcf3cf73c6fd2618838b29d6fef356fe2b63e856",
+      "log_sha256": "d5ce5b7f7fc10443708f032cc42c65606afe9c222b6d59558e10fc1774f90eb8",
+      "models": [
+        {
+          "converted_sha256": {
+            "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+            "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+            "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+          },
+          "engine": "madlad",
+          "license": "Apache-2.0",
+          "minimum_free_gib": 18,
+          "repository": "google/madlad400-3b-mt",
+          "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+        }
+      ],
+      "summary": [
+        {
+          "approved": 0,
+          "conversion_seconds": 84.73881013599998,
+          "counts": {
+            "legacy": 80,
+            "model": 80,
+            "reviewed_memory_hits": 21
+          },
+          "engine": "madlad",
+          "peak_rss_kib": 3692920,
+          "scope": "references",
+          "total_seconds": 245.660993346
+        }
+      ],
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0,
+      "actual_python_test_lines": [
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T05:28:27.6067675Z Ran 91 tests in 52.028s",
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T05:28:27.6068219Z OK"
+      ],
+      "collected_at_utc": "2026-10-23T05:33:35.951123+00:00"
+    },
+    {
+      "inference_policy": "context-v16",
+      "schema_version": 1,
+      "run_id": 39939504317,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317",
+      "source_commit": "11b047f31e8ebad184d9be91facea1fb0f7ca701",
+      "policy": "context-v16",
+      "engine": "madlad",
+      "scope": "references",
+      "locales": [
+        "ko"
+      ],
+      "status_at_capture": "in_progress",
+      "started_at": "2026-10-23T10:29:48Z",
+      "dispatches": 1,
+      "complete": true,
+      "model_inference_local": false,
+      "job_id": 120367192051,
+      "conclusion": "success",
+      "checkpoint_before": 0,
+      "checkpoint_after": 67,
+      "new_records": 67,
+      "checkpoint_sha256_at_collection": "38f39e96db0cdb0b5e49c87dded586be23c530385652e81010862eedc9d1aa87",
+      "log_sha256": "aca6b86512f194f0e9f59243b56853bd4d374fa97546b53c811c42ee992d9d26",
+      "models": [
+        {
+          "converted_sha256": {
+            "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+            "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+            "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+          },
+          "engine": "madlad",
+          "license": "Apache-2.0",
+          "minimum_free_gib": 18,
+          "repository": "google/madlad400-3b-mt",
+          "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+        }
+      ],
+      "model_hashes_same_v15": true,
+      "summary": [
+        {
+          "approved": 0,
+          "conversion_seconds": 92.08653897599999,
+          "counts": {
+            "legacy": 27,
+            "model": 40
+          },
+          "engine": "madlad",
+          "peak_rss_kib": 3726876,
+          "scope": "references",
+          "total_seconds": 195.80049130099997
+        }
+      ],
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0,
+      "actual_python_test_lines": [
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T10:31:34.8400680Z Ran 103 tests in 57.492s",
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T10:31:34.8401044Z OK"
+      ],
+      "collected_at_utc": "2026-10-23T10:35:15.275034+00:00",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out pilot source without persistent credentials",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restrict model storage to this disposable runner",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install pinned CPU-only translation dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check pilot contracts and extract the real three-tool corpus",
+          "conclusion": "success"
+        },
+        {
+          "name": "Translate, back-translate and checkpoint machine drafts in logs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Remove job-owned model downloads and caches",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out pilot source without persistent credentials",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "inference_policy": "context-v17",
+      "scope": "references",
+      "run_id": 39944893447,
+      "job_id": 120385024521,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 91.389294377,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 10
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3726180,
+        "scope": "references",
+        "total_seconds": 179.99029507799997
+      }
+    },
+    {
+      "inference_policy": "context-v17",
+      "scope": "full",
+      "run_id": 39946160052,
+      "job_id": 120389229630,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 81.93110841700002,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 1
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3830856,
+        "scope": "full",
+        "total_seconds": 524.207774213
+      }
+    },
+    {
+      "inference_policy": "context-v18",
+      "scope": "references",
+      "run_id": 39979681259,
+      "job_id": 120503377409,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 139.770715935,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 10
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3689100,
+        "scope": "references",
+        "total_seconds": 223.92063608
+      }
+    },
+    {
+      "inference_policy": "context-v18",
+      "scope": "full",
+      "run_id": 39980833943,
+      "job_id": 120507376183,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 89.75740484100001,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 38
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3796012,
+        "scope": "full",
+        "total_seconds": 489.9104213019999
+      }
+    },
+    {
+      "inference_policy": "context-v19",
+      "run_id": 40048103975,
+      "job_id": 120734329923,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 103.954422573,
+        "counts": {
+          "legacy": 27,
+          "model": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3634236,
+        "scope": "references",
+        "total_seconds": 141.49319240200003
+      }
+    },
+    {
+      "inference_policy": "context-v20",
+      "run_id": 40050138164,
+      "job_id": 120740764642,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 116.31300386799998,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 7
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3627108,
+        "scope": "references",
+        "total_seconds": 151.995413286
+      }
+    },
+    {
+      "inference_policy": "context-v20",
+      "run_id": 40050727169,
+      "job_id": 120742572308,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 73.98672156499998,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 1
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3698944,
+        "scope": "full",
+        "total_seconds": 428.90846288200004
+      }
+    },
+    {
+      "inference_policy": "context-v21",
+      "run_id": 40069534310,
+      "job_id": 120799776381,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 70.23033668200003,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 7
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3602668,
+        "scope": "references",
+        "total_seconds": 147.327394399
+      }
+    },
+    {
+      "inference_policy": "context-v21",
+      "run_id": 40070361820,
+      "job_id": 120802286636,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 122.35192925300001,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 51
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3712364,
+        "scope": "full",
+        "total_seconds": 327.57778905500004
+      }
+    },
+    {
+      "inference_policy": "context-v22",
+      "run_id": 40089099175,
+      "job_id": 120857929437,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 124.90344556399998,
+        "counts": {
+          "legacy": 27,
+          "model": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7538964,
+        "scope": "references",
+        "total_seconds": 197.19286932
+      }
+    },
+    {
+      "inference_policy": "context-v23",
+      "run_id": 40109970196,
+      "job_id": 120919453491,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 92.16884313599999,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3699860,
+        "scope": "references",
+        "total_seconds": 171.884367842
+      }
+    },
+    {
+      "inference_policy": "context-v24",
+      "run_id": 40113864520,
+      "job_id": 120930984785,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 90.662641692,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3717060,
+        "scope": "references",
+        "total_seconds": 178.332040067
+      }
+    },
+    {
+      "inference_policy": "context-v24",
+      "run_id": 40114620348,
+      "job_id": 120933237363,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 132.74806263200003,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 2
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7654404,
+        "scope": "full",
+        "total_seconds": 421.774571721
+      }
+    },
+    {
+      "inference_policy": "context-v25",
+      "run_id": 40151851906,
+      "job_id": 121044845475,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 89.88914405599996,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3719624,
+        "scope": "references",
+        "total_seconds": 173.85266004699997
+      }
+    },
+    {
+      "inference_policy": "context-v25",
+      "run_id": 40153243412,
+      "job_id": 121049018187,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 155.525765557,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 53
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 4042868,
+        "scope": "full",
+        "total_seconds": 399.746755571
+      }
+    },
+    {
+      "inference_policy": "context-v26",
+      "run_id": 40190935942,
+      "job_id": 121161604348,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 114.022995272,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3715688,
+        "scope": "references",
+        "total_seconds": 164.06721429199996
+      }
+    },
+    {
+      "inference_policy": "context-v27",
+      "run_id": 40196684338,
+      "job_id": 121178914764,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 204.50083292300008,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3793228,
+        "scope": "references",
+        "total_seconds": 250.831978789
+      }
+    },
+    {
+      "inference_policy": "context-v27",
+      "run_id": 40198168513,
+      "job_id": 121183436569,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 88.06615186699992,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 4089660,
+        "scope": "full",
+        "total_seconds": 335.46055118000004
+      }
+    },
+    {
+      "inference_policy": "context-v28",
+      "scope": "reference",
+      "run_id": 40251753561,
+      "job_id": 121344981342,
+      "conclusion": "success",
+      "source_commit": "199dd74b02a686d90c8085e71affef9e482928f1",
+      "locales": [
+        "bn"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 125.29197060900003,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3686408,
+        "scope": "references",
+        "total_seconds": 165.40705231200002
+      },
+      "cleanup": "success",
+      "records": 67,
+      "evidence": "run-context-v28-reference.json"
+    },
+    {
+      "inference_policy": "context-v28",
+      "scope": "full",
+      "run_id": 40253948985,
+      "job_id": 121351660897,
+      "conclusion": "success",
+      "source_commit": "ff5d27d682b7015512300824a26a516817867609",
+      "locales": [
+        "bn"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 120.85769708499993,
+        "counts": {
+          "legacy": 92,
+          "model": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 4098932,
+        "scope": "full",
+        "total_seconds": 351.148751447
+      },
+      "cleanup": "success",
+      "records": 266,
+      "evidence": "run-context-v28-full.json"
+    },
+    {
+      "inference_policy": "context-v29",
+      "scope": "reference",
+      "run_id": 40282144871,
+      "job_id": 121437596345,
+      "conclusion": "success",
+      "source_commit": "528cee0d0255a468d84142240b664e298baea702",
+      "locales": [
+        "bn"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 94.26244492399996,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3659556,
+        "scope": "references",
+        "total_seconds": 140.754938434
+      },
+      "cleanup": "success",
+      "records": 67,
+      "evidence": "run-context-v29-reference.json"
+    },
+    {
+      "inference_policy": "context-v29",
+      "scope": "full",
+      "run_id": 40286109390,
+      "job_id": 121450055131,
+      "conclusion": "success",
+      "source_commit": "6b63bd84263872bb07da1f5ba8b3ad4e36fd657a",
+      "locales": [
+        "bn"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 99.420387087,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 4138028,
+        "scope": "full",
+        "total_seconds": 353.63665031300013
+      },
+      "cleanup": "success",
+      "records": 266,
+      "evidence": "run-context-v29-full.json"
+    },
+    {
+      "inference_policy": "context-v30",
+      "scope": "reference",
+      "run_id": 40314553754,
+      "job_id": 121543771011,
+      "conclusion": "success",
+      "source_commit": "1edc9d6479b20f7f733ae05773a6475319061ea6",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 92.12490365100001,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3652448,
+        "scope": "references",
+        "total_seconds": 137.967692289
+      },
+      "cleanup": "success",
+      "records": 67,
+      "evidence": "run-context-v30-reference.json"
+    },
+    {
+      "inference_policy": "context-v30",
+      "scope": "full",
+      "run_id": 40316656982,
+      "job_id": 121550842346,
+      "conclusion": "success",
+      "source_commit": "e3b9ee10ac92e9bf0c9a0d26daf6c66b1debd5e9",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 92.33942727800002,
+        "counts": {
+          "legacy": 92,
+          "model": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3809300,
+        "scope": "full",
+        "total_seconds": 471.928215154
+      },
+      "cleanup": "success",
+      "records": 266,
+      "evidence": "run-context-v30-full.json"
+    },
+    {
+      "inference_policy": "context-v31",
+      "scope": "references",
+      "run_id": 40466449927,
+      "job_id": 122062908874,
+      "conclusion": "success",
+      "source_commit": "dc520c57f709c0d0b3ab69c59dbb53372912eb00",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 75.84576787099999,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3705808,
+        "scope": "references",
+        "total_seconds": 122.58761004299998
+      },
+      "cleanup": "success",
+      "records": 67,
+      "evidence": "run-context-v31-references.json"
+    },
+    {
+      "inference_policy": "context-v31",
+      "scope": "full",
+      "run_id": 40467626526,
+      "job_id": 122066766492,
+      "conclusion": "success",
+      "source_commit": "a3ce9aea00f29068726998b8323261f04dbf9f40",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 110.368378739,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 7411496,
+        "scope": "full",
+        "total_seconds": 266.73019307199996
+      },
+      "cleanup": "success",
+      "records": 266,
+      "evidence": "run-context-v31-full.json"
+    },
+    {
+      "schema_version": 1,
+      "inference_policy": "context-v32",
+      "scope": "references",
+      "run_id": 40477109792,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40477109792",
+      "job_id": 122097955175,
+      "conclusion": "success",
+      "source_commit": "104881fbd2a0b4309c088d90526b67fbc18cfb98",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 128.218305141,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3707120,
+        "scope": "references",
+        "total_seconds": 178.14008599599998
+      },
+      "cleanup": "success",
+      "records": 67,
+      "artifacts": 0,
+      "site_and_publications": "skipped",
+      "frozen_runtime_sha256": {
+        "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+        "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+        "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+        "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+        "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+        "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+        "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+        "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+        "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+        "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+        "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+        "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+        "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1",
+        "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+        "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+        "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+        "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+        "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+        "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+      },
+      "log_sha256": "015821516f9b45fc9ef7869b8b24f4dc89411b1554d9953b86622dcb2db2be3a",
+      "checkpoint_sha256": "376313ff37151a558b0e8ac692476c03a66495a884c6d287cc2aab97580a0417",
+      "approved_locales": [],
+      "native_review": false,
+      "python_precheck": {
+        "tests": 16,
+        "seconds": 29.935
+      }
+    },
+    {
+      "schema_version": 1,
+      "inference_policy": "context-v32",
+      "scope": "full",
+      "run_id": 40478376896,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40478376896",
+      "job_id": 122102175834,
+      "conclusion": "success",
+      "source_commit": "40131d96b0cb2c0bfa275501e874251d12f92aa2",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 123.07675809399998,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3833048,
+        "scope": "full",
+        "total_seconds": 236.70203715
+      },
+      "cleanup": "success",
+      "records": 266,
+      "artifacts": 0,
+      "site_and_publications": "skipped",
+      "frozen_runtime_sha256": {
+        "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+        "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+        "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+        "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+        "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+        "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+        "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+        "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+        "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+        "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+        "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+        "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+        "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1",
+        "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+        "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+        "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+        "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+        "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+        "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+      },
+      "log_sha256": "2f16fd76c7e8a90b04df634cc64d80a1a89fa8a21a4e33cb680bcc4b7ad651d8",
+      "checkpoint_sha256": "61bd8aac556cbbd818633e2276fa8b16e62ab204089b6a32f3137b9b6aef39df",
+      "approved_locales": [],
+      "native_review": false,
+      "python_precheck": {
+        "tests": 16,
+        "seconds": 18.119
+      }
+    },
+    {
+      "schema_version": 1,
+      "inference_policy": "context-v33",
+      "scope": "references",
+      "run_id": 40480964445,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40480964445",
+      "job_id": 122110868524,
+      "conclusion": "success",
+      "source_commit": "517d93726eb28e4c47d4f8d322e93e7db2721420",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 169.07462630699996,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 40
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3685376,
+        "scope": "references",
+        "total_seconds": 219.349440652
+      },
+      "cleanup": "success",
+      "records": 67,
+      "artifacts": 0,
+      "site_and_publications": "skipped",
+      "frozen_runtime_sha256": {
+        "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+        "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+        "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+        "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+        "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+        "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+        "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+        "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+        "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+        "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+        "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+        "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+        "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1",
+        "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+        "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+        "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+        "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+        "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+        "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "scripts/localization/translation-pilot-v32.py": "e850fd65b0b8b7d6da21f0b7fc8c536fd75d248ce632b49eed1b2c31006b73a8",
+        "scripts/localization/pilot-russian-v32.py": "b6b944825cb014fae2c3056cc31d6da2d78ca0e86fd4550250a6db3b867dd924",
+        "scripts/localization/pilot-russian-repaired-corpus-policy.json": "cb4833257255a413ac4b5cf1ce7111df0f01a4c39221bb9950d054c42128569c",
+        "docs/quality/translation-pilot/reviewed-memory-v32-import.json": "abfb2bbcd84b54004a4c799240eeba38f39f987a05f81da36689d0beaf60ba9e",
+        "docs/quality/translation-pilot/corrections-v32.json": "c93ae3179c103c24cf4c4527be1ba060d43e577a8f1a0c8888ded7ee316132ff",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/manifest.json": "e6fa11c36118af1bff93ec183851ceae5a48c8b457f8e94029fc81d4f42ea7a4",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+      },
+      "log_sha256": "fa4c09c140f934e670cafb99fda595bc4c7c53adfd66e65cc2cffc0de51f4441",
+      "checkpoint_sha256": "934662941822bfeb8d301b038697816ed1e317d5e395268acc218cc7674247cb",
+      "approved_locales": [],
+      "native_review": false,
+      "python_precheck": {
+        "tests": 16,
+        "seconds": 30.839
+      }
+    },
+    {
+      "schema_version": 1,
+      "inference_policy": "context-v33",
+      "scope": "full",
+      "run_id": 40502016693,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40502016693",
+      "job_id": 122181783955,
+      "conclusion": "success",
+      "source_commit": "58332f985efc4c7b33da4d404c84ebb0df80539b",
+      "locales": [
+        "ru"
+      ],
+      "engine": "madlad",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 69.75042366100001,
+        "counts": {
+          "legacy": 92,
+          "model": 174,
+          "reviewed_memory_hits": 174
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3739000,
+        "scope": "full",
+        "total_seconds": 304.801065011
+      },
+      "cleanup": "success",
+      "records": 266,
+      "artifacts": 0,
+      "site_and_publications": "skipped",
+      "frozen_runtime_sha256": {
+        "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+        "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+        "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+        "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+        "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+        "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf",
+        "scripts/localization/translation-pilot-v29.py": "48f787f309c992ef5c2650cd927c5724b04c4e97b8b76ad4f8f05a7e16ef29d4",
+        "scripts/localization/pilot-bengali-v29.py": "c8c780643e5b03f50e34e4991f97fd1f54dd23fca7788e5b77914ab38b505a20",
+        "scripts/localization/pilot-bengali-known-corpus-policy.json": "a3a77406e42780d2374e45b43effe3fa8cfd140058e9f39cd1b903bcbaa7f5cc",
+        "docs/quality/translation-pilot/reviewed-memory-v29-import.json": "88357dd6ba4289058b748d6eb80c3c533d6123b13f96876ffe8d05c0bd7f7c33",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/bound-readings.json": "d531f82a9f1fb1f9f1005fe76e1c7c9648514cd49023a864e8fe82798d3a849f",
+        "docs/quality/translation-pilot/numeric-sources/context-v29/manifest.json": "22369cbc577bc4479bf49866f81b8b6b9db04ca122fe34b986c20fd532f9bfec",
+        "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+        "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+        "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+        "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1",
+        "scripts/localization/translation-pilot-v31.py": "2bce1b1d022948850e56b260be9b1b9f0c38a2c1827ef8b845259f9e66087c2b",
+        "scripts/localization/pilot-russian-v31.py": "03cad8fb2369d9c1189f774f49c5d85e5b27fa916227be1c330f76876fd50433",
+        "scripts/localization/pilot-english-memo-v31.py": "68683cb2672d4bba77817a7e7a1698b1d59921a93a562322c96c64c47f89128c",
+        "scripts/localization/pilot-russian-known-corpus-policy.json": "99202c537c290733ed7c0392711f5df755d11f73bfc3df1b7d7f86bf9d64d60a",
+        "docs/quality/translation-pilot/reviewed-memory-v31-import.json": "b11ff3c7f7598e001aa5e9a6f75f9f952e2fc4c8ca65a094e91219551744dbb8",
+        "docs/quality/translation-pilot/corrections-v31.json": "78e341870a15bfd595f657379e8ec8521e3fead7e0f0044fcc255bd9b7f90b00",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/manifest.json": "611343d91d8ed86823da563cfa02be9cd8a8f195f6c49fc75d5361d282488227",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v31/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+        "scripts/localization/translation-pilot-v32.py": "e850fd65b0b8b7d6da21f0b7fc8c536fd75d248ce632b49eed1b2c31006b73a8",
+        "scripts/localization/pilot-russian-v32.py": "b6b944825cb014fae2c3056cc31d6da2d78ca0e86fd4550250a6db3b867dd924",
+        "scripts/localization/pilot-russian-repaired-corpus-policy.json": "cb4833257255a413ac4b5cf1ce7111df0f01a4c39221bb9950d054c42128569c",
+        "docs/quality/translation-pilot/reviewed-memory-v32-import.json": "abfb2bbcd84b54004a4c799240eeba38f39f987a05f81da36689d0beaf60ba9e",
+        "docs/quality/translation-pilot/corrections-v32.json": "c93ae3179c103c24cf4c4527be1ba060d43e577a8f1a0c8888ded7ee316132ff",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/manifest.json": "e6fa11c36118af1bff93ec183851ceae5a48c8b457f8e94029fc81d4f42ea7a4",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+        "docs/quality/translation-pilot/numeric-sources/context-v32/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd"
+      },
+      "log_sha256": "8ca30aecf331bd4f39e4f5d37b026fe5d144553eef79561fa2383802dd6f3bf1",
+      "checkpoint_sha256": "cbc403f83b5677231f36015f45fe7efbf00661cd2119097eada3429c8b44b694",
+      "approved_locales": [],
+      "native_review": false,
+      "python_precheck": {
+        "tests": 16,
+        "seconds": 31.988
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "checkpoints/context-v10/madlad.jsonl",
+      "records": 160,
+      "sha256": "1168e6230168b532b0b9b0974fa5222948248bafdebeb27952971cbb87427c19"
+    },
+    {
+      "path": "checkpoints/context-v11/madlad.jsonl",
+      "records": 856,
+      "sha256": "9fdb2df8a76f0d3327d5ebc54a41cf1edd4a399792f14e93e495c2b24b0e66e1"
+    },
+    {
+      "path": "checkpoints/context-v12/madlad.jsonl",
+      "records": 856,
+      "sha256": "1482ef42bc4f37929ad4702ebeb32baa9da66dac4cc3b9c7bc742c38c7f39743"
+    },
+    {
+      "path": "checkpoints/context-v13/madlad.jsonl",
+      "records": 856,
+      "sha256": "81b848f393680344c10715142236ccc819b0209f91e5009cfc8b645de739bbfa"
+    },
+    {
+      "path": "checkpoints/context-v14/madlad.jsonl",
+      "records": 856,
+      "sha256": "2abfed40e0b3a79e2113b6664a7b6968e0878b10265efacd5710c833e9f5fb50"
+    },
+    {
+      "path": "checkpoints/context-v15/madlad.jsonl",
+      "records": 856,
+      "sha256": "098fb29f8380b896d242aacf45f7e5dc6a7eeb5c241c0ae8fbffdf1a4476a65e"
+    },
+    {
+      "path": "checkpoints/context-v16/madlad.jsonl",
+      "records": 67,
+      "sha256": "38f39e96db0cdb0b5e49c87dded586be23c530385652e81010862eedc9d1aa87"
+    },
+    {
+      "path": "checkpoints/context-v17/madlad.jsonl",
+      "records": 333,
+      "sha256": "c2a665c9a4af95b02c858bc882c43eb72b7c67ff864bc339709573593e07abca"
+    },
+    {
+      "path": "checkpoints/context-v18/madlad.jsonl",
+      "records": 333,
+      "sha256": "efac89b4a58f1cd2d09adc2a1b490b50e1592036843d3ea312367346aceb5da9"
+    },
+    {
+      "path": "checkpoints/context-v19/madlad.jsonl",
+      "records": 67,
+      "sha256": "c805435228e6cf0bf8d72fd00ae2eec7b8a93cfcf34b5f165476bb2fc71afa0e"
+    },
+    {
+      "path": "checkpoints/context-v2/m2m100.jsonl",
+      "records": 160,
+      "sha256": "a7b345ca4dc937a294d7313390dfd33cb659de7dad804593e5fc00467790ef51"
+    },
+    {
+      "path": "checkpoints/context-v2/madlad.jsonl",
+      "records": 160,
+      "sha256": "21f4ceb56c59470eefb202f7329d8ab7f69d7733c5007102800b40057ff0a834"
+    },
+    {
+      "path": "checkpoints/context-v20/madlad.jsonl",
+      "records": 333,
+      "sha256": "71906835000cb289c004fc92f2607cf1a68c4a8b8d12aec931dbda9cd2c174c9"
+    },
+    {
+      "path": "checkpoints/context-v21/madlad.jsonl",
+      "records": 333,
+      "sha256": "241ced9fda24e6d9d1c326fb2d3a00374aba2836794b31fa25fa6810b83f9844"
+    },
+    {
+      "path": "checkpoints/context-v22/madlad.jsonl",
+      "records": 67,
+      "sha256": "e0cd3f66e4a96f22d40e7fa2ff40b6f6229f1694f449410d34b0ba6500c34d06"
+    },
+    {
+      "path": "checkpoints/context-v23/madlad.jsonl",
+      "records": 67,
+      "sha256": "d3490ab26890d055ef54a4e50b8eb2e50cfee6b2ac8cc65f7be4c2251ced85fb"
+    },
+    {
+      "path": "checkpoints/context-v24/madlad.jsonl",
+      "records": 333,
+      "sha256": "5bb6591263a49a2946f14176555f50bda2d3aeb2af610e3d32b96bdb6001077c"
+    },
+    {
+      "path": "checkpoints/context-v25/madlad.jsonl",
+      "records": 333,
+      "sha256": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3"
+    },
+    {
+      "path": "checkpoints/context-v26/madlad.jsonl",
+      "records": 67,
+      "sha256": "9b559280228d19f4f4f539e02998844b59d3e19a0bab80e331ecdac393a5a503"
+    },
+    {
+      "path": "checkpoints/context-v27/madlad.jsonl",
+      "records": 333,
+      "sha256": "3fe10a3e3d4fc051feff6f3c6c4aa865890d12b463975cbe116851ad636188cb"
+    },
+    {
+      "path": "checkpoints/context-v28/madlad.jsonl",
+      "records": 333,
+      "sha256": "b1c31ed81356c321acacbfb32e05b8743a966899021ce3f0486928ce7edf9d1c"
+    },
+    {
+      "path": "checkpoints/context-v29/madlad.jsonl",
+      "records": 333,
+      "sha256": "fdc1927ec634cf4f663215d77f4482b0a8903b4d707032e7ee5820f47cc66e19"
+    },
+    {
+      "path": "checkpoints/context-v3/madlad.jsonl",
+      "records": 160,
+      "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
+    },
+    {
+      "path": "checkpoints/context-v30/madlad.jsonl",
+      "records": 333,
+      "sha256": "d86812e0a2cfb0ca83ffb43a501626387b9194c18331578f5ce97fd2eceba903"
+    },
+    {
+      "path": "checkpoints/context-v31/madlad.jsonl",
+      "records": 333,
+      "sha256": "51c4121b17fabf85a7e9157dedea06e101de5100d1b09dfa1c55d50d0c711b77"
+    },
+    {
+      "path": "checkpoints/context-v32/madlad.jsonl",
+      "records": 333,
+      "sha256": "61bd8aac556cbbd818633e2276fa8b16e62ab204089b6a32f3137b9b6aef39df"
+    },
+    {
+      "path": "checkpoints/context-v33/madlad.jsonl",
+      "records": 333,
+      "sha256": "cbc403f83b5677231f36015f45fe7efbf00661cd2119097eada3429c8b44b694"
+    },
+    {
+      "path": "checkpoints/context-v4/madlad.jsonl",
+      "records": 856,
+      "sha256": "8a79e3d62b322ed1b5b51e056127c234883abd06b1323df5cf514c4ed1568fec"
+    },
+    {
+      "path": "checkpoints/context-v5/madlad.jsonl",
+      "records": 160,
+      "sha256": "c1be917da805bc3ff4a7e6bbef21bcbccf1a79af5a838b5941001ba3e24a60e4"
+    },
+    {
+      "path": "checkpoints/context-v6/madlad.jsonl",
+      "records": 856,
+      "sha256": "69c86192b1f0e6da85919e9625df566674597f797465a9c4eb4dcbdbfc6efd98"
+    },
+    {
+      "path": "checkpoints/context-v7/madlad.jsonl",
+      "records": 160,
+      "sha256": "033690f3aced231f88b55cab1ea14a50b251d3a46a727a83934ddef351a9a326"
+    },
+    {
+      "path": "checkpoints/context-v8/madlad.jsonl",
+      "records": 160,
+      "sha256": "2774ad36397f32119a037c5e6eefc1ae5844eb0de6517a1d5cc83b6ff4449c9c"
+    },
+    {
+      "path": "checkpoints/context-v9/madlad.jsonl",
+      "records": 856,
+      "sha256": "5844a6d0b163089d4d7974c1035179e8199efac3de0eb5c84fd9041134a80dcf"
+    },
+    {
+      "path": "checkpoints/m2m100.jsonl",
+      "records": 2371,
+      "sha256": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a"
+    },
+    {
+      "path": "checkpoints/madlad.jsonl",
+      "records": 2438,
+      "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
+    }
+  ],
+  "total_records": 17441,
+  "cancelled_runs": [
+    {
+      "run_id": 39484416039,
+      "job_id": 118841008325,
+      "source_commit": "f0aa420b0fc483f547f1ae0be54e6a9a4c29579e",
+      "conclusion": "cancelled",
+      "reason": "Gate de referencias v7 retirado: avisos heredados de respuesta negativa explícita en FAQ de subida de grabación no estaban resueltos. No usar el completo para aprobar idiomas.",
+      "partial_records_in_log": 0,
+      "cleanup_step": "success",
+      "at_utc": "2026-10-20T19:35:59.933691+00:00",
+      "approved_locales": []
+    },
+    {
+      "inference_policy": "context-v10",
+      "run_id": 39623097623,
+      "job_id": 119301352634,
+      "source_commit": "6d99ba9bc9db595d7db91e4594e91465d1d5d6ea",
+      "conclusion": "cancelled",
+      "reason": "Pre-measurement audit found Unicode-minus and unparsed-digit bypass; cancelled during preparation/conversion before records. No results accepted. Replaced by 39623344071 from 7c4cc21.",
+      "emitted_records": 0,
+      "converted_model_records": 0,
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T15:10:41Z",
+        "completed_at": "2026-10-21T15:10:41Z"
+      },
+      "log_sha256": "281f24232dec26e4ff5310f9592caefe0b4c51a71e8ecc4ac1fd20d098bf45be"
+    },
+    {
+      "run_id": 40250574315,
+      "source_commit": "f9a40ae550d237e4bd3b5899c8f7013bdfac39fb",
+      "conclusion": "cancelled",
+      "reason": "Separate historical data validity from future semantic findings before freezing the first actual references",
+      "partial_records_in_log": 0,
+      "cleanup_step": "success",
+      "at_utc": "2026-10-26T00:54:15.655222+00:00",
+      "approved_locales": []
+    }
+  ],
+  "interrupted_runs": [
+    {
+      "inference_policy": "context-v10",
+      "run_id": 39623344071,
+      "job_id": 119302197888,
+      "source_commit": "7c4cc217eff820115d921d1d60b485147c670a19",
+      "conclusion": "failure",
+      "reason": "Digit coverage validator omitted already protected technical MP3; aborted before emitting decodeFailed row. 29 complete records recovered unchanged; no full gate. Correct validator recognition/preflight, not model input or inference.",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "emitted_records": 29,
+      "checkpoint_sha256_at_recovery": "dd1f9aeb03fc9c14e8dd77ce2eb2c4210c6bccb00b4fc32771678e1cbc7dc06b",
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T15:14:40Z",
+        "completed_at": "2026-10-21T15:14:41Z"
+      },
+      "log_sha256": "ff42e447277dec6079c1121397dd97978763ee59cd3f363c930df0d548b77b39",
+      "summary_emitted": false,
+      "timing": "No complete timing summary; do not invent whole-run figures."
+    }
+  ],
+  "failed_preinference_runs": [
+    {
+      "policy": "context-v21",
+      "run_id": 40069125442,
+      "conclusion": "failure",
+      "inference_started": false,
+      "new_records": 0,
+      "cleanup": "success",
+      "reason": "New AST-guard portability regression fixed before retry; source and evidence retained in run-context-v21-references-initial-failed.json."
+    },
+    {
+      "policy": "context-v23",
+      "run_id": 40108791297,
+      "conclusion": "failure",
+      "inference_started": false,
+      "new_records": 0,
+      "cleanup": "success",
+      "reason": "Host Unicode Numeric_Value mismatch for 两/兩 caught by two negative tests; pinned Unicode17 table plus permanent simulation tests before retry. Original source and failed run receipt retained."
+    },
+    {
+      "inference_policy": "context-v25",
+      "run_id": 40152812589,
+      "job_id": 121047714724,
+      "source_commit": "42be2fa0b790dea43e9b048e21a9938b1de5eca7",
+      "conclusion": "failure",
+      "emitted_records": 0,
+      "converted_model_records": 0,
+      "reason": "230 tests detected stale checkpoint inventory and automatic-summary after adding the 67 reference rows. No inference/model conversion executed. Fix metadata and run full green suite before new dispatch.",
+      "cleanup_step": "success",
+      "log_sha256": "a906b28e16ba5eab0f692f846e359101f1ac62d20c4040b4e1b85e9305d2d2dc"
+    }
+  ]
+}

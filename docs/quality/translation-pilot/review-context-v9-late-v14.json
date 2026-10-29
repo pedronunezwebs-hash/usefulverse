@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "expected_rows": 1,
+  "inference_policy": "context-v9",
+  "reviewer": "Codex (agente)",
+  "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "One previously unreviewed historical forward row discovered by v14 fixture; not a replacement or new gate.",
+  "decision": "historical-negative-evidence-only",
+  "approved_locales": [],
+  "rows": [
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.device",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "candidate": "madlad-historical-extra-review",
+      "translation_hash": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+      "record_ids": [
+        "a1b60956ba636c0bc5290c829a01028206e3e8bf2cf8d43c8b139f8e8605f82d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Procesamiento más suave es un calco táctil de smoother en rendimiento; corresponde más fluido. Significado, datos y negaciones conservados, defecto leve de naturalidad. Fuente/ida/vuelta histórica exactas releídas independientemente."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review"
+    }
+  ],
+  "back_findings": [],
+  "warning_reconciliation": [
+    {
+      "record_id": "a1b60956ba636c0bc5290c829a01028206e3e8bf2cf8d43c8b139f8e8605f82d",
+      "translation_hash": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+      "back_translation_hash": "fdfd5a01fc3bd740c2141593cb22b499963458c30120967851686669e0cea5c2",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Procesamiento más suave es un calco táctil de smoother en rendimiento; corresponde más fluido. Significado, datos y negaciones conservados, defecto leve de naturalidad. Fuente/ida/vuelta histórica exactas releídas independientemente."
+        }
+      }
+    }
+  ],
+  "requires_complete_model_warning_coverage": false
+}

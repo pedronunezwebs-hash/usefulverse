@@ -1,0 +1,328 @@
+[
+  {
+    "review_file": "review-context-v9-references.json",
+    "review_digest": "aad2b9e0143f2dcbed0fafee710cc9a2b953c8f6efb1e3de665da5d169ec19d6",
+    "review_file_sha256": "c799759a9129dfe6d6919e9d5e00718dcc6d7d32f48b3430ccda4b0c8cb75f22",
+    "added_at_utc": "2026-10-21T15:19:27.953455+00:00",
+    "reason": "Previously unnoticed back ambiguity, observed in v10. Historical review remains unchanged; every current warning still reconciled. No forward/gate override.",
+    "warning_reconciliation": [
+      {
+        "record_id": "c126212d8690975bfd635f499896d8c5d16a682650a742d5d6e5fecc29208c40",
+        "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+        "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v10: upload por loading en la vuelta; ida correcta. Se conserva íntegra la revisión v9, sin cambiar su rúbrica/gate."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v9-full.json",
+    "review_file_sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+    "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653",
+    "reviewed_at_utc": "2026-10-21T16:21:09.264894+00:00",
+    "reason": "V11 direct reading discovered old matching back defects; preserve original bytes and gate, add only exact hash-bound non-gating back resolutions.",
+    "warning_reconciliation": [
+      {
+        "record_id": "417f88207be18e3ca9ef00f8a350ceae708cf7a840c3b825bb5791daa070dada",
+        "translation_hash": "e6bcc08e8fa0be94c48a12faa6ab85e9e556f78a62783aa56a1b3ec6e2aabd6e",
+        "back_translation_hash": "43f149865fca04410c1b22d40c5f0311f789a593f449b81e582e04f9f86ad511",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Teams interpreta las capas CAD lag como equipos; ida correcta. Hallazgo posterior v11:rúbrica/gate/ida históricos intactos."
+          }
+        }
+      },
+      {
+        "record_id": "1eb6a20d4fa9d90b2d9743169cf44a10e49fcffefaf4d288a9776a213967139c",
+        "translation_hash": "63a65296c191baa640477bb70b185c45add62f95f9e8a10d6917f18e3e175c38",
+        "back_translation_hash": "eaaea5acccc95a008b4caa0db6ba633f0dc6795b9a79e13b383ffa8f673d2d1a",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Treatment usa el sentido médico en vez del procesamiento de audio; ida behandlingen válida en contexto. Hallazgo posterior v11:rúbrica/gate/ida históricos intactos."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v11-full.json",
+    "review_file_sha256": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa",
+    "review_digest": "1d1b0bcdc6609a368fc814211f0caf9e38fdd127a5984fecf15b95b880836951",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "3789d9003cc801bb71eaf1f1fed4c2f8296292dd406b9031811306ecc22e65b8",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "61400c945f143be781b93fb6697321fd62816550873918fa60fe5e39110ccd4e",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v12-full.json",
+    "review_file_sha256": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632",
+    "review_digest": "8fae13ba4b6c93e7e7a43328092655a4b6a4fc04303410f6c646734653fb9d7b",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "a02747e1b1852f6efeb6692b15ff9d13e0ac72aaed3f3e4f46075087e5b7eac5",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "f2d453d23fc47a28e0e7743928044a6370e4b0f61ec4956088c41924840e35e2",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v13-full.json",
+    "review_file_sha256": "de206636a5921a71480e334962342439565c136c105e2aadeb895d86c3410e32",
+    "review_digest": "b2ef06557ddad517edba7886261a72fc1af9ab2243c583ccbd751ef6aaf54cba",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "2f7e69fe482582093f5ae42f4545024d6c55df788fae8752321785c1c1238dda",
+        "translation_hash": "64fa0b3b79c2ecf535cd942217107d02142b373ed2e51dc263104147cfcceac7",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "87aba6b1a7094e471c7a6498ae2131f5ad9041c1579bb210726f8cd05696442b",
+        "translation_hash": "64fa0b3b79c2ecf535cd942217107d02142b373ed2e51dc263104147cfcceac7",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v9-full.json",
+    "review_file_sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+    "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "640821b9f2a94b88ee6c32db8294c1d3ba6a2f6e03c76551ec9d2cebb759814c",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "ae00c4d21325b178451e4e82a2dc673510e815da00d1ffd4ecf65d9b2aa72607",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v19-references.json",
+    "review_digest": "e76c5a9d06d3df0dab9ad1ccc203127108bc8aa0f16c6944afba5e54228546a2",
+    "review_file_sha256": "f30fa33a25bb307e0442f48af6b26e541d7280e773c4c7052e7daef3696f6693",
+    "added_at_utc": "2026-10-24T06:27:01.284479+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "0b9b1c8b6133dc3cd25380294bc7feeceeb907614bb4fc98d2e0a3a29db491a7",
+        "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+        "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v20-references.json",
+    "review_digest": "f3c49b395f5e937f0e847729c3ca3456db8cd5502842c95999969b972e72966b",
+    "review_file_sha256": "73d6ed152c407115c696f47c9e1d986b1d54a0e70696dabee1645f65a67e6b32",
+    "added_at_utc": "2026-10-24T06:27:01.466344+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "042475bdf438ed17e1a63112af2a30004f92a95e1069e0f89ab7359bddb832ac",
+        "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+        "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v20-full.json",
+    "review_digest": "b5485e82243cb91cd0166c5e32350a3498647fcf8e082efe212f130768feb4b1",
+    "review_file_sha256": "cafc8eba30f688cf821060c570f49e83bee6605e84d5826539594c6b57b10555",
+    "added_at_utc": "2026-10-24T06:41:29.173660+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "65e7646ae9099d06a635b4eee00f9e3b14901d2647ca34a01aa0852afd111c2d",
+        "translation_hash": "d7b3d14036070ad52a92b8c16a93392e9164a742d814ffbb1058d1d0ff9bbb26",
+        "back_translation_hash": "63b777ad677fad426bf590a8af51c107327999388e55c10b9d08889d79861453",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: La vuelta usa image/picture/images para el dibujo CAD. Pierde precisión técnica frente a drawing; gambar conserva dibujo en el contexto DXF. Imprecisión de vuelta independiente de la ida. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      },
+      {
+        "record_id": "ed9fac6734eea8a869be7fc69dd35dd1058425c62076c08d84cb3a0a4a97e082",
+        "translation_hash": "9af9eaad68fb7632dc628723d37908fff59cf504e3588d8bf6dbd883fb66c559",
+        "back_translation_hash": "0b285e096a70de5632963a995216288402906bf271fc541916fa382f12cb2194",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: La vuelta usa image/picture/images para el dibujo CAD. Pierde precisión técnica frente a drawing; gambar conserva dibujo en el contexto DXF. Imprecisión de vuelta independiente de la ida. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v24-full-legacy.json",
+    "review_digest": "242572466650fde0120d95a4a945243208387e764550396c5d10e7949ae656c0",
+    "review_file_sha256": "ea71fce4bdbc3d6261d1dc75d4eae9f106d2d352b02e767331df64cf7d8aab84",
+    "added_at_utc": "2026-10-25T16:56:09.045755+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "V27 confirms an exact duplicate historical back defect. Only non-gating back diagnostic added; original review/rubric/gate/policy/raw bytes preserved.",
+    "warning_reconciliation": [
+      {
+        "record_id": "4f0c2e10fec92b97416c4c796109773973bfe79e125f12f024b4376b9254a6c9",
+        "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+        "back_translation_hash": "6521f09df3b0e92567c341ad37ac401e5fb6b91064b26c20ebd3544025241138",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v25-full-legacy.json",
+    "review_digest": "27e44e40b231c328c8478d1a0fe6edd1da840d4d81b7b51a79cb242209eb345f",
+    "review_file_sha256": "b50d8fe3ece0a5d9fe9ab5f31f0c65be1286a5b7812aa893fe37cc069b885940",
+    "added_at_utc": "2026-10-25T16:56:09.052241+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "V27 confirms an exact duplicate historical back defect. Only non-gating back diagnostic added; original review/rubric/gate/policy/raw bytes preserved.",
+    "warning_reconciliation": [
+      {
+        "record_id": "a0963a9e7460e4e4a72b7f840c2516e38e2aa5962d4a61e10836b525b93e37a6",
+        "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+        "back_translation_hash": "6521f09df3b0e92567c341ad37ac401e5fb6b91064b26c20ebd3544025241138",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
+          }
+        }
+      }
+    ]
+  }
+]

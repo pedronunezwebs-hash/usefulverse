@@ -1,0 +1,110 @@
+{
+  "toolId": "timeline-maker",
+  "sourceCopy": {
+    "name": "Timeline Maker",
+    "title": "Timeline Maker Free | UsefulVerse",
+    "description": "Make an event timeline from dates and ranges. Sort events, zoom in, and download a free SVG or CSV locally.",
+    "intro": "Turn milestones or historical events into a clear, chronological timeline. Add a single date or a start and end date for each event.",
+    "howQuestion": "How do I make an event timeline?",
+    "howAnswer": "Add at least two named events and choose a start date for each. Add an end date for a duration or leave it blank for a single-day event. Create the timeline to sort events by date, adjust the zoom, and download SVG or CSV files.",
+    "privacyQuestion": "Are my timeline events uploaded?",
+    "privacyAnswer": "No. Names and dates are processed in this browser tab. The SVG and CSV are generated on your device; nothing is uploaded or saved automatically.",
+    "howTo": [
+      "Enter a short name and start date for each event. Add an end date when it spans multiple days.",
+      "Add at least two events, then create the timeline. Events are sorted by start date; the original order is kept for dates that tie.",
+      "Adjust the chart zoom or download an SVG image or CSV table for your own use."
+    ],
+    "example": {
+      "label": "Example: a project launch and a multi-day milestone."
+    },
+    "actions": {
+      "addEvent": "Add event",
+      "removeEvent": "Remove",
+      "example": "Load example",
+      "create": "Create timeline",
+      "downloadSvg": "Download SVG",
+      "downloadCsv": "Download CSV",
+      "reset": "Clear events",
+      "result": "Timeline results"
+    },
+    "fields": {
+      "eventName": "Event name",
+      "startDate": "Start date",
+      "endDate": "End date (optional)",
+      "eventLegend": "Event {number}",
+      "zoom": "Chart zoom",
+      "zoom75": "75%",
+      "zoom100": "100%",
+      "zoom150": "150%",
+      "zoom200": "200%",
+      "pointHint": "Leave the end date blank for a single-day event. Date ranges include both the start and end dates.",
+      "scopeNote": "This is an event timeline, not a task/dependency schedule or a source of historical facts. Enter dates you have checked.",
+      "privacyNote": "Your event names and dates stay in this tab. Nothing is uploaded or auto-saved. Exports are created locally.",
+      "empty": "Add at least two events to create a timeline.",
+      "totalEvents": "Events",
+      "dateRange": "Date range",
+      "tableName": "Event",
+      "tableStart": "Start",
+      "tableEnd": "End",
+      "chartLabel": "Timeline chart",
+      "tableLabel": "Timeline events in chronological order",
+      "sourceNote": "A timeline visualizes only the dates you enter. It does not verify event accuracy or infer missing dates."
+    },
+    "messages": {
+      "created": "Timeline created and sorted by date.",
+      "exampleLoaded": "Example events loaded. Edit them or create the timeline.",
+      "invalid": "Check event names and dates. A range must end on or after its start.",
+      "maximum": "The timeline is limited to 80 events.",
+      "removed": "Event removed.",
+      "added": "Event row added.",
+      "emptyExport": "Create a timeline before downloading.",
+      "exportedSvg": "SVG downloaded.",
+      "exportedCsv": "CSV downloaded.",
+      "exportUnavailable": "Your browser could not create the download.",
+      "cleared": "Timeline entries cleared."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can an event last more than one day?",
+        "answer": "Yes. Enter both a start and end date. The chart includes both endpoint dates; leave the end blank for a single-day event."
+      },
+      {
+        "question": "Does this timeline create task dependencies?",
+        "answer": "No. It shows dated events and ranges in chronological order. Use a project schedule tool for tasks, durations and dependencies."
+      },
+      {
+        "question": "Can I save or share the timeline?",
+        "answer": "Download an SVG for a scalable image or a CSV for the event table. The page does not upload or automatically save your event data."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": [
+        {
+          "name": "Project begins",
+          "start": "2025-04-01",
+          "end": ""
+        },
+        {
+          "name": "Design milestone",
+          "start": "2025-04-03",
+          "end": "2025-04-07"
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/timeline-maker/index.html",
+    "htmlSha256": "074bc4b804f9eec25f3255eeab881725aa01a68309468ddf47584715b3f8c50c",
+    "payloadSha256": "bc1ec0f3635a9645a2465e913d069abee3e8a3e8367abfb07f5f9e4ef7484379",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/timeline-maker.js",
+    "controllerSha256": "10c5d3308329a9af1bc2b4851b09d57cb0e8b0c2fa07f9a47168257b817471e8",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

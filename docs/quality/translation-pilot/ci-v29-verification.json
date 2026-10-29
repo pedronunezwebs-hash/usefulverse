@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T08:22:30.677569+00:00",
+  "run_id": 40289374472,
+  "run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40289374472",
+  "source": "66fc8069997e97d6c385ef690d501d7523d93597",
+  "conclusion": "success",
+  "node_tests": 3045,
+  "python_tests": 346,
+  "python_passed": 344,
+  "python_dependency_skips": 2,
+  "python_seconds": 932.653,
+  "parallel_inventory": {
+    "tests": 346,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "f1d7f31063eb83535e99467f0bb879a5634ffb128a035981d18b3ccc76a74fc1",
+    "workers": 4,
+    "seconds": 932.653
+  },
+  "worker_results": [
+    {
+      "worker": 0,
+      "exit": 0,
+      "tests": 87,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 1,
+      "exit": 0,
+      "tests": 87,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 2,
+      "exit": 0,
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 3,
+      "exit": 0,
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2
+    }
+  ],
+  "artifacts": 0,
+  "model_job": "skipped",
+  "publish_steps": "skipped",
+  "runner": "ubuntu-latest public standard",
+  "repository_private": false,
+  "runner_labels": [
+    "ubuntu-latest"
+  ],
+  "jobs": [
+    {
+      "name": "validate-and-deploy",
+      "conclusion": "success"
+    },
+    {
+      "name": "translation-pilot",
+      "conclusion": "skipped"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-10-26T08:00:56Z",
+      "completed_at": "2026-10-26T08:00:57Z"
+    },
+    {
+      "name": "Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-10-26T08:00:57Z",
+      "completed_at": "2026-10-26T08:01:04Z"
+    },
+    {
+      "name": "Set up Node.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-10-26T08:01:04Z",
+      "completed_at": "2026-10-26T08:01:04Z"
+    },
+    {
+      "name": "Install dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-10-26T08:01:04Z",
+      "completed_at": "2026-10-26T08:01:15Z"
+    },
+    {
+      "name": "Run tests",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-10-26T08:01:15Z",
+      "completed_at": "2026-10-26T08:18:31Z"
+    },
+    {
+      "name": "Build and validate all pages",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-10-26T08:18:31Z",
+      "completed_at": "2026-10-26T08:19:52Z"
+    },
+    {
+      "name": "Require linguistic approval for expanded locales",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-10-26T08:19:52Z",
+      "completed_at": "2026-10-26T08:19:52Z"
+    },
+    {
+      "name": "Build and validate the isolated tools hub",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-10-26T08:19:52Z",
+      "completed_at": "2026-10-26T08:20:34Z"
+    },
+    {
+      "name": "Validate the 300 staged tools without publishing",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9,
+      "started_at": "2026-10-26T08:20:34Z",
+      "completed_at": "2026-10-26T08:20:46Z"
+    },
+    {
+      "name": "Publish to the existing Cloudflare Pages project",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 10,
+      "started_at": "2026-10-26T08:20:46Z",
+      "completed_at": "2026-10-26T08:20:46Z"
+    },
+    {
+      "name": "Publish the separate static tools hub",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 11,
+      "started_at": "2026-10-26T08:20:46Z",
+      "completed_at": "2026-10-26T08:20:46Z"
+    },
+    {
+      "name": "Post Set up Node.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 21,
+      "started_at": "2026-10-26T08:20:46Z",
+      "completed_at": "2026-10-26T08:20:46Z"
+    },
+    {
+      "name": "Post Check out source",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 22,
+      "started_at": "2026-10-26T08:20:46Z",
+      "completed_at": "2026-10-26T08:20:47Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 23,
+      "started_at": "2026-10-26T08:20:47Z",
+      "completed_at": "2026-10-26T08:20:47Z"
+    }
+  ],
+  "log_sha256": "0f6b4316fed0f4f9b78d07b5238aa1a638b7c8d6c59243e1eeaa81231759b35d",
+  "build_scope": {
+    "principal_tool_pages": 9972,
+    "principal_homes": 36,
+    "principal_sitemap_urls": 10260,
+    "existing_locale_gate": 20,
+    "preview_reported_indexable_pages": 0,
+    "preview_files": 11293,
+    "preview_tool_pages": 10800,
+    "preview_locales": 36,
+    "preview_all_tool_pages_and_homes_noindex": true,
+    "preview_indexable_sitemap_urls": 0,
+    "not37locale_certification": true,
+    "hub_growth_tools": 217,
+    "hub_market_tools": 100,
+    "hub_editable_recovered_tools": 106,
+    "growth_build_pages": 7848,
+    "growth_build_files": 8253
+  },
+  "approved_locales": [],
+  "native_review": false,
+  "limitations": [
+    "Known-sample agent review only; no native/blind/unseen/general-engine approval.",
+    "Build preview36locales is not37locale certification.",
+    "No UI/devices/responsive/per-tool quality gate certification."
+  ],
+  "pedro_tests": {
+    "new_ids": [],
+    "pending": 8,
+    "fails": 0
+  },
+  "costs": {
+    "at_utc": "2026-10-26T06:50:01.553051+00:00",
+    "repository_private": false,
+    "runner": "ubuntu-latest",
+    "standard_public_runner": true,
+    "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+    "new_paid_api_calls": 0,
+    "cloudflare_operations": 0,
+    "codespaces": 0,
+    "containers": 0,
+    "persistent_model_caches": 0,
+    "artifacts_expected": 0,
+    "note": "Official docs checked this turn:standard hosted runners are free in public repositories. No larger runners,Packages,LFS uploads or paid API use; no claim about pre-existing account bills."
+  },
+  "secret_scan": {
+    "version": "8.30.1",
+    "active_findings": 0,
+    "scope": "complete current sparse checkout; two unchanged exact public metadata false positives only"
+  },
+  "observed_previous_ci_comparison": {
+    "previous_run": 40274336760,
+    "previous_tests": 327,
+    "previous_python_seconds": 1177.897,
+    "current_tests": 346,
+    "current_python_seconds": 932.653,
+    "time_reduction_percent": 20.82049618939516,
+    "note": "Successive-run observation with different corpus/review/test counts,not a controlled benchmark or future guarantee. Both standard public ubuntu-latest;original cases retained."
+  },
+  "post_ci_audit_metadata_regression": {
+    "evidence": "coverage-counter-regression-v29.json",
+    "test": "test_translation_coverage_inventory.CoverageInventoryTest.test_contextual_policy_count_matches_the_actual_review_inventory",
+    "red_failures": 1,
+    "green_passed": 1,
+    "run_locally": true,
+    "seconds": 0.001,
+    "current_inventory": 347,
+    "original346_ci_test_ids_identical": true,
+    "scope": "Counter only27→28;translation runtime/data/reviews and existing346CI cases unchanged. The new counter assertion is reported separately from Actions."
+  }
+}

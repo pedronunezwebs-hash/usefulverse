@@ -1,0 +1,1428 @@
+{
+  "schema_version": 1,
+  "review_type": "baseline-negative-review-batch-v1",
+  "reviewer": "Codex (agent review, no paid API)",
+  "native_review": false,
+  "approved_locales": [],
+  "engine_frozen": false,
+  "typed_profile_verified": false,
+  "new_inference_calls": 0,
+  "inference_policy": "baseline",
+  "locale": "ru",
+  "candidate": "m2m100",
+  "expected_rows": 40,
+  "reviewed_at_utc": "2026-10-25T23:32:41.992782+00:00",
+  "checkpoint_sha256": {
+    "madlad": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643",
+    "m2m100": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a"
+  },
+  "source_snapshot_sha256": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+  "rubric": "Meaning, numbers/negations and naturalness 0–3. All existing S/F/B read directly. No native/blind review, generation, general engine choice, or release approval.",
+  "rows": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "m2m100",
+      "translation_hash": "01ab5490934c516f20e7a737acda3b40ee56ab150fcab09a1a93c6fa1766a682",
+      "canonical_context": "faq.0.a",
+      "record_ids": [
+        "985d0c2594f0287aa0001188a3a416150c582371b4f17e6f79a66d9d5bd874d4"
+      ],
+      "record_sha256": {
+        "985d0c2594f0287aa0001188a3a416150c582371b4f17e6f79a66d9d5bd874d4": "f6c8a8691bc6f05bdaa724fbb2d3ab6c65b029b5affcd56317de7c7406bfbbd8"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Orden final de только y comienzo de oración он en minúscula; mantiene la exclusión DWG/binario."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "locale": "ru",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "m2m100",
+      "translation_hash": "f73fab8a7fa15898bba21374a4b6d119e9f5fe72d641315ae1c37ad7a010d6f8",
+      "canonical_context": "faq.2.a",
+      "record_ids": [
+        "9e6bcbb5c2a9cbd5d7ebe07f9ea85bb7c614f0ef754df6aadc3f888c8d89f24f"
+      ],
+      "record_sha256": {
+        "9e6bcbb5c2a9cbd5d7ebe07f9ea85bb7c614f0ef754df6aadc3f888c8d89f24f": "21d556fe832dd414b54540c5d85f2814f1e860e711ea84692cc17bf89656f19e"
+      },
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "зритель es espectador y рисующие единицы unidades que dibujan, no visor/unidades de dibujo."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "locale": "ru",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "m2m100",
+      "translation_hash": "66578930d8dd4e51af572c6a577358d7b80d2fed380b3ceff1bfeafc940a8e6e",
+      "canonical_context": "fields.binary",
+      "record_ids": [
+        "576364d8ef2def838bbbac8a4ab37429d5ec1c29a4a8f1819cf4149cdb4ab0aa"
+      ],
+      "record_sha256": {
+        "576364d8ef2def838bbbac8a4ab37429d5ec1c29a4a8f1819cf4149cdb4ab0aa": "68df18d1efbbea6760e1abd36648fcfe22cc660a6d0c1df6fc6b025a93203941"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La segunda oración empieza en minúscula y usa un infinitivo mal encajado; el requisito ASCII se mantiene."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "m2m100",
+      "translation_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "canonical_context": "fields.cancel",
+      "record_ids": [
+        "c6b6c89af827e1983b8f6d2315d2c6c8260f7bfce0f9ed96d8f7d396a52973d1"
+      ],
+      "record_sha256": {
+        "c6b6c89af827e1983b8f6d2315d2c6c8260f7bfce0f9ed96d8f7d396a52973d1": "b020e1275a655d408143f75faba5eb598e3e840c86bcda99c983d6af44d9d6ac"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Отменить загрузку» conserva en este contexto la acción o afirmación de «Cancel loading», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "locale": "ru",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "m2m100",
+      "translation_hash": "285c21ce1a47eac446c450c7a7ecf7f555a5bba1a571fc5c33f70c22a7573a12",
+      "canonical_context": "fields.exportPng",
+      "record_ids": [
+        "fb6d621bc18463667819492545fee8b6e411ebacb24a974db1b8bca025df0aa7"
+      ],
+      "record_sha256": {
+        "fb6d621bc18463667819492545fee8b6e411ebacb24a974db1b8bca025df0aa7": "b1df3871a346a765bf386505847f0b6f92c9c27273e30b77209c6f95bf08ff41"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Скачать PNG» conserva en este contexto la acción o afirmación de «Download PNG», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "locale": "ru",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "m2m100",
+      "translation_hash": "45bf70d6a4218906e0a93f6f828c17e0184e541d1ac0b5096b5a99bf8c78f26e",
+      "canonical_context": "fields.exportSvg",
+      "record_ids": [
+        "370b3042b4e3dc31ddbe5de0d4d02e9b235e489b4c82aaf0683f0c669effb819"
+      ],
+      "record_sha256": {
+        "370b3042b4e3dc31ddbe5de0d4d02e9b235e489b4c82aaf0683f0c669effb819": "42f93ef8b9bcdbdf29d3e54a93abec9e64b28a2fdaac59135fce57ad6c47ff93"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Скачать SVG» conserva en este contexto la acción o afirmación de «Download SVG», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. Загрузить SVG es una forma rusa válida de descargar en contexto de enlace de exportación; la vuelta Upload se evalúa como error separado."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "locale": "ru",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "m2m100",
+      "translation_hash": "dfa3336886a57b64140fa0cfc8c388cf5b309b6fd4e3c3f1a41b61a4a556a08a",
+      "canonical_context": "fields.file",
+      "record_ids": [
+        "3f97fec45d58d74936ef3ec3fe307b95cb1649318778543d15e9463d55668e47"
+      ],
+      "record_sha256": {
+        "3f97fec45d58d74936ef3ec3fe307b95cb1649318778543d15e9463d55668e47": "5cb0c6628b2c8eacae29bbc366eefc67db53968fb6989132d08c1cc84a74dfa7"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Выберите файл ASCII DXF» conserva en este contexto la acción o afirmación de «Choose an ASCII DXF file», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "locale": "ru",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "m2m100",
+      "translation_hash": "5d76c843faa832c1d1083bd85cf0b77df217cdc8ec4e5739c944698e72ccbef8",
+      "canonical_context": "fields.invalidCoordinates",
+      "record_ids": [
+        "4751cd22d471ffc8b4fc2d7b6739808d6adc6b9b295447101317ec98dc023246"
+      ],
+      "record_sha256": {
+        "4751cd22d471ffc8b4fc2d7b6739808d6adc6b9b295447101317ec98dc023246": "4f4ded10eaa7749f49344c0e893e4b6aec9fa7a00f00d954186c8dbefe898124"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "координатов es una flexión incorrecta de координаты; la cantidad cuatro se conserva.",
+        "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "locale": "ru",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "m2m100",
+      "translation_hash": "8d26ad052ce3011a3c902fc5ada5fd6be7d1e4770aed0cce01deeb2d492fb07e",
+      "canonical_context": "fields.measurement",
+      "record_ids": [
+        "3fc686c37d30393c99c8233f9eecd9fef364eafdb26e441ef825a640f6fa71bd"
+      ],
+      "record_sha256": {
+        "3fc686c37d30393c99c8233f9eecd9fef364eafdb26e441ef825a640f6fa71bd": "f994cdd202f93343d2d902f8888b8d418b440f9fdcc5749dcf409d57d159dd48"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Измерение расстояния» conserva en este contexto la acción o afirmación de «Measure distance», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "m2m100",
+      "translation_hash": "bd33d4c078022c4ba9c67298ea34a3671dfe5a26232b13ef8b0ff729aaa3dd9c",
+      "canonical_context": "fields.resetView",
+      "record_ids": [
+        "69cf8cbe7efdb97964d91325db8ff25bc49009cf1def5af12339fc776bc53a74"
+      ],
+      "record_sha256": {
+        "69cf8cbe7efdb97964d91325db8ff25bc49009cf1def5af12339fc776bc53a74": "623d8624b173d4da4b1c9f212c4278634fb47a197191a2c98a58d9720c7fab86"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Подходит для рисунка significa adecuado para un dibujo, no ajustar el dibujo a la vista."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "locale": "ru",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "m2m100",
+      "translation_hash": "db077d6d6dafbb3f59d945fe9877080e3670832d2a52b898efd0f559a81ed71c",
+      "canonical_context": "fields.unsupported",
+      "record_ids": [
+        "941a60a2d2e8330dd8ba7516fa831af0e8840f061a6fc3ea79e38252c53345de"
+      ],
+      "record_sha256": {
+        "941a60a2d2e8330dd8ba7516fa831af0e8840f061a6fc3ea79e38252c53345de": "63b48b655d9e7571e1a26f7c2f44cd728fda42cb74bcd0bdd28eab421a637106"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Omite por completo el aviso de archivo no compatible; conserva solo elegir ASCII.dxf."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "locale": "ru",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "m2m100",
+      "translation_hash": "ff10de800e6ec79794f966135df0b9bc2cbad46eac9d3182fb07acfde1288e6a",
+      "canonical_context": "fields.zoomIn",
+      "record_ids": [
+        "873aea56fc3eee905874a728ea0319cf8688b264e9761d3f7d944642c3ec678d"
+      ],
+      "record_sha256": {
+        "873aea56fc3eee905874a728ea0319cf8688b264e9761d3f7d944642c3ec678d": "139b83cfabc2a63a0c49afc1aa17a0b8d54d4293d0493d84e4ed304493c3316a"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Зом в es una transliteración truncada y un calco incompleto, no aumentar zoom."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "locale": "ru",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "m2m100",
+      "translation_hash": "9d11ce08de7ba2dc60682f6f46cb0be710c03b6f2631f2f1cbcfb5738ed33b54",
+      "canonical_context": "fields.zoomOut",
+      "record_ids": [
+        "449cb8be9bab9b132ad8ecfa5206fe6a0d6fe71f0345e1a7251426caec6645a9"
+      ],
+      "record_sha256": {
+        "449cb8be9bab9b132ad8ecfa5206fe6a0d6fe71f0345e1a7251426caec6645a9": "14d0121e4eb404b55fdd4399e1b67588bf9ab9588516718a7b0d275d39f10386"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Зом выходит significa zoom sale, no reducir el zoom."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.example",
+      "locale": "ru",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "m2m100",
+      "translation_hash": "b06f841cacc32c1b2c8da93aa06e814e7fe0845f5309db4b098ed9226247656c",
+      "canonical_context": "example",
+      "record_ids": [
+        "e2719f3dc27bdb0e92c2c22963df9fe0cce306f91e9f820fd84738afa690718c"
+      ],
+      "record_sha256": {
+        "e2719f3dc27bdb0e92c2c22963df9fe0cce306f91e9f820fd84738afa690718c": "a60538ec2f9d6f10d6fb1ff922a54a43318285f66f116a7bf96976f8bc32cd24"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Название es nombre/título y правоугаса es una deformación de rectángulo; no conserva la regla geométrica con claridad.",
+        "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "ru",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "m2m100",
+      "translation_hash": "9c9a6a40dae05c628955ff4639ba33269376a36ff411a549fb914d67d8cd2c51",
+      "canonical_context": "fields.check",
+      "record_ids": [
+        "fd85ed660b04278b34a690391ad9be337e72e7e0c9efa0f9ebeea8e82580ee9b"
+      ],
+      "record_sha256": {
+        "fd85ed660b04278b34a690391ad9be337e72e7e0c9efa0f9ebeea8e82580ee9b": "344fcca3eb8510e0682d307aed38221e660dd13c463caf7b853cf17a8dfcdd5f"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Deja Puzzle en inglés dentro del control ruso."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "ru",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "m2m100",
+      "translation_hash": "e62290a09236cb0bbea31a7b6103833ec76ae157950712b8a1980267ae46107c",
+      "canonical_context": "fields.clear",
+      "record_ids": [
+        "244b0714829f815300b628ecaee7bff3143cd132d904280649b377029fe53606"
+      ],
+      "record_sha256": {
+        "244b0714829f815300b628ecaee7bff3143cd132d904280649b377029fe53606": "59056ff4ced73bb56f8a28322f21a6d16e7655b600c5c907180a972266ac6e11"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Яркие significa brillantes; pierde borrar rectángulos."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "ru",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "m2m100",
+      "translation_hash": "cf3cf65ae1e2c4040aef1842dfe95f5481bfac76759a178ca78b6abb4b596958",
+      "canonical_context": "fields.daily",
+      "record_ids": [
+        "4eaf783a8e9470ab74844e6c0e1dba2a08b612044889645c39cd41ddff5f014c"
+      ],
+      "record_sha256": {
+        "4eaf783a8e9470ab74844e6c0e1dba2a08b612044889645c39cd41ddff5f014c": "cce0d84373bf44ad37d2c7a69307a6b592c74d3f151f86c40e6b4fa4333813fc"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "пузырь es burbuja, no puzzle."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "ru",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "m2m100",
+      "translation_hash": "a014ba0b6a59f24058f451d818b463db3ae7b5e5d77cd4d62be06ead967df395",
+      "canonical_context": "fields.deleteSave",
+      "record_ids": [
+        "e9dabdc6453e0768e97c34e17c7677c9544208b0a0a420fc86abee74223f6e33"
+      ],
+      "record_sha256": {
+        "e9dabdc6453e0768e97c34e17c7677c9544208b0a0a420fc86abee74223f6e33": "5e5ce30c7af326c6021f1789e1a51f9e646373bfc8cacd3d19ecb4de5633bfc4"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Скачать спасенную игру ordena descargar una partida rescatada, en vez de borrar la guardada."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "ru",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "m2m100",
+      "translation_hash": "da3eaeea2abb2437a84470f85f1a59370ee0ab9b52e9a2780a4fd97ecd5450de",
+      "canonical_context": "fields.faq.1.a",
+      "record_ids": [
+        "5516dccc424c74ec5aaae8c78c96d1872a61ecb46b23db7b97d24f6284a3f158"
+      ],
+      "record_sha256": {
+        "5516dccc424c74ec5aaae8c78c96d1872a61ecb46b23db7b97d24f6284a3f158": "ef88306dede7237151be5e8bf7677926a4024ef834a1fdaf4345f6b27747ad89"
+      },
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Limita a una cifra (цифру) en vez de una pista numérica, que puede tener varios dígitos. Una pista12 seguiría siendo una sola pista.",
+        "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "ru",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "m2m100",
+      "translation_hash": "c40b3ccb5d0fe79328bc535822b6c17159b793ac278d62c290dc51c0f5d4d82b",
+      "canonical_context": "fields.hint",
+      "record_ids": [
+        "d0359b318142f2a7df4509fb77d0efc6fae1a6d524b334e10cf6b8a724ace2c8"
+      ],
+      "record_sha256": {
+        "d0359b318142f2a7df4509fb77d0efc6fae1a6d524b334e10cf6b8a724ace2c8": "63684a61b37749b0994399aeabed13e40e275e3f4ef0c880cb661f7b66d9b9d8"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "индикацию es indicación/indicador, no una pista del puzzle."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "ru",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "m2m100",
+      "translation_hash": "dea1204aa5db30656d44386af3c49b797234ff2944117e7f045faf55ced02bf2",
+      "canonical_context": "fields.newPuzzle",
+      "record_ids": [
+        "5ecf5a33e12a0ac5184402f8b7e2d9f0545f51e21411594482e63df8b3f37efb"
+      ],
+      "record_sha256": {
+        "5ecf5a33e12a0ac5184402f8b7e2d9f0545f51e21411594482e63df8b3f37efb": "156670fe86cb6262145439b2756c6a405b4299ad55e57b1143ef04d1843f56a0"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Deja Puzzle sin traducir al ruso."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "ru",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "m2m100",
+      "translation_hash": "3fe113e6c02a7ed0372815534468c4b056b065495e63471bd0a354630d8dc749",
+      "canonical_context": "fields.resume",
+      "record_ids": [
+        "14528ec14e5810d383acd37e2929e23156b647b3c727c182bfaf2fffaf08506b"
+      ],
+      "record_sha256": {
+        "14528ec14e5810d383acd37e2929e23156b647b3c727c182bfaf2fffaf08506b": "5852cf8e58985b5aa3bb5c9c6905d8423646284834cd7c31fd8222930fb9a832"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Резюме significa resumen/CV; no reanudar la partida."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "ru",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "m2m100",
+      "translation_hash": "ce029a0abbcd2ae2ecc416f02e6eae2f7925f06b84fdd812ac95c8359b47241e",
+      "canonical_context": "fields.reveal",
+      "record_ids": [
+        "3ce18bc7ab7c31bb787c0a81b053c99c23324630427b70eff4a09cc0fa617965"
+      ],
+      "record_sha256": {
+        "3ce18bc7ab7c31bb787c0a81b053c99c23324630427b70eff4a09cc0fa617965": "f90f8e1d73191e010d9d6919e63998f19c28eaa8fd52c066ee276c9b85b63384"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Показать решение» conserva en este contexto la acción o afirmación de «Show solution», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "ru",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "m2m100",
+      "translation_hash": "91094be3c40d496da0ee8fa432fb21175c9019be0376a82af928bfa484b68872",
+      "canonical_context": "fields.selectEnd",
+      "record_ids": [
+        "7ac182e415dfb79b46fa57a595e47bd78cf038a1353c6f168d5d9a4ac82f229b"
+      ],
+      "record_sha256": {
+        "7ac182e415dfb79b46fa57a595e47bd78cf038a1353c6f168d5d9a4ac82f229b": "e5685809c9b466cd8c397794d9a6a762d86b73eaf5ecfb0ee1c5e5ffebfffefe"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Теперь выберите противоположный угол.» conserva en este contexto la acción o afirmación de «Now choose the opposite corner.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. угол sirve para esquina en este contexto geométrico; no se inventa un error de ida por angle en la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "ru",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "m2m100",
+      "translation_hash": "2c44ade102f6218501702d9e4d6a2915d1f4bb41b5429d837a406fbd291a739f",
+      "canonical_context": "fields.selectStart",
+      "record_ids": [
+        "354273c6a94951a9b0e61fd7a0772ed1be8e0d50d161a0a17faf7effb86c0864"
+      ],
+      "record_sha256": {
+        "354273c6a94951a9b0e61fd7a0772ed1be8e0d50d161a0a17faf7effb86c0864": "3978b6030fe54821afdb34e8fc47e57e51c6e815d84be2037e918ee9f9486e14"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Выберите стартовый квадрат.» conserva en este contexto la acción o afirmación de «Choose a start square.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "ru",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "m2m100",
+      "translation_hash": "540fe9c7b9b97545de91bd0551e1bb20afe612705a3546e02e3a03461de3bb0d",
+      "canonical_context": "fields.undo",
+      "record_ids": [
+        "4132cbbd2a5c04792643e1124442a948cfa0c575144a97ddda9159ffee13cd37"
+      ],
+      "record_sha256": {
+        "4132cbbd2a5c04792643e1124442a948cfa0c575144a97ddda9159ffee13cd37": "04b2391c988872490697d5d4ec42f549490f823547286cbde9202ca56f346eaf"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Последнее правоугольное es una frase deformada que pierde deshacer el último rectángulo."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "ru",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "m2m100",
+      "translation_hash": "5429ab1b9cb873179fce353402ba785d8fc46f282dd9ea641c525356cc65160d",
+      "canonical_context": "fields.chooseFile",
+      "record_ids": [
+        "bfd1f40d35294b7cb8193da7616168868482d5da3e09ccf6b23d0a79af0dfada"
+      ],
+      "record_sha256": {
+        "bfd1f40d35294b7cb8193da7616168868482d5da3e09ccf6b23d0a79af0dfada": "03e12ec1a0eaa22ee8c20f6334c34f1d8cc7b651e136653c3b0850193802acfb"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Выберите аудиофайл» conserva en este contexto la acción o afirmación de «Choose an audio file», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "ru",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "m2m100",
+      "translation_hash": "54ff4589dd1241cd6e4dab5c8ee40b8a4e636d4c677f32c4fa7adafe42bb3376",
+      "canonical_context": "fields.chooseFirst",
+      "record_ids": [
+        "7edee6a6b4dfa4606f4d83bc475d555d4b7c131e6df3d80f90d7c5dd3efbb566"
+      ],
+      "record_sha256": {
+        "7edee6a6b4dfa4606f4d83bc475d555d4b7c131e6df3d80f90d7c5dd3efbb566": "92aa08d9356ed242f1c2f3292156929f5a8707d34eb632c70b183792b6b0d2a1"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Сначала выберите аудиофайл.» conserva en este contexto la acción o afirmación de «Choose an audio file first.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "ru",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "m2m100",
+      "translation_hash": "59910d976af753a406c12eea678c573f43e78e3f657ba2710e0eee8dc32562c6",
+      "canonical_context": "fields.clear",
+      "record_ids": [
+        "bea35dee80b64ff5b0976f9facb572e3b7e6ea44658bbbf3f56bcfc0ae1bcbf8"
+      ],
+      "record_sha256": {
+        "bea35dee80b64ff5b0976f9facb572e3b7e6ea44658bbbf3f56bcfc0ae1bcbf8": "af6b1afe616448941e41ab581408e23db1ff82b522c217946d1a6dad42489a19"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Яркий аудио es audio brillante; no borrar audio y además hay discordancia de género."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "ru",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "m2m100",
+      "translation_hash": "672b94591f6db1cc7b9eabfb0c55b69accb6bd5d9f2ed4f7d8acddc60174fcb8",
+      "canonical_context": "fields.decodeFailed",
+      "record_ids": [
+        "2b12381d4b1866c781c2ce178ea8dace9cc584cd34fabd06aa067d7f3a8f91a5"
+      ],
+      "record_sha256": {
+        "2b12381d4b1866c781c2ce178ea8dace9cc584cd34fabd06aa067d7f3a8f91a5": "3a099227b25c021299c8af7b3cd0281723d93d167f54d2952b104e7571306a19"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La segunda oración comienza con pruebe en minúscula; sentido y formatos conservados."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "ru",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "m2m100",
+      "translation_hash": "50682c83ba4ef5f28607f31e05536bc494f644de7fb31549655af8a481d30961",
+      "canonical_context": "fields.export",
+      "record_ids": [
+        "9a358405a84872be175a87eb04863cb50b9268f15f7080bbdfc2dc93d3733b34"
+      ],
+      "record_sha256": {
+        "9a358405a84872be175a87eb04863cb50b9268f15f7080bbdfc2dc93d3733b34": "9b8ba585b9b4612040374679488e46bb82e47144fbf2c3aedcf9696918863ef5"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "обработанной no concuerda con el archivo WAV de este contexto; usar обработанного."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "m2m100",
+      "translation_hash": "d8b67f921b0893369514acf021d58314a8d29576072f1cd9a85cc8627d042b26",
+      "canonical_context": "fields.faq1a",
+      "record_ids": [
+        "a2bea4b07c6ec4e0aded263423c3a239b1cd67747423922a84d60ff8466edaba"
+      ],
+      "record_sha256": {
+        "a2bea4b07c6ec4e0aded263423c3a239b1cd67747423922a84d60ff8466edaba": "fb07caf8311851dbf268718cda608598a1b9af6c7054af419c50edcbc7554621"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "выбранный аудио tiene discordancia: аудио es neutro. Conserva procesamiento local y no recepción."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "ru",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "m2m100",
+      "translation_hash": "afafc6d615b037cfd3e3767d72d3802f1e045ce13449e70464b76c471fa17f5b",
+      "canonical_context": "fields.faq2a",
+      "record_ids": [
+        "bbb22c824fb8878edf775c98ce55078c847db96b0d6c3731486e62d8dd9b5a6e"
+      ],
+      "record_sha256": {
+        "bbb22c824fb8878edf775c98ce55078c847db96b0d6c3731486e62d8dd9b5a6e": "18ec37816f5412623e074814f1b8e4831b1e6cd44e370c4dd175741fc6bcf9a5"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "полюс es polo, no altura tonal; mantiene lento/rápido pero explica otra magnitud."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "ru",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "m2m100",
+      "translation_hash": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+      "canonical_context": "fields.load",
+      "record_ids": [
+        "212ca316c313da703f6d77c0884a074afec84ff380adc03a66202083274202ca"
+      ],
+      "record_sha256": {
+        "212ca316c313da703f6d77c0884a074afec84ff380adc03a66202083274202ca": "44ae3973a10be3e09bd4c03002fa5e77f589fc4d717b81fd0f368826ca94ebb1"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Загрузить аудио локально» conserva en este contexto la acción o afirmación de «Load audio locally», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "ru",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "m2m100",
+      "translation_hash": "8b54f343b7edfa44cc82338345938ec0e210c79af106921c35fa53b91dcf91ac",
+      "canonical_context": "fields.loaded",
+      "record_ids": [
+        "6beba3bbeb5ada121b7039b158eaabda70e2f8281b25d4a4d675f7a3a0df6b15"
+      ],
+      "record_sha256": {
+        "6beba3bbeb5ada121b7039b158eaabda70e2f8281b25d4a4d675f7a3a0df6b15": "6a26c99a654810a935db098dd42a56305f2f8bf18626396f9f5eabc5536931bf"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Omite Audio decoded locally; deja solo duración y placeholder."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "ru",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "m2m100",
+      "translation_hash": "714f2b1a1b0392724ec4054de2b4d7ee2f6eb7278cd5e04bbad3e0cc2aa237c6",
+      "canonical_context": "fields.preview",
+      "record_ids": [
+        "ee2c2742f98a53cb5e4f88dab94e67c17e1accde2f3850377fc4ca1fc56aa4b9"
+      ],
+      "record_sha256": {
+        "ee2c2742f98a53cb5e4f88dab94e67c17e1accde2f3850377fc4ca1fc56aa4b9": "1d0c6d7f1e31226eaeb1319391187ef37a45d9ed974919ebde97107648c5938f"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Предварительный эффект significa efecto preliminar; no preescuchar el efecto."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "m2m100",
+      "translation_hash": "f2de02aeb02a75033ffebf640f0ebfdb3b2d83020757f498f952e2cd2db66466",
+      "canonical_context": "fields.privacy",
+      "record_ids": [
+        "108982c9fc604b26006b9acb77b62df513dd9d06b88972a0075cbb4f72011150"
+      ],
+      "record_sha256": {
+        "108982c9fc604b26006b9acb77b62df513dd9d06b88972a0075cbb4f72011150": "84035fe038b3f91cf6be58d2a996baa2ddf55c452eaa3042ea3b676bd4f18103"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Oración en minúscula y coordinación/atribución mal formada; las negaciones y permanencia local siguen presentes."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "ru",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "m2m100",
+      "translation_hash": "d86f776b4ed79a3d41493bf1091ba25215b87e4e7ada0c59aa1be944d0e868b3",
+      "canonical_context": "fields.stop",
+      "record_ids": [
+        "4a36f75d051e6b9aa8973b5b0954bd1b7ef200f30b245c01a997a641ef4ee66d"
+      ],
+      "record_sha256": {
+        "4a36f75d051e6b9aa8973b5b0954bd1b7ef200f30b245c01a997a641ef4ee66d": "dd2f230c6b45f634326926068b7fb01fff39b0efaeb5fe2ac1a26225c87f1830"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Прекращение прогноза es cancelar un pronóstico, no parar la preescucha."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "ru",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "m2m100",
+      "translation_hash": "c681b611ed21a7796c0276266be9128504b591ef02f2dd6ed74a63aab9fb891c",
+      "canonical_context": "fields.tooLarge",
+      "record_ids": [
+        "a2ba0b132fc39e5a811285def363abcf009211eada7c7ea88d36fd12c533c36a"
+      ],
+      "record_sha256": {
+        "a2ba0b132fc39e5a811285def363abcf009211eada7c7ea88d36fd12c533c36a": "c8ac5b5c512b88a3a21f86801b4cbfdf95c0f220500712a9c02fe28359e32849"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «Выберите аудиофайл не больше, чем 25 MB.» conserva en este contexto la acción o afirmación de «Choose an audio file no larger than 25 MB.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. МБ es la abreviatura rusa de megabyte, no un cambio de unidad."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "ru",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "m2m100",
+      "translation_hash": "c1aa8e2f1e569eaa2e1a269c8883ae770e3b6ec2d5bd765199fbfc8273303760",
+      "canonical_context": "fields.tooLong",
+      "record_ids": [
+        "af543e8f3e768e512a44f167d1000a41d9535d9302a79cbc04b87e0cd00f5c92"
+      ],
+      "record_sha256": {
+        "af543e8f3e768e512a44f167d1000a41d9535d9302a79cbc04b87e0cd00f5c92": "d60d242219ea7a8e77b317728e8792d7f0bbf6b754c429b8b5a7fe8315ecb8e6"
+      },
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Стрим файл manda hacer streaming del archivo en vez de recortarlo; conserva30 segundos."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "985d0c2594f0287aa0001188a3a416150c582371b4f17e6f79a66d9d5bd874d4",
+      "record_sha256": "f6c8a8691bc6f05bdaa724fbb2d3ab6c65b029b5affcd56317de7c7406bfbbd8",
+      "translation_hash": "01ab5490934c516f20e7a737acda3b40ee56ab150fcab09a1a93c6fa1766a682",
+      "back_translation_hash": "e00e123089c2e07c849071f1e4a876c94955e8c615011315ae20be392253fb34",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Orden final de только y comienzo de oración он en minúscula; mantiene la exclusión DWG/binario."
+        }
+      }
+    },
+    {
+      "record_id": "9e6bcbb5c2a9cbd5d7ebe07f9ea85bb7c614f0ef754df6aadc3f888c8d89f24f",
+      "record_sha256": "21d556fe832dd414b54540c5d85f2814f1e860e711ea84692cc17bf89656f19e",
+      "translation_hash": "f73fab8a7fa15898bba21374a4b6d119e9f5fe72d641315ae1c37ad7a010d6f8",
+      "back_translation_hash": "98aa77f762fef2c5e7eb4f20631479245c787d1ebfa88fbaca578c44949018ab",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "зритель es espectador y рисующие единицы unidades que dibujan, no visor/unidades de dibujo."
+        }
+      }
+    },
+    {
+      "record_id": "576364d8ef2def838bbbac8a4ab37429d5ec1c29a4a8f1819cf4149cdb4ab0aa",
+      "record_sha256": "68df18d1efbbea6760e1abd36648fcfe22cc660a6d0c1df6fc6b025a93203941",
+      "translation_hash": "66578930d8dd4e51af572c6a577358d7b80d2fed380b3ceff1bfeafc940a8e6e",
+      "back_translation_hash": "a7f587b3bdb103bb620b797149cb4113cf6f8375395f8423a5b2af37924d0b86",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La segunda oración empieza en minúscula y usa un infinitivo mal encajado; el requisito ASCII se mantiene."
+        }
+      }
+    },
+    {
+      "record_id": "4751cd22d471ffc8b4fc2d7b6739808d6adc6b9b295447101317ec98dc023246",
+      "record_sha256": "4f4ded10eaa7749f49344c0e893e4b6aec9fa7a00f00d954186c8dbefe898124",
+      "translation_hash": "5d76c843faa832c1d1083bd85cf0b77df217cdc8ec4e5739c944698e72ccbef8",
+      "back_translation_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "координатов es una flexión incorrecta de координаты; la cantidad cuatro se conserva."
+        }
+      }
+    },
+    {
+      "record_id": "69cf8cbe7efdb97964d91325db8ff25bc49009cf1def5af12339fc776bc53a74",
+      "record_sha256": "623d8624b173d4da4b1c9f212c4278634fb47a197191a2c98a58d9720c7fab86",
+      "translation_hash": "bd33d4c078022c4ba9c67298ea34a3671dfe5a26232b13ef8b0ff729aaa3dd9c",
+      "back_translation_hash": "46dfd1c7340f6b6a6156b40ee6b3ff32d7a152958f7b5980feea683b2a622931",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Подходит для рисунка significa adecuado para un dibujo, no ajustar el dibujo a la vista."
+        }
+      }
+    },
+    {
+      "record_id": "941a60a2d2e8330dd8ba7516fa831af0e8840f061a6fc3ea79e38252c53345de",
+      "record_sha256": "63b48b655d9e7571e1a26f7c2f44cd728fda42cb74bcd0bdd28eab421a637106",
+      "translation_hash": "db077d6d6dafbb3f59d945fe9877080e3670832d2a52b898efd0f559a81ed71c",
+      "back_translation_hash": "e6083e1e7132061be3c9610df9883394f59dd2395947ad9d9e36537537293232",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Omite por completo el aviso de archivo no compatible; conserva solo elegir ASCII.dxf."
+        }
+      }
+    },
+    {
+      "record_id": "873aea56fc3eee905874a728ea0319cf8688b264e9761d3f7d944642c3ec678d",
+      "record_sha256": "139b83cfabc2a63a0c49afc1aa17a0b8d54d4293d0493d84e4ed304493c3316a",
+      "translation_hash": "ff10de800e6ec79794f966135df0b9bc2cbad46eac9d3182fb07acfde1288e6a",
+      "back_translation_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Зом в es una transliteración truncada y un calco incompleto, no aumentar zoom."
+        }
+      }
+    },
+    {
+      "record_id": "449cb8be9bab9b132ad8ecfa5206fe6a0d6fe71f0345e1a7251426caec6645a9",
+      "record_sha256": "14d0121e4eb404b55fdd4399e1b67588bf9ab9588516718a7b0d275d39f10386",
+      "translation_hash": "9d11ce08de7ba2dc60682f6f46cb0be710c03b6f2631f2f1cbcfb5738ed33b54",
+      "back_translation_hash": "20ae2317e7f3538543d8bd46f4b742a643a24885cfb19d7ec6efbe9a019097fa",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Зом выходит significa zoom sale, no reducir el zoom."
+        }
+      }
+    },
+    {
+      "record_id": "e2719f3dc27bdb0e92c2c22963df9fe0cce306f91e9f820fd84738afa690718c",
+      "record_sha256": "a60538ec2f9d6f10d6fb1ff922a54a43318285f66f116a7bf96976f8bc32cd24",
+      "translation_hash": "b06f841cacc32c1b2c8da93aa06e814e7fe0845f5309db4b098ed9226247656c",
+      "back_translation_hash": "fd3f67e28686ebe7376b20e68c759ce50124652d8a61a656eda10bc327301378",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Название es nombre/título y правоугаса es una deformación de rectángulo; no conserva la regla geométrica con claridad."
+        }
+      }
+    },
+    {
+      "record_id": "fd85ed660b04278b34a690391ad9be337e72e7e0c9efa0f9ebeea8e82580ee9b",
+      "record_sha256": "344fcca3eb8510e0682d307aed38221e660dd13c463caf7b853cf17a8dfcdd5f",
+      "translation_hash": "9c9a6a40dae05c628955ff4639ba33269376a36ff411a549fb914d67d8cd2c51",
+      "back_translation_hash": "190f2a32f5b7d84719d1917276da7ca93ac503adc8822bc72971b49e139b52d3",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Deja Puzzle en inglés dentro del control ruso."
+        }
+      }
+    },
+    {
+      "record_id": "244b0714829f815300b628ecaee7bff3143cd132d904280649b377029fe53606",
+      "record_sha256": "59056ff4ced73bb56f8a28322f21a6d16e7655b600c5c907180a972266ac6e11",
+      "translation_hash": "e62290a09236cb0bbea31a7b6103833ec76ae157950712b8a1980267ae46107c",
+      "back_translation_hash": "c0b9511f88f443bd1e2d9be3205cd1238135fa5e434a854b02fce01e57fd9419",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Яркие significa brillantes; pierde borrar rectángulos."
+        }
+      }
+    },
+    {
+      "record_id": "4eaf783a8e9470ab74844e6c0e1dba2a08b612044889645c39cd41ddff5f014c",
+      "record_sha256": "cce0d84373bf44ad37d2c7a69307a6b592c74d3f151f86c40e6b4fa4333813fc",
+      "translation_hash": "cf3cf65ae1e2c4040aef1842dfe95f5481bfac76759a178ca78b6abb4b596958",
+      "back_translation_hash": "95a6a5e0693618a1ec4907944d1b275ccfd0608f427185a201bff1ea97ce2746",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "пузырь es burbuja, no puzzle."
+        }
+      }
+    },
+    {
+      "record_id": "e9dabdc6453e0768e97c34e17c7677c9544208b0a0a420fc86abee74223f6e33",
+      "record_sha256": "5e5ce30c7af326c6021f1789e1a51f9e646373bfc8cacd3d19ecb4de5633bfc4",
+      "translation_hash": "a014ba0b6a59f24058f451d818b463db3ae7b5e5d77cd4d62be06ead967df395",
+      "back_translation_hash": "3ba187222055e29f42362a139f5cec7c67bbba4243d6b08883335c3985c542cf",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Скачать спасенную игру ordena descargar una partida rescatada, en vez de borrar la guardada."
+        }
+      }
+    },
+    {
+      "record_id": "5516dccc424c74ec5aaae8c78c96d1872a61ecb46b23db7b97d24f6284a3f158",
+      "record_sha256": "ef88306dede7237151be5e8bf7677926a4024ef834a1fdaf4345f6b27747ad89",
+      "translation_hash": "da3eaeea2abb2437a84470f85f1a59370ee0ab9b52e9a2780a4fd97ecd5450de",
+      "back_translation_hash": "02ce9f6906afa27b140cb162d6480e8aa74ac2a9982731d5fb1b5b8a99f1ddc8",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Limita a una cifra (цифру) en vez de una pista numérica, que puede tener varios dígitos. Una pista12 seguiría siendo una sola pista."
+        }
+      }
+    },
+    {
+      "record_id": "d0359b318142f2a7df4509fb77d0efc6fae1a6d524b334e10cf6b8a724ace2c8",
+      "record_sha256": "63684a61b37749b0994399aeabed13e40e275e3f4ef0c880cb661f7b66d9b9d8",
+      "translation_hash": "c40b3ccb5d0fe79328bc535822b6c17159b793ac278d62c290dc51c0f5d4d82b",
+      "back_translation_hash": "01ae4ce2f7196467d78d939f9eb772453cb1adc10eae094292fe417f84e2c2d5",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "индикацию es indicación/indicador, no una pista del puzzle."
+        }
+      }
+    },
+    {
+      "record_id": "5ecf5a33e12a0ac5184402f8b7e2d9f0545f51e21411594482e63df8b3f37efb",
+      "record_sha256": "156670fe86cb6262145439b2756c6a405b4299ad55e57b1143ef04d1843f56a0",
+      "translation_hash": "dea1204aa5db30656d44386af3c49b797234ff2944117e7f045faf55ced02bf2",
+      "back_translation_hash": "63fc6303a47f25eef3fb440a2486fabe21edf0ff64be8ffef81eaf3cc85022fb",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Deja Puzzle sin traducir al ruso."
+        },
+        "wrong_script": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Proporción de longitud/escritura leída con fuente e ida: etiqueta breve, texto técnico latino o expansión localizada. El defecto lingüístico, si existe, consta por separado en known_semantic_errors; esta heurística no sustituye la rúbrica."
+        }
+      }
+    },
+    {
+      "record_id": "14528ec14e5810d383acd37e2929e23156b647b3c727c182bfaf2fffaf08506b",
+      "record_sha256": "5852cf8e58985b5aa3bb5c9c6905d8423646284834cd7c31fd8222930fb9a832",
+      "translation_hash": "3fe113e6c02a7ed0372815534468c4b056b065495e63471bd0a354630d8dc749",
+      "back_translation_hash": "b00fb02cfe3a6cb99388e8765db3f7d751b6309b9d3b6a4732197e51835f2dcf",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Резюме significa resumen/CV; no reanudar la partida."
+        }
+      }
+    },
+    {
+      "record_id": "4132cbbd2a5c04792643e1124442a948cfa0c575144a97ddda9159ffee13cd37",
+      "record_sha256": "04b2391c988872490697d5d4ec42f549490f823547286cbde9202ca56f346eaf",
+      "translation_hash": "540fe9c7b9b97545de91bd0551e1bb20afe612705a3546e02e3a03461de3bb0d",
+      "back_translation_hash": "d490b5c44b020c0f3ec290c3786b4965ed7f05729f214bba115d059e91501f81",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Последнее правоугольное es una frase deformada que pierde deshacer el último rectángulo."
+        }
+      }
+    },
+    {
+      "record_id": "bea35dee80b64ff5b0976f9facb572e3b7e6ea44658bbbf3f56bcfc0ae1bcbf8",
+      "record_sha256": "af6b1afe616448941e41ab581408e23db1ff82b522c217946d1a6dad42489a19",
+      "translation_hash": "59910d976af753a406c12eea678c573f43e78e3f657ba2710e0eee8dc32562c6",
+      "back_translation_hash": "48fd064858285b7ded5a0eff8102dc9b44bd95b54daf57024f982a9e51c504d1",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Яркий аудио es audio brillante; no borrar audio y además hay discordancia de género."
+        }
+      }
+    },
+    {
+      "record_id": "2b12381d4b1866c781c2ce178ea8dace9cc584cd34fabd06aa067d7f3a8f91a5",
+      "record_sha256": "3a099227b25c021299c8af7b3cd0281723d93d167f54d2952b104e7571306a19",
+      "translation_hash": "672b94591f6db1cc7b9eabfb0c55b69accb6bd5d9f2ed4f7d8acddc60174fcb8",
+      "back_translation_hash": "07c02aaa6f430847e6300cf516f058ba0944083d90c18100aa16119697250e72",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La segunda oración comienza con pruebe en minúscula; sentido y formatos conservados."
+        }
+      }
+    },
+    {
+      "record_id": "9a358405a84872be175a87eb04863cb50b9268f15f7080bbdfc2dc93d3733b34",
+      "record_sha256": "9b8ba585b9b4612040374679488e46bb82e47144fbf2c3aedcf9696918863ef5",
+      "translation_hash": "50682c83ba4ef5f28607f31e05536bc494f644de7fb31549655af8a481d30961",
+      "back_translation_hash": "0d6da97e80e5428e67342158079501a142e65b97c8bbd673ab0522761a484c84",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "обработанной no concuerda con el archivo WAV de este contexto; usar обработанного."
+        }
+      }
+    },
+    {
+      "record_id": "a2bea4b07c6ec4e0aded263423c3a239b1cd67747423922a84d60ff8466edaba",
+      "record_sha256": "fb07caf8311851dbf268718cda608598a1b9af6c7054af419c50edcbc7554621",
+      "translation_hash": "d8b67f921b0893369514acf021d58314a8d29576072f1cd9a85cc8627d042b26",
+      "back_translation_hash": "7543125f719927f6d707269b98520fbfb7fcf83071063462f8a7fa28a7e78a4b",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "выбранный аудио tiene discordancia: аудио es neutro. Conserva procesamiento local y no recepción."
+        }
+      }
+    },
+    {
+      "record_id": "bbb22c824fb8878edf775c98ce55078c847db96b0d6c3731486e62d8dd9b5a6e",
+      "record_sha256": "18ec37816f5412623e074814f1b8e4831b1e6cd44e370c4dd175741fc6bcf9a5",
+      "translation_hash": "afafc6d615b037cfd3e3767d72d3802f1e045ce13449e70464b76c471fa17f5b",
+      "back_translation_hash": "8d5be2813afae4991f9ac1c147d05188216f36d7bf48d26321899f18f64521c6",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "полюс es polo, no altura tonal; mantiene lento/rápido pero explica otra magnitud."
+        }
+      }
+    },
+    {
+      "record_id": "212ca316c313da703f6d77c0884a074afec84ff380adc03a66202083274202ca",
+      "record_sha256": "44ae3973a10be3e09bd4c03002fa5e77f589fc4d717b81fd0f368826ca94ebb1",
+      "translation_hash": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+      "back_translation_hash": "e6805affd49d6911791874a7e4721ff3303f6413240f7938cbb82647c7698172",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Download the audio locally cambia cargar un archivo local por descargarlo. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "6beba3bbeb5ada121b7039b158eaabda70e2f8281b25d4a4d675f7a3a0df6b15",
+      "record_sha256": "6a26c99a654810a935db098dd42a56305f2f8bf18626396f9f5eabc5536931bf",
+      "translation_hash": "8b54f343b7edfa44cc82338345938ec0e210c79af106921c35fa53b91dcf91ac",
+      "back_translation_hash": "211c958a9c1dc37f2cb574b8b1523039ec7270d75c4f5f838dec1b211f27af0d",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Omite Audio decoded locally; deja solo duración y placeholder."
+        }
+      }
+    },
+    {
+      "record_id": "ee2c2742f98a53cb5e4f88dab94e67c17e1accde2f3850377fc4ca1fc56aa4b9",
+      "record_sha256": "1d0c6d7f1e31226eaeb1319391187ef37a45d9ed974919ebde97107648c5938f",
+      "translation_hash": "714f2b1a1b0392724ec4054de2b4d7ee2f6eb7278cd5e04bbad3e0cc2aa237c6",
+      "back_translation_hash": "6b8302b654ffb2ee1ea9d0458f171bd237103084fba11dfdac862782754243fd",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Предварительный эффект significa efecto preliminar; no preescuchar el efecto."
+        }
+      }
+    },
+    {
+      "record_id": "108982c9fc604b26006b9acb77b62df513dd9d06b88972a0075cbb4f72011150",
+      "record_sha256": "84035fe038b3f91cf6be58d2a996baa2ddf55c452eaa3042ea3b676bd4f18103",
+      "translation_hash": "f2de02aeb02a75033ffebf640f0ebfdb3b2d83020757f498f952e2cd2db66466",
+      "back_translation_hash": "8db29c2c6fbcd1b71352aeed3f9855c3ee31a75d48b4ad578561a920a44921bb",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta convierte UsefulVerse en objeto de store, en vez del agente que no guarda el audio. Se juzga la ida por separado."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Oración en minúscula y coordinación/atribución mal formada; las negaciones y permanencia local siguen presentes."
+        }
+      }
+    },
+    {
+      "record_id": "4a36f75d051e6b9aa8973b5b0954bd1b7ef200f30b245c01a997a641ef4ee66d",
+      "record_sha256": "dd2f230c6b45f634326926068b7fb01fff39b0efaeb5fe2ac1a26225c87f1830",
+      "translation_hash": "d86f776b4ed79a3d41493bf1091ba25215b87e4e7ada0c59aa1be944d0e868b3",
+      "back_translation_hash": "01a494ae597c50a4a2d77d6dea2461c3b93adb02480f30256776cd612bac3fb6",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Прекращение прогноза es cancelar un pronóstico, no parar la preescucha."
+        }
+      }
+    },
+    {
+      "record_id": "af543e8f3e768e512a44f167d1000a41d9535d9302a79cbc04b87e0cd00f5c92",
+      "record_sha256": "d60d242219ea7a8e77b317728e8792d7f0bbf6b754c429b8b5a7fe8315ecb8e6",
+      "translation_hash": "c1aa8e2f1e569eaa2e1a269c8883ae770e3b6ec2d5bd765199fbfc8273303760",
+      "back_translation_hash": "d2511c6fe862831cdb0c314521c82e65328b91194957b0df0528fdb25c920e02",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Стрим файл manda hacer streaming del archivo en vez de recortarlo; conserva30 segundos."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "rows": 40,
+    "points": 292,
+    "maximum": 360,
+    "button_errors": 15,
+    "number_negation_errors": 1,
+    "major_rows": 17,
+    "minor_rows": 11,
+    "unproved_data_rows": 3,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Negative existing baseline: observed linguistic defects and no locale-specific typed profile. Do not run full sample, freeze an engine, import memory or approve release."
+  }
+}

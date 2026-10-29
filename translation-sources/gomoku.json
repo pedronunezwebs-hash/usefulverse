@@ -1,0 +1,85 @@
+{
+  "toolId": "gomoku",
+  "sourceCopy": {
+    "name": "Gomoku",
+    "title": "Gomoku Online Free | UsefulVerse",
+    "description": "Play Gomoku free on a 15×15 board against a simple local bot or a friend. No download or account; moves stay in your browser.",
+    "intro": "Place black and white stones on a 15×15 board. Make five or more in a row horizontally, vertically, or diagonally to win. Play a friend on this device or challenge a basic local opponent.",
+    "howQuestion": "How do you win at Gomoku?",
+    "howAnswer": "Take turns placing one stone on an empty intersection. The first player to make five or more continuous stones in any direction wins. This version uses freestyle rules: overlines also win.",
+    "privacyQuestion": "Can I play Gomoku without downloading anything?",
+    "privacyAnswer": "Yes. The board and local opponent run in this browser. The game is not uploaded or automatically saved.",
+    "howTo": [
+      "Choose play against the computer or a second person on this device.",
+      "Select an empty intersection. Black takes the first move.",
+      "Connect five or more stones in a horizontal, vertical, or diagonal line to win."
+    ],
+    "example": {
+      "label": "Start a new game"
+    },
+    "actions": {
+      "newGame": "New game",
+      "reset": "New game",
+      "result": "Game status"
+    },
+    "fields": {
+      "mode": "Game mode",
+      "computerMode": "Play the local computer",
+      "twoPlayerMode": "Two players on this device",
+      "boardLabel": "Gomoku board, 15 rows by 15 columns",
+      "emptyPoint": "empty intersection",
+      "blackStone": "black stone",
+      "whiteStone": "white stone",
+      "cellLabel": "Row {row}, column {column}: {stone}",
+      "currentPlayer": "Turn",
+      "blackPlayer": "Black",
+      "whitePlayer": "White",
+      "moveCount": "Moves",
+      "rules": "Rules",
+      "accuracyNote": "Freestyle Gomoku: five or more continuous stones win. The local opponent uses a small heuristic, not a tournament-strength search. Game state stays in this tab and is cleared on reload.",
+      "resultSummary": "Game result"
+    },
+    "messages": {
+      "blackTurn": "Black to move.",
+      "whiteTurn": "White to move.",
+      "botThinking": "The local computer is choosing a move.",
+      "blackWon": "Black wins with five or more in a row!",
+      "whiteWon": "White wins with five or more in a row!",
+      "draw": "The board is full. The game is a draw.",
+      "newGame": "New game started. Black moves first.",
+      "invalidMove": "Choose an empty point on the board."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does a line need to be exactly five stones?",
+        "answer": "No. This game uses freestyle rules: five or more consecutive stones in a horizontal, vertical, or diagonal direction wins."
+      },
+      {
+        "question": "Can I play Gomoku against the computer?",
+        "answer": "Yes. The local computer checks immediate wins and blocks, then scores nearby open lines. It is a simple opponent, not an advanced or tournament-strength AI."
+      },
+      {
+        "question": "Does Gomoku work with two players?",
+        "answer": "Yes. Choose the two-player mode to take turns on the same device. There is no online multiplayer or automatic game saving."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/gomoku/index.html",
+    "htmlSha256": "830b293f8e68fc738b8fb0de5bd67cb5b72883e96f0e853cd597488d8ad2ca46",
+    "payloadSha256": "d0b90adf47bf4d4130d4c28d1d761b49f5ed8efc7a44e9a2db6367079e32e398",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/gomoku.js",
+    "controllerSha256": "f8de39f46c0a56305066dccaf06ec792acb41cbed500bc667d637ac6d82334a6",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

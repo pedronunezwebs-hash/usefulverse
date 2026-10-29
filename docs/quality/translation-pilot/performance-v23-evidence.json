@@ -1,0 +1,184 @@
+{
+  "before": {
+    "semantic_queries": 28620,
+    "semantic_seconds": 0.4962567090005905,
+    "record_flags_sample": 1023,
+    "record_flags_seconds": 0.1856043329989916,
+    "clock": "perf_counter",
+    "models_downloaded": false,
+    "fixture_count": 967,
+    "validate_records": 14310,
+    "validate_seconds": 5.939792958000908
+  },
+  "after": {
+    "validate_records": 14310,
+    "validate_seconds": 0.7761242910000874,
+    "before_seconds": 5.939792958000908,
+    "speedup": 7.653146573143706,
+    "same_historical_policy_hashes": true,
+    "same_historical_record_flags": true,
+    "full_sfb_checks_retained": true,
+    "paid_services": false
+  },
+  "scope": "Pure local validation of the same14310 historical records; not translation throughput. Full source/forward/back contracts and historical hashes retained. No model/infrastructure spend.",
+  "red_test_sha256": "9e1106a2752db28b488b85e7975bdaafdf91f5dbb79302e976422536f6b87834",
+  "green_test_sha256": "c1de396add63b60b7739446ae754c9af4d1c4c8af85083ffc8071726ef9e4e98",
+  "test_receipts": [
+    {
+      "label": "Immutable policy cache first red",
+      "sha256": "9e1106a2752db28b488b85e7975bdaafdf91f5dbb79302e976422536f6b87834",
+      "result_lines": [
+        "Ran 6 tests in 0.011s",
+        "FAILED (errors=3)"
+      ]
+    },
+    {
+      "label": "Six immutable/mutable/tampered-policy tests green",
+      "sha256": "c1de396add63b60b7739446ae754c9af4d1c4c8af85083ffc8071726ef9e4e98",
+      "result_lines": [
+        "Ran 6 tests in 0.017s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Existing direct-mutation test red after freeze",
+      "sha256": "fc0cdd32ee613ab42cc667af4ad52a0fef9fac61d9078f6c9daceded8af8cd32",
+      "result_lines": [
+        "Ran 162 tests in 38.415s",
+        "FAILED (errors=1, skipped=2)"
+      ]
+    },
+    {
+      "label": "Same negative assertion retained using scoped mutable copy",
+      "sha256": "d0bbd3fb4fcf80c9cbf5ce59bf4ce44bb927e9e40a6269d0b33dc8c4a94c4755",
+      "result_lines": [
+        "Ran 1 test in 0.009s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Exact-text runtime cache first red",
+      "sha256": "6ad3ebe27700e834785bb71ea233ca6d51cab96e8478edf5af42fbd18819fe4c",
+      "result_lines": [
+        "Ran 7 tests in 0.001s",
+        "FAILED (errors=10)"
+      ]
+    },
+    {
+      "label": "Seven raw-cache safety/order/language/truncation tests green",
+      "sha256": "670a39115e7523a8984e4842e16547cb2094b03fad392b037b4b9dc8b2656e62",
+      "result_lines": [
+        "Ran 7 tests in 0.003s",
+        "OK"
+      ]
+    },
+    {
+      "label": "All nine old callbacks replayed before new memory",
+      "sha256": "0290f960216bf90d35f62e8bb22fc39e4d5c54609e549c026c550e8b7b121d67",
+      "result_lines": [
+        "Ran 4 tests in 0.015s",
+        "FAILED (failures=2, errors=11)"
+      ]
+    },
+    {
+      "label": "Four memory/source/context/marker tests green",
+      "sha256": "ed0770e91399d03f49edafc1bc5dba54194da2d7ac1bc29e9794edff19552db7",
+      "result_lines": [
+        "Ran 4 tests in 0.037s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Sixteen old numeric proof gaps red",
+      "sha256": "c01824334ef6b00b77842ad0689c17dd08c35b8712ff6a6f2bc79ca50659c537",
+      "result_lines": [
+        "Ran 7 tests in 0.017s",
+        "FAILED (failures=12, errors=10)"
+      ]
+    },
+    {
+      "label": "Seven exact-source proof/tampering/unknown-number tests green",
+      "sha256": "87578f2fe4d6902dff24988aed54087da09e87393d7135be492b1066cbaba89d",
+      "result_lines": [
+        "Ran 7 tests in 0.062s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Full182 current tests:180pass,2dependency skips",
+      "sha256": "54745c8937ecde26043bc38054aa26f564879a9a91e2ccb5ff2053385455eb3e",
+      "result_lines": [
+        "Ran 182 tests in 45.535s",
+        "OK (skipped=2)"
+      ]
+    },
+    {
+      "label": "Portable Unicode full184 tests:182pass,2dependency skips",
+      "sha256": "79670bb40134237a0e4c5e56e79275bcde02582988cf3ec281e227d2801987ce",
+      "result_lines": [
+        "Ran 184 tests in 45.674s",
+        "OK (skipped=2)"
+      ]
+    }
+  ],
+  "runtime_cache": "Only context-v23; exact raw texts/language direction/model-instance in disposable-runner RAM. No normalization, persistent model/cache/artifact storage or quality/approval reuse. Actual call avoidance will be measured in Actions.",
+  "portability_failure": {
+    "run_id": 40108791297,
+    "source_commit": "5f1b576948eb3df0dc8020c21cfbc63ed4ea58ab",
+    "actual_tests": 182,
+    "failed_negative_cases": 2,
+    "records": 0,
+    "model_inference": false,
+    "cleanup": "success",
+    "artifacts": 0,
+    "cause": "Python3.11 UCD14 vsPython3.14 UCD16 Numeric_Value differences for两/兩; host-dependent rejection was unsafe",
+    "primary_sources": [
+      "https://docs.python.org/3.11/library/unicodedata.html",
+      "https://docs.python.org/3.14/library/unicodedata.html",
+      "https://www.unicode.org/Public/17.0.0/ucd/extracted/DerivedNumericValues.txt"
+    ],
+    "local_red_sha256": "492f073a54a3dc6a360d62974e61306fe6316add703248ac9daac2171275637f",
+    "local_green_sha256": "094229866179a6a511b6844fae01fda535cc06f3daa769f2228ca882f6eca658",
+    "pinned_numeric_sha256": "139b976bdc288be01c80f018523da769cf2845109b5a7f0f8a432db64bfedcfa"
+  },
+  "runtime_cache_measured": {
+    "run_id": 40109970196,
+    "requests": 103,
+    "model_items": 98,
+    "avoided_items": 5,
+    "saved_fraction": 0.04854368932038835,
+    "model_seconds": 73.29251745400006,
+    "calls": 14,
+    "memory_hits": 9,
+    "total_seconds": 171.884367842,
+    "controlled_model_speedup_claim": false,
+    "note": "Actual item avoidance, not measured counterfactual wall-clock acceleration. Separate policy validation benchmark is7.65x, not model inference."
+  },
+  "whole_input_gap": {
+    "record_id": "44232533fd023e05d28567421c34a7ff007a94db45e8f257e2db0cc29548c3bd",
+    "acceptance_stays_false": true,
+    "before": "classifier missed whole controlled inference input gap",
+    "after": "blocking unproved-data metadata only; inference/policy/checkpoint unchanged",
+    "red_sha256": "b2e09a61c444e0a81743ab49a816afdc24b11ddfc60bfcc6c255e4714c62805b",
+    "green_sha256": "7d5c9ab002d7c614c71e0655c1f64ea23d420dec69d8e37bf300ce249ba786bc"
+  },
+  "new_finding_tests": {
+    "findings": 4,
+    "red_sha256": "e8534aa79fd98541375f3248c101d0645e75990345d6f35cadff5b11577791cd",
+    "green_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5"
+  },
+  "local_review_metadata_correction": {
+    "red_full_suite_sha256": "ab7ea53669917a5963ce7bc18d0cf76ee478393b8bbd5da6f99e070e027360b1",
+    "actual_tests": 187,
+    "failed_errors": 1,
+    "reason": "New legacy review mistakenly requested model-only coverage. Set flag false for legacy; all27legacy rows still individually audited and all40model coverage remains mandatory. No test/assertion or auditor change.",
+    "green_sha256": "34919cec390295022570a78370e340102387e55774f1050b50b250773f0ae087"
+  },
+  "local_final_suite": {
+    "tests": 187,
+    "passed": 185,
+    "dependency_skips": 2,
+    "seconds": 47.562,
+    "log_sha256": "34919cec390295022570a78370e340102387e55774f1050b50b250773f0ae087"
+  }
+}

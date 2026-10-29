@@ -1,0 +1,90 @@
+{
+  "toolId": "vcard-generator",
+  "sourceCopy": {
+    "name": "VCard Generator",
+    "title": "VCard Generator Free | UsefulVerse",
+    "description": "Create a vCard 3.0 or 4.0 contact file with escaped Unicode text and optional photo. Preview, copy or download it locally.",
+    "intro": "Create a single digital contact as a .vcf file in your browser. Choose vCard 3.0 or 4.0, add contact details and optionally embed a small JPEG or PNG photo.",
+    "howQuestion": "Will this add the contact to my phone?",
+    "howAnswer": "No. It creates a VCF file for you to preview, copy or download. It never reads or changes your address book; you decide whether and where to import the file.",
+    "privacyQuestion": "Is my contact information uploaded?",
+    "privacyAnswer": "No. Details and an optional photo are processed on this device. There is no upload, account, server processing or automatic saving.",
+    "fields": {
+      "version": "vCard format",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "middleName": "Middle name",
+      "prefix": "Name prefix",
+      "suffix": "Name suffix",
+      "formattedName": "Display name (optional override)",
+      "organization": "Organization",
+      "department": "Department",
+      "title": "Job title",
+      "phones": "Phone numbers (one per line, up to 5)",
+      "phoneType": "Phone type",
+      "phoneCell": "Mobile",
+      "phoneWork": "Work",
+      "phoneHome": "Home",
+      "emails": "Email addresses (one per line, up to 5)",
+      "emailType": "Email type",
+      "emailWork": "Work",
+      "emailHome": "Home",
+      "website": "Website (HTTPS)",
+      "poBox": "P.O. box",
+      "extendedAddress": "Apartment or extended address",
+      "street": "Street address",
+      "locality": "City or locality",
+      "region": "State, province or region",
+      "postalCode": "Postal code",
+      "country": "Country",
+      "note": "Note",
+      "photo": "Contact photo (optional)",
+      "photoHint": "Optional JPEG or PNG, up to 128 KiB. The photo is embedded into the VCF file; it is not uploaded.",
+      "limits": "One contact, up to 5 phones and 5 emails, 500 characters per text field, and a 1 MiB generated-file limit. Only vCard 3.0 and 4.0 are offered.",
+      "privacyNote": "Runs locally after you choose Generate. No account, contact-book access, upload, API, server processing or automatic save.",
+      "previewTitle": "VCF preview"
+    },
+    "actions": {
+      "generate": "Create contact file",
+      "copy": "Copy VCF text",
+      "download": "Download VCF",
+      "reset": "Clear form",
+      "result": "Contact file ready"
+    },
+    "messages": {
+      "loading": "Creating the contact file locally…",
+      "requiredName": "Enter a display name or a first or last name.",
+      "invalid": "Check the contact details. Use valid email addresses and an HTTPS website URL.",
+      "limits": "A field, list or photo exceeds the local limit, or the selected photo is not a matching JPEG or PNG.",
+      "created": "VCF is ready. Review it, then copy or download the file.",
+      "copied": "VCF text copied.",
+      "copyUnavailable": "Clipboard access is unavailable. Select the preview text to copy it.",
+      "downloaded": "The VCF file download is ready.",
+      "cleared": "The form and generated contact were cleared."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between vCard 3.0 and 4.0?",
+        "answer": "They are two versions of the vCard contact format. The tool writes a compatible VCF text file using the version you select; contact apps may support them differently."
+      },
+      {
+        "question": "Does this verify phone numbers or email addresses?",
+        "answer": "No. It checks their basic format only. It cannot verify that a number, mailbox, address or website belongs to the person."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/vcard-generator/index.html",
+    "htmlSha256": "c513b95a18c5040f2f89a3453d5578316946a7fecb39c9b04559becbc4c6b72b",
+    "payloadSha256": "348013c7afd677af6d515823d2bcc6502a92144bfbeb47454b7322876e69278e",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/vcard-generator.js",
+    "controllerSha256": "d1e296bcbec1572e1e1417486fe81f700205d90f37f2f245d96dd92463eb2210",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

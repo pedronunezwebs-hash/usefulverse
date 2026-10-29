@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T01:38:01.599801+00:00",
+  "run_id": 40253948985,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40253948985",
+  "source_commit": "ff5d27d682b7015512300824a26a516817867609",
+  "policy": "context-v28",
+  "scope": "full",
+  "locales": [
+    "bn"
+  ],
+  "conclusion": "success",
+  "new_records": 266,
+  "total_checkpoint_records": 333,
+  "approved_locales": [],
+  "new_forward_model_rows": 174,
+  "new_reviewed_memory_rows": 0,
+  "summary": {
+    "approved": 0,
+    "conversion_seconds": 120.85769708499993,
+    "counts": {
+      "legacy": 92,
+      "model": 174
+    },
+    "engine": "madlad",
+    "peak_rss_kib": 4098932,
+    "scope": "full",
+    "total_seconds": 351.148751447
+  },
+  "model": {
+    "converted_sha256": {
+      "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+      "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+      "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+    },
+    "engine": "madlad",
+    "license": "Apache-2.0",
+    "minimum_free_gib": 18,
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  },
+  "python_tests": 326,
+  "python_seconds": 343.759,
+  "python_skips": 0,
+  "artifacts": 0,
+  "cleanup": "success",
+  "site_job": "skipped",
+  "runner_labels": [
+    "ubuntu-latest"
+  ],
+  "runtime_sha256": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+  "checkpoint_sha256": "b1c31ed81356c321acacbfb32e05b8743a966899021ce3f0486928ce7edf9d1c",
+  "cache_log_occurrences": 112,
+  "method": "Recovered complete base64 raw records from immutable public Actions logs; duplicate step/full logs deduplicated by record_id, conflicting content rejected."
+}

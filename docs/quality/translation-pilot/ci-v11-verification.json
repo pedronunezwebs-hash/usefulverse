@@ -1,0 +1,91 @@
+{
+  "runs": [
+    {
+      "run_id": 39629749690,
+      "job_id": 119324473434,
+      "source_commit": "fe2acf3f27b2105d979fa21853eaa53225fe7d6a",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 77,
+      "python_pass": 75,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "71af4734e922cd05d5b4969560d132619a3af39b0f5d89aa838d8cd57eb8ce54",
+      "limitations": "No whole-language/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    },
+    {
+      "run_id": 39631316685,
+      "job_id": 119329942494,
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 77,
+      "python_pass": 75,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "7755c570c4a179e2b6240f94feb9a6f8c5d6c8c2147db9387cda2883b1ed56bf",
+      "limitations": "No whole-language/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    },
+    {
+      "run_id": 39634328120,
+      "job_id": 119340896622,
+      "source_commit": "aa4024459d566438cd51c790f707825feb49e9b2",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 77,
+      "python_pass": 75,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "021c2e2c3b7598a81fb6492d15612bfc856a7f7d2348d492395ee843b37ae117",
+      "limitations": "No whole-language/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    }
+  ],
+  "at_utc": "2026-10-21T16:29:19.334717+00:00",
+  "superseded_runs": [
+    {
+      "run_id": 39634166321,
+      "source_commit": "32597994e4b5cffd87b891d11d3704ca956a9acd",
+      "conclusion": "cancelled",
+      "reason": "Cancelled after local coverage test rejected missing references-to-full supplemental link; replaced by final successful run39634328120. No deployment/model data lost."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "toolId": "rref-calculator",
+  "sourceCopy": {
+    "name": "RREF Calculator",
+    "title": "RREF Calculator Free | UsefulVerse",
+    "description": "Reduce a matrix to reduced row echelon form. See rank, pivot columns and row-operation steps with this free online RREF calculator.",
+    "intro": "Enter a rectangular matrix to calculate its reduced row echelon form (RREF), rank, pivot columns and elementary row-operation steps.",
+    "howQuestion": "How do you find reduced row echelon form?",
+    "howAnswer": "Use Gaussian elimination to create a leading 1 in each pivot column and eliminate every other value in that column. This calculator uses bounded numerical arithmetic and displays each row swap, scaling and elimination step.",
+    "privacyQuestion": "Are my matrix values uploaded?",
+    "privacyAnswer": "No. The matrix is processed in this browser and is not uploaded or saved by this tool.",
+    "fields": {
+      "matrix": "Matrix entries",
+      "matrixHint": "Enter one row per line. Separate columns with spaces, tabs or semicolons. Use finite decimal values; fractions such as 1/2 are not accepted.",
+      "tolerance": "Zero tolerance",
+      "toleranceHint": "Values at or below this absolute size are treated as zero. Tight tolerances may amplify rounding error.",
+      "accuracyNote": "Numerical result, not exact symbolic arithmetic. Up to 12 rows and columns; entries must be finite and no larger than 10⁹ in absolute value. Check the tolerance for ill-conditioned matrices.",
+      "resultSummary": "RREF results",
+      "resultMatrix": "Reduced row echelon form",
+      "resultRank": "Rank",
+      "pivotColumns": "Pivot columns",
+      "operations": "Row-operation steps",
+      "noOperations": "The matrix is already in reduced row echelon form.",
+      "stepSwap": "Swap rows {first} and {second}",
+      "stepScale": "Multiply row {row} by {factor}",
+      "stepAdd": "Add {factor} times row {source} to row {target}",
+      "stepsLimited": "Only the first 256 row-operation steps are shown."
+    },
+    "actions": {
+      "calculate": "Reduce matrix",
+      "reset": "Reset",
+      "example": "Load an example",
+      "result": "Results",
+      "copy": "Copy results"
+    },
+    "messages": {
+      "calculated": "Matrix reduced.",
+      "checkInputs": "Check the matrix shape, entries and tolerance.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does RREF mean?",
+        "answer": "Reduced row echelon form has a leading 1 in each nonzero row, each pivot is the only nonzero value in its column, and pivot positions move to the right in lower rows."
+      },
+      {
+        "question": "How do I read pivot columns and rank?",
+        "answer": "The listed pivot columns contain leading 1s. The rank is the number of pivot columns, or equivalently the number of nonzero rows in the RREF."
+      },
+      {
+        "question": "Is the result exact?",
+        "answer": "No. This tool uses floating-point arithmetic and a selected zero tolerance. For exact rational work or ill-conditioned matrices, verify the result with an appropriate symbolic tool."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/rref-calculator/index.html",
+    "htmlSha256": "45c1c1ce3bd3e958b03aea517372273ee0631f1a7415f806b3439a90b677fedf",
+    "payloadSha256": "f84d32db271855a7bc6ff014183b12fca260b6124822336aa54ca6296239a094",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/rref-calculator.js",
+    "controllerSha256": "9d7a2fe48783fec29ddd8b204dc3f5f5e1531d9bef79dd1204a97283192e73d7",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

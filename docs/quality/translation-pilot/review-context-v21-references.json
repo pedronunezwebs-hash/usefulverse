@@ -1,0 +1,1094 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2 y RUNBOOK §8: significado, cifras/negaciones y naturalidad0–3; cero errores botones/cifras, máximo1leve/20. Fuente/ida/vuelta actuales leídas directamente.",
+  "expected_rows": 40,
+  "inference_policy": "context-v21",
+  "reviewed_at_utc": "2026-10-24T06:26:59.004215+00:00",
+  "scope": "All listed current source/forward/back read directly; all58 known id memories declared. No native/blind/unseen-text or language approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": true,
+  "rows": [
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2715bb047957d0e02ef142b4dac2bfe2f637a054470847c308aa2abe38b4c067",
+      "record_ids": [
+        "06d07faea79b57fd5faaca5f7bb1f5e2249f3f14c9f1e401495768deefec1719"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pilih berkas ASCII DXF pide elegir el formato exacto, sin confundirlo con DWG. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "491266e9a26b78b2c9122e4f46cd89c3c6bf1c7ddb82bf48edfd1d425350d80c",
+      "record_ids": [
+        "082163bfe249660d4c530ef7afb1c74e5c0332b87164e6f6686f1eda40ebd9e6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "tidak lebih besar dari 25 MB mantiene el límite inclusivo y MB exactos. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "f4f76a634b557d0d3391bf69597a8e2ec3893eeac037688600bf2d0b116e1118",
+      "record_ids": [
+        "0827145bdc6c3c872ab89a2f3c81a3270283d63e273de66fe28b1780c7c62b80"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Binary DXF se entiende como nombre técnico del formato; no didukung niega soporte y ordena guardar/exportar como ASCII DXF. gambar es dibujo válido en CAD. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5a66ffd3b416bad7c68b6c3a1a6fb151a33d394f5770995009fcdace04b27659",
+      "record_ids": [
+        "0846d1958df5c77f1ca9f93f580a2288930198c3b0c5dc114578d195895c1bde"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Teka-teki harian conserva el puzle diario. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "df582daf2c6c4be53ec6a55e598f0abd6a8a8b71b716831bfd6eb2279d8cb343",
+      "record_ids": [
+        "097949b125d2fef16a9973ce1c4c1149f74ddb66c43a0dac9ee23bb2fd6ea85a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Muat audio secara lokal mantiene cargar audio en el dispositivo. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "365eb8680f3beca7aec484a9746ee8feeb63eb359e62d12cfb4cce0946bda52f",
+      "record_ids": [
+        "0ae98a2a2fc98186153d3dacef9d249bb94d65ab9aa65bdbbc538677874981b9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Zoom keluar conserva la acción de alejar; zoom es un préstamo técnico corriente. Variante de caja/ortografía de Zum Keluar, sin cambio de dirección. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "4760cc59e88d2843cfd5aca9fe49b4c210d057099104065c1d75600049d9cd11",
+      "record_ids": [
+        "0bb83bc2b1784c4ebd0aa44d207e803b7cba1837d904cfe375fdfdcd3791eb30"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "6 y tepat enam kotak mantienen exactamente seis casillas dentro de un rectángulo. Kotak se lee como casilla del tablero, no cambia área ni cantidad. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d003dee7b2d36667e1cf76365d2c4f5da3fa3151c62c5d79b7f166a33b95e6e5",
+      "record_ids": [
+        "0c13badfdd5a75d0c0ec0a51957fc336d37dbb6d1f651c14ef8940212af49257"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ukur jarak es medir distancia, sin confundir medir con probar. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "0af6b651562f1e66376aeb7fea8cf73e77b133cdad1271a42dedc524882e848d",
+      "record_ids": [
+        "10d0867e082fc0cdc108905d7c0c8cc842f753c7efd60fcc6522c3737755de99"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio didekode y Durasi conservan decodificación, procesamiento local y {duration} exacto. La vuelta encoded confunde codificación con decodificación; la ida correcta no se penaliza. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5ef93a40366331164e0d57115cc9ffb73641266e12c934add629394f9fd8a343",
+      "record_ids": [
+        "126faeeb33e9ef369cc332d31e7e04f6d98c16bfe684bbf905a0a7d8ee60dfef"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Periksa teka-teki ordena comprobar el puzle. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fd3f4946967796010621661cef3d756df3458eba4696f2ea395dbbe58d61fb3f",
+      "record_ids": [
+        "12ecb84b5cc27e78efe77587299c8dd133096dcf8d2c7df79596a57b202f4632"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Batalkan persegi panjang terakhir deshace el último rectángulo, no toda la partida. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d4c12acabce8ceb0050c0a8cce1f71f3d76395508e921b03819da9e1def30090",
+      "record_ids": [
+        "14268a32e0a98646c2ae1eecc26d67c3dc8670d81889b240a45bb1b814948edc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "hingga 30 detik conserva máximo inclusivo; Potong berkas dan coba lagi indica recortar y reintentar. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5fbde155a717ef55cebc2a39b0457aa2d8c8dcd1f55532d77f171e914507a92b",
+      "record_ids": [
+        "237e1aebdc5e517dac4fc49d962c4160b09ecd646807407eb28961535b1708d4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Berkas .dxf berformat ASCII separa inequívocamente la extensión y la codificación, tras rechazar el archivo no soportado. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "311fbb2be8c2845350d479fbb88efeed2fe4e4c2e0e68f0b6a54ddacb946d638",
+      "record_ids": [
+        "3f375d1ec7418efbc5f0df3707937b5699ef45a531147c60e54bef17e23bdc9a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Batalkan pemuatan cancela la carga del archivo, sin el falso llenado de pengisian. El guion bajo de la vuelta no procede de la ida. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e957b9c658324c821006cb5e77d4a3eb05518fc1c16d63ea0d221db5b6a38b81",
+      "record_ids": [
+        "55b30a7af42baa7f6b7ebd5a4b2bd7ffefaa430ca26082c38b2e105e18b263c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "biner DXF mantiene la restricción de DXF binario; DWG tampoco se abre y ASCII DXF sigue siendo el único admitido. Orden de palabras distinto, contenido intacto. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9e9a96861fc02efdd81472ead5a311b07f75892f19d4af6c0ca3ef0341ef4936",
+      "record_ids": [
+        "5c56410cf7ea13e0c364203b74147a0e37733116d72d61d9ef3c1a7067167133"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Unduh PNG expresa descargar, con el formato exacto. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e1f297729f53f8d6939a639727985c97f020fda6370bd6cb263e9874759c1bde",
+      "record_ids": [
+        "64f932122bb611a919d31a6b00839082336d7b084f828f61991efc24826bf99b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sesuaikan tampilan agar seluruh gambar terlihat ordena ajustar la vista para que se vea todo el dibujo. La longitud frente a Fit drawing explica la señal; la acción es correcta. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "277ac9310ad34ee174fcbc7a1a4735b9ca4870acfeb468a646210ae0d6208106",
+      "record_ids": [
+        "720b482ecc1a4a90b8e89cc4f436978e5defb6ebc263be99b98e948cebcbeb60"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Unduh SVG expresa descargar, con el formato exacto. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "b34fee0d6f6e96ef7800230e73400837a010814e3c2922fa1f270d2a4098d0a5",
+      "record_ids": [
+        "786626bcc1d0a4e0e090b3f86946cbbb1349b20cfac590c2344f4eb043d618f2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Berhenti memainkan efek audio detiene la reproducción de la muestra del efecto. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "604ba3edea2d9dcf9525ea9f03f1c050058d7b22c289d661450f35a5acf1d1d9",
+      "record_ids": [
+        "83c2278945726467f80f05f16bdd99f0353e5a974602cf66d322846b717a8382"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tampilkan petunjuk es mostrar una pista; sustantivo indonesio sin artículo no implica varias pistas. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "f28398195034351ebd291754997aff53e2f5bd90fc0637f91e83f0e41d504aa8",
+      "record_ids": [
+        "89b1b59f0212035e2b935aab344e8bf66ba375d8c9634218a1c6fd5ece60ca61"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Putar efek audio expresa reproducir la previsualización del efecto, sin prometer aplicar o exportar. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+      "record_ids": [
+        "93275fb66cf9e7d61caef9137841fb6b5d8842bd3b790dd69018ab2318b47cae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "La grabación elegida nunca se sube; Penjelajah designa el navegador y conserva decodificar/procesar localmente y no recibir por UsefulVerse. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "dc576296a7960e19a806dfbb14b945fe1abcc3e6192e4dad8802f177ef007f5f",
+      "record_ids": [
+        "96888bc2a1632b349eca19678c1b64317c3e488a136e675ec1e3fa0b7d99cae8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "penampil designa el visor; la condición de milímetros, unidad declarada y alternativa de etiquetar como satuan gambar están completas y claras. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fa88c442dd2ce73803b9a663a68a4b566c0f062cda39b4f6c6aa85b01c8edec2",
+      "record_ids": [
+        "9a13ded59834dde2d598b98aa6c38ec786f8cfa5aa2d00e935db9d5112cb0aec"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ekspor WAV diproses es una etiqueta compacta de acción: exportar el WAV procesado. Conserva acción, formato y estado; la forma relativa yang diproses es una alternativa más desarrollada, sin pérdida funcional en la etiqueta breve. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d027d5bd3fa52984dfdbbcd84a7da1e37ece19fb7d42d76aeb9080fcfddd2361",
+      "record_ids": [
+        "9ef2f86ab102b9e7bef422ff074ab87157c16d1da7931d7f9990719d1ce03b14"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Hapus permainan yang tersimpan elimina la partida guardada, no solo los rectángulos actuales. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "909bb1f0159856f1c3f369a9481a730551caa23ff8d78f64054090b8326ac60e",
+      "record_ids": [
+        "9f36e85e39af9e220bf1bb378759a3dd4e620dd58bb38b9217b164b8abe25dab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "beberapa prohíbe varias pistas y tepat satu petunjuk angka exige exactamente una. La regla y la negación se conservan; el digit de la vuelta no cambia la ida. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e9989731ff669ef00803384b27bb4af58493846c8c9ce76b84eb67a80a792011",
+      "record_ids": [
+        "ab28c530ba5165c33c45fd9e1c6f60f003500b1cf2b413873b1869613480a332"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "sudut yang berlawanan es la esquina opuesta del rectángulo en contexto; angle de la vuelta no cambia una ida correcta. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "f1b30d7f1a5992b5fd15ffeba303830bd9590c931357c97b12e3c30a098f6a66",
+      "record_ids": [
+        "ae63a6ef040dc44a3742a8e7b8fefa227e440798608423f3a5b40edb9b26670c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Buang semua persegi panjang elimina todos los rectángulos; no borra solo uno ni reinicia un archivo. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9bb9ac26a31b9db15eb7c0cc35c9eae4a56ac67c86eaa5395da4d23a54521687",
+      "record_ids": [
+        "af38c5649d1e7d64c899d2b1181fff4b286929d39c7fda7a2ea63bfbf4c61232"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Perbesar es ampliar/acercar la vista. Zoom en la vuelta pierde dirección; no invalida la ida. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "0c06dc45ddfcecd4c5c9bd0bc1782a4e656db6150b353c9ba8bbb73227a7e63f",
+      "record_ids": [
+        "b8d70881fd8633e11c18c3b4fc3009aabea5150477b5ba21115ea8fa78dd3b74"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "terlebih dahulu conserva que elegir audio es el paso previo. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "789b3f2c0e0abcc78e734da8f7019aa57907d837dc95f5f59b5c6364c988f184",
+      "record_ids": [
+        "ba029cb865cdd97342a0962c338590ab7b7cb31d6a3950a865d0021d2a5f0028"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio permanece en este navegador; tidak ada audio yang dikirim atau disimpan por UsefulVerse mantiene envío y guardado negados, marca exacta. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5a087c5b7c2f1247b5bac2388e0b2c1864676f35c01a28b8d3b786ed30715277",
+      "record_ids": [
+        "ba8bbb5d11c1ee089b17100361291ba09ac6818df68520c4b38795d20fb31925"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tidak conserva No; mengubah kecepatan pemutaran y las dos frases Pitch yang lebih ... mantienen ambas direcciones de tono/velocidad con orden natural. La repetición No, no nace solo en la vuelta. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1b4ca00915a0dec0b4259ebe8535fdba72767fdc8c8a8fa331ec869ad3e5c502",
+      "record_ids": [
+        "c0b1a85eaafb6845f3c466a9e7cd6e05fab20980baac564dece9980e0c612665"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pilih berkas audio pide elegir un archivo de audio. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "41cd2cc598adbe0e671f0713befdadf9439db47eeba2628c959622fd81535785",
+      "record_ids": [
+        "c5da7694561866e4cd2e8687f5519135c5138d0a407f95076502ccf0206acba6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "tidak dapat mendekodi comunica fallo de decodificación y Coba WAV atau MP3 mantiene ambos formatos. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "978aa460dedd1c6a04d96ee04aa90f2e6253b75e8f5c91719bb56946316daeab",
+      "record_ids": [
+        "cacebc2fa51abef13a38d69d1c87444e72857b787c106274295ca3247473b8a8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "teka-teki baru conserva Nuevo rompecabezas; la minúscula inicial es una variante de caja de etiqueta, sin cambio de significado. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "776807e520db7b3d0f774313282cf4f21d7b14bb5d4d6db3da60b4c8cf0260ac",
+      "record_ids": [
+        "e39ee50e8dc78621debb9ae2e9ad46d16ecc1bb6e68fc30119651f40ece65406"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "empat koordinat yang valid exige cuatro coordenadas válidas; cuatro en palabras conserva el significado. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fa7322cd21afc653a4680635964510c61ffeecf49cdcc6ad156a225378546b68",
+      "record_ids": [
+        "e46d0260ac0c95b46e0f385e941a22d0a1b62fb9c4c0b4a8de78567bd3dfe934"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Buang audio yang dimuat elimina el audio cargado, no describe audio de sonido limpio. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "25628b30a9d90da0457e4bd669eae34fe9affbf3318aeee6a13314af3002580a",
+      "record_ids": [
+        "f13d12a56194ef38389b088a5d79b83ba61e90232d5f2296ce27a7e4906489a4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tampilkan solusi muestra la solución, sin confundirlo con comprobar. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "6105fccd7f69664311fe1426c1d75df58a6cc8a89e8ea181c181020b6e2f0ca6",
+      "record_ids": [
+        "f2ce24ec89228ad57565b7c84b05df1adccb58ae6e3ceb9705836ea97d07aa98"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "kotak awal designa la casilla inicial del tablero. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "id",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "3601653675c5a65b8a5efeb0ea54bddb436a537df103f287cf44bd6151eaf49d",
+      "record_ids": [
+        "f31cc14c5b1b238ed97cd65a60043a457d890af98bfca188b817572a5f21adb1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lanjutkan permainan yang disimpan continúa la partida guardada. Su longitud frente a Resume se explica por desambiguación, sin error. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "0827145bdc6c3c872ab89a2f3c81a3270283d63e273de66fe28b1780c7c62b80",
+      "back_translation_hash": "e7270ce7cce11c33a5a1a7e9a721099cc494aebe69070a0505f9aa62ec68b670",
+      "notes": [
+        "Save/export images amplía drawing a imágenes en la vuelta; gambar conserva dibujo CAD en el contexto indonesio."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "10d0867e082fc0cdc108905d7c0c8cc842f753c7efd60fcc6522c3737755de99",
+      "back_translation_hash": "72b1aede7a4a9a70fd98d792dbc34c66d627ea25c8ee7da3da13e1c3c4ad0ce1",
+      "notes": [
+        "La vuelta Audio encoded locally invierte decodificar por codificar. La ida didekode expresa decodificado y conserva {duration}. Defecto independiente solo de vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "237e1aebdc5e517dac4fc49d962c4160b09ecd646807407eb28961535b1708d4",
+      "back_translation_hash": "c23f241400e52468fafab4ada309171775ca2f2cb854fa3705e8f78fc855fe02",
+      "notes": [
+        "ASCII-formatted.dxf pega formatted a la extensión como si fuera nombre de archivo. La ida .dxf berformat ASCII separa formato y extensión; defecto solo de vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "3f375d1ec7418efbc5f0df3707937b5699ef45a531147c60e54bef17e23bdc9a",
+      "back_translation_hash": "2eda6aa86f74d5809ae70cc466f97c0fd4bd6c3c3ee0ffd076c0306600365bf2",
+      "notes": [
+        "_Cancel loading añade un guion bajo que no aparece en la fuente ni en Batalkan pemuatan. Artefacto solo de vuelta; la acción de ida es correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "93275fb66cf9e7d61caef9137841fb6b5d8842bd3b790dd69018ab2318b47cae",
+      "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+      "notes": [
+        "doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "96888bc2a1632b349eca19678c1b64317c3e488a136e675ec1e3fa0b7d99cae8",
+      "back_translation_hash": "44133056c01d984d3b255451b0751b18d6106952e4dd87dd4b4fd9c622b13429",
+      "notes": [
+        "display por viewer e image unit por drawing units desvían el sentido técnico del visor/unidades del dibujo CAD. La ida penampil/satuan gambar mantiene ambos sentidos."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "9f36e85e39af9e220bf1bb378759a3dd4e620dd58bb38b9217b164b8abe25dab",
+      "back_translation_hash": "da3f98cd3944ef4badbda1e334d6444428c287ff4854b7ac08d76dc03f37fc25",
+      "notes": [
+        "one digit clue puede imponer una sola cifra en vez de una pista numérica; la ida tepat satu petunjuk angka exige una pista y no limita sus dígitos."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ab28c530ba5165c33c45fd9e1c6f60f003500b1cf2b413873b1869613480a332",
+      "back_translation_hash": "a667cf11a2f6072e74200bafc8f9cc310c90ce764b0328fea00f3d41b301701b",
+      "notes": [
+        "Opposite angle convierte la esquina del rectángulo en ángulo; sudut conserva esquina en la ida y su contexto."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ba8bbb5d11c1ee089b17100361291ba09ac6818df68520c4b38795d20fb31925",
+      "back_translation_hash": "88c7c72ad465da54649906c86c7681f2ebb9b778abf652f1268027da1e9ccf00",
+      "notes": [
+        "No, no. añade repetición enfática ausente de un único Tidak. Relación tono/velocidad conservada; no es un error de ida."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "0827145bdc6c3c872ab89a2f3c81a3270283d63e273de66fe28b1780c7c62b80",
+      "translation_hash": "f4f76a634b557d0d3391bf69597a8e2ec3893eeac037688600bf2d0b116e1118",
+      "back_translation_hash": "e7270ce7cce11c33a5a1a7e9a721099cc494aebe69070a0505f9aa62ec68b670",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Save/export images amplía drawing a imágenes en la vuelta; gambar conserva dibujo CAD en el contexto indonesio."
+        }
+      }
+    },
+    {
+      "record_id": "10d0867e082fc0cdc108905d7c0c8cc842f753c7efd60fcc6522c3737755de99",
+      "translation_hash": "0af6b651562f1e66376aeb7fea8cf73e77b133cdad1271a42dedc524882e848d",
+      "back_translation_hash": "72b1aede7a4a9a70fd98d792dbc34c66d627ea25c8ee7da3da13e1c3c4ad0ce1",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta Audio encoded locally invierte decodificar por codificar. La ida didekode expresa decodificado y conserva {duration}. Defecto independiente solo de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "237e1aebdc5e517dac4fc49d962c4160b09ecd646807407eb28961535b1708d4",
+      "translation_hash": "5fbde155a717ef55cebc2a39b0457aa2d8c8dcd1f55532d77f171e914507a92b",
+      "back_translation_hash": "c23f241400e52468fafab4ada309171775ca2f2cb854fa3705e8f78fc855fe02",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "ASCII-formatted.dxf pega formatted a la extensión como si fuera nombre de archivo. La ida .dxf berformat ASCII separa formato y extensión; defecto solo de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "3f375d1ec7418efbc5f0df3707937b5699ef45a531147c60e54bef17e23bdc9a",
+      "translation_hash": "311fbb2be8c2845350d479fbb88efeed2fe4e4c2e0e68f0b6a54ddacb946d638",
+      "back_translation_hash": "2eda6aa86f74d5809ae70cc466f97c0fd4bd6c3c3ee0ffd076c0306600365bf2",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "_Cancel loading añade un guion bajo que no aparece en la fuente ni en Batalkan pemuatan. Artefacto solo de vuelta; la acción de ida es correcta."
+        }
+      }
+    },
+    {
+      "record_id": "64f932122bb611a919d31a6b00839082336d7b084f828f61991efc24826bf99b",
+      "translation_hash": "e1f297729f53f8d6939a639727985c97f020fda6370bd6cb263e9874759c1bde",
+      "back_translation_hash": "823bf23df4202aedf01bb02ec4279d37d9cbde36d08af6082dda6c9531faffb6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Sesuaikan tampilan agar seluruh gambar terlihat ordena ajustar la vista para que se vea todo el dibujo. La longitud frente a Fit drawing explica la señal; la acción es correcta. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20. Señal contrastada con fuente/ida/vuelta actuales; no se aprueba por detector ni por vuelta aislada."
+        }
+      }
+    },
+    {
+      "record_id": "93275fb66cf9e7d61caef9137841fb6b5d8842bd3b790dd69018ab2318b47cae",
+      "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+      "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "96888bc2a1632b349eca19678c1b64317c3e488a136e675ec1e3fa0b7d99cae8",
+      "translation_hash": "dc576296a7960e19a806dfbb14b945fe1abcc3e6192e4dad8802f177ef007f5f",
+      "back_translation_hash": "44133056c01d984d3b255451b0751b18d6106952e4dd87dd4b4fd9c622b13429",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "display por viewer e image unit por drawing units desvían el sentido técnico del visor/unidades del dibujo CAD. La ida penampil/satuan gambar mantiene ambos sentidos."
+        }
+      }
+    },
+    {
+      "record_id": "9f36e85e39af9e220bf1bb378759a3dd4e620dd58bb38b9217b164b8abe25dab",
+      "translation_hash": "909bb1f0159856f1c3f369a9481a730551caa23ff8d78f64054090b8326ac60e",
+      "back_translation_hash": "da3f98cd3944ef4badbda1e334d6444428c287ff4854b7ac08d76dc03f37fc25",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "one digit clue puede imponer una sola cifra en vez de una pista numérica; la ida tepat satu petunjuk angka exige una pista y no limita sus dígitos."
+        }
+      }
+    },
+    {
+      "record_id": "ab28c530ba5165c33c45fd9e1c6f60f003500b1cf2b413873b1869613480a332",
+      "translation_hash": "e9989731ff669ef00803384b27bb4af58493846c8c9ce76b84eb67a80a792011",
+      "back_translation_hash": "a667cf11a2f6072e74200bafc8f9cc310c90ce764b0328fea00f3d41b301701b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Opposite angle convierte la esquina del rectángulo en ángulo; sudut conserva esquina en la ida y su contexto."
+        }
+      }
+    },
+    {
+      "record_id": "ba8bbb5d11c1ee089b17100361291ba09ac6818df68520c4b38795d20fb31925",
+      "translation_hash": "5a087c5b7c2f1247b5bac2388e0b2c1864676f35c01a28b8d3b786ed30715277",
+      "back_translation_hash": "88c7c72ad465da54649906c86c7681f2ebb9b778abf652f1268027da1e9ccf00",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no. añade repetición enfática ausente de un único Tidak. Relación tono/velocidad conservada; no es un error de ida."
+        }
+      }
+    },
+    {
+      "record_id": "f31cc14c5b1b238ed97cd65a60043a457d890af98bfca188b817572a5f21adb1",
+      "translation_hash": "3601653675c5a65b8a5efeb0ea54bddb436a537df103f287cf44bd6151eaf49d",
+      "back_translation_hash": "4b42a271ee5f45fe8269f30ce337ebca6b426aa14db480404708d412ab98a26d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Lanjutkan permainan yang disimpan continúa la partida guardada. Su longitud frente a Resume se explica por desambiguación, sin error. Fuente/ida/vuelta actuales leídas directamente y confirmadas por hashes frente a v19. Fuente/ida/vuelta actuales leídas directamente; cotejo explícito de valores y variantes frente a v20. Señal contrastada con fuente/ida/vuelta actuales; no se aprueba por detector ni por vuelta aislada."
+        }
+      }
+    }
+  ],
+  "evidence_sources": {
+    "inference_source_commit": "fb099fce1f3eabde54a82ac0bc004a387c947471",
+    "checkpoint_capture_commit": "ffc25b672b1ec39bd96e99491b03ed315555517a",
+    "checkpoint_sha256_at_capture": "6b4ce7f2c4064e214debbb731611749fdede9a855b0d15df9fd6310a9f2bd0d0",
+    "run_id": 40069534310
+  },
+  "reference_gate": {
+    "id": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+    }
+  },
+  "decision": "Model reference sample passes; full conditional on audited warning coverage. No locale approval.",
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 243,
+    "legacy_points": 233,
+    "maximum": 243,
+    "frozen_engine": false
+  },
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v21-full.json"
+  ]
+}

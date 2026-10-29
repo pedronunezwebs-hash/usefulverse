@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T13:04:28.528951+00:00",
+  "run_id": 40324945714,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40324945714",
+  "source": "0159802ac2f59186e13030abfd635b0e1e480afa",
+  "conclusion": "success",
+  "node_tests": 3045,
+  "python": {
+    "tests": 363,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "c5c7b81b653334ba57ebf41d71a2fa53536687e4432997d51e0cd99c388b7748",
+    "workers": 4,
+    "seconds": 893.794
+  },
+  "all_case_ids_executed_once": true,
+  "runner": "public standard ubuntu-latest",
+  "artifacts": 0,
+  "model": "skipped",
+  "publications": "skipped",
+  "log_sha256": "18b0598e53362acbb281654d7db56b4da7428f94d2f14dc871c9f841ae6358d5",
+  "build_scope": {
+    "principal_tool_pages": 9972,
+    "principal_homes": 36,
+    "sitemap_urls": 10260,
+    "hub_growth_tools": 217,
+    "hub_market_tools": 100,
+    "editable_recovered_tools": 106,
+    "growth_pages": 7848,
+    "growth_files": 8253,
+    "preview_files": 11293,
+    "preview_tool_pages": 10800,
+    "preview_locales": 36,
+    "all_tool_pages_and_homes_noindex": true,
+    "indexable_preview_urls": 0,
+    "not37locale_certification": true
+  },
+  "native_review": false,
+  "approved_locales": [],
+  "pedro_tests": {
+    "pending": 8,
+    "fails": 0,
+    "new_ids": []
+  },
+  "limitations": [
+    "No UI/devices/responsive/native/blind/general-engine/release certification.",
+    "Model runs have focused16 prechecks;this final CI executes the complete suite."
+  ],
+  "costs": {
+    "at_utc": "2026-10-26T11:22:06.645018+00:00",
+    "repository_private": false,
+    "runner": "ubuntu-latest public standard",
+    "billing_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+    "runner_source": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+    "new_paid_api_calls": 0,
+    "cloudflare_operations": 0,
+    "codespaces": 0,
+    "containers": 0,
+    "persistent_model_caches": 0,
+    "artifacts_expected": 0,
+    "note": "Official documents verified this turn;standard public runner free. No claim about pre-existing account bills."
+  }
+}

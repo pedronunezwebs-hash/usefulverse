@@ -1,0 +1,352 @@
+{
+  "source": "7ec358639d326a2dafdd29e556dd4724a6a34f66",
+  "implementation": "761594331de07819b671837f48a9e0f1e9abc42e",
+  "main": "a88a00a5282bc37ebca1c87565782ee8cabde750",
+  "versioned_files": 7790,
+  "unchanged_protected_files": 6853,
+  "immutable_old_pilot_blobs": 377,
+  "main_changed_only_six_docs": true,
+  "all_index_matches_remote_tree": true,
+  "workflow_blob": "5bda2090b7fac5c66ad1f714f612fb599488ae32",
+  "native_review": false,
+  "approved_locales": [],
+  "unchanged_src_public_files": 6851,
+  "six_shared_docs_same": true,
+  "prior_review_metrics_groups_unchanged": 122,
+  "new_reference_evaluations": 321,
+  "word_quantity_data_unproved": true,
+  "no_new_source_forward_or_back_inference": true,
+  "schema_fix": "ae1c8a7a7d47c8c2f8969ea9c62229e82d2b648a",
+  "initial_failed_ci": {
+    "run_id": 40245562940,
+    "source": "f6b6dad818aeb8ae7109a94bb704c39a94da30ab",
+    "conclusion": "failure",
+    "node_tests": 3045,
+    "python_tests": 308,
+    "python_seconds": 601.495,
+    "error": "KeyError: observed_candidate in historical fixture-schema test",
+    "fix": "Add candidate provenance metadata to all183 new cases; no grading, warning, source, translation or runtime change. Historical test retained."
+  },
+  "at_utc": "2026-10-26T00:06:21.009117+00:00",
+  "ci": {
+    "schema_version": 1,
+    "at_utc": "2026-10-26T00:06:13.849622+00:00",
+    "run_id": 40246599367,
+    "run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40246599367",
+    "source": "7ec358639d326a2dafdd29e556dd4724a6a34f66",
+    "implementation": "761594331de07819b671837f48a9e0f1e9abc42e",
+    "schema_fix": "ae1c8a7a7d47c8c2f8969ea9c62229e82d2b648a",
+    "conclusion": "success",
+    "node_tests": 3045,
+    "python_tests": 308,
+    "python_passed": 306,
+    "python_dependency_skips": 2,
+    "python_seconds": 593.43,
+    "focused_tests": 21,
+    "artifacts": 0,
+    "model_job": "skipped",
+    "publish_steps": "skipped",
+    "workflow_blob": "5bda2090b7fac5c66ad1f714f612fb599488ae32",
+    "runner": "ubuntu-latest public standard",
+    "repository_private": false,
+    "runner_labels": [
+      "ubuntu-latest"
+    ],
+    "jobs": [
+      {
+        "name": "validate-and-deploy",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:11Z",
+        "completed_at": "2026-10-26T00:05:29Z"
+      },
+      {
+        "name": "translation-pilot",
+        "conclusion": "skipped",
+        "started_at": "2026-10-25T23:51:10Z",
+        "completed_at": "2026-10-25T23:51:09Z"
+      }
+    ],
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:12Z",
+        "completed_at": "2026-10-25T23:51:13Z"
+      },
+      {
+        "name": "Check out source",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:13Z",
+        "completed_at": "2026-10-25T23:51:20Z"
+      },
+      {
+        "name": "Set up Node.js",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:20Z",
+        "completed_at": "2026-10-25T23:51:21Z"
+      },
+      {
+        "name": "Install dependencies",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:21Z",
+        "completed_at": "2026-10-25T23:51:31Z"
+      },
+      {
+        "name": "Run tests",
+        "conclusion": "success",
+        "started_at": "2026-10-25T23:51:31Z",
+        "completed_at": "2026-10-26T00:03:12Z"
+      },
+      {
+        "name": "Build and validate all pages",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:03:12Z",
+        "completed_at": "2026-10-26T00:04:32Z"
+      },
+      {
+        "name": "Require linguistic approval for expanded locales",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:04:32Z",
+        "completed_at": "2026-10-26T00:04:33Z"
+      },
+      {
+        "name": "Build and validate the isolated tools hub",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:04:33Z",
+        "completed_at": "2026-10-26T00:05:14Z"
+      },
+      {
+        "name": "Validate the 300 staged tools without publishing",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:05:14Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      },
+      {
+        "name": "Publish to the existing Cloudflare Pages project",
+        "conclusion": "skipped",
+        "started_at": "2026-10-26T00:05:27Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      },
+      {
+        "name": "Publish the separate static tools hub",
+        "conclusion": "skipped",
+        "started_at": "2026-10-26T00:05:27Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      },
+      {
+        "name": "Post Set up Node.js",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:05:27Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      },
+      {
+        "name": "Post Check out source",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:05:27Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success",
+        "started_at": "2026-10-26T00:05:27Z",
+        "completed_at": "2026-10-26T00:05:27Z"
+      }
+    ],
+    "build_scope": {
+      "principal_tool_pages": 9972,
+      "principal_homes": 36,
+      "principal_sitemap_urls": 10260,
+      "existing_locale_gate": 20,
+      "preview_files": 11293,
+      "preview_tool_pages": 10800,
+      "preview_locales": 36,
+      "preview_all_tool_pages_and_homes_noindex": true,
+      "preview_indexable_sitemap_urls": 0,
+      "not37locale_certification": true,
+      "hub_growth_tools": 217,
+      "hub_market_tools": 100,
+      "hub_editable_recovered_tools": 106,
+      "growth_build_pages": 7848,
+      "growth_build_files": 8253
+    },
+    "production": {
+      "before": {
+        "at_utc": "2026-10-25T23:34:00.882158+00:00",
+        "method": "5 GET / 2 XML, no deployment",
+        "rows": [
+          {
+            "url": "https://usefulverse.com/sitemap.xml",
+            "status": 200,
+            "bytes": 786404,
+            "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+            "urls": 10260
+          },
+          {
+            "url": "https://tools.usefulverse.com/sitemap.xml",
+            "status": 200,
+            "bytes": 1431497,
+            "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+            "urls": 15365
+          },
+          {
+            "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          },
+          {
+            "url": "https://tools.usefulverse.com/es/zzz/",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          },
+          {
+            "url": "https://tools.usefulverse.com/zzz.html",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          }
+        ]
+      },
+      "after": {
+        "at_utc": "2026-10-26T00:06:13.849622+00:00",
+        "method": "5 GET / 2 XML; no UI or search-index verification",
+        "rows": [
+          {
+            "url": "https://usefulverse.com/sitemap.xml",
+            "status": 200,
+            "bytes": 786404,
+            "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+            "urls": 10260
+          },
+          {
+            "url": "https://tools.usefulverse.com/sitemap.xml",
+            "status": 200,
+            "bytes": 1431497,
+            "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+            "urls": 15365
+          },
+          {
+            "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          },
+          {
+            "url": "https://tools.usefulverse.com/es/zzz/",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          },
+          {
+            "url": "https://tools.usefulverse.com/zzz.html",
+            "status": 200,
+            "bytes": 98535,
+            "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+          }
+        ]
+      },
+      "identical_status_bytes_sha256": true,
+      "total_sitemap_urls": 25625,
+      "soft404_pending": 3
+    },
+    "limitations": [
+      "No native/blind linguistic review or generic-engine approval",
+      "No real device/camera/microphone/audio/game feel verification",
+      "No UI/responsive/18-tool-gates/7-layer certification",
+      "All9 baseline reviews negative; no expanded inference or memory import"
+    ],
+    "pedro_tests": {
+      "new_ids": [],
+      "pending": [
+        "P-001",
+        "P-002",
+        "P-003",
+        "P-004",
+        "P-005",
+        "P-006",
+        "P-007",
+        "P-008"
+      ],
+      "fails": 0
+    },
+    "costs": {
+      "new_paid_api_calls": 0,
+      "new_model_calls": 0,
+      "cloudflare_operations": 0,
+      "codespaces": 0,
+      "containers": 0,
+      "deployment_requests": 0
+    },
+    "secret_scan": {
+      "version": "8.30.1",
+      "official_binary_archive_sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+      "active_findings": 0,
+      "scope": "Sparse clone including all new/changed text; unchanged src/public and historical blobs verified against remote trees",
+      "known_unchanged_public_metadata_fingerprints": [
+        "repo/docs/quality/translation-pilot/full-sample-v24-plan.json:generic-api-key:511",
+        "repo/docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7"
+      ]
+    },
+    "initial_failed_ci": {
+      "run_id": 40245562940,
+      "source": "f6b6dad818aeb8ae7109a94bb704c39a94da30ab",
+      "conclusion": "failure",
+      "node_tests": 3045,
+      "python_tests": 308,
+      "python_seconds": 601.495,
+      "error": "KeyError: observed_candidate in historical fixture-schema test",
+      "fix": "Add candidate provenance metadata to all183 new cases; no grading, warning, source, translation or runtime change. Historical test retained."
+    },
+    "red_tests": {
+      "commit": "6f0b81a797301f069f23f684f57185a12f5901d2",
+      "failed_observations": 202,
+      "fixture_addition_commit": "761594331de07819b671837f48a9e0f1e9abc42e",
+      "historical_guard_failed_before_fix": true
+    }
+  },
+  "red_test_commit": "6f0b81a797301f069f23f684f57185a12f5901d2",
+  "original_fixture_prefix": 1151,
+  "current_fixtures": 1334,
+  "raw_records_unchanged": 15443,
+  "prior_metrics_groups_unchanged": 122,
+  "current_metrics_groups": 131,
+  "current_review_evaluations": 7271,
+  "reference_languages_passed": [],
+  "cleanup_executed": true,
+  "lock": "LIBRE only after actual verified removal",
+  "cleanup": {
+    "schema_version": 1,
+    "at_utc": "2026-10-26T00:08:01.808972+00:00",
+    "root": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-batch-bn-ru-ur-20261026",
+    "root_removed_and_absent": true,
+    "removed_before_lock_free": true,
+    "versioned_files_matched_to_remote_tree": 7792,
+    "backed_up_feature_source": "7bbc9909073cd0d655533c054131ec6bfaf26c60",
+    "backed_up_main_source": "7e500eab1792874d456bb939c5cb835f15e79eb3",
+    "ci_source": "7ec358639d326a2dafdd29e556dd4724a6a34f66",
+    "ci_run": 40246599367,
+    "post_ci_changes_limited_to_shared_docs_and_receipts": [
+      "docs/quality/ESTADO.md",
+      "docs/quality/LOG.md",
+      "docs/quality/MAPA-REPO.md",
+      "docs/quality/lotes/2026-10-26-referencias-bn-ru-ur.md",
+      "docs/quality/translation-pilot.md",
+      "docs/quality/translation-pilot/ci-batch1-verification.json",
+      "docs/quality/translation-pilot/remote-batch1-verification.json"
+    ],
+    "internal_run_log_zips_removed": [
+      "ci-40246599367.zip",
+      "ci-40245562940-failed.zip"
+    ],
+    "external_own_run_cache_files_removed": [],
+    "external_own_run_cache_files_remaining": [],
+    "local_models_or_dependencies_installed": false,
+    "bytes_free_before": 44620292096,
+    "bytes_free_after": 44834144256,
+    "git_histories_deleted_to_solve_codespaces": false
+  },
+  "backed_up_feature_before_removal": "7bbc9909073cd0d655533c054131ec6bfaf26c60",
+  "backed_up_main_before_removal": "7e500eab1792874d456bb939c5cb835f15e79eb3",
+  "versioned_files_verified_before_removal": 7792
+}

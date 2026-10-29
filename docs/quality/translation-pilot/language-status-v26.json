@@ -1,0 +1,382 @@
+{
+  "as_of": "2026-10-25T12:09:52.275184+00:00",
+  "source": "en",
+  "product_locales": 37,
+  "destination_locales": 36,
+  "automatic_references_destinations": 36,
+  "passed_known_full_sample": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v18",
+    "id": "context-v21"
+  },
+  "zh_CN_current_gates": {
+    "references": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 1,
+      "passed": false,
+      "minimum_style_budget_met": true,
+      "reason": "360/360 lingüístico, bloqueado por1 variante actual de cantidad sin prueba finita en shikaku.example. No cambia la nota a error numérico ni acepta la salida. Completo no autorizado."
+    },
+    "full": {
+      "dispatched": false,
+      "reason": "Reference finite-data gate blocked. Last full computation remains v25, rejected."
+    },
+    "last_full_v25": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1564,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 2,
+      "unproved_data_rows": 7,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Gate bloqueado por defectos observados o datos sin prueba; memoria conocida declarada. Sin aprobación nativa/ciega/de idioma.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 791,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "voice-changer.intro está fuera88 y bloquea; los7 datos sin prueba también."
+    }
+  },
+  "remaining_without_detailed_review": [
+    "bn",
+    "ru",
+    "ur",
+    "tr",
+    "vi",
+    "it",
+    "zh-TW",
+    "bg",
+    "ca",
+    "nl",
+    "el",
+    "ms",
+    "pl",
+    "sv",
+    "th",
+    "uk",
+    "sw",
+    "mr",
+    "te",
+    "ha",
+    "fil",
+    "ta",
+    "fa",
+    "am",
+    "gu"
+  ],
+  "approved_for_release": 0,
+  "note": "Una muestra conocida no significa que todas las herramientas estén traducidas/revisadas. Sin revisión nativa, motor congelado ni aprobación de publicación. No se omiten los 7 locales de bajos recursos: requieren80 muestras.",
+  "rows": [
+    {
+      "locale": "en",
+      "nombre": "Inglés",
+      "estado": "fuente inglesa; no requiere traducción",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "es",
+      "nombre": "Español",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v15",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fr",
+      "nombre": "Francés",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "pt-BR",
+      "nombre": "Portugués de Brasil",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "de",
+      "nombre": "Alemán",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ja",
+      "nombre": "Japonés",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ko",
+      "nombre": "Coreano",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v18",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "id",
+      "nombre": "Indonesio",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v21",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "hi",
+      "nombre": "Hindi",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ar",
+      "nombre": "Árabe",
+      "estado": "revisado históricamente; no pasa",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "zh-CN",
+      "nombre": "Chino simplificado",
+      "estado": "v26 referencias360/360 lingüístico; bloqueado por1cantidad sin prueba; completo no ejecutado",
+      "policy": "context-v26",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "bn",
+      "nombre": "Bengalí",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ru",
+      "nombre": "Ruso",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ur",
+      "nombre": "Urdu",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "tr",
+      "nombre": "Turco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "vi",
+      "nombre": "Vietnamita",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "it",
+      "nombre": "Italiano",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "zh-TW",
+      "nombre": "Chino tradicional",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "bg",
+      "nombre": "Búlgaro",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ca",
+      "nombre": "Catalán",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "nl",
+      "nombre": "Neerlandés",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "el",
+      "nombre": "Griego",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ms",
+      "nombre": "Malayo",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "pl",
+      "nombre": "Polaco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "sv",
+      "nombre": "Sueco",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "th",
+      "nombre": "Tailandés",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "uk",
+      "nombre": "Ucraniano",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "sw",
+      "nombre": "Suajili",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "mr",
+      "nombre": "Maratí",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "te",
+      "nombre": "Telugu",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ha",
+      "nombre": "Hausa",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fil",
+      "nombre": "Filipino",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "ta",
+      "nombre": "Tamil",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "fa",
+      "nombre": "Persa",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "am",
+      "nombre": "Amhárico",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "gu",
+      "nombre": "Guyaratí",
+      "estado": "referencias automáticas disponibles; revisión detallada pendiente",
+      "policy": null,
+      "requiere_80_muestras": true,
+      "aprobado_para_publicar": false
+    },
+    {
+      "locale": "nb-NO",
+      "nombre": "Noruego bokmål",
+      "estado": "muestra completa conocida pasa revisión de agente",
+      "policy": "context-v15",
+      "requiere_80_muestras": false,
+      "aprobado_para_publicar": false
+    }
+  ],
+  "current_policy": "context-v26",
+  "current_full_dispatched": false,
+  "current_unproved_reference_data": 1
+}

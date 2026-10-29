@@ -1,0 +1,72 @@
+{
+  "toolId": "radical-calculator",
+  "sourceCopy": {
+    "name": "Square Root Simplifier",
+    "title": "Square Root Simplifier Free | UsefulVerse",
+    "description": "Simplify square and nth roots exactly, or rationalize a square-root denominator. Free browser calculator with no sign-up.",
+    "intro": "Simplify exact integer radicals by extracting perfect powers, or rewrite a fraction so its denominator contains no square root. Results are exact for the supported integer inputs.",
+    "howQuestion": "How do you simplify a square root?",
+    "howAnswer": "Factor the radicand into prime powers. Pull each complete pair outside a square root; for example, √72 = √(36 × 2) = 6√2. This tool also supports integer roots with indexes 2 through 12.",
+    "privacyQuestion": "Are my numbers uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser and this tool does not upload or save your inputs.",
+    "fields": {
+      "mode": "Choose a calculation",
+      "simplifyMode": "Simplify an exact radical",
+      "rationalizeMode": "Remove a square root from a denominator",
+      "radicand": "Integer under the root sign",
+      "rootIndex": "Index of the root (2–12)",
+      "numerator": "Numerator",
+      "denominatorCoefficient": "Coefficient multiplying the square root in the denominator",
+      "rationalizeRadicand": "Positive integer under the denominator’s square root",
+      "limitsNote": "Enter whole numbers. Radicands are limited to ±1,000,000,000,000; the root index is 2–12. Negative radicands are supported only for odd indexes.",
+      "rationalizeNote": "This mode handles numerator / (coefficient × √radicand). The denominator coefficient cannot be zero; the radicand must be a positive whole number.",
+      "simplified": "Simplified exact result",
+      "original": "Input expression",
+      "rationalized": "Equivalent form with a rational denominator",
+      "rationalizationStep": "Why the result is equivalent",
+      "rationalizationExplanation": "Multiply the numerator and denominator by the same square root, then reduce the rational coefficient."
+    },
+    "actions": {
+      "calculate": "Calculate the result",
+      "example": "Load a worked example",
+      "reset": "Reset the form",
+      "copy": "Copy the exact result",
+      "result": "Result"
+    },
+    "messages": {
+      "calculated": "Exact result calculated.",
+      "checkInputs": "Check the whole numbers, root index, and denominator.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example calculated."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does √72 simplify to?",
+        "answer": "√72 is 6√2, because 72 = 36 × 2 and √36 = 6."
+      },
+      {
+        "question": "Can it rationalize a denominator?",
+        "answer": "Yes. It rewrites a / (c√b) with integer inputs as an equivalent fraction whose denominator has no square root, then reduces the rational coefficient."
+      },
+      {
+        "question": "Does this give decimal approximations?",
+        "answer": "No. It keeps the exact radical form. Use a scientific calculator if you also need a decimal approximation."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/radical-calculator/index.html",
+    "htmlSha256": "196c7594798e91546dfeb22bc3d2de4391560228d3727fd65c7bb54ffef2d8af",
+    "payloadSha256": "e2a73e54052a1432d293855312f000a8c22bf2317b250d193e658f26f504b65f",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/radical-calculator.js",
+    "controllerSha256": "ba977af3e035fc700396931b24f6c5a0dd185b71370fac4ec5872134724f4d2a",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

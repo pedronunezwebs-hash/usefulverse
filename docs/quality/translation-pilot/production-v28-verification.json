@@ -1,0 +1,80 @@
+{
+  "at_utc": "2026-10-26T05:50:26.416467+00:00",
+  "method": "Five real GET requests using Mozilla/5.0; XML parsed for both sitemap url elements; HTTP status, bytes and SHA256 compared to session start. No UI or Google index certification.",
+  "before": {
+    "at_utc": "2026-10-26T00:43:18.104678+00:00",
+    "rows": [
+      {
+        "url": "https://usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 786404,
+        "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+        "urls": 10260
+      },
+      {
+        "url": "https://tools.usefulverse.com/sitemap.xml",
+        "status": 200,
+        "bytes": 1431497,
+        "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+        "urls": 15365
+      },
+      {
+        "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/es/zzz/",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      },
+      {
+        "url": "https://tools.usefulverse.com/zzz.html",
+        "status": 200,
+        "bytes": 98535,
+        "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+      }
+    ]
+  },
+  "after": [
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "status": 200,
+      "bytes": 786404,
+      "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+      "urls": 10260
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "status": 200,
+      "bytes": 1431497,
+      "sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+      "urls": 15365
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200,
+      "bytes": 98535,
+      "sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a"
+    }
+  ],
+  "identical": true,
+  "indexable_urls_before": 25625,
+  "indexable_urls_after": 25625,
+  "false_routes_still_200": true,
+  "deployments": 0
+}

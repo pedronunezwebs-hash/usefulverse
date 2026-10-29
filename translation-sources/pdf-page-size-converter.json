@@ -1,0 +1,89 @@
+{
+  "toolId": "pdf-page-size-converter",
+  "sourceCopy": {
+    "name": "PDF Page Size Converter",
+    "title": "Resize PDF to A4, Letter or Custom Size Free | UsefulVerse",
+    "description": "Change PDF page size to A4, Letter, Legal or custom dimensions. Fit and center pages locally without intentional cropping.",
+    "intro": "Resize every page in a PDF to A4, US Letter, Legal or a custom paper size. Preview the new dimensions, fit the full original page area, and download a separate copy processed on your device.",
+    "howQuestion": "How do I change the page size of a PDF?",
+    "howAnswer": "Choose a PDF, inspect its pages, select A4, Letter, Legal or custom dimensions, then choose fit-to-page or actual size. Fit mode scales proportionally and centers each complete page area. Download the new copy and keep your original.",
+    "privacyQuestion": "Is my PDF uploaded to resize it?",
+    "privacyAnswer": "No. The PDF is processed in this browser after you choose it. It is not uploaded or saved by UsefulVerse. Large PDFs can use device memory; a computer is recommended.",
+    "fields": {
+      "pdfFile": "Choose a PDF file",
+      "warning": "Resizing creates a separate copy. Re-saving may invalidate digital signatures. Keep the original and check the new PDF before sharing.",
+      "limits": "Local limits: 25 MiB input, 300 pages and 50 MiB output. Large files may use substantial memory; a computer is recommended.",
+      "scope": "To avoid silent changes, this tool rejects rotated pages, custom page boxes, annotations, links and interactive forms. Fit mode scales the entire existing page rectangle and cannot restore content already outside its bounds.",
+      "preset": "Paper size",
+      "a4": "A4",
+      "letter": "US Letter",
+      "legal": "US Legal",
+      "custom": "Custom size",
+      "orientation": "Orientation",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "width": "Width",
+      "height": "Height",
+      "unit": "Unit",
+      "millimeters": "Millimeters",
+      "inches": "Inches",
+      "scaleMode": "Content sizing",
+      "fit": "Fit and center (no intentional crop)",
+      "actualSize": "Keep actual size (reject if it would crop)",
+      "preview": "Preview",
+      "pages": "Pages",
+      "dimensions": "New page dimensions",
+      "scale": "Scale"
+    },
+    "actions": {
+      "inspect": "Inspect PDF pages",
+      "convert": "Resize PDF pages",
+      "reset": "Start over",
+      "download": "Download resized PDF copy",
+      "result": "Your new PDF copy is ready"
+    },
+    "messages": {
+      "fileReady": "PDF selected",
+      "noFile": "Choose a PDF file first.",
+      "tooLarge": "The PDF exceeds the local 25 MiB input or 50 MiB output limit.",
+      "tooManyPages": "This tool supports PDFs with 1–300 pages.",
+      "inspecting": "Checking page dimensions…",
+      "inspected": "PDF checked: {pages} pages. Review the target paper and preview.",
+      "unsupported": "This PDF has page features this tool cannot safely preserve. The original was not changed.",
+      "invalidSize": "Enter valid target dimensions from 25 to 2,000 mm.",
+      "actualTooLarge": "At actual size, at least one page is larger than the target paper. Choose fit-to-page to avoid clipping.",
+      "preview": "{pages} pages → {width} × {height}; smallest page scale: {scale}. The original file is unchanged.",
+      "working": "Creating a resized copy on this device…",
+      "success": "A new PDF copy with {pages} resized pages is ready to download.",
+      "convertFailed": "Could not safely resize this PDF. Your original file was not changed."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I resize a PDF to A4 or US Letter?",
+        "answer": "Yes. Select A4, US Letter or US Legal, choose portrait or landscape, and preview the result. A custom size can also be entered in millimetres or inches."
+      },
+      {
+        "question": "Will resizing crop the PDF content?",
+        "answer": "Fit mode scales the complete original page rectangle uniformly and centers it on the new paper. It does not intentionally crop. Content already outside the original PDF page boundary cannot be recovered."
+      },
+      {
+        "question": "Does this preserve links, forms or digital signatures?",
+        "answer": "This tool rejects pages with annotations, links, interactive fields, rotation or custom page boxes instead of silently dropping them. Saving a PDF can invalidate digital signatures; keep and review the original."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/pdf-page-size-converter/index.html",
+    "htmlSha256": "7dc4ebcd1059d4c4ebf59cd0036fb076a3bc23722d08330df27a2f31b9470166",
+    "payloadSha256": "7441242d3eea1823018c888c1f59e4872057bae92bfb78a2abc2d69bb8f59b3f",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/pdf-page-size-converter.js",
+    "controllerSha256": "60cd04c78060064c51eda5f9a9f02b4533e8517e4dc1206fefcb53b2b8511ad8",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

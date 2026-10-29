@@ -1,0 +1,21 @@
+{
+  "checked_at_utc": "2026-10-24T11:13:51.478209+00:00",
+  "actionlint": "1.7.12 official darwin_arm64; archive SHA256 aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f, release checksums matched",
+  "gitleaks": "8.30.1 official darwin_arm64; archive SHA256 b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5, release checksums matched",
+  "findings_after_exact_git_object_exclusion": 0,
+  "exact_exclusion": "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+  "excluded_value_type": "Git workflow blob f6a3f4442df98f17083d5dedeaa397682babfdbc verified at commit260d87a39690c23829f5c32e8cd5fc3161176f18; not a credential",
+  "repository_ignore_changed": false,
+  "cost_scope": "Public repository + ubuntu-latest standard only; no artifacts/cache upload/Packages/LFS/Codespaces/Cloudflare/API paid",
+  "billing_global_audit": false,
+  "cost_primary_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "final_pre_ci_checked_at_utc": "2026-10-24T11:35:09.562900+00:00",
+  "final_pre_ci_findings": 0,
+  "final_pre_ci_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "actionlint_final_exit_code": 0,
+  "after_ci_checked_at_utc": "2026-10-24T11:42:54.470496+00:00",
+  "after_ci_findings": 0,
+  "after_ci_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "final_remote_proof_scan_at_utc": "2026-10-24T11:45:39.413000+00:00",
+  "final_remote_proof_findings": 0
+}

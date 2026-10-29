@@ -1,0 +1,763 @@
+{
+  "at_utc": "2026-10-27T12:32:29.050934+00:00",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "source_locale": "en",
+  "product_locales": 37,
+  "destination_locales": 36,
+  "reference_units": 40,
+  "full_source_units": 214,
+  "reference_computation_complete": true,
+  "full_tool_pilot_complete": false,
+  "approved_locales": [],
+  "agent_reviewed_translations": 9271,
+  "native_review": false,
+  "engines": {
+    "m2m100": {
+      "records": 2371,
+      "destinations": 35,
+      "by_locale": {
+        "am": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ar": {
+          "model": 40,
+          "legacy": 27
+        },
+        "bg": {
+          "legacy": 27,
+          "model": 40
+        },
+        "bn": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ca": {
+          "model": 40,
+          "legacy": 27
+        },
+        "de": {
+          "legacy": 27,
+          "model": 40
+        },
+        "el": {
+          "model": 40,
+          "legacy": 27
+        },
+        "es": {
+          "model": 40,
+          "legacy": 40
+        },
+        "fa": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fil": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "gu": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ha": {
+          "model": 40,
+          "legacy": 27
+        },
+        "hi": {
+          "model": 40,
+          "legacy": 27
+        },
+        "id": {
+          "model": 40,
+          "legacy": 27
+        },
+        "it": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ja": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ko": {
+          "legacy": 27,
+          "model": 40
+        },
+        "mr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ms": {
+          "legacy": 27,
+          "model": 40
+        },
+        "nb-NO": {
+          "model": 40,
+          "legacy": 40
+        },
+        "nl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pl": {
+          "model": 40,
+          "legacy": 27
+        },
+        "pt-BR": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ru": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sv": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sw": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ta": {
+          "legacy": 27,
+          "model": 40
+        },
+        "th": {
+          "model": 40,
+          "legacy": 27
+        },
+        "tr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "uk": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ur": {
+          "model": 40,
+          "legacy": 27
+        },
+        "vi": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-CN": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-TW": {
+          "model": 40,
+          "legacy": 27
+        }
+      }
+    },
+    "madlad": {
+      "records": 2438,
+      "destinations": 36,
+      "by_locale": {
+        "am": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ar": {
+          "legacy": 27,
+          "model": 40
+        },
+        "bg": {
+          "model": 40,
+          "legacy": 27
+        },
+        "bn": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ca": {
+          "model": 40,
+          "legacy": 27
+        },
+        "de": {
+          "model": 40,
+          "legacy": 27
+        },
+        "el": {
+          "legacy": 27,
+          "model": 40
+        },
+        "es": {
+          "model": 40,
+          "legacy": 40
+        },
+        "fa": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fil": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "gu": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ha": {
+          "legacy": 27,
+          "model": 40
+        },
+        "hi": {
+          "legacy": 27,
+          "model": 40
+        },
+        "id": {
+          "model": 40,
+          "legacy": 27
+        },
+        "it": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ja": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ko": {
+          "legacy": 27,
+          "model": 40
+        },
+        "mr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ms": {
+          "model": 40,
+          "legacy": 27
+        },
+        "nb-NO": {
+          "model": 40,
+          "legacy": 40
+        },
+        "nl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pt-BR": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ru": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sv": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sw": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ta": {
+          "legacy": 27,
+          "model": 40
+        },
+        "te": {
+          "model": 40,
+          "legacy": 27
+        },
+        "th": {
+          "model": 40,
+          "legacy": 27
+        },
+        "tr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "uk": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ur": {
+          "legacy": 27,
+          "model": 40
+        },
+        "vi": {
+          "legacy": 27,
+          "model": 40
+        },
+        "zh-CN": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-TW": {
+          "model": 40,
+          "legacy": 27
+        }
+      }
+    }
+  },
+  "unsupported": [
+    {
+      "engine": "m2m100",
+      "locale": "te"
+    }
+  ],
+  "agent_reviewed_evaluations": 9271,
+  "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
+  "full_tool_computation_locales": [
+    "es",
+    "nb-NO",
+    "ko",
+    "id",
+    "zh-CN",
+    "bn"
+  ],
+  "full_tool_computation_policy": "mixed-per-locale",
+  "full_tool_pilot_approved_locales": [],
+  "total_records_all_policies": 17441,
+  "semantic_regressions": 1403,
+  "contextual_reference_gate": {
+    "es": {
+      "passed": true,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication."
+    },
+    "nb-NO": {
+      "passed": true,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication."
+    },
+    "ko": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current source/forward/back agent reading; exact known memory declared. No blind/native/unseen-text or language approval claim."
+    },
+    "id": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+    },
+    "zh-CN": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known40 source-bound reviewed-memory references360/360; direct current S/F/B reading and all warnings reconciled. All forward data proved, including Shikaku. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "bn": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
+    },
+    "ru": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval."
+    }
+  },
+  "full_tool_gate": {
+    "es": {
+      "passed": true,
+      "sample": 88,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication.",
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1566,
+      "expanded_maximum": 1566,
+      "global_no_open_defects_requirement": "full-sample-v15-plan.json: any observed outside88 forward defect blocks global."
+    },
+    "nb-NO": {
+      "passed": true,
+      "sample": 88,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication.",
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1566,
+      "expanded_maximum": 1566,
+      "global_no_open_defects_requirement": "full-sample-v15-plan.json: any observed outside88 forward defect blocks global."
+    },
+    "ko": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current source/forward/back agent reading; exact known memory declared. No blind/native/unseen-text or language approval claim.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "fixed_sample_gate": {
+        "rows": 88,
+        "sample": 88,
+        "points": 792,
+        "maximum": 792,
+        "button_errors": 0,
+        "number_negation_errors": 0,
+        "major_rows": 0,
+        "minor_rows": 0,
+        "passed": true,
+        "minimum_style_budget_met": true,
+        "reason": "Direct current source/forward/back agent reading; exact known memory declared. No blind/native/unseen-text or language approval claim."
+      },
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1566,
+      "expanded_maximum": 1566,
+      "expanded_forward_defects": 0,
+      "known_reviewed_memory_rows": 38,
+      "pure_model_rows": 136,
+      "global_no_open_defects_requirement": "Any observed forward defect outside88 blocks global; the same fixed sample and all174 current nonreferences are reviewed."
+    },
+    "id": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+    },
+    "zh-CN": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known214 Chinese reviewed-memory outputs; all174 current nonreferences directly read and forward data proved. No observed outside88 forward defect. No native/blind/unseen-text/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Any observed forward defect or unproved forward data, including outside88, blocks. All174 read;0observed open forward defects.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    },
+    "bn": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    },
+    "ru": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1566,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "global_no_open_defects_requirement": "Any observed forward error or unproved datum outside88 also blocks.",
+      "known_memory_rows": 174,
+      "forward_model_rows": 0
+    }
+  },
+  "contextual_policies_reviewed": 32,
+  "contextual_reference_gate_policy": "mixed-per-locale",
+  "low_resource_review_minimum": {
+    "locales": [
+      "ha",
+      "am",
+      "te",
+      "gu",
+      "ta",
+      "mr",
+      "sw"
+    ],
+    "sample_size": 80,
+    "completed": false
+  },
+  "full_tool_gate_policy": "mixed-per-locale",
+  "contextual_reference_gate_policy_by_locale": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v18",
+    "id": "context-v21",
+    "zh-CN": "context-v27",
+    "bn": "context-v29",
+    "ru": "context-v33"
+  },
+  "latest_reference_pilot": {
+    "policy": "context-v31",
+    "locale": "ru",
+    "run_id": 40466449927,
+    "model_references": 40,
+    "legacy_references": 27,
+    "model_gate_passed": true,
+    "full_dispatched": true,
+    "approved_locales": []
+  },
+  "engines_inventory_note": "engines block retains original baseline counts;all-policy inventory is context-run-evidence.json.V31uses known214Russian memory targets and fresh back evidence,not native/blind/general-engine approval.",
+  "full_tool_gate_policy_by_locale": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v18",
+    "id": "context-v21",
+    "zh-CN": "context-v27",
+    "bn": "context-v29",
+    "ru": "context-v33"
+  },
+  "latest_full_pilot": {
+    "policy": "context-v31",
+    "locale": "ru",
+    "run_id": 40467626526,
+    "current_outputs_read": 333,
+    "model_nonreferences": 174,
+    "legacy_nonreferences": 92,
+    "model_gate_passed": false,
+    "approved_locales": []
+  },
+  "detailed_review_inventory": {
+    "full_known_sample_pass": [
+      "es",
+      "nb-NO",
+      "ko",
+      "id",
+      "zh-CN",
+      "bn",
+      "ru"
+    ],
+    "historically_reviewed_not_passed": [
+      "de",
+      "fr",
+      "pt-BR",
+      "ja",
+      "hi",
+      "ar"
+    ],
+    "current_references_not_passed": [
+      "ur"
+    ],
+    "remaining_without_detailed_review": 22,
+    "approved_locales": [],
+    "current_full_not_passed": []
+  },
+  "v25_historical_withdrawal_note": "Two explicit naturalness reassessments for duplicate v24 model/legacy FAQ; original review bytes/gates/score inventory preserved. See review-withdrawal-addenda.json; no locale approval.",
+  "latest_baseline_reference_batch": {
+    "review_files": [
+      "review-batch1-bn-m2m100.json",
+      "review-batch1-bn-madlad.json",
+      "review-batch1-bn-legacy.json",
+      "review-batch1-ru-m2m100.json",
+      "review-batch1-ru-madlad.json",
+      "review-batch1-ru-legacy.json",
+      "review-batch1-ur-m2m100.json",
+      "review-batch1-ur-madlad.json",
+      "review-batch1-ur-legacy.json"
+    ],
+    "read_records": 402,
+    "forward_evaluations": 321,
+    "passed_locales": [],
+    "approved_locales": [],
+    "candidate_plan": "batch1-v28-candidate-plan.json"
+  },
+  "negative_bn_legacy_reassessment": {
+    "path": "review-v28-legacy-reassessment.json",
+    "original_points": 236,
+    "effective_points": 232,
+    "maximum": 243,
+    "reason": "Two U+09F7 fraction glyphs were falsely scored perfect; original bytes retained and current negative audit projects232/243.37 usable Bengali candidates still exist via two MADLAD substitutions."
+  },
+  "latest_bn_reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval."
+  },
+  "bn_reference_policy": "context-v29",
+  "latest_bn_full_gate": {
+    "rows": 174,
+    "sample": 174,
+    "points": 1566,
+    "maximum": 1566,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known memory only; directly read actual S/F/B and every warning. No native/blind/unseen-text/general-engine/release approval.",
+    "fixed_sample_rows": 88,
+    "fixed_sample_points": 792,
+    "fixed_sample_maximum": 792,
+    "fixed_sample_passed": true,
+    "global_no_open_defects_requirement": "Every observed forward defect or unproved datum,including outside88,blocks.",
+    "known_memory_rows": 174,
+    "forward_model_rows": 0
+  },
+  "scoped_back_regressions": 95,
+  "total_permanent_regression_cases": 1550,
+  "latest_ru_reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval."
+  },
+  "latest_ru_full_gate": {
+    "rows": 174,
+    "sample": 174,
+    "points": 1566,
+    "maximum": 1566,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval.",
+    "fixed_sample_rows": 88,
+    "fixed_sample_points": 792,
+    "fixed_sample_maximum": 792,
+    "fixed_sample_passed": true,
+    "global_no_open_defects_requirement": "Any observed forward error or unproved datum outside88 also blocks.",
+    "known_memory_rows": 174,
+    "forward_model_rows": 0
+  },
+  "ru_reference_policy": "context-v33",
+  "scoped_forward_regressions": 52,
+  "reviewed_memory_targets": 905,
+  "ru_retired_targets_for_future_reuse": 5,
+  "ru_current_positive_sample_targets": 214
+}

@@ -1,0 +1,402 @@
+{
+  "schema_version": 1,
+  "scope": "Finite13English source/controlled-input/fragment proofs only; no unknown-text acceptance, universal word-number grammar, output repair, language approval or grade inheritance.",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "source_policy": "context-v23",
+  "policy_entries_sha256": "72549ddce082f6bab3d24d6880286f59bd2985ac7c2e673da8c44bbcfacd1dba",
+  "observed_rejection": {
+    "checkpoint": "docs/quality/translation-pilot/checkpoints/context-v23/madlad.jsonl",
+    "checkpoint_sha256": "d3490ab26890d055ef54a4e50b8eb2e50cfee6b2ac8cc65f7be4c2251ced85fb",
+    "record_id": "44232533fd023e05d28567421c34a7ff007a94db45e8f257e2db0cc29548c3bd",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "context": "fields.faq.1.a",
+    "model_input_sha256": "802680d71e74378707834c4aec9a30d691c9ee8029a08ad4d617a5ec04c11c29",
+    "run_id": 40109970196,
+    "marker_restore_ok": false
+  },
+  "entries": [
+    {
+      "locale": "en",
+      "text": "Draw rectangles so every number is the area of exactly one region. Cover every square once, with no overlaps.",
+      "text_sha256": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactly one region is cardinal1. Once describes coverage frequency, separately from this cardinal contract; no numeric value is inferred from an article.",
+      "evidence": [
+        {
+          "key": "shikaku.intro",
+          "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+          "context": "intro",
+          "field": "source"
+        },
+        {
+          "key": "shikaku.intro",
+          "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+          "context": "intro",
+          "field": "model_input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Draw rectangles so every number is the area of exactly one region.",
+      "text_sha256": "e880c6c9e1f175c577a03d73d87fe37dadf02516a244766dd3ab7a6e66efff90",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactly one region is cardinal1. Once describes coverage frequency, separately from this cardinal contract; no numeric value is inferred from an article.",
+      "evidence": [
+        {
+          "key": "shikaku.intro",
+          "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+          "context": "intro",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "shikaku.intro",
+          "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+          "context": "intro",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Every rectangle must contain one clue whose number matches its area.",
+      "text_sha256": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "One number clue per rectangle is cardinal1; the controlled text expresses the same exact-one requirement.",
+      "evidence": [
+        {
+          "key": "shikaku.details",
+          "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+          "context": "details",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Every rectangle must contain one clue whose number matches its area.",
+      "text_sha256": "87808b0bd90d7154c16a838f115688a21934bdb8606af2cb3a6f2fc2012896ed",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "One number clue per rectangle is cardinal1; the controlled text expresses the same exact-one requirement.",
+      "evidence": [
+        {
+          "key": "shikaku.details",
+          "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+          "context": "details",
+          "field": "source.sentence.2"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Each rectangle must contain exactly one number clue. That number must equal the number of squares inside the rectangle.",
+      "text_sha256": "c630b4d9d84c1ed32a0e515e916ad2ad0259576ee5d5fe2bfa702b52a263016a",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "One number clue per rectangle is cardinal1; the controlled text expresses the same exact-one requirement.",
+      "evidence": [
+        {
+          "key": "shikaku.details",
+          "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+          "context": "details",
+          "field": "model_input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Click two opposite corners or drag to draw a rectangle. Keyboard: Tab to a square, then Enter to select it.",
+      "text_sha256": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "quantities": [
+        {
+          "value": "2",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Two opposite corners is cardinal2; Tab/Enter and the following article do not add a cardinal.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.dragHelp",
+          "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+          "context": "fields.dragHelp",
+          "field": "source"
+        },
+        {
+          "key": "shikaku.fields.dragHelp",
+          "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+          "context": "fields.dragHelp",
+          "field": "model_input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Click two opposite corners or drag to draw a rectangle.",
+      "text_sha256": "2c7635311cb88d8338ec79c75f1b199037492c0a29a8bad39619443df28dad2f",
+      "quantities": [
+        {
+          "value": "2",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Two opposite corners is cardinal2; Tab/Enter and the following article do not add a cardinal.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.dragHelp",
+          "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+          "context": "fields.dragHelp",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "shikaku.fields.dragHelp",
+          "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+          "context": "fields.dragHelp",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "That rectangle does not match a clue or overlaps another one.",
+      "text_sha256": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Another one is a pronoun referring to another rectangle, not a numeric quantity.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.statusInvalid",
+          "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+          "context": "fields.statusInvalid",
+          "field": "source"
+        },
+        {
+          "key": "shikaku.fields.statusInvalid",
+          "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+          "context": "fields.statusInvalid",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "shikaku.fields.statusInvalid",
+          "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+          "context": "fields.statusInvalid",
+          "field": "model_input"
+        },
+        {
+          "key": "shikaku.fields.statusInvalid",
+          "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+          "context": "fields.statusInvalid",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Can a rectangle contain two numbers?",
+      "text_sha256": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "quantities": [
+        {
+          "value": "2",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Two numbers is cardinal2 in the question.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.faq.1.q",
+          "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+          "context": "fields.faq.1.q",
+          "field": "source"
+        },
+        {
+          "key": "shikaku.fields.faq.1.q",
+          "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+          "context": "fields.faq.1.q",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "shikaku.fields.faq.1.q",
+          "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+          "context": "fields.faq.1.q",
+          "field": "model_input"
+        },
+        {
+          "key": "shikaku.fields.faq.1.q",
+          "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+          "context": "fields.faq.1.q",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue.",
+      "text_sha256": "802680d71e74378707834c4aec9a30d691c9ee8029a08ad4d617a5ec04c11c29",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Cannot contain multiple plus must contain exactly one: cardinal1 across the whole controlled input. The first sentence has no fixed cardinal.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "model_input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "This game only accepts generated boards with one verified solution.",
+      "text_sha256": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "One verified solution is cardinal1.",
+      "evidence": [
+        {
+          "key": "shikaku.fields.faq.2.a",
+          "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+          "context": "fields.faq.2.a",
+          "field": "source"
+        },
+        {
+          "key": "shikaku.fields.faq.2.a",
+          "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+          "context": "fields.faq.2.a",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "shikaku.fields.faq.2.a",
+          "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+          "context": "fields.faq.2.a",
+          "field": "model_input"
+        },
+        {
+          "key": "shikaku.fields.faq.2.a",
+          "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+          "context": "fields.faq.2.a",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Select the button, then choose two points in the drawing. Press Escape to cancel.",
+      "text_sha256": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+      "quantities": [
+        {
+          "value": "2",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Two points is cardinal2 for the distance selection.",
+      "evidence": [
+        {
+          "key": "dxf-viewer.fields.measureHelp",
+          "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+          "context": "fields.measureHelp",
+          "field": "source"
+        },
+        {
+          "key": "dxf-viewer.fields.measureHelp",
+          "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+          "context": "fields.measureHelp",
+          "field": "model_input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Select the button, then choose two points in the drawing.",
+      "text_sha256": "81501b1744a025a14f6e7dac6ee171ad728eb74716f591a3cdbe980af1f62f57",
+      "quantities": [
+        {
+          "value": "2",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Two points is cardinal2 for the distance selection.",
+      "evidence": [
+        {
+          "key": "dxf-viewer.fields.measureHelp",
+          "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+          "context": "fields.measureHelp",
+          "field": "source.sentence.0"
+        },
+        {
+          "key": "dxf-viewer.fields.measureHelp",
+          "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+          "context": "fields.measureHelp",
+          "field": "model_input.sentence.0"
+        }
+      ]
+    }
+  ]
+}

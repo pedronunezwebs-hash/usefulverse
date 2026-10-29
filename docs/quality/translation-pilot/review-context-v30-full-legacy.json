@@ -1,0 +1,2467 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agent,no paid API)",
+  "native_review": false,
+  "approved_locales": [],
+  "engine_frozen": false,
+  "rubric": "Direct source/forward/back reading;meaning,numbers/negations,naturalness0–3. Back errors do not grade correct forward text. Known reference memory is not native/blind/unseen/general-engine/release approval.",
+  "inference_policy": "context-v30",
+  "reviewed_at_utc": "2026-10-26T12:14:02.631728+00:00",
+  "scope": "full",
+  "expected_rows": 92,
+  "rows": [
+    {
+      "key": "shikaku.description",
+      "locale": "ru",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "candidate": "legacy",
+      "translation_hash": "1cbdea22efab246ae021430cda71af301357c320e5a982217e26f0d018bcc44e",
+      "record_ids": [
+        "fc24d7a2a9f9c6a07c8c8497610a1c2332ed0c76861837c6c9814e750f3b4d47"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Свежая доска is a fresh-board calque for a new generated grid."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.details",
+      "locale": "ru",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "candidate": "legacy",
+      "translation_hash": "270e6d6d75bfbeb45413b825fdff41bc3b5d6b9286d508c663d529c7ecc802ba",
+      "record_ids": [
+        "79b0250465865a65fde29bfa5de5402e15cebd014586801e505fabc9d6cf85fc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.exampleHeading",
+      "locale": "ru",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "fab313a94604a96150cd1eb009b7486a12b0c9fda83de27f0d9efb61f8b955a7",
+      "record_ids": [
+        "0e97a352f707b69e3a5a5e0f7ab03f6d66a9f7bebb00bab62a27e69499d43df2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.faqHeading",
+      "locale": "ru",
+      "source_hash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+      "candidate": "legacy",
+      "translation_hash": "9c924186ced1f2cf19cab11e7703788902a4f4cfd876db7bb417628d6e1485bf",
+      "record_ids": [
+        "3ac5895478fe8ed991984105999d5d527a4bde349b55d5fda0f7cbcedecd80ce"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "ru",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "legacy",
+      "translation_hash": "716694e3998fb21ae724bca50bcc59406ab315df7f16413d143b0a04eeaea190",
+      "record_ids": [
+        "90554ed422244342e215440564cda02dfacda22a2c48c62fd28d462f66f8cc99"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Крытые квадраты is an unnatural roofed-square collocation for covered grid cells."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.dragHelp",
+      "locale": "ru",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "candidate": "legacy",
+      "translation_hash": "82a26c0c24d2e432d19f925251a43f8888ebec63971e900ab4a543b24c7b0d56",
+      "record_ids": [
+        "5ff2af7e34754ebe889827b30efd3e9346645e8d897e61a7a06752ae9793e2b5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "ru",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "candidate": "legacy",
+      "translation_hash": "efb71b8b661a53fcb6b328a65c136e1cbeb17295c402676ca66d6f5aa516000b",
+      "record_ids": [
+        "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Area shown by a clue becomes area shown below the clue,adding an incorrect placement relationship."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.0.q",
+      "locale": "ru",
+      "source_hash": "034b4f79cdf40c346b5bfea1d81f216c16da62f5ae09859b43f3d62bbb7c5688",
+      "candidate": "legacy",
+      "translation_hash": "ee2ee37743535823a9d01706010d1bf1bad9651aec1c13152a5f9afb0ce85821",
+      "record_ids": [
+        "80316d0111feef44e53a601a7e126ae83ed009aa2582f043bead88785fb84ec5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.q",
+      "locale": "ru",
+      "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "candidate": "legacy",
+      "translation_hash": "366b23689ff5c3fd1a211900e32b0886c8f565a49c39f7e082b35e2f5af67a3b",
+      "record_ids": [
+        "d80af232f747a381025a39ff76e4bd4be062bfe7c8d901130d1e976e8105e96a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.2.a",
+      "locale": "ru",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "candidate": "legacy",
+      "translation_hash": "71981ff21eb95e96b348ccb2c73419bc6a66200b803a7bc07ac2dc80768c8f70",
+      "record_ids": [
+        "3e4ed7b7712db480096640e75f71712bbc3c52e897b0bedabd181c1618303417"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.2.q",
+      "locale": "ru",
+      "source_hash": "061b9172bbad7c11f22631f93f77ae0a15fd38ba2967a367865dcecef1eecd47",
+      "candidate": "legacy",
+      "translation_hash": "64bc905e55fab89015cf10ff8c7a0dce87691c0b93a4de3f7a473acd0d76383e",
+      "record_ids": [
+        "24a9af4d201e62ac92970b1050f1f87d0be8ec6c5fa4d51f764d07fcb96ae3a4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.3.a",
+      "locale": "ru",
+      "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+      "candidate": "legacy",
+      "translation_hash": "bc67d07d77e7a22e3f5d28e26a2580b97c1d19d45a65ba7ce3d1da55a9f4d547",
+      "record_ids": [
+        "69d90d0a5ca973c9469abc9f81d36960277260f13af03b1dc4d067158914ed59"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.faq.3.q",
+      "locale": "ru",
+      "source_hash": "b368ec1d3c4b28a8345e45c54c667ae625be3816aa9b4efda42f6b018ca7f5a5",
+      "candidate": "legacy",
+      "translation_hash": "84051d35742ae19bad9bf9295c552dc237bd36b74fbc1c5f2a6376f056c1a5ba",
+      "record_ids": [
+        "698933b15cf7f033523fa9ede5d2370309d588608106cf45d3916192b79dfe5f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.puzzle",
+      "locale": "ru",
+      "source_hash": "2509a26877403b3ffa4f242a266f7843bc3327829ddf8f325fb6dca399b7c2ac",
+      "candidate": "legacy",
+      "translation_hash": "1a98bf4b92dac283f8d4e3e93ab7f77c4a9d141d8871b7fd5bd915d37ec4abd9",
+      "record_ids": [
+        "9cce023e1be88832341ac16a0d46d6e9bbd3b284c44b7c815e9a25a4f4244a75"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.ready",
+      "locale": "ru",
+      "source_hash": "df6e45fe2a00defc65aeff5434d873d5f89e77c6f6bf0e58c0d3faff0218d7a8",
+      "candidate": "legacy",
+      "translation_hash": "35774bd477320d70d90b30548b5875fd0de5e8d5d7756120a663afe05ecf3abf",
+      "record_ids": [
+        "f118146d459934fae493b367fa2344acb0bf145514d7cc2c76cc1c487ae398d1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.regions",
+      "locale": "ru",
+      "source_hash": "183bc1aabbc9b333ab7faeaf5ee9f024cb5ef279777a51c70be866049d87aea5",
+      "candidate": "legacy",
+      "translation_hash": "4f003164e08966e7387c9b6aad6d07f7ee743e76fd318a9cf9851a90730ed294",
+      "record_ids": [
+        "df4ff992ea72d147d2eef57914146e58cefd6b3cb016f9400c48c09be50aef55"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.ruleReference",
+      "locale": "ru",
+      "source_hash": "c52a28e3876b46a8bf98b8b60ad089168d859655b5a98b19e25e8cb4462050e0",
+      "candidate": "legacy",
+      "translation_hash": "33bc4d3a767ad36dca360ede6cee17b8a47d063d29f23fd461063e18d020f1ee",
+      "record_ids": [
+        "14ace78dfac3104985fbf2ac110fa8e16eff59c434370f08e5ad17d0192481d5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.seed",
+      "locale": "ru",
+      "source_hash": "9a37c639fc9f5132c1813e6a00ad8b1e4d3af6669cb55823b6b93a93a4267a6c",
+      "candidate": "legacy",
+      "translation_hash": "c85300c2fa238bf819e38d93bb187ab09635450df1bbde4be7c5a61cc1a31aaf",
+      "record_ids": [
+        "a83118a87ad0b5797a1ab80005092724b7a3e1e5aa651a092f4ac4d92090468a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.size",
+      "locale": "ru",
+      "source_hash": "3fd344ffd82464420f12a2ee86afd43dddc79c87e7b556845e4bc7c8cb34ebe8",
+      "candidate": "legacy",
+      "translation_hash": "243f259c9812baef5e0ae198095790339235931fb2470d282e9e327a4b7f0669",
+      "record_ids": [
+        "205f8a4446f982a6d3f71adc18094b01a03475835d6b2425ab95353778b1dbe5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "ru",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "candidate": "legacy",
+      "translation_hash": "199d6db958cdb81713e474a75baeddf7b70122aae0da9f96eb6a238caf738786",
+      "record_ids": [
+        "15d2ec413a40887d0998da2b2c82950cda2db69c4d9f6fc90bb298cad3224ad0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "ru",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "candidate": "legacy",
+      "translation_hash": "816fc1dc3d05540e4a76bb96d3cf276b893ffbbfcbe20777b46bb126c173e56b",
+      "record_ids": [
+        "533b0b1715e910ea4717ae999023356824a9db59fb55326bfab37576555db0ca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusDaily",
+      "locale": "ru",
+      "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+      "candidate": "legacy",
+      "translation_hash": "f3c4ec28f07336d9bb4eaa1930cb1c3b84877f4f647bdf331e245c1c7c3e566c",
+      "record_ids": [
+        "230e2e280db2e2977d41904ffc947782146789790797e12593121cdb8103769f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusDeleted",
+      "locale": "ru",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "candidate": "legacy",
+      "translation_hash": "447b91e2794586d62cd54591b25cdaf9d9e43a83770e7f8f1fe27e96783a135e",
+      "record_ids": [
+        "6dd13097c054ed2a2ddd31a67d9ae20ca5d99714b3ba638f5d8072e086580a7a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusGenerated",
+      "locale": "ru",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "candidate": "legacy",
+      "translation_hash": "73b89ba25e2935d2d4431b289ad6ad609cf82aff2d195cdfc2f60d5d157e2e7b",
+      "record_ids": [
+        "680125d95749fb1e4459057d51afe8f8a2283242399708ab6cae6f405773bbd6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusHint",
+      "locale": "ru",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "candidate": "legacy",
+      "translation_hash": "ddab7569b880c89680dbca744aa9752eed7e0862af265b5126aaa99fb01b6652",
+      "record_ids": [
+        "9ef51a6b9ffc0079865e639c3236373e336a320ef2b2d2a2f9c79067fb1e506d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusIncomplete",
+      "locale": "ru",
+      "source_hash": "8d10609ff52aae309bf7e11e35149f7740322a671da31f8b3ecbea7f891a8955",
+      "candidate": "legacy",
+      "translation_hash": "741e405f134dd997c183e8275b7902dbb3ed3af3bc2d06c9b885326621e15a5b",
+      "record_ids": [
+        "7161fb7319d222279f6da91d33ecdbf3ce9392437f9de7a2ef87c723eeffc147"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusInvalid",
+      "locale": "ru",
+      "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "candidate": "legacy",
+      "translation_hash": "d09e38748e928c3052cd29ff5b99f0296b4a9e002da283fd589a14ad91af6fca",
+      "record_ids": [
+        "eebc2410bc7f122fcbdc3a6045fc3b2c1ebaa43e5c0c8e305d7f7cc675fb59f8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusNeedStart",
+      "locale": "ru",
+      "source_hash": "17e2fa514c38464d01ff155a1b975d9036d93571ae07aa2a5d92b1b7377a658f",
+      "candidate": "legacy",
+      "translation_hash": "81641c892a43301219cb6e412cd85fbb2dda3654b301c860b124acf5e675f7b0",
+      "record_ids": [
+        "4312ff6f3d92bdd685c7cd7599619143d8699633f79c6d18343208b9ff40e397"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusNoHint",
+      "locale": "ru",
+      "source_hash": "5f73bb19199ff39a117346245696341080defb739fb4aa96d4dc30a22a130302",
+      "candidate": "legacy",
+      "translation_hash": "a9e346852c4c1ab8f65cf7f06376ae8cde1b3dab99cf0692a97e452395de5570",
+      "record_ids": [
+        "b141d3d264e04b022af1a1cb9cbfa5daa28408e529c2eae0e4bcfb1fab197c7b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusPlaced",
+      "locale": "ru",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "candidate": "legacy",
+      "translation_hash": "f4d265ba55d8cf5e471930c84ddd2c80b809ab862b1ea3aaddd520fde25692b8",
+      "record_ids": [
+        "0c3329bfb3758bea70328a1a8a148445b212009d91a19fa53fffb3520074f619"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusRemoved",
+      "locale": "ru",
+      "source_hash": "df2cea3d3735d58d384b4ec5756e0fd1b0e8a360dbd52da2743c1ea549c55eb5",
+      "candidate": "legacy",
+      "translation_hash": "91fdd2c4786419045e215300c015db38e9998c756fd137a797f8381235a98c27",
+      "record_ids": [
+        "772d6f9e351da4dcaa77c8581d91415a38b2da263afc365c53819e22ad517146"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusRevealed",
+      "locale": "ru",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "candidate": "legacy",
+      "translation_hash": "cc3b8d59a370680e08055b2807b86bf8f7084523482af59a602bde92ebcecb3b",
+      "record_ids": [
+        "12261b013a5619143e3aa36f05cbf8745e7892daea9e985e26d6a76347115a58"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusSaved",
+      "locale": "ru",
+      "source_hash": "c834d5befcb40b515a790e5fe0c223a1383438a0302d4952463d635a8543cab9",
+      "candidate": "legacy",
+      "translation_hash": "8a26f6bfb81ec49f60bc8dcbc6fca8dea383edafcddcdc602e7ebf7e8c8ebe3d",
+      "record_ids": [
+        "d200a3e884d8383ae7851dbab04fe0ce6df9601e99d12b59d27db9dd4d4d9ca2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.statusWon",
+      "locale": "ru",
+      "source_hash": "6be09835314bbdf76630f2754d8607ee2b3cda0836f3ea8a55f4be02f1210744",
+      "candidate": "legacy",
+      "translation_hash": "19c3dbc41e1345e8fb8a96448aa58bfd8a5b26ba196695d28cf07bfa82daf679",
+      "record_ids": [
+        "16abdbf011e77210d462e1eb7e5c36fac90e2fcef55ed7c354427f7a34691cad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "ru",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "legacy",
+      "translation_hash": "c39d123dc041ed1f7818a077a5d500f13693c5a448fb8e2205d22b970626c89d",
+      "record_ids": [
+        "c9767aa29a17a2d01b9876f4fd3ce917c51512983f4440ed8794c59742464ea8"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Numeric rectangle areas become regions(области),not площади."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.freeBadge",
+      "locale": "ru",
+      "source_hash": "c7b94045ee1ad4623931a29aa8c09b5ae4f5f21f4286314ba686cd1fc83096fb",
+      "candidate": "legacy",
+      "translation_hash": "a306cc8123175fc96a20123d7ef13aa149c7c53ef78234764f84a1c1e93a128e",
+      "record_ids": [
+        "2b96244de5519c9d036574d3977e50fdcc5aab8c67715d8639b8938c266c996e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.home",
+      "locale": "ru",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "legacy",
+      "translation_hash": "d328e53dc4561e099c85d45d26fea5d20aac5ffc2b949a0388eb794e30db40cb",
+      "record_ids": [
+        "edaf0a670aecf14a66719a8a11dbd9b05325f3d5ab2a832af568219e4bbd59f4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.howItWorks",
+      "locale": "ru",
+      "source_hash": "13a6b22428cd17c402c4a0361b645ee0894bada3ee921a3faa3eb3f2dd110e0c",
+      "candidate": "legacy",
+      "translation_hash": "f416fa0d4d3b9ce97610c4bbccbf831924b467f70e41a9fadc0605f28c05988f",
+      "record_ids": [
+        "8113b5882944e17a10088498eb18ead3ecccaff19ef28b4f7bb7d8c6b61645fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.intro",
+      "locale": "ru",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "candidate": "legacy",
+      "translation_hash": "06d63a87662271bfa43004074b787251321e376f1a733be9ae05f271f8316f5a",
+      "record_ids": [
+        "73eab817cd436d015612668cc1af026d4202c2e926833e3accad5973bdc88014"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.language",
+      "locale": "ru",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "candidate": "legacy",
+      "translation_hash": "5bd57038dbadd6517fcaab9deb791efdc1c05a17fccdb975be51452a6c5326b2",
+      "record_ids": [
+        "e84f661bf1537aee437285b866cd69d0e3d28dba0905f7781348ddc6ce066109"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "ru",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "candidate": "legacy",
+      "translation_hash": "67a5c78847d2262104e590da35d79d734bd7fea04ea69c23676f2fa643b9fc6e",
+      "record_ids": [
+        "503d03553ea3d64169459ebcb1e22400c34facdb150f6907dcc979e6395034c2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.limitsHeading",
+      "locale": "ru",
+      "source_hash": "5bec15dcf9064f77e758fd1db9f37a724d8038dc30b11a8043a44f5079fb6e59",
+      "candidate": "legacy",
+      "translation_hash": "614bb2a2b7f43b390baa349d3973399a6750bf4d05d14118321f97af9d5d36f5",
+      "record_ids": [
+        "b8af8fe1d8dbfe8ad3f0547efc1b2d9820a7faf007d001380d693c82c82683f3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "ru",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "legacy",
+      "translation_hash": "915684a197ffae25d59b9243ec28796f5efce74e6017da17014aa544a0ed5016",
+      "record_ids": [
+        "a36fc733b1388a0c20a6fbb07fda0acedd4aadae7042181d568463fda46c1b30"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.privacy",
+      "locale": "ru",
+      "source_hash": "6e1eec3cceb3260523ac5004e36aba6150bb58d19ea82378cc6ac78acce2a0c9",
+      "candidate": "legacy",
+      "translation_hash": "2e1e1fcc594efa90aa218016a2feab6aa0caa61ce2b20511b0a1e22de90bcf23",
+      "record_ids": [
+        "d0bff5f3291b24ab9ee43e0aa51812a657940d77ad7787dc6f729d35b8e60c3c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.related",
+      "locale": "ru",
+      "source_hash": "ac611f323eb0278f314a8d645943ad2b529c24de4b6aca9fcb76fcf52ecb25e2",
+      "candidate": "legacy",
+      "translation_hash": "6a889558bb1108f124aeef6856b1d6378290e0700df5792ddebd1baf8cb8e051",
+      "record_ids": [
+        "335ef59c6686d9c199b76b0bcefe42455e4169c472b86daf7642dc491e9fb74a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "ru",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "legacy",
+      "translation_hash": "c968da96e40cd1e6db1c4bb891a3f83267a63af4982f2bd8b6122a9f3476a174",
+      "record_ids": [
+        "294c38695ff34fe382082a7a77e81197c9a2d7a3b2df15846c7914ca2c513da2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Puzzle Online remains in English;Shikaku may stay a brand,but the generic title words need localization."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.useTool",
+      "locale": "ru",
+      "source_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+      "candidate": "legacy",
+      "translation_hash": "1f97c120e226974fad1eaaa245298988d0713d65c78bb1041700e6b925713292",
+      "record_ids": [
+        "ed622367bb6f0c1cbdde671c5c1bcf1170b0763b1098ab14b09541ff6870172e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "ru",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "candidate": "legacy",
+      "translation_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "record_ids": [
+        "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Radio is detached from effect and preview echo uses visual viewing terminology in audio copy."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "ru",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "candidate": "legacy",
+      "translation_hash": "e6d93893164a9cab45aa8886636b2ea643d60c146a44759070a2e6be78d6a1ff",
+      "record_ids": [
+        "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "candidate": "legacy",
+      "translation_hash": "d88450537a25d380cafe5977d8f0e751af1c8c171536def888235c9901ef8db4",
+      "record_ids": [
+        "ab7deed127afd335dffeafd7e2b7eeb5694c4dc2432ec3001ff48addcd6dcee0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.exampleHeading",
+      "locale": "ru",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "fab313a94604a96150cd1eb009b7486a12b0c9fda83de27f0d9efb61f8b955a7",
+      "record_ids": [
+        "64c89641320d0b6ce4359097338507b242560d32be2b6890b8ce2fccb0d01c1a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "8e0bd7ec9f26a3763eea5719e821998126641d4ffcb00a3b5f4c3512109ff97f",
+      "record_ids": [
+        "1a946f43a904424dbdcd6dd3bfa8e45ca751243c0a9c46da3753b364bdf32d1f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.0.q",
+      "locale": "ru",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "record_ids": [
+        "2416a8ee638aa1e44084ad573a5d59da08d43df2eff377b5270ff9614ba5371f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.1.a",
+      "locale": "ru",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "b503c5536934af55b390d0e1cb273c460efba847c6e08bc22b37a790238cfce7",
+      "record_ids": [
+        "2eb421991cd082c45cdff4f8868a82c30f83f7d507cbe567631171dba3801b4d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.1.q",
+      "locale": "ru",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "8e3620040be608ee6f32c9e476ba71e7726869ca9f8241691982bcb2d8340d9f",
+      "record_ids": [
+        "cedb6207de8fc34661299e213000ee3a732c1e32da4770d715cdd812736ef0ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.2.a",
+      "locale": "ru",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "25ef5e9e01f7bb5b2efab96b50925fa87ce14ff42f4244a49a0010e146d86e46",
+      "record_ids": [
+        "dc0018355015600e1a0d184540393462d83f0ecebed252b198ff7b53fd7efbb7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.faq.2.q",
+      "locale": "ru",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "1052ebbf97c4f60078c41b227c380ce8e9626b1f98b316e11755732f3a51fe71",
+      "record_ids": [
+        "74b80083c750e7da86940e1e8f767152312f87284d07af8fc90f5b74180a802b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.3.a",
+      "locale": "ru",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "record_ids": [
+        "72836152a3973c98de09a15272d83f1c2c8c2fff1aab9fcf2690b6961fd61c62"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Creating/rendering a WAV file becomes displaying it."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.3.q",
+      "locale": "ru",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "96a72206161fdac31e951c2fd5c0f46bd5a2ff63b57b0e54bfdf4fb738824658",
+      "record_ids": [
+        "6acc3cfaf871ef86ef0d3db83f91be15c46718ebf61978e0dcf4adb966ab5a2c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "ru",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "record_ids": [
+        "129667d6452fcfa25c22e6d8631648cd3656123ec8559ca162a9a5f56aa7ba11"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio rendering becomes sound visualization,an incorrect operation."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faq.4.q",
+      "locale": "ru",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "eab48ae4469196f1f6140f57285e96dc870fc07da88531ef89119276161e37ba",
+      "record_ids": [
+        "4d700fb37a9fbc02237f6be06a958d49cfeacd2d7047c9d130bd2acd43c5da23"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.faqHeading",
+      "locale": "ru",
+      "source_hash": "e956a9404b467e6b372e082d28cb9d4710af764c2fa5e56a415211e12166be0e",
+      "candidate": "legacy",
+      "translation_hash": "eab4596889345a5731468051a0a4d189b08712699ac23866a93fdd450b14290e",
+      "record_ids": [
+        "7e47ae9d66b6755c70a185adef773c68d05c6d9d339641f8a018cf69144100ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.bright",
+      "locale": "ru",
+      "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+      "candidate": "legacy",
+      "translation_hash": "df4d52f9f34aedbcc2408ed131031eaaf8343aa9e6dfde530768fe19d50a8d8a",
+      "record_ids": [
+        "61485456395d9c016f8663459b0542790798965147eb934059550726dfe3ca3c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.clean",
+      "locale": "ru",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "candidate": "legacy",
+      "translation_hash": "8965271d3c97c79d9dd0daae5f1c022dfc544fadffff105619bf1b445a51ce72",
+      "record_ids": [
+        "68afa6d5b2f809dde8906af52d096184569e1b94fff7ab8c9e9dc567c32dd3cf"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Neutral Clean preset becomes the action Очистить(clear/delete)."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.deep",
+      "locale": "ru",
+      "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+      "candidate": "legacy",
+      "translation_hash": "191841988cb5da8be66cd3c0585ee857a639f71240d3414100a6e6f4af854bcc",
+      "record_ids": [
+        "7f933f32becf6d7f961d8e0b47bde1615267f4d68aca8ea0960eb42476a56b94"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.device",
+      "locale": "ru",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "candidate": "legacy",
+      "translation_hash": "0a57a3bc74f7baece2ace557a228383d624081f70aceeeb04213eb7f61d416d2",
+      "record_ids": [
+        "ad55be9326086409934d6cf955ede1efdb79d927226b9ce2fdefdad0401c32e8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.echo",
+      "locale": "ru",
+      "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+      "candidate": "legacy",
+      "translation_hash": "bd13b9770bd04b6cc515e68bb1d90e950d7948758dac8a8e5615fd3446b5818a",
+      "record_ids": [
+        "c395dff4eb05aab601a486581d79925839d5f23d881a2489964dd0bd719e0cc7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.effect",
+      "locale": "ru",
+      "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+      "candidate": "legacy",
+      "translation_hash": "ba3994437cf8e1408aa3712d3e3cdaa9dc347b65705327bdf218693050079fa3",
+      "record_ids": [
+        "44c4eaafed8b65dd11f2d55326b5211567034c7201568c7739feb2f762e58d3b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "candidate": "legacy",
+      "translation_hash": "3fca24b9f1351228715c1d9cd4532d1e352adc84550efbf3aefdc3c83dec41ed",
+      "record_ids": [
+        "209f9f4245c0bd17274b62dc96288e8d2afc5c83663ba7db03e0807f6e695120"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq1q",
+      "locale": "ru",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "record_ids": [
+        "8c825134a6ed0f4f31e5f781afa1e03df95ce4aa2a6faf165211c9273e05daa2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq2q",
+      "locale": "ru",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "8e3620040be608ee6f32c9e476ba71e7726869ca9f8241691982bcb2d8340d9f",
+      "record_ids": [
+        "5abb33cb26051fc4a0e1979b383eb258bd53b67f6affbf19dd0f86ab6cf83455"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq3a",
+      "locale": "ru",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "25ef5e9e01f7bb5b2efab96b50925fa87ce14ff42f4244a49a0010e146d86e46",
+      "record_ids": [
+        "13b7440b61a5265c71f6b12db7fa607520e26b9a7e25bbe1d90364109dc45833"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq3q",
+      "locale": "ru",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "1052ebbf97c4f60078c41b227c380ce8e9626b1f98b316e11755732f3a51fe71",
+      "record_ids": [
+        "bf4ae82fe0cab7823a64d38260ff0ea673a605983df50ae3e5fe236eff36fcd4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq4a",
+      "locale": "ru",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "record_ids": [
+        "e3466f525fc32f23b687492902ee9dbffbe0910af009826c1b7c7a84c126689e"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Creating/rendering a WAV file becomes displaying it."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.faq4q",
+      "locale": "ru",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "96a72206161fdac31e951c2fd5c0f46bd5a2ff63b57b0e54bfdf4fb738824658",
+      "record_ids": [
+        "7e7fbb4f405230efade9802c64feeede58d639296ca93fa4c56e12a5adcd55e9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "ru",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "record_ids": [
+        "8b04815dac15012a1a9f5ad3fda8bb9cb7efc7d60e2f2edaeda0d841ed0a9f4c"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio rendering becomes sound visualization,an incorrect operation."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq5q",
+      "locale": "ru",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "eab48ae4469196f1f6140f57285e96dc870fc07da88531ef89119276161e37ba",
+      "record_ids": [
+        "f3de11c83565e9cb60978cf1f3fbd18e41fd9389f51c20729395445d55f9db67"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "ru",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "candidate": "legacy",
+      "translation_hash": "85ad46901b951ae1f3d2333b226da3f465c40ecdb276aa85ca31ea298d9f4169",
+      "record_ids": [
+        "f91508c002d9f881493ac9d2013faf50d2659769c728e73f14f78754f6513eb9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.loading",
+      "locale": "ru",
+      "source_hash": "d20218d43c5baad32d4b8080beec0bea5273de91138f25c3899aa78f69a1ccda",
+      "candidate": "legacy",
+      "translation_hash": "85133218a20022e79daff2025e79cf0ed1a07e907871f366b4cab8ae4619f3e9",
+      "record_ids": [
+        "ea26594df5cd7ab0c6ff07db1831a0ba7bc0c71e4a587f893eee08fb71420c98"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "ru",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "candidate": "legacy",
+      "translation_hash": "02eda071401a30984094d9ce4c23118d14dce0e3f496db7eee6ce6e0f4542cc0",
+      "record_ids": [
+        "1390c5790c1d2b6f7327f88fe0e59fdaa2a8a5165969b42d3a9b80ad694cc7bf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "candidate": "legacy",
+      "translation_hash": "32d8eb7bbac9e090670c9267081daf62978044439ae4da0512ea00c660763834",
+      "record_ids": [
+        "66919c3daa069340a729eb8f0bef148e8a6017b673bc1af739c25ce57a45e4a9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.playbackRateNote",
+      "locale": "ru",
+      "source_hash": "03f4e3f331c890be8134aa6d9b648ca437a864fed42753cb6f253ac072ce00d9",
+      "candidate": "legacy",
+      "translation_hash": "3d1519dc43eae10170c15b03ec9e01ab7d515412970e0c23075ae83473785179",
+      "record_ids": [
+        "9fb01357c01b0f07521274056e84aa428394482a7997176f876d5d3ed57ff643"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.processing",
+      "locale": "ru",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "candidate": "legacy",
+      "translation_hash": "8ffcdf48c4f78ecf7df3e9863d0aaed3faebab5a7d5b12ac3fbe1a59ed11ffb9",
+      "record_ids": [
+        "e04f1e538a9c3a3ca0e669756e68fcd6114aa0c5eb0738696c3a48fef4b95ea0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.radio",
+      "locale": "ru",
+      "source_hash": "2a7dfeb2f2b018e5dae04497c0a281e7b22403057b91679046c9da52433894e1",
+      "candidate": "legacy",
+      "translation_hash": "f08e8c24721cd3f40b8f7a93ab5fbc04b8a9858e79d88178bb82ef1191f3d392",
+      "record_ids": [
+        "b09688d1db6ef6ed81c6c45c0f869c0387b56ea1801ffa97be1dbdf5fff37379"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "ru",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "candidate": "legacy",
+      "translation_hash": "aaf2d79d6ec040161dd5ee680769bebacae1ac9b72fcd069298d1fab10d2cc42",
+      "record_ids": [
+        "33e3e76dbd0533039dbd89c2e4ee21e8f5d8b35924227a11714a4570976cf936"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.volume",
+      "locale": "ru",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "candidate": "legacy",
+      "translation_hash": "46eb03f73fafc8c655b675263eb1dc047425f1ecce2877c541bb8acc670c6dca",
+      "record_ids": [
+        "8c9551572d05f74a7d9c8223a1883d9013c567048558cf3b2f9478b5352c0060"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.howItWorks",
+      "locale": "ru",
+      "source_hash": "de3eaa7ed04dee6b7107ac85941500cae480e29ede1e055980f63bfcfb32f70d",
+      "candidate": "legacy",
+      "translation_hash": "4d52e67736b5094dda52be1441b0926a3f7e48b95c6ae98367d5d8e46f3cfd60",
+      "record_ids": [
+        "831dcb05e3de04c2c94596e72d095b94743644cf3cb19625e7e6e3c3c50b471e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "ru",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "candidate": "legacy",
+      "translation_hash": "bef5388e5e2daa5a5dc9b5af040f4aa8e13dc3d11c28972d3bb029d8b5f2b3cc",
+      "record_ids": [
+        "9d43f993ed0407dff7dad40c5277e40372e9e1fd69a157810cc27779dfe68760"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "эффект ниже,выше is an unnatural adverb construction for lower/higher pitch effects."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "ru",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "candidate": "legacy",
+      "translation_hash": "253cf05a018a87c683413bf94ea3be07179cf927ab9598ae03eed415144217fc",
+      "record_ids": [
+        "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Separate voices is attached as an object of create:cannot create separate voices,instead of cannot isolate voices. Unproved forward data blocks the gate without fabricating a linguistic error: quantities,coordinates."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": true,
+      "in_fixed88": true
+    },
+    {
+      "key": "voice-changer.limitsHeading",
+      "locale": "ru",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "candidate": "legacy",
+      "translation_hash": "1c893ca40df2102ee3ea0a67c1b3935de28d980fbbcb2412ad36f5173d0ad2da",
+      "record_ids": [
+        "fd5c2494f6c5fedfcda9643402c2c1130bfc16163599904589f30eb861ac3f5f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.name",
+      "locale": "ru",
+      "source_hash": "d1518eabcadd5528e9274833eaad6891cb0eeeb91ff4dfb6d24a4bffe2b1f72c",
+      "candidate": "legacy",
+      "translation_hash": "c266848a6ce19c8129a2618c80226c8464cc319339bb13bc761318a57d42d365",
+      "record_ids": [
+        "413e6c216792e7ae386e6abaf8a5a862a951b0689feb916de7c884af0608b253"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "ru",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "legacy",
+      "translation_hash": "ccdff8bc2792476ed38f0a770551b3fa559bb58341ed00d8beee118ea843e6b9",
+      "record_ids": [
+        "c7017cda1bb45d8f4e7a11c0af3016f569bcb63fc9c863d4c542c89c0ba4a395"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Actual source/forward/back directly read;current forward reviewed independently from back. Exact known memory/provenance declared for references;full model outputs are actual new forward inference."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-S/F/B-agent-review",
+      "translation_origin": "legacy",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    }
+  ],
+  "back_findings": [],
+  "warning_reconciliation": [
+    {
+      "record_id": "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9",
+      "translation_hash": "efb71b8b661a53fcb6b328a65c136e1cbeb17295c402676ca66d6f5aa516000b",
+      "back_translation_hash": "052dce290febb412a5049515c4fdb2e7e2cc1c309c836676cd6bb0204dd7c619",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        }
+      }
+    },
+    {
+      "record_id": "73eab817cd436d015612668cc1af026d4202c2e926833e3accad5973bdc88014",
+      "translation_hash": "06d63a87662271bfa43004074b787251321e376f1a733be9ae05f271f8316f5a",
+      "back_translation_hash": "ff816003e8bd672f33df1b07d04e02ca81c82d5eb891a88bf645b8eaf60c3119",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        }
+      }
+    },
+    {
+      "record_id": "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3",
+      "translation_hash": "e6d93893164a9cab45aa8886636b2ea643d60c146a44759070a2e6be78d6a1ff",
+      "back_translation_hash": "7c7330139f909502f1802217dc3ee7e1d7bd2080349e3cb76c5d164d52a84c76",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_software_identifiers": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+        },
+        "software_identifiers": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+        }
+      }
+    },
+    {
+      "record_id": "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a",
+      "translation_hash": "253cf05a018a87c683413bf94ea3be07179cf927ab9598ae03eed415144217fc",
+      "back_translation_hash": "946d973458557d5b86f95c358831742ed6ca30449aee68c08732b4b85bf0f162",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual current back read directly;parser evidence is separate from linguistic defects. Independently confirmed current back defects are recorded separately;no forward downgrade from the back alone."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "Separate voices is attached as an object of create:cannot create separate voices,instead of cannot isolate voices. Unproved forward data blocks the gate without fabricating a linguistic error: quantities,coordinates."
+        }
+      }
+    }
+  ],
+  "requires_complete_model_warning_coverage": false,
+  "warning_coverage_supplemental_reviews": [],
+  "scoped_back_findings": [
+    {
+      "record_id": "15d2ec413a40887d0998da2b2c82950cda2db69c4d9f6fc90bb298cad3224ad0",
+      "key": "shikaku.fields.solution",
+      "translation_hash": "199d6db958cdb81713e474a75baeddf7b70122aae0da9f96eb6a238caf738786",
+      "back_translation_hash": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1",
+      "notes": [
+        "Puzzle solution becomes Decision,wrong sense of Russian решение."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62",
+      "key": "voice-changer.description",
+      "translation_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "back_translation_hash": "3984e14c11293e270908c041a4bd6252b185f5ed67f884fe736a9ed9c244528b",
+      "notes": [
+        "No upload becomes no download,contradicting local WAV export."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "2416a8ee638aa1e44084ad573a5d59da08d43df2eff377b5270ff9614ba5371f",
+      "key": "voice-changer.faq.0.q",
+      "translation_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "notes": [
+        "Recording uploaded becomes recording loaded,losing the privacy/network question."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "209f9f4245c0bd17274b62dc96288e8d2afc5c83663ba7db03e0807f6e695120",
+      "key": "voice-changer.fields.exportReady",
+      "translation_hash": "3fca24b9f1351228715c1d9cd4532d1e352adc84550efbf3aefdc3c83dec41ed",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "notes": [
+        "Ready to download becomes ready for upload,opposite transfer direction."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "8c825134a6ed0f4f31e5f781afa1e03df95ce4aa2a6faf165211c9273e05daa2",
+      "key": "voice-changer.fields.faq1q",
+      "translation_hash": "823df11cc9a2834b5cd093d42f29bb913e03e63974119fda420137d672bb68dd",
+      "back_translation_hash": "73ccf7b090267bd046f604239b0cf727c68c7c3b47fc9964e8e35b2dcf4023c4",
+      "notes": [
+        "Recording uploaded becomes recording loaded,losing the privacy/network question."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "1390c5790c1d2b6f7327f88fe0e59fdaa2a8a5165969b42d3a9b80ad694cc7bf",
+      "key": "voice-changer.fields.noAudio",
+      "translation_hash": "02eda071401a30984094d9ce4c23118d14dce0e3f496db7eee6ce6e0f4542cc0",
+      "back_translation_hash": "f8a22d68b337667d4e34aad9b6750fb5202c60329c8e02e43ca9db228931c487",
+      "notes": [
+        "Local audio loading becomes upload in the back."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "66919c3daa069340a729eb8f0bef148e8a6017b673bc1af739c25ce57a45e4a9",
+      "key": "voice-changer.fields.pitch",
+      "translation_hash": "32d8eb7bbac9e090670c9267081daf62978044439ae4da0512ea00c660763834",
+      "back_translation_hash": "995c72b915b18da2e850ad36241a470a724704521edbbdfa6db90708dfe85f61",
+      "notes": [
+        "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+      ],
+      "blocks_gate": false
+    }
+  ],
+  "scoped_forward_findings": [
+    {
+      "record_id": "fc24d7a2a9f9c6a07c8c8497610a1c2332ed0c76861837c6c9814e750f3b4d47",
+      "key": "shikaku.description",
+      "translation_hash": "1cbdea22efab246ae021430cda71af301357c320e5a982217e26f0d018bcc44e",
+      "notes": [
+        "Свежая доска is a fresh-board calque for a new generated grid."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "90554ed422244342e215440564cda02dfacda22a2c48c62fd28d462f66f8cc99",
+      "key": "shikaku.fields.covered",
+      "translation_hash": "716694e3998fb21ae724bca50bcc59406ab315df7f16413d143b0a04eeaea190",
+      "notes": [
+        "Крытые квадраты is an unnatural roofed-square collocation for covered grid cells."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "81ef404b895f1560b17b79f7094864da04924f86bcb4de73ae2325465df863e9",
+      "key": "shikaku.fields.faq.0.a",
+      "translation_hash": "efb71b8b661a53fcb6b328a65c136e1cbeb17295c402676ca66d6f5aa516000b",
+      "notes": [
+        "Area shown by a clue becomes area shown below the clue,adding an incorrect placement relationship."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "c9767aa29a17a2d01b9876f4fd3ce917c51512983f4440ed8794c59742464ea8",
+      "key": "shikaku.fields.statusWrong",
+      "translation_hash": "c39d123dc041ed1f7818a077a5d500f13693c5a448fb8e2205d22b970626c89d",
+      "notes": [
+        "Numeric rectangle areas become regions(области),not площади.",
+        "Rectangle areas are numeric площади,not области(regions);the instruction loses the area-value sense."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "294c38695ff34fe382082a7a77e81197c9a2d7a3b2df15846c7914ca2c513da2",
+      "key": "shikaku.title",
+      "translation_hash": "c968da96e40cd1e6db1c4bb891a3f83267a63af4982f2bd8b6122a9f3476a174",
+      "notes": [
+        "Puzzle Online remains in English;Shikaku may stay a brand,but the generic title words need localization."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "876bd17d5e96547197d5713b0260702ced29cdb260959203bc208e36b7b94e62",
+      "key": "voice-changer.description",
+      "translation_hash": "dda2d7f1694472464bdc9103b5336f3d41e1230fe86c12224ca4e9e9b9b2affb",
+      "notes": [
+        "Radio is detached from effect and preview echo uses visual viewing terminology in audio copy."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "9b62e50d2868db0e41a9519e2bca0ea5d987a21ab4975bd0055a355a61cfaad3",
+      "key": "voice-changer.details",
+      "translation_hash": "e6d93893164a9cab45aa8886636b2ea643d60c146a44759070a2e6be78d6a1ff",
+      "notes": [
+        "Required Web Audio literal is translated;pitch-rate loses its playback-rate component,and WAV rendering becomes visualizing a file."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "72836152a3973c98de09a15272d83f1c2c8c2fff1aab9fcf2690b6961fd61c62",
+      "key": "voice-changer.faq.3.a",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "notes": [
+        "Creating/rendering a WAV file becomes displaying it."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "129667d6452fcfa25c22e6d8631648cd3656123ec8559ca162a9a5f56aa7ba11",
+      "key": "voice-changer.faq.4.a",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "notes": [
+        "Audio rendering becomes sound visualization,an incorrect operation."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "68afa6d5b2f809dde8906af52d096184569e1b94fff7ab8c9e9dc567c32dd3cf",
+      "key": "voice-changer.fields.clean",
+      "translation_hash": "8965271d3c97c79d9dd0daae5f1c022dfc544fadffff105619bf1b445a51ce72",
+      "notes": [
+        "Neutral Clean preset becomes the action Очистить(clear/delete)."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "e3466f525fc32f23b687492902ee9dbffbe0910af009826c1b7c7a84c126689e",
+      "key": "voice-changer.fields.faq4a",
+      "translation_hash": "dd001a67a611bad81facf9db0a7823deeae336e812b5d06425a98a11774c8524",
+      "notes": [
+        "Creating/rendering a WAV file becomes displaying it."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "8b04815dac15012a1a9f5ad3fda8bb9cb7efc7d60e2f2edaeda0d841ed0a9f4c",
+      "key": "voice-changer.fields.faq5a",
+      "translation_hash": "bbe66e4289f4cdcefb09a06035c5137c4abd66902556b8b4de46ddb2e16aa630",
+      "notes": [
+        "Audio rendering becomes sound visualization,an incorrect operation."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "9d43f993ed0407dff7dad40c5277e40372e9e1fd69a157810cc27779dfe68760",
+      "key": "voice-changer.intro",
+      "translation_hash": "bef5388e5e2daa5a5dc9b5af040f4aa8e13dc3d11c28972d3bb029d8b5f2b3cc",
+      "notes": [
+        "эффект ниже,выше is an unnatural adverb construction for lower/higher pitch effects."
+      ],
+      "blocks_gate": true
+    },
+    {
+      "record_id": "36ecaf7417a46855bbcda5d8e9035173d2d139015b68b9dc36608a8813a4ee9a",
+      "key": "voice-changer.limits",
+      "translation_hash": "253cf05a018a87c683413bf94ea3be07179cf927ab9598ae03eed415144217fc",
+      "notes": [
+        "Separate voices is attached as an object of create:cannot create separate voices,instead of cannot isolate voices."
+      ],
+      "blocks_gate": true
+    }
+  ],
+  "full_gate": {
+    "ru": {
+      "rows": 92,
+      "sample": 92,
+      "points": 807,
+      "maximum": 828,
+      "button_errors": 1,
+      "number_negation_errors": 2,
+      "major_rows": 3,
+      "minor_rows": 11,
+      "unproved_data_rows": 1,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Blocked by observed forward defects or unproved data;no approval.",
+      "fixed_sample_rows": 39,
+      "fixed_sample_points": 339,
+      "fixed_sample_maximum": 351,
+      "fixed_sample_passed": false,
+      "global_no_open_defects_requirement": "Every observed forward error or unproved datum blocks,including outside88.",
+      "forward_model_rows": 0,
+      "known_memory_rows": 0
+    }
+  }
+}

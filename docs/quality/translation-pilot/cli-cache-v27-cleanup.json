@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-10-25T17:28:48.091414+00:00",
+  "run_ids": [
+    40196684338,
+    40198168513,
+    40215319807
+  ],
+  "removed_exact_owned_zips": [
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40198168513-1792935222.zip",
+      "bytes": 178033
+    },
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40196684338-1792934052.zip",
+      "bytes": 113141
+    },
+    {
+      "bucket": "task-xdg",
+      "name": "run-log-40215319807-1792948333.zip",
+      "bytes": 240331
+    }
+  ],
+  "remaining_owned_zips": 0,
+  "task_root_absent": true,
+  "other_project_caches_touched": false,
+  "method": "Exact run IDs in ZIP basenames, then task root rmtree after remote/index equality; OS temp root preserved."
+}

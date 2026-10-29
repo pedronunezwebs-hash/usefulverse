@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "run_id": 40196684338,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40196684338",
+  "source_commit": "5e52d477bd23c0a6aadf743ee62e0a35c20372b7",
+  "policy": "context-v27",
+  "engine": "madlad",
+  "scope": "references",
+  "locales": [
+    "zh-CN"
+  ],
+  "dispatches": 1,
+  "complete": true,
+  "model_inference_local": false,
+  "known_sample_reviewed_memory": true,
+  "created_at": "2026-10-25T13:14:12Z",
+  "conclusion": "success",
+  "final_status": "completed",
+  "job_id": 121178914764,
+  "checkpoint_before": 0,
+  "checkpoint_after": 67,
+  "new_records": 67,
+  "checkpoint_sha256_at_collection": "936f325a08d59b437ac6f8249e00d1edb2c54057fcad441013dc88e1cbfe3d86",
+  "log_sha256": "bb90fc1a524570964cbc2bad25fbbafa52bcc91841ab4c810f14a1860f25d83b",
+  "models": [
+    {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    }
+  ],
+  "summary": [
+    {
+      "approved": 0,
+      "conversion_seconds": 204.50083292300008,
+      "counts": {
+        "legacy": 27,
+        "model": 40,
+        "reviewed_memory_hits": 40
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3793228,
+      "scope": "references",
+      "total_seconds": 250.831978789
+    }
+  ],
+  "cache_events": [
+    {
+      "avoided_items": 0,
+      "cached_entries": 8,
+      "calls": 1,
+      "miss_hashes": [
+        "eff44243d799fa458e684de800d4edbea8e80ab4030ebda24a6499ae9a326428",
+        "b14c6b5468c14f484e77d607d02da153c60a083df799ac9b6f2fec30f69a8bb5",
+        "b499ff07dda07c9b26817983624d9d63136ebe197c35cf8a53b3ff964d50860e",
+        "af0d5472da248ad7d7ca2afef1c579e50c0f7ab4a2d99af5058eb3e28670d896",
+        "842d210e4415a130b39b897afb5ca5de05356789db6c1ca5040b6a1e10a372fe",
+        "8ccae7873fee5eb005135866a9f894abf41cd9616ad7d93ed1c0383679cad91f",
+        "db2d2b0eeb6b633165671e1aceed7fc70a7858e4b77716e4f7ccf3348571363b",
+        "0b5b12656741ba31a4cc4dc166981e30bbd75cf16551849eea1b98c07cc70b59"
+      ],
+      "model_items": 8,
+      "model_seconds": 5.603590919999988,
+      "policy": "context-v27",
+      "request_hashes": [
+        "eff44243d799fa458e684de800d4edbea8e80ab4030ebda24a6499ae9a326428",
+        "b14c6b5468c14f484e77d607d02da153c60a083df799ac9b6f2fec30f69a8bb5",
+        "b499ff07dda07c9b26817983624d9d63136ebe197c35cf8a53b3ff964d50860e",
+        "af0d5472da248ad7d7ca2afef1c579e50c0f7ab4a2d99af5058eb3e28670d896",
+        "842d210e4415a130b39b897afb5ca5de05356789db6c1ca5040b6a1e10a372fe",
+        "8ccae7873fee5eb005135866a9f894abf41cd9616ad7d93ed1c0383679cad91f",
+        "db2d2b0eeb6b633165671e1aceed7fc70a7858e4b77716e4f7ccf3348571363b",
+        "0b5b12656741ba31a4cc4dc166981e30bbd75cf16551849eea1b98c07cc70b59"
+      ],
+      "requests": 8,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 0,
+      "cached_entries": 16,
+      "calls": 2,
+      "miss_hashes": [
+        "662a4c9456fec77904fde17f560576915c77e4a91732eb3b32fcbafc38010cce",
+        "c940b528e40de95dcb6562e0aae1bad61a19239076220d952f892692d95dabe6",
+        "b99f798a6557bf238d334eababee40211f3599eaa7bee6175cc6567242ce6d23",
+        "8c8925c717043771f8ec734bc5b3e477e9ace38bf937a55d8ace3ae8ebe5f900",
+        "49097ae374980f4215f82b5712773388e5568484319041838039f484e46dc7ab",
+        "2d5e3592082a5b9b056646b96830f3dc011b32b8b6579ff7963288ac3081bb82",
+        "2eacac0e34040adb4afc3a66b05be024965490e94b3f0bd949950f5888170b98",
+        "6e6df01836a4947b371ee036f5d476f89909c43ac13218cc9b59cc9e73c48583"
+      ],
+      "model_items": 16,
+      "model_seconds": 8.107296642999927,
+      "policy": "context-v27",
+      "request_hashes": [
+        "662a4c9456fec77904fde17f560576915c77e4a91732eb3b32fcbafc38010cce",
+        "c940b528e40de95dcb6562e0aae1bad61a19239076220d952f892692d95dabe6",
+        "b99f798a6557bf238d334eababee40211f3599eaa7bee6175cc6567242ce6d23",
+        "8c8925c717043771f8ec734bc5b3e477e9ace38bf937a55d8ace3ae8ebe5f900",
+        "49097ae374980f4215f82b5712773388e5568484319041838039f484e46dc7ab",
+        "2d5e3592082a5b9b056646b96830f3dc011b32b8b6579ff7963288ac3081bb82",
+        "2eacac0e34040adb4afc3a66b05be024965490e94b3f0bd949950f5888170b98",
+        "6e6df01836a4947b371ee036f5d476f89909c43ac13218cc9b59cc9e73c48583"
+      ],
+      "requests": 16,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 0,
+      "cached_entries": 24,
+      "calls": 3,
+      "miss_hashes": [
+        "63d5505f1fae3663c4435aae6431dfd73db07f69d8a50b2c30a994a997e06ab9",
+        "ab345392cc0f3e8f6d21a8be68035b6e3c6944da273466ef6140374aebe57509",
+        "e54c0b3b6ad91d34165e067eda4d711601a743980be77a461680146dc11384e8",
+        "920a356085ea299644af3b8539abf4691e7e1f3e43b7e4e50e7a0b21b228373f",
+        "2d61e873b964607765b53340d1230a865afb797846397c051801a0d77ae5813a",
+        "c4e0895870e9c7e309f5a52fe9e917b79e5725e69f4147818975cd94b30a5f9b",
+        "e317c7a2026550f98148040387b6a188e61375b19212d63a909c45053e0a5984",
+        "72907378c23afe61d45c9cb0b71b1d26e4f3fe2e93144695af60907201ec5f25"
+      ],
+      "model_items": 24,
+      "model_seconds": 10.42991447399993,
+      "policy": "context-v27",
+      "request_hashes": [
+        "63d5505f1fae3663c4435aae6431dfd73db07f69d8a50b2c30a994a997e06ab9",
+        "ab345392cc0f3e8f6d21a8be68035b6e3c6944da273466ef6140374aebe57509",
+        "e54c0b3b6ad91d34165e067eda4d711601a743980be77a461680146dc11384e8",
+        "920a356085ea299644af3b8539abf4691e7e1f3e43b7e4e50e7a0b21b228373f",
+        "2d61e873b964607765b53340d1230a865afb797846397c051801a0d77ae5813a",
+        "c4e0895870e9c7e309f5a52fe9e917b79e5725e69f4147818975cd94b30a5f9b",
+        "e317c7a2026550f98148040387b6a188e61375b19212d63a909c45053e0a5984",
+        "72907378c23afe61d45c9cb0b71b1d26e4f3fe2e93144695af60907201ec5f25"
+      ],
+      "requests": 24,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 0,
+      "cached_entries": 32,
+      "calls": 4,
+      "miss_hashes": [
+        "bead7dbdb57aa188682a53c9d04668dbdaab417ee0d3695c06ed6996aad09ac0",
+        "57b7608946665c91f22fb80611297b209fdb69fc6cdca01dedd2778f4d0d98bd",
+        "05ccfe8fbaed6d520ecb2dbf9419cc7a4137839e765ba7c855f033ff26878edd",
+        "8aead53dda6afe72bc25b0c0df3707abb3dd17d76d4b6d21791637b8258789d8",
+        "088ff0df6b9de7a30102adafeb038b29987098c1c8059928a0160f1bcf144c5a",
+        "21033f14fee223aee03de002866951cd727791ea22506c37262bb152a51dfda1",
+        "f640533db36012f4bd98a0f47c6f8880e90a226225e925603f8bf70b07a65e92",
+        "c5b1a65a83f507198e7b632cd1d52f7e160e93675600ebcf359ec20e5bf5edaa"
+      ],
+      "model_items": 32,
+      "model_seconds": 13.436238925999987,
+      "policy": "context-v27",
+      "request_hashes": [
+        "bead7dbdb57aa188682a53c9d04668dbdaab417ee0d3695c06ed6996aad09ac0",
+        "57b7608946665c91f22fb80611297b209fdb69fc6cdca01dedd2778f4d0d98bd",
+        "05ccfe8fbaed6d520ecb2dbf9419cc7a4137839e765ba7c855f033ff26878edd",
+        "8aead53dda6afe72bc25b0c0df3707abb3dd17d76d4b6d21791637b8258789d8",
+        "088ff0df6b9de7a30102adafeb038b29987098c1c8059928a0160f1bcf144c5a",
+        "21033f14fee223aee03de002866951cd727791ea22506c37262bb152a51dfda1",
+        "f640533db36012f4bd98a0f47c6f8880e90a226225e925603f8bf70b07a65e92",
+        "c5b1a65a83f507198e7b632cd1d52f7e160e93675600ebcf359ec20e5bf5edaa"
+      ],
+      "requests": 32,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 0,
+      "cached_entries": 40,
+      "calls": 5,
+      "miss_hashes": [
+        "f1a08974b31eeae46b1faf334f8959e8e5f8d5a672f64767dfcc4bba9bde2a10",
+        "cecd931f61c08a2fed0b6c51821bde2aa339db11453c02439ce8ed7ea1ffd3b5",
+        "379e8e72e11d55210cd18d63ebec60b7e0a193a4c5d09e652654c8a63f16396e",
+        "7dad1c1f47f607486aa8ea996d3a804bc50836649f013da7788098b3c7c32925",
+        "5056d48ca71b6bb163279f18edbc05c43b4abc69fc70f218b303a0e544b00087",
+        "f8ad05ae6831cc7942d6295acba6ce69b4c669068a0d9dd7791f90ff97fa16e4",
+        "5c0427567e9a3344fdb2d296806e77448f305ef5101de63b12b65b6728dc9398",
+        "b7190facfa6cd3a6a82df188c84e1ca05975a4c24c7783f6edbb7d4f94a05a64"
+      ],
+      "model_items": 40,
+      "model_seconds": 18.54215267899997,
+      "policy": "context-v27",
+      "request_hashes": [
+        "f1a08974b31eeae46b1faf334f8959e8e5f8d5a672f64767dfcc4bba9bde2a10",
+        "cecd931f61c08a2fed0b6c51821bde2aa339db11453c02439ce8ed7ea1ffd3b5",
+        "379e8e72e11d55210cd18d63ebec60b7e0a193a4c5d09e652654c8a63f16396e",
+        "7dad1c1f47f607486aa8ea996d3a804bc50836649f013da7788098b3c7c32925",
+        "5056d48ca71b6bb163279f18edbc05c43b4abc69fc70f218b303a0e544b00087",
+        "f8ad05ae6831cc7942d6295acba6ce69b4c669068a0d9dd7791f90ff97fa16e4",
+        "5c0427567e9a3344fdb2d296806e77448f305ef5101de63b12b65b6728dc9398",
+        "b7190facfa6cd3a6a82df188c84e1ca05975a4c24c7783f6edbb7d4f94a05a64"
+      ],
+      "requests": 40,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 2,
+      "cached_entries": 46,
+      "calls": 6,
+      "miss_hashes": [
+        "211801bc96bfbceab651346b031bc38c8c66f0eaf3d4d2bd1def5e134b2c1e71",
+        "489ccd2b1559b7e2fd646182be8d739f357f94e59e12350e2f4610227d459f52",
+        "b35a373dd63ba34fa616a568ae01cecd8c10fc882bc2f80afa9f68250b3f9e1e",
+        "f59e31b91ad1775a5ccc09112a11dc220c54be05581c43305c7bd800381f79d9",
+        "a2444199f213f54bd838edf1b4d8a4dc5e169ae2d98487bc9b26cbd725dcb880",
+        "413f187499244de7fbe7960bc2037562abc3533496838e2ffd7877ef0cd93b5f"
+      ],
+      "model_items": 46,
+      "model_seconds": 20.853226140999936,
+      "policy": "context-v27",
+      "request_hashes": [
+        "211801bc96bfbceab651346b031bc38c8c66f0eaf3d4d2bd1def5e134b2c1e71",
+        "489ccd2b1559b7e2fd646182be8d739f357f94e59e12350e2f4610227d459f52",
+        "b35a373dd63ba34fa616a568ae01cecd8c10fc882bc2f80afa9f68250b3f9e1e",
+        "f59e31b91ad1775a5ccc09112a11dc220c54be05581c43305c7bd800381f79d9",
+        "ab345392cc0f3e8f6d21a8be68035b6e3c6944da273466ef6140374aebe57509",
+        "a2444199f213f54bd838edf1b4d8a4dc5e169ae2d98487bc9b26cbd725dcb880",
+        "920a356085ea299644af3b8539abf4691e7e1f3e43b7e4e50e7a0b21b228373f",
+        "413f187499244de7fbe7960bc2037562abc3533496838e2ffd7877ef0cd93b5f"
+      ],
+      "requests": 48,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 4,
+      "cached_entries": 52,
+      "calls": 7,
+      "miss_hashes": [
+        "6b442197b5c28994e32e5fe9e4d32b23b73b5e1718d4c171716b15bb238ddf29",
+        "8c2d078e7d5b020a491efad5eb838aafe6112cb8df8af1afb733ee4881b54d0d",
+        "9d2e99df5c8eb896549f66d279825a0daa6fa7fbeb96c7ee27312026a74841d1",
+        "4e0ba70a403d41840dcc60e6ec435522b3cf9b85b66180c75c0e3bc8e7e0e25b",
+        "73fffe1f44fe36ca58a7d797e64afa93e426ab56197f2c8d196e9e7e9b07288b",
+        "fb467bd806b71e579a972661d790926b0b8de5641bf1aee74add4a109e94f553"
+      ],
+      "model_items": 52,
+      "model_seconds": 21.71949804799999,
+      "policy": "context-v27",
+      "request_hashes": [
+        "6b442197b5c28994e32e5fe9e4d32b23b73b5e1718d4c171716b15bb238ddf29",
+        "8c2d078e7d5b020a491efad5eb838aafe6112cb8df8af1afb733ee4881b54d0d",
+        "9d2e99df5c8eb896549f66d279825a0daa6fa7fbeb96c7ee27312026a74841d1",
+        "4e0ba70a403d41840dcc60e6ec435522b3cf9b85b66180c75c0e3bc8e7e0e25b",
+        "73fffe1f44fe36ca58a7d797e64afa93e426ab56197f2c8d196e9e7e9b07288b",
+        "05ccfe8fbaed6d520ecb2dbf9419cc7a4137839e765ba7c855f033ff26878edd",
+        "8aead53dda6afe72bc25b0c0df3707abb3dd17d76d4b6d21791637b8258789d8",
+        "fb467bd806b71e579a972661d790926b0b8de5641bf1aee74add4a109e94f553"
+      ],
+      "requests": 56,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 5,
+      "cached_entries": 59,
+      "calls": 8,
+      "miss_hashes": [
+        "06a1c667323cb532a90c16d3ede2a99fb960081ef10ae19829950bc604bc6029",
+        "2fafabee8af138a504c6eeb6850591011601d2e697c5a0de1890aed7a5e96346",
+        "870889a2d1b62f0a69ba7255d6626157e1d2dbaa5849d83f6ef3c18ddff30a11",
+        "b6c8ce26ce7f499f6f2dfd3238e4972d6df07a6bedbc32300b44615cf33ae3ac",
+        "74fbf5b476da36ad184e96aa7747a672d7ffe7a1ee6d83248a64ebadeec2c331",
+        "87c81f6147695a883ef5a87e7c56e5b70a1c4a1a349be039267322222d5e626f",
+        "29832c7d5468848da88e7cb1494d7c3026f528baf02aa56fb4faf18b2d236e05"
+      ],
+      "model_items": 59,
+      "model_seconds": 25.49195192100001,
+      "policy": "context-v27",
+      "request_hashes": [
+        "06a1c667323cb532a90c16d3ede2a99fb960081ef10ae19829950bc604bc6029",
+        "2fafabee8af138a504c6eeb6850591011601d2e697c5a0de1890aed7a5e96346",
+        "870889a2d1b62f0a69ba7255d6626157e1d2dbaa5849d83f6ef3c18ddff30a11",
+        "b6c8ce26ce7f499f6f2dfd3238e4972d6df07a6bedbc32300b44615cf33ae3ac",
+        "cecd931f61c08a2fed0b6c51821bde2aa339db11453c02439ce8ed7ea1ffd3b5",
+        "74fbf5b476da36ad184e96aa7747a672d7ffe7a1ee6d83248a64ebadeec2c331",
+        "87c81f6147695a883ef5a87e7c56e5b70a1c4a1a349be039267322222d5e626f",
+        "29832c7d5468848da88e7cb1494d7c3026f528baf02aa56fb4faf18b2d236e05"
+      ],
+      "requests": 64,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    },
+    {
+      "avoided_items": 5,
+      "cached_entries": 62,
+      "calls": 9,
+      "miss_hashes": [
+        "99b61088b14e125c5b41edef34529242998504dd76dcb61b141cdaae23a298e1",
+        "82993b3452230e0de54a40761465dd177c53ea604afd70495014fb2147e45486",
+        "bb4bb1afb587f3e8b203b64db22d65ad496a46f851e596c4ce59c8d70a5dc202"
+      ],
+      "model_items": 62,
+      "model_seconds": 27.776862039000093,
+      "policy": "context-v27",
+      "request_hashes": [
+        "99b61088b14e125c5b41edef34529242998504dd76dcb61b141cdaae23a298e1",
+        "82993b3452230e0de54a40761465dd177c53ea604afd70495014fb2147e45486",
+        "bb4bb1afb587f3e8b203b64db22d65ad496a46f851e596c4ce59c8d70a5dc202"
+      ],
+      "requests": 67,
+      "source_locale": "zh-CN",
+      "target_locale": "en"
+    }
+  ],
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-10-25T13:14:16Z",
+      "completed_at": "2026-10-25T13:14:17Z"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-10-25T13:14:17Z",
+      "completed_at": "2026-10-25T13:14:23Z"
+    },
+    {
+      "name": "Set up Python",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-10-25T13:14:23Z",
+      "completed_at": "2026-10-25T13:14:23Z"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-10-25T13:14:23Z",
+      "completed_at": "2026-10-25T13:14:24Z"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-10-25T13:14:24Z",
+      "completed_at": "2026-10-25T13:14:53Z"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6,
+      "started_at": "2026-10-25T13:14:53Z",
+      "completed_at": "2026-10-25T13:21:17Z"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7,
+      "started_at": "2026-10-25T13:21:17Z",
+      "completed_at": "2026-10-25T13:25:28Z"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-10-25T13:25:28Z",
+      "completed_at": "2026-10-25T13:25:29Z"
+    },
+    {
+      "name": "Post Set up Python",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 15,
+      "started_at": "2026-10-25T13:25:29Z",
+      "completed_at": "2026-10-25T13:25:29Z"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16,
+      "started_at": "2026-10-25T13:25:29Z",
+      "completed_at": "2026-10-25T13:25:29Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17,
+      "started_at": "2026-10-25T13:25:29Z",
+      "completed_at": "2026-10-25T13:25:29Z"
+    }
+  ],
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "actual_python_test_lines": [
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-25T13:21:15.7988300Z Ran 273 tests in 379.389s"
+  ],
+  "collected_at_utc": "2026-10-25T13:26:38.142241+00:00",
+  "model_hashes_same_v26": true,
+  "forward_model_records": 0,
+  "cleanup_verification": {
+    "method": "actual cleanup step conclusion",
+    "job_steps_api_empty": false,
+    "workflow_sha256": "c831b7cd8cb03b9676a35c88aef5b2505daef866b921d4d8f2911357671105c5",
+    "log_evidence_lines": [
+      "translation-pilot (madlad)\tRemove job-owned model downloads and caches\t﻿2026-10-25T13:25:28.9017325Z ##[group]Run rm -rf -- \"$HF_HOME\" \"$RUNNER_TEMP/usefulverse-pilot-${PILOT_ENGINE}\"",
+      "translation-pilot (madlad)\tPost Set up Python\t﻿2026-10-25T13:25:29.2229757Z Post job cleanup.",
+      "translation-pilot (madlad)\tPost Check out pilot source without persistent credentials\t﻿2026-10-25T13:25:29.4801895Z Post job cleanup."
+    ]
+  }
+}

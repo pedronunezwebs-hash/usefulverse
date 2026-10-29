@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T08:00:23.777981+00:00",
+  "post_inference_only": true,
+  "forward_binding_required": true,
+  "frozen_runtime_unchanged": true,
+  "generic_historical_flags_unchanged": true,
+  "global_semantic_fixtures": 1403,
+  "global_semantic_file_sha256": "aaacfee4214d93a9d53a49ea14c046c289aa1cf9ecfd196d85a1329ea7643abe",
+  "scoped_back_cases": 14,
+  "observed_current_back_defects": 15,
+  "total_permanent_regression_cases": 1417,
+  "registry_sha256": "6c1240906845d525ab5197edd8bcec6e2f4bade6b0b3e2e3b42c1e7c237ddb9f",
+  "red": {
+    "tests": 1,
+    "failures": 15,
+    "log_sha256": "d0ba87f6307c86d9b7774bdddbccc219f07061dcdea93d1ee822454176631704"
+  },
+  "green": {
+    "tests": 4,
+    "seconds": 26.505,
+    "log_sha256": "440fc99a782865c345945a30f05eedb5279c0ebc7ba5d4f71e0a06b34e674f47"
+  },
+  "method": "Standalone audit and current review fields; original frozen inference module/entry/policy/import/proofs unchanged. Generic automatic-summary remains its original flag inventory; scoped_back_findings separately audits these15 back observations. No forward-score override or language approval."
+}

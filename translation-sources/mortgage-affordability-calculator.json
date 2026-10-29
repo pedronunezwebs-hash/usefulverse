@@ -1,0 +1,85 @@
+{
+  "toolId": "mortgage-affordability-calculator",
+  "sourceCopy": {
+    "name": "Mortgage Affordability Calculator",
+    "title": "Mortgage Affordability Calculator Free | UsefulVerse",
+    "description": "Estimate a home-price range from income, debts, down payment, rate, taxes and insurance. Free, browser-based, with no account.",
+    "intro": "Estimate a possible home-price ceiling from the monthly housing budget and assumptions you enter. See principal, interest, property tax, insurance and HOA costs separately.",
+    "howQuestion": "How do I estimate how much house I can afford?",
+    "howAnswer": "Enter gross monthly income, monthly debts, a total debt-to-income limit and housing-cost assumptions. The estimate solves for a price whose modeled monthly debt and housing costs match that limit.",
+    "privacyQuestion": "Are my income or debt details uploaded?",
+    "privacyAnswer": "No. This calculation runs in your browser; the values you enter are not uploaded or saved by this tool.",
+    "fields": {
+      "grossMonthlyIncome": "Gross monthly income (USD)",
+      "monthlyDebts": "Other monthly debt payments (USD)",
+      "dtiLimit": "Maximum total debt-to-income ratio (%)",
+      "downPayment": "Down payment (%)",
+      "rate": "Annual mortgage interest rate (%)",
+      "term": "Loan term (years)",
+      "propertyTax": "Annual property tax rate (%)",
+      "annualInsurance": "Annual homeowners insurance (USD)",
+      "hoa": "Monthly HOA or condo fee (USD)",
+      "mortgageInsurance": "Optional monthly mortgage insurance (USD)",
+      "assumptionsNote": "Enter your own estimates. Gross income is before taxes. This uses a user-selected total debt-to-income limit; it is not a lender approval rule.",
+      "costNote": "Monthly housing includes principal and interest, estimated property tax, homeowners insurance, HOA fees and the optional mortgage-insurance amount you enter. Maintenance, utilities, closing costs and other expenses are not included.",
+      "accuracyNote": "Illustrative estimate only, not financial advice, a loan offer, eligibility decision or guarantee. Lenders use additional information and rules. Rates, taxes, insurance, fees and costs vary. Check local figures and consult a qualified housing or mortgage professional before making a decision.",
+      "resultSummary": "Illustrative home affordability estimate",
+      "homePrice": "Estimated home-price ceiling",
+      "loanAmount": "Estimated loan amount",
+      "downPaymentAmount": "Estimated down payment",
+      "monthlyBudget": "Monthly housing budget after other debts",
+      "monthlyHousing": "Estimated total monthly housing cost",
+      "principalInterest": "Principal and interest",
+      "propertyTaxMonthly": "Estimated property tax",
+      "homeInsuranceMonthly": "Homeowners insurance",
+      "hoaMonthly": "HOA or condo fee",
+      "mortgageInsuranceMonthly": "Mortgage insurance",
+      "dtiResult": "Modeled total debt-to-income ratio",
+      "annualRateAssumption": "Annual interest rate used",
+      "termAssumption": "Term used",
+      "sourceLinkText": "Read the CFPB home payment worksheet"
+    },
+    "actions": {
+      "calculate": "Estimate affordability",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "example": "Load example",
+      "result": "Estimate breakdown"
+    },
+    "messages": {
+      "calculated": "Illustrative estimate calculated from your assumptions.",
+      "checkInputs": "Check income, debts, down payment and housing-cost assumptions.",
+      "exampleLoaded": "Example loaded and calculated.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What costs are included in the monthly housing estimate?",
+        "answer": "Principal and interest, estimated property tax, homeowners insurance, HOA or condo fees, and any monthly mortgage-insurance amount you enter. The estimate does not include maintenance, utilities or closing costs."
+      },
+      {
+        "question": "Does this estimate mean a lender will approve me?",
+        "answer": "No. It is arithmetic based on your assumptions, not a lender decision. Lenders may review credit, assets, employment, loan terms, property details and other rules."
+      },
+      {
+        "question": "Why does a higher monthly debt amount lower the home-price estimate?",
+        "answer": "The selected total debt-to-income limit is shared by housing costs and other debt payments. More monthly debt leaves less of that modeled budget for housing."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/mortgage-affordability-calculator/index.html",
+    "htmlSha256": "70b7a77a8f674b0a5c8b15e4673e3d20b7eca262b5164604c4ad9a1aee7e2fa7",
+    "payloadSha256": "588e44ce5316b1fa894ce6e2da24b5d831246b09f85315366c42ccc88ff679ab",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/mortgage-affordability-calculator.js",
+    "controllerSha256": "6dc50a4503b0eff76806c02aebc09a3a4b01edad5b7f1f335b8433884b63635b",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

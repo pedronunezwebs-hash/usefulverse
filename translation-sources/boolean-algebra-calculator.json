@@ -1,0 +1,73 @@
+{
+  "toolId": "boolean-algebra-calculator",
+  "sourceCopy": {
+    "name": "Boolean Algebra Calculator",
+    "title": "Boolean Algebra Calculator Free | UsefulVerse",
+    "description": "Simplify Boolean expressions into SOP and POS, verify a truth table, and view Karnaugh maps. Free, no sign-up, processed locally in your browser.",
+    "intro": "Enter a logic expression to get minimized sum-of-products and product-of-sums forms. Check every truth-table row and view a Karnaugh map when the expression has two to four variables.",
+    "howQuestion": "How do you simplify a Boolean expression?",
+    "howAnswer": "Enter an expression with variables A–F and Boolean operators, then select Simplify. Compare its SOP and POS forms with the generated truth table. For two to four variables, the tool also shows a Gray-ordered Karnaugh map.",
+    "privacyQuestion": "Is my Boolean expression uploaded?",
+    "privacyAnswer": "No. Parsing, minimization, truth-table generation and Karnaugh-map layout run in this browser. The expression is not uploaded or saved by this tool.",
+    "howTo": [
+      "Enter variables A–F, constants 0 or 1, parentheses, and NOT (!), AND (&), XOR (^) or OR (|). Adjacent terms mean AND.",
+      "Select Simplify to see exact SOP and POS forms and compare the output for every input combination.",
+      "For two to four variables, use the Gray-ordered Karnaugh map as another view. Copy the simplified forms if needed."
+    ],
+    "example": {
+      "label": "Load the tautology example"
+    },
+    "actions": {
+      "calculate": "Simplify expression",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy simplified forms",
+      "result": "Simplified result"
+    },
+    "fields": {
+      "expression": "Boolean expression",
+      "expressionHint": "Use variable letters A–F, constants 0 and 1, and the symbols ! & ^ |. Parentheses group expressions.",
+      "accuracyNote": "Exact minimization for accepted expressions. At most 6 variables and 180 characters; Karnaugh maps display for 2–4 variables. Equivalent minimal forms can differ. This is not a circuit simulator or formal proof tool.",
+      "simplifiedSop": "Sum of products (SOP)",
+      "simplifiedPos": "Product of sums (POS)",
+      "variables": "Variables",
+      "minterms": "True minterm indexes",
+      "truthTableLabel": "Boolean expression truth table",
+      "result": "Output",
+      "kmapTitle": "Karnaugh map (Gray code)"
+    },
+    "messages": {
+      "calculated": "Expression simplified and checked against its truth table.",
+      "exampleLoaded": "Tautology example loaded.",
+      "checkInputs": "Check the expression. Use A–F, supported Boolean operators and balanced parentheses."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What do SOP and POS mean in Boolean algebra?",
+        "answer": "SOP combines AND terms with OR; POS combines OR clauses with AND. This tool computes both forms from the same truth table."
+      },
+      {
+        "question": "When is a Karnaugh map shown?",
+        "answer": "A Gray-ordered Karnaugh map is shown for expressions with two, three or four variables. The truth table and minimized forms support up to six variables."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/boolean-algebra-calculator/index.html",
+    "htmlSha256": "86ed4bac2c085a5329fbac238123cca0820fbae32a5781d8b404588c20c9d75a",
+    "payloadSha256": "14857ed7b2e0e7ea0dcbbab116c0bb04eeeb858b0b8be83d076a13400e921f87",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/boolean-algebra-calculator.js",
+    "controllerSha256": "989aeca115a235bb669b6bd1c166545df68a57d2084d84434482a053bfffc4f0",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "context-v2",
+  "protection": "literal-segments-v1",
+  "description": "Controlled English by meaning; immutable literals bypass the model. Experimental, no locale approval.",
+  "reviewer": "Codex",
+  "review_kind": "agent",
+  "reviewed_at": "2026-10-20",
+  "native_review": false,
+  "entries": {
+    "shikaku.fields.resume": {
+      "source": "Resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "context": "fields.resume",
+      "concept": "continue-saved-game",
+      "translation_input": "Continue the saved game"
+    },
+    "shikaku.fields.clear": {
+      "source": "Clear rectangles",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "context": "fields.clear",
+      "concept": "remove-rectangles",
+      "translation_input": "Remove all rectangles"
+    },
+    "voice-changer.fields.clear": {
+      "source": "Clear audio",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "context": "fields.clear",
+      "concept": "remove-audio",
+      "translation_input": "Remove the loaded audio"
+    },
+    "voice-changer.fields.preview": {
+      "source": "Preview effect",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "context": "fields.preview",
+      "concept": "play-audio-effect",
+      "translation_input": "Play the audio effect"
+    },
+    "voice-changer.fields.stop": {
+      "source": "Stop preview",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "context": "fields.stop",
+      "concept": "stop-audio-effect",
+      "translation_input": "Stop playing the audio effect"
+    },
+    "dxf-viewer.fields.resetView": {
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView",
+      "concept": "fit-drawing-to-viewport",
+      "translation_input": "Fit the drawing in the viewer"
+    },
+    "shikaku.fields.faq.1.a": {
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "concept": "one-clue-per-rectangle",
+      "translation_input": "A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue."
+    },
+    "voice-changer.fields.faq1a": {
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "fields.faq1a",
+      "concept": "audio-not-uploaded",
+      "translation_input": "Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording."
+    },
+    "voice-changer.fields.faq2a": {
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "fields.faq2a",
+      "concept": "pitch-not-independent-of-speed",
+      "translation_input": "This pitch control does not preserve playback speed. A lower pitch plays slower. A higher pitch plays faster."
+    },
+    "dxf-viewer.faq.0.a": {
+      "source": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "context": "faq.0.a",
+      "concept": "dxf-not-dwg",
+      "translation_input": "This tool cannot open DWG or binary DXF. It only opens ASCII DXF."
+    }
+  }
+}

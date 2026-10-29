@@ -1,0 +1,82 @@
+{
+  "toolId": "pdf-metadata-editor",
+  "sourceCopy": {
+    "name": "PDF Metadata Editor",
+    "title": "PDF Metadata Editor Free | UsefulVerse",
+    "description": "Edit standard PDF title, author, subject and dates free in your browser. No upload; keep the original PDF unchanged.",
+    "intro": "Read or edit common document information stored in a PDF, then download a separate copy. The selected PDF stays on this device.",
+    "howQuestion": "Which PDF metadata can I change?",
+    "howAnswer": "This tool edits the standard document information fields: title, author, subject, keywords, creator, producer, creation date and modification date. It does not edit XMP metadata or custom properties.",
+    "privacyQuestion": "Is my PDF uploaded?",
+    "privacyAnswer": "No. Reading and editing happen in your browser after you choose a file. The original file is not changed; saving creates a separate PDF copy.",
+    "fields": {
+      "pdfFile": "Choose a PDF",
+      "warning": "Keep your original. Re-saving may invalidate digital signatures or affect advanced PDF features. This tool does not remove hidden information or certify privacy.",
+      "limits": "Local limits: 25 MiB input, 300 pages and 50 MiB output. Large documents may need more memory; a computer is recommended.",
+      "scope": "Only standard PDF document information is edited. XMP, custom metadata, attachments, hidden content and signature validation are not supported.",
+      "sourceNote": "Processing is local in this browser. No account, upload, server processing or automatic saving.",
+      "fieldsHeading": "Standard document information",
+      "clearHint": "Leave a field blank to remove that standard information entry from the new copy. Other fields are kept.",
+      "title": "Title",
+      "author": "Author",
+      "subject": "Subject",
+      "keywords": "Keywords",
+      "creator": "Creator application",
+      "producer": "PDF producer",
+      "creationDate": "Creation date",
+      "modificationDate": "Modification date",
+      "pages": "Pages"
+    },
+    "actions": {
+      "read": "Read PDF information",
+      "clear": "Clear these fields",
+      "save": "Save edited PDF copy",
+      "reset": "Choose another PDF",
+      "download": "Download edited PDF",
+      "result": "Your PDF copy is ready"
+    },
+    "messages": {
+      "fileReady": "PDF selected",
+      "noFile": "Choose a PDF first.",
+      "tooLarge": "This PDF or its edited copy exceeds the local size limit.",
+      "invalid": "This file is not a supported, readable PDF or one of its fields is invalid.",
+      "tooManyPages": "This tool supports PDFs with 1 to 300 pages.",
+      "reading": "Reading standard PDF information on this device…",
+      "readSuccess": "PDF information is ready to review.",
+      "readFailed": "Could not read this PDF. It may be damaged, encrypted or use unsupported features.",
+      "saving": "Creating a separate PDF copy on this device…",
+      "saved": "Edited PDF copy is ready. The original was not changed.",
+      "saveFailed": "Could not create the edited copy. Keep the original and try another PDF.",
+      "cleared": "The fields are blank. Save to remove these standard entries from the new copy.",
+      "downloadReady": "Your edited PDF download is ready."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this remove all metadata from a PDF?",
+        "answer": "No. It edits only common entries in the standard PDF document information dictionary. XMP, custom properties, embedded files and other hidden content may remain."
+      },
+      {
+        "question": "Will editing metadata preserve a digital signature?",
+        "answer": "Do not rely on that. Saving rewrites the PDF and can invalidate existing digital signatures or affect features not supported by this tool. Keep the original and verify the copy."
+      },
+      {
+        "question": "Is the original PDF overwritten?",
+        "answer": "No. The tool reads the selected file and creates a separate downloadable copy. It does not modify the original on your device."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/pdf-metadata-editor/index.html",
+    "htmlSha256": "7b6e116060362e74dccb224cbf72ea633b60d726711e4aa567cf8c3afd0891a8",
+    "payloadSha256": "3da730788a7d1a74afa0d0d250b9b2b00db602acc966c34baf767e7cded47e07",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/pdf-metadata-editor.js",
+    "controllerSha256": "62d17703cf5828064cd92d8d43e57ab99b98854eacdc2cdfdbbaf571a9d28074",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

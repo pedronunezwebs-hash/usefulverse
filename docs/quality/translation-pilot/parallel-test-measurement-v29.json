@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T07:51:07.628453+00:00",
+  "serial_run": 40282144871,
+  "parallel_run": 40286109390,
+  "serial_tests": 338,
+  "parallel_tests": 342,
+  "serial_seconds": 1132.985,
+  "parallel_seconds": 756.237,
+  "speedup": 1.4981877374420982,
+  "time_reduction_percent": 33.25269090058562,
+  "all_original_serial_case_ids_preserved": true,
+  "all_parallel_case_ids_proved_once": true,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "workers": 4,
+  "worker_results": [
+    {
+      "worker": 0,
+      "exit": 0,
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 1,
+      "exit": 0,
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 2,
+      "exit": 0,
+      "tests": 85,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "worker": 3,
+      "exit": 0,
+      "tests": 85,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "inventory_sha256": "65fe613bdfa22fdd2e3320210c67118a3dafdc02988b206297e762f02697085b",
+  "runner": "same standard public ubuntu-latest",
+  "new_paid_cost": 0,
+  "limits": "Observed successive-run comparison,not a controlled model benchmark. Parallel run includes4extra tests and67additional raw reference records;all338original cases/assertions remain. No guaranteed future wall time."
+}

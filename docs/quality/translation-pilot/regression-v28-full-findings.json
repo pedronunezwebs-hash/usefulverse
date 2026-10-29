@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source_checkpoint_sha256": "b1c31ed81356c321acacbfb32e05b8743a966899021ce3f0486928ce7edf9d1c",
+  "first_red": {
+    "command": "python3 -B -m unittest discover -s scripts/localization -p test_translation_findings_v28.py",
+    "tests": 2,
+    "failures": 65,
+    "log_sha256": "89324eb5e4aa49d83e50742b193aa232bcdf66ee1d864cf8e549f71ff55eb092"
+  },
+  "second_red": {
+    "tests": 2,
+    "failures": 1,
+    "log_sha256": "123768aa4fe2f7f47d619e1686b13fdb600fd1878ba96acad9808a09124188eb"
+  },
+  "new_exact_full_cases": 64,
+  "fixture_count_before_full": 1339,
+  "fixture_count_after_full": 1403,
+  "approved_locales": [],
+  "measured_runtime_sha256": {
+    "scripts/localization/translation-pilot.py": "d8d8c3df2a7d548ab17f3aac266d066dacc64f68b313184b1957dfccd314f176",
+    "scripts/localization/pilot-bengali-v28.py": "f19d59d02c04316a174cee09c6eb9155020b1d114c130988f6daf55d72b5839b",
+    "scripts/localization/pilot-bengali-known-reference-policy.json": "0b30bb3362234c3d9b7c27a030437514dfef72c682addab616ed274ecc769919",
+    "docs/quality/translation-pilot/reviewed-memory-v28-import.json": "cea09bf2a9b253b0a1d8b40a9eae165f18c96421152d15c21d168c7aea0b3809",
+    "docs/quality/translation-pilot/review-v28-legacy-reassessment.json": "19daec64cde65b3990f584d9af2fbca411efdc2fe1d872415e5e0920ef7d79ce",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bn-numbers.json": "f5fd869b650fb47a9dce4b29f1498ca0f5d71d70a248eb45eb3f70ede150aab6",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bn-rbnf.xml": "d43d41a479536aa485e7e78df0138004159fa676c27a9ac81a2237d802ea0a1b",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/bound-readings.json": "c686bca8c3c82d5c7eeef17bc2464eaff68618aeaab05625bd563c2042b73a2e",
+    "docs/quality/translation-pilot/numeric-sources/context-v28/manifest.json": "8216ae19c4dd06ac6aac4d315fd323ac63f9f242fb139b204a9213fd2c8c0aaf"
+  },
+  "note": "Every observed exact full error was registered in findings before its semantic fixture. Grades of forward text and independent back errors are separate. Frozen measured inference/runtime/policy/imports were not changed.",
+  "focused_green": {
+    "tests": 37,
+    "seconds": 146.767,
+    "log_sha256": "ae426e09bda1a6925b15d1d071fbdab8c3010a3eee0b65aa325d406466f346bc"
+  },
+  "best_source_green": {
+    "tests": 1,
+    "seconds": 0.154,
+    "log_sha256": "d10df881b011b8e607710ab2f89708a67f0fdeccde27851f98b50bf7049f0bb3"
+  },
+  "unique_focused_tests": 38,
+  "suite_tests_expected": 327,
+  "gitleaks": {
+    "version": "8.30.1",
+    "active_findings": 0,
+    "unchanged_public_metadata_exclusions": 2,
+    "report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  }
+}

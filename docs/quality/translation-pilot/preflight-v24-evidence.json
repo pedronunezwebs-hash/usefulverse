@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "before": {
+    "units": 214,
+    "source_checks": 1004,
+    "unknown_unique": 13,
+    "entries": [
+      {
+        "text": "Draw rectangles so every number is the area of exactly one region. Cover every square once, with no overlaps.",
+        "evidence": [
+          {
+            "key": "shikaku.intro",
+            "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+            "context": "intro",
+            "field": "source"
+          },
+          {
+            "key": "shikaku.intro",
+            "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+            "context": "intro",
+            "field": "model_input"
+          }
+        ]
+      },
+      {
+        "text": "Draw rectangles so every number is the area of exactly one region.",
+        "evidence": [
+          {
+            "key": "shikaku.intro",
+            "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+            "context": "intro",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "shikaku.intro",
+            "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+            "context": "intro",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      },
+      {
+        "text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Every rectangle must contain one clue whose number matches its area.",
+        "evidence": [
+          {
+            "key": "shikaku.details",
+            "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+            "context": "details",
+            "field": "source"
+          }
+        ]
+      },
+      {
+        "text": "Every rectangle must contain one clue whose number matches its area.",
+        "evidence": [
+          {
+            "key": "shikaku.details",
+            "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+            "context": "details",
+            "field": "source.sentence.2"
+          }
+        ]
+      },
+      {
+        "text": "Choose a start square, then choose an end square to draw a rectangle. You can also drag across the grid. Each rectangle must contain exactly one number clue. That number must equal the number of squares inside the rectangle.",
+        "evidence": [
+          {
+            "key": "shikaku.details",
+            "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+            "context": "details",
+            "field": "model_input"
+          }
+        ]
+      },
+      {
+        "text": "Click two opposite corners or drag to draw a rectangle. Keyboard: Tab to a square, then Enter to select it.",
+        "evidence": [
+          {
+            "key": "shikaku.fields.dragHelp",
+            "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+            "context": "fields.dragHelp",
+            "field": "source"
+          },
+          {
+            "key": "shikaku.fields.dragHelp",
+            "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+            "context": "fields.dragHelp",
+            "field": "model_input"
+          }
+        ]
+      },
+      {
+        "text": "Click two opposite corners or drag to draw a rectangle.",
+        "evidence": [
+          {
+            "key": "shikaku.fields.dragHelp",
+            "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+            "context": "fields.dragHelp",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "shikaku.fields.dragHelp",
+            "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+            "context": "fields.dragHelp",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      },
+      {
+        "text": "That rectangle does not match a clue or overlaps another one.",
+        "evidence": [
+          {
+            "key": "shikaku.fields.statusInvalid",
+            "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+            "context": "fields.statusInvalid",
+            "field": "source"
+          },
+          {
+            "key": "shikaku.fields.statusInvalid",
+            "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+            "context": "fields.statusInvalid",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "shikaku.fields.statusInvalid",
+            "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+            "context": "fields.statusInvalid",
+            "field": "model_input"
+          },
+          {
+            "key": "shikaku.fields.statusInvalid",
+            "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+            "context": "fields.statusInvalid",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      },
+      {
+        "text": "Can a rectangle contain two numbers?",
+        "evidence": [
+          {
+            "key": "shikaku.fields.faq.1.q",
+            "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+            "context": "fields.faq.1.q",
+            "field": "source"
+          },
+          {
+            "key": "shikaku.fields.faq.1.q",
+            "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+            "context": "fields.faq.1.q",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "shikaku.fields.faq.1.q",
+            "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+            "context": "fields.faq.1.q",
+            "field": "model_input"
+          },
+          {
+            "key": "shikaku.fields.faq.1.q",
+            "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+            "context": "fields.faq.1.q",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      },
+      {
+        "text": "A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue.",
+        "evidence": [
+          {
+            "key": "shikaku.fields.faq.1.a",
+            "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+            "context": "fields.faq.1.a",
+            "field": "model_input"
+          }
+        ]
+      },
+      {
+        "text": "This game only accepts generated boards with one verified solution.",
+        "evidence": [
+          {
+            "key": "shikaku.fields.faq.2.a",
+            "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+            "context": "fields.faq.2.a",
+            "field": "source"
+          },
+          {
+            "key": "shikaku.fields.faq.2.a",
+            "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+            "context": "fields.faq.2.a",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "shikaku.fields.faq.2.a",
+            "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+            "context": "fields.faq.2.a",
+            "field": "model_input"
+          },
+          {
+            "key": "shikaku.fields.faq.2.a",
+            "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+            "context": "fields.faq.2.a",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      },
+      {
+        "text": "Select the button, then choose two points in the drawing. Press Escape to cancel.",
+        "evidence": [
+          {
+            "key": "dxf-viewer.fields.measureHelp",
+            "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+            "context": "fields.measureHelp",
+            "field": "source"
+          },
+          {
+            "key": "dxf-viewer.fields.measureHelp",
+            "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+            "context": "fields.measureHelp",
+            "field": "model_input"
+          }
+        ]
+      },
+      {
+        "text": "Select the button, then choose two points in the drawing.",
+        "evidence": [
+          {
+            "key": "dxf-viewer.fields.measureHelp",
+            "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+            "context": "fields.measureHelp",
+            "field": "source.sentence.0"
+          },
+          {
+            "key": "dxf-viewer.fields.measureHelp",
+            "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+            "context": "fields.measureHelp",
+            "field": "model_input.sentence.0"
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "source_units": 214,
+    "source_input_sentence_checks": 1004,
+    "unknown_source_texts": 0,
+    "source_vs_controlled_input_contracts_passed": 214,
+    "exact_source_proofs_added": 13,
+    "all_previous_memory_targets_preserved": 274
+  },
+  "red": {
+    "tests": 4,
+    "failures": 3,
+    "log_sha256": "9f0344dba350320b7adc58ae81f02b23c9b6a688a0aad7121c836a1a5cf38acc"
+  },
+  "green": {
+    "tests": 5,
+    "failures": 0,
+    "log_sha256": "651612c6e8e0614cf77388ee2fa55639c46d5a79d64d35f66184b8651599a737"
+  },
+  "full_local_suite": {
+    "tests": 204,
+    "passed": 202,
+    "dependency_skips": 2,
+    "seconds": 49.481,
+    "log_sha256": "7253ccfc60972f29c5ea350d51ee98c3979822807a07159b13fd0fbf377fc018"
+  },
+  "historical_records": 14377,
+  "historical_policy_count": 22,
+  "historical_function_ast_count": 26,
+  "model_inference_local": false,
+  "paid_services": false,
+  "final_recovery_local_tests": {
+    "total": 206,
+    "passed": 204,
+    "skipped_dependencies": 2,
+    "seconds": 92.167,
+    "log_sha256": "3214ec8c3b1fca62ca1d2cbcbb6f234d6bde4cfff8a6d626912b303ef6ad7e03",
+    "result": "OK"
+  }
+}

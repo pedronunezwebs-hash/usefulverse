@@ -1,0 +1,54 @@
+{
+  "policy": "context-v22",
+  "run_id": 40089099175,
+  "reference_gate": {
+    "zh-CN": {
+      "rows": 40,
+      "sample": 40,
+      "points": 344,
+      "maximum": 360,
+      "button_errors": 3,
+      "number_negation_errors": 2,
+      "major_rows": 4,
+      "minor_rows": 5,
+      "unproved_data_rows": 11,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current agent reading. Real forward defects and unsupported data proof both block, with separate counts; unproved Han is not a fabricated linguistic defect. No native/blind/unseen-text or locale approval."
+    }
+  },
+  "legacy_gate": {
+    "zh-CN": {
+      "rows": 27,
+      "sample": 27,
+      "points": 223,
+      "maximum": 243,
+      "button_errors": 5,
+      "number_negation_errors": 3,
+      "major_rows": 6,
+      "minor_rows": 2,
+      "unproved_data_rows": 5,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current agent reading. Real forward defects and unsupported data proof both block, with separate counts; unproved Han is not a fabricated linguistic defect. No native/blind/unseen-text or locale approval."
+    }
+  },
+  "full_dispatched": false,
+  "full_authorized_by_gate": false,
+  "approved_locales": [],
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 232,
+    "legacy_points": 223,
+    "maximum": 243,
+    "frozen_engine": false
+  },
+  "direct_current_outputs_read": 67,
+  "condition": "References rejected for actual defects and unproved contract. Full remains forbidden. Correct classifications do not silently approve a failed numeric grammar.",
+  "new_fixtures": 37,
+  "new_fixtures_by_direction": {
+    "back": 20,
+    "forward": 17
+  },
+  "all_previous_930_fixture_prefix_preserved": true
+}

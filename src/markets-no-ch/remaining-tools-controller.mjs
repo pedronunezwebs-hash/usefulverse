@@ -38,11 +38,11 @@ if (root) {
   root.addEventListener('click', async (event) => {
     if (event.target.closest('[type="reset"]')) { result && (result.hidden = true); status.textContent = copy.messages.ready; return; }
     if (mode === 'swissTenancy' && event.target.closest('[data-remaining-copy]')) { try { await navigator.clipboard.writeText(result.querySelector('textarea').value); status.textContent = copy.messages.done; } catch { status.textContent = copy.messages.invalid; } return; }
-    if (mode === 'spellcheck' && event.target.closest('[data-remaining-copy]')) { try { await navigator.clipboard.writeText(form.elements.text.value); status.textContent = f.done; } catch { status.textContent = f.invalid; } return; }
+    if (mode === 'spellcheck' && event.target.closest('[data-remaining-copy]')) { try { await navigator.clipboard.writeText(form.elements.text.value); status.textContent = copy.messages.done; } catch { status.textContent = copy.messages.invalid; } return; }
     if (mode === 'hyphenation' && event.target.closest('[data-remaining-preview]')) {
       const v = values(); const lang = /^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$/u.test(v.language) ? v.language : '';
       if (!lang || !v.text.trim()) { status.textContent = copy.messages.invalid; result.hidden = true; return; }
-      result.lang = lang; result.textContent = v.text; result.style.maxWidth = `${Math.max(20, Math.min(100, Number(v.width) || 48))}ch`; result.style.hyphens = 'auto'; result.style.overflowWrap = 'normal'; result.style.whiteSpace = 'normal'; result.style.lineHeight = '1.8'; result.hidden = false; status.textContent = f.done; return;
+      result.lang = lang; result.textContent = v.text; result.style.maxWidth = `${Math.max(20, Math.min(100, Number(v.width) || 48))}ch`; result.style.hyphens = 'auto'; result.style.overflowWrap = 'normal'; result.style.whiteSpace = 'normal'; result.style.lineHeight = '1.8'; result.hidden = false; status.textContent = copy.messages.done; return;
     }
     if (mode === 'resume' && event.target.closest('[data-remaining-analyze]')) {
       const text = form.elements.text.value.trim(); if (!text) { status.textContent = copy.messages.invalid; return; }

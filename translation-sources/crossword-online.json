@@ -1,0 +1,306 @@
+{
+  "toolId": "crossword-online",
+  "sourceCopy": {
+    "name": "Crossword Online",
+    "title": "Free Crossword Online | Play Word Puzzles | UsefulVerse",
+    "description": "Play an original crossword puzzle online. Fill across and down clues, check answers, use hints, and start a fresh locally generated board.",
+    "category": "Games & puzzles",
+    "intro": "Solve a fresh, locally generated crossword from a small set of original clues. Select a clue or square, type with your keyboard, and check or reveal answers when you need help.",
+    "summary": "A free browser crossword with across and down clues, keyboard controls, hints, answer checks and shuffled boards. It works without an account or puzzle upload.",
+    "howQuestion": "How do I play this crossword?",
+    "howAnswer": "Choose an across or down clue, then type letters into the selected squares. Use the arrow keys to move within the answer. Check a word or the whole puzzle, reveal one letter or the full answer, or start a new shuffled board.",
+    "privacyQuestion": "Are my answers uploaded or saved?",
+    "privacyAnswer": "No. The puzzle, answers and score stay in this browser tab. There is no account, upload, server processing or saved play history.",
+    "howTo": [
+      "Choose a clue from Across or Down, or select a square on the board.",
+      "Type letters; use the arrow keys to move inside the selected answer. Switching direction on a crossing square is supported.",
+      "Check your word or the full board, use a letter hint, or reveal an answer. Start a new board to reshuffle the original clue set."
+    ],
+    "example": {
+      "label": "Start a crossword"
+    },
+    "actions": {
+      "newGame": "New crossword",
+      "check": "Check puzzle",
+      "checkWord": "Check this word",
+      "hint": "Reveal one letter",
+      "reveal": "Reveal this answer"
+    },
+    "fields": {
+      "board": "Crossword board",
+      "across": "Across",
+      "down": "Down",
+      "selected": "Selected clue",
+      "progress": "{solved} of {total} answers correct",
+      "rules": "Answers ignore spaces and letter case. The clue set is finite and original; a new board rearranges its entries but does not promise an unlimited daily puzzle feed.",
+      "keyboard": "Keyboard: type a letter, use arrows to move, and press Backspace to clear a square.",
+      "blank": "Blank square",
+      "number": "Clue {number}",
+      "clueInput": "Answer for clue {number}: {clue}",
+      "empty": "No crossword could be built from this language’s available word set. Try a new board or use the English version."
+    },
+    "messages": {
+      "ready": "A new crossword is ready. Choose an Across or Down clue to begin.",
+      "entryCorrect": "That answer is correct.",
+      "entryIncorrect": "Some letters in this answer do not match yet.",
+      "puzzleCorrect": "Every answer is correct. Crossword complete!",
+      "puzzleProgress": "{solved} of {total} answers are correct.",
+      "hint": "Revealed one letter in clue {number}.",
+      "revealed": "Answer revealed for clue {number}.",
+      "newGame": "A new crossword board is ready.",
+      "cleared": "Square cleared.",
+      "noHint": "This answer has no hidden letters left.",
+      "noSelection": "Choose a clue first.",
+      "buildFailed": "This language’s clue set could not form a connected board. Try New crossword."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this crossword include an unlimited daily puzzle feed?",
+        "answer": "No. The page builds shuffled boards from a small, finite set of original clue-and-answer pairs. It does not fetch or claim an unlimited daily puzzle library."
+      },
+      {
+        "question": "Can I use this crossword without uploading anything?",
+        "answer": "Yes. The board and your answers run in this browser tab. The tool does not upload your play or require an account."
+      },
+      {
+        "question": "Is this a crossword maker?",
+        "answer": "No. This page is for playing clues. Use the separate Crossword Maker when you want to arrange your own answer-and-clue pairs."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "puzzles": [
+      {
+        "id": "sun",
+        "answer": "sun",
+        "clue": "The star that gives Earth daylight"
+      },
+      {
+        "id": "moon",
+        "answer": "moon",
+        "clue": "Earth’s natural satellite"
+      },
+      {
+        "id": "rain",
+        "answer": "rain",
+        "clue": "Water that falls from clouds"
+      },
+      {
+        "id": "tree",
+        "answer": "tree",
+        "clue": "A tall plant with a trunk and branches"
+      },
+      {
+        "id": "bird",
+        "answer": "bird",
+        "clue": "An animal with feathers and wings"
+      },
+      {
+        "id": "fish",
+        "answer": "fish",
+        "clue": "An animal that breathes with gills and swims"
+      },
+      {
+        "id": "book",
+        "answer": "book",
+        "clue": "Bound pages made for reading"
+      },
+      {
+        "id": "road",
+        "answer": "road",
+        "clue": "A route used by vehicles"
+      },
+      {
+        "id": "milk",
+        "answer": "milk",
+        "clue": "A common white drink"
+      },
+      {
+        "id": "wind",
+        "answer": "wind",
+        "clue": "Moving air outdoors"
+      },
+      {
+        "id": "rose",
+        "answer": "rose",
+        "clue": "A flower that often has thorns"
+      },
+      {
+        "id": "snow",
+        "answer": "snow",
+        "clue": "Frozen flakes that fall from clouds"
+      },
+      {
+        "id": "star",
+        "answer": "star",
+        "clue": "A bright object in the night sky"
+      },
+      {
+        "id": "hand",
+        "answer": "hand",
+        "clue": "The body part at the end of an arm"
+      },
+      {
+        "id": "door",
+        "answer": "door",
+        "clue": "A hinged entrance that can open and close"
+      },
+      {
+        "id": "ship",
+        "answer": "ship",
+        "clue": "A large vessel that travels on water"
+      },
+      {
+        "id": "stone",
+        "answer": "stone",
+        "clue": "A small piece of rock"
+      },
+      {
+        "id": "cloud",
+        "answer": "cloud",
+        "clue": "A visible mass of tiny water drops in the sky"
+      },
+      {
+        "id": "sunlight",
+        "answer": "sunlight",
+        "clue": "Light that comes from the Sun"
+      },
+      {
+        "id": "moonlight",
+        "answer": "moonlight",
+        "clue": "Soft light reflected from the Moon"
+      },
+      {
+        "id": "daylight",
+        "answer": "daylight",
+        "clue": "Natural light during the day"
+      },
+      {
+        "id": "raindrop",
+        "answer": "raindrop",
+        "clue": "One small drop of rain"
+      },
+      {
+        "id": "rainfall",
+        "answer": "rainfall",
+        "clue": "Rain that falls in a place over time"
+      },
+      {
+        "id": "treehouse",
+        "answer": "treehouse",
+        "clue": "A small platform or shelter built in a tree"
+      },
+      {
+        "id": "treetop",
+        "answer": "treetop",
+        "clue": "The uppermost part of a tree"
+      },
+      {
+        "id": "birdhouse",
+        "answer": "birdhouse",
+        "clue": "A small shelter made for birds"
+      },
+      {
+        "id": "birdsong",
+        "answer": "birdsong",
+        "clue": "A bird’s musical call"
+      },
+      {
+        "id": "fishbowl",
+        "answer": "fishbowl",
+        "clue": "A round glass container for a pet fish"
+      },
+      {
+        "id": "fishbone",
+        "answer": "fishbone",
+        "clue": "A hard structure inside a fish"
+      },
+      {
+        "id": "bookcase",
+        "answer": "bookcase",
+        "clue": "Furniture with shelves for books"
+      },
+      {
+        "id": "bookstore",
+        "answer": "bookstore",
+        "clue": "A shop that sells books"
+      },
+      {
+        "id": "roadway",
+        "answer": "roadway",
+        "clue": "The part of a road where vehicles travel"
+      },
+      {
+        "id": "roadblock",
+        "answer": "roadblock",
+        "clue": "A barrier that prevents travel along a road"
+      },
+      {
+        "id": "milkshake",
+        "answer": "milkshake",
+        "clue": "A cold drink made with milk and ice cream"
+      },
+      {
+        "id": "windmill",
+        "answer": "windmill",
+        "clue": "A structure that uses wind to turn blades"
+      },
+      {
+        "id": "rosebud",
+        "answer": "rosebud",
+        "clue": "A rose before its flower opens"
+      },
+      {
+        "id": "snowflake",
+        "answer": "snowflake",
+        "clue": "One small, unique piece of falling snow"
+      },
+      {
+        "id": "starfish",
+        "answer": "starfish",
+        "clue": "A sea animal with arms arranged around a center"
+      },
+      {
+        "id": "handrail",
+        "answer": "handrail",
+        "clue": "A rail people hold for support"
+      },
+      {
+        "id": "doorknob",
+        "answer": "doorknob",
+        "clue": "A round handle used to open a door"
+      },
+      {
+        "id": "shipwreck",
+        "answer": "shipwreck",
+        "clue": "The remains of a ship lost at sea"
+      },
+      {
+        "id": "stonewall",
+        "answer": "stonewall",
+        "clue": "A wall built from pieces of rock"
+      },
+      {
+        "id": "cloudburst",
+        "answer": "cloudburst",
+        "clue": "A sudden, heavy downpour of rain"
+      }
+    ],
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/crossword-online/index.html",
+    "htmlSha256": "3db41b5907d2f9a9997a7d5488bd9458185a9f1e8f62313c4cf9c298d5229ad2",
+    "payloadSha256": "833f7cc84f3905ba4480759829e0ee444ea4aa6abe348cb4bd7f5545077a867a",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/crossword-online.js",
+    "controllerSha256": "04a44138af21fb66f641da68db0e34e67561d04f3e88904d87ade136ac16491c",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

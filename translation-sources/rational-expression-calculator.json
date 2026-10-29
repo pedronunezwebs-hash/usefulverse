@@ -1,0 +1,66 @@
+{
+  "toolId": "rational-expression-calculator",
+  "sourceCopy": {
+    "name": "Rational Expression Calculator",
+    "title": "Rational Expression Calculator Free | UsefulVerse",
+    "description": "Simplify polynomial fractions, cancel common factors and keep excluded values visible. Free local calculator, no sign-up.",
+    "intro": "Enter integer-coefficient polynomials in x to reduce a rational expression. The result keeps the original denominator restriction, so cancellation never hides values that make the input undefined.",
+    "howQuestion": "How do you simplify a rational expression?",
+    "howAnswer": "Factor the numerator and denominator, cancel their common polynomial and retain the original denominator’s zeros as restrictions. For example, x²−1 over x−1 reduces to x+1, with x≠1 still excluded.",
+    "privacyQuestion": "Are my expressions uploaded?",
+    "privacyAnswer": "No. Parsing and simplification run locally in this browser; inputs are not uploaded or saved.",
+    "fields": {
+      "numerator": "Numerator polynomial",
+      "denominator": "Denominator polynomial",
+      "numeratorHint": "Use integer coefficients and x, for example x^2-1. Powers up to 8.",
+      "denominatorHint": "Use integer coefficients and x, for example x-1. It cannot be zero.",
+      "limitsNote": "Supports one variable x, integer coefficients up to 1,000,000 and degree up to 8. No parentheses or decimal coefficients.",
+      "expression": "Simplified expression",
+      "commonFactor": "Common factor cancelled",
+      "restriction": "Original domain restriction",
+      "tableCaption": "Rational expression simplification"
+    },
+    "actions": {
+      "calculate": "Simplify expression",
+      "example": "Load example",
+      "reset": "Reset",
+      "result": "Result",
+      "copy": "Copy results"
+    },
+    "messages": {
+      "calculated": "Expression simplified.",
+      "checkInputs": "Check both polynomials and the supported limits.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Why keep a restriction after cancelling a factor?",
+        "answer": "The simplified expression may be defined at a value where the original denominator was zero. That value remains excluded from the original expression’s domain."
+      },
+      {
+        "question": "What polynomial format is supported?",
+        "answer": "Use a single variable x with integer coefficients, such as 2x^3−x+4. Powers from 0 to 8 are supported; parentheses, decimal coefficients and multiple variables are not."
+      },
+      {
+        "question": "Does this find every possible factorization?",
+        "answer": "It cancels the exact common polynomial factor using integer arithmetic. It does not provide a complete factorization into irreducible linear or quadratic factors."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/rational-expression-calculator/index.html",
+    "htmlSha256": "d5157d626a30c9504483deabf569f52c875bae752495389a19df573d93d3dc4b",
+    "payloadSha256": "9026de99406d27339ffdc060225de1e33b34c99676671e85da42f0defa6834dc",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/rational-expression-calculator.js",
+    "controllerSha256": "6caf16c0730b81157d4b16de4d26131da68bf20420f90d419858b9b8fea0d433",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

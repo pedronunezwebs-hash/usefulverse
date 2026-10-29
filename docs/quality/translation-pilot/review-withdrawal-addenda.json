@@ -1,0 +1,162 @@
+[
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v12-full.json",
+    "review_file_sha256": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632",
+    "review_digest": "8fae13ba4b6c93e7e7a43328092655a4b6a4fc04303410f6c646734653fb9d7b",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado.",
+    "entries": [
+      {
+        "record_id": "5ebcda48a74c6135c1f56ad9550cc47cc3e8aa99604d3053ce9279d6b01b2dac",
+        "key": "voice-changer.fields.device",
+        "locale": "es",
+        "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+        "context": "fields.device",
+        "inference_policy": "context-v12",
+        "translation_hash": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+        "back_translation_hash": "fdfd5a01fc3bd740c2141593cb22b499963458c30120967851686669e0cea5c2",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Se retira explícitamente la antigua nota perfecta de naturalidad: procesamiento más suave calca una cualidad táctil; el sentido informático requiere más fluido. Observado directamente en v14 y releído en la fila histórica exacta. No se edita ni borra la evaluación original; el gate v12 ya era rechazado y permanece rechazado."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v24-full.json",
+    "review_file_sha256": "a7dab2f1a436aea1b89d71e216c30fd4e14209d2874adc5b327723ff9a168024",
+    "review_digest": "c3b05a5af15d9d69799d23b7f3529ec9b3abe6a06b81b2616cb102746502f925",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-25T01:19:15.869394+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta.",
+    "entries": [
+      {
+        "record_id": "873974b3454398677915b021840b1c144c9559a0a53ff7c133bbc206b5908568",
+        "key": "voice-changer.fields.faq5a",
+        "locale": "zh-CN",
+        "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+        "context": "fields.faq5a",
+        "inference_policy": "context-v24",
+        "translation_hash": "e2a64ebfdbe1a485fab8524ff087b1c727b6434d9287097025f774292b634f31",
+        "back_translation_hash": "88ca0b82ba12165e82edc7a42ee1f725d007ed6981eeb9e3326b41881829e2ea",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Relectura v25: la comparación entre clips/ordenadores y clips en teléfono es idéntica a voice-changer.faq.4.a, ya puntuada2 en naturalidad. Esta clave interna recibió3 por inconsistencia del agente. Se retira explícitamente esa nota perfecta; no se modifica el original ni su gate ya rechazado, ni se deriva el juicio de la vuelta."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "kind": "historical-perfect-forward-score-withdrawal",
+    "review_file": "review-context-v24-full.json",
+    "review_file_sha256": "a7dab2f1a436aea1b89d71e216c30fd4e14209d2874adc5b327723ff9a168024",
+    "review_digest": "c3b05a5af15d9d69799d23b7f3529ec9b3abe6a06b81b2616cb102746502f925",
+    "reviewer": "Codex (agente)",
+    "review_kind": "agent",
+    "native_review": false,
+    "reviewed_at_utc": "2026-10-25T06:01:41.220728+00:00",
+    "automatic_approval": false,
+    "approved_locales": [],
+    "reason": "Relectura directa v25: dos leves de estilo puntuados3 en v24; rebaja explícita, originales y gate rechazado intactos.",
+    "entries": [
+      {
+        "record_id": "934cccf56104deb7cc503873d277cfaec986fb88e0d6e7f9d0116ca99a526a3c",
+        "key": "dxf-viewer.example",
+        "locale": "zh-CN",
+        "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+        "context": "example",
+        "inference_policy": "context-v24",
+        "translation_hash": "480499e9ebbba8d2f13317fa7a646e3d02b522be9811969ecf9d386b151195da",
+        "back_translation_hash": "448f3f4d6d99a6baa5ad85e62fa017d6c0e100dee40ef12931a845b8f61a1c34",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "Se conserva sentido/cifras, pero DXF 单位代码(如果存在 ) 。 mezcla puntuación y espacios dentro del paréntesis y antes del punto; naturalidad2, sin inventar defecto numérico.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "Se conserva sentido/cifras, pero DXF 单位代码(如果存在 ) 。 mezcla puntuación y espacios dentro del paréntesis y antes del punto; naturalidad2, sin inventar defecto numérico."
+          }
+        }
+      },
+      {
+        "record_id": "a4c84444973e8503157a43d934f586349e618e2d6e6867e1dded46e50e88f0d0",
+        "key": "voice-changer.intro",
+        "locale": "zh-CN",
+        "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+        "context": "intro",
+        "inference_policy": "context-v24",
+        "translation_hash": "096a183efa4d95b1f6945e25330dd448c0d555ecfb574a629676461f7d483b77",
+        "back_translation_hash": "51389608a3d89de5f1596a3cb7d12b1df855b56340d24740e19e34ff3919da33",
+        "original_scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "note": "给予短音频剪辑低、高、无线电…效果 calca la construcción inglesa y enumera cualidades sueltas: copy artificial; significado/cifras3, naturalidad2.",
+        "warning": {
+          "known_semantic_errors": {
+            "disposition": "forward-defect",
+            "blocks_gate": true,
+            "note": "给予短音频剪辑低、高、无线电…效果 calca la construcción inglesa y enumera cualidades sueltas: copy artificial; significado/cifras3, naturalidad2."
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,1071 @@
+{
+  "schema_version": 1,
+  "prepared_only": true,
+  "imported": false,
+  "native_review": false,
+  "approved_locales": [],
+  "source_plan": "batch1-v28-candidate-plan.json",
+  "source_plan_sha256": "daf4cd088915dba532f5bc259d49afb12e2933fae16b3a6148e3ea69efa398d0",
+  "source_policy": "context-v33",
+  "destination": "ur",
+  "candidate_count": 32,
+  "repair_count": 8,
+  "reference_rows": 40,
+  "full_fixed_keys_file": "full-sample-v33-plan.json",
+  "next": "Independent v34 Urdu. Build a small delta over immutable v33 memory;do not copy growing complete policy JSON beyond500KB. Pin Urdu-specific CLDR/data/negation contracts;Russian grammar does not prove Urdu. Test each8observed errors first;bind32exact candidates to source/hash/context/review/record,then prove every whole input/target and fragment.40references+allwarnings first;full only after pass,same88keys and all174+92currentS/F/B. Preserve all51measured runtime files,all checkpoints,judgments and regressions. English controlled inputs stay canonical.No paid API/native/general/release claim.",
+  "rows": [
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.faq.0.a",
+        "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+        "canonical_context": "faq.0.a",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "نہیں یہ ٹول صرف ASCII DXF کھولتا ہے یہ DWG یا بائنری DXF کو ڈیکوڈ نہیں کرتا",
+        "translation_hash": "5dedfc66fb593ac8d7fcb74516b71ed1487733fb651e79422f801612b6047e0a",
+        "record_ids": [
+          "34dd998a9788b6467e649d30886dede23d0e00a5c61250f95a1da5817c72f1f1"
+        ],
+        "record_sha256": {
+          "34dd998a9788b6467e649d30886dede23d0e00a5c61250f95a1da5817c72f1f1": "ab32ed0cd319e577197bcb09ce00a3807d7955a1ad483486e5100b1204aaab82"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "34dd998a9788b6467e649d30886dede23d0e00a5c61250f95a1da5817c72f1f1"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "context": "faq.0.a"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.faq.2.a",
+        "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+        "canonical_context": "faq.2.a",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "Only when the DXF declares millimetres. Otherwise the viewer uses the declared unit or labels measurements as drawing units.",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "context": "faq.2.a"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.binary",
+        "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+        "canonical_context": "fields.binary",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "بائنري DXF کو مدد نہیں ملتی. ڈرائنگ کو ASCII DXF کے طور پر محفوظ یا برآمد کریں",
+        "translation_hash": "288b8c508630e7c536e57ca3fc4e98b85ee3df669ab9b3a9f75db8cb8da0557b",
+        "record_ids": [
+          "5e342ff0155628ebc92388c9e548fb3cc8849db798e77a4096d2be163f0c5d4c"
+        ],
+        "record_sha256": {
+          "5e342ff0155628ebc92388c9e548fb3cc8849db798e77a4096d2be163f0c5d4c": "674ca21b8ce7e98ae9eb8f92204f9c6674672e5dba06b998557212deabc1f39f"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "5e342ff0155628ebc92388c9e548fb3cc8849db798e77a4096d2be163f0c5d4c"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Binary DXF is not supported. Save or export the drawing as ASCII DXF.",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "context": "fields.binary"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.cancel",
+        "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+        "canonical_context": "fields.cancel",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "لوڈنگ منسوخ کریں",
+        "translation_hash": "8daffa38c47a4d8927ea1219d5f7b6f39139fd590527bbc20d8fa816622f5e83",
+        "record_ids": [
+          "ef10d14055d8d73175644c0002c52eeb74dbc4ee048efa1dcaf3adf60990cc34"
+        ],
+        "record_sha256": {
+          "ef10d14055d8d73175644c0002c52eeb74dbc4ee048efa1dcaf3adf60990cc34": "d5726145c89ab0dceb08d40229c492f2fd3de237dc617ab9ea629c96fd423238"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "ef10d14055d8d73175644c0002c52eeb74dbc4ee048efa1dcaf3adf60990cc34"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Cancel loading",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "context": "fields.cancel"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.exportPng",
+        "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+        "canonical_context": "fields.exportPng",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "PNG ڈائون لوڈ کریں",
+        "translation_hash": "0a9243f447f8a3dea94829b9da8ddffcd886d6f833f4f2c684fc56719ebd4e4b",
+        "record_ids": [
+          "01eff798425e77799099d589ac7f858f56fafd0f8ba05dd5db7e43f7b2430553"
+        ],
+        "record_sha256": {
+          "01eff798425e77799099d589ac7f858f56fafd0f8ba05dd5db7e43f7b2430553": "a8a24afe103fc49c85f44ecb9554a48149568f2b3c96ea1051e94ddaac6922e0"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "01eff798425e77799099d589ac7f858f56fafd0f8ba05dd5db7e43f7b2430553"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Download PNG",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "context": "fields.exportPng"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.exportSvg",
+        "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+        "canonical_context": "fields.exportSvg",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "Download SVG",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "context": "fields.exportSvg"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.file",
+        "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+        "canonical_context": "fields.file",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "ASCII DXF فائل منتخب کریں",
+        "translation_hash": "da82eeecbfe33a9380def604e72767975f35f9e1158314265976e21e78c8f232",
+        "record_ids": [
+          "b86f9efdf63823e141135d26b2883f057b487f0df644ae1034e252e34192d63b"
+        ],
+        "record_sha256": {
+          "b86f9efdf63823e141135d26b2883f057b487f0df644ae1034e252e34192d63b": "b90ad50135f57c1d442835d7ccee1bf316e616d4e2848b4be5a4857ceadb4f76"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "b86f9efdf63823e141135d26b2883f057b487f0df644ae1034e252e34192d63b"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Choose an ASCII DXF file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "context": "fields.file"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.invalidCoordinates",
+        "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+        "canonical_context": "fields.invalidCoordinates",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "چار صحيح کوآرڈینیٹ داخل کریں.",
+        "translation_hash": "d45b1949bc69ef3fbedb363580d566e706b6a1243a75bed823f381f1a4d2b1ca",
+        "record_ids": [
+          "31100e2f29840ffd1bdaa336ff70fec670a442506115f646b1fbca00042d69e5"
+        ],
+        "record_sha256": {
+          "31100e2f29840ffd1bdaa336ff70fec670a442506115f646b1fbca00042d69e5": "bbd3f7d9068629fa63842104731078c79612a853d4d0e656a58bf906d2b0e3b4"
+        },
+        "data_contract_unproved": true,
+        "back_record_ids_without_observed_independent_defect": [
+          "31100e2f29840ffd1bdaa336ff70fec670a442506115f646b1fbca00042d69e5"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Enter four valid coordinates.",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "context": "fields.invalidCoordinates"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.measurement",
+        "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+        "canonical_context": "fields.measurement",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "Measure distance",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "context": "fields.measurement"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.resetView",
+        "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+        "canonical_context": "fields.resetView",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "ڈرائنگ فٹ",
+        "translation_hash": "82684f7e78cdbb4fa4a33f0bca065792f362e5943ee5ac2dc6da07ba2cf0e6f8",
+        "record_ids": [
+          "74adf5ce2e924fc121a45b2edcb2fc1d4d32fa822e6ab9bb01e5bb44ec2ccc19"
+        ],
+        "record_sha256": {
+          "74adf5ce2e924fc121a45b2edcb2fc1d4d32fa822e6ab9bb01e5bb44ec2ccc19": "92410534658482b3c2912283e2406d343bb2deb4c52af613f5d8c671ad481eaa"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "74adf5ce2e924fc121a45b2edcb2fc1d4d32fa822e6ab9bb01e5bb44ec2ccc19"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.unsupported",
+        "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+        "canonical_context": "fields.unsupported",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-m2m100.json",
+        "candidate": "m2m100",
+        "translation": "فائل کی حمایت نہیں کی گئی. ایک ASCII .dxf فائل کا انتخاب کریں.",
+        "translation_hash": "713ea92f682c0ab02f2796cd9af2a9895f17cb1d0d99963d168683b2a22bfc29",
+        "record_ids": [
+          "eb341fa9d8ddf275eb5ac903b3248e796c5e8e2e7193771f54ce4c3fec7f6c5f"
+        ],
+        "record_sha256": {
+          "eb341fa9d8ddf275eb5ac903b3248e796c5e8e2e7193771f54ce4c3fec7f6c5f": "2c0c954f13edd6270e7a72f97ba70916e8d59510992808b38cc7f1a6827e0c12"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "eb341fa9d8ddf275eb5ac903b3248e796c5e8e2e7193771f54ce4c3fec7f6c5f"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Unsupported file. Choose an ASCII .dxf file.",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "context": "fields.unsupported"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.zoomIn",
+        "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+        "canonical_context": "fields.zoomIn",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "زوم ان",
+        "translation_hash": "c34820ce23b1703f2e0fad9dbc02c115de22a7374493bb4db3b6115a9930483c",
+        "record_ids": [
+          "c51baec1bf3fbc9f8f59968ca4315890ad4f8262c0a054350acd754b5a5bb84b"
+        ],
+        "record_sha256": {
+          "c51baec1bf3fbc9f8f59968ca4315890ad4f8262c0a054350acd754b5a5bb84b": "a857baa9f225b19aa03d0aead27955b49d2fea43a83a02a71bfdb404b7733fbb"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "c51baec1bf3fbc9f8f59968ca4315890ad4f8262c0a054350acd754b5a5bb84b"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Zoom in",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "context": "fields.zoomIn"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "dxf-viewer.fields.zoomOut",
+        "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+        "canonical_context": "fields.zoomOut",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "Zoom out",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "context": "fields.zoomOut"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.example",
+        "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+        "canonical_context": "example",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "6 نشان زد ایک اشارہ ایک مستطیل کے اندر ہے جو بالکل چھ مربعوں پر محیط ہے۔",
+        "translation_hash": "36192b6c3c83ec25f95da54bac2f7d6c12e3d112a3f3081849d36146233c6943",
+        "record_ids": [
+          "31ce4a7add78ccf12cf24f8a8e064dd31c91affdd0288d3dd61ccd08564fbf5f",
+          "e53aaa7104ab508099ba9ff8375b2ea304d357b1a06c3a850e9eb71b0edf3fdf"
+        ],
+        "record_sha256": {
+          "31ce4a7add78ccf12cf24f8a8e064dd31c91affdd0288d3dd61ccd08564fbf5f": "c57fb513f16f5662ea5625aebc45ea61d98f5b74e28e2fd96239007aa12ced4f",
+          "e53aaa7104ab508099ba9ff8375b2ea304d357b1a06c3a850e9eb71b0edf3fdf": "abe87d214936c4b5cdc1025fef4bf0d94e44857989ddecd32b3e977e5c264090"
+        },
+        "data_contract_unproved": true,
+        "back_record_ids_without_observed_independent_defect": [],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "context": "example"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.check",
+        "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+        "canonical_context": "fields.check",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "پزل چیک کریں۔",
+        "translation_hash": "b63f1e484d1ac5c25dfb870ffd1d664875a1d1bcf5354a145960dcdde5f77404",
+        "record_ids": [
+          "51fe074f2a032ac949c566bfd7cfe50aa82954bae0f1c8e1b092c38bd9a63173",
+          "c2ae50a350ad7348b02897221c57d5947a0e4a5d658ea00ee05b00f1e87f1cf2"
+        ],
+        "record_sha256": {
+          "c2ae50a350ad7348b02897221c57d5947a0e4a5d658ea00ee05b00f1e87f1cf2": "28926f6c4effa97dcd48dc04fdd9bfaa0ee67dcef7bac3c118ad3dc0ff688b70",
+          "51fe074f2a032ac949c566bfd7cfe50aa82954bae0f1c8e1b092c38bd9a63173": "bdf1d7adda1b536b45445fc61b4305e9bd3729e9832c36081c4e7054f85bb620"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "c2ae50a350ad7348b02897221c57d5947a0e4a5d658ea00ee05b00f1e87f1cf2"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Check puzzle",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "context": "fields.check"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.clear",
+        "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+        "canonical_context": "fields.clear",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "مستطیل صاف کریں۔",
+        "translation_hash": "0662060cdc32482e1dcc99f115515bab2b428d30226482bc690666ef64c902d1",
+        "record_ids": [
+          "b7396c3e23c7581ad7dca4942f37238cf98260c8827bc8feae9cd3d6d1865c22",
+          "fbc278a386117af7a9944fc55a0695b14f8ac14eb1893eda7feddd26e9254750"
+        ],
+        "record_sha256": {
+          "b7396c3e23c7581ad7dca4942f37238cf98260c8827bc8feae9cd3d6d1865c22": "448219161db5c93329ace85e8bff772111f2e0d44db480bf728736b9454c0e1c",
+          "fbc278a386117af7a9944fc55a0695b14f8ac14eb1893eda7feddd26e9254750": "96237db1a619069eea3c52f04e1036479a81afddac520b7fa0f4d2f17a8389a1"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "b7396c3e23c7581ad7dca4942f37238cf98260c8827bc8feae9cd3d6d1865c22"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Clear rectangles",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "context": "fields.clear"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.daily",
+        "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+        "canonical_context": "fields.daily",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "روزانہ پازل",
+        "translation_hash": "0b8e4d19e4a705b9e4488be3a9af314b918daec086fae9f459e7a5b757b9fca6",
+        "record_ids": [
+          "a11af4d9258d53827839f94598cd47016ec360a61896d5b446f394b71a2036f1"
+        ],
+        "record_sha256": {
+          "a11af4d9258d53827839f94598cd47016ec360a61896d5b446f394b71a2036f1": "8221b1cbe371ad671865b762e2022faf3690305214cb7b8f6bde10f9711d6847"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "a11af4d9258d53827839f94598cd47016ec360a61896d5b446f394b71a2036f1"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Daily puzzle",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "context": "fields.daily"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.deleteSave",
+        "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+        "canonical_context": "fields.deleteSave",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "محفوظ کردہ گیم کو حذف کریں۔",
+        "translation_hash": "a350b3d89ae585ad049a3e918f3b4398372d4414531ca00be35354b4b7ca6966",
+        "record_ids": [
+          "368b2c08d51026b209eba6c795b1fcf3a10e3175fd8153b13b32792397412fab",
+          "eac8c530cd1d55cde161dcfaa291a2469446b41f32a42a380a5e1e2e4e4d0555"
+        ],
+        "record_sha256": {
+          "eac8c530cd1d55cde161dcfaa291a2469446b41f32a42a380a5e1e2e4e4d0555": "1adc5fb1eb37f8e1040758b2d65c484e0ab325f84a7d20c70e5ac894964d5493",
+          "368b2c08d51026b209eba6c795b1fcf3a10e3175fd8153b13b32792397412fab": "4ade9a4c9db27737159ea429625879d79fd1740d92f91872ab9504f5fce3da63"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "eac8c530cd1d55cde161dcfaa291a2469446b41f32a42a380a5e1e2e4e4d0555"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Delete saved game",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "context": "fields.deleteSave"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.faq.1.a",
+        "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+        "canonical_context": "fields.faq.1.a",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.hint",
+        "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+        "canonical_context": "fields.hint",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "ایک اشارہ دکھائیں۔",
+        "translation_hash": "77c2373eaae7d7f2583561af7bd3ff6f6b3287f27920bc0ebd83208d072b5adf",
+        "record_ids": [
+          "e8e358058ec66781787166a8dee8c5a2abbe9351e2fcfb70f9b2b606094f18ad",
+          "f8bf86afc3f688acc7aecdeaa8c400787e288ccd68e247bc7ff9c864d2358801"
+        ],
+        "record_sha256": {
+          "f8bf86afc3f688acc7aecdeaa8c400787e288ccd68e247bc7ff9c864d2358801": "c74c53edda3c647885296987cba633c470e5270e0131b1f7964bb37a08cd1517",
+          "e8e358058ec66781787166a8dee8c5a2abbe9351e2fcfb70f9b2b606094f18ad": "51c5d4eb3469de7d6ec7f06bf15f8ed8ef467f5019c4a77eb39bb8e114a03587"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "e8e358058ec66781787166a8dee8c5a2abbe9351e2fcfb70f9b2b606094f18ad",
+          "f8bf86afc3f688acc7aecdeaa8c400787e288ccd68e247bc7ff9c864d2358801"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Show a hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "context": "fields.hint"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.newPuzzle",
+        "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+        "canonical_context": "fields.newPuzzle",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "نئی پہیلی",
+        "translation_hash": "9a6415a77915cd236205ce88f1a0766ba94632a154929ebad84fd3b336b7dc5d",
+        "record_ids": [
+          "00e958215e926edbfefa9f38ccd46e3b1f37ea0f5ea67596a87b4350a14758ff",
+          "6fd30d466ebf1a8b8be4df267cb1e53f44716decfd466e91b95386a35d360492"
+        ],
+        "record_sha256": {
+          "6fd30d466ebf1a8b8be4df267cb1e53f44716decfd466e91b95386a35d360492": "a93c5fea70091750b190169b354cb6b17cfe4ed0f07b17c1fb987a2ffc8bddf8",
+          "00e958215e926edbfefa9f38ccd46e3b1f37ea0f5ea67596a87b4350a14758ff": "75f4ff6397075341f0aac64b2f7a32cf99e25dcf4e8b3224c570a4033b69d602"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "New puzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "context": "fields.newPuzzle"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.resume",
+        "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+        "canonical_context": "fields.resume",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "دوبارہ شروع کریں۔",
+        "translation_hash": "4ed14f22e378178c9d09d7838df6f7bf6851ef92c2a311beaf863d759513c6e2",
+        "record_ids": [
+          "b7aff0d06d43f5d62b8f6367417ceeb9bcda3c35d9137c8cf71e15b5dfbd4f95",
+          "fd5f439ea10220e9ec79e4a837fda27d4bf707ad369b38d3ce2c90979ef74781"
+        ],
+        "record_sha256": {
+          "fd5f439ea10220e9ec79e4a837fda27d4bf707ad369b38d3ce2c90979ef74781": "36c18476c463374deaf354e0c26f2f665180a25718fecef0c91fd64a2c4def0c",
+          "b7aff0d06d43f5d62b8f6367417ceeb9bcda3c35d9137c8cf71e15b5dfbd4f95": "c8bd0d43a9fcfe39b905dce69aa72d41a6a05938a67f0d90e8591802ecac3bcc"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "b7aff0d06d43f5d62b8f6367417ceeb9bcda3c35d9137c8cf71e15b5dfbd4f95",
+          "fd5f439ea10220e9ec79e4a837fda27d4bf707ad369b38d3ce2c90979ef74781"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "context": "fields.resume"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.reveal",
+        "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+        "canonical_context": "fields.reveal",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "حل دکھائیں۔",
+        "translation_hash": "2ba6983f78292e0a591e45f343dfe8c57bcf6c964d7cbb044c3d3495ce6ab780",
+        "record_ids": [
+          "114aea62c349a766f8092310220eb3398b5a2b249992b3081f5da131777ef5a4",
+          "d16e6aa5a322d588b3ab585beffbf14d2455526ba96e06ecf05c59157137d903"
+        ],
+        "record_sha256": {
+          "114aea62c349a766f8092310220eb3398b5a2b249992b3081f5da131777ef5a4": "f3d6756c661316c480499e858262ae0cac7b37b765dbd76a5199a76e2d7f6b11",
+          "d16e6aa5a322d588b3ab585beffbf14d2455526ba96e06ecf05c59157137d903": "866fd720da475a85156800515369b369a51e9d2fe301a25b4104e3769313c8bd"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "114aea62c349a766f8092310220eb3398b5a2b249992b3081f5da131777ef5a4",
+          "d16e6aa5a322d588b3ab585beffbf14d2455526ba96e06ecf05c59157137d903"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Show solution",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "context": "fields.reveal"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.selectEnd",
+        "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+        "canonical_context": "fields.selectEnd",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "اب مخالف کونے کا انتخاب کریں۔",
+        "translation_hash": "e07698155c10ed2d1afade78f35f32b5bc29aca8499797b3d8cef6df85c132e8",
+        "record_ids": [
+          "05a3c7bc52b6cc1fc22577e360228960c9bbe8775ddf84412bda8d24256cc9ed",
+          "3baba4f1b7b464ea8246bfb3f8a1f57937b02c3ecd7e2ca967cb871cf1652d33"
+        ],
+        "record_sha256": {
+          "05a3c7bc52b6cc1fc22577e360228960c9bbe8775ddf84412bda8d24256cc9ed": "2acc859b361af543ce6020b7edbf5eb1bdac8cc51c1adbcd24d04ad59ab4da06",
+          "3baba4f1b7b464ea8246bfb3f8a1f57937b02c3ecd7e2ca967cb871cf1652d33": "e43f06e043f6375b5dc8a143e597d5312b8ad8e7604781b9162771f4353ac5a4"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "05a3c7bc52b6cc1fc22577e360228960c9bbe8775ddf84412bda8d24256cc9ed"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Now choose the opposite corner.",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "context": "fields.selectEnd"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.selectStart",
+        "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+        "canonical_context": "fields.selectStart",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "شروع مربع کا انتخاب کریں۔",
+        "translation_hash": "0d6adb3cc2f9d6a7c85e1ae86b5a3ca0eb6f7bb5c7fb255a95c023b8b62ed873",
+        "record_ids": [
+          "0593b5a830587c89baae4aae9c9f3abbf31598bb3c544aa9cf42906fb1c02683",
+          "49cd78b87efe028b423e7b7ce0e7bc3af01edb5876b36d86d46903f3db0c6205"
+        ],
+        "record_sha256": {
+          "0593b5a830587c89baae4aae9c9f3abbf31598bb3c544aa9cf42906fb1c02683": "511cce9e4793e2f6dbd18d9250e23282d2c7257f2a11f8457f938ada89ab2ed9",
+          "49cd78b87efe028b423e7b7ce0e7bc3af01edb5876b36d86d46903f3db0c6205": "e2beca67fe226dafdeae6eb2fcd440962a3c14edaa82c21a09252538a8d592b9"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "0593b5a830587c89baae4aae9c9f3abbf31598bb3c544aa9cf42906fb1c02683",
+          "49cd78b87efe028b423e7b7ce0e7bc3af01edb5876b36d86d46903f3db0c6205"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Choose a start square.",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "context": "fields.selectStart"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "shikaku.fields.undo",
+        "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+        "canonical_context": "fields.undo",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "آخری مستطیل کو کالعدم کریں۔",
+        "translation_hash": "5241e5708068ff6350eb65764f098b180366053ac8ecf09067005f1ddae50eb6",
+        "record_ids": [
+          "92d02c8deeb671e941df0e2ba83d8adacbe080c640f50353a29482aedba80370",
+          "b9148810eb06dd1f2610402b915f618f234659fec6900817435ee2e56767f0c8"
+        ],
+        "record_sha256": {
+          "b9148810eb06dd1f2610402b915f618f234659fec6900817435ee2e56767f0c8": "6951d73214f2166d246624f39a8f87254fe0a243b599bc78e4fec8ac6dad4b3a",
+          "92d02c8deeb671e941df0e2ba83d8adacbe080c640f50353a29482aedba80370": "abc44ce3ca49f547842ee3c8c4b89b1dbbbd60f166de3c3c7eb75e7cc9976386"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "b9148810eb06dd1f2610402b915f618f234659fec6900817435ee2e56767f0c8"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Undo last rectangle",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "context": "fields.undo"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.chooseFile",
+        "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+        "canonical_context": "fields.chooseFile",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "ایک آڈیو فائل کا انتخاب کریں۔",
+        "translation_hash": "3ef31aded1e126987c2c940d6a778d97e21f0584469e54265ca0ea870f944063",
+        "record_ids": [
+          "0e31d7a0b9a697354f25815802348f949c78f2c2884272b1fa10e62f734c70ab",
+          "7cd06e7dcda25bd3e4053a883f406f54ded607012467678770859aa634f879e4"
+        ],
+        "record_sha256": {
+          "7cd06e7dcda25bd3e4053a883f406f54ded607012467678770859aa634f879e4": "19f34e082630684fba40013ce684cdf1bb1959b56340fb3089eca77a3b04576c",
+          "0e31d7a0b9a697354f25815802348f949c78f2c2884272b1fa10e62f734c70ab": "246e4d04e3c43352a172109683b43f0f641c47509657d721d3c14913c93d1eb5"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "0e31d7a0b9a697354f25815802348f949c78f2c2884272b1fa10e62f734c70ab",
+          "7cd06e7dcda25bd3e4053a883f406f54ded607012467678770859aa634f879e4"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Choose an audio file",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "context": "fields.chooseFile"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.chooseFirst",
+        "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+        "canonical_context": "fields.chooseFirst",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "پہلے ایک آڈیو فائل کا انتخاب کریں۔",
+        "translation_hash": "37420b61724800ffc43a02e5be92ce533bda1143d9cf86c016e4137f8241420d",
+        "record_ids": [
+          "1d0492289578a6e403d54c536b636d20e6eb2241215783e337224d2b4b9e5ea9",
+          "c00b9b1629055165c2e27e0ad8e31f073cf62eeb13c6ea11a1406d7e5fd04613"
+        ],
+        "record_sha256": {
+          "c00b9b1629055165c2e27e0ad8e31f073cf62eeb13c6ea11a1406d7e5fd04613": "4f309496bf595e38d08e4ff823c0294936446c9a6aa1410940abaadf60acf476",
+          "1d0492289578a6e403d54c536b636d20e6eb2241215783e337224d2b4b9e5ea9": "8a6885fba60cce3b9c892f54de290570e74d43ff5d9d14a1e71c77c279ddd5f0"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "c00b9b1629055165c2e27e0ad8e31f073cf62eeb13c6ea11a1406d7e5fd04613"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Choose an audio file first.",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "context": "fields.chooseFirst"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.clear",
+        "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+        "canonical_context": "fields.clear",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "آڈیو صاف کریں۔",
+        "translation_hash": "b7bf7696394c5298ae1a15547d89b6a569198b69a1abf69c1a4679c75e13d659",
+        "record_ids": [
+          "5a54ff1dac775ba30c124b356b6ce4d2faeb92dd2dde3bd0d65620fa3d96bf92",
+          "fd001fc11543b2ce4fa9b6e959d4058d4f231158e0ebd3845b315807e3fad84e"
+        ],
+        "record_sha256": {
+          "5a54ff1dac775ba30c124b356b6ce4d2faeb92dd2dde3bd0d65620fa3d96bf92": "fcec62210c3f32e876812c802d2b90055a6cf06a0f67e8da42d21a95204361e3",
+          "fd001fc11543b2ce4fa9b6e959d4058d4f231158e0ebd3845b315807e3fad84e": "de01f2056eebdd935f79de82c1b7a10a0dc02bc4e5e6a0168b0a59506875fd4d"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "5a54ff1dac775ba30c124b356b6ce4d2faeb92dd2dde3bd0d65620fa3d96bf92",
+          "fd001fc11543b2ce4fa9b6e959d4058d4f231158e0ebd3845b315807e3fad84e"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Clear audio",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "context": "fields.clear"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.decodeFailed",
+        "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+        "canonical_context": "fields.decodeFailed",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "یہ براؤزر اس آڈیو فارمیٹ کو ڈی کوڈ نہیں کر سکا۔ WAV یا MP3 آزمائیں۔",
+        "translation_hash": "0065125752882a7f524a4351f74fea54d05f85d5ed05bb1dc81902503fc0f4a0",
+        "record_ids": [
+          "47fc3f687fc9c98bfc50123a42e93aa3c5ab4d2c87d9f6ba0d05edca328567ab",
+          "ac9de89f5050c684f6549b4ed8d46c8e77ec850eb6837420c5e46eebfb735e71"
+        ],
+        "record_sha256": {
+          "47fc3f687fc9c98bfc50123a42e93aa3c5ab4d2c87d9f6ba0d05edca328567ab": "2412dd82f7ae2ecedc1dce1e8fb144a1f521b357c615b934a0e8d4ae63127833",
+          "ac9de89f5050c684f6549b4ed8d46c8e77ec850eb6837420c5e46eebfb735e71": "9f9b7ade270c80e379fc0e6a642a2b0da22ad0e30cf35782b350b329b18cb78c"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "47fc3f687fc9c98bfc50123a42e93aa3c5ab4d2c87d9f6ba0d05edca328567ab"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "This browser could not decode that audio format. Try WAV or MP3.",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "context": "fields.decodeFailed"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.export",
+        "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+        "canonical_context": "fields.export",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "پروسیس شدہ WAV برآمد کریں۔",
+        "translation_hash": "7f351d0c5b1a9f665055d20d8d6da3c8997f2bae8e531dfe38017e23afcef0e4",
+        "record_ids": [
+          "4210923b923389bbde35bfdd7b15d085712a4ba09433dc4a4a529325eb4dbc94",
+          "9f060c1a0817df538de7b34541ebb2ef04e762b41864935bb24dd49bb50e847a"
+        ],
+        "record_sha256": {
+          "9f060c1a0817df538de7b34541ebb2ef04e762b41864935bb24dd49bb50e847a": "acb8678c2bfdbad7bbad0ea04dc4e06ffe712b5a03877e09a1647bf425210bbe",
+          "4210923b923389bbde35bfdd7b15d085712a4ba09433dc4a4a529325eb4dbc94": "f766881a722c098f1dc087f4cbf21223da3fff13793e727c7d03439b21ca0f4b"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "4210923b923389bbde35bfdd7b15d085712a4ba09433dc4a4a529325eb4dbc94",
+          "9f060c1a0817df538de7b34541ebb2ef04e762b41864935bb24dd49bb50e847a"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Export processed WAV",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "context": "fields.export"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.faq1a",
+        "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+        "canonical_context": "fields.faq1a",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "fields.faq1a"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.faq2a",
+        "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+        "canonical_context": "fields.faq2a",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "fields.faq2a"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.load",
+        "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+        "canonical_context": "fields.load",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "آڈیو مقامی طور پر لوڈ کریں۔",
+        "translation_hash": "cd5fc8f83ad9ca2a8c274c65ba21b5219e6994c1606d3b709b368893208e3d4f",
+        "record_ids": [
+          "055945016fced1e80754ad4ee317c6df6b57f69581db5f8ef21e65c7d4b9a12d",
+          "655b1581d25f1ac33b9b4fd3b9c3858411c5090430a5b0362aa0e75be59f410a"
+        ],
+        "record_sha256": {
+          "055945016fced1e80754ad4ee317c6df6b57f69581db5f8ef21e65c7d4b9a12d": "4d68f00e61ae5063faa63f8f0f92055077dc2580b0c48d09de3f885ff2ab13ed",
+          "655b1581d25f1ac33b9b4fd3b9c3858411c5090430a5b0362aa0e75be59f410a": "421ec290e003f4f85b1ebf79dd5fd834b64f6af84bf067b2d5ee17a0f09a3445"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "055945016fced1e80754ad4ee317c6df6b57f69581db5f8ef21e65c7d4b9a12d"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Load audio locally",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "context": "fields.load"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.loaded",
+        "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+        "canonical_context": "fields.loaded",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "آڈیو کو مقامی طور پر ڈی کوڈ کیا گیا۔ دورانیہ: {duration} سیکنڈ۔",
+        "translation_hash": "a6186d3b5ce639b94e42a8a5614dded7183df3bcc7d0b09ea22675249b958793",
+        "record_ids": [
+          "6e682cffc18a2b55cb647cd43cd243c5aa46ac199f2f282c94927b978e59d4d1",
+          "98145c3f747d6beba5db041f83d66274720bc23f49a441d4ffe453c37fa1c71e"
+        ],
+        "record_sha256": {
+          "6e682cffc18a2b55cb647cd43cd243c5aa46ac199f2f282c94927b978e59d4d1": "e4c23f7305578c3b94d005274ea5c9dd08c20db8c39e81d43487734ec890124c",
+          "98145c3f747d6beba5db041f83d66274720bc23f49a441d4ffe453c37fa1c71e": "3d63ad5e9126e5a30c306d3af5b4652df34aad3422af4f8dddcfe0291c931e65"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "6e682cffc18a2b55cb647cd43cd243c5aa46ac199f2f282c94927b978e59d4d1"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Audio decoded locally. Duration: {duration} seconds.",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "context": "fields.loaded"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.preview",
+        "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+        "canonical_context": "fields.preview",
+        "status": "manual-forward-repair-required",
+        "rejected_reviews": [
+          "review-batch1-ur-m2m100.json",
+          "review-batch1-ur-madlad.json",
+          "review-batch1-ur-legacy.json"
+        ],
+        "next": "Author a faithful natural forward correction, review directly, then bind numeric/token contracts and back evidence."
+      },
+      "source": "Preview effect",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "context": "fields.preview"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.privacy",
+        "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+        "canonical_context": "fields.privacy",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "آڈیو اس براؤزر میں رہتا ہے۔ اسے UsefulVerse کے ذریعے اپ لوڈ یا محفوظ نہیں کیا گیا ہے۔",
+        "translation_hash": "538581d0487952611d9a5a82ac08c22c1ace4f6ed34265eff53df444ed306449",
+        "record_ids": [
+          "0084787083920eeddd642a6a5c0955ff9d50b7da9a3274d344df6e0b397e6cd1",
+          "5cf6df8f6e6e31038414c34a5274b2075ef58480702e10d1bdf55e8725aa6d5f"
+        ],
+        "record_sha256": {
+          "0084787083920eeddd642a6a5c0955ff9d50b7da9a3274d344df6e0b397e6cd1": "f06a2f543e75ebff251e4ea2190ef7c21526c02ca9f721a9056f3b3613544487",
+          "5cf6df8f6e6e31038414c34a5274b2075ef58480702e10d1bdf55e8725aa6d5f": "8ee7322a3200908b52fe4269953800c1fa835f787c36b7ac6966cc9066f14119"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "0084787083920eeddd642a6a5c0955ff9d50b7da9a3274d344df6e0b397e6cd1",
+          "5cf6df8f6e6e31038414c34a5274b2075ef58480702e10d1bdf55e8725aa6d5f"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Audio stays in this browser. It is not uploaded or saved by UsefulVerse.",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "context": "fields.privacy"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.stop",
+        "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+        "canonical_context": "fields.stop",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-legacy.json",
+        "candidate": "legacy",
+        "translation": "پیش نظارہ بند کریں۔",
+        "translation_hash": "aa6ce48bf1dff0e020fa3b09d514cbfcbc319cc6e24eaab03d3ea1ec5c815930",
+        "record_ids": [
+          "3524b2c196869cdfbf111a04d33fa331a2123b26d17e3c2db0a5ddc77e817e6c",
+          "b29164faaf68a9cfdf68b14b12fc125efa60915e838bcded7090876fe0ec17f8"
+        ],
+        "record_sha256": {
+          "3524b2c196869cdfbf111a04d33fa331a2123b26d17e3c2db0a5ddc77e817e6c": "7572ee7dbefc2a7f68f11acd5fdff7f0fe2fa29fa25c50d5f18c8121ddf7f29d",
+          "b29164faaf68a9cfdf68b14b12fc125efa60915e838bcded7090876fe0ec17f8": "3c33b14fccdfd3cfdd166ab096538302c76ba97cfc0306c68c730a9c47e1cfef"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "3524b2c196869cdfbf111a04d33fa331a2123b26d17e3c2db0a5ddc77e817e6c",
+          "b29164faaf68a9cfdf68b14b12fc125efa60915e838bcded7090876fe0ec17f8"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Stop preview",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "context": "fields.stop"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.tooLarge",
+        "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+        "canonical_context": "fields.tooLarge",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "آڈیو فائل منتخب کریں جو 25 MB سے زیادہ نہ ہو",
+        "translation_hash": "1798cbeac865ab0f0cc9e8c417282dbf2e6ac0ee89472a44df499ce32601f623",
+        "record_ids": [
+          "536048b000cd5902d75d06b78e051da9e465ce933e00b0a63774303fc3ffd26e"
+        ],
+        "record_sha256": {
+          "536048b000cd5902d75d06b78e051da9e465ce933e00b0a63774303fc3ffd26e": "f458370a79b471dd18a161160f5c149e50d2c62f238201edc37ee577d1005ad0"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "536048b000cd5902d75d06b78e051da9e465ce933e00b0a63774303fc3ffd26e"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "Choose an audio file no larger than 25 MB.",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "context": "fields.tooLarge"
+    },
+    {
+      "candidate": {
+        "locale": "ur",
+        "key": "voice-changer.fields.tooLong",
+        "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+        "canonical_context": "fields.tooLong",
+        "status": "linguistically-reusable-pending-v28-proof",
+        "review_file": "review-batch1-ur-madlad.json",
+        "candidate": "madlad",
+        "translation": "یہ اوزار 30 سیکنڈ تک کلیپ کی حمایت کرتا ہے. فائل کو کاٹ کر دوبارہ کوشش کریں.",
+        "translation_hash": "c6f670f36334491fefc279e4413a8f24e24d51b85200e67a9fed794315f8bdae",
+        "record_ids": [
+          "e610e4c996776541e7ea015e54f4dbabcf6ff2d0804f74af0f61adad8a4d0dbe"
+        ],
+        "record_sha256": {
+          "e610e4c996776541e7ea015e54f4dbabcf6ff2d0804f74af0f61adad8a4d0dbe": "275d727c760371ade1a233dd03173e9ba3e3538c1ec10d3c43cec09f8a7225f5"
+        },
+        "data_contract_unproved": false,
+        "back_record_ids_without_observed_independent_defect": [
+          "e610e4c996776541e7ea015e54f4dbabcf6ff2d0804f74af0f61adad8a4d0dbe"
+        ],
+        "next": "Bind reviewed memory to exact source/context; prove forward quantities/tokens in locale profile and produce/review new bound back evidence. No cached back reuse as new inference."
+      },
+      "source": "This tool supports clips up to 30 seconds. Trim the file and try again.",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "context": "fields.tooLong"
+    }
+  ]
+}

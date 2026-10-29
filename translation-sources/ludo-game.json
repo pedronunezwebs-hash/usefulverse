@@ -1,0 +1,95 @@
+{
+  "toolId": "ludo-game",
+  "sourceCopy": {
+    "name": "Ludo Game",
+    "title": "Ludo Game Online Free | Play vs Computer | UsefulVerse",
+    "description": "Play Ludo online for free: roll, move four tokens, capture on unsafe squares, and race home against local bots or pass-and-play. No sign-up.",
+    "intro": "Play a local Ludo race game with two to four players. Choose a token after each roll, use safe squares, capture opponents, and reach home with exact rolls.",
+    "howQuestion": "How do you play this Ludo game?",
+    "howAnswer": "Choose two to four players and optional computer opponents. Roll the die; a six releases a token from base. Move a legal token along the track, avoid capture on unsafe squares, and enter the home lane. This casual rule set requires an exact roll to finish.",
+    "privacyQuestion": "Is this Ludo game online multiplayer?",
+    "privacyAnswer": "No. You can play on one device in pass-and-play or against simple bots in this browser. Moves are not uploaded and no account or sign-up is needed.",
+    "howTo": [
+      "Choose the number of players and optional local bots, then start a game.",
+      "Roll the die. Roll a six to bring a token out of base; select one of the highlighted legal tokens.",
+      "Capture on unsafe squares, use safe squares, and reach the finish with an exact roll. A six, capture, or finish grants another roll in this casual rule set."
+    ],
+    "example": {
+      "label": "Start a Ludo game"
+    },
+    "actions": {
+      "newGame": "New game",
+      "start": "Start game",
+      "roll": "Roll the dice",
+      "pass": "Pass turn",
+      "move": "Move token",
+      "result": "Game status"
+    },
+    "fields": {
+      "players": "Players",
+      "bots": "Computer opponents",
+      "allHumans": "All human players",
+      "oneBot": "1 bot",
+      "twoBots": "2 bots",
+      "threeBots": "3 bots",
+      "currentPlayer": "Current player",
+      "die": "Dice result",
+      "track": "Track square",
+      "homeLane": "Home lane",
+      "base": "In base",
+      "finished": "Finished",
+      "rules": "Casual rules: six to leave base; start and star squares are safe; six, capture, and exact finish grant another roll. No triple-six penalty or blockade rule. Regional rules vary.",
+      "accuracyNote": "This is a local pass-and-play game or a game against simple computer opponents. It is not online multiplayer. Moves stay in this browser tab and are not saved.",
+      "board": "Ludo board",
+      "token": "Player {player}, token {token}: {state}",
+      "waiting": "Choose a legal token after rolling.",
+      "botTurn": "Computer opponent is thinking…"
+    },
+    "messages": {
+      "ready": "Choose the game settings and start.",
+      "started": "Game started. {player} rolls first.",
+      "rolled": "{player} rolled {die}.",
+      "noMove": "{player} has no legal move.",
+      "chooseMove": "Choose a highlighted token to move.",
+      "moved": "{player} moved a token.",
+      "captured": "{player} captured {count} opponent token(s).",
+      "extraRoll": "{player} gets another roll.",
+      "passed": "No legal move. Turn passed.",
+      "botMoved": "Computer opponent moved.",
+      "won": "{player} wins!",
+      "invalidMove": "That token cannot move with this roll."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Can I play Ludo against the computer?",
+        "answer": "Yes. Choose one or more local computer opponents. The bot uses a simple legal-move priority and does not connect to a service."
+      },
+      {
+        "question": "What are the safe squares in this version?",
+        "answer": "Each player start and the four marked star squares are safe. Tokens on a safe square cannot be captured. Ludo house rules vary by region."
+      },
+      {
+        "question": "Does a token need an exact roll to finish?",
+        "answer": "Yes. This version requires the exact number to reach the final home space; an overshooting roll does not move that token."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/ludo-game/index.html",
+    "htmlSha256": "75e487958bd851b645988dd74b2ffbffb8745e408165f8bfb23f544316cc8bfa",
+    "payloadSha256": "4c443c6a76dd7f26eb22c4169b77d1b768ee80a4b64fc698c835743a3fbf4617",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/ludo-game.js",
+    "controllerSha256": "a55618a4ec3cf5a3449445eb128bfa0dcbd7208badb5a1b16302fb07e8dde903",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

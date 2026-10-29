@@ -1,0 +1,98 @@
+{
+  "toolId": "social-security-calculator",
+  "sourceCopy": {
+    "name": "Social Security Calculator",
+    "title": "Social Security Calculator Free | UsefulVerse",
+    "description": "Estimate a US Social Security retirement benefit from AIME with 2025–2026 SSA bend points. Free, private and local.",
+    "intro": "Estimate a retired-worker benefit using your average indexed monthly earnings (AIME), the year you turned 62, and a claiming age from 62 to 70. This simple estimate does not access your Social Security record.",
+    "howQuestion": "How does this Social Security estimate work?",
+    "howAnswer": "The Social Security Administration applies 90%, 32% and 15% rates to parts of AIME. The bend points depend on the year you first become eligible. For example, a 2026 AIME of $5,825 gives a primary insurance amount (PIA) of $2,609.80 before age adjustments.",
+    "privacyQuestion": "Does this calculator access my Social Security account?",
+    "privacyAnswer": "No. It does not ask for a Social Security number, sign-in or earnings record. Your inputs are calculated in this browser and are not uploaded or saved by this tool.",
+    "howTo": [
+      "Find your estimated AIME in your official Social Security statement; this calculator does not compute AIME from yearly wages.",
+      "Choose the year you turned 62 and enter the whole-dollar AIME shown by SSA.",
+      "Choose a claiming age from 62 to 70 to see the PIA and a simplified monthly estimate."
+    ],
+    "example": {
+      "label": "Load SSA 2026 example: AIME $5,825"
+    },
+    "actions": {
+      "calculate": "Estimate benefit",
+      "example": "Load 2026 SSA example",
+      "reset": "Reset",
+      "result": "Illustrative monthly estimate"
+    },
+    "fields": {
+      "aime": "Average indexed monthly earnings (AIME), whole dollars",
+      "eligibilityYear": "Year you turned 62",
+      "year2025": "2025",
+      "year2026": "2026",
+      "claimingAge": "Age when benefits begin",
+      "age62": "62 years",
+      "age63": "63 years",
+      "age64": "64 years",
+      "age65": "65 years",
+      "age66": "66 years",
+      "age67": "67 years (full retirement age)",
+      "age68": "68 years",
+      "age69": "69 years",
+      "age70": "70 years",
+      "officialInputs": "The 2025 and 2026 bend points and the 90% / 32% / 15% formula come from SSA. Full retirement age is 67 for these cohorts. This does not include later cost-of-living adjustments or adjustments to your earnings record.",
+      "sourceLinkText": "View SSA formula and examples",
+      "sourceFormula": "SSA primary insurance amount formula",
+      "sourceExamples": "SSA 2026 retirement examples",
+      "resultYear": "Eligibility year",
+      "resultAime": "AIME used",
+      "resultPia": "Estimated PIA at full retirement age",
+      "resultClaimAge": "Claiming age selected",
+      "resultMonthly": "Estimated monthly amount at selected age",
+      "resultFactor": "Age adjustment factor",
+      "firstBend": "First bend point",
+      "secondBend": "Second bend point",
+      "estimateOnly": "This is a simplified estimate, not an award or promise of payment. It uses the official 2025/2026 PIA formula and assumes a full retirement age of 67. It does not calculate AIME from wages, add later COLAs, verify work credits or earnings, or model taxes, Medicare premiums, family benefits, disability or survivor benefits. Check your official Social Security statement and use SSA’s estimator for a personal estimate. This tool gives general information, not financial advice."
+    },
+    "messages": {
+      "calculated": "Illustrative estimate calculated.",
+      "exampleLoaded": "The SSA 2026 example is ready.",
+      "checkInputs": "Enter a whole-dollar AIME from 0 to 200,000 and choose a supported year and age.",
+      "sourceNote": "Use the official SSA statement for your personal record."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is AIME in Social Security?",
+        "answer": "AIME means average indexed monthly earnings. SSA calculates it from a worker’s earnings record after wage indexing and other rules. This tool needs the AIME from your SSA estimate; it does not reconstruct it from a few salary inputs."
+      },
+      {
+        "question": "What are Social Security bend points?",
+        "answer": "Bend points are the dollar thresholds that split AIME into portions. For 2025 they are $1,226 and $7,391; for 2026 they are $1,286 and $7,749. SSA applies 90%, 32% and 15% to the respective portions."
+      },
+      {
+        "question": "Does claiming at 62 or 70 change the estimate?",
+        "answer": "Yes. For the 2025–2026 age-62 cohorts, this estimate uses a full retirement age of 67, SSA’s early-claim reduction formula, and delayed retirement credits of two-thirds of 1% per month through age 70. Actual benefits can include other adjustments."
+      },
+      {
+        "question": "Is this an official Social Security benefit quote?",
+        "answer": "No. It is an educational calculation from AIME and selected assumptions, not an SSA decision or personalized quote. SSA has your complete earnings record and should be used for an official estimate."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/social-security-calculator/index.html",
+    "htmlSha256": "2e2a41589f97e098216f01bdb75528c8b2e60e0d529e0e485ab36ddccbac8806",
+    "payloadSha256": "f757b8206472a1f1766af694ed5e55ec1de03cf2bf4bee44c6b551d21415b3e6",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/social-security-calculator.js",
+    "controllerSha256": "49d585fa115b1c43ac714e62e5b58358c86c411f306e61edc61b09a133a4831c",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

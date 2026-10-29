@@ -1,0 +1,34 @@
+{
+  "at_utc": "2026-10-20T15:56:51.856817+00:00",
+  "method": "curl HTTP GET, sitemap loc counts and invented route status",
+  "initial_python_get": "403; curl verification recorded separately",
+  "deployment_performed": false,
+  "sitemaps": [
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "url_count": 10260
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset",
+      "url_count": 15365
+    }
+  ],
+  "invented_routes": [
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+      "status": 200
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200
+    }
+  ],
+  "indexable_urls_before": 25625,
+  "indexable_urls_after": 25625
+}

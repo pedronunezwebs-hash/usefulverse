@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "kind": "negative-finite-v26-reference-audit-only",
+  "inference_policy": "context-v26",
+  "source_checkpoint": "checkpoints/context-v26/madlad.jsonl",
+  "source_checkpoint_sha256": "9b559280228d19f4f4f539e02998844b59d3e19a0bab80e331ecdac393a5a503",
+  "run_id": 40190935942,
+  "source_commit": "c6fef85e593d245a3607866ab3be0b1c97cec060",
+  "automatic_approval": false,
+  "approved_locales": [],
+  "native_review": false,
+  "rows": [
+    {
+      "record_id": "13b71b671428d304447f8543e16143f971f4d7d36e34ee5a87c92ffbd76117a1",
+      "row_digest": "fee9b672cd95dee1e6f2c2dcba13659b013681a66c3c9977c81ef8a44a52bcfd",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "context": "example",
+      "source": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "translation": "标记为6的线索位于一个正好包含6个方格的矩形内。",
+      "translation_hash": "677ee20d9672a1fefb112295db7b83dcf27d090cfe349727f76dbe8e74bf05c2",
+      "forward_linguistic_defect": false,
+      "note": "Pista6, un rectángulo, exactamente6 casillas conservados. 位于…内 sustituye 属于…; la salida actual no es una prueba finita de cantidades v26. Cantidad desconocida, no cifra/negación lingüística cambiada. No se usa para aceptar datos ni aprobar gate."
+    }
+  ]
+}

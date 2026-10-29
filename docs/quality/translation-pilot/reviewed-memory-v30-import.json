@@ -1,0 +1,1939 @@
+{
+  "schema_version": 1,
+  "policy": "context-v30",
+  "native_review": false,
+  "approved_locales": [],
+  "new_forward_model_calls": 0,
+  "entries": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "source": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "context": "faq.0.a",
+      "translation": "Нет. Этот инструмент открывает только ASCII DXF. Он не декодирует DWG или двоичный DXF.",
+      "translation_sha256": "c965611c24afc6096b9d4eb9e28c759f89f0cabdf547a1c13fd3278fa90b28e6",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "6f6201b09d53886b6bb575c354f088ad462d86aa580a9b801418909a6d5322a6",
+      "source_record_sha256": "848a24eb8750ab55b2065c11fe13900b2af958ecb84131b19e59f36f68984a50",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.faq.0.a",
+        "locale": "ru",
+        "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+        "candidate": "madlad",
+        "translation_hash": "c965611c24afc6096b9d4eb9e28c759f89f0cabdf547a1c13fd3278fa90b28e6",
+        "canonical_context": "faq.0.a",
+        "record_ids": [
+          "6f6201b09d53886b6bb575c354f088ad462d86aa580a9b801418909a6d5322a6"
+        ],
+        "record_sha256": {
+          "6f6201b09d53886b6bb575c354f088ad462d86aa580a9b801418909a6d5322a6": "848a24eb8750ab55b2065c11fe13900b2af958ecb84131b19e59f36f68984a50"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Нет. Этот инструмент открывает только ASCII DXF. Он не декодирует DWG или двоичный DXF.» conserva en este contexto la acción o afirmación de «No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "source": "Only when the DXF declares millimetres. Otherwise the viewer uses the declared unit or labels measurements as drawing units.",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "context": "faq.2.a",
+      "translation": "Только если DXF объявляет миллиметры. В противном случае просмотрщик использует объявленную единицу или помечивает измерения как единицы чертежа.",
+      "translation_sha256": "a944ed60b0cc06536c111d8ca76e126af082d97a00d4246a863fd94b468fd81c",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "1a086b60ed23da0156165690a9814d258f79ce74678bb6d6ecbbdfcfd764dd43",
+      "source_record_sha256": "e1b5b88a92eeff2cea6498ba3a99c23761223b3e1df2105cdacaf0d362b3429b",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.faq.2.a",
+        "locale": "ru",
+        "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+        "candidate": "madlad",
+        "translation_hash": "a944ed60b0cc06536c111d8ca76e126af082d97a00d4246a863fd94b468fd81c",
+        "canonical_context": "faq.2.a",
+        "record_ids": [
+          "1a086b60ed23da0156165690a9814d258f79ce74678bb6d6ecbbdfcfd764dd43"
+        ],
+        "record_sha256": {
+          "1a086b60ed23da0156165690a9814d258f79ce74678bb6d6ecbbdfcfd764dd43": "e1b5b88a92eeff2cea6498ba3a99c23761223b3e1df2105cdacaf0d362b3429b"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Только если DXF объявляет миллиметры. В противном случае просмотрщик использует объявленную единицу или помечивает измерения как единицы чертежа.» conserva en este contexto la acción o afirmación de «Only when the DXF declares millimetres. Otherwise the viewer uses the declared unit or labels measurements as drawing units.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "source": "Binary DXF is not supported. Save or export the drawing as ASCII DXF.",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "context": "fields.binary",
+      "translation": "Двоичный формат DXF не поддерживается. Сохранение или экспорт чертежа в формате ASCII DXF.",
+      "translation_sha256": "f0665e1bcf61362851a9e9eb720445c14c0dd91c2c02f3a2201ed19013484eb0",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "e922bcba09beaec90c9721be5aa68f60e660c6d96ba2d8200e7e798ac0528086",
+      "source_record_sha256": "071ec24bd743f9e846592dee1cfbe4bc0cd94d869bf7bdc957f07a3ceb9c945a",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.binary",
+        "locale": "ru",
+        "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+        "candidate": "madlad",
+        "translation_hash": "f0665e1bcf61362851a9e9eb720445c14c0dd91c2c02f3a2201ed19013484eb0",
+        "canonical_context": "fields.binary",
+        "record_ids": [
+          "e922bcba09beaec90c9721be5aa68f60e660c6d96ba2d8200e7e798ac0528086"
+        ],
+        "record_sha256": {
+          "e922bcba09beaec90c9721be5aa68f60e660c6d96ba2d8200e7e798ac0528086": "071ec24bd743f9e846592dee1cfbe4bc0cd94d869bf7bdc957f07a3ceb9c945a"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Двоичный формат DXF не поддерживается. Сохранение или экспорт чертежа в формате ASCII DXF.» conserva en este contexto la acción o afirmación de «Binary DXF is not supported. Save or export the drawing as ASCII DXF.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "source": "Cancel loading",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "context": "fields.cancel",
+      "translation": "Отменить загрузку",
+      "translation_sha256": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "c6b6c89af827e1983b8f6d2315d2c6c8260f7bfce0f9ed96d8f7d396a52973d1",
+      "source_record_sha256": "b020e1275a655d408143f75faba5eb598e3e840c86bcda99c983d6af44d9d6ac",
+      "source_review": "review-batch1-ru-m2m100.json",
+      "source_review_sha256": "8808d616b676602a880b87b4b0a54b569a366133d92c459291041e95fa52fbec",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.cancel",
+        "locale": "ru",
+        "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+        "candidate": "m2m100",
+        "translation_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+        "canonical_context": "fields.cancel",
+        "record_ids": [
+          "c6b6c89af827e1983b8f6d2315d2c6c8260f7bfce0f9ed96d8f7d396a52973d1"
+        ],
+        "record_sha256": {
+          "c6b6c89af827e1983b8f6d2315d2c6c8260f7bfce0f9ed96d8f7d396a52973d1": "b020e1275a655d408143f75faba5eb598e3e840c86bcda99c983d6af44d9d6ac"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Отменить загрузку» conserva en este contexto la acción o afirmación de «Cancel loading», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "source": "Download PNG",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "context": "fields.exportPng",
+      "translation": "Скачать PNG",
+      "translation_sha256": "285c21ce1a47eac446c450c7a7ecf7f555a5bba1a571fc5c33f70c22a7573a12",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "124904ef88f6e4eb898538762381e8936c650c0f891873273fb3513f78a60a86",
+      "source_record_sha256": "725b3d17737acfd6a29cb68a8a4882a02033bd4437f7f85185cbae4054598ad5",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.exportPng",
+        "locale": "ru",
+        "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+        "candidate": "madlad",
+        "translation_hash": "285c21ce1a47eac446c450c7a7ecf7f555a5bba1a571fc5c33f70c22a7573a12",
+        "canonical_context": "fields.exportPng",
+        "record_ids": [
+          "124904ef88f6e4eb898538762381e8936c650c0f891873273fb3513f78a60a86"
+        ],
+        "record_sha256": {
+          "124904ef88f6e4eb898538762381e8936c650c0f891873273fb3513f78a60a86": "725b3d17737acfd6a29cb68a8a4882a02033bd4437f7f85185cbae4054598ad5"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Скачать PNG» conserva en este contexto la acción o afirmación de «Download PNG», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "source": "Download SVG",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "context": "fields.exportSvg",
+      "translation": "Скачать SVG",
+      "translation_sha256": "45bf70d6a4218906e0a93f6f828c17e0184e541d1ac0b5096b5a99bf8c78f26e",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "370b3042b4e3dc31ddbe5de0d4d02e9b235e489b4c82aaf0683f0c669effb819",
+      "source_record_sha256": "42f93ef8b9bcdbdf29d3e54a93abec9e64b28a2fdaac59135fce57ad6c47ff93",
+      "source_review": "review-batch1-ru-m2m100.json",
+      "source_review_sha256": "8808d616b676602a880b87b4b0a54b569a366133d92c459291041e95fa52fbec",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.exportSvg",
+        "locale": "ru",
+        "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+        "candidate": "m2m100",
+        "translation_hash": "45bf70d6a4218906e0a93f6f828c17e0184e541d1ac0b5096b5a99bf8c78f26e",
+        "canonical_context": "fields.exportSvg",
+        "record_ids": [
+          "370b3042b4e3dc31ddbe5de0d4d02e9b235e489b4c82aaf0683f0c669effb819"
+        ],
+        "record_sha256": {
+          "370b3042b4e3dc31ddbe5de0d4d02e9b235e489b4c82aaf0683f0c669effb819": "42f93ef8b9bcdbdf29d3e54a93abec9e64b28a2fdaac59135fce57ad6c47ff93"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Скачать SVG» conserva en este contexto la acción o afirmación de «Download SVG», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. Загрузить SVG es una forma rusa válida de descargar en contexto de enlace de exportación; la vuelta Upload se evalúa como error separado."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "source": "Choose an ASCII DXF file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "context": "fields.file",
+      "translation": "Выберите файл ASCII DXF",
+      "translation_sha256": "dfa3336886a57b64140fa0cfc8c388cf5b309b6fd4e3c3f1a41b61a4a556a08a",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "84664c69b766165fe639bb6ac85695ed779ba2abe6afa78bbd4c56d5dcebc031",
+      "source_record_sha256": "076ce05ee802a6525d6bb4e8651a32441a92641a8d278566ed759e3bc2d5b66c",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.file",
+        "locale": "ru",
+        "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+        "candidate": "madlad",
+        "translation_hash": "dfa3336886a57b64140fa0cfc8c388cf5b309b6fd4e3c3f1a41b61a4a556a08a",
+        "canonical_context": "fields.file",
+        "record_ids": [
+          "84664c69b766165fe639bb6ac85695ed779ba2abe6afa78bbd4c56d5dcebc031"
+        ],
+        "record_sha256": {
+          "84664c69b766165fe639bb6ac85695ed779ba2abe6afa78bbd4c56d5dcebc031": "076ce05ee802a6525d6bb4e8651a32441a92641a8d278566ed759e3bc2d5b66c"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Выберите файл ASCII DXF» conserva en este contexto la acción o afirmación de «Choose an ASCII DXF file», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source": "Enter four valid coordinates.",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "context": "fields.invalidCoordinates",
+      "translation": "Введите четыре действительных координаты.",
+      "translation_sha256": "2e38334003cb9635ae88ee2346edc953502f8b89c6a5ca9c5e0175fc6b1ef645",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "520b0c893b8d016d1ef3a928ca45c78ca80e5a76cdc496945f452a5c63b0a586",
+      "source_record_sha256": "21c13dbad77d6e93fed5272f3d8474dedbdece1eff59ac93802365bd13ea60d6",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.invalidCoordinates",
+        "locale": "ru",
+        "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+        "candidate": "madlad",
+        "translation_hash": "2e38334003cb9635ae88ee2346edc953502f8b89c6a5ca9c5e0175fc6b1ef645",
+        "canonical_context": "fields.invalidCoordinates",
+        "record_ids": [
+          "520b0c893b8d016d1ef3a928ca45c78ca80e5a76cdc496945f452a5c63b0a586"
+        ],
+        "record_sha256": {
+          "520b0c893b8d016d1ef3a928ca45c78ca80e5a76cdc496945f452a5c63b0a586": "21c13dbad77d6e93fed5272f3d8474dedbdece1eff59ac93802365bd13ea60d6"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Введите четыре действительных координаты.» conserva en este contexto la acción o afirmación de «Enter four valid coordinates.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta.",
+          "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": true
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "source": "Measure distance",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "context": "fields.measurement",
+      "translation": "Измерение расстояния",
+      "translation_sha256": "8d26ad052ce3011a3c902fc5ada5fd6be7d1e4770aed0cce01deeb2d492fb07e",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "a1d343d2fa6c14c590d0a738447ae4b37c2f4469e2139c0c861e1dd5cdca28ec",
+      "source_record_sha256": "a56ca2401c48be80a86a3d4abe3dd59e77bc283a9fc57f905a6ec9c5c3531da7",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.measurement",
+        "locale": "ru",
+        "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+        "candidate": "madlad",
+        "translation_hash": "8d26ad052ce3011a3c902fc5ada5fd6be7d1e4770aed0cce01deeb2d492fb07e",
+        "canonical_context": "fields.measurement",
+        "record_ids": [
+          "a1d343d2fa6c14c590d0a738447ae4b37c2f4469e2139c0c861e1dd5cdca28ec"
+        ],
+        "record_sha256": {
+          "a1d343d2fa6c14c590d0a738447ae4b37c2f4469e2139c0c861e1dd5cdca28ec": "a56ca2401c48be80a86a3d4abe3dd59e77bc283a9fc57f905a6ec9c5c3531da7"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Измерение расстояния» conserva en este contexto la acción o afirmación de «Measure distance», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView",
+      "translation": "Вписать чертёж",
+      "translation_sha256": "27b250b132fbe7ce7c36753823e342a487b774c025bfe3172367e133aea9b6f1",
+      "origin": "agent-correction",
+      "source_record_id": "a55d1fed773f8a468f752d46b49720ac787a331958ebbcc7378e34916ba59ce2",
+      "source_record_sha256": "29b26d834af8cfe9b508a4ffed8b31c805153e6ce32277f41ee791ee9e1724ca",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.resetView",
+        "locale": "ru",
+        "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+        "candidate": "madlad",
+        "translation_hash": "355b650b1c2e61b633afe6c1ccbc7495f88d804f485d3f68a808cd6281e8e6e0",
+        "canonical_context": "fields.resetView",
+        "record_ids": [
+          "a55d1fed773f8a468f752d46b49720ac787a331958ebbcc7378e34916ba59ce2"
+        ],
+        "record_sha256": {
+          "a55d1fed773f8a468f752d46b49720ac787a331958ebbcc7378e34916ba59ce2": "29b26d834af8cfe9b508a4ffed8b31c805153e6ce32277f41ee791ee9e1724ca"
+        },
+        "scores": {
+          "meaning": 0,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "notes": [
+          "Рисунок соответствия es dibujo de correspondencia; pierde la acción ajustar a la vista."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "source": "Unsupported file. Choose an ASCII .dxf file.",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "context": "fields.unsupported",
+      "translation": "Неподдерживаемый файл. Выберите ASCII.dxf файл.",
+      "translation_sha256": "5010d3145e733a2be9d803660e6b6e9bf3c4b3e66bd7629d3044c2ba7bc7eac3",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "c4128d4dc78c04d478e99d956adf4742db5d2509b16d79185530131e82de3359",
+      "source_record_sha256": "a59e74deffd19b625ed7ee29efd2f21f061349f950426688864e78a87d6fad70",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.unsupported",
+        "locale": "ru",
+        "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+        "candidate": "madlad",
+        "translation_hash": "5010d3145e733a2be9d803660e6b6e9bf3c4b3e66bd7629d3044c2ba7bc7eac3",
+        "canonical_context": "fields.unsupported",
+        "record_ids": [
+          "c4128d4dc78c04d478e99d956adf4742db5d2509b16d79185530131e82de3359"
+        ],
+        "record_sha256": {
+          "c4128d4dc78c04d478e99d956adf4742db5d2509b16d79185530131e82de3359": "a59e74deffd19b625ed7ee29efd2f21f061349f950426688864e78a87d6fad70"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Неподдерживаемый файл. Выберите ASCII.dxf файл.» conserva en este contexto la acción o afirmación de «Unsupported file. Choose an ASCII .dxf file.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "source": "Zoom in",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "context": "fields.zoomIn",
+      "translation": "Увеличить",
+      "translation_sha256": "3acc44d6a1b1941c5d0c64a09637fd4332ea3d5b5504572fdaf9b771d24b672a",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "79b461f4715de3708813921133244c421aaa7252ca8b3031980e1fbdc814b0f8",
+      "source_record_sha256": "3b936c76fdff28b8193b6e081b974e23a07fe9e3374e0e8882909580be60bd09",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.zoomIn",
+        "locale": "ru",
+        "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+        "candidate": "madlad",
+        "translation_hash": "3acc44d6a1b1941c5d0c64a09637fd4332ea3d5b5504572fdaf9b771d24b672a",
+        "canonical_context": "fields.zoomIn",
+        "record_ids": [
+          "79b461f4715de3708813921133244c421aaa7252ca8b3031980e1fbdc814b0f8"
+        ],
+        "record_sha256": {
+          "79b461f4715de3708813921133244c421aaa7252ca8b3031980e1fbdc814b0f8": "3b936c76fdff28b8193b6e081b974e23a07fe9e3374e0e8882909580be60bd09"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Увеличить» conserva en este contexto la acción o afirmación de «Zoom in», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "source": "Zoom out",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "context": "fields.zoomOut",
+      "translation": "Уменьшить",
+      "translation_sha256": "0b9ff60343ea45e1859aef2389c8afea31aedb975536be898a3b90f735e0c26f",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "4da7a006f8019e4c517e9c01b321057ec8c714a7a4b7819041c3def2eb3bd4b1",
+      "source_record_sha256": "fc88613c083a1c09b37347179bd93640ae1fba755f7dc166b656dd496799a446",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "dxf-viewer.fields.zoomOut",
+        "locale": "ru",
+        "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+        "candidate": "madlad",
+        "translation_hash": "0b9ff60343ea45e1859aef2389c8afea31aedb975536be898a3b90f735e0c26f",
+        "canonical_context": "fields.zoomOut",
+        "record_ids": [
+          "4da7a006f8019e4c517e9c01b321057ec8c714a7a4b7819041c3def2eb3bd4b1"
+        ],
+        "record_sha256": {
+          "4da7a006f8019e4c517e9c01b321057ec8c714a7a4b7819041c3def2eb3bd4b1": "fc88613c083a1c09b37347179bd93640ae1fba755f7dc166b656dd496799a446"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Уменьшить» conserva en este contexto la acción o afirmación de «Zoom out», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.example",
+      "source": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "context": "example",
+      "translation": "Подсказка с пометкой 6 находится внутри одного прямоугольника, охватывающего ровно шесть квадратов.",
+      "translation_sha256": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "557b50d02a3625e6979dae14c21636e27133581ff20528cee8c67e36c1cfdf8a",
+      "source_record_sha256": "45968a71ff9e4bc9517629c7ab3e163a16bc7318c2d526a12e957f681e9e95c8",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.example",
+        "locale": "ru",
+        "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+        "candidate": "legacy",
+        "translation_hash": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+        "canonical_context": "example",
+        "record_ids": [
+          "557b50d02a3625e6979dae14c21636e27133581ff20528cee8c67e36c1cfdf8a",
+          "a68e1a20c6597503cdb9331418ab3f8a4b4194f5992faee601c5dbb033f274c9"
+        ],
+        "record_sha256": {
+          "a68e1a20c6597503cdb9331418ab3f8a4b4194f5992faee601c5dbb033f274c9": "bd29fd44e3f0099f20be0060f3f0aaa1c60e9c02157687ceb2bf76dd64a93a59",
+          "557b50d02a3625e6979dae14c21636e27133581ff20528cee8c67e36c1cfdf8a": "45968a71ff9e4bc9517629c7ab3e163a16bc7318c2d526a12e957f681e9e95c8"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Подсказка с пометкой 6 находится внутри одного прямоугольника, охватывающего ровно шесть квадратов.» conserva en este contexto la acción o afirmación de «A clue marked 6 belongs inside one rectangle that covers exactly six squares.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta.",
+          "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": true
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.check",
+      "source": "Check puzzle",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "context": "fields.check",
+      "translation": "Проверка головоломки",
+      "translation_sha256": "7a621492ef995f230029b159272ea991d2550780992a9520d8385420987c5d26",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "dc7889df4e95dd7d7e495616e4d7208d231ca0dd0a1e6c3f28a0ad9167e17c5e",
+      "source_record_sha256": "5dfed3249e53b2e162e9671bae4c0d438c4e96a9e1b5cede11778e4264fae283",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.check",
+        "locale": "ru",
+        "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+        "candidate": "legacy",
+        "translation_hash": "7a621492ef995f230029b159272ea991d2550780992a9520d8385420987c5d26",
+        "canonical_context": "fields.check",
+        "record_ids": [
+          "dc7889df4e95dd7d7e495616e4d7208d231ca0dd0a1e6c3f28a0ad9167e17c5e",
+          "e16907cc4323ada4094715be3f165e846447ab195f282d7d2ffa1a4bec09cfb9"
+        ],
+        "record_sha256": {
+          "e16907cc4323ada4094715be3f165e846447ab195f282d7d2ffa1a4bec09cfb9": "bc6dad9274dd3f8621dca70081d5738739319c274bf7a06f25ccbd09f839f8d4",
+          "dc7889df4e95dd7d7e495616e4d7208d231ca0dd0a1e6c3f28a0ad9167e17c5e": "5dfed3249e53b2e162e9671bae4c0d438c4e96a9e1b5cede11778e4264fae283"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Проверка головоломки» conserva en este contexto la acción o afirmación de «Check puzzle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "source": "Clear rectangles",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "context": "fields.clear",
+      "translation": "Очистить прямоугольники",
+      "translation_sha256": "27df399ecca1aa4e11ab8cdd89ae78588db673e3718b5acf1d6e5a928d344420",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "1b23bbf288832faf7de74d4429014a069f9a586f7a258a002a910cc9b20a44aa",
+      "source_record_sha256": "64b667bf0c11dee0d9573528d35f860abbef66ea8357a71316b9b127e4fa5e98",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "shikaku.fields.clear",
+        "locale": "ru",
+        "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+        "candidate": "madlad",
+        "translation_hash": "27df399ecca1aa4e11ab8cdd89ae78588db673e3718b5acf1d6e5a928d344420",
+        "canonical_context": "fields.clear",
+        "record_ids": [
+          "1b23bbf288832faf7de74d4429014a069f9a586f7a258a002a910cc9b20a44aa"
+        ],
+        "record_sha256": {
+          "1b23bbf288832faf7de74d4429014a069f9a586f7a258a002a910cc9b20a44aa": "64b667bf0c11dee0d9573528d35f860abbef66ea8357a71316b9b127e4fa5e98"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Очистить прямоугольники» conserva en este contexto la acción o afirmación de «Clear rectangles», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "source": "Daily puzzle",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "context": "fields.daily",
+      "translation": "Ежедневная головоломка",
+      "translation_sha256": "455846dbd91fdc541336890e84d5d160ab9c3e003825fab56f5d6ce3c1538e7b",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "427b370a1d2cac55607abdb55627b7fa14d521eca6b885cd672a35ce530d22a8",
+      "source_record_sha256": "265a8313e7075b046ac363d20141af497f24307563547cefaf1f00db88bc2ea3",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.daily",
+        "locale": "ru",
+        "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+        "candidate": "legacy",
+        "translation_hash": "455846dbd91fdc541336890e84d5d160ab9c3e003825fab56f5d6ce3c1538e7b",
+        "canonical_context": "fields.daily",
+        "record_ids": [
+          "427b370a1d2cac55607abdb55627b7fa14d521eca6b885cd672a35ce530d22a8",
+          "a117ba269b194f308fde74ca376370e2e98aa1b0fdd4da7c1ddd16f4ff05f1a5"
+        ],
+        "record_sha256": {
+          "a117ba269b194f308fde74ca376370e2e98aa1b0fdd4da7c1ddd16f4ff05f1a5": "7d1e6107a7f9f87bd878d0c64b20f036885b03ec5f586e17cf6b99ed5cd374fd",
+          "427b370a1d2cac55607abdb55627b7fa14d521eca6b885cd672a35ce530d22a8": "265a8313e7075b046ac363d20141af497f24307563547cefaf1f00db88bc2ea3"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Ежедневная головоломка» conserva en este contexto la acción o afirmación de «Daily puzzle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "source": "Delete saved game",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "context": "fields.deleteSave",
+      "translation": "Удалить сохраненную игру",
+      "translation_sha256": "33d9c9808e02c2f3360461a0b9a862c722509dbcc06f69f65e4020d1d3db4d59",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "465762eeb3c7af8b7323a46faa678f31f6a7d9c99532a7f47b3e7531e5707951",
+      "source_record_sha256": "e5ca3dbeda06aa638e8350af4b9ad317a340abe6a988c0ba5950a0cde8c5e0d5",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.deleteSave",
+        "locale": "ru",
+        "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+        "candidate": "legacy",
+        "translation_hash": "33d9c9808e02c2f3360461a0b9a862c722509dbcc06f69f65e4020d1d3db4d59",
+        "canonical_context": "fields.deleteSave",
+        "record_ids": [
+          "465762eeb3c7af8b7323a46faa678f31f6a7d9c99532a7f47b3e7531e5707951",
+          "c5fde0b44705e6d62bdbea8fedef09de391af5fb2886798e570d6400df377c45"
+        ],
+        "record_sha256": {
+          "465762eeb3c7af8b7323a46faa678f31f6a7d9c99532a7f47b3e7531e5707951": "e5ca3dbeda06aa638e8350af4b9ad317a340abe6a988c0ba5950a0cde8c5e0d5",
+          "c5fde0b44705e6d62bdbea8fedef09de391af5fb2886798e570d6400df377c45": "38d43e86d6e5d715ee413870f6d8ca0e7bef87e9c55a66701109e44edc764e66"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Удалить сохраненную игру» conserva en este contexto la acción o afirmación de «Delete saved game», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "translation": "Нет. Каждый прямоугольник должен содержать ровно одну цифровую подсказку.",
+      "translation_sha256": "f8fcc8c6ce1294ea7bfe39fc3a0755e65d31aae619b416173e9d84173671942a",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "41adcead17aca6677ce0a52913ca627b635cda55155a49b96478ca59e08dffd0",
+      "source_record_sha256": "3f4dd65ed8105bb6a8147512db2ab76f700856f4d6ca6a4622e55958f480b1b6",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.faq.1.a",
+        "locale": "ru",
+        "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+        "candidate": "legacy",
+        "translation_hash": "f8fcc8c6ce1294ea7bfe39fc3a0755e65d31aae619b416173e9d84173671942a",
+        "canonical_context": "fields.faq.1.a",
+        "record_ids": [
+          "41adcead17aca6677ce0a52913ca627b635cda55155a49b96478ca59e08dffd0",
+          "fae8185080dd67fa017f190930aed437c7986c4d24772cff460bfaccb593f1d7"
+        ],
+        "record_sha256": {
+          "41adcead17aca6677ce0a52913ca627b635cda55155a49b96478ca59e08dffd0": "3f4dd65ed8105bb6a8147512db2ab76f700856f4d6ca6a4622e55958f480b1b6",
+          "fae8185080dd67fa017f190930aed437c7986c4d24772cff460bfaccb593f1d7": "79d314ec54f6bc9138c8ffcaa06a74205f727fb537a500371f1e4c8146a21d79"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Нет. Каждый прямоугольник должен содержать ровно одну цифровую подсказку.» conserva en este contexto la acción o afirmación de «No. Each rectangle must contain exactly one number clue.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta.",
+          "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": true
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "source": "Show a hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "context": "fields.hint",
+      "translation": "Показать подсказку",
+      "translation_sha256": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "102f1371346c1bb0c770fcfecf001bf4cc80a632c6c8528930c06554da6c1577",
+      "source_record_sha256": "14ff79c423e289bd808623672ad0bee14ae82133ace5ac336b9068e5bd6e8b91",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.hint",
+        "locale": "ru",
+        "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+        "candidate": "legacy",
+        "translation_hash": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+        "canonical_context": "fields.hint",
+        "record_ids": [
+          "102f1371346c1bb0c770fcfecf001bf4cc80a632c6c8528930c06554da6c1577",
+          "6143c784a7f7cb49dafd2f815b3a1dbf9cf9850018e7483e9b9974fb5a3b02c8"
+        ],
+        "record_sha256": {
+          "6143c784a7f7cb49dafd2f815b3a1dbf9cf9850018e7483e9b9974fb5a3b02c8": "f81932ae122f7a914f9c8c404863c969a5c299c8f0df957002a82017c641334c",
+          "102f1371346c1bb0c770fcfecf001bf4cc80a632c6c8528930c06554da6c1577": "14ff79c423e289bd808623672ad0bee14ae82133ace5ac336b9068e5bd6e8b91"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Показать подсказку» conserva en este contexto la acción o afirmación de «Show a hint», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "source": "New puzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "context": "fields.newPuzzle",
+      "translation": "Новая головоломка",
+      "translation_sha256": "1667e6ed1048a896aed50e88e6442cb7b3bcb2651f2404882dfd6c13f0671c0c",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "1463eef31d05467ed8c04f094a7a2a1e603800a99f09af45534ae585620d769d",
+      "source_record_sha256": "87677cc926884f8036ae0442b458d8a3c1047bfaad467e39a003f00e4e709cdb",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.newPuzzle",
+        "locale": "ru",
+        "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+        "candidate": "legacy",
+        "translation_hash": "1667e6ed1048a896aed50e88e6442cb7b3bcb2651f2404882dfd6c13f0671c0c",
+        "canonical_context": "fields.newPuzzle",
+        "record_ids": [
+          "1463eef31d05467ed8c04f094a7a2a1e603800a99f09af45534ae585620d769d",
+          "c34b9784d580c65332846e728d9389e453fd9dd2f1d5c71c00d54f68699af77a"
+        ],
+        "record_sha256": {
+          "1463eef31d05467ed8c04f094a7a2a1e603800a99f09af45534ae585620d769d": "87677cc926884f8036ae0442b458d8a3c1047bfaad467e39a003f00e4e709cdb",
+          "c34b9784d580c65332846e728d9389e453fd9dd2f1d5c71c00d54f68699af77a": "cae9376b67562c189e1f2fb77d375b530484700ac368714071dfb6b52704f257"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Новая головоломка» conserva en este contexto la acción o afirmación de «New puzzle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "source": "Resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "context": "fields.resume",
+      "translation": "Возобновить",
+      "translation_sha256": "07c7b8b8142d494fe76a69062c3f5194b7ad0eaa46d603cff431322c387c5676",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "4f2ce27da53a4bfa38a4492a888a978a136f74368d9b4d1bf31941d89df599d2",
+      "source_record_sha256": "c7992220817c86f0b971db6e91cf11be534ac4f7a5a1b4fc40bfdaa9550d0214",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "shikaku.fields.resume",
+        "locale": "ru",
+        "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+        "candidate": "madlad",
+        "translation_hash": "07c7b8b8142d494fe76a69062c3f5194b7ad0eaa46d603cff431322c387c5676",
+        "canonical_context": "fields.resume",
+        "record_ids": [
+          "4f2ce27da53a4bfa38a4492a888a978a136f74368d9b4d1bf31941d89df599d2"
+        ],
+        "record_sha256": {
+          "4f2ce27da53a4bfa38a4492a888a978a136f74368d9b4d1bf31941d89df599d2": "c7992220817c86f0b971db6e91cf11be534ac4f7a5a1b4fc40bfdaa9550d0214"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Возобновить» conserva en este contexto la acción o afirmación de «Resume», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "source": "Show solution",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "context": "fields.reveal",
+      "translation": "Показать решение",
+      "translation_sha256": "ce029a0abbcd2ae2ecc416f02e6eae2f7925f06b84fdd812ac95c8359b47241e",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "15b95eb78a8ff9deded3d4a336f2206040179e5c04a866286259b03fa2415227",
+      "source_record_sha256": "67b4aef75ae7b31cd7fccec5a97b32801f95138ee7497cb94c10f16bb2b7fa85",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.reveal",
+        "locale": "ru",
+        "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+        "candidate": "legacy",
+        "translation_hash": "ce029a0abbcd2ae2ecc416f02e6eae2f7925f06b84fdd812ac95c8359b47241e",
+        "canonical_context": "fields.reveal",
+        "record_ids": [
+          "15b95eb78a8ff9deded3d4a336f2206040179e5c04a866286259b03fa2415227",
+          "d30e387f333fe6dcb796dc67ad241a16b45f02e743938337478560a547ffe524"
+        ],
+        "record_sha256": {
+          "d30e387f333fe6dcb796dc67ad241a16b45f02e743938337478560a547ffe524": "5118a5e86e4d1c1be781872392014f85d4c23232170b703e8a193bc08d4b5403",
+          "15b95eb78a8ff9deded3d4a336f2206040179e5c04a866286259b03fa2415227": "67b4aef75ae7b31cd7fccec5a97b32801f95138ee7497cb94c10f16bb2b7fa85"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Показать решение» conserva en este contexto la acción o afirmación de «Show solution», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "source": "Now choose the opposite corner.",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "context": "fields.selectEnd",
+      "translation": "Теперь выберите противоположный угол.",
+      "translation_sha256": "91094be3c40d496da0ee8fa432fb21175c9019be0376a82af928bfa484b68872",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "2b5ec8505db75ce94c5e84995dbb5efda5ab0cf4a6f2589e6282cce26b5efd9d",
+      "source_record_sha256": "b8011bea34c47e05b8dc452d131fc024a9d3b52ac3aeaa0f2836369a0e99a315",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.selectEnd",
+        "locale": "ru",
+        "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+        "candidate": "legacy",
+        "translation_hash": "91094be3c40d496da0ee8fa432fb21175c9019be0376a82af928bfa484b68872",
+        "canonical_context": "fields.selectEnd",
+        "record_ids": [
+          "2b5ec8505db75ce94c5e84995dbb5efda5ab0cf4a6f2589e6282cce26b5efd9d",
+          "f4b629b6a979c4820db5da0ff614b3e63df44f6905fa4a597c27a18d215c3a61"
+        ],
+        "record_sha256": {
+          "2b5ec8505db75ce94c5e84995dbb5efda5ab0cf4a6f2589e6282cce26b5efd9d": "b8011bea34c47e05b8dc452d131fc024a9d3b52ac3aeaa0f2836369a0e99a315",
+          "f4b629b6a979c4820db5da0ff614b3e63df44f6905fa4a597c27a18d215c3a61": "7148d2c490665852ee9dfbd4f24d39d328c484eb18704f24a62ad326dee02628"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Теперь выберите противоположный угол.» conserva en este contexto la acción o afirmación de «Now choose the opposite corner.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. угол sirve para esquina en este contexto geométrico; no se inventa un error de ida por angle en la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "source": "Choose a start square.",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "context": "fields.selectStart",
+      "translation": "Выберите стартовую клетку.",
+      "translation_sha256": "98f1d7d660dc6fee828aa209c97adae8512b9fedec358d75f96e3571b4fcb4b9",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "037d6a93e58bcd7c9e8aff7a967a531350e2a7c20b800c0c39db185eb3660a80",
+      "source_record_sha256": "5ecd21b18b1ed2c196717443d5a6e94208c99f81da7c864dc4bd0a046f73403c",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.selectStart",
+        "locale": "ru",
+        "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+        "candidate": "legacy",
+        "translation_hash": "98f1d7d660dc6fee828aa209c97adae8512b9fedec358d75f96e3571b4fcb4b9",
+        "canonical_context": "fields.selectStart",
+        "record_ids": [
+          "037d6a93e58bcd7c9e8aff7a967a531350e2a7c20b800c0c39db185eb3660a80",
+          "5aee9dc66f5599e03a074e2f0e7c5b89337481e89a180cc1dbeea6ca9b22a863"
+        ],
+        "record_sha256": {
+          "037d6a93e58bcd7c9e8aff7a967a531350e2a7c20b800c0c39db185eb3660a80": "5ecd21b18b1ed2c196717443d5a6e94208c99f81da7c864dc4bd0a046f73403c",
+          "5aee9dc66f5599e03a074e2f0e7c5b89337481e89a180cc1dbeea6ca9b22a863": "cfbb554f917ec2c0989288b25cd647957c97c33cd085935f595dc2327451ceb4"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Выберите стартовую клетку.» conserva en este contexto la acción o afirmación de «Choose a start square.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "source": "Undo last rectangle",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "context": "fields.undo",
+      "translation": "Отменить последний прямоугольник",
+      "translation_sha256": "b675b12a80f21713685e56735dac89017f5d7263b35ae4a30ce90fbb990b3e8d",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "a49db2d158167c2d69dc42b48259c5790067ad7b783f7d8215633c81453b0ae1",
+      "source_record_sha256": "4ce740abe07c8169c2c87ed77373f052289f3b0669d33d518b5cc8ede6055d3e",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "shikaku.fields.undo",
+        "locale": "ru",
+        "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+        "candidate": "legacy",
+        "translation_hash": "b675b12a80f21713685e56735dac89017f5d7263b35ae4a30ce90fbb990b3e8d",
+        "canonical_context": "fields.undo",
+        "record_ids": [
+          "a49db2d158167c2d69dc42b48259c5790067ad7b783f7d8215633c81453b0ae1",
+          "f32d789e033bef31735626701ede113afa25c6dda4e8c886a915147239dcdc4b"
+        ],
+        "record_sha256": {
+          "a49db2d158167c2d69dc42b48259c5790067ad7b783f7d8215633c81453b0ae1": "4ce740abe07c8169c2c87ed77373f052289f3b0669d33d518b5cc8ede6055d3e",
+          "f32d789e033bef31735626701ede113afa25c6dda4e8c886a915147239dcdc4b": "0ac1dd920f63e42cfb61a0587ba7b736333cda317918c818c1229da59734d1d0"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Отменить последний прямоугольник» conserva en este contexto la acción o afirmación de «Undo last rectangle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "source": "Choose an audio file",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "context": "fields.chooseFile",
+      "translation": "Выберите аудиофайл",
+      "translation_sha256": "5429ab1b9cb873179fce353402ba785d8fc46f282dd9ea641c525356cc65160d",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "2fccf425ac4b49abfaec3c43d1ced282a620c237d23175b891c721fc1c9fc755",
+      "source_record_sha256": "1f46c3bb39220ce12abb190067f36c7048cb65e1d70b7cc100548040efaf3874",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.chooseFile",
+        "locale": "ru",
+        "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+        "candidate": "legacy",
+        "translation_hash": "5429ab1b9cb873179fce353402ba785d8fc46f282dd9ea641c525356cc65160d",
+        "canonical_context": "fields.chooseFile",
+        "record_ids": [
+          "2fccf425ac4b49abfaec3c43d1ced282a620c237d23175b891c721fc1c9fc755",
+          "6c4b58c87882c44d8b97776fa3c9b480452484dedf67abd973be513d8450dd59"
+        ],
+        "record_sha256": {
+          "6c4b58c87882c44d8b97776fa3c9b480452484dedf67abd973be513d8450dd59": "6a1a96153ba647a76a252fecb3cd08c0c3a4fe40897f1f2376de3569ac7661b3",
+          "2fccf425ac4b49abfaec3c43d1ced282a620c237d23175b891c721fc1c9fc755": "1f46c3bb39220ce12abb190067f36c7048cb65e1d70b7cc100548040efaf3874"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Выберите аудиофайл» conserva en este contexto la acción o afirmación de «Choose an audio file», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "source": "Choose an audio file first.",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "context": "fields.chooseFirst",
+      "translation": "Сначала выберите аудиофайл.",
+      "translation_sha256": "54ff4589dd1241cd6e4dab5c8ee40b8a4e636d4c677f32c4fa7adafe42bb3376",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "172e55fc7346fcd9a87106e6821326ea18c9ca4a13f710fef0dbebcfb2249d24",
+      "source_record_sha256": "6c8f72af209c7f221180857efe78fcaa11bf554c8f7da3fc912dccac9209f8e1",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.chooseFirst",
+        "locale": "ru",
+        "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+        "candidate": "legacy",
+        "translation_hash": "54ff4589dd1241cd6e4dab5c8ee40b8a4e636d4c677f32c4fa7adafe42bb3376",
+        "canonical_context": "fields.chooseFirst",
+        "record_ids": [
+          "172e55fc7346fcd9a87106e6821326ea18c9ca4a13f710fef0dbebcfb2249d24",
+          "3eb76f7f6a529fe4a2fad35da6a4410227d8b47c80e8bcd1d5ec6a5ddf48f18a"
+        ],
+        "record_sha256": {
+          "172e55fc7346fcd9a87106e6821326ea18c9ca4a13f710fef0dbebcfb2249d24": "6c8f72af209c7f221180857efe78fcaa11bf554c8f7da3fc912dccac9209f8e1",
+          "3eb76f7f6a529fe4a2fad35da6a4410227d8b47c80e8bcd1d5ec6a5ddf48f18a": "83347bb4fcf44eda5f2fab09536edf288ce70c79682feda66cb3da468ef9e586"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Сначала выберите аудиофайл.» conserva en este contexto la acción o afirmación de «Choose an audio file first.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "source": "Clear audio",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "context": "fields.clear",
+      "translation": "Очистить аудио",
+      "translation_sha256": "be48473b0eaf465312192060ab60f24e9d6eccb6d365ab9d36cd5c2247c5bc92",
+      "origin": "agent-correction",
+      "source_record_id": "76c8462467e4ee82c72f12d8d20daaa6af3dde36af50732f477eec8c6eb7d2c2",
+      "source_record_sha256": "4eca1fa67077d8b8518d18165918ea60cff1cfc42b0cde55208428ca7a3db94a",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "voice-changer.fields.clear",
+        "locale": "ru",
+        "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+        "candidate": "madlad",
+        "translation_hash": "33f4470ac062f776b7967e3f9302256c28d4242f1a2c2bf4b8ed3d3a36e2e82c",
+        "canonical_context": "fields.clear",
+        "record_ids": [
+          "76c8462467e4ee82c72f12d8d20daaa6af3dde36af50732f477eec8c6eb7d2c2"
+        ],
+        "record_sha256": {
+          "76c8462467e4ee82c72f12d8d20daaa6af3dde36af50732f477eec8c6eb7d2c2": "4eca1fa67077d8b8518d18165918ea60cff1cfc42b0cde55208428ca7a3db94a"
+        },
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Чистое аудио describe audio limpio; no expresa eliminar el audio cargado."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "source": "This browser could not decode that audio format. Try WAV or MP3.",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "context": "fields.decodeFailed",
+      "translation": "Этот браузер не смог декодировать этот аудиоформат. Попробуйте WAV или MP3.",
+      "translation_sha256": "73c6209f7c56933c255a0255e7736a4be9494842dbd13cabf947ca67c2588e40",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "669367d62857e386e1b7298b2ee48459d9f8327d66e7dbefbb36ce5910bb981f",
+      "source_record_sha256": "d24608806d0673331fe1f953613dcd904e7ca0e604e71cf949b2d8958d0e17ab",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.decodeFailed",
+        "locale": "ru",
+        "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+        "candidate": "legacy",
+        "translation_hash": "73c6209f7c56933c255a0255e7736a4be9494842dbd13cabf947ca67c2588e40",
+        "canonical_context": "fields.decodeFailed",
+        "record_ids": [
+          "669367d62857e386e1b7298b2ee48459d9f8327d66e7dbefbb36ce5910bb981f",
+          "6cced54c5dd7fe205497cfb9b6c1f8841bd50af2f5b50f4c49c2e31fdd9a6743"
+        ],
+        "record_sha256": {
+          "6cced54c5dd7fe205497cfb9b6c1f8841bd50af2f5b50f4c49c2e31fdd9a6743": "e965d78681b7046294183ed58f3e81c21494a8e9813c7df674b98869eafe5cd9",
+          "669367d62857e386e1b7298b2ee48459d9f8327d66e7dbefbb36ce5910bb981f": "d24608806d0673331fe1f953613dcd904e7ca0e604e71cf949b2d8958d0e17ab"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Этот браузер не смог декодировать этот аудиоформат. Попробуйте WAV или MP3.» conserva en este contexto la acción o afirmación de «This browser could not decode that audio format. Try WAV or MP3.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "source": "Export processed WAV",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "context": "fields.export",
+      "translation": "Экспорт обработанного WAV",
+      "translation_sha256": "c9f2485825b56283cd0731fb217e538b21717491f915f39b706bb19db738bdca",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "a36f0685f24774b9042a79de11331d42ffa104928940bdcbebb5ccdb715db0e7",
+      "source_record_sha256": "65471b9046d18c949d4c44cdfa69a419031becb4832e97186680426cfdd4d7c6",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.export",
+        "locale": "ru",
+        "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+        "candidate": "legacy",
+        "translation_hash": "c9f2485825b56283cd0731fb217e538b21717491f915f39b706bb19db738bdca",
+        "canonical_context": "fields.export",
+        "record_ids": [
+          "a36f0685f24774b9042a79de11331d42ffa104928940bdcbebb5ccdb715db0e7",
+          "f2c2f1c8746c0182a42ddcbdc37a5763ad9f2ce30294d44783e6f6c475078776"
+        ],
+        "record_sha256": {
+          "f2c2f1c8746c0182a42ddcbdc37a5763ad9f2ce30294d44783e6f6c475078776": "abeb39f54d21242c1b73867db70053b32e27ac7ee87017cd89f7bce4c4b84976",
+          "a36f0685f24774b9042a79de11331d42ffa104928940bdcbebb5ccdb715db0e7": "65471b9046d18c949d4c44cdfa69a419031becb4832e97186680426cfdd4d7c6"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Экспорт обработанного WAV» conserva en este contexto la acción o afirmación de «Export processed WAV», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "fields.faq1a",
+      "translation": "Нет. Ваш браузер декодирует и обрабатывает выбранный звук локально. UsefulVerse не получает запись.",
+      "translation_sha256": "8e0bd7ec9f26a3763eea5719e821998126641d4ffcb00a3b5f4c3512109ff97f",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "7f3936062a9de69d46612544b02c51f78006914077cbcbb0ac61a07aa0fdf553",
+      "source_record_sha256": "d5360caff39d07b13e04c550d0fabb31ef17fc2de822bf3a79ec5f96dc1afb84",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.faq1a",
+        "locale": "ru",
+        "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+        "candidate": "legacy",
+        "translation_hash": "8e0bd7ec9f26a3763eea5719e821998126641d4ffcb00a3b5f4c3512109ff97f",
+        "canonical_context": "fields.faq1a",
+        "record_ids": [
+          "7f3936062a9de69d46612544b02c51f78006914077cbcbb0ac61a07aa0fdf553",
+          "9f4304224f9823de75014f77cd7a2672995cb627f2739887f8c038661932cb30"
+        ],
+        "record_sha256": {
+          "9f4304224f9823de75014f77cd7a2672995cb627f2739887f8c038661932cb30": "ecfb94aaba56e7d5e012c960b80e6b9533902e9ec71b0336c37ef72950d89498",
+          "7f3936062a9de69d46612544b02c51f78006914077cbcbb0ac61a07aa0fdf553": "d5360caff39d07b13e04c550d0fabb31ef17fc2de822bf3a79ec5f96dc1afb84"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Нет. Ваш браузер декодирует и обрабатывает выбранный звук локально. UsefulVerse не получает запись.» conserva en este contexto la acción o afirmación de «No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "fields.faq2a",
+      "translation": "Нет. Этот легкий регулятор высоты звука изменяет скорость воспроизведения, поэтому более низкий тон воспроизводится медленнее, а более высокий – быстрее.",
+      "translation_sha256": "b503c5536934af55b390d0e1cb273c460efba847c6e08bc22b37a790238cfce7",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "6b54a7727c215a3e7e9971852015f1716bfbd5a5dd1fb1a903a6e52c59731ffa",
+      "source_record_sha256": "7b3d272d347254b3a2a880a66db391f133460b81ae1382a568fce65cce4c4a7b",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.faq2a",
+        "locale": "ru",
+        "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+        "candidate": "legacy",
+        "translation_hash": "b503c5536934af55b390d0e1cb273c460efba847c6e08bc22b37a790238cfce7",
+        "canonical_context": "fields.faq2a",
+        "record_ids": [
+          "6b54a7727c215a3e7e9971852015f1716bfbd5a5dd1fb1a903a6e52c59731ffa",
+          "8b4f79648a2d380af7fb9f18dfaf27c74dec11c8f2f80571e5b1d9a04801aba0"
+        ],
+        "record_sha256": {
+          "6b54a7727c215a3e7e9971852015f1716bfbd5a5dd1fb1a903a6e52c59731ffa": "7b3d272d347254b3a2a880a66db391f133460b81ae1382a568fce65cce4c4a7b",
+          "8b4f79648a2d380af7fb9f18dfaf27c74dec11c8f2f80571e5b1d9a04801aba0": "c55f0427d2e812853a8b97a2dfc854ea57a361ea10608fe9b9c2437aa2944315"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Нет. Этот легкий регулятор высоты звука изменяет скорость воспроизведения, поэтому более низкий тон воспроизводится медленнее, а более высокий – быстрее.» conserva en este contexto la acción o afirmación de «No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "source": "Load audio locally",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "context": "fields.load",
+      "translation": "Загрузить аудио локально",
+      "translation_sha256": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "3666d1fe61e789a581f4e137b88af50524042db5e4b89d7762a4456b6c6eb287",
+      "source_record_sha256": "c119782f0630915ef22ea169476dbda4c63d5228ecb771fec1e8943074bc9eca",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.load",
+        "locale": "ru",
+        "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+        "candidate": "legacy",
+        "translation_hash": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+        "canonical_context": "fields.load",
+        "record_ids": [
+          "3666d1fe61e789a581f4e137b88af50524042db5e4b89d7762a4456b6c6eb287",
+          "adceece1edb3a7269570eccbf3a64cf677745e3a00f266604dcec147318a9270"
+        ],
+        "record_sha256": {
+          "3666d1fe61e789a581f4e137b88af50524042db5e4b89d7762a4456b6c6eb287": "c119782f0630915ef22ea169476dbda4c63d5228ecb771fec1e8943074bc9eca",
+          "adceece1edb3a7269570eccbf3a64cf677745e3a00f266604dcec147318a9270": "1d9fcecde5ad1629cad6da51c2561db9c93e56e40c73281e5a26df532ea4059f"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Загрузить аудио локально» conserva en este contexto la acción o afirmación de «Load audio locally», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "source": "Audio decoded locally. Duration: {duration} seconds.",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "context": "fields.loaded",
+      "translation": "Аудио декодировано локально. Продолжительность: {duration} секунд.",
+      "translation_sha256": "6fd21e63d20c19adc595fb71d96576fb722cc0023d28a0f52a605c647e630613",
+      "origin": "agent-clarification",
+      "source_record_id": "ba0507baa525c2e00c2a06c3e973ab2a44bc40b813ecc1bf9f7443d1935ca3a2",
+      "source_record_sha256": "d19410b52392349a0f4b065ba5d7ab4b9894c66603115d9ec7ba26072aaf5448",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.loaded",
+        "locale": "ru",
+        "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+        "candidate": "legacy",
+        "translation_hash": "fb00036072b8ef3884eb867a3d54fbeda3ece434b1afff93d0492a7f3843cdd8",
+        "canonical_context": "fields.loaded",
+        "record_ids": [
+          "ba0507baa525c2e00c2a06c3e973ab2a44bc40b813ecc1bf9f7443d1935ca3a2",
+          "dcff7e6471cd612c5c1967b41b5625a4241a4c49200fd1f928565ccf8c7e4deb"
+        ],
+        "record_sha256": {
+          "dcff7e6471cd612c5c1967b41b5625a4241a4c49200fd1f928565ccf8c7e4deb": "3a07c7109e9a0fb6bcf8f5dcb41614ce783132dae4e404a673a1b6d720686e7a",
+          "ba0507baa525c2e00c2a06c3e973ab2a44bc40b813ecc1bf9f7443d1935ca3a2": "d19410b52392349a0f4b065ba5d7ab4b9894c66603115d9ec7ba26072aaf5448"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Звук декодируется локально. Продолжительность: {duration} секунд.» conserva en este contexto la acción o afirmación de «Audio decoded locally. Duration: {duration} seconds.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "source": "Preview effect",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "context": "fields.preview",
+      "translation": "Прослушать эффект",
+      "translation_sha256": "fe2ccec36969800a9db127f534050d414b0da1fd588b52173bb20571bd573f6e",
+      "origin": "agent-correction",
+      "source_record_id": "9c4e3baaeead7acc03bb68b10f2397a2005bc950e3af7d3f3338a2e2fd2164cb",
+      "source_record_sha256": "b85e0d4f5f4acf339a898e51f6f4bf41967d663c2e7b75f7fa963ec8dc02378c",
+      "source_review": "review-batch1-ru-madlad.json",
+      "source_review_sha256": "19cddb3c92bd62bff895ec6039afd79ad96b18f204871579c636766c62e64fff",
+      "source_judgment": {
+        "key": "voice-changer.fields.preview",
+        "locale": "ru",
+        "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+        "candidate": "madlad",
+        "translation_hash": "5570e07d4f30505b1d197e27cb53a5e1089cc23a9ead9df8261a60430d774649",
+        "canonical_context": "fields.preview",
+        "record_ids": [
+          "9c4e3baaeead7acc03bb68b10f2397a2005bc950e3af7d3f3338a2e2fd2164cb"
+        ],
+        "record_sha256": {
+          "9c4e3baaeead7acc03bb68b10f2397a2005bc950e3af7d3f3338a2e2fd2164cb": "b85e0d4f5f4acf339a898e51f6f4bf41967d663c2e7b75f7fa963ec8dc02378c"
+        },
+        "scores": {
+          "meaning": 2,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "notes": [
+          "Эффект предварительного просмотра invierte la relación: efecto de la vista previa en vez de preescuchar el efecto."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "source": "Audio stays in this browser. It is not uploaded or saved by UsefulVerse.",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "context": "fields.privacy",
+      "translation": "Аудио остается в этом браузере. UsefulVerse не загружает и не сохраняет его.",
+      "translation_sha256": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "55ae0357bb29add60656807c228ee2339440db566e6d73b92774969344a01060",
+      "source_record_sha256": "583ea51a0f25af4490774ae255415950e462ddeb0096ca72f41ddee21d5ad57d",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.privacy",
+        "locale": "ru",
+        "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+        "candidate": "legacy",
+        "translation_hash": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+        "canonical_context": "fields.privacy",
+        "record_ids": [
+          "55ae0357bb29add60656807c228ee2339440db566e6d73b92774969344a01060",
+          "75ca219527f46cb1b52bfdb064932385cf438ef6f9d632986cd29a5bfd67ee54"
+        ],
+        "record_sha256": {
+          "55ae0357bb29add60656807c228ee2339440db566e6d73b92774969344a01060": "583ea51a0f25af4490774ae255415950e462ddeb0096ca72f41ddee21d5ad57d",
+          "75ca219527f46cb1b52bfdb064932385cf438ef6f9d632986cd29a5bfd67ee54": "044750ff73c02e660593b76336e078addfa2265066b694db53d1269a140b4775"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Аудио остается в этом браузере. UsefulVerse не загружает и не сохраняет его.» conserva en este contexto la acción o afirmación de «Audio stays in this browser. It is not uploaded or saved by UsefulVerse.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "source": "Stop preview",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "context": "fields.stop",
+      "translation": "Остановить прослушивание",
+      "translation_sha256": "6467d4af32b4c0bde936d48b58d2d3c1a974e64c575e83931cf6baf91b492d39",
+      "origin": "agent-clarification",
+      "source_record_id": "51ce390ba3626887a56090b86dc4247e8db4093740bd24059398d64401a0bbe0",
+      "source_record_sha256": "3842dbb12afcb6a779ce4ca5f44d3c7fbf580af98feff67465c9bd01e6718b36",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.stop",
+        "locale": "ru",
+        "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+        "candidate": "legacy",
+        "translation_hash": "35c009cebd781b97275c95c40b7682aa58f2f9e13577391bf5a9fa83452fd05c",
+        "canonical_context": "fields.stop",
+        "record_ids": [
+          "51ce390ba3626887a56090b86dc4247e8db4093740bd24059398d64401a0bbe0",
+          "6ee9a96935dbd6b11846c8a72d8dc497aef671815202dcf04ae3ad82315aa777"
+        ],
+        "record_sha256": {
+          "6ee9a96935dbd6b11846c8a72d8dc497aef671815202dcf04ae3ad82315aa777": "ab66ee5d6f0e95012cd49367ddd7fc76418a51effb465c02b0cc7be65a7711bb",
+          "51ce390ba3626887a56090b86dc4247e8db4093740bd24059398d64401a0bbe0": "3842dbb12afcb6a779ce4ca5f44d3c7fbf580af98feff67465c9bd01e6718b36"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Остановить просмотр» conserva en este contexto la acción o afirmación de «Stop preview», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": true,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "source": "Choose an audio file no larger than 25 MB.",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "context": "fields.tooLarge",
+      "translation": "Выберите аудиофайл размером не более 25 МБ.",
+      "translation_sha256": "9ef534aa35e19fffaf7567a03e264e13a92f1eb265a8821298e23556854aa9e7",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "689b7dffd248651f4eb075005a77dc4a3a339f21a7f103ca2a10f850ecd696d5",
+      "source_record_sha256": "cfddec5463318c27154422d7c2beb6b5c83fd6c751c4954f78e673debe4f7ea0",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.tooLarge",
+        "locale": "ru",
+        "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+        "candidate": "legacy",
+        "translation_hash": "9ef534aa35e19fffaf7567a03e264e13a92f1eb265a8821298e23556854aa9e7",
+        "canonical_context": "fields.tooLarge",
+        "record_ids": [
+          "689b7dffd248651f4eb075005a77dc4a3a339f21a7f103ca2a10f850ecd696d5",
+          "ee32abc8142750e8f694baa67d98c9f640cadcd624b2efa997e6058d903a573f"
+        ],
+        "record_sha256": {
+          "689b7dffd248651f4eb075005a77dc4a3a339f21a7f103ca2a10f850ecd696d5": "cfddec5463318c27154422d7c2beb6b5c83fd6c751c4954f78e673debe4f7ea0",
+          "ee32abc8142750e8f694baa67d98c9f640cadcd624b2efa997e6058d903a573f": "7929a04860aa6c00b079c54e211ce797302d561c0c6905c7baf9e575e276b90b"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Выберите аудиофайл размером не более 25 МБ.» conserva en este contexto la acción o afirmación de «Choose an audio file no larger than 25 MB.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. МБ es la abreviatura rusa de megabyte, no un cambio de unidad.",
+          "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": true
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "source": "This tool supports clips up to 30 seconds. Trim the file and try again.",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "context": "fields.tooLong",
+      "translation": "Этот инструмент поддерживает клипы продолжительностью до 30 секунд. Обрежьте файл и повторите попытку.",
+      "translation_sha256": "047841d070adaee0b88f6f06b60901a00cc54efdee137759c85c3864f16f9cc6",
+      "origin": "existing-exact-agent-reviewed-import",
+      "source_record_id": "6f95eaf8c62be768c05eb817cab5c164242542897a11753e9a985aaa67e1d66c",
+      "source_record_sha256": "0fe81ba2d4160ed9cb8ac5b7685006a085eb0c8fe6d8ff0540005125ba701ba7",
+      "source_review": "review-batch1-ru-legacy.json",
+      "source_review_sha256": "bb376ecffa9ce4afc10771b225daced67f167bf8441ed125fd98024d63136fd3",
+      "source_judgment": {
+        "key": "voice-changer.fields.tooLong",
+        "locale": "ru",
+        "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+        "candidate": "legacy",
+        "translation_hash": "047841d070adaee0b88f6f06b60901a00cc54efdee137759c85c3864f16f9cc6",
+        "canonical_context": "fields.tooLong",
+        "record_ids": [
+          "6f95eaf8c62be768c05eb817cab5c164242542897a11753e9a985aaa67e1d66c",
+          "b2aecd5474d584dc1435f032db5fbc2e5a02c3bf1416e1352a13edd12caf0b6e"
+        ],
+        "record_sha256": {
+          "6f95eaf8c62be768c05eb817cab5c164242542897a11753e9a985aaa67e1d66c": "0fe81ba2d4160ed9cb8ac5b7685006a085eb0c8fe6d8ff0540005125ba701ba7",
+          "b2aecd5474d584dc1435f032db5fbc2e5a02c3bf1416e1352a13edd12caf0b6e": "9b2cadb84a5b10d32562690d90b2fb8fbc1506556aaf44fb6262bc43d2f24f58"
+        },
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "notes": [
+          "Lectura directa: «Этот инструмент поддерживает клипы продолжительностью до 30 секунд. Обрежьте файл и повторите попытку.» conserva en este contexto la acción o afirmación de «This tool supports clips up to 30 seconds. Trim the file and try again.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+        ],
+        "critical_control": false,
+        "score_origin": "direct-existing-source-forward-back-agent-review",
+        "data_contract_unproved": false
+      },
+      "native_review": false,
+      "review_kind": "agent",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "reviewed_at_utc": "2026-10-26T08:49:54.436372+00:00",
+      "note": "Direct current source/forward reading and original back evidence. Two clarifications explicitly state completed decoding/audio listening;they do not withdraw prior positive grades. Known reference only;not native/blind/unseen/general-engine/release approval."
+    }
+  ]
+}

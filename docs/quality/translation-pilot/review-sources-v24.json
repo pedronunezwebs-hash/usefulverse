@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-10-25T00:52:21.579006+00:00",
+  "primary_sources": [
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2026/ENU/AutoCAD-Core/files/GUID-A58A87BB-482B-4042-A00A-EEF55A2B4FD8.htm",
+      "used_for": "DXF unit codes15/16/20 are deca/hecto/metre parsec;9 mil is a thousandth inch."
+    },
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2020/ENU/AutoCAD-DXF/files/GUID-748FC305-F3F2-4F74-825A-61F04D757A50.htm",
+      "used_for": "Polyline can be open; closed bit is optional, so polygon is not equivalent."
+    },
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2021/CHS/AutoCAD-DXF/files/GUID-748FC305-F3F2-4F74-825A-61F04D757A50.htm",
+      "used_for": "Chinese technical term 多段线."
+    },
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2016/CHS/AutoCAD-DXF/files/GUID-A85E8E67-27CD-4C59-BE61-4DC9FADBE74A.htm",
+      "used_for": "Chinese DXF unit labels; used with EN2026 and NIST, not the erroneous2021 Chinese Mils→miles entry."
+    },
+    {
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+      "used_for": "Length mil=0.001inch=0.0254mm."
+    },
+    {
+      "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+      "used_for": "Public standard-runner compute free; no larger runners/artifacts/cache creation/Packages/LFS/Codespaces in this lot."
+    }
+  ],
+  "native_review": false
+}

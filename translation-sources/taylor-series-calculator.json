@@ -1,0 +1,94 @@
+{
+  "toolId": "taylor-series-calculator",
+  "sourceCopy": {
+    "name": "Taylor Series Calculator",
+    "title": "Taylor Series Calculator Free | UsefulVerse",
+    "description": "Build a Taylor or Maclaurin polynomial, choose its center and order, and compare its value with the function. Free and local.",
+    "intro": "Choose an elementary function, expansion center, degree and evaluation point. Inspect each coefficient, the polynomial estimate and its pointwise error.",
+    "howQuestion": "What does a Taylor series calculator show?",
+    "howAnswer": "It builds a finite Taylor polynomial from derivatives at a chosen center. The reported error is the absolute difference at your selected point, not a guaranteed error bound over an interval.",
+    "privacyQuestion": "Are my values uploaded?",
+    "privacyAnswer": "No. The polynomial and comparison are calculated in this browser; your values are not uploaded or saved.",
+    "howTo": [
+      "Select one of the supported functions.",
+      "Enter the center, evaluation point and polynomial order.",
+      "Compare the Taylor approximation with the function value and review convergence notes."
+    ],
+    "example": {
+      "label": "Load example: eˣ about 0, order 2, at 1"
+    },
+    "actions": {
+      "calculate": "Calculate polynomial",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Taylor polynomial result"
+    },
+    "fields": {
+      "functionType": "Function",
+      "exp": "Exponential · eˣ",
+      "sin": "Sine · sin(x)",
+      "cos": "Cosine · cos(x)",
+      "ln": "Natural logarithm · ln(x)",
+      "reciprocal": "Reciprocal · 1/x",
+      "sqrt": "Square root · √x",
+      "center": "Expansion center a",
+      "evaluationPoint": "Evaluate at x",
+      "order": "Polynomial order",
+      "coefficientTable": "Taylor polynomial terms in powers of (x − a)",
+      "degree": "Degree k",
+      "coefficient": "Coefficient cₖ",
+      "contribution": "Term at selected x",
+      "approximation": "Taylor approximation",
+      "actualValue": "Function value",
+      "absoluteError": "Absolute difference at x",
+      "convergenceNote": "For ln(x), √x and 1/x, the Taylor series has a finite convergence radius around the selected center. A polynomial can still be evaluated outside it, but may not approximate the function well.",
+      "accuracyNote": "Supported functions: eˣ, sin(x), cos(x), ln(x), 1/x and √x. Order 0–30; inputs are bounded to ±50. Trigonometric inputs use radians.",
+      "formulaNote": "Pointwise difference is |f(x) − Pₙ(x)|. It is not a maximum-error estimate or a formal remainder bound on a whole interval."
+    },
+    "messages": {
+      "calculated": "Taylor polynomial calculated.",
+      "checkInputs": "Check the function and numeric values.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is unavailable in this browser.",
+      "inputRange": "Use finite values within ±50.",
+      "orderRange": "Order must be a whole number from 0 to 30.",
+      "centerDomain": "The center is outside this function’s supported domain.",
+      "pointDomain": "The evaluation point is outside the real-valued domain.",
+      "resultRange": "The polynomial result exceeds the supported numeric range."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is a Maclaurin polynomial?",
+        "answer": "It is a Taylor polynomial centered at zero. This calculator lets you choose zero or another valid center."
+      },
+      {
+        "question": "Does the displayed difference guarantee accuracy throughout an interval?",
+        "answer": "No. It is the absolute difference at your single evaluation point. A remainder bound across an interval requires additional derivative bounds and conditions."
+      },
+      {
+        "question": "Why can the polynomial be poor outside a convergence radius?",
+        "answer": "The finite polynomial can be evaluated there, but the infinite Taylor series for logarithm, square root and reciprocal functions only converges inside its radius around the center."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/taylor-series-calculator/index.html",
+    "htmlSha256": "d46fbd0fe95cdcc33784986ca8194be33f7074e874ab79a3f73f4c323e080d61",
+    "payloadSha256": "43b826bddc23c9740dd03b7463e16a7b1c9a67f274151b9d5350c7631a612cdc",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/taylor-series-calculator.js",
+    "controllerSha256": "7a0b1a0c2d353b556118fae7a359f4c3a8672e5fd211da7d965701a44b57b1ed",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

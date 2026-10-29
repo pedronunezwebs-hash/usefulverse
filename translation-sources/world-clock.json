@@ -1,0 +1,68 @@
+{
+  "toolId": "world-clock",
+  "sourceCopy": {
+    "name": "World Clock",
+    "title": "World Clock Online Free | UsefulVerse",
+    "description": "See live local times in cities around the world, compare UTC offsets and daylight saving changes. Free, no account.",
+    "intro": "Keep several city clocks in view at once. Times update from your device clock and the browser’s time-zone database, including daylight saving changes where supported.",
+    "howQuestion": "How do I compare times around the world?",
+    "howAnswer": "Your local time, New York, London and Tokyo appear by default. Add or remove cities, then choose a 12-hour or 24-hour display. Each clock follows its city’s time-zone rules in your browser.",
+    "privacyQuestion": "Does the world clock use my location?",
+    "privacyAnswer": "No location permission is requested. The page reads your browser’s configured time zone to show your local clock. Nothing is uploaded or saved by UsefulVerse.",
+    "fields": {
+      "yourLocalTime": "Your local time",
+      "addCity": "Add a city",
+      "timeZone": "City or time zone",
+      "hourFormat": "Time format",
+      "twelveHour": "12-hour",
+      "twentyFourHour": "24-hour",
+      "utcOffset": "UTC offset",
+      "difference": "Difference from local time",
+      "clockList": "World clocks",
+      "maxClocks": "You can show up to 8 clocks, including your local time.",
+      "accuracyNote": "Times use your device clock and its time-zone database. Future daylight-saving rules or device settings may be outdated."
+    },
+    "actions": {
+      "add": "Add clock",
+      "remove": "Remove",
+      "result": "Current city times",
+      "reset": "Reset cities"
+    },
+    "messages": {
+      "added": "City clock added.",
+      "removed": "City clock removed.",
+      "alreadyShown": "That city is already on the clock list.",
+      "maxReached": "The clock list is full. Remove a city before adding another.",
+      "invalidZone": "Choose a supported city or time zone.",
+      "reset": "The default city clocks were restored."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this clock account for daylight saving time?",
+        "answer": "It uses the time-zone data available in your browser and device for the selected city. Rules can change, so confirm important future appointments with an authoritative local calendar."
+      },
+      {
+        "question": "Why can two cities have a 30- or 45-minute difference?",
+        "answer": "Some time zones use offsets that are not whole hours. The clock shows the current UTC offset supplied by your browser’s time-zone data."
+      },
+      {
+        "question": "Is this a time-zone converter?",
+        "answer": "It shows several current clocks at once. To convert a chosen date and time between two zones, use the separate time-zone converter."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/world-clock/index.html",
+    "htmlSha256": "07c140a1054e910fe2906213cb058727c1df1dadeb58bb52ae7c0afa2e26fcd1",
+    "payloadSha256": "16a020fed0046c13dfe24396bd5431c94477126096c9a92cda584a61181b9491",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/world-clock.js",
+    "controllerSha256": "d041201ac86c8e8fc4c2550cf7f3cbe1eb491f0e37c7230f63887eca225cb0cf",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

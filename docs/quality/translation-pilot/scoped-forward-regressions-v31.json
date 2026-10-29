@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "approved_locales": [],
+  "native_review": false,
+  "cases": [
+    {
+      "key": "dxf-viewer.description",
+      "locale": "ru",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "inference_policy": "context-v31",
+      "translation": "Открытие чертежей ASCII DXF на этом устройстве. Просмотр поддерживаемых 2D-линий, окружностей, дуг и полилиней. Показывать или скрывать слои и измерять расстояния. Экспортировать поддерживаемую геометрию в SVG или PNG.",
+      "translation_hash": "53879e7ea8976470fe06768012d51b1eb60b213519e8457dfee0e18756dd95a2",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "820550e7a489abdfd8876accdc022477770b12782898001231c2f3e70a8c79a1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "issue": "Genitive plural полилиней is malformed;standard Russian полилиний is needed after просмотр. Current independent negative;old positive review is preserved unchanged."
+    },
+    {
+      "key": "dxf-viewer.example",
+      "locale": "ru",
+      "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+      "inference_policy": "context-v31",
+      "translation": "Линия от (0, 0) до (10, 0) измеряет 10 чертежных единиц. Этот инструмент считывает DXF код единицы, если таковой присутствует. Без этого кода измерения обозначаются как чертежные единицы.",
+      "translation_hash": "e41e542f0b30fbe9126af025254e22a8ec0921348bcddf6cb2746c1dc105f9ae",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "a784e22f4ea1ed1a585085f9f33d71a91f8b1ee55f74857c3f159b3149699361"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "issue": "Линия…измеряет10единиц is an active-verb calque:a line has a length,it does not perform measurement. Values/coordinates remain correct. Current independent negative;old positive unchanged."
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "ru",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "inference_policy": "context-v31",
+      "translation": "Попробуйте записать голос и сравнить оригинал с радио или более низким тоном. Изменение высоты звука также меняет скорость воспроизведения; это не клонирование голоса или коррекция высоты звука студийного уровня.",
+      "translation_hash": "d88450537a25d380cafe5977d8f0e751af1c8c171536def888235c9901ef8db4",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "01284d8d92ea4deb958e0d295b43a9302106110d5fcae4189c52f9233188aea3",
+        "7955b6717f10873e92832fadbc1f17f4cb90f146293c7c33df07ec9483f03d91"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "issue": "Try a voice recording asks to use an audio recording;Попробуйте записать голос asks to create one. The action is changed. Current model and exact legacy share this inherited defect;old positive judgments stay immutable."
+    },
+    {
+      "key": "voice-changer.limitsHeading",
+      "locale": "ru",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "inference_policy": "context-v31",
+      "translation": "Последствия и ограничения",
+      "translation_hash": "1c893ca40df2102ee3ea0a67c1b3935de28d980fbbcb2412ad36f5173d0ad2da",
+      "direction": "forward",
+      "blocks_gate": true,
+      "observed_record_ids": [
+        "6b5bd61be5b2f89a01e69c147b9506577ef6275be5eeb2b1d94dd30007864f95",
+        "f8f5e2a52dcdf8eed86a97cbc09bb0f663a56d063bf69f8601cb417990dd10c3"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "issue": "Audio Effects becomes Последствия(consequences),the wrong sense for the audio-effects heading. Current independent negative;old positive judgments stay immutable."
+    }
+  ]
+}

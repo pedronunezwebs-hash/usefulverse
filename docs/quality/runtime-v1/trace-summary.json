@@ -1,0 +1,34 @@
+{
+  "loadTrace": {
+    "path": "/es/tools/grammar-checker/",
+    "viewport": [
+      390,
+      844
+    ],
+    "cpuSlowdown": 4,
+    "network": "Slow 4G",
+    "lcpMs": 1292,
+    "cls": 0,
+    "renderBlockingEstimatedSavingsMs": 545,
+    "fieldData": false
+  },
+  "interaction": {
+    "path": "/tools/markdown-editor/",
+    "method": "PerformanceEventTiming in current document with real Enter presses",
+    "viewport": [
+      390,
+      844
+    ],
+    "cpuSlowdown": 1,
+    "network": "none",
+    "observedDurationsMs": [
+      32,
+      40
+    ],
+    "sanitizedPreviewCorrect": true,
+    "keyboardFocusVisible": true,
+    "formalINPGateApproved": false
+  },
+  "discardedTrace": "DevTools interaction summary labelled an old URL; not used for approval.",
+  "deploymentApproved": false
+}

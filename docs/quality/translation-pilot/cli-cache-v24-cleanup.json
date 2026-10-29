@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-25T01:03:28.122002+00:00",
+  "owned_run_ids": [
+    40113864520,
+    40114620348,
+    40148453347
+  ],
+  "removed_exact_owned_run_log_archives": [
+    {
+      "path": "/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-v24-recovery-20261025-3hqj1zit/cache/gh/run-log-40148453347-1792889608.zip",
+      "bytes": 242308,
+      "run_id": 40148453347
+    }
+  ],
+  "remaining_matching_archives": 0,
+  "scope": "Only exact owned Actions log ZIP names; unrelated caches untouched. Root removal also removes own binaries/scratch/clone/dependencies, not a shared runtime."
+}

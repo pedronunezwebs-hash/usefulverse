@@ -1,0 +1,78 @@
+{
+  "toolId": "gold-calculator",
+  "sourceCopy": {
+    "name": "Gold Calculator",
+    "title": "Gold Calculator Free | UsefulVerse",
+    "description": "Calculate fine-gold content by weight and purity, then estimate value with your own price. Free, no account, no live quote.",
+    "intro": "Convert a gold item’s weight and karat or purity into fine-gold content. Add your own price per gram of pure gold only if you want an illustrative value estimate.",
+    "howQuestion": "How do I calculate the value of gold?",
+    "howAnswer": "Convert the item weight to grams and multiply by its purity fraction to estimate fine-gold weight. If you enter a price per gram of pure gold, the tool multiplies that price by the fine-gold weight and can apply your chosen premium or discount.",
+    "privacyQuestion": "Does this tool fetch live gold prices or upload my values?",
+    "privacyAnswer": "No. The tool does not fetch market prices or upload your inputs. Any price is entered by you and is only an assumption for arithmetic.",
+    "fields": {
+      "weight": "Item weight",
+      "weightUnit": "Weight unit",
+      "grams": "Grams (g)",
+      "kilograms": "Kilograms (kg)",
+      "ounces": "Avoirdupois ounces (oz)",
+      "troyOunces": "Troy ounces (ozt)",
+      "karat": "Karat (K)",
+      "purityPercent": "Or enter purity (%)",
+      "purityHint": "Use either karat or purity percent. If purity is entered, it takes priority.",
+      "pricePerGram": "Your assumed price per gram of pure gold (USD, optional)",
+      "adjustmentPercent": "Premium or discount (%)",
+      "adjustmentHint": "For example, −10% models a 10% discount. This does not predict an actual buyer offer.",
+      "accuracyNote": "Illustrative arithmetic only, not a live quote, appraisal, investment advice or guaranteed offer. Actual purity and resale prices vary; an item may include stones, other metals, fees or workmanship. Verify the item and current market price independently.",
+      "resultTitle": "Gold content and optional value estimate",
+      "weightGrams": "Item weight in grams",
+      "purityResult": "Purity used",
+      "fineGold": "Estimated fine-gold content",
+      "metalValue": "Value at your entered pure-gold price",
+      "adjustedValue": "Value after your entered adjustment",
+      "valueUnavailable": "No monetary value calculated",
+      "enterPrice": "Enter a price per gram to estimate value."
+    },
+    "actions": {
+      "calculate": "Calculate",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "example": "Load 10 g, 18K example",
+      "result": "Results"
+    },
+    "messages": {
+      "calculated": "Gold-content estimate calculated from your inputs.",
+      "checkInputs": "Check weight, purity, price and adjustment values.",
+      "exampleLoaded": "The 10 g, 18K example is ready.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "How much pure gold is in 10 g of 18-karat gold?",
+        "answer": "18-karat gold is 18/24, or 75%, gold by mass. Ten grams therefore contain an estimated 7.5 g of fine gold."
+      },
+      {
+        "question": "Does this show today’s gold price?",
+        "answer": "No. Enter a price yourself. The result is arithmetic based on that assumption, not a real-time market quote or a buyer’s offer."
+      },
+      {
+        "question": "What is the difference between ounces and troy ounces?",
+        "answer": "An avoirdupois ounce is about 28.3495 g; a troy ounce is about 31.1035 g. Gold-market weights commonly use troy ounces, so select the unit that matches your item."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/gold-calculator/index.html",
+    "htmlSha256": "8108c88ed5caf7c815d0ad061a4a00b3481f77fd891ad04650b90947346f6d15",
+    "payloadSha256": "38c766f5de0cb7659bcd807332e940b4b8dd21964255d5fb5c00ffdf694fc059",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/gold-calculator.js",
+    "controllerSha256": "d42842a59aa157d439acd4d9b886bf746a2f8e50958115b7d37862d465006cd7",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

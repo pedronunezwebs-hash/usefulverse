@@ -1,0 +1,48 @@
+{
+  "policy": "context-v24",
+  "run_id": 40113864520,
+  "reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current source/forward/back reading. All reference quantities proved, including whole controlled input; known memory disclosed. No native/blind/unseen-text or locale approval."
+  },
+  "legacy_gate": {
+    "rows": 27,
+    "sample": 27,
+    "points": 223,
+    "maximum": 243,
+    "button_errors": 5,
+    "number_negation_errors": 3,
+    "major_rows": 6,
+    "minor_rows": 2,
+    "unproved_data_rows": 0,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Direct current source/forward/back reading; eight existing forward defects remain. No native or release approval."
+  },
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 243,
+    "legacy_points": 223,
+    "maximum": 243,
+    "frozen_engine": false
+  },
+  "all_current_outputs_read": 67,
+  "warning_records_reconciled": 57,
+  "back_findings": 17,
+  "full_dispatched": true,
+  "source_forward_back_identical_to_v23": 67,
+  "only_forward_acceptance_change": "shikaku.fields.faq.1.a false→true in newly measuredv24; originalv23record unchanged",
+  "approved_locales": [],
+  "full_run_id": 40114620348,
+  "full_run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40114620348"
+}

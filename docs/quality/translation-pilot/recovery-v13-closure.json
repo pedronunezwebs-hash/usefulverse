@@ -1,0 +1,8 @@
+{
+  "previous_root": "/private/tmp/usefulverse-codex-v13-20261022.zaksq8aa",
+  "previous_root_absent": true,
+  "at_client": "2026-10-22T17:50:03.178798+07:00",
+  "main_expected": "0a4c3534310e2243e5110863b07566b8dc0f0ddd",
+  "feature_expected": "d21c4549fe5fbb05583aa9c4febcd049fb4b7331",
+  "note": "Prior temp root already absent at resume; deletion time/size unknown. Code/checkpoints/CI already pushed. Only handoff documents recovered here. Own new helper moved out of workspace."
+}

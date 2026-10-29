@@ -1,0 +1,1025 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agent review, no paid API)",
+  "native_review": false,
+  "rubric": "Meaning, numbers/negations and naturalness0–3. Every actual S/F/B read directly; no native/blind/unseen-text/generic-engine approval.",
+  "expected_rows": 40,
+  "inference_policy": "context-v28",
+  "reviewed_at_utc": "2026-10-26T01:19:30.191649+00:00",
+  "scope": "Actual67 current S/F/B read;40 model forward rows are known reviewed memory (37 imports incl2 substitutions,3 corrections),0 new forward generation. Back data/defects assessed separately. Legacy27 independently retains a negative gate.",
+  "approved_locales": [],
+  "engine_frozen": false,
+  "requires_complete_model_warning_coverage": false,
+  "rows": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "locale": "bn",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "3283b9f59a57f0709278ecb11ebec505def535803575711648f83dc0b0cb3650",
+      "record_ids": [
+        "ef6c6b6e110af56d6d83b15590925c2e41a6b6c4283fa9727dbc4dd80a63da2b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "locale": "bn",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "c462b3a4cfd834d210bb012c3962a86312d468aa11936b05647854a9e81087fa",
+      "record_ids": [
+        "af1d76d569e99cfca432a70008a8770bfd95a10fb0273d5218576c2560e23c28"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "locale": "bn",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "10341a2d73cf4c98ac7ec5dc2dde9b22a5ba0512277b08d78d53ca86370d75c6",
+      "record_ids": [
+        "527ef08720d0da9048618c26567d869f93b1d03c68b07c2689015f5d6ebb1a35"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "bn",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "ec352e4659182fe764d9b5124a3efa9458323111669bbefd23ae59ebed60675a",
+      "record_ids": [
+        "524b2914d49b4ca7ba56fb8835ad76303b31135a67680ff41f77850da1eadc75"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "locale": "bn",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "96dc3ad01f7df6ffca2975f892ed322079b0bc91e5863fb14b6aa285915532b3",
+      "record_ids": [
+        "2470b6bb891243e9782904cc6db5d3fdeb1e52d39edc3d1a8ba17dcb49d81099"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "locale": "bn",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "853076e52ababf216b63e4b7e3c6a0b34f7e1c36970ee748ac718664c4ba37b4",
+      "record_ids": [
+        "19335117a597c158b01b150d3593cb81870bd1a23006af6f69fd6445ffd0c901"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "locale": "bn",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "446d8e877be16176eea31de7c18f53cd1bb49501f47e6b831d788a2d534430d7",
+      "record_ids": [
+        "5f25b2bfe9bd6a0956b674b5ba4b8d0728273b486d035b6e1309d4f9e17670b6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "locale": "bn",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "33cc09ae5b0b85ac8b0cfdc838114fc2ca033d9f5e589a099f27d779fdee8707",
+      "record_ids": [
+        "3aca6ab4fca28196b4046ed4493c1e2ce1d777bf5a7b27ba06f2c52d2a1be631"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "locale": "bn",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "6b3846e61aa0375fc30dbfb15b90e513520acc30fe9486e8daf98971e40bccce",
+      "record_ids": [
+        "678f3a64679c7834da38864641cd3aa9b11298595acbd59ad287307ca5560cda"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "bn",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "06ec0fd8b0f87955c6d83fe0c1de9087e8a86eb1cec847b1c5ddf6f394632d7a",
+      "record_ids": [
+        "099bf9b0153a6883091b948022d12ba29eea983a6b49146f8ad11d9d0ccd0651"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Acción de ajustar el dibujo al área visible, no dibujar de nuevo. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "locale": "bn",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "ba01d17d1c9a039247e80101e45f886c1cb634462f2d72adfd2ff68e7f7b7dae",
+      "record_ids": [
+        "77c871d62fb90c3f9d6c0f527c13e5702252f9fe623db7f353affe9c35b60f9a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "locale": "bn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "72f59ca077924a339da205517bc4c5f874b3c892eb0196804d32850ff198744a",
+      "record_ids": [
+        "38b3d4c5097abea98e5662f412f270fbe8e3f532145135e18658f605e1cd5fd2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "locale": "bn",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "f219157133a101015ed11e1c9da0167f2c37618ad924e44e13e102788265a925",
+      "record_ids": [
+        "6a19fd4c88e9a435f9a9c4af10f92884bc07e8b3ea2821976d8fccdb6e603926"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Reducir la vista/alejar, nunca mostrar más grande. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.example",
+      "locale": "bn",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "72eb2ed87c2a9eea435e12d3bbd630cfcd01e1f6e85fd5cf92122ed93a2bd17f",
+      "record_ids": [
+        "5218c664691c8361a58009491652d48ef1e0b20b2a278fb9d2e369d116e6b1cc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "bn",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "694197c970705ccc655e9719b6858723331888d5736336085edbedfb6d230a5f",
+      "record_ids": [
+        "2f6a4aada10a58f51a8fd2b9a6b30df7053c7ef2394de2476545df6aeee4f7c6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Imperativo de comprobar el puzle, no sustantivo sobre examen. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "bn",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "3a208eee9c38c074e318eaefbc3299de30cc3f7628c5436018870535c2424a0f",
+      "record_ids": [
+        "329b0b2ce517ae432202af96223748ff469df071e397ae9c1758d1533c949e25"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "bn",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "30f286a8779b15c2551a7253f933a4969d4fa5a1bb134c46f9d9b3cb60f12c1d",
+      "record_ids": [
+        "c868978e65235f7f73058a6e6ead780b4ee97e4ce497d970b141d78a2886aa76"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "bn",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "ab07ccd6afaa9e29546bbc8dd0fcaebec04b0f71a51c24d01c0578c15962c97b",
+      "record_ids": [
+        "dc1fd324f0e4d00c80edbd0313e71791862d7eba61c9f385c1518826fa9a7c22"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "bn",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "880786078a32bac875c9eddba58914a8a3cff52f79131d92e55d54ea64eb497f",
+      "record_ids": [
+        "eb6f34732586ba42dc757b9232684cfde1a231c65724cba776fa6298674a9467"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "bn",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "27cc37f6634b158778addc42eb4eb0bf30944d23d928f471bdafa4318e29a0e4",
+      "record_ids": [
+        "819d8a487d70de6df4952d86e0b022812ef878a2f75cb2ff3542235fe5b3598e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "bn",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "c8ffa2710cdf1df43db10bdd63678126e974cd28f72eabc0ec68133a6fb70d7d",
+      "record_ids": [
+        "06588a61d021b0dddfb838abf9eee7786e96c5338fded7e2b4da908c82bdc132"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "bn",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "record_ids": [
+        "dad530fed6d53d0a65cebfe22d199153bf9a8cb535a029083196d34bb9bf68eb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. En el contexto de partida guardada, পুনরায় শুরু করুন se acepta como reanudar; Restart de vuelta no demuestra por sí solo borrado de estado. No se inventa tal comportamiento. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "bn",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "b7c1c31159d5d2e76fd12472e11776e8a4da44e63ab49259770fe3847c44c1d2",
+      "record_ids": [
+        "47dce0d71dd03a925e958bd2ad014d7f3d9457ecccf3591288ae31e3f97275af"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "bn",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "35babb8655b94669761c2553a06dc40b586c68489f912d0b4052d53e4a429d2c",
+      "record_ids": [
+        "c200a3a4f59f12da4df9b7d09b3b58573001942802d8146a3de5f72d956a894e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. কোণ es esquina en este selector geométrico; la vuelta angle no se usa para inventar un error de ida. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "bn",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "0edee41d130e9e115e672a16187542c877892e2f0faa1987f9653324cba0ad63",
+      "record_ids": [
+        "052dc20f09a91a35047c8c8249ecc86c8eddd34f5c1addc870ba6f0fd3c25641"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "bn",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "28e1e8277e593004233a7bbbd9a862bf68ee724cff98e86d0518e5e917067b69",
+      "record_ids": [
+        "8954e04e1261634f0fc8eb9d48cd3a04e8e49e7f4a2b684ddcd208e12055280b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "bn",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "436d88a0b970a6af0c81ea0a308921a22eaa5be2d74c6b062e8b45fdcb3002eb",
+      "record_ids": [
+        "fcfa01d79e75867afb5419c21f300a990f77dd2f63314a6ea8136d59c876ccee"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "bn",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "05d3ba9d563d5b3244b3a9777c8de91794a8585a80c87e4469419201c5d7e2f6",
+      "record_ids": [
+        "c9602aeba0581255fb1dede8163c180dc54bb321a08c2a5c35af44d8da12664c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "bn",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "bc30058d8db9d39cd61509cd58ca0bb5bd990e9d6c603b21788ac2cd67d7deff",
+      "record_ids": [
+        "4643416f9eb74daf10c8b6ff453c1e3cc493c4a083374d0dc7c3b39087989101"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "bn",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "af7fb4940c4c53c75730cda83a1568607cda325d78dcd64bcb6510f08f4be706",
+      "record_ids": [
+        "45391ef131ce75f3892b07b948c136cdb66ee2253b6d702621c23bad50477ca8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "bn",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "97907110351e4c2da8b22d864ea66ec4e2e171412e834bade4097f95abb724e7",
+      "record_ids": [
+        "c61d081cc84886f197c9cc4a22e211d89628c4b6add7604fa1b4b622f9065232"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "bn",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "record_ids": [
+        "0649136e7daa9b4cd6a949f72f3e3dee64f53d26b7f3d0ce7698ce6f3df19430"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "bn",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "9f3724c89a327212d9e875660b07f509e96d25fc95af4a725f10da65f0c288c0",
+      "record_ids": [
+        "0591abe7b7b43cc410d7ba27238ac0f0ed1e4a8a0723d7583855bfe26ce53c40"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "bn",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "dc7f0673fdf475715e621537f3e457cc6d8bff27b5e6d4c0622afceb8bbe6112",
+      "record_ids": [
+        "ea8d4b7aa9f91f1942f9595bfc5378c400bc8d24dfb4a3cfb16e2062cd72de76"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "bn",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "f36d313758349621f2273fd49c7bbdd171ea6a037f9af4506eac45a6683b912f",
+      "record_ids": [
+        "7b6723112fb52f49006aef8eaf66b483b4c2541f3bb588ffcaa8405d83975d66"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "bn",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "b38bfa05afed7bb69c2082b0b613548d4ebd60a702f086dfd05c45090e514704",
+      "record_ids": [
+        "554b040343d596f6f29ca2cfad90eeda60de7bd7d5341f00be304e2ec8d3b4cf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "bn",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "4cb4fbbd5d577783de81ada8f862dfe78dbc30de08cc90bb4a369d766a9377ee",
+      "record_ids": [
+        "3e2a0f02108d619f1e14df16a803227cb955a061262737690e050805a87e074d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "bn",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "67bd87983ea87a451084108775eb9e0cfde8b291e049f3e0d23a99ddfde59684",
+      "record_ids": [
+        "3d6f6ead5f1ff46b0154d3b4ad9874220812246c23e54655a687eb8a306ffd4d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "bn",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "dd809ffd71be82bedf899df7bacf65d5f0d38315f7081cf984c03b1a2c700a18",
+      "record_ids": [
+        "a1b936e7c6836f508696297945c9b5acc1d22e60fa115ea317acd82e1d376f27"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "bn",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "reviewed-memory+madlad-back-v28",
+      "translation_hash": "83169b2eeb8e8d03988e1dc15d01215986684bfb2eb91bbaf06c58b2b19f00d7",
+      "record_ids": [
+        "cdea52d024f4e9686ded7a11faef683abff7f278e1d34567a1d218b9ccd372ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente e ida releídas directamente en este turno; candidata lingüística del lote previo. No se reutiliza la vuelta como inferencia nueva. Lectura directa de la fuente, ida y vuelta actuales; la nota de ida no se deduce de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-current-known-text-agent-review",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "0649136e7daa9b4cd6a949f72f3e3dee64f53d26b7f3d0ce7698ce6f3df19430",
+      "key": "voice-changer.fields.faq1a",
+      "locale": "bn",
+      "back_translation_hash": "b41207cde779f3a58ee3e93ec3a5274b40bcac83e8383d34acbcf5e9b8fa936b",
+      "notes": [
+        "La ida পায় না conserva no recibe. La vuelta does not detect cambia recibir una grabación por detectar una grabación, debilitando la afirmación de privacidad; fallo de vuelta independiente."
+      ]
+    },
+    {
+      "record_id": "554b040343d596f6f29ca2cfad90eeda60de7bd7d5341f00be304e2ec8d3b4cf",
+      "key": "voice-changer.fields.preview",
+      "locale": "bn",
+      "back_translation_hash": "299db343514c9e55dc3d33a19381fb52cfb063f45b5ef0f118bbf9a7ca00b1fe",
+      "notes": [
+        "La vuelta añade un guion bajo inicial en _Preview, ausente de la ida y de la etiqueta fuente; artefacto tipográfico de vuelta, sin rebajar la ida."
+      ]
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "5f25b2bfe9bd6a0956b674b5ba4b8d0728273b486d035b6e1309d4f9e17670b6",
+      "translation_hash": "446d8e877be16176eea31de7c18f53cd1bb49501f47e6b831d788a2d534430d7",
+      "back_translation_hash": "2e197683ac595b8920b8e30caf2b42e047b6bb0931248b992715043aba8017f9",
+      "warnings": {
+        "wrong_script": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Heurística revisada: expansión bengalí de Resume o proporción de tokens ASCII DXF en una etiqueta bengalí correcta. Fuente/ida y función conservadas; contrato de datos probado."
+        }
+      }
+    },
+    {
+      "record_id": "5218c664691c8361a58009491652d48ef1e0b20b2a278fb9d2e369d116e6b1cc",
+      "translation_hash": "72eb2ed87c2a9eea435e12d3bbd630cfcd01e1f6e85fd5cf92122ed93a2bd17f",
+      "back_translation_hash": "e057d9da88376d9ab6f92b9570dffdce07df7485ec7d43c54931fb48cd09cc28",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        }
+      }
+    },
+    {
+      "record_id": "eb6f34732586ba42dc757b9232684cfde1a231c65724cba776fa6298674a9467",
+      "translation_hash": "880786078a32bac875c9eddba58914a8a3cff52f79131d92e55d54ea64eb497f",
+      "back_translation_hash": "450999b0edc523a71f15150927f585111c7a4b4a06080571748963ba0cd45c11",
+      "warnings": {
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente/ida/vuelta leídas: el parser no prueba a/a number clue como cardinal uno en estas vueltas; en U+09F7 el aviso deriva del glifo erróneo de ida. No se inventa pérdida lingüística extra ni se rebaja la ida. Los defectos independientes constan por separado como known_back_semantic_errors."
+        }
+      }
+    },
+    {
+      "record_id": "dad530fed6d53d0a65cebfe22d199153bf9a8cb535a029083196d34bb9bf68eb",
+      "translation_hash": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "back_translation_hash": "6b983a81e5e8099e4e23a368e72636e31f029f2e691e5be714106b8cf59d70a7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Heurística revisada: expansión bengalí de Resume o proporción de tokens ASCII DXF en una etiqueta bengalí correcta. Fuente/ida y función conservadas; contrato de datos probado."
+        }
+      }
+    },
+    {
+      "record_id": "0649136e7daa9b4cd6a949f72f3e3dee64f53d26b7f3d0ce7698ce6f3df19430",
+      "translation_hash": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "back_translation_hash": "b41207cde779f3a58ee3e93ec3a5274b40bcac83e8383d34acbcf5e9b8fa936b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La ida পায় না conserva no recibe. La vuelta does not detect cambia recibir una grabación por detectar una grabación, debilitando la afirmación de privacidad; fallo de vuelta independiente."
+        }
+      }
+    },
+    {
+      "record_id": "554b040343d596f6f29ca2cfad90eeda60de7bd7d5341f00be304e2ec8d3b4cf",
+      "translation_hash": "b38bfa05afed7bb69c2082b0b613548d4ebd60a702f086dfd05c45090e514704",
+      "back_translation_hash": "299db343514c9e55dc3d33a19381fb52cfb063f45b5ef0f118bbf9a7ca00b1fe",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta añade un guion bajo inicial en _Preview, ausente de la ida y de la etiqueta fuente; artefacto tipográfico de vuelta, sin rebajar la ida."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "bn": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known40 reviewed-memory references360/360 with all forward data proved;67 S/F/B read and every warning reconciled. No native/blind/unseen-text/generic-engine/release approval."
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "run_id": 40153243412,
+  "native_review": false,
+  "approved_locales": [],
+  "findings": [
+    {
+      "record_id": "9e16c4855f2008e41c3b49f99f553b54bcc6e8fa6c8001c588e6350033bde396",
+      "direction": "forward",
+      "translation": "从(0, 0)到(10, 0)的直线测量10个绘图单位。 该工具读取 DXF 单位代码(如果存在 ) 。 没有该代码,测量将被标记为绘图单位。",
+      "issue": "Se conserva sentido/cifras, pero DXF 单位代码(如果存在 ) 。 mezcla puntuación y espacios dentro del paréntesis y antes del punto; naturalidad2, sin inventar defecto numérico."
+    },
+    {
+      "record_id": "b72d9292510506fa813f0ea3f8a2cbbb3d61fe47b3698c0be8923a5024a4fb97",
+      "direction": "forward",
+      "translation": "给予短音频剪辑低、高、无线电、明亮或回声效果。 预览结果,调整它,并在您的设备上导出一个WAV文件。",
+      "issue": "给予短音频剪辑低、高、无线电…效果 calca la construcción inglesa y enumera cualidades sueltas: copy artificial; significado/cifras3, naturalidad2."
+    },
+    {
+      "record_id": "3defd3eedd2db3cb1efb643b416709484326b2342ef6ea94a0a41c606b7a2417",
+      "direction": "back",
+      "translation": "The scope of the drawing",
+      "issue": "Scope expresa ámbito en vez de límites geométricos del dibujo; ida correcta en CAD."
+    },
+    {
+      "record_id": "f3d6d9557d89fa31672d3e4a7d3a31048adba64c33814a6767f7bd65e7adfe79",
+      "direction": "back",
+      "translation": "This drawing exceeds the supported recording limits. Export as a smaller or simpler DXF.",
+      "issue": "Recording limits cambia registros del parser por grabación."
+    },
+    {
+      "record_id": "8c11e46ae548eb673a328e793d3db81edacfc0c61e01b64146ea9b130553cc21",
+      "direction": "back",
+      "translation": "DXF is not safe to read.",
+      "issue": "Is not safe to read afirma inseguridad inherente en vez de no haber podido leer con seguridad."
+    },
+    {
+      "record_id": "eff89352fa38b066a7318ff304beaca75dbe02e1f73cb45a0dac604144496c51",
+      "direction": "back",
+      "translation": "Ae",
+      "issue": "Ae no expresa la unidad angstrom; 埃 es correcta."
+    },
+    {
+      "record_id": "7d51f821e221acc3857c857b548fa9306688f645f142d1b84780b38f1d86d0b3",
+      "direction": "back",
+      "translation": "Nano",
+      "issue": "Nano pierde metre de nanometres; 纳米 es correcta."
+    },
+    {
+      "record_id": "82f2341ba9387d5d9f5942cf9e7576b81ea803c1975f79f180613e5d8c0894fa",
+      "direction": "back",
+      "translation": "Inches (cm)",
+      "issue": "Inches (cm) contradice centimetres; 厘米(cm) es correcta."
+    },
+    {
+      "record_id": "64f2afcd16530edb9a3a193ca8472bb4dd075a46f57e3a52f8dd886102216426",
+      "direction": "back",
+      "translation": "Mille",
+      "issue": "Mille no expresa la unidad mils; 密耳 es correcta."
+    },
+    {
+      "record_id": "614c2862afb787122ab0808d9aeb7d13653dde8f629424f28d4e386a3b610faa",
+      "direction": "back",
+      "translation": "Preview and export support for LINE, CIRCLE, ARC and straight line segments LWPOLYLINE/POLYLINE in the XY plane. Curves, text, blocks, annotations, bar curves, 3D entities and other types with convexity are listed as not supported, are not counted for measurement and are not exported. Maximum file size is 10 MB; maximum batch code records are 200,000.",
+      "issue": "Bar curves sustituye splines, batch code records cambia group records y with convexity se adjunta a toda la lista."
+    },
+    {
+      "record_id": "5e1f02859dc07ef3a08835afbaf4fba371cb9c779235991ab1ffd0498aaf3595",
+      "direction": "back",
+      "translation": "Click the two opposite corners, or drag to draw a rectangle. Keyboard action: Press Tab to move the focus to the grid, then press Enter to select.",
+      "issue": "La vuelta mueve el foco al grid entero en vez de una celda; 方格 conserva la celda."
+    },
+    {
+      "record_id": "6de651cbda0ac78e5c4285b1f95687cfbb9cf9cfff8cbb2698a8fe5f16030deb",
+      "direction": "back",
+      "translation": "Shikaku is a digital jigsaw puzzle. A rectangle is drawn around a line. Each rectangle has the area shown by its clue, and all grid tiles must be used once.",
+      "issue": "Digital jigsaw cambia el tipo de juego y around a line sustituye pistas por línea; ida 数字拼图/线索 correcta."
+    },
+    {
+      "record_id": "7e65f767ed07218580aa9fbc866e6061b9ed0451fc5ed03f289317a27ca3e062",
+      "direction": "back",
+      "translation": "Shikaku is a digital jigsaw puzzle. A rectangle is drawn around a line. Each rectangle has the area shown by its clue, and all grid tiles must be used once.",
+      "issue": "Digital jigsaw cambia el tipo de juego y around a line sustituye pistas por línea; ida 数字拼图/线索 correcta."
+    },
+    {
+      "record_id": "2d6eebdbe9fb790776ab7d148329e20b2420f7bf88a214455e91e34dc8efded8",
+      "direction": "back",
+      "translation": "Save your progress on this device.",
+      "issue": "Save your progress es una orden futura en vez del aviso de progreso guardado; no se infiere la ida de la vuelta."
+    },
+    {
+      "record_id": "70deef0ba12c3c39b8625e39bf324f2506199ecd9a28288bc891f2f7e85572db",
+      "direction": "back",
+      "translation": "Draw a rectangle so that each number is the exact area of an area. Cover each square once and do not overlap.",
+      "issue": "Exact area of an area pierde exactamente una región; ida 正好一个区域 correcta."
+    },
+    {
+      "record_id": "1e240adb3ac947a5a1eda3c3522908159cb28409cc011c4ce0c28ae7ebbd07c1",
+      "direction": "back",
+      "translation": "Square Rectangle Puzzle",
+      "issue": "Square Rectangle Puzzle pierde el nombre Shikaku; 四角 es correcto."
+    },
+    {
+      "record_id": "1a6eb43d277ff4b57b49ba6fa975f2d18c916d47d43efe863bb6d05770d06ee6",
+      "direction": "back",
+      "translation": "Try recording a human voice and compare the original with the radio effect or lower pitch preset. Changing the pitch also changes the playback speed; this is not sound cloning or studio-grade pitch correction.",
+      "issue": "Try recording a human voice pide grabar en vez de probar una grabación."
+    },
+    {
+      "record_id": "a0bc7a34a093ab59f1d5e393be317b39d575bcea4c901b59ab0fd79b42fb4ac0",
+      "direction": "back",
+      "translation": "Try to record and compare the original recording with the radio or bass presets. Pitch changes also change the playback speed; this is not sound cloning or studio-grade pitch correction.",
+      "issue": "Try to record pide grabar en vez de probar una grabación; no determina por sí solo la nota de ida."
+    },
+    {
+      "record_id": "bda8360e0eb0cec054aa46c74e7bf7bfe372acd45dafe0a37dc6003e304184aa",
+      "direction": "back",
+      "translation": "Can the tool clone sound or isolate audio tracks?",
+      "issue": "Clone sound/isolate audio tracks amplía voz y voces humanas a sonido y pistas genéricas."
+    },
+    {
+      "record_id": "f9abcf385cffa2a259a605dc46570825de49a535ffa75107bd11040f62a65bbc",
+      "direction": "back",
+      "translation": "Can the tool clone sound or isolate audio tracks?",
+      "issue": "Clone sound/isolate audio tracks amplía voz y voces humanas a sonido y pistas genéricas."
+    },
+    {
+      "record_id": "b72d9292510506fa813f0ea3f8a2cbbb3d61fe47b3698c0be8923a5024a4fb97",
+      "direction": "back",
+      "translation": "Give short audio clips low, high, radio, bright or echo effects.Preview the results, adjust it, and export a WAV file on your device.",
+      "issue": "Effects.Preview une dos oraciones sin espacio; el defecto de estilo de ida se juzga por separado."
+    },
+    {
+      "record_id": "1fe1cac88b4e73f8d4c2309759fde4227729c68ad5b52eb7356dcfede08eb67d",
+      "direction": "back",
+      "translation": "Shown solution. Start a new puzzle to play again.",
+      "issue": "Shown solution es un fragmento invertido artificial, inducido por 所示解决方案."
+    },
+    {
+      "record_id": "6ae5ad622808080f229df65679e61dbdeb3f648b12a04bca3f6bf24afdd46340",
+      "direction": "back",
+      "translation": "Audio rendering uses your device's memory and processor.Short clips and computers usually run smoother on your phone than long clips.",
+      "issue": "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+    },
+    {
+      "record_id": "d1de7b0fd8343c246b8963a52ee53d2ff72a801812c04ef8fe44a196f5409ca3",
+      "direction": "back",
+      "translation": "Audio rendering uses your device's memory and processor.Short clips and computers usually run smoother on your phone than long clips.",
+      "issue": "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+    },
+    {
+      "record_id": "6686293d0e7981793c0cba784f79240aac1bd41753756a6732394b3df424d814",
+      "direction": "back",
+      "translation": "The lightweight tool is designed for short clips, not full songs. By adjusting the playback speed, the pitch changes, so the length of the clip and the pitch of the voice change together.",
+      "issue": "Omite toda la última oración: límites de identidad natural, separación de voces y resultado no garantizado en todos los navegadores."
+    }
+  ]
+}

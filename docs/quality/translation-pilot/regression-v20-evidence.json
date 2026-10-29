@@ -1,0 +1,88 @@
+{
+  "baseline_commit": "116e93c2ca6c1c6a5b377368377acc39f7878adb",
+  "historical_policy_digests": {
+    "context-v2": "b344b0c6f12cbd3625700c6d37c604ec03d3115183cd4899bfc4f64ed065284b",
+    "context-v3": "ca156304940f94ae0c486525e1a26ea916c57bc4c995eb90aa1c2323908f5de9",
+    "context-v4": "96cfaa876dc1b20dd96957d4dd5263355e0d02392fd63b0504f1ebb6a86986a2",
+    "context-v5": "b1055d666c38f8698619ffb18274001424f0d2846c1dc9b2b27c1ff2e6537d76",
+    "context-v6": "ab937c2176f803ad077bdb29567014320c0d0a20f489830f04f81c770ecc68f1",
+    "context-v7": "3c8b67923be1bc6837551523bb3888227d7b4614d1fe61be43cc08562dbb89cc",
+    "context-v8": "f9c80e8561750e0f08a6fd1c6350c4bb3842dc7799cfa5a113943d2b70d4f1e3",
+    "context-v9": "fbfff06b87e2dcf9e04f1f107c65bf271c2a3808dcb9a2637d988f0496548360",
+    "context-v10": "343e405ab7719440177fc4ff5624142024f7e5ea1ad00d25eb7c62a091dc303f",
+    "context-v11": "71b6a61869646956986c151a5f00d6a68a49f87cc54d07298f49caa6def82514",
+    "context-v12": "17132a637a996324ac745809c39999fb087a7c6b53bfbf29abfd6c396b9f06fe",
+    "context-v13": "cc84a5dadf675702ba38bd0b272319a199ac141a71a5fdf1604ffcf9ec931ee5",
+    "context-v14": "658c8c48267656dd2d56a02715e8455b2a321d27daba5f58b2578a4f1c3094e7",
+    "context-v15": "3b304391a2d83b7d296253d1a483da48181b86b09ed4bed8d0049a5afe516599",
+    "context-v16": "e86941fdf844609f31cb835ad0132ae59e8ade8d8af86615a08fa9b0dfdbf3dd",
+    "context-v17": "47432f67ac4a40c278e116897c61ac3959de073f930a38f66ed4469f4f7257dc",
+    "context-v18": "433f45ca6b8ba1ae9b526cec706af164245605d7290394990e54e28c55af670a",
+    "context-v19": "22e9dbfc06cceeb6291ac80c3c980f544928cc9d3de78cc559cd418819d4ba91"
+  },
+  "historical_records": 13577,
+  "record_flags_digest": "cc59a9a477bc166d72ce364178509786cdf89ab53490a577cf6f5c1dfd419124",
+  "fixture_prefix_count": 761,
+  "fixture_prefix_digest": "8a5c0436c4e0402e13a3c57a03ebbcd280bb2f4a2a0ba3bb778a0f09821dfbf3",
+  "red": {
+    "tests": 4,
+    "errors": 10,
+    "log_tail": ".POLICIES['context-v20']\n                                          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^\nKeyError: 'context-v20'\n\n======================================================================\nERROR: test_invalid_memory_keeps_raw_and_never_infers_or_repairs (test_translation_indonesian_memory.IndonesianMemoryTest.test_invalid_memory_keeps_raw_and_never_infers_or_repairs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<owned-temp>/repo/scripts/localization/test_translation_indonesian_memory.py\", line 74, in test_invalid_memory_keeps_raw_and_never_infers_or_repairs\n    policy='context-v20';changed=copy.deepcopy(pilot.POLICIES[policy])\n                                               ~~~~~~~~~~~~~~^^^^^^^^\nKeyError: 'context-v20'\n\n----------------------------------------------------------------------\nRan 4 tests in 0.009s\n\nFAILED (errors=10)\n"
+  },
+  "preserved_functions_by_ast": [
+    "numeric_data",
+    "numeric_data_id_v19",
+    "id_version_matches_v19",
+    "numeric_prose",
+    "localized_audit_text",
+    "typed_data_checks",
+    "complete_sentence_parts",
+    "complete_sentence_evidence_valid",
+    "translate_complete_sentences",
+    "complete_sentence_evidence_valid_v19",
+    "translate_complete_sentences_v19",
+    "forward_with_memory",
+    "typed_record_evidence",
+    "run"
+  ],
+  "policy_digest": "bff5df5f9bc4dec643e78a63f0490d819c64d09a48aa7b8e1021574b385d4ffc",
+  "reference_back_regressions": {
+    "red_tests": 1,
+    "red_failures": 5,
+    "new_unique_fixtures": 5,
+    "new_forward": 0,
+    "new_back": 5,
+    "log_sha256": "98810da6a764bbecee04bfb277879df1fa5f6095e24a5df8d402c08060dbd5d1"
+  },
+  "historical_test_scope_fix": {
+    "red_tests": 9,
+    "failures": 1,
+    "observed": "The v19 guard accidentally included future v20 rows:13577 instead of original13510. Pin original policy set from original proof; original732-fixture digest and13510 records remain mandatory. New v20 guard independently covers all13577 historical records and original761 fixtures.",
+    "log_sha256": "835fa43fd6736c93653ee5ecb6844db3be87fa7c9c8334dcb513131347a2a249"
+  },
+  "full_current_review": {
+    "red_tests": 1,
+    "red_failures": 126,
+    "red_log_sha256": "f91cb51f81ef9ac7ac2a7c7ebaefebdec5be928a3770e40be8edc49a11f02045",
+    "new_unique_fixtures": 125,
+    "new_forward": 61,
+    "new_back": 64,
+    "shared_exact_back_fixture": 1,
+    "all_current_records_read": 333,
+    "new_records_read": 266,
+    "reference_review_only_change": "Added reciprocal supplemental model warning coverage; reference rows, grades, source evidence and pre-full gate identical to full dispatch source1dd6e08da8c9107112a93e13ce1750fd1b68cd8b.",
+    "reference_before_full_sha256": "e75255afa6b95d684ef808fa8a3b4bb383a5892b10683786d4681941b3e11267",
+    "review_sha256": {
+      "review-context-v20-references.json": "73d6ed152c407115c696f47c9e1d986b1d54a0e70696dabee1645f65a67e6b32",
+      "review-context-v20-legacy.json": "142d9a565e8ba4fa3db8163d215c82baf98125bc11561ea4639372ea467d2541",
+      "review-context-v20-full.json": "cafc8eba30f688cf821060c570f49e83bee6605e84d5826539594c6b57b10555",
+      "review-context-v20-full-legacy.json": "fcffb73a8537897138d6bbe80028ca86105b461892657c7a4f5cdd98ba0c2328"
+    }
+  },
+  "local_final_suite": {
+    "tests": 131,
+    "passed": 129,
+    "dependency_skips": 2,
+    "log_sha256": "068a0f61941b165e4958188493a45f7b0a44124234c739508b6ec2babd890d98"
+  }
+}

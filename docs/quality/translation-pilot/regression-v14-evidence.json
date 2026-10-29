@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "observed_run": 39737830473,
+  "observed_source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d",
+  "reproduced_at_utc": "2026-10-22T11:07:40.096581+00:00",
+  "method": "Replay two actual stored v13 per-sentence callbacks through unchanged translator/forward path. Exact raw text and traces asserted before new memory; no local inference or raw repair. Both already have permanent fixtures from independent v13 review.",
+  "red": {
+    "tests": 2,
+    "errors": 4,
+    "command": "python3 -m unittest discover -s scripts/localization -p 'test_translation_shikaku_grammar.py'",
+    "cause": "Two observed cases reach unknown v14; final new policy assertion and adversarial test fail before implementation.",
+    "log_sha256": "5b5fa469ed68879053e2ff6adba46e615bb996d853051ab3b2ff84348da1cf8d"
+  },
+  "memory_review": [
+    {
+      "record_id": "8ecae0c8823df7cfcaa6cebb55061fe353f997ce9fa01c5c81533da63e055d4c",
+      "key": "shikaku.fields.statusPlaced",
+      "source": "Rectangle added.",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "context": "fields.statusPlaced",
+      "locale": "es",
+      "previous_raw": "Se ha añadido rectángulo.",
+      "previous_raw_sha256": "a53c2d720c60192f95aab05588b1c1a661870df0c8003d0eb5250cec79681413",
+      "reviewed_translation": "Se ha añadido un rectángulo.",
+      "reviewed_translation_sha256": "41bc13e47bfebd6be2649f76e9872e2b4319916b6bf44b4978d18cd78a88774f",
+      "observed_issue": [
+        "Se ha añadido rectángulo omite el artículo ante el nombre contable en una oración conjugada; debe decir Se ha añadido un rectángulo o Rectángulo añadido. Acción y estado conservados, defecto leve de gramática."
+      ],
+      "review_kind": "agent",
+      "native_review": false,
+      "raw_replay_verified": true
+    },
+    {
+      "record_id": "a3909f53260965cdac9f89d840afb46c0d1636a5b3399fb27d5d3ec2996149e9",
+      "key": "shikaku.fields.statusRevealed",
+      "source": "Solution shown. Start a new puzzle to play again.",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "context": "fields.statusRevealed",
+      "locale": "nb-NO",
+      "previous_raw": "Løsning vist. Start en ny oppgave å spille igjen.",
+      "previous_raw_sha256": "8dcdf542c820dd556704d826c5dfb2bb2424dab4bf1a9a6dcf4b1953995a6e6b",
+      "reviewed_translation": "Løsning vist. Start en ny oppgave for å spille igjen.",
+      "reviewed_translation_sha256": "dfaf199a2f8c50ea0f9c917190935d3ca936b0b22a0bca1c480609f1b90329ac",
+      "observed_issue": [
+        "Start en ny oppgave å spille igjen omite for ante la subordinada de finalidad: Start en ny oppgave for å spille igjen. Estado y acción conservados, defecto leve de gramática."
+      ],
+      "review_kind": "agent",
+      "native_review": false,
+      "raw_replay_verified": true
+    }
+  ],
+  "prior_memory_keys": 88,
+  "prior_memory_targets": 154,
+  "memory_keys": 90,
+  "memory_targets": 156,
+  "approved_locales": [],
+  "immutable_baseline_files": 50,
+  "green": {
+    "tests": 87,
+    "pass": 85,
+    "dependency_skips": 2,
+    "corpus_node_tests": 2,
+    "log_sha256": "9e44c5a38a508b305fffda9befbc7c1b3df92339020523b71bd6410d2276fda0"
+  },
+  "preflight": {
+    "units": 214,
+    "all_controlled_inputs_typed_valid": true,
+    "all156_memory_targets_typed_valid": true,
+    "unchanged_inference_AST_functions": [
+      "complete_sentence_parts",
+      "complete_sentence_evidence_valid",
+      "translate_complete_sentences",
+      "typed_data_checks",
+      "typed_record_evidence",
+      "forward_with_memory",
+      "run"
+    ],
+    "immutable_files": {
+      "docs/quality/translation-pilot/checkpoints/context-v10/madlad.jsonl": "1168e6230168b532b0b9b0974fa5222948248bafdebeb27952971cbb87427c19",
+      "docs/quality/translation-pilot/checkpoints/context-v11/madlad.jsonl": "9fdb2df8a76f0d3327d5ebc54a41cf1edd4a399792f14e93e495c2b24b0e66e1",
+      "docs/quality/translation-pilot/checkpoints/context-v12/madlad.jsonl": "1482ef42bc4f37929ad4702ebeb32baa9da66dac4cc3b9c7bc742c38c7f39743",
+      "docs/quality/translation-pilot/checkpoints/context-v13/madlad.jsonl": "81b848f393680344c10715142236ccc819b0209f91e5009cfc8b645de739bbfa",
+      "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl": "a7b345ca4dc937a294d7313390dfd33cb659de7dad804593e5fc00467790ef51",
+      "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl": "21f4ceb56c59470eefb202f7329d8ab7f69d7733c5007102800b40057ff0a834",
+      "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0",
+      "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl": "8a79e3d62b322ed1b5b51e056127c234883abd06b1323df5cf514c4ed1568fec",
+      "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl": "c1be917da805bc3ff4a7e6bbef21bcbccf1a79af5a838b5941001ba3e24a60e4",
+      "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl": "69c86192b1f0e6da85919e9625df566674597f797465a9c4eb4dcbdbfc6efd98",
+      "docs/quality/translation-pilot/checkpoints/context-v7/madlad.jsonl": "033690f3aced231f88b55cab1ea14a50b251d3a46a727a83934ddef351a9a326",
+      "docs/quality/translation-pilot/checkpoints/context-v8/madlad.jsonl": "2774ad36397f32119a037c5e6eefc1ae5844eb0de6517a1d5cc83b6ff4449c9c",
+      "docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl": "5844a6d0b163089d4d7974c1035179e8199efac3de0eb5c84fd9041134a80dcf",
+      "docs/quality/translation-pilot/checkpoints/m2m100.jsonl": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a",
+      "docs/quality/translation-pilot/checkpoints/madlad.jsonl": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643",
+      "docs/quality/translation-pilot/review-context-v10-references.json": "d5edc1e5762bd266f69a478e87578947bb8110eb4eaf0f59a3b5206667fb9544",
+      "docs/quality/translation-pilot/review-context-v11-full.json": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa",
+      "docs/quality/translation-pilot/review-context-v11-late-v12.json": "a3d1421619c9f7fc92c7ecd4bdef8c94fd72306a133943f1904904576f1f818f",
+      "docs/quality/translation-pilot/review-context-v11-late-v13.json": "5beb8b0dfd8ab829384b79535d6ece1ad3cef05aa70c35ec904a2e6efe682b90",
+      "docs/quality/translation-pilot/review-context-v11-references.json": "854d8f11e828e5f06ba64d6661c4615a8ea184fab0ff8f6dfbeaa172990c98ec",
+      "docs/quality/translation-pilot/review-context-v12-full.json": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632",
+      "docs/quality/translation-pilot/review-context-v12-references.json": "7475d06f8e401fc3f09b2c9138102cd243cc6ac15f6d1b88853cdfe9b2319c9e",
+      "docs/quality/translation-pilot/review-context-v13-full.json": "de206636a5921a71480e334962342439565c136c105e2aadeb895d86c3410e32",
+      "docs/quality/translation-pilot/review-context-v13-references.json": "7e80fd1afb5daa8dab6dff257c9d66e8ec98b27e176ab9f20c7d28f257666141",
+      "docs/quality/translation-pilot/review-context-v2-m2m100.json": "9cdb3835a1cb349527a8815ce1e74e7419b8acf871c213a8847215ed31b6d673",
+      "docs/quality/translation-pilot/review-context-v2-madlad.json": "abd74546b2fc7998cc03762a37f359fc0221f327c8342a98d6f9bb25cb408c63",
+      "docs/quality/translation-pilot/review-context-v3-madlad.json": "30bfee2fd4bfe5bbfb0ae299be7ce01e71112223ade36765e299228ac2e68bda",
+      "docs/quality/translation-pilot/review-context-v4-full.json": "2cc54718bbc9409ef0899f11fbd111cd7441ac9abd2011fa7431d9140dccde3a",
+      "docs/quality/translation-pilot/review-context-v4-references.json": "1d117cd145d16ca980e5e67262f79727b757d91be71898572926b60d5e79a419",
+      "docs/quality/translation-pilot/review-context-v5-references.json": "7ee8c8d3826b08f9a6e1cc404bfcdb686c1dea18d6856b686bcffb44e7bdbf9b",
+      "docs/quality/translation-pilot/review-context-v6-full.json": "19bbe7b48a142a2652abb536e3c0a76aa0e2dfcc12e1bdc47f77248234f20b1b",
+      "docs/quality/translation-pilot/review-context-v6-references.json": "f410883a37d3e5fc0eda04d852d1d010aad5395379e54c638658089e219d4622",
+      "docs/quality/translation-pilot/review-context-v7-references.json": "6da93172601577b17d7990a54537862a5c407ce45184df96f26c5e575bbf1714",
+      "docs/quality/translation-pilot/review-context-v8-references.json": "2cfb702b65b1c7c0b6c558cecb2560e1e2506894781932b56ad520d59d23757d",
+      "docs/quality/translation-pilot/review-context-v9-full.json": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+      "docs/quality/translation-pilot/review-context-v9-late-v12.json": "280ddeeeae52475a9865bb5b5965e441fa264ea2c81dfc5749aff65b9fec7415",
+      "docs/quality/translation-pilot/review-context-v9-late-v13.json": "456bdf67743c6e51636d92ba531ae9fb180f927493ac84082deb8c8a449e7349",
+      "docs/quality/translation-pilot/review-context-v9-references.json": "c799759a9129dfe6d6919e9d5e00718dcc6d7d32f48b3430ccda4b0c8cb75f22",
+      "scripts/localization/pilot-complete-sentence-policy.json": "8eeebad938f00e0704e98d91cd97547a2bf0ed4555d85a4ce9a097d99d114613",
+      "scripts/localization/pilot-context-policy.json": "9a04fc1ee6eee01b85df58b5ccbf304cfbdbd33828e448314a7927c46737165e",
+      "scripts/localization/pilot-coverage-policy.json": "1ab7d91464cd1ea874d864244f78de7cdd250f711c7403e16fa0d265eba10bc8",
+      "scripts/localization/pilot-expanded-language-policy.json": "fd542c30d4c248cedfe247f6ff08b67efd73fb73461f0613b4eca035c26cd782",
+      "scripts/localization/pilot-explicit-negative-policy.json": "78c2348cece3eb9b2de0aa4c779773fb9f69b22ef279ee5a3717854895975bfc",
+      "scripts/localization/pilot-memory-policy.json": "788544552c5d7da8d1051b290d6c021dd83ea10c71791fc8379cfa2fc9862534",
+      "scripts/localization/pilot-privacy-policy.json": "6925eec0c23ffe2cb23b38d85c824be16bbb25f83058bf94da4083ddce6570d3",
+      "scripts/localization/pilot-quantity-memory-policy.json": "226a3a72a1d0ad4e5305694464eb1f47eb9b8c5d875021f38183901f126df268",
+      "scripts/localization/pilot-reviewed-language-policy.json": "073654d443ca0ac6ff7bdbe48ee06ac4694d2b971764b903b3dbd81bf546d7f9",
+      "scripts/localization/pilot-sentence-policy.json": "19d9ac0b094de8dc44c9772443965e96784ee28ce7dc79ae822d2bba2d8a4947",
+      "scripts/localization/pilot-technical-policy.json": "60520b02ad3ff89bbc94f3387351f2f4c6eae39d40f768f7ce9de80be3ad6072",
+      "scripts/localization/pilot-whole-unit-policy.json": "85c35ec96e0b01ec35151a06b96cb19c584c87f3df4fbd0b6289c2744e86ed28"
+    }
+  },
+  "observed_full_at_utc": "2026-10-22T11:38:47.221188+00:00",
+  "observed_regressions_red": {
+    "tests": 1,
+    "failing_subtests": 5,
+    "command": "PYTHONPATH=scripts/localization python3 -m unittest test_translation_pilot.TranslationPilotTest.test_observed_semantic_errors_are_rejected_even_when_tokens_survive",
+    "log_sha256": "e0638a66fcdc2fe1faf247ff68be05819c4df7a18dc21f8b7fa4aaa7bf471c41",
+    "method": "Independent current review declared one forward calque and four new back variants before appending exact fixtures. Existing regression test first failed five subtests."
+  },
+  "fixtures_before": 580,
+  "fixtures_after": 585,
+  "new_findings": [
+    {
+      "direction": "forward",
+      "locale": "es",
+      "key": "voice-changer.fields.device",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "observed_text_sha256": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+      "issue": "Procesamiento más suave calca smoother con una cualidad táctil; en rendimiento informático corresponde procesamiento más fluido. Recomendación, dependencia del dispositivo y datos conservados; defecto leve de naturalidad, no de cifras ni negaciones.",
+      "record_id": "b18a5eec9171bee1e1a6f80e8360b13ade32caa25a62efcf53f7f9202d79c4aa",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "06de23b439c7512d565068fe22038c4b600c435a1fd7aa2e764317c595e4609b",
+      "issue": "Glow usa brillo visual en vez de timbre brillante de audio; la ida brillo en contexto de efectos de sonido es correcta. Variante cruda nueva, no reparar la ida.",
+      "record_id": "947ac9a8b625a89e4d4e8dde7eef2e1224d23420d7df73ea140a7d9d9ea7478f",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "106a9c17fdeb320c5cc7c76efad24b2a0775c146a6c169ee2275a1483d7bc4f0",
+      "issue": "Brighter reverb sustituye lysere klang (timbre brillante) por reverberación, mientras el eco ya es un efecto distinto. Variante cruda nueva; ida correcta.",
+      "record_id": "bd7a4ccdc9473c9ccf5651e805154c68e856e456caa0b78c7ea65094e1d61a54",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.faq.2.a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "observed_text_sha256": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+      "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta.",
+      "record_id": "8d836af3d24fa8c4a5414fb995263ed5166d61a79bd685f69d00b7886d5696d3",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.fields.faq3a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "observed_text_sha256": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+      "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta.",
+      "record_id": "c4fe0382cc75c8b75682e4c6a79f7fce78044c32f50766d0bdf537110fe42fe8",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    }
+  ],
+  "historical_coverage": {
+    "new_back_only_bindings": 4,
+    "new_back_only_records": 8,
+    "previous_back_addenda_preserved": 2,
+    "new_historical_rows": 3,
+    "new_historical_review_files": [
+      "review-context-v6-late-v14.json",
+      "review-context-v9-late-v14.json",
+      "review-context-v11-late-v14.json"
+    ],
+    "previous_coverage_bindings_preserved": 6,
+    "new_coverage_bindings": 3,
+    "explicit_forward_withdrawals": 1,
+    "withdrawn_original_review": "review-context-v12-full.json",
+    "original_review_bytes_preserved": true,
+    "original_gate_already_rejected_and_stays_rejected": true,
+    "old_perfect_score_retained_visibly": true,
+    "new_negative_assessment": {
+      "meaning": 3,
+      "numbers_negations": 3,
+      "naturalness": 2
+    }
+  },
+  "withdrawal_tests": {
+    "tests": 2,
+    "red_errors": 2,
+    "red_log_sha256": "8b5fa4cf4339bc7f669a63fc23a372c77d355cc3684d59a43ca222efd45e71cd",
+    "green_log_sha256": "d52c3edafd8764709ef986459cf66ab80da7e60c9411ffb073e6b0124e733238",
+    "adversarial_cases": 30,
+    "scope": "Real historical false-perfect forward grade, byte/digest/source/context/text/grade provenance, explicit negative-only reassessment, missing fixture, duplicate/foreign entries, nonblocking/approval/passed-gate/path tampering. Does not mutate old bytes or gates.",
+    "hardened_green_log_sha256": "d43095852807f63b8b5530f20994a4879f06e32645bea9752c17eca5be179d03",
+    "hardened_cases": "Direct reader checks for absent permanent fixture and an unrelated passed historical locale; they cannot pass merely because another audit check rejects."
+  },
+  "historical_suite_red": {
+    "tests": 87,
+    "errors": 1,
+    "dependency_skips": 2,
+    "log_sha256": "7327065d365b91673b5f63cdc99fe1bee08caff3770c73713aa4b592909ab4a4"
+  },
+  "final_local_suite": {
+    "tests": 89,
+    "pass": 87,
+    "dependency_skips": 2,
+    "log_sha256": "16ae7547a926006e038565a4ba88ef5b05026bd73ce221a29213f15c0c820fce"
+  }
+}

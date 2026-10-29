@@ -1,0 +1,87 @@
+{
+  "toolId": "sobriety-counter",
+  "sourceCopy": {
+    "name": "Sobriety Day Counter",
+    "title": "Sobriety Day Counter Free | UsefulVerse",
+    "description": "Count calendar days from a date you choose, see personal milestones, and optionally keep a private note on this device.",
+    "intro": "Choose a start date to count elapsed calendar days and see upcoming milestones. This private counter is not treatment, recovery advice, or a measure of health.",
+    "howQuestion": "How does the sobriety day counter work?",
+    "howAnswer": "It counts whole calendar days from the date you enter through today. The selected start date itself is day zero; later dates use date-only arithmetic, so daylight-saving time does not add or remove a day.",
+    "privacyQuestion": "Is my sobriety date uploaded or saved?",
+    "privacyAnswer": "No data is uploaded. Your dates are used in this browser only. A note or date can be saved on this device only if you explicitly opt in, and you can clear the local record at any time.",
+    "fields": {
+      "startDate": "Start date",
+      "startDateHint": "Enter the date you want to count from. A date today is day zero; future dates are not allowed.",
+      "today": "Count through date",
+      "todayHint": "Defaults to today and can be changed to review an earlier date, but not a date before the start.",
+      "note": "Optional private note",
+      "noteHint": "Up to 280 characters. Keep sensitive details out of shared devices.",
+      "saveConsent": "Save this date and note on this device",
+      "privacyNote": "Saving is optional and uses this browser’s local storage only; nothing is uploaded. Clear saved data below.",
+      "day": "day",
+      "days": "days",
+      "elapsedDays": "Elapsed calendar days",
+      "nextMilestone": "Next milestone",
+      "daysRemaining": "Days until next milestone",
+      "milestone": "Milestone",
+      "milestoneDate": "Date reached",
+      "status": "Status",
+      "reached": "Reached",
+      "upcoming": "Upcoming",
+      "history": "Saved entries on this device",
+      "historyEmpty": "No saved entries.",
+      "historyDate": "Start date",
+      "historyDays": "Days counted",
+      "historyNote": "Note",
+      "tableCaption": "Personal milestones",
+      "chartDescription": "Timeline showing completed and upcoming personal milestones",
+      "accuracyNote": "This is date arithmetic only. It does not assess substance use, health, risk, progress, or treatment needs. Recovery is personal; consider qualified support if you want help."
+    },
+    "actions": {
+      "calculate": "Count days",
+      "reset": "Clear form",
+      "example": "Load example",
+      "result": "Your day count",
+      "copy": "Copy summary",
+      "clearSaved": "Clear saved entries"
+    },
+    "messages": {
+      "calculated": "Day count updated.",
+      "checkInputs": "Check the dates and note.",
+      "copied": "Summary copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded.",
+      "saved": "Entry saved on this device.",
+      "saveUnavailable": "This browser could not save local data.",
+      "deleted": "Saved entries cleared from this device."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does the start date count as day one?",
+        "answer": "No. The chosen start date is day zero. The next calendar date is one elapsed day later."
+      },
+      {
+        "question": "Can this counter give recovery or medical advice?",
+        "answer": "No. It counts calendar days and displays milestones only. It does not assess health, substance use, treatment or personal progress."
+      },
+      {
+        "question": "Are dates and notes sent to a server?",
+        "answer": "No. Calculations run in your browser. Saving is optional and stores a small record in this browser on this device; you can clear it here."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/sobriety-counter/index.html",
+    "htmlSha256": "248208e35d1ee84fa85094da3d14fd5bcecb5a9840b5dfa6861e76e9636573cc",
+    "payloadSha256": "0c17f3f9cad8310e37add3cc2924f24f1dc8dd4f7fc71510c8e0e57c3e5d7fcb",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/sobriety-counter.js",
+    "controllerSha256": "2aa4a0a4c071e9928a028dc386175ba54a9c5b84066f9cb142e13da6b4ae9f53",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

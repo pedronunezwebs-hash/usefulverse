@@ -1,0 +1,96 @@
+{
+  "toolId": "vcard-converter",
+  "sourceCopy": {
+    "name": "VCF to CSV Converter",
+    "title": "VCF to CSV Converter Free | UsefulVerse",
+    "description": "Convert multiple VCF contacts to CSV in your browser. Choose columns; no upload and no changes to your contact book.",
+    "intro": "Turn a VCF file with multiple contacts into one spreadsheet-ready CSV. Choose the fields you need and download a separate file.",
+    "howQuestion": "How do I convert VCF contacts to CSV?",
+    "howAnswer": "Choose one UTF-8 .vcf file or paste vCard text, select the contact columns to include, then convert and download the CSV. Repeated phone numbers, email addresses and other supported fields stay together in that contact’s row.",
+    "privacyQuestion": "Are my VCF contacts uploaded or changed?",
+    "privacyAnswer": "No. The file is read and converted in this browser after you choose it. UsefulVerse does not access your address book, upload the file or change contacts.",
+    "fields": {
+      "file": "Choose a VCF file",
+      "paste": "Or paste vCard text",
+      "pasteHint": "Use one source at a time. A single VCF can contain many contacts.",
+      "privacyNote": "Local processing: the selected file stays in this browser tab. Nothing is added to or changed in your address book.",
+      "scopeNote": "Reads common text fields in vCard 2.1, 3.0 and 4.0: name, organization, title, phone, email, URL, address and note. Binary photos are ignored. Quoted-printable and non-UTF-8 text are not decoded.",
+      "columnsHeading": "CSV columns to include",
+      "name": "Display name",
+      "givenName": "Given name",
+      "familyName": "Family name",
+      "organization": "Organization",
+      "department": "Department",
+      "title": "Job title",
+      "phones": "Phone numbers",
+      "emails": "Email addresses",
+      "websites": "Websites",
+      "street": "Street",
+      "locality": "City or locality",
+      "region": "Region or state",
+      "postalCode": "Postal code",
+      "country": "Country",
+      "notes": "Notes",
+      "limits": "Local limits: 5 MiB input, 5,000 contacts and 20 MiB CSV output. Large files may need more device memory; a computer is recommended.",
+      "resultSummary": "Converted contacts",
+      "output": "CSV output",
+      "formulaNote": "Spreadsheet safety: values that could be treated as formulas start with an apostrophe in the CSV. This intentionally changes those exported cells."
+    },
+    "actions": {
+      "convert": "Convert to CSV",
+      "example": "Load example",
+      "reset": "Clear",
+      "copy": "Copy CSV",
+      "download": "Download CSV",
+      "result": "CSV is ready"
+    },
+    "messages": {
+      "chooseOne": "Choose a file or paste text, not both.",
+      "emptyInput": "Choose a VCF file or paste vCard text first.",
+      "fileTooLarge": "Input is above the local 5 MiB limit.",
+      "invalid": "This does not look like a supported vCard file. Check the file and try again.",
+      "invalidFields": "Choose at least one different CSV column.",
+      "unsupportedEncoding": "This file uses quoted-printable or a non-UTF-8 charset, which this converter does not decode.",
+      "unsupportedVersion": "Only common vCard versions 2.1, 3.0 and 4.0 are supported.",
+      "missingName": "A contact without a display, given or family name cannot be exported.",
+      "tooManyContacts": "This file has more than 5,000 contacts.",
+      "tooManyLines": "This file has too many lines for local processing.",
+      "tooManyValues": "A contact has more than 100 repeated values in one field.",
+      "propertyTooLong": "A vCard field is longer than the 5,000-character limit.",
+      "outputTooLarge": "The CSV would exceed the local 20 MiB output limit.",
+      "converted": "Contacts converted locally. No address book was changed.",
+      "contacts": "contacts",
+      "columns": "columns",
+      "exampleLoaded": "Example loaded. Select Convert to CSV.",
+      "downloaded": "CSV download started."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does one contact create one CSV row?",
+        "answer": "Yes. Each vCard contact becomes one data row. Repeated phone numbers, emails and other supported values are joined with semicolons in that contact’s cell."
+      },
+      {
+        "question": "Does this include contact photos?",
+        "answer": "No. Binary photo, logo, sound and key data are ignored; they are not embedded in CSV."
+      },
+      {
+        "question": "Does conversion modify my contacts?",
+        "answer": "No. It creates a separate CSV download and never reads from or writes to your device address book."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/vcard-converter/index.html",
+    "htmlSha256": "57d74dc24831df810d897d1990ef52c22e626adb2dbf5f850c088223f35b6bac",
+    "payloadSha256": "b5481e9808904591e167f9569ff02c6a70c74b6f9167ec9893baf504914b20dd",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/vcard-converter.js",
+    "controllerSha256": "768fe4fb6bac338bde87528ff82fb87fa9b395bc9e643bff453de1ae9e6f87b9",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "policy": "context-v24",
+  "approved_locales": [],
+  "quantity_registry": "unproved-data-v24-full.json",
+  "quantity_rows": 51,
+  "dimension_rows": [
+    {
+      "record_id": "1b58a02b6753740eafa67a8e72444214d86f8b6c217f445f297efe4b353851ad",
+      "key": "dxf-viewer.description",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "translation_hash": "af12fd6688189d3132b05d3c2c58926c959b66e9aff00478aed4241113ed202c",
+      "forward_evidence": {
+        "nonempty": true,
+        "quantities": false,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": false,
+        "unit_symbols": true
+      },
+      "reason": "2D→二维 is semantically correct but this frozen profile does not prove the dimension spelling. A separate polyline/polygon defect independently blocks the same row."
+    },
+    {
+      "record_id": "25a97ceac28ddd3309de36c4ef726b5a313d7666ef1c9e92cf2fc6b809ccbb5a",
+      "key": "dxf-viewer.privacy",
+      "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+      "translation_hash": "1de7c6845d526c202bdadf695076a62399f0c3bf05ede20e5269381a90dfeb97",
+      "forward_evidence": {
+        "nonempty": true,
+        "quantities": false,
+        "coordinates": true,
+        "opaque_literals": true,
+        "brands": true,
+        "versions": true,
+        "software_identifiers": true,
+        "technical_tokens": true,
+        "dimensions": false,
+        "unit_symbols": true
+      },
+      "reason": "2D→二维 is semantically correct but this frozen profile does not prove the dimension spelling. A separate polyline/polygon defect independently blocks the same row."
+    }
+  ],
+  "examples": "Numeric_Value in ordinary words (什 in 为什么), classifiers 一个, ordinals 第1/第2, binary 二进制 and 千兆 unit name; not a universal permission to parse arbitrary Han."
+}

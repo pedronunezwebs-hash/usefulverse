@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": 39983727423,
+  "source_commit": "82f69e28f5d4767eb5ce520d0897ac565fc1b7af",
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39983727423",
+  "status_at_capture": "in_progress",
+  "event": "pull_request",
+  "resolved": true,
+  "at_utc": "2026-10-23T16:05:11.818931+00:00",
+  "conclusion": "success",
+  "verification_file": "ci-v18-verification.json"
+}

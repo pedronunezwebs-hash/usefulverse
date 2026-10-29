@@ -1,0 +1,80 @@
+{
+  "toolId": "required-minimum-distribution-calculator",
+  "sourceCopy": {
+    "name": "RMD Calculator",
+    "title": "RMD Calculator 2026 Free | UsefulVerse",
+    "description": "Estimate a 2026 RMD with the IRS Uniform Lifetime Table. Free, no account, and calculated in your browser.",
+    "intro": "Estimate an illustrative 2026 required minimum distribution (RMD) from an account balance and age. The table, balance year, and calculation are shown.",
+    "howQuestion": "How do I estimate a 2026 required minimum distribution?",
+    "howAnswer": "Divide the eligible account balance from December 31, 2025 by the IRS Uniform Lifetime Table factor for your age in 2026. This calculator applies Table III only and does not decide whether an RMD is due.",
+    "privacyQuestion": "Are my retirement figures uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. The balance and age you enter are not uploaded or saved by this tool.",
+    "howTo": [
+      "Enter the eligible account balance as of December 31, 2025.",
+      "Enter the age you will reach during 2026.",
+      "Calculate to see the Table III factor, formula, and illustrative amount; check that this table applies to your account."
+    ],
+    "example": {
+      "label": "Load IRS example: $100,000 balance and age 75"
+    },
+    "actions": {
+      "calculate": "Estimate RMD",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Illustrative 2026 estimate"
+    },
+    "fields": {
+      "accountBalance": "Eligible account balance on December 31, 2025 (USD)",
+      "ageIn2026": "Age reached during 2026",
+      "balanceDateNote": "Use the balance from December 31 of the previous year: 2025 for this 2026 estimate.",
+      "ageDateNote": "Use your age on your birthday in 2026. Age 120 represents age 120 and over in Table III.",
+      "accuracyNote": "U.S. estimate using IRS Publication 590-B (2025), Appendix B, Table III, for 2026. It does not determine whether or when you must take a distribution. It does not cover inherited accounts or the separate table for a sole spouse beneficiary more than 10 years younger. Plan rules and other exceptions may change the amount. Verify with your plan custodian or a qualified tax professional. Not tax or financial advice.",
+      "resultSummary": "Illustrative 2026 calculation",
+      "distributionAmount": "Estimated distribution (USD)",
+      "tableDivisor": "Uniform Lifetime Table factor",
+      "formula": "Balance ÷ factor",
+      "tableNote": "Source and scope: IRS Publication 590-B (2025), Appendix B, Table III. The IRS example rounds $100,000 ÷ 24.6 to about $4,065; this display keeps cents.",
+      "sourceLinkText": "Read the IRS publication"
+    },
+    "messages": {
+      "calculated": "Illustrative estimate calculated.",
+      "checkInputs": "Enter a balance from 0 to 1 trillion and a whole age from 72 to 120.",
+      "exampleLoaded": "IRS example loaded: $100,000 and age 75.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What balance and age does a 2026 RMD estimate use?",
+        "answer": "For this illustration, enter the account balance from December 31, 2025 and your age on your birthday in 2026. IRS rules and account type determine which table and timing apply."
+      },
+      {
+        "question": "Can I use this for an inherited IRA or a much younger spouse?",
+        "answer": "Not reliably. Inherited accounts may use different rules and tables. A sole spouse beneficiary more than 10 years younger generally uses the Joint Life and Last Survivor Table, not Table III."
+      },
+      {
+        "question": "Does this tell me when or whether I must take an RMD?",
+        "answer": "No. It only divides a balance by a Table III factor. It does not determine your required beginning date, eligibility, deadlines, aggregation rules, plan exceptions, or tax consequences."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/required-minimum-distribution-calculator/index.html",
+    "htmlSha256": "75883c21c3b1dca1e4d3855ca5e691af3f6bf81851b6c730422cba0ca74ac160",
+    "payloadSha256": "577b964dda3e9004e3a84e59fc2d36123ab3c6512376a9f249bc13ef4419d34c",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/required-minimum-distribution-calculator.js",
+    "controllerSha256": "b31596381659e79cf2be7945f74f1ab00ca062abfefd5279fc0d2819b3b0e62a",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

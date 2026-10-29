@@ -1,0 +1,111 @@
+{
+  "toolId": "heart-rate-zone-calculator",
+  "sourceCopy": {
+    "name": "Heart Rate Zone Calculator",
+    "title": "Heart Rate Zone Calculator Free | UsefulVerse",
+    "description": "Free heart rate zones by age or Karvonen. Set a measured maximum and custom cutoffs; see bpm ranges.",
+    "intro": "Estimate five exercise heart-rate zones from an age-based maximum or a maximum you already know. Choose percentage-of-maximum or Karvonen reserve, then adjust each zone boundary.",
+    "howQuestion": "How do I calculate heart rate zones?",
+    "howAnswer": "Choose a method and six increasing percentage boundaries. Percentage-of-maximum multiplies your maximum heart rate by each cutoff. Karvonen adds that percentage of heart-rate reserve (maximum minus resting heart rate) to your resting rate. The age estimate uses 220 minus age; it is only a rough population estimate.",
+    "privacyQuestion": "Are my heart-rate inputs saved?",
+    "privacyAnswer": "No. The calculation runs in this browser. Your age, heart rates and zone cutoffs are not uploaded or saved by this tool.",
+    "howTo": [
+      "Choose percentage of maximum or Karvonen heart-rate reserve.",
+      "Use the rough 220-minus-age estimate or enter a maximum heart rate you already know; Karvonen also needs resting heart rate.",
+      "Edit the six increasing percentages that define five adjacent zones, then calculate and review the bpm ranges."
+    ],
+    "example": {
+      "label": "Load example"
+    },
+    "actions": {
+      "calculate": "Calculate zones",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy results",
+      "result": "Estimated heart-rate zones"
+    },
+    "fields": {
+      "method": "Calculation method",
+      "percentageMax": "Percentage of maximum heart rate",
+      "karvonen": "Karvonen heart-rate reserve",
+      "maxSource": "Maximum heart rate source",
+      "estimated": "Estimate from age (220 − age)",
+      "known": "Enter a known maximum",
+      "age": "Age in years (adults)",
+      "maximum": "Maximum heart rate",
+      "restingHeartRate": "Resting heart rate",
+      "zoneBoundary": "Zone boundary percentage",
+      "boundaryNote": "Set six strictly increasing cutoffs from 0 to 100%. They create five adjacent zones; start with the defaults or customize them.",
+      "zone": "Zone",
+      "intensity": "Intensity range",
+      "heartRate": "Heart-rate range",
+      "bpm": "bpm",
+      "tableCaption": "Estimated zone cutoffs (lower edge included; upper edge is the next boundary)",
+      "reserve": "Heart-rate reserve",
+      "accuracyNote": "A common estimate is maximum heart rate ≈ 220 − age, but it is not a measurement and can differ substantially for an individual. The default 50–100% cutoffs are only an editable partition, not a recommendation or the AHA target range; AHA describes a general target of about 50–85% of estimated maximum for moderate-to-vigorous activity.",
+      "safetyNote": "Medicines and health conditions can change heart-rate response. If you have a heart condition, take medicine that affects heart rate, are pregnant, are under 18, or need a personal exercise target, ask a qualified health professional. Stop activity and seek appropriate help for concerning symptoms. The CDC talk test is another way to judge relative effort.",
+      "sourceNote": "Sources:",
+      "sourceLinkText": "American Heart Association: target heart rates",
+      "privacyNote": "All inputs stay in this browser; nothing is uploaded or stored."
+    },
+    "messages": {
+      "calculated": "Estimated zones calculated.",
+      "checkInputs": "Check your entries and zone boundaries.",
+      "exampleLoaded": "Example loaded.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "method": "Choose a calculation method.",
+      "maxSource": "Choose a maximum heart-rate source.",
+      "ageRange": "Enter an adult age from 18 to 100 years.",
+      "maximumRange": "Enter a known maximum heart rate from 80 to 240 bpm.",
+      "restingRange": "Enter a resting heart rate from 30 to 120 bpm.",
+      "maxMustExceedRest": "Maximum heart rate must be higher than resting heart rate.",
+      "boundariesCount": "Enter six zone boundary percentages.",
+      "boundaryRange": "Zone percentages must be whole numbers from 0 to 100.",
+      "boundaryOrder": "Zone boundaries must increase from left to right."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the Karvonen formula?",
+        "answer": "It estimates a target rate as resting heart rate plus a chosen fraction of heart-rate reserve. Reserve is maximum heart rate minus resting heart rate. This result is still an estimate, not an individualized prescription."
+      },
+      {
+        "question": "Is 220 minus age an exact maximum heart rate?",
+        "answer": "No. It is a rough age-based population estimate cited by the American Heart Association, not a measurement of your own maximum. Fitness, health, medication and individual variation can affect heart rate."
+      },
+      {
+        "question": "Are heart-rate zones medical limits?",
+        "answer": "No. These ranges are configurable arithmetic estimates for general education. A clinician can help set personal targets, especially with a heart condition or medicine that affects heart rate."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": {
+        "method": "karvonen",
+        "maxSource": "known",
+        "knownMaximum": "180",
+        "restingHeartRate": "60",
+        "boundary0": "50",
+        "boundary1": "60",
+        "boundary2": "70",
+        "boundary3": "80",
+        "boundary4": "90",
+        "boundary5": "100"
+      }
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/heart-rate-zone-calculator/index.html",
+    "htmlSha256": "42551576db20efd2a89e57c73905b34b28078a494a908a20e0dbc21f24c22987",
+    "payloadSha256": "4cfa585f328017beb6b44cf1d64337ef49975e0c86f1656de976182b45e293f4",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/heart-rate-zone-calculator.js",
+    "controllerSha256": "1e8455176f5ad204ef1efee7306c50faafe49928cb309333cad73374471b57d3",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

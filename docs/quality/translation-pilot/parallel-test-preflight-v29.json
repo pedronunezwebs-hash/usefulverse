@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "serial_run": 40282144871,
+  "serial_tests": 338,
+  "serial_seconds": 1132.985,
+  "model_seconds": 140.754938434,
+  "red": {
+    "tests": 4,
+    "failures": 3,
+    "errors": 1,
+    "log_sha256": "dcc2f5685d03eb699ff5afc5d63896677ff89264cd758d64a9bd8ce21c7dfea4"
+  },
+  "green": {
+    "tests": 6,
+    "log_sha256": "de161501b22bae42debd87662130297954e82a5f960fccc8cc8a40c0998e5f94"
+  },
+  "all_current_tests": 342,
+  "inventory_sha256": "65fe613bdfa22fdd2e3320210c67118a3dafdc02988b206297e762f02697085b",
+  "original_serial_ids_preserved": true,
+  "maximum_workers": 4,
+  "modules_kept_together": true,
+  "runner_unchanged": "ubuntu-latest",
+  "paid_cost": 0,
+  "measured_speedup": null,
+  "note": "All 338 passing serial cases plus 4 runner tests. Real speedup pending identical-runner measurement; no runtime/translation/model contract edits.",
+  "final_ci_expected_tests": 346,
+  "final_ci_inventory_sha256": "f1d7f31063eb83535e99467f0bb879a5634ffb128a035981d18b3ccc76a74fc1"
+}

@@ -1,0 +1,726 @@
+{
+  "at_utc": "2026-10-22T06:35:30.186037+00:00",
+  "branch": "feat/new-tools-batch-1",
+  "verified_commit": "943aceb73a7e09b1cbe8471d401138b111ebc65e",
+  "method": "GitHub recursive Git Tree at immutable commit, not truncated. Local Git blob SHA and size compared to every listed remote blob. No Git LFS or artifacts used for these source/evidence files.",
+  "files": [
+    {
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "blob_sha": "7f426ca45a62b80c1bffaaf70a53e6c9238535b8",
+      "size": 6810,
+      "sha256": "e54a2aade04cbf48ac9123c4465bc338206cdb5c9070e501e98c95eacbe1f1ea"
+    },
+    {
+      "path": "docs/quality/translation-pilot/automatic-summary.json",
+      "blob_sha": "3b435c8198c2c9c0f9def4a0a7287961901ef635",
+      "size": 178079,
+      "sha256": "bbfef016321d6c59dc8ecf03a4298790e07a795b2e3e4b62cf372f519587b053"
+    },
+    {
+      "path": "docs/quality/translation-pilot/cancelled-v7-full.json",
+      "blob_sha": "e495b4872b1139cdf28cf4c94778e60198780778",
+      "size": 473,
+      "sha256": "0d6b0ac0a997fb4a0b99901394f1814d26ad27655be5074d8e0fb1af5b7deca2"
+    },
+    {
+      "path": "docs/quality/translation-pilot/candidate-source-manifest.json",
+      "blob_sha": "3992ba1fe35d57627307c0635d560deb71986ef8",
+      "size": 50085,
+      "sha256": "559c892eade225e21317fb026669e071fe94e74a61d4789f336cbcf2c9df9423"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v10/madlad.jsonl",
+      "blob_sha": "b51e422f45054b8ffb0c291354c77fd0337ad44e",
+      "size": 492604,
+      "sha256": "1168e6230168b532b0b9b0974fa5222948248bafdebeb27952971cbb87427c19"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v11/madlad.jsonl",
+      "blob_sha": "584124403b70caab46dd642f05db88355884fa85",
+      "size": 2748602,
+      "sha256": "9fdb2df8a76f0d3327d5ebc54a41cf1edd4a399792f14e93e495c2b24b0e66e1"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v12/madlad.jsonl",
+      "blob_sha": "fce7a3ec087726f8a009691206e6226b1bf36828",
+      "size": 2732814,
+      "sha256": "1482ef42bc4f37929ad4702ebeb32baa9da66dac4cc3b9c7bc742c38c7f39743"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl",
+      "blob_sha": "ec4c0053759989be590d9ec0983f9d6c721b80b9",
+      "size": 312568,
+      "sha256": "a7b345ca4dc937a294d7313390dfd33cb659de7dad804593e5fc00467790ef51"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl",
+      "blob_sha": "eaabc2413a0228ebb3071965a525d14bc80caa05",
+      "size": 313317,
+      "sha256": "21f4ceb56c59470eefb202f7329d8ab7f69d7733c5007102800b40057ff0a834"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl",
+      "blob_sha": "0ae87625355bea180e7aa935c8c9d14cca79c45e",
+      "size": 302222,
+      "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl",
+      "blob_sha": "a77bf96bca5a052ffcd7f181076180ea3bd36e82",
+      "size": 1732304,
+      "sha256": "8a79e3d62b322ed1b5b51e056127c234883abd06b1323df5cf514c4ed1568fec"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl",
+      "blob_sha": "d431bab0fb34ae9653411c6dda123a79ac146d55",
+      "size": 347746,
+      "sha256": "c1be917da805bc3ff4a7e6bbef21bcbccf1a79af5a838b5941001ba3e24a60e4"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl",
+      "blob_sha": "b3a43d02be9ea0b3773dbfed9a6f126f0546531b",
+      "size": 1935425,
+      "sha256": "69c86192b1f0e6da85919e9625df566674597f797465a9c4eb4dcbdbfc6efd98"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v7/madlad.jsonl",
+      "blob_sha": "f0cbcbea14b9abed883dfca18fe7239eb35584cb",
+      "size": 396789,
+      "sha256": "033690f3aced231f88b55cab1ea14a50b251d3a46a727a83934ddef351a9a326"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v8/madlad.jsonl",
+      "blob_sha": "9fbb45796c36229ef2a5cdf9baaebb6ed030e7f1",
+      "size": 396157,
+      "sha256": "2774ad36397f32119a037c5e6eefc1ae5844eb0de6517a1d5cc83b6ff4449c9c"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl",
+      "blob_sha": "b85bf4ad978ce618d732534bf44f9bdd4030b1f7",
+      "size": 2182833,
+      "sha256": "5844a6d0b163089d4d7974c1035179e8199efac3de0eb5c84fd9041134a80dcf"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/m2m100.jsonl",
+      "blob_sha": "46c1f0622b37ac246bcb0b4b240e9c06eb3a3aa2",
+      "size": 3012736,
+      "sha256": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/madlad.jsonl",
+      "blob_sha": "22e6748a00d11910fccad5d09d95ce349adee740",
+      "size": 3110828,
+      "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v10-verification.json",
+      "blob_sha": "8eeb85614c985c1e239e4ecf0f1607b43a8c10db",
+      "size": 2986,
+      "sha256": "d71d5c5bf43b164981fae579612e0331dc09781661d7a210f5882c5c66862627"
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v11-verification.json",
+      "blob_sha": "0e3b255423c32277cc5c152fbe7fe6a30bc1f1f8",
+      "size": 3331,
+      "sha256": "1c6705f69e779f89a60f0b96f6e319f1c7b66aed0c0c046a8d3a5717b61f26af"
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v12-verification.json",
+      "blob_sha": "311c16744fdbadf3ffaee29a9280412e6b3a2e96",
+      "size": 1973,
+      "sha256": "8e9a390e39c128fbd013459da39b6a2452b3317ead9113178cc463932f109333"
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v9-verification.json",
+      "blob_sha": "2761c03bd66b232b8dcc925916ae08b5e7c22c72",
+      "size": 1983,
+      "sha256": "8a964bb2a4966fbcfc6e2f8cfd2703df73d693dd9cc66964d4b021d6307d9347"
+    },
+    {
+      "path": "docs/quality/translation-pilot/context-run-evidence.json",
+      "blob_sha": "3d29014bc2f21134f1e31c02eea90633388535f0",
+      "size": 27222,
+      "sha256": "5e9310c3debdc81c8176db838f754d2db84d4072bb3bfca756555caa551c752f"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-plan.json",
+      "blob_sha": "917004ddb7ac5b971cfc4ed14c04d308d21d16a9",
+      "size": 5531,
+      "sha256": "1d1d177cb8449ca340c8a288cf45655c66e3aa5dee15c755cba60c8bb60b5bc7"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v10-plan.json",
+      "blob_sha": "75b26f98d06cc0b2253793b6030a776e072efc2e",
+      "size": 6878,
+      "sha256": "675dedb661c7fd7b8c76cfb9f94a9e9b49b4615bd2cd6adc20a84264c8ac613c"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v11-plan.json",
+      "blob_sha": "83c5aafea99de989ee39c83a41915192f4646665",
+      "size": 6874,
+      "sha256": "be48dca010d448cd84ad633662ee96e41b785f341543e66ab0fbbaeb47e5223a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v12-plan.json",
+      "blob_sha": "07ea75f0e9931477e23050bf5be4f6ed8cecb437",
+      "size": 13642,
+      "sha256": "b3d0ac2e5e83dfb8e3c4c9463a027905cfb56021aa4b4e28db10006481af2b9b"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v5-plan.json",
+      "blob_sha": "5c7e7735bdc1e4013b526760e6bab35139da9475",
+      "size": 5663,
+      "sha256": "c653f047a76663336395137c8ae289fc3dba22565314b38a65db24db5c194cf4"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v6-plan.json",
+      "blob_sha": "69bbe1e523f2e3c10b4b987b50e1546f7ef2782d",
+      "size": 6838,
+      "sha256": "579773a948a108ecb9326b3099dc4ec1bca97015dd8d277c79daaaca151d81e4"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v7-plan.json",
+      "blob_sha": "73a321454b2604d720b954ced878367900d9c562",
+      "size": 6959,
+      "sha256": "4e9dad5c2961a4dac8814ccb2f8985c7dfd7bd8c5894020096afaceed4f49ca5"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v8-plan.json",
+      "blob_sha": "09bdfe53b8f737440d98ed967df7381457ab8ecc",
+      "size": 6920,
+      "sha256": "8da623badb64d1d9468197c2e611fe65c6f21e95733e1258f72552a3a5b05171"
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v9-plan.json",
+      "blob_sha": "260cecf3e745ef9c643351bd7f78db62d47a0064",
+      "size": 6917,
+      "sha256": "37791b396918d96a2b094261ecceaac7b37dfa0f38a4bfa388104233b68fd43c"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-check.json",
+      "blob_sha": "eabe5552acd2c0f3f033b4712022ba60b77c68e2",
+      "size": 698,
+      "sha256": "770cf93ead2126beea44ce65ffe475b7d605359712e16c1e6cb36bb1854967a2"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-context-check.json",
+      "blob_sha": "60a6c813325b73c91c10771abf3a26b924b5790f",
+      "size": 973,
+      "sha256": "0298e8b6a4d788b6a6bdefd06e4249fe192ccc5920b54da768de8ba757dc627a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v10-check.json",
+      "blob_sha": "b6c88827e74970c89ab0fed24511b215d2a859d6",
+      "size": 3136,
+      "sha256": "818c18cb1744d4f256c80939eb577c367f612d199c14a95d06fd353c8e6158ca"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v11-check.json",
+      "blob_sha": "e2797d9f7d47dc6757f94f0303f6feff130151bf",
+      "size": 3134,
+      "sha256": "e60f6c78903c73f7aecd4e5d8a1d2998621a28a1583d00b128cbde2bceb4ac72"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v12-check.json",
+      "blob_sha": "3fc1972337427f901c5ed81b2b2461c0b806c07e",
+      "size": 3174,
+      "sha256": "89fecac98858a8c447a8d524f5effcac8f681f43fc84fe4871338b3119f42d34"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v5-check.json",
+      "blob_sha": "edaafa0779309f06c5010a9cd10cc422379cb6d8",
+      "size": 942,
+      "sha256": "1412dc567e6ded4168a73ca7317dd8b69db89e84677fd8a60c916e7a3f9e5861"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v7-check.json",
+      "blob_sha": "3bfe6f0d06a86ccbc88c17c5211c43e032267558",
+      "size": 1875,
+      "sha256": "becf49909127e8d1649c1700c996fd3ccc476800ccffbbe2f2a7c51dc11c3f74"
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v9-check.json",
+      "blob_sha": "e9999ac1786529be779920fabbeed84a8885486f",
+      "size": 2228,
+      "sha256": "93c61e4917b967e04977b6647c628845f76c5d1b5d079836fcac3252af80b50a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/reference-coverage.json",
+      "blob_sha": "4d8cd974c89d38abe9a454a9dde7789e9edcceac",
+      "size": 8289,
+      "sha256": "1ead5d460336d0525e7df182fdbbbf2c69861b48306968f6af76ab26522d2179"
+    },
+    {
+      "path": "docs/quality/translation-pilot/regression-v11-evidence.json",
+      "blob_sha": "164441dc911c7cadcbdd4800b82ef1befc1747da",
+      "size": 10014,
+      "sha256": "b7af227443d8bf718eb4c663ed6a19ba31d5885d4f62c2075a93ea3aa681f253"
+    },
+    {
+      "path": "docs/quality/translation-pilot/regression-v12-evidence.json",
+      "blob_sha": "56e881c0f5ab51047f9a58bd1313f9afc979edcc",
+      "size": 49633,
+      "sha256": "c83e299ea2210dfec3010249a1e5331b3c2538fa85db1d6ba8c6a9c31cb5f64e"
+    },
+    {
+      "path": "docs/quality/translation-pilot/remote-v10-verification.json",
+      "blob_sha": "dbc0765cbebf6c398675617183437b2a1d82b9cd",
+      "size": 14957,
+      "sha256": "6b39e40a8b2ca65daea3cf203f3f063b389a53673ca334638aac47a52e85b46a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/remote-v11-verification.json",
+      "blob_sha": "34466898799516eda3089f4bb92945c489f2de07",
+      "size": 26302,
+      "sha256": "1d5c7ece6cb942eec7b65eef0d72dd5bd0d7d4e2ed145032c575b1276543bc48"
+    },
+    {
+      "path": "docs/quality/translation-pilot/remote-v6-verification.json",
+      "blob_sha": "e071c260bce7208c652a7b130c90605a9826f092",
+      "size": 2751,
+      "sha256": "2a87a4b24ea60ca01e1ca97708355a2d07439df85d8a948ac26740051a138fcf"
+    },
+    {
+      "path": "docs/quality/translation-pilot/remote-v8-verification.json",
+      "blob_sha": "146e3d4f9ca11dd563d4250615d27fa8e68b4e3c",
+      "size": 5735,
+      "sha256": "99b6686dc3b451d8aa663dd84b1cafb3b2903823edd777fc0a8e24d7f73ec5bb"
+    },
+    {
+      "path": "docs/quality/translation-pilot/remote-v9-verification.json",
+      "blob_sha": "fc7a1fac2740a51cb8ffe072167ea0bbb3d9c3d6",
+      "size": 11148,
+      "sha256": "3fff4cc0a1e77492792fe5fa812ebd82cc4ad8fb28ebb46143617e3f4e79385a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v10-references.json",
+      "blob_sha": "537b9c316d0190a3c5c80a9ab720045e0b1db334",
+      "size": 104709,
+      "sha256": "d5edc1e5762bd266f69a478e87578947bb8110eb4eaf0f59a3b5206667fb9544"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-full.json",
+      "blob_sha": "555423ad9de392e0b8f4a6b6c1181e774f4e9ab1",
+      "size": 212807,
+      "sha256": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-late-v12.json",
+      "blob_sha": "5e4e571d5a92b1836efd6ebc6b43a8d55530cb89",
+      "size": 50263,
+      "sha256": "a3d1421619c9f7fc92c7ecd4bdef8c94fd72306a133943f1904904576f1f818f"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-references.json",
+      "blob_sha": "d413e2568fc99539225899a119df6c686ea37b21",
+      "size": 110306,
+      "sha256": "854d8f11e828e5f06ba64d6661c4615a8ea184fab0ff8f6dfbeaa172990c98ec"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v12-full.json",
+      "blob_sha": "ffb7dad0f8e0429d406a3f56cbbc37f71d182b1b",
+      "size": 389320,
+      "sha256": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v12-references.json",
+      "blob_sha": "ffa729e85e95018aac6f289c6bcb8b29054de88d",
+      "size": 117041,
+      "sha256": "7475d06f8e401fc3f09b2c9138102cd243cc6ac15f6d1b88853cdfe9b2319c9e"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v2-m2m100.json",
+      "blob_sha": "7e1b244ca252ba290d8bc19ae3e04c043584cf14",
+      "size": 49649,
+      "sha256": "9cdb3835a1cb349527a8815ce1e74e7419b8acf871c213a8847215ed31b6d673"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v2-madlad.json",
+      "blob_sha": "f60eeb8e030d302b7f07d7f18eee0ee720574993",
+      "size": 51105,
+      "sha256": "abd74546b2fc7998cc03762a37f359fc0221f327c8342a98d6f9bb25cb408c63"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v3-madlad.json",
+      "blob_sha": "eae76b48958b50e1a98ea1319fae64e10fb3c810",
+      "size": 51847,
+      "sha256": "30bfee2fd4bfe5bbfb0ae299be7ce01e71112223ade36765e299228ac2e68bda"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v4-full.json",
+      "blob_sha": "126ab71bfe07cc03851975107a001c705dae977e",
+      "size": 124829,
+      "sha256": "2cc54718bbc9409ef0899f11fbd111cd7441ac9abd2011fa7431d9140dccde3a"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v4-references.json",
+      "blob_sha": "158735f8e62fd4102f520057744fac2e6e4fc032",
+      "size": 61804,
+      "sha256": "1d117cd145d16ca980e5e67262f79727b757d91be71898572926b60d5e79a419"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v5-references.json",
+      "blob_sha": "8d5466c12548cea66bea9f3b8cb27174b1a8a675",
+      "size": 54650,
+      "sha256": "7ee8c8d3826b08f9a6e1cc404bfcdb686c1dea18d6856b686bcffb44e7bdbf9b"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-full.json",
+      "blob_sha": "911f5d98412096ffbbf0f24f645d6ba25dc4ecbc",
+      "size": 163062,
+      "sha256": "19bbe7b48a142a2652abb536e3c0a76aa0e2dfcc12e1bdc47f77248234f20b1b"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-references.json",
+      "blob_sha": "5423447728e5cd6a2854b9448017197d2cc988bf",
+      "size": 58096,
+      "sha256": "f410883a37d3e5fc0eda04d852d1d010aad5395379e54c638658089e219d4622"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v7-references.json",
+      "blob_sha": "95d16c91854c5a928f715f85f6e37111b17b1125",
+      "size": 57109,
+      "sha256": "6da93172601577b17d7990a54537862a5c407ce45184df96f26c5e575bbf1714"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v8-references.json",
+      "blob_sha": "db436bef698ca67e0aab63c4ad0c0fbd8e4999dd",
+      "size": 59273,
+      "sha256": "2cfb702b65b1c7c0b6c558cecb2560e1e2506894781932b56ad520d59d23757d"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-full.json",
+      "blob_sha": "90495dbb7379b87f69fa5a1a339496602db00d75",
+      "size": 187793,
+      "sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-late-v12.json",
+      "blob_sha": "e582a7b7b18a9ef51cad6744d345f125bdbb3333",
+      "size": 50262,
+      "sha256": "280ddeeeae52475a9865bb5b5965e441fa264ea2c81dfc5749aff65b9fec7415"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-references.json",
+      "blob_sha": "6b6659ff0ad3ea574fc08e1e39c98fd8d9b457fe",
+      "size": 71330,
+      "sha256": "c799759a9129dfe6d6919e9d5e00718dcc6d7d32f48b3430ccda4b0c8cb75f22"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-core-six.json",
+      "blob_sha": "eaf7a671e8b9534f8845acc5b77a49fe978ac6c6",
+      "size": 248229,
+      "sha256": "7cd8aeaaf41be5595e7a9867fc9e5ad1ec09977d5de5cc6100c8fa47f8b01747"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-coverage-addenda.json",
+      "blob_sha": "783b52eecf4063582e4b32ea85b53dce07db4ed5",
+      "size": 1729,
+      "sha256": "425104a4a9399d501d1db3824b3a375c38ecd1e2f05f7e7a9bf88b7611f6df5c"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-es-nb.json",
+      "blob_sha": "88fc4cdb38546c7bb4941c6000fdcb4ab5c4029a",
+      "size": 154627,
+      "sha256": "ea1999b91fc527fa1b1bf1e706a588ccff4de3287353d244630a1f5ba80b2291"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-madlad-core-four.json",
+      "blob_sha": "b765dcc70ef3ab370bef70b75b0da7c6ed23ad4e",
+      "size": 101703,
+      "sha256": "dd046b481d68acb55fc4bf12ace0a6836e8960dba03dd84d9ef6eb77ddaff292"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-madlad-de-fr.json",
+      "blob_sha": "57d69df478ff7d8dcad33eefda8c2f0bde9d62e3",
+      "size": 51025,
+      "sha256": "f9382202243398cd1090b7f4b54907a28f6a22a9b939f6be7e11ae704e74946e"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-metrics.json",
+      "blob_sha": "aac959daa2002cfa4de1457133d342546ae96df8",
+      "size": 21962,
+      "sha256": "6be8a7923e5260503da0eed291a5d5004732178ce8da123310a5d4d045868fdc"
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-warning-addenda.json",
+      "blob_sha": "bb285a82e8470c0914e1b95c98ebae5f362bdde5",
+      "size": 2914,
+      "sha256": "8e053e560ddbd902f34d1f4af0da2e6d586d8ec11d7970006b975f747caaac61"
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v12-full.json",
+      "blob_sha": "5129bdeb1e9d91d0d256a1b53fba2928a0a0165d",
+      "size": 1707,
+      "sha256": "10b1e28d1bd6d3e62fbbe4fe41428b3bf2cba07deea653d8a8b69b4bb56bb500"
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v12-references.json",
+      "blob_sha": "8bf90d5ba308e11ca2a088f2bc610ff9aa1e0770",
+      "size": 1720,
+      "sha256": "82462895f04d723d3103bcd1ae533f615e9471773b17fb86f8fa9884f2287d55"
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-evidence.json",
+      "blob_sha": "e01022885cc24ec23d0074c3dde504fa26407e99",
+      "size": 8490,
+      "sha256": "8f8e20c3664d7ba0f64e2782364fb593c14664f300feb3af988418c9a8b27096"
+    },
+    {
+      "path": "scripts/localization/pilot-complete-sentence-policy.json",
+      "blob_sha": "340179d1ffc66cca6a35415fd0a00bbab28d808f",
+      "size": 62131,
+      "sha256": "8eeebad938f00e0704e98d91cd97547a2bf0ed4555d85a4ce9a097d99d114613"
+    },
+    {
+      "path": "scripts/localization/pilot-context-policy.json",
+      "blob_sha": "4ca1bd2398fe936c68e55d41af35169be4e452ff",
+      "size": 3796,
+      "sha256": "9a04fc1ee6eee01b85df58b5ccbf304cfbdbd33828e448314a7927c46737165e"
+    },
+    {
+      "path": "scripts/localization/pilot-coverage-policy.json",
+      "blob_sha": "fbb3f29ad4bae575014e4cb2be2fc6e3aac41c95",
+      "size": 32876,
+      "sha256": "1ab7d91464cd1ea874d864244f78de7cdd250f711c7403e16fa0d265eba10bc8"
+    },
+    {
+      "path": "scripts/localization/pilot-explicit-negative-policy.json",
+      "blob_sha": "725816540d214d59dc7ac94989a20077012fd027",
+      "size": 56422,
+      "sha256": "78c2348cece3eb9b2de0aa4c779773fb9f69b22ef279ee5a3717854895975bfc"
+    },
+    {
+      "path": "scripts/localization/pilot-memory-policy.json",
+      "blob_sha": "d410b724e052d3e04cc3a61c1d35e8f8e365b208",
+      "size": 6945,
+      "sha256": "788544552c5d7da8d1051b290d6c021dd83ea10c71791fc8379cfa2fc9862534"
+    },
+    {
+      "path": "scripts/localization/pilot-privacy-policy.json",
+      "blob_sha": "c50fd19754586dd92fb58813ddc418eec4de642c",
+      "size": 34095,
+      "sha256": "6925eec0c23ffe2cb23b38d85c824be16bbb25f83058bf94da4083ddce6570d3"
+    },
+    {
+      "path": "scripts/localization/pilot-quantity-memory-policy.json",
+      "blob_sha": "00590fc74db069ea3be9b67e801432a291dce312",
+      "size": 61073,
+      "sha256": "226a3a72a1d0ad4e5305694464eb1f47eb9b8c5d875021f38183901f126df268"
+    },
+    {
+      "path": "scripts/localization/pilot-reviewed-language-policy.json",
+      "blob_sha": "32faa97681d5473ec2460804fdba6de2bfc4b925",
+      "size": 75386,
+      "sha256": "073654d443ca0ac6ff7bdbe48ee06ac4694d2b971764b903b3dbd81bf546d7f9"
+    },
+    {
+      "path": "scripts/localization/pilot-semantic-regressions.json",
+      "blob_sha": "a3b3d66571f1b46eea3d715732a17578385557e9",
+      "size": 249514,
+      "sha256": "ef4589f51e4d9894c1a36a3d456eda23cfeedecd8b7a4f37e674faed5d893ad5"
+    },
+    {
+      "path": "scripts/localization/pilot-sentence-policy.json",
+      "blob_sha": "4d30af657e95c5e104b81cc762deb124fbe02514",
+      "size": 3840,
+      "sha256": "19d9ac0b094de8dc44c9772443965e96784ee28ce7dc79ae822d2bba2d8a4947"
+    },
+    {
+      "path": "scripts/localization/pilot-technical-policy.json",
+      "blob_sha": "52a46bc9497ce72ff44b49e3ade3093b2ff36d6d",
+      "size": 54335,
+      "sha256": "60520b02ad3ff89bbc94f3387351f2f4c6eae39d40f768f7ce9de80be3ad6072"
+    },
+    {
+      "path": "scripts/localization/pilot-whole-unit-policy.json",
+      "blob_sha": "402d20879fe0a1716740127935cbfc025a7aaad8",
+      "size": 61273,
+      "sha256": "85c35ec96e0b01ec35151a06b96cb19c584c87f3df4fbd0b6289c2744e86ed28"
+    },
+    {
+      "path": "scripts/localization/test_translation_complete_sentences.py",
+      "blob_sha": "f399634fa4b035f213ac0e0570552a46b4b8c1d6",
+      "size": 7811,
+      "sha256": "8e9fdfd80e2a50138666650eb2b2160cd537f30393826a2287ceb7c357a06acf"
+    },
+    {
+      "path": "scripts/localization/test_translation_model_dependencies.py",
+      "blob_sha": "9cfaa398c54ca3a306a94cb1de4e5655ca72cc98",
+      "size": 1048,
+      "sha256": "52e257f08a0a379107e3637322a7ef4db6b8c7f6afe7c17a5c8bf4d9286b80c3"
+    },
+    {
+      "path": "scripts/localization/test_translation_pilot.py",
+      "blob_sha": "d0c3419ba0f04d72096de04b50b95d7d887c1576",
+      "size": 32707,
+      "sha256": "52365081a3a3fb60e18e7ab205fe2c0ff3f8bf431c381a41eaaa4c862fd3f8d6"
+    },
+    {
+      "path": "scripts/localization/test_translation_review_provenance.py",
+      "blob_sha": "bfb414a84caf42a916ffb994d1304e410940de8e",
+      "size": 7658,
+      "sha256": "9bbe2c675b69a1bad6c6dc5950ad2768122a6a14e7ee43ed22bf8bf437392ad3"
+    },
+    {
+      "path": "scripts/localization/test_translation_reviewed_language.py",
+      "blob_sha": "c255064846cdd9d7ccd2bae4b88c7b0724b7c46b",
+      "size": 5859,
+      "sha256": "36cb6a0027ba8f7d33525156244e5cb1342f73349dd70b2d9317aff833af5a21"
+    },
+    {
+      "path": "scripts/localization/test_translation_sentences.py",
+      "blob_sha": "d65f39d606c29669c545feab263cbd3c24536064",
+      "size": 10028,
+      "sha256": "c1c79a756a4ef8a62713df71fc36a2f85044dd302569a100f37fa84ef50510aa"
+    },
+    {
+      "path": "scripts/localization/test_translation_typed_data.py",
+      "blob_sha": "151ef7a707f2d73ff75d91f4400ea5451e7b2d31",
+      "size": 13344,
+      "sha256": "f0a4dc8df45c6d8d77c959ddffc333686036444aab22d56233f1f723231e1864"
+    },
+    {
+      "path": "scripts/localization/test_translation_warning_coverage.py",
+      "blob_sha": "93468a8efe3f99c385e7e8646c09f62bb90c2567",
+      "size": 4772,
+      "sha256": "15abcc5b60038485d38cf828c7f559467d526d239bf824e4249a57a687921e2b"
+    },
+    {
+      "path": "scripts/localization/test_translation_whole_unit.py",
+      "blob_sha": "418b38db2994dc2fe57d522bedfc8d4710169556",
+      "size": 11147,
+      "sha256": "c22f9d06ade90ac47fe60056f5161462bab6f235282113388cf6d04b406febc2"
+    },
+    {
+      "path": "scripts/localization/translation-pilot.py",
+      "blob_sha": "e1f60afa77632eaa31ca8a6f13a1c3ed127cba36",
+      "size": 59024,
+      "sha256": "98116d5c14d5f63f10927b6223808f49f1c69bf48f3b0379a256eaf7dc956717"
+    }
+  ],
+  "policy_immutability": [
+    {
+      "path": "scripts/localization/pilot-context-policy.json",
+      "measured_source": "75c6be9",
+      "unchanged": true,
+      "blob_sha": "4ca1bd2398fe936c68e55d41af35169be4e452ff"
+    },
+    {
+      "path": "scripts/localization/pilot-sentence-policy.json",
+      "measured_source": "75c6be9",
+      "unchanged": true,
+      "blob_sha": "4d30af657e95c5e104b81cc762deb124fbe02514"
+    },
+    {
+      "path": "scripts/localization/pilot-memory-policy.json",
+      "measured_source": "75c6be9",
+      "unchanged": true,
+      "blob_sha": "d410b724e052d3e04cc3a61c1d35e8f8e365b208"
+    },
+    {
+      "path": "scripts/localization/pilot-coverage-policy.json",
+      "measured_source": "75c6be9",
+      "unchanged": true,
+      "blob_sha": "fbb3f29ad4bae575014e4cb2be2fc6e3aac41c95"
+    },
+    {
+      "path": "scripts/localization/pilot-privacy-policy.json",
+      "measured_source": "75c6be9",
+      "unchanged": true,
+      "blob_sha": "c50fd19754586dd92fb58813ddc418eec4de642c"
+    },
+    {
+      "path": "scripts/localization/pilot-technical-policy.json",
+      "measured_source": "203422e",
+      "unchanged": true,
+      "blob_sha": "52a46bc9497ce72ff44b49e3ade3093b2ff36d6d"
+    },
+    {
+      "path": "scripts/localization/pilot-explicit-negative-policy.json",
+      "measured_source": "3c1faf3",
+      "unchanged": true,
+      "blob_sha": "725816540d214d59dc7ac94989a20077012fd027"
+    },
+    {
+      "path": "scripts/localization/pilot-quantity-memory-policy.json",
+      "measured_source": "9b430c3",
+      "unchanged": true,
+      "blob_sha": "00590fc74db069ea3be9b67e801432a291dce312"
+    },
+    {
+      "path": "scripts/localization/pilot-whole-unit-policy.json",
+      "measured_source": "7c4cc21",
+      "unchanged": true,
+      "blob_sha": "402d20879fe0a1716740127935cbfc025a7aaad8"
+    },
+    {
+      "path": "scripts/localization/pilot-complete-sentence-policy.json",
+      "measured_source": "fe2acf3f27b2105d979fa21853eaa53225fe7d6a",
+      "unchanged": true,
+      "blob_sha": "340179d1ffc66cca6a35415fd0a00bbab28d808f"
+    },
+    {
+      "path": "scripts/localization/pilot-reviewed-language-policy.json",
+      "measured_source": "5801f4a",
+      "unchanged": true,
+      "blob_sha": "32faa97681d5473ec2460804fdba6de2bfc4b925"
+    }
+  ],
+  "preserved_historical_files": {
+    "baseline_commit": "14e38733fb0307fc75a3672ee187ea40bbce6bbd",
+    "count": 32,
+    "paths": [
+      "docs/quality/translation-pilot/checkpoints/context-v10/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v11/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v7/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v8/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl",
+      "docs/quality/translation-pilot/checkpoints/m2m100.jsonl",
+      "docs/quality/translation-pilot/checkpoints/madlad.jsonl",
+      "docs/quality/translation-pilot/review-context-v10-references.json",
+      "docs/quality/translation-pilot/review-context-v11-full.json",
+      "docs/quality/translation-pilot/review-context-v11-references.json",
+      "docs/quality/translation-pilot/review-context-v2-m2m100.json",
+      "docs/quality/translation-pilot/review-context-v2-madlad.json",
+      "docs/quality/translation-pilot/review-context-v3-madlad.json",
+      "docs/quality/translation-pilot/review-context-v4-full.json",
+      "docs/quality/translation-pilot/review-context-v4-references.json",
+      "docs/quality/translation-pilot/review-context-v5-references.json",
+      "docs/quality/translation-pilot/review-context-v6-full.json",
+      "docs/quality/translation-pilot/review-context-v6-references.json",
+      "docs/quality/translation-pilot/review-context-v7-references.json",
+      "docs/quality/translation-pilot/review-context-v8-references.json",
+      "docs/quality/translation-pilot/review-context-v9-full.json",
+      "docs/quality/translation-pilot/review-context-v9-references.json",
+      "docs/quality/translation-pilot/review-core-six.json",
+      "docs/quality/translation-pilot/review-es-nb.json",
+      "docs/quality/translation-pilot/review-madlad-core-four.json",
+      "docs/quality/translation-pilot/review-madlad-de-fr.json"
+    ]
+  },
+  "inference_functions_unchanged_from_full_run": {
+    "source_commit": "5801f4a",
+    "functions": [
+      "complete_sentence_parts",
+      "complete_sentence_evidence_valid",
+      "translate_complete_sentences",
+      "typed_data_checks",
+      "typed_record_evidence",
+      "forward_with_memory",
+      "run"
+    ],
+    "method": "Python AST without line attributes",
+    "unchanged": true
+  },
+  "preserved_semantic_fixtures": 525,
+  "public_source_assets_unchanged_from": "14e38733fb0307fc75a3672ee187ea40bbce6bbd",
+  "native_review": false,
+  "approved_locales": []
+}

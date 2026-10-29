@@ -1,0 +1,99 @@
+{
+  "toolId": "spades-game",
+  "sourceCopy": {
+    "name": "Spades",
+    "title": "Spades Card Game Online Free | UsefulVerse",
+    "description": "Play Spades against three local bots. Bid nil or tricks, follow suit and track bags. Free, no account or online opponent.",
+    "category": "Games",
+    "intro": "Play a full four-seat Spades match in this browser. You play South with three simple local bots. Bid tricks or nil, follow the led suit, and use spades as trump; spades cannot lead until broken unless you hold only spades. No account or network opponents.",
+    "summary": "A local Spades card game with four seats, bidding from nil to 13, legal follow-suit play, the unbroken-spades lead rule, spades as trump, team scoring, bag penalties, and 250- or 500-point matches.",
+    "howQuestion": "How do you play Spades here?",
+    "howAnswer": "Each player bids how many tricks they expect, including nil for zero. South plays against three simple bots. Follow the led suit when possible; otherwise you may play any card. Spades cannot be led until broken (unless your hand contains only spades), and they trump other suits. Team bids are scored together, overtricks are bags, and each ten bags costs 100 points.",
+    "privacyQuestion": "Does this Spades game connect to other people?",
+    "privacyAnswer": "No. Three simple bots run in this browser. Cards, bids and scores are not uploaded or saved by UsefulVerse.",
+    "fields": {
+      "score": "Match score",
+      "target": "Points to win",
+      "you": "You (South)",
+      "yourTeam": "North–South",
+      "opponents": "East–West",
+      "dealer": "Dealer",
+      "bid": "Your bid",
+      "bidHint": "Choose 0 for a nil bid (aim to take no tricks), or 1–13 tricks.",
+      "yourHand": "Your hand",
+      "currentTrick": "Current trick",
+      "tricksWon": "Tricks won this hand",
+      "teamBids": "Team bids",
+      "bags": "Bags",
+      "teamNorthSouth": "North–South team",
+      "teamEastWest": "East–West team",
+      "localBot": "Local bot",
+      "seatNorth": "North",
+      "seatEast": "East",
+      "seatSouth": "South",
+      "seatWest": "West",
+      "clubs": "Clubs",
+      "diamonds": "Diamonds",
+      "hearts": "Hearts",
+      "spades": "Spades",
+      "accuracyNote": "The three computer players use simple local heuristics, not expert strategy. This single-player version has no online multiplayer, partner chat, or persistent statistics.",
+      "rulesText": "The standard 52-card deck is dealt evenly. Each player bids 0–13 tricks; a successful nil bid scores 100 and a failed nil loses 100. Team contracts add their non-nil bids: make the total for 10 points per bid, plus one bag for each extra trick; miss it and lose 10 points per bid. Every ten accumulated bags subtract 100 points. Players must follow the suit led when possible. Spades cannot be led until broken unless a player holds only spades, and a spade beats any non-spade card.",
+      "bagNote": "Each overtrick is one bag. At ten bags, the team loses 100 points and keeps the remainder.",
+      "nilOption": "Nil",
+      "nilNote": "Nil means you aim to take zero tricks. If you take any, the nil bid loses 100 points.",
+      "emptyTrick": "No cards have been played in this trick yet."
+    },
+    "actions": {
+      "newGame": "New match",
+      "submitBid": "Confirm bid",
+      "play": "Play selected card",
+      "nextHand": "Deal next hand",
+      "result": "Match result",
+      "rules": "Show rules",
+      "closeRules": "Hide rules"
+    },
+    "messages": {
+      "chooseBid": "Your turn to bid. Choose a number from 0 to 13.",
+      "botBid": "{player} bids {bid}.",
+      "allBids": "All bids are in. Play begins with {player}.",
+      "chooseCard": "Your turn. Choose a legal card from your hand.",
+      "botTurn": "{player} is thinking.",
+      "cardPlayed": "{player} played {card}.",
+      "invalidAction": "That action is not legal now.",
+      "handScored": "Hand complete. North–South: {ns} tricks; East–West: {ew}.",
+      "teamWins": "{team} wins the match with {score} points.",
+      "newHand": "New hand dealt. Your turn to bid.",
+      "yourTeam": "North–South",
+      "opponents": "East–West",
+      "ready": "Choose a match target and start a new match."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does nil mean in Spades?",
+        "answer": "A nil bid means you expect to take zero tricks. It earns 100 points if successful and loses 100 if you take any trick; your tricks still count toward your team total."
+      },
+      {
+        "question": "What are bags in Spades?",
+        "answer": "Tricks above your team contract are bags. Each is worth one point, but every ten accumulated bags triggers a 100-point penalty and removes those ten bags."
+      },
+      {
+        "question": "Can I play Spades with other people here?",
+        "answer": "No. This is a local single-player game against three deliberately simple bots. There is no online matchmaking or multiplayer connection."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/spades-game/index.html",
+    "htmlSha256": "438ebcc3827b7543d56237652f9ccbc35107e33d5ddbaaf8a1a536adb0006843",
+    "payloadSha256": "a4499d2ee565d09bcbaa3b092bb39b7b7519db50968ff70c23a0d36f63370566",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/spades-game.js",
+    "controllerSha256": "9cb9234e388f45fd2e398b324bbd8bbff9d5c1e7389ee711d39e83535dd6cd61",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

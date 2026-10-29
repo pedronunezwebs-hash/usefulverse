@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T11:29:33.814789+00:00",
+  "run_id": 40314553754,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40314553754",
+  "source_commit": "1edc9d6479b20f7f733ae05773a6475319061ea6",
+  "policy": "context-v30",
+  "scope": "reference",
+  "locales": [
+    "ru"
+  ],
+  "conclusion": "success",
+  "new_records": 67,
+  "total_checkpoint_records": 67,
+  "summary": {
+    "approved": 0,
+    "conversion_seconds": 92.12490365100001,
+    "counts": {
+      "legacy": 27,
+      "model": 40,
+      "reviewed_memory_hits": 40
+    },
+    "engine": "madlad",
+    "peak_rss_kib": 3652448,
+    "scope": "references",
+    "total_seconds": 137.967692289
+  },
+  "model": {
+    "converted_sha256": {
+      "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+      "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+      "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+    },
+    "engine": "madlad",
+    "license": "Apache-2.0",
+    "minimum_free_gib": 18,
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+  },
+  "focused_python_tests": 16,
+  "python_seconds": 27.563,
+  "full_suite_before_batch": 40294300194,
+  "full_suite_required_final": true,
+  "artifacts": 0,
+  "cleanup": "success",
+  "site_job": "skipped",
+  "runner_labels": [
+    "ubuntu-latest"
+  ],
+  "runtime_sha256": {
+    "scripts/localization/translation-pilot-v30.py": "a965acc48282c76e9076b85abdd5a33d3d76f8bcde3eef727dc09d1066804c86",
+    "scripts/localization/pilot-russian-v30.py": "7bb6e99f63d3f7761eb89d4ac31c5ccf11c068ed7d74bd285cf7039723a0fe4c",
+    "scripts/localization/pilot-russian-reference-policy.json": "5171463f7b9fe7b96922c23607c194c068acb0896456f3802e329d0202d07f0f",
+    "docs/quality/translation-pilot/reviewed-memory-v30-import.json": "62e2fd1381ae9e0c3513c04dedd46f321a3603a9259c6cc2c8321f27973ae703",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-numbers.json": "e6f4cbfea69b3b3a21c0858b94f7b4cd42d0fcb60782ca94f39c92187251ea9f",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-rbnf.xml": "e5c5c3d118b0d562509fbacc53ff326c655718569e06f9a6fec5a46aa35b272a",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/ru-units.json": "5eb55a4d08fe86f2f2aa629a69f0657996eed0700b19b24f57d6969a5d7056fd",
+    "docs/quality/translation-pilot/numeric-sources/context-v30/manifest.json": "61b33a714762b054825b7bdcc2f94c1b488f4360b34e6aa1590b374fac4233b1"
+  },
+  "checkpoint_sha256": "194a0e83a8bf3a698006dac3a46dfe76c6d74b93da11634828b2fcf3c02762a3",
+  "approved_locales": [],
+  "method": "Original base64 records recovered from public Actions logs;duplicates/conflicts validated;no raw repair. Full model rows are new inference outside40known references. Focused precheck plus complete final CI,not a claim of full suite inside each model job."
+}

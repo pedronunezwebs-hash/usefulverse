@@ -1,0 +1,718 @@
+{
+  "at_utc": "2026-10-22T10:51:05.293097+00:00",
+  "verified_commit": "d21c4549fe5fbb05583aa9c4febcd049fb4b7331",
+  "method": "Recovery after interruption: immutable GitHub recursive Git Trees, not truncated. Every listed path resolves to a remote blob with SHA/size. Current non-doc code equals final CI source; checkpoint/review data equal final CI tree. Changed CI/security metadata recovered and blob-checked. No clone, model or build rerun.",
+  "files": [
+    {
+      "path": ".github/workflows/deploy-cloudflare.yml",
+      "git_blob_sha": "84d32ad4c666a51ccf3e02e57679df79ab51a703",
+      "bytes": 6830
+    },
+    {
+      "path": "docs/quality/translation-pilot/automatic-summary.json",
+      "git_blob_sha": "bfb0721df63408f261e3e3434ddc73e9b3fb3a32",
+      "bytes": 182560
+    },
+    {
+      "path": "docs/quality/translation-pilot/cancelled-v7-full.json",
+      "git_blob_sha": "e495b4872b1139cdf28cf4c94778e60198780778",
+      "bytes": 473
+    },
+    {
+      "path": "docs/quality/translation-pilot/candidate-source-manifest.json",
+      "git_blob_sha": "3992ba1fe35d57627307c0635d560deb71986ef8",
+      "bytes": 50085
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v10/madlad.jsonl",
+      "git_blob_sha": "b51e422f45054b8ffb0c291354c77fd0337ad44e",
+      "bytes": 492604
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v11/madlad.jsonl",
+      "git_blob_sha": "584124403b70caab46dd642f05db88355884fa85",
+      "bytes": 2748602
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v12/madlad.jsonl",
+      "git_blob_sha": "fce7a3ec087726f8a009691206e6226b1bf36828",
+      "bytes": 2732814
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v13/madlad.jsonl",
+      "git_blob_sha": "1d0f7f72015069ce1fd0c7605c9e718dc7ec20eb",
+      "bytes": 2732631
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl",
+      "git_blob_sha": "ec4c0053759989be590d9ec0983f9d6c721b80b9",
+      "bytes": 312568
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl",
+      "git_blob_sha": "eaabc2413a0228ebb3071965a525d14bc80caa05",
+      "bytes": 313317
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl",
+      "git_blob_sha": "0ae87625355bea180e7aa935c8c9d14cca79c45e",
+      "bytes": 302222
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl",
+      "git_blob_sha": "a77bf96bca5a052ffcd7f181076180ea3bd36e82",
+      "bytes": 1732304
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl",
+      "git_blob_sha": "d431bab0fb34ae9653411c6dda123a79ac146d55",
+      "bytes": 347746
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl",
+      "git_blob_sha": "b3a43d02be9ea0b3773dbfed9a6f126f0546531b",
+      "bytes": 1935425
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v7/madlad.jsonl",
+      "git_blob_sha": "f0cbcbea14b9abed883dfca18fe7239eb35584cb",
+      "bytes": 396789
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v8/madlad.jsonl",
+      "git_blob_sha": "9fbb45796c36229ef2a5cdf9baaebb6ed030e7f1",
+      "bytes": 396157
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl",
+      "git_blob_sha": "b85bf4ad978ce618d732534bf44f9bdd4030b1f7",
+      "bytes": 2182833
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/m2m100.jsonl",
+      "git_blob_sha": "46c1f0622b37ac246bcb0b4b240e9c06eb3a3aa2",
+      "bytes": 3012736
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/madlad.jsonl",
+      "git_blob_sha": "22e6748a00d11910fccad5d09d95ce349adee740",
+      "bytes": 3110828
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v10-verification.json",
+      "git_blob_sha": "8eeb85614c985c1e239e4ecf0f1607b43a8c10db",
+      "bytes": 2986
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v11-verification.json",
+      "git_blob_sha": "0e3b255423c32277cc5c152fbe7fe6a30bc1f1f8",
+      "bytes": 3331
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v12-verification.json",
+      "git_blob_sha": "311c16744fdbadf3ffaee29a9280412e6b3a2e96",
+      "bytes": 1973
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v13-verification.json",
+      "git_blob_sha": "6958001ad1cf848fa593556a519bf66aa5aa71ea",
+      "bytes": 10013
+    },
+    {
+      "path": "docs/quality/translation-pilot/ci-v9-verification.json",
+      "git_blob_sha": "2761c03bd66b232b8dcc925916ae08b5e7c22c72",
+      "bytes": 1983
+    },
+    {
+      "path": "docs/quality/translation-pilot/cli-cache-v13-cleanup.json",
+      "git_blob_sha": "e413aa331b2eb63f874600af6147541f278f5e6f",
+      "bytes": 1662
+    },
+    {
+      "path": "docs/quality/translation-pilot/context-run-evidence.json",
+      "git_blob_sha": "6374ad8c0677fa949d7d6439da7e95cd9538b841",
+      "bytes": 29772
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-plan.json",
+      "git_blob_sha": "917004ddb7ac5b971cfc4ed14c04d308d21d16a9",
+      "bytes": 5531
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v10-plan.json",
+      "git_blob_sha": "75b26f98d06cc0b2253793b6030a776e072efc2e",
+      "bytes": 6878
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v11-plan.json",
+      "git_blob_sha": "83c5aafea99de989ee39c83a41915192f4646665",
+      "bytes": 6874
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v12-plan.json",
+      "git_blob_sha": "07ea75f0e9931477e23050bf5be4f6ed8cecb437",
+      "bytes": 13642
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v13-plan.json",
+      "git_blob_sha": "d4a6a69a0be7244d9d3b090c89d6804357130d84",
+      "bytes": 13495
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v5-plan.json",
+      "git_blob_sha": "5c7e7735bdc1e4013b526760e6bab35139da9475",
+      "bytes": 5663
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v6-plan.json",
+      "git_blob_sha": "69bbe1e523f2e3c10b4b987b50e1546f7ef2782d",
+      "bytes": 6838
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v7-plan.json",
+      "git_blob_sha": "73a321454b2604d720b954ced878367900d9c562",
+      "bytes": 6959
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v8-plan.json",
+      "git_blob_sha": "09bdfe53b8f737440d98ed967df7381457ab8ecc",
+      "bytes": 6920
+    },
+    {
+      "path": "docs/quality/translation-pilot/full-sample-v9-plan.json",
+      "git_blob_sha": "260cecf3e745ef9c643351bd7f78db62d47a0064",
+      "bytes": 6917
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-check.json",
+      "git_blob_sha": "eabe5552acd2c0f3f033b4712022ba60b77c68e2",
+      "bytes": 698
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-context-check.json",
+      "git_blob_sha": "60a6c813325b73c91c10771abf3a26b924b5790f",
+      "bytes": 973
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v10-check.json",
+      "git_blob_sha": "b6c88827e74970c89ab0fed24511b215d2a859d6",
+      "bytes": 3136
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v11-check.json",
+      "git_blob_sha": "e2797d9f7d47dc6757f94f0303f6feff130151bf",
+      "bytes": 3134
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v12-check.json",
+      "git_blob_sha": "3fc1972337427f901c5ed81b2b2461c0b806c07e",
+      "bytes": 3174
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v13-check.json",
+      "git_blob_sha": "a669b5a62d5ff44b6a1d8e2fd2a39552398cd5d4",
+      "bytes": 3437
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v5-check.json",
+      "git_blob_sha": "edaafa0779309f06c5010a9cd10cc422379cb6d8",
+      "bytes": 942
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v7-check.json",
+      "git_blob_sha": "3bfe6f0d06a86ccbc88c17c5211c43e032267558",
+      "bytes": 1875
+    },
+    {
+      "path": "docs/quality/translation-pilot/production-v9-check.json",
+      "git_blob_sha": "e9999ac1786529be779920fabbeed84a8885486f",
+      "bytes": 2228
+    },
+    {
+      "path": "docs/quality/translation-pilot/reference-coverage.json",
+      "git_blob_sha": "6675e236d64ce56203825756702537013dd23e42",
+      "bytes": 9005
+    },
+    {
+      "path": "docs/quality/translation-pilot/regression-v11-evidence.json",
+      "git_blob_sha": "164441dc911c7cadcbdd4800b82ef1befc1747da",
+      "bytes": 10014
+    },
+    {
+      "path": "docs/quality/translation-pilot/regression-v12-evidence.json",
+      "git_blob_sha": "56e881c0f5ab51047f9a58bd1313f9afc979edcc",
+      "bytes": 49633
+    },
+    {
+      "path": "docs/quality/translation-pilot/regression-v13-evidence.json",
+      "git_blob_sha": "5965f73131ff11277c3b379c350ed738735606dc",
+      "bytes": 36274
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v10-references.json",
+      "git_blob_sha": "537b9c316d0190a3c5c80a9ab720045e0b1db334",
+      "bytes": 104709
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-full.json",
+      "git_blob_sha": "555423ad9de392e0b8f4a6b6c1181e774f4e9ab1",
+      "bytes": 212807
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-late-v12.json",
+      "git_blob_sha": "5e4e571d5a92b1836efd6ebc6b43a8d55530cb89",
+      "bytes": 50263
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-late-v13.json",
+      "git_blob_sha": "e4408e62cc8a088e5e4aab80516a29514626bed2",
+      "bytes": 2426
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v11-references.json",
+      "git_blob_sha": "d413e2568fc99539225899a119df6c686ea37b21",
+      "bytes": 110306
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v12-full.json",
+      "git_blob_sha": "ffb7dad0f8e0429d406a3f56cbbc37f71d182b1b",
+      "bytes": 389320
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v12-references.json",
+      "git_blob_sha": "ffa729e85e95018aac6f289c6bcb8b29054de88d",
+      "bytes": 117041
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v13-full.json",
+      "git_blob_sha": "35f06f432ace398f90f6381f89a338686efb2908",
+      "bytes": 400247
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v13-references.json",
+      "git_blob_sha": "4b91788a0e5ad573c5e1c588ec9c122c3098fab4",
+      "bytes": 120744
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v2-m2m100.json",
+      "git_blob_sha": "7e1b244ca252ba290d8bc19ae3e04c043584cf14",
+      "bytes": 49649
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v2-madlad.json",
+      "git_blob_sha": "f60eeb8e030d302b7f07d7f18eee0ee720574993",
+      "bytes": 51105
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v3-madlad.json",
+      "git_blob_sha": "eae76b48958b50e1a98ea1319fae64e10fb3c810",
+      "bytes": 51847
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v4-full.json",
+      "git_blob_sha": "126ab71bfe07cc03851975107a001c705dae977e",
+      "bytes": 124829
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v4-references.json",
+      "git_blob_sha": "158735f8e62fd4102f520057744fac2e6e4fc032",
+      "bytes": 61804
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v5-references.json",
+      "git_blob_sha": "8d5466c12548cea66bea9f3b8cb27174b1a8a675",
+      "bytes": 54650
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-full.json",
+      "git_blob_sha": "911f5d98412096ffbbf0f24f645d6ba25dc4ecbc",
+      "bytes": 163062
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-references.json",
+      "git_blob_sha": "5423447728e5cd6a2854b9448017197d2cc988bf",
+      "bytes": 58096
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v7-references.json",
+      "git_blob_sha": "95d16c91854c5a928f715f85f6e37111b17b1125",
+      "bytes": 57109
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v8-references.json",
+      "git_blob_sha": "db436bef698ca67e0aab63c4ad0c0fbd8e4999dd",
+      "bytes": 59273
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-full.json",
+      "git_blob_sha": "90495dbb7379b87f69fa5a1a339496602db00d75",
+      "bytes": 187793
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-late-v12.json",
+      "git_blob_sha": "e582a7b7b18a9ef51cad6744d345f125bdbb3333",
+      "bytes": 50262
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-late-v13.json",
+      "git_blob_sha": "3d66f07a5f16783d1ee540deb1378f0ff52a067f",
+      "bytes": 2425
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v9-references.json",
+      "git_blob_sha": "6b6659ff0ad3ea574fc08e1e39c98fd8d9b457fe",
+      "bytes": 71330
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-core-six.json",
+      "git_blob_sha": "eaf7a671e8b9534f8845acc5b77a49fe978ac6c6",
+      "bytes": 248229
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-coverage-addenda.json",
+      "git_blob_sha": "5bb89a49a35740dddb46e320f5ffc3018baef9c8",
+      "bytes": 3506
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-es-nb.json",
+      "git_blob_sha": "88fc4cdb38546c7bb4941c6000fdcb4ab5c4029a",
+      "bytes": 154627
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-madlad-core-four.json",
+      "git_blob_sha": "b765dcc70ef3ab370bef70b75b0da7c6ed23ad4e",
+      "bytes": 101703
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-madlad-de-fr.json",
+      "git_blob_sha": "57d69df478ff7d8dcad33eefda8c2f0bde9d62e3",
+      "bytes": 51025
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-metrics.json",
+      "git_blob_sha": "802f8276f5cc107ca2df06959fdb9f3abcb6e027",
+      "bytes": 24060
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-warning-addenda.json",
+      "git_blob_sha": "bb285a82e8470c0914e1b95c98ebae5f362bdde5",
+      "bytes": 2914
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v12-full.json",
+      "git_blob_sha": "5129bdeb1e9d91d0d256a1b53fba2928a0a0165d",
+      "bytes": 1707
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v12-references.json",
+      "git_blob_sha": "8bf90d5ba308e11ca2a088f2bc610ff9aa1e0770",
+      "bytes": 1720
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v13-full.json",
+      "git_blob_sha": "b89178e95107fb904b9f7291a923b6e21c8d6237",
+      "bytes": 1709
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-context-v13-references.json",
+      "git_blob_sha": "1f9ae246ed85e3c9c0a23474262c0e9cc3949ffd",
+      "bytes": 1721
+    },
+    {
+      "path": "docs/quality/translation-pilot/run-evidence.json",
+      "git_blob_sha": "e01022885cc24ec23d0074c3dde504fa26407e99",
+      "bytes": 8490
+    },
+    {
+      "path": "docs/quality/translation-pilot/security-v13-check.json",
+      "git_blob_sha": "c8e73769b31ad648a1fef70976aa21c6014ccc55",
+      "bytes": 1205
+    },
+    {
+      "path": "scripts/localization/build-five-letter-norwegian-wordbank.py",
+      "git_blob_sha": "e24f021ddab26bd9c8c3cc942b1cc3c1a82a58dd",
+      "bytes": 2634
+    },
+    {
+      "path": "scripts/localization/capture-live-only-106.py",
+      "git_blob_sha": "6896411e745e3377dfede416b47e6fc9bea01ca4",
+      "bytes": 11725
+    },
+    {
+      "path": "scripts/localization/compile-nvdb-tolls-data.py",
+      "git_blob_sha": "0f048a82506a58ccd356d5d36d8d142888b955c8",
+      "bytes": 4609
+    },
+    {
+      "path": "scripts/localization/export-review-packages.py",
+      "git_blob_sha": "76fabae576bf490cd8b37b1f748b0458bfce3471",
+      "bytes": 10419
+    },
+    {
+      "path": "scripts/localization/pilot-complete-sentence-policy.json",
+      "git_blob_sha": "340179d1ffc66cca6a35415fd0a00bbab28d808f",
+      "bytes": 62131
+    },
+    {
+      "path": "scripts/localization/pilot-context-policy.json",
+      "git_blob_sha": "4ca1bd2398fe936c68e55d41af35169be4e452ff",
+      "bytes": 3796
+    },
+    {
+      "path": "scripts/localization/pilot-coverage-policy.json",
+      "git_blob_sha": "fbb3f29ad4bae575014e4cb2be2fc6e3aac41c95",
+      "bytes": 32876
+    },
+    {
+      "path": "scripts/localization/pilot-expanded-language-policy.json",
+      "git_blob_sha": "c28cba464b8ac78b642e8772c58e0223be7b56d6",
+      "bytes": 81530
+    },
+    {
+      "path": "scripts/localization/pilot-explicit-negative-policy.json",
+      "git_blob_sha": "725816540d214d59dc7ac94989a20077012fd027",
+      "bytes": 56422
+    },
+    {
+      "path": "scripts/localization/pilot-memory-policy.json",
+      "git_blob_sha": "d410b724e052d3e04cc3a61c1d35e8f8e365b208",
+      "bytes": 6945
+    },
+    {
+      "path": "scripts/localization/pilot-privacy-policy.json",
+      "git_blob_sha": "c50fd19754586dd92fb58813ddc418eec4de642c",
+      "bytes": 34095
+    },
+    {
+      "path": "scripts/localization/pilot-quantity-memory-policy.json",
+      "git_blob_sha": "00590fc74db069ea3be9b67e801432a291dce312",
+      "bytes": 61073
+    },
+    {
+      "path": "scripts/localization/pilot-reviewed-language-policy.json",
+      "git_blob_sha": "32faa97681d5473ec2460804fdba6de2bfc4b925",
+      "bytes": 75386
+    },
+    {
+      "path": "scripts/localization/pilot-semantic-regressions.json",
+      "git_blob_sha": "1799f6e4d2fdcfa2786f410691e468a4a952c3e4",
+      "bytes": 255199
+    },
+    {
+      "path": "scripts/localization/pilot-sentence-policy.json",
+      "git_blob_sha": "4d30af657e95c5e104b81cc762deb124fbe02514",
+      "bytes": 3840
+    },
+    {
+      "path": "scripts/localization/pilot-technical-policy.json",
+      "git_blob_sha": "52a46bc9497ce72ff44b49e3ade3093b2ff36d6d",
+      "bytes": 54335
+    },
+    {
+      "path": "scripts/localization/pilot-whole-unit-policy.json",
+      "git_blob_sha": "402d20879fe0a1716740127935cbfc025a7aaad8",
+      "bytes": 61273
+    },
+    {
+      "path": "scripts/localization/refresh-carbon-electricity-factors.py",
+      "git_blob_sha": "bc34e1d297f8b3d89a16a1140d1d4dad747b3e52",
+      "bytes": 3147
+    },
+    {
+      "path": "scripts/localization/test_translation_complete_sentences.py",
+      "git_blob_sha": "f399634fa4b035f213ac0e0570552a46b4b8c1d6",
+      "bytes": 7811
+    },
+    {
+      "path": "scripts/localization/test_translation_expanded_language.py",
+      "git_blob_sha": "9424b718c87e77a4fb0dc029813282df1a9739c4",
+      "bytes": 5883
+    },
+    {
+      "path": "scripts/localization/test_translation_model_dependencies.py",
+      "git_blob_sha": "9cfaa398c54ca3a306a94cb1de4e5655ca72cc98",
+      "bytes": 1048
+    },
+    {
+      "path": "scripts/localization/test_translation_pilot.py",
+      "git_blob_sha": "d0c3419ba0f04d72096de04b50b95d7d887c1576",
+      "bytes": 32707
+    },
+    {
+      "path": "scripts/localization/test_translation_review_provenance.py",
+      "git_blob_sha": "bfb414a84caf42a916ffb994d1304e410940de8e",
+      "bytes": 7658
+    },
+    {
+      "path": "scripts/localization/test_translation_reviewed_language.py",
+      "git_blob_sha": "c255064846cdd9d7ccd2bae4b88c7b0724b7c46b",
+      "bytes": 5859
+    },
+    {
+      "path": "scripts/localization/test_translation_sentences.py",
+      "git_blob_sha": "d65f39d606c29669c545feab263cbd3c24536064",
+      "bytes": 10028
+    },
+    {
+      "path": "scripts/localization/test_translation_typed_data.py",
+      "git_blob_sha": "151ef7a707f2d73ff75d91f4400ea5451e7b2d31",
+      "bytes": 13344
+    },
+    {
+      "path": "scripts/localization/test_translation_warning_coverage.py",
+      "git_blob_sha": "93468a8efe3f99c385e7e8646c09f62bb90c2567",
+      "bytes": 4772
+    },
+    {
+      "path": "scripts/localization/test_translation_whole_unit.py",
+      "git_blob_sha": "418b38db2994dc2fe57d522bedfc8d4710169556",
+      "bytes": 11147
+    },
+    {
+      "path": "scripts/localization/translate-28-locale-drafts.py",
+      "git_blob_sha": "fa114e2d84d7099d17d724fb8d436aa84584ee9b",
+      "bytes": 10359
+    },
+    {
+      "path": "scripts/localization/translation-pilot.py",
+      "git_blob_sha": "c6cfb0822a7c7a5f8dcb02328799e3de32331a44",
+      "bytes": 59168
+    },
+    {
+      "path": "scripts/localization/translation-queue.py",
+      "git_blob_sha": "eed59cb505cbadd72aadc761a40fe083ad970c55",
+      "bytes": 28713
+    },
+    {
+      "path": "scripts/localization/update-carbon-electricity-factors.py",
+      "git_blob_sha": "23700ce645825feabcdaf2f905c93c52a1836d7a",
+      "bytes": 4641
+    },
+    {
+      "path": "scripts/localization/update-geography-map-data.py",
+      "git_blob_sha": "784b52a9d47d05cea967f80c236a76e74d1f1927",
+      "bytes": 6406
+    }
+  ],
+  "preserved_historical_files": 49,
+  "preserved_historical_paths": [
+    "docs/quality/translation-pilot/checkpoints/context-v10/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v11/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v12/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v7/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v8/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl",
+    "docs/quality/translation-pilot/checkpoints/m2m100.jsonl",
+    "docs/quality/translation-pilot/checkpoints/madlad.jsonl",
+    "docs/quality/translation-pilot/review-context-v10-references.json",
+    "docs/quality/translation-pilot/review-context-v11-full.json",
+    "docs/quality/translation-pilot/review-context-v11-late-v12.json",
+    "docs/quality/translation-pilot/review-context-v11-references.json",
+    "docs/quality/translation-pilot/review-context-v12-full.json",
+    "docs/quality/translation-pilot/review-context-v12-references.json",
+    "docs/quality/translation-pilot/review-context-v2-m2m100.json",
+    "docs/quality/translation-pilot/review-context-v2-madlad.json",
+    "docs/quality/translation-pilot/review-context-v3-madlad.json",
+    "docs/quality/translation-pilot/review-context-v4-full.json",
+    "docs/quality/translation-pilot/review-context-v4-references.json",
+    "docs/quality/translation-pilot/review-context-v5-references.json",
+    "docs/quality/translation-pilot/review-context-v6-full.json",
+    "docs/quality/translation-pilot/review-context-v6-references.json",
+    "docs/quality/translation-pilot/review-context-v7-references.json",
+    "docs/quality/translation-pilot/review-context-v8-references.json",
+    "docs/quality/translation-pilot/review-context-v9-full.json",
+    "docs/quality/translation-pilot/review-context-v9-late-v12.json",
+    "docs/quality/translation-pilot/review-context-v9-references.json",
+    "docs/quality/translation-pilot/review-core-six.json",
+    "docs/quality/translation-pilot/review-es-nb.json",
+    "docs/quality/translation-pilot/review-madlad-core-four.json",
+    "docs/quality/translation-pilot/review-madlad-de-fr.json",
+    "docs/quality/translation-pilot/review-warning-addenda.json",
+    "scripts/localization/pilot-complete-sentence-policy.json",
+    "scripts/localization/pilot-context-policy.json",
+    "scripts/localization/pilot-coverage-policy.json",
+    "scripts/localization/pilot-explicit-negative-policy.json",
+    "scripts/localization/pilot-memory-policy.json",
+    "scripts/localization/pilot-privacy-policy.json",
+    "scripts/localization/pilot-quantity-memory-policy.json",
+    "scripts/localization/pilot-reviewed-language-policy.json",
+    "scripts/localization/pilot-sentence-policy.json",
+    "scripts/localization/pilot-technical-policy.json",
+    "scripts/localization/pilot-whole-unit-policy.json"
+  ],
+  "preserved_semantic_fixture_prefix": 571,
+  "preserved_coverage_manifest_entries": 3,
+  "inference_AST_functions_unchanged": [
+    "complete_sentence_parts",
+    "complete_sentence_evidence_valid",
+    "translate_complete_sentences",
+    "typed_data_checks",
+    "typed_record_evidence",
+    "forward_with_memory",
+    "run"
+  ],
+  "full_run_source": "22e139ef094cff6c0e677cee5b721e0687e6146d",
+  "CI_source": "d6d4019fa0ef79b7c399c4130c10c376d90d3904",
+  "public_source_assets_unchanged_from": "9335c51dca47b2d6e69de32a8001d948d451b635",
+  "main_non_docs_unchanged_from": "a04833044d5f833242f02a5590895f4da6ebafa6",
+  "approved_locales": [],
+  "native_review": false,
+  "closure_verification": {
+    "at_utc": "2026-10-22T10:57:28.294755+00:00",
+    "feature_before_receipt": "e2d63aaa78daf20009162aab928ea263fd8e97a7",
+    "main": "54b429415cf4b20c8f22b2d8be09004cf9b3833b",
+    "critical_files_including_proof_and_recovery": 120,
+    "six_handoff_files": [
+      {
+        "path": "docs/quality/ESTADO.md",
+        "git_blob_sha": "e64a239e529df74b88342fb6bd9a276e58fb1a92",
+        "bytes": 19732
+      },
+      {
+        "path": "docs/quality/LOG.md",
+        "git_blob_sha": "9fbaa46ff5acadee94a7581bc856cd53cc3bb13c",
+        "bytes": 31428
+      },
+      {
+        "path": "docs/quality/MAPA-REPO.md",
+        "git_blob_sha": "71c8f756077d37883c18acc8ed2baf640d93849b",
+        "bytes": 5247
+      },
+      {
+        "path": "docs/quality/progress.csv",
+        "git_blob_sha": "1d0de216eb07ef300720f1a4565bd31a7ccb9f88",
+        "bytes": 178039
+      },
+      {
+        "path": "docs/quality/translation-pilot.md",
+        "git_blob_sha": "3d5b54dfa48248505ff764a1fe5832d4144c48f7",
+        "bytes": 39780
+      },
+      {
+        "path": "docs/quality/lotes/2026-10-22-piloto-v13.md",
+        "git_blob_sha": "0d6aca51b2aa5577a3cd7bdd2347018982ca0118",
+        "bytes": 8169
+      }
+    ],
+    "current_metadata_overrides": {
+      "docs/quality/translation-pilot/production-v13-check.json": "a8db97a0dde4f662c5f56ac04ba09cb9ab0ae79a",
+      "docs/quality/translation-pilot/security-v13-check.json": "1a0dda48f3cbf66cffa192649225b44592ecc6af",
+      "docs/quality/translation-pilot/recovery-v13-closure.json": "fd17f62d506e18dbfc7edc93b6d84e550bb5bdde"
+    },
+    "feature_non_docs_equal_final_CI": true,
+    "main_non_docs_equal_baseline": true,
+    "model_cleanup_success": true,
+    "run_artifacts": 0,
+    "PR_open_draft": true,
+    "Pedro_file_unchanged": true,
+    "owned_global_log_zip_caches": 0,
+    "previous_root_already_absent": true,
+    "workspace_helper_absent": true
+  }
+}

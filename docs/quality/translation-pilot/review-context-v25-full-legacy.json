@@ -1,0 +1,3702 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2 y RUNBOOK §8: significado, cifras/negaciones y naturalidad0–3. Lectura directa de todas las fuentes/idas/vueltas; gramática no probada bloquea sin inventar un defecto lingüístico.",
+  "inference_policy": "context-v25",
+  "approved_locales": [],
+  "expected_rows": 92,
+  "reviewed_at_utc": "2026-10-25T06:02:31.003730+00:00",
+  "scope": "Las174 idas modelo y92 legacy actuales con fuentes y vueltas fueron leídas directamente después del respaldo e265796. Revisión reconstruida sobre el mismo checkpoint inmutable tras faltar el temporal anterior; sin repetir inferencia ni dar por recuperados archivos locales perdidos. Siete variantes sin prueba se separan de la rúbrica. Sin revisión nativa/ciega/texto inédito.",
+  "requires_complete_model_warning_coverage": false,
+  "decision": "Rechazado: defectos o datos sin prueba; política medida intacta.",
+  "rows": [
+    {
+      "key": "shikaku.description",
+      "locale": "zh-CN",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "candidate": "legacy",
+      "translation_hash": "40e8519108e8ff73a75a723dd5076202fad7e86a4dbae746eb91f94d14e59637",
+      "record_ids": [
+        "01b44559827491965028162a3403c68b78b834474b879fbc4db513143f978ae8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 免费在线玩Shikaku。将每个网格划分为与编号区域匹配的矩形。获取每日谜题、提示和新棋盘；您的游戏将保留在此设备上。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.details",
+      "locale": "zh-CN",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "candidate": "legacy",
+      "translation_hash": "6e1a3b3e4219c1f1548c0b8145da581a834c449377d1d1a8b37adc17a5c31d78",
+      "record_ids": [
+        "3ff9b4ad3b1d9554744a1de14bfe87c61f873a8dd6ef39611d1ac8ea5c8523cd"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "其数量 se refiere a cantidad de pistas, no a su valor numérico: la regla de área queda ambigua/equivocada. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.exampleHeading",
+      "locale": "zh-CN",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "0d53f08678d8101b0c7e5053b30224fc671c55051770ba18207435ead7ad37bd",
+      "record_ids": [
+        "fe89cd030a37d9c0149b0e10847e32023ff7029f9083137346f2af0a6d2e6258"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 示例 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.faqHeading",
+      "locale": "zh-CN",
+      "source_hash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+      "candidate": "legacy",
+      "translation_hash": "33a8618cb6710e43488a4b7ed2406bf0ec1f80d10093863798a3ca5eb8a9d6c6",
+      "record_ids": [
+        "008ca0e9c98502e79eb9fea3073f1aa7b14e0dd6f012780785934d483b064351"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 问题 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "zh-CN",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "legacy",
+      "translation_hash": "e2a321f36661414013ef61b563b6bdeb37231fb26a3292884e1dd99a96c76838",
+      "record_ids": [
+        "8e51a5eec8ffd019689ce56ef16c8981e57d2b952b855bc832626cf418d78627"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 覆盖的方块 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.dragHelp",
+      "locale": "zh-CN",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "candidate": "legacy",
+      "translation_hash": "a0245b2097bdce583de9028d446bd4a789d7e2c90501dbfa0b2258086258e5de",
+      "record_ids": [
+        "dff9962bea3f51b676e316c1afc1f40d2814321eab3af83578f0723ab72eb425"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La ayuda llama seleccionar a mover el foco con Tab y repite seleccionar con Enter; leve de precisión, 对角 es entendible como esquina opuesta. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "zh-CN",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "candidate": "legacy",
+      "translation_hash": "786bcdfe3f7e4876d176c301b61ede82f3432c40955c5e568f694c51c3d9d4c2",
+      "record_ids": [
+        "7e65f767ed07218580aa9fbc866e6061b9ed0451fc5ed03f289317a27ca3e062"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: Shikaku 是一款数字拼图。在线索周围画出矩形。每个矩形都有其线索所显示的面积，并且所有网格方块必须使用一次。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.0.q",
+      "locale": "zh-CN",
+      "source_hash": "034b4f79cdf40c346b5bfea1d81f216c16da62f5ae09859b43f3d62bbb7c5688",
+      "candidate": "legacy",
+      "translation_hash": "d1d0136ca18e316833ad853d5a9cd45fa551afdc00d1427b85ece4ad557d0b08",
+      "record_ids": [
+        "222d2c818e390291c4b6303317cbb36fe9b6bdb5854d01fc1773e4cb2d901904"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "鹿角 significa cuerno de ciervo y sustituye Shikaku. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.q",
+      "locale": "zh-CN",
+      "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "candidate": "legacy",
+      "translation_hash": "591b3d44cd5384b9cc5ce9aa884ac7bbfb3ce37df2b583a245323d2e5a5d716e",
+      "record_ids": [
+        "a78be46c924857e37357b84d8c63fb5ac8931774f7ae95c405f067e3a57980d8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 一个矩形可以包含两个数字吗？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.2.a",
+      "locale": "zh-CN",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "candidate": "legacy",
+      "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+      "record_ids": [
+        "a0963a9e7460e4e4a72b7f840c2516e38e2aa5962d4a61e10836b525b93e37a6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "生成板/解决方案 es un calco poco natural para tablero/solución del juego; una solución verificada no afirma por sí sola unicidad. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.2.q",
+      "locale": "zh-CN",
+      "source_hash": "061b9172bbad7c11f22631f93f77ae0a15fd38ba2967a367865dcecef1eecd47",
+      "candidate": "legacy",
+      "translation_hash": "ba13f64d13a2556ee6a876149de8e4d8e9b9ec27cda5d01296acf0b589345a65",
+      "record_ids": [
+        "4983bfa2c0cefaff7ab90f54b430f16b1a7070a5cba9e1bfe60e8395db719619"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 每个谜题都能解决吗？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.3.a",
+      "locale": "zh-CN",
+      "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+      "candidate": "legacy",
+      "translation_hash": "32ea8a5e19604c56d4e6b747e42206323e02d0278c4a4798f973411a73703c59",
+      "record_ids": [
+        "83154f89cf43761c8d3f2155c4f93fd5ca9dbdc704b49a46f4d09be9072e7755"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "编号 transforma la respuesta No. en numeración; la condición de almacenamiento se conserva pero falta la negativa inicial. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.3.q",
+      "locale": "zh-CN",
+      "source_hash": "b368ec1d3c4b28a8345e45c54c667ae625be3816aa9b4efda42f6b018ca7f5a5",
+      "candidate": "legacy",
+      "translation_hash": "9cb1d6d9d8e9ea6190fc687a4a97b3e6a867eb19d32230c48581f9d65593e26c",
+      "record_ids": [
+        "0823ea7aa074d483c1b802ff8e33937b998f280e88c02d6a46f119d34c84f437"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 我的进度会离开此设备吗？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.puzzle",
+      "locale": "zh-CN",
+      "source_hash": "2509a26877403b3ffa4f242a266f7843bc3327829ddf8f325fb6dca399b7c2ac",
+      "candidate": "legacy",
+      "translation_hash": "37a7ebce781df40c5d20614c9e3c9ac23b28bd897341b16886a8b48499375824",
+      "record_ids": [
+        "9b08178fac655948790446232991ff156518af6f8e85437af26a8e02b534cc20"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 拼图 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.ready",
+      "locale": "zh-CN",
+      "source_hash": "df6e45fe2a00defc65aeff5434d873d5f89e77c6f6bf0e58c0d3faff0218d7a8",
+      "candidate": "legacy",
+      "translation_hash": "bd1e7b012070cf43d7102f27d0ef3888e592c468db1ca075b45543aca0ea377c",
+      "record_ids": [
+        "22c386baaacb892ea6fd97e83f0b65938459f77216d1ea72dc97697baf34e33b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 选择网格大小并开始。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.regions",
+      "locale": "zh-CN",
+      "source_hash": "183bc1aabbc9b333ab7faeaf5ee9f024cb5ef279777a51c70be866049d87aea5",
+      "candidate": "legacy",
+      "translation_hash": "88b75a101595a23afc92d9a290b08c542fa4ef661559538ffd7239796476bfea",
+      "record_ids": [
+        "a8bd395e56df7449cda8cde1ecaf5e8b369062633e804a3907b65a13fd90efe6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 矩形 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.ruleReference",
+      "locale": "zh-CN",
+      "source_hash": "c52a28e3876b46a8bf98b8b60ad089168d859655b5a98b19e25e8cb4462050e0",
+      "candidate": "legacy",
+      "translation_hash": "4d138022895cbf575019345f584de9e7cfc48977047b6392e11fe9f2b342a75d",
+      "record_ids": [
+        "37002b5e711d6018b13da2ab2a7e0dcbcacb67c33e1db244aa1ae51004c44b59"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 拼图规则 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.seed",
+      "locale": "zh-CN",
+      "source_hash": "9a37c639fc9f5132c1813e6a00ad8b1e4d3af6669cb55823b6b93a93a4267a6c",
+      "candidate": "legacy",
+      "translation_hash": "23cc89edff180ba8340b2260a3146d0f79468491521d884619519e211fe900c5",
+      "record_ids": [
+        "7dbfccf18dfef36328c40a63635333e8885b4fa657c6b5d2f97f8c493d4ecc23"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 拼图编号 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.size",
+      "locale": "zh-CN",
+      "source_hash": "3fd344ffd82464420f12a2ee86afd43dddc79c87e7b556845e4bc7c8cb34ebe8",
+      "candidate": "legacy",
+      "translation_hash": "7924e2f6d9c2c46f4784e0327f15bc8dae457fcdcff2625ba60ef95053aac1af",
+      "record_ids": [
+        "cb61281d633dda20a5e5fe8ee65a3ff51aad668a13741d1ff0963fa44ecff40b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 网格尺寸 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "zh-CN",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "candidate": "legacy",
+      "translation_hash": "27aa2247752d5aa0ae8035e95cc494575a2116e41af3860bc6a55b4c16e97d1f",
+      "record_ids": [
+        "296b041d9fc0f87685dff227213cc7ebb16eb896c8d0c7e259d29cfba8db5b2e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "解决方案 se entiende, pero es poco natural como solución de este juego; preferir 答案/解答. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "zh-CN",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "candidate": "legacy",
+      "translation_hash": "e9127b50040e03ee5a189273fdef9bd6122100fee10cb6eb84807c8bc016b8b6",
+      "record_ids": [
+        "548a642f0f75ccee75bc0528f5ba364f40183c61d306641cb0c1faa9113ddb24"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "鹿角规则 habla de reglas del cuerno de ciervo, no de Shikaku. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusDaily",
+      "locale": "zh-CN",
+      "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+      "candidate": "legacy",
+      "translation_hash": "a8f5fef79ce75622e0a384e657cf6278a433deb0022910e6fa601619bbf54ccc",
+      "record_ids": [
+        "46e8ced7ff0c1c8a62c535ede16f6f38dd7c41883e3dd2918bfa842503037769"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 今天的拼图已经准备好了。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusDeleted",
+      "locale": "zh-CN",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "candidate": "legacy",
+      "translation_hash": "34c6ac9e5ac8ad968b76b3161099715402f3799ba3ffe009794852eaac301965",
+      "record_ids": [
+        "9c4a732536103a13ea62e157518d19c6a056523b18e8a2e90f7e204b5f1ed4f7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 已保存的进度已删除。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusGenerated",
+      "locale": "zh-CN",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "candidate": "legacy",
+      "translation_hash": "6955841087286d498a5e6cd6ccf4ab1e99393d25dda3efd1bf69d476816d455f",
+      "record_ids": [
+        "012bf9522258fa83a6e9d8df8f028b7c696664b2098114c0509a073f071c06dc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 一个新的谜题已准备就绪。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusHint",
+      "locale": "zh-CN",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "candidate": "legacy",
+      "translation_hash": "3b37ef54c31417e8c9f95335bfe4386281638c18824c7201c526c2e5566bb224",
+      "record_ids": [
+        "562fb3bbac5c68c8ec71afab2d1c73408501090238ca86aeef9610d805087591"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 提示：已勾勒出正确的矩形。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusIncomplete",
+      "locale": "zh-CN",
+      "source_hash": "8d10609ff52aae309bf7e11e35149f7740322a671da31f8b3ecbea7f891a8955",
+      "candidate": "legacy",
+      "translation_hash": "32bac3287568f758e1d27370f86f5afc08b616990fcc74d878308d57740bad6a",
+      "record_ids": [
+        "df8ce179a76c35fcc5bdaa87282667c416e5dd29dfd1d99a56163771da868f29"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 一些方块仍然是空的。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusInvalid",
+      "locale": "zh-CN",
+      "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "candidate": "legacy",
+      "translation_hash": "b7ef12bf10bc05d1e7726c9cea448c0233ec92f926340be2ee526bae78fa9a6d",
+      "record_ids": [
+        "b5a843b589a846b93f81cb19a380981e77c6245e9afeb0b171088781b25f38b1"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "另一条线索 dice otra pista, cuando el solapamiento debe ser con otro rectángulo. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusNeedStart",
+      "locale": "zh-CN",
+      "source_hash": "17e2fa514c38464d01ff155a1b975d9036d93571ae07aa2a5d92b1b7377a658f",
+      "candidate": "legacy",
+      "translation_hash": "006cdcbb5cbbff6e43ca06efb630cadad3569ad338e16d5015e5afeaf4c4f0ae",
+      "record_ids": [
+        "5e63b92e7cb3497d8bf41279b042d085421d02c9e7b2f718a5b403a21daddb71"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 首先选择一个起始方块。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusNoHint",
+      "locale": "zh-CN",
+      "source_hash": "5f73bb19199ff39a117346245696341080defb739fb4aa96d4dc30a22a130302",
+      "candidate": "legacy",
+      "translation_hash": "33b6ef621070a6d5cbf69001dd062702bd7dc513f3d9984a659db476708ea106",
+      "record_ids": [
+        "e6646005bcfc7695c536f60749e202ed8029e2b3037a3f7ea41ec3ee78fb2274"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 没有可用的提示。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusPlaced",
+      "locale": "zh-CN",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "candidate": "legacy",
+      "translation_hash": "9018781d0ae0d84adc64f4f6dc6388f045e439e11a877a24c6f9778dbd824332",
+      "record_ids": [
+        "65fd0dfd458e13de722c6aaa0ee92e47c285dec9ca8a9b0592e9380e273c5017"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 已添加矩形。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusRemoved",
+      "locale": "zh-CN",
+      "source_hash": "df2cea3d3735d58d384b4ec5756e0fd1b0e8a360dbd52da2743c1ea549c55eb5",
+      "candidate": "legacy",
+      "translation_hash": "d9fbd85ac59cf11da0587586000fcc5ec5ef1a51b65298e979f02ef4a87794c9",
+      "record_ids": [
+        "e1cf638866089c81564376607fd1280aed89d3eacfb91a56d072773239da1001"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 矩形已移除。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusRevealed",
+      "locale": "zh-CN",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "candidate": "legacy",
+      "translation_hash": "f79cff5d1316d9d6b2b4600495bb2e7a246a20de1eeaae42c0e460b91d5efbae",
+      "record_ids": [
+        "1fe1cac88b4e73f8d4c2309759fde4227729c68ad5b52eb7356dcfede08eb67d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "所示解决方案...再次玩 es un calco sintáctico poco natural; se entiende solución mostrada y volver a jugar. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusSaved",
+      "locale": "zh-CN",
+      "source_hash": "c834d5befcb40b515a790e5fe0c223a1383438a0302d4952463d635a8543cab9",
+      "candidate": "legacy",
+      "translation_hash": "9bcff7370cbb1348cd7cf9b3928d5503f18babd2389b46dd27a2ddeeae74bc20",
+      "record_ids": [
+        "000981f93f1b04ff76c6cf40db7b34727e7cf07b962d7f3221013edc7c4cc5a0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 此设备上保存的进度。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusWon",
+      "locale": "zh-CN",
+      "source_hash": "6be09835314bbdf76630f2754d8607ee2b3cda0836f3ea8a55f4be02f1210744",
+      "candidate": "legacy",
+      "translation_hash": "a0967d41b01c431608856e2a7147b311767755de28c84b597f9a50cf132e68e4",
+      "record_ids": [
+        "820fdb8c0d38eb74bf1acc0170f983cdcd185df55c8a5d8296941898a28192ca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 解决了！每个方块都被正确覆盖。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "zh-CN",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "legacy",
+      "translation_hash": "16a3e8961b1798d0853c0a64a95997171491c8be2a97dac03e73659b5b6a2d21",
+      "record_ids": [
+        "c8b4ee21337f7c1a76c7deacf3e55b8535073fa14733bb4f3e04c9b87daf18c0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "矩形区域 es menos preciso que 面积 para comprobar áreas del puzzle; defecto leve de claridad. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.freeBadge",
+      "locale": "zh-CN",
+      "source_hash": "c7b94045ee1ad4623931a29aa8c09b5ae4f5f21f4286314ba686cd1fc83096fb",
+      "candidate": "legacy",
+      "translation_hash": "cd32b787612e3a113af0e3f85174855c09b4401d24dc29f967062005dba3468d",
+      "record_ids": [
+        "2f65dd6dcec0c2ad48242653f282993434572432eb95f6e405609631535c6917"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 免费·无帐户·保存在此设备上 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.home",
+      "locale": "zh-CN",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "legacy",
+      "translation_hash": "203c08e0d44ac3753a3c5b96644a6e10403bc0cbc5770b55cd1f775745a0a978",
+      "record_ids": [
+        "4568afbdd9853c89ef15b8779a71c46e3944b13117d4da3fa895b2e938df4f96"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 首页 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.howItWorks",
+      "locale": "zh-CN",
+      "source_hash": "13a6b22428cd17c402c4a0361b645ee0894bada3ee921a3faa3eb3f2dd110e0c",
+      "candidate": "legacy",
+      "translation_hash": "f07645071973302b5aad23dbf41f052fa7b071cd20ee14e7584a3fc60ad5d62d",
+      "record_ids": [
+        "900a8044b1c312ded529cdd8a27326ebcc621424f32e33f84d2a97d85e66f356"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 怎么玩 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.intro",
+      "locale": "zh-CN",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "candidate": "legacy",
+      "translation_hash": "dfe055a2604e293c203f53361270c7c894ebc59d7f3e8672aafdf4e20fefab16",
+      "record_ids": [
+        "ca58cbb7ae0cc93ad49acefff2006ee8a519b3af9f940c4ab1fc9af09f3bada5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 绘制矩形，使每个数字恰好是一个区域的面积。将每个方格覆盖一次，不要重叠。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.language",
+      "locale": "zh-CN",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "candidate": "legacy",
+      "translation_hash": "9f6fee1aba17a56586bf16a77b07b1a76d8c4e867430c6ee6abfa3128b55fa98",
+      "record_ids": [
+        "9627bd84661ef212ef2e41aba4b7316ac476069fb65b5df80e80fadc1086304c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 语言 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "zh-CN",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "candidate": "legacy",
+      "translation_hash": "7fedfb89e1fbec0a2a8c6f1d4bbe7f707b85cef656a28edb7c23b37059cf0798",
+      "record_ids": [
+        "cc45e5802c28db5a45eb5add26a399d0d09acf70ec9572479019bc51e8909660"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 拼图是在您的浏览器中制作的。较大的网格可能会在较慢的设备上花费一些时间。无需帐户或文件上传。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.limitsHeading",
+      "locale": "zh-CN",
+      "source_hash": "5bec15dcf9064f77e758fd1db9f37a724d8038dc30b11a8043a44f5079fb6e59",
+      "candidate": "legacy",
+      "translation_hash": "df6d8f75d5e3ab041494835b3f1683f39247d2ae85f5a9564c5f463e2aacd0aa",
+      "record_ids": [
+        "4a30d0a37a46157ae8ab4410b6daccfbb0d2a99d7d5669738b723c2ce8a311cb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 关于这个游戏 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "zh-CN",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "legacy",
+      "translation_hash": "4c86cdf266945a97200a2f3d33b9be0b769337672c7a83fa99d6d3be692a1dbb",
+      "record_ids": [
+        "cbd5d54916480f2ae95f0d52f8b7f65bb8926df7ba82dbeb2739f8278f77fcd8"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "鹿角 vuelve a sustituir el nombre Shikaku por cuerno de ciervo. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.privacy",
+      "locale": "zh-CN",
+      "source_hash": "6e1eec3cceb3260523ac5004e36aba6150bb58d19ea82378cc6ac78acce2a0c9",
+      "candidate": "legacy",
+      "translation_hash": "6e85497e2d70b1b147386ff3f9ddd85833bf30e90be318ad0b09742df3afcf52",
+      "record_ids": [
+        "b51105bc3775bd2446c084e06e4fe368720e0751186d3eda867b30c44e8dc36f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 免费玩。您的谜题和进度都保留在这个浏览器中。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.related",
+      "locale": "zh-CN",
+      "source_hash": "ac611f323eb0278f314a8d645943ad2b529c24de4b6aca9fcb76fcf52ecb25e2",
+      "candidate": "legacy",
+      "translation_hash": "d670954aa9e72c7a03e9c29cd1f48591232a8f11a1be596e856a25dc7737d89a",
+      "record_ids": [
+        "702989f75937085eec5d3af7f4c3d1dcc953e819ec9681b477978e5151f9b857"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 更多免费工具 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "zh-CN",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "legacy",
+      "translation_hash": "0f97fb3807027e1a870d9b0ca30a8720d4f4c86bbf73f652d1bdc764bcd28051",
+      "record_ids": [
+        "7ac36b442d4e957e23288ba19cec95dd59c8320b763ab46e9748b56402ffc094"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Puzzle Online sigue en inglés en un título chino. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.useTool",
+      "locale": "zh-CN",
+      "source_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+      "candidate": "legacy",
+      "translation_hash": "2bcd4521231120906974f28bae2c0f49d762ed5679069052f1a95c8af76dbd1c",
+      "record_ids": [
+        "906066083abb3e496f5f9dc0b14eb2a2826369f6bfe57983213f07581ab66ea6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 玩拼图 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.description",
+      "locale": "zh-CN",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "candidate": "legacy",
+      "translation_hash": "f018b74d9a7b8f9778dc9c343e884d281f0bb45e2022a396ee58413fd778ea1a",
+      "record_ids": [
+        "e33d8a72cabd23d4e672d8d5bbf4d1d2638f5a3113fcfdb9edfe741480c1b50c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 更改音调、塑造无线电或深沉的声音效果、预览回声以及在本地导出处理后的音频。免费、私密且无需上传。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.details",
+      "locale": "zh-CN",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "candidate": "legacy",
+      "translation_hash": "642ab7c7da6e4f06783baf737b3efd4adbc819eb42e96a6812dc8f46222c1a3b",
+      "record_ids": [
+        "3f115b80a014ac2b0b983e14e7ac9fb4c4bc44176f90902dbef0578141e48879"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "网络音频 traduce Web Audio como audio de red, en vez de mantener el nombre de la API local. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.example",
+      "locale": "zh-CN",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "candidate": "legacy",
+      "translation_hash": "262805d93902b19ff8b12ff2dc0293c3a3a8a79dcedc439a0e41abf313e6abbe",
+      "record_ids": [
+        "a0bc7a34a093ab59f1d5e393be317b39d575bcea4c901b59ab0fd79b42fb4ac0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "尝试录音 sugiere la acción de grabar; para probar un archivo ya existente conviene una frase inequívoca. Solo ambigüedad leve. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.exampleHeading",
+      "locale": "zh-CN",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "0d53f08678d8101b0c7e5053b30224fc671c55051770ba18207435ead7ad37bd",
+      "record_ids": [
+        "d8852aff43ece4c08a9e6ec80a1e1e15dbbf5083ec5886ecd94b24a0effe0c9c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 示例 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "zh-CN",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "a44bf40188dd795e99b703bd9cf19c4acdafed302c1ba0c1d878c2c1b4815fb6",
+      "record_ids": [
+        "48772026f34f56b1fe832db95b5f9aaddc19f04b84c91eb5d4a78b3f52faca54"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "编号 convierte No. en numeración. La segunda negación sobre recepción sigue presente, pero se pierde la respuesta inicial. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.0.q",
+      "locale": "zh-CN",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "bad8be97c24306b6e19d7b076bd083bf40287b46757473be46bb3cd674f25067",
+      "record_ids": [
+        "d3685ff44f375fe6616781dfa842631483bf322b67524663b28fda5463394331"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 我的录音上传了吗？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.1.a",
+      "locale": "zh-CN",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "251bdd95b36d64c101b046b38289422dafb65468967ff9d635692df834502bcb",
+      "record_ids": [
+        "a77ed27e5c446b80e7703f63c9d3adb6b55e423d6b563d001eea9d99da78eae7"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "编号 reemplaza No. y se pierde la respuesta negativa sobre mantener duración; relación tono/velocidad conservada. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.1.q",
+      "locale": "zh-CN",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "92c40454c000b35b0b894d0cd734106f33449106e2cce7798995da8e1bac5b69",
+      "record_ids": [
+        "fe1ccf22f5402cbd0d8bc7fe2c2f7f612e66d4bef4ceca8c9c118b885c1d6cdb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 音高变换是否保持原始持续时间？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.2.a",
+      "locale": "zh-CN",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "6d1d05bda278f676bc8c46c8fc21b4336c7753b662c40e62bd042369bb0e6cc8",
+      "record_ids": [
+        "22b7cc9152276251574f9268930395783806cbece8a89d9df5efb4e0b94dd3e2"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "编号 reemplaza No.; además 将一个声音变成另一个真人 convierte sonido en persona. Negativas restantes presentes. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.2.q",
+      "locale": "zh-CN",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "06e015f2100b5d4b0a1915b46344704581672df9abe51a35d919ae74894a3e5b",
+      "record_ids": [
+        "6562207d25f7d00efe6b5da254e24774ec143af433122f413beb13bf9509f7c5"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "单独的人声 es un sintagma nominal de voces individuales, no el verbo separar/aislar voces. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.3.a",
+      "locale": "zh-CN",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "25cdbb274dd1798d88869fd22c5abe7075cb6961ebb70585762e89684f4ded1d",
+      "record_ids": [
+        "2cd6f5d5182f04db82e1e54e987e91d12dc7bd5054574f2b2a6b981a855ab5a6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 该工具在您的浏览器中呈现标准的未压缩 WAV 文件。输入可以是您的浏览器可以解码的任何音频格式。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.3.q",
+      "locale": "zh-CN",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "3ef493b9ec5a8fb10185bdc752eeeab317ce378982e9931949058deae5600d87",
+      "record_ids": [
+        "3577269433c761dbe2d14da8f22aa0b6fd24d1b5c4a58866d474ac1c28570f8b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 创建哪种导出格式？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.4.a",
+      "locale": "zh-CN",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "83bdde377ad78018a04e73d070763d9a60bc50b98f869c94d15dacec93bb5948",
+      "record_ids": [
+        "6ae5ad622808080f229df65679e61dbdeb3f648b12a04bca3f6bf24afdd46340"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La comparación de clips cortos y ordenador frente a clips largos en móvil queda mal organizada, aunque el consejo se entiende. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faq.4.q",
+      "locale": "zh-CN",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "92867358fbd9d18e4977f7792a94ec17efa1fc79e8a7a510b9c8db535b2c20d9",
+      "record_ids": [
+        "31dbf9367a75cc51af99dd1f066fddddaa6ed45f2003d3c2ca2182dd84123511"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 为什么处理速度会很慢？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.faqHeading",
+      "locale": "zh-CN",
+      "source_hash": "e956a9404b467e6b372e082d28cb9d4710af764c2fa5e56a415211e12166be0e",
+      "candidate": "legacy",
+      "translation_hash": "70a833e79412cf5beec00d18327eff9e9641b06a76c43d21959341f8fb2de58a",
+      "record_ids": [
+        "9d50a7ac46f9c02b1de9ddec520507a569e0f54009c8d2d598f8e32d80c64917"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 常见问题解答 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.bright",
+      "locale": "zh-CN",
+      "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+      "candidate": "legacy",
+      "translation_hash": "b0dedf02fafb645ee9d9bfbb5d252cb469d240ef4ceedd4404e8dc147d6a5bae",
+      "record_ids": [
+        "2c35231e06029c1987d0b174cc07b624bf6de3c16c087f25b17f49f5b7afe2ec"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 明亮的声音 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.clean",
+      "locale": "zh-CN",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "candidate": "legacy",
+      "translation_hash": "d5a8d6bcf268a9777534eb9e9205861bd06e2f633b8160c590be42c87c80ac00",
+      "record_ids": [
+        "4006e9a7fec73527c5a33ece99d1e34d9fddd06775aa1c8b651b816930ee8fe6"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "清洁 es limpiar físicamente, no preset neutral/sin efectos. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.deep",
+      "locale": "zh-CN",
+      "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+      "candidate": "legacy",
+      "translation_hash": "3318fcf935354ec98d1ca382700e31aa5c73e29b781698b3699a6d5f43089126",
+      "record_ids": [
+        "8d19374eeaefd63746e421bb3728b321f56ad31ae2faea5111082e92eaae2173"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 深沉的声音 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.device",
+      "locale": "zh-CN",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "candidate": "legacy",
+      "translation_hash": "c2c99b3bbe12e1f679e3210077065858f34c0b875711933d997ff344c3001b69",
+      "record_ids": [
+        "c737f0f926e54f2201fc69b66e313a2c6380b2dbe55582457f566688d7ec93da"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 建议使用电脑，处理更流畅。速度和内存使用取决于您的设备。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.echo",
+      "locale": "zh-CN",
+      "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+      "candidate": "legacy",
+      "translation_hash": "72b977ec2e0295bb5e054e82dfe1377a66591143555b1dbbe2465f135e789c47",
+      "record_ids": [
+        "305c9e403a7ab0d355660fcea056ff48707e1242a6e10eca813bba04ca6240ed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 回声 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.effect",
+      "locale": "zh-CN",
+      "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+      "candidate": "legacy",
+      "translation_hash": "4963524494dced5c049e185417b5b2423da190f7bfa685f437853e6873d9dfa4",
+      "record_ids": [
+        "621ba236adf8ad0d38ec7c402204716f50a3f7e38bbaf6864d4017888a66aa80"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 效果预设 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "zh-CN",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "candidate": "legacy",
+      "translation_hash": "b9b3b1cf9c6882912985371ab219923fbddd74e667f4afde1e2186b3db7d6c3d",
+      "record_ids": [
+        "c40da2db45d698b1c114c24ad30fddffe2179a9cf7030265fb14d672227bf46e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 处理后的 WAV 可供下载。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq1q",
+      "locale": "zh-CN",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "bad8be97c24306b6e19d7b076bd083bf40287b46757473be46bb3cd674f25067",
+      "record_ids": [
+        "a1b1300ccd163853b173e7933e93a393f086f8a95590672deb4ec66282fd4e0a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 我的录音上传了吗？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq2q",
+      "locale": "zh-CN",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "92c40454c000b35b0b894d0cd734106f33449106e2cce7798995da8e1bac5b69",
+      "record_ids": [
+        "1584556976415c49b7d394be6dc1b4c5104060449914d7f4529a745f01ba753f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 音高变换是否保持原始持续时间？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq3a",
+      "locale": "zh-CN",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "6d1d05bda278f676bc8c46c8fc21b4336c7753b662c40e62bd042369bb0e6cc8",
+      "record_ids": [
+        "2e9d4abb4abf74db6b020e5cbcd4e2a8be9ec616737c1a4ce18bdadcff459528"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 2
+      },
+      "notes": [
+        "Mismo No.→编号 y sonido→persona en la FAQ de interfaz; clave fuente distinta preservada. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq3q",
+      "locale": "zh-CN",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "06e015f2100b5d4b0a1915b46344704581672df9abe51a35d919ae74894a3e5b",
+      "record_ids": [
+        "677366264e82b36d507dd904ac50cde976de43f24f1f5a7b30e1c24274345657"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "单独的人声 vuelve a nominalizar separar voces y cambia la pregunta funcional. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq4a",
+      "locale": "zh-CN",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "25cdbb274dd1798d88869fd22c5abe7075cb6961ebb70585762e89684f4ded1d",
+      "record_ids": [
+        "5932264b366cea3d32f2fe762d642c77462e091e93712aa6cb66d08650e043aa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 该工具在您的浏览器中呈现标准的未压缩 WAV 文件。输入可以是您的浏览器可以解码的任何音频格式。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq4q",
+      "locale": "zh-CN",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "3ef493b9ec5a8fb10185bdc752eeeab317ce378982e9931949058deae5600d87",
+      "record_ids": [
+        "ca9aac5608fe1ca49a056e74d535cf64fb997db345c50b06568fca4e0388d360"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 创建哪种导出格式？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq5a",
+      "locale": "zh-CN",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "83bdde377ad78018a04e73d070763d9a60bc50b98f869c94d15dacec93bb5948",
+      "record_ids": [
+        "d1de7b0fd8343c246b8963a52ee53d2ff72a801812c04ef8fe44a196f5409ca3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 音频渲染使用您的设备内存和处理器。短剪辑和计算机通常比长剪辑在手机上运行更流畅。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq5q",
+      "locale": "zh-CN",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "92867358fbd9d18e4977f7792a94ec17efa1fc79e8a7a510b9c8db535b2c20d9",
+      "record_ids": [
+        "6fef81d66de98a0c8533420925aeb33bc696175c0f438d1d60a3c71023ef6bf8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 为什么处理速度会很慢？ La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "zh-CN",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "candidate": "legacy",
+      "translation_hash": "352ba0280ce03886d35ae53570bbc3206211915f85d40317340bb4031319cd63",
+      "record_ids": [
+        "a8478b3cef20ee1ff2b60c3850165cbbebbfc7ab49fdbee1ad6f76455390d057"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 使用浏览器可以解码的格式。最大 25 MB 和 30 秒。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.loading",
+      "locale": "zh-CN",
+      "source_hash": "d20218d43c5baad32d4b8080beec0bea5273de91138f25c3899aa78f69a1ccda",
+      "candidate": "legacy",
+      "translation_hash": "2ecd89671e679bdfea9947fcc85069772f0cbead3c615d2672ce2bb87906ad6a",
+      "record_ids": [
+        "8fc4928c777ae32f0b7e72237e252f7cf7a474c144a226668f8a60ebeba04b82"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 本地解码音频... La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "zh-CN",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "candidate": "legacy",
+      "translation_hash": "a3b7aa3131c7f4331dae7f5c35a454f67402ebc7bb49fdecf9e0976874dc5818",
+      "record_ids": [
+        "bd64d7cb6ba5b066e6ae4554a3e19ab5d39a9813e9d57701ae8677c8e7b3c0d0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 在预览或导出之前加载音频剪辑。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "zh-CN",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "candidate": "legacy",
+      "translation_hash": "7f38469c5a6d99cf14155ff0523b4ad592a91307610f488664af2d4e41bdca31",
+      "record_ids": [
+        "891a6aaf2b0f590a33b08af0e47bba8bb9494226fe91b1c974449ab9d122d951"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 变调（半音） La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.playbackRateNote",
+      "locale": "zh-CN",
+      "source_hash": "03f4e3f331c890be8134aa6d9b648ca437a864fed42753cb6f253ac072ce00d9",
+      "candidate": "legacy",
+      "translation_hash": "6ae6d509180cb546607e4876af1afb7aa78f6462bdf15bd8265306c2c2d57071",
+      "record_ids": [
+        "55eae96e45df6a101d300f9da9d18c7111db5e32639a0392558cb1f41d5b5613"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 音调控制还可以改变播放速度和剪辑长度。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.processing",
+      "locale": "zh-CN",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "candidate": "legacy",
+      "translation_hash": "0c77dcadd357427d1783b734ab55cd459272c2c9037a986e2acf8d0f693b2b56",
+      "record_ids": [
+        "e089852124ddd3dde417948620c0630b46366b70ea47179d46d02a07bbb2cae9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 渲染处理后的音频... La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.radio",
+      "locale": "zh-CN",
+      "source_hash": "2a7dfeb2f2b018e5dae04497c0a281e7b22403057b91679046c9da52433894e1",
+      "candidate": "legacy",
+      "translation_hash": "ca2c561ff6bca7889aec1c8b224eac14c54a5ef9b944dcb684919461eddb2db8",
+      "record_ids": [
+        "db1d88d67d31309843748f57eac7f9b3452c1c46bd30c84351f68c22f3bcdade"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 收音机 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.status",
+      "locale": "zh-CN",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "candidate": "legacy",
+      "translation_hash": "a96607cd79f89cb09bb33c7e4fefc9e96e08c679bec55d49b9fa7fef6846b625",
+      "record_ids": [
+        "0baa0d124f5b10a74f5647d20b95b29858aa193b1f8312c93aa1271e14acf71f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 变声器状态 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.volume",
+      "locale": "zh-CN",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "candidate": "legacy",
+      "translation_hash": "fbf6ec670ff610034e99f15e9db4d46a0c6cb2fb4d576c7a1fbbd27eb7a2dac1",
+      "record_ids": [
+        "844592f20c958cf47b6814c7846f1c89ba27605f65745e03a842f026649e731c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 输出电平 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.howItWorks",
+      "locale": "zh-CN",
+      "source_hash": "de3eaa7ed04dee6b7107ac85941500cae480e29ede1e055980f63bfcfb32f70d",
+      "candidate": "legacy",
+      "translation_hash": "e8d6f43bf9e5ae810d8d2d2658270c1ada55bdc95c353c69b7fac7c7b2d6a014",
+      "record_ids": [
+        "9d8f9269e1ae79eff5688695923f6fdc066a00d3651c5e94696c76f3339c4c46"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 变声器的工作原理 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "zh-CN",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "candidate": "legacy",
+      "translation_hash": "73097242434e1559f0b98875c62c1d7b7dfbaf9d3fd3f187c0b4ad3525a2a0d1",
+      "record_ids": [
+        "7d1c13806fb6dbd14bf91a8049eb674342e75ae0900be81c57782b3113ac3cce"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 为短音频片段提供更低、更高、无线电、明亮或回声效果。预览结果、调整结果并在您的设备上导出 WAV 文件。 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.limits",
+      "locale": "zh-CN",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "candidate": "legacy",
+      "translation_hash": "b5f5a9c49d319686c788f3e22def41d3494b559ee9597aeb08a12acbc8ff3e47",
+      "record_ids": [
+        "6686293d0e7981793c0cba784f79240aac1bd41753756a6732394b3df424d814"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "单独的声音 es voces aisladas como objeto de crear, no capacidad de separar voces; la última frase queda mal coordinada. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.limitsHeading",
+      "locale": "zh-CN",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "candidate": "legacy",
+      "translation_hash": "54b41f57de1c1255657ca4439b2bcbce0e296d7ab62596cf681760a33bfe757a",
+      "record_ids": [
+        "114b9fee9c7cd62c92a984d0d1d41bd14b8e6ec6c1c7e89d814141b70f29a8ad"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "影响 significa impacto, no efectos de audio. La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.name",
+      "locale": "zh-CN",
+      "source_hash": "d1518eabcadd5528e9274833eaad6891cb0eeeb91ff4dfb6d24a4bffe2b1f72c",
+      "candidate": "legacy",
+      "translation_hash": "fbc346b64f572a37d2566bbc87d307f8506256ba21177ef311d7671f32536ee4",
+      "record_ids": [
+        "99168b02a163d952d0fbd5e6e6bd5c33149d3eb04a3b6f442e068d731f856e04"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 变声器和音频效果 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "zh-CN",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "legacy",
+      "translation_hash": "cfa061c91f5507813f1c01fec4caff3e795030dcfbc2a9e67759e11440363bb3",
+      "record_ids": [
+        "596f8d38990d357697548cdfc928f1030b3d3d63685ffd69cee746de5237a7ea"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa fuente/ida: conserva significado, acciones y restricciones en este contexto. Cifras desconocidas para el contrato se registran aparte y no originan una rebaja lingüística. Texto contrastado: 在线变声器 — 浏览器中的免费语音效果 La nota de ida no procede de la vuelta. Relectura directa de la ida v25; igualdad de bytes no basta para aprobar."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "01b44559827491965028162a3403c68b78b834474b879fbc4db513143f978ae8",
+      "translation_hash": "40e8519108e8ff73a75a723dd5076202fad7e86a4dbae746eb91f94d14e59637",
+      "back_translation_hash": "d1354d7bfc8bd2a2efb6a4779ebc0c532d96e18e8c8d9e57250fef2b3d80f00b",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "3ff9b4ad3b1d9554744a1de14bfe87c61f873a8dd6ef39611d1ac8ea5c8523cd",
+      "translation_hash": "6e1a3b3e4219c1f1548c0b8145da581a834c449377d1d1a8b37adc17a5c31d78",
+      "back_translation_hash": "cb0b41bb3df4ed647b04d468db7c346f31257b2ddf3c8821c0f283071ae2e3f0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "其数量 se refiere a cantidad de pistas, no a su valor numérico: la regla de área queda ambigua/equivocada."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量."
+        }
+      }
+    },
+    {
+      "record_id": "fe89cd030a37d9c0149b0e10847e32023ff7029f9083137346f2af0a6d2e6258",
+      "translation_hash": "0d53f08678d8101b0c7e5053b30224fc671c55051770ba18207435ead7ad37bd",
+      "back_translation_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "008ca0e9c98502e79eb9fea3073f1aa7b14e0dd6f012780785934d483b064351",
+      "translation_hash": "33a8618cb6710e43488a4b7ed2406bf0ec1f80d10093863798a3ca5eb8a9d6c6",
+      "back_translation_hash": "666067dd376e5d4553b8fd554f855855819ad213ae825022d2a32dfa28431115",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "8e51a5eec8ffd019689ce56ef16c8981e57d2b952b855bc832626cf418d78627",
+      "translation_hash": "e2a321f36661414013ef61b563b6bdeb37231fb26a3292884e1dd99a96c76838",
+      "back_translation_hash": "8e05bd6d0cde91e95e800e4d7b832af3580006457db206b31ae0c596a96bb21c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "dff9962bea3f51b676e316c1afc1f40d2814321eab3af83578f0723ab72eb425",
+      "translation_hash": "a0245b2097bdce583de9028d446bd4a789d7e2c90501dbfa0b2258086258e5de",
+      "back_translation_hash": "3b824a72121b71c147987194c3c66c58d44fbd49682c009d941347b1323f205d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ayuda llama seleccionar a mover el foco con Tab y repite seleccionar con Enter; leve de precisión, 对角 es entendible como esquina opuesta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter."
+        }
+      }
+    },
+    {
+      "record_id": "7e65f767ed07218580aa9fbc866e6061b9ed0451fc5ed03f289317a27ca3e062",
+      "translation_hash": "786bcdfe3f7e4876d176c301b61ede82f3432c40955c5e568f694c51c3d9d4c2",
+      "back_translation_hash": "73d39e0a59ecdf66fc1d6c2ff5cd8eb02a6cadffdf5a6cd6ea1f8b90d69d5266",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Digital jigsaw cambia el tipo de juego y around a line sustituye pistas por línea; ida 数字拼图/线索 correcta."
+        }
+      }
+    },
+    {
+      "record_id": "222d2c818e390291c4b6303317cbb36fe9b6bdb5854d01fc1773e4cb2d901904",
+      "translation_hash": "d1d0136ca18e316833ad853d5a9cd45fa551afdc00d1427b85ece4ad557d0b08",
+      "back_translation_hash": "b49f3bedf359969204e1021f1c5a33b5216ab21e2812e0f0f6bb169d9cb458e8",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "鹿角 significa cuerno de ciervo y sustituye Shikaku."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Deer horn sustituye Shikaku."
+        }
+      }
+    },
+    {
+      "record_id": "a78be46c924857e37357b84d8c63fb5ac8931774f7ae95c405f067e3a57980d8",
+      "translation_hash": "591b3d44cd5384b9cc5ce9aa884ac7bbfb3ce37df2b583a245323d2e5a5d716e",
+      "back_translation_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "a0963a9e7460e4e4a72b7f840c2516e38e2aa5962d4a61e10836b525b93e37a6",
+      "translation_hash": "2f0c2a97bc0916c99e94960eea45b7fb927ee048518635c213742117264394c0",
+      "back_translation_hash": "6521f09df3b0e92567c341ad37ac401e5fb6b91064b26c20ebd3544025241138",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "生成板/解决方案 es un calco poco natural para tablero/solución del juego; una solución verificada no afirma por sí sola unicidad."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Lectura actual: diferencia de notación/compresión o entrada china sin prueba. No se afirma igualdad probada ni se usa para aprobar la ida."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Lectura actual: diferencia de notación/compresión o entrada china sin prueba. No se afirma igualdad probada ni se usa para aprobar la ida."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Lectura actual: diferencia de notación/compresión o entrada china sin prueba. No se afirma igualdad probada ni se usa para aprobar la ida."
+        }
+      }
+    },
+    {
+      "record_id": "4983bfa2c0cefaff7ab90f54b430f16b1a7070a5cba9e1bfe60e8395db719619",
+      "translation_hash": "ba13f64d13a2556ee6a876149de8e4d8e9b9ec27cda5d01296acf0b589345a65",
+      "back_translation_hash": "27ada303bdd0f53bd2243809aadbcaac7735a95c5732c90635b5e339e69d8b74",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "83154f89cf43761c8d3f2155c4f93fd5ca9dbdc704b49a46f4d09be9072e7755",
+      "translation_hash": "32ea8a5e19604c56d4e6b747e42206323e02d0278c4a4798f973411a73703c59",
+      "back_translation_hash": "85747b2a7181074aa2e8370629161d209f9c55865b618eca6186294667581957",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "编号 transforma la respuesta No. en numeración; la condición de almacenamiento se conserva pero falta la negativa inicial."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Progress of the numbering refleja No.→编号 y altera el sujeto del progreso."
+        }
+      }
+    },
+    {
+      "record_id": "0823ea7aa074d483c1b802ff8e33937b998f280e88c02d6a46f119d34c84f437",
+      "translation_hash": "9cb1d6d9d8e9ea6190fc687a4a97b3e6a867eb19d32230c48581f9d65593e26c",
+      "back_translation_hash": "914fc01373d9c49fe33979e149263eb64005cabf10463f254e2b0da81705d3f5",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "9b08178fac655948790446232991ff156518af6f8e85437af26a8e02b534cc20",
+      "translation_hash": "37a7ebce781df40c5d20614c9e3c9ac23b28bd897341b16886a8b48499375824",
+      "back_translation_hash": "2197e79ac6d8c75a21f06680893cf61ac85f9087d89995c994538a9026cfdf33",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Jigsaw restringe el puzzle numérico a piezas de imagen; la ida se entiende en contexto."
+        }
+      }
+    },
+    {
+      "record_id": "22c386baaacb892ea6fd97e83f0b65938459f77216d1ea72dc97697baf34e33b",
+      "translation_hash": "bd1e7b012070cf43d7102f27d0ef3888e592c468db1ca075b45543aca0ea377c",
+      "back_translation_hash": "4971610cca0745ba3a013fc55fa4d211f6d89a840f90234ad9ac63e845949012",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "a8bd395e56df7449cda8cde1ecaf5e8b369062633e804a3907b65a13fd90efe6",
+      "translation_hash": "88b75a101595a23afc92d9a290b08c542fa4ef661559538ffd7239796476bfea",
+      "back_translation_hash": "0306996228eb0b748da44b48ce0d392b557fea59fc6eca397caef02aabdbc6ed",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "37002b5e711d6018b13da2ab2a7e0dcbcacb67c33e1db244aa1ae51004c44b59",
+      "translation_hash": "4d138022895cbf575019345f584de9e7cfc48977047b6392e11fe9f2b342a75d",
+      "back_translation_hash": "c52a28e3876b46a8bf98b8b60ad089168d859655b5a98b19e25e8cb4462050e0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "7dbfccf18dfef36328c40a63635333e8885b4fa657c6b5d2f97f8c493d4ecc23",
+      "translation_hash": "23cc89edff180ba8340b2260a3146d0f79468491521d884619519e211fe900c5",
+      "back_translation_hash": "23d79bad4d2c7b73a58adf293a77a95e7eb33a13064655513c7607b8130a4c30",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "cb61281d633dda20a5e5fe8ee65a3ff51aad668a13741d1ff0963fa44ecff40b",
+      "translation_hash": "7924e2f6d9c2c46f4784e0327f15bc8dae457fcdcff2625ba60ef95053aac1af",
+      "back_translation_hash": "e1cfe7e6c22d3352ef783fccdf1b59c46c9d70bb7a26bf6635d965d17f72f6fd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "296b041d9fc0f87685dff227213cc7ebb16eb896c8d0c7e259d29cfba8db5b2e",
+      "translation_hash": "27aa2247752d5aa0ae8035e95cc494575a2116e41af3860bc6a55b4c16e97d1f",
+      "back_translation_hash": "4a22553454d9c5dd64074602945c5b00d702abe009320162312cdddb157348f6",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "解决方案 es un calco empresarial comprensible pero poco propio de la respuesta de un juego; preferir 解答/答案."
+        }
+      }
+    },
+    {
+      "record_id": "548a642f0f75ccee75bc0528f5ba364f40183c61d306641cb0c1faa9113ddb24",
+      "translation_hash": "e9127b50040e03ee5a189273fdef9bd6122100fee10cb6eb84807c8bc016b8b6",
+      "back_translation_hash": "94b3252791e8f3704dcce8f127aa3a74ace5209372b2bd0da51d70afa00140f6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "鹿角规则 habla de reglas del cuerno de ciervo, no de Shikaku."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Deer horn rule no es reglas de Shikaku."
+        }
+      }
+    },
+    {
+      "record_id": "9c4a732536103a13ea62e157518d19c6a056523b18e8a2e90f7e204b5f1ed4f7",
+      "translation_hash": "34c6ac9e5ac8ad968b76b3161099715402f3799ba3ffe009794852eaac301965",
+      "back_translation_hash": "b68f1a3adccc27102a5de68892702b8793983fde781625fcf9254a4ca61f04ec",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "562fb3bbac5c68c8ec71afab2d1c73408501090238ca86aeef9610d805087591",
+      "translation_hash": "3b37ef54c31417e8c9f95335bfe4386281638c18824c7201c526c2e5566bb224",
+      "back_translation_hash": "bebb0f48d7b9574a1b2b5a6cc96dd3444158005ecd86affcdda247f620759e21",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "df8ce179a76c35fcc5bdaa87282667c416e5dd29dfd1d99a56163771da868f29",
+      "translation_hash": "32bac3287568f758e1d27370f86f5afc08b616990fcc74d878308d57740bad6a",
+      "back_translation_hash": "ef87672665633b4eff4e236458ace64005b118106efa3b75adb08fb8cecc0591",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "b5a843b589a846b93f81cb19a380981e77c6245e9afeb0b171088781b25f38b1",
+      "translation_hash": "b7ef12bf10bc05d1e7726c9cea448c0233ec92f926340be2ee526bae78fa9a6d",
+      "back_translation_hash": "8ba4a1333e7cdc3ecb2e493eb61391680c14b2aaeb46b71370de9e5f89d1c062",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "另一条线索 dice otra pista, cuando el solapamiento debe ser con otro rectángulo."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Overlaps another clue sustituye otro rectángulo por otra pista."
+        }
+      }
+    },
+    {
+      "record_id": "5e63b92e7cb3497d8bf41279b042d085421d02c9e7b2f718a5b403a21daddb71",
+      "translation_hash": "006cdcbb5cbbff6e43ca06efb630cadad3569ad338e16d5015e5afeaf4c4f0ae",
+      "back_translation_hash": "d2ea41c17fa944efd1cd3f0e37da5b5beb5ba0c852afd01ed3f95f34750d2804",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "e6646005bcfc7695c536f60749e202ed8029e2b3037a3f7ea41ec3ee78fb2274",
+      "translation_hash": "33b6ef621070a6d5cbf69001dd062702bd7dc513f3d9984a659db476708ea106",
+      "back_translation_hash": "06dde58f91e6eedd6231c894566eb89be9dc965b32711e8ca92b8d2a506fc4eb",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "65fd0dfd458e13de722c6aaa0ee92e47c285dec9ca8a9b0592e9380e273c5017",
+      "translation_hash": "9018781d0ae0d84adc64f4f6dc6388f045e439e11a877a24c6f9778dbd824332",
+      "back_translation_hash": "6f2a3ae2dfb0df6fb3731477f790a180d188ec0881dc6169dc62b44780ffff2e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "e1cf638866089c81564376607fd1280aed89d3eacfb91a56d072773239da1001",
+      "translation_hash": "d9fbd85ac59cf11da0587586000fcc5ec5ef1a51b65298e979f02ef4a87794c9",
+      "back_translation_hash": "945a06c7ffb00101dc26c83f3cea4624eaa7d822cd1a10b6bd3f9725e4902d52",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "1fe1cac88b4e73f8d4c2309759fde4227729c68ad5b52eb7356dcfede08eb67d",
+      "translation_hash": "f79cff5d1316d9d6b2b4600495bb2e7a246a20de1eeaae42c0e460b91d5efbae",
+      "back_translation_hash": "745d7c6013b306780989cbbf04b8c04e89ac76ee41509a220e87310bb79acac4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "所示解决方案...再次玩 es un calco sintáctico poco natural; se entiende solución mostrada y volver a jugar."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Shown solution es un fragmento invertido artificial, inducido por 所示解决方案."
+        }
+      }
+    },
+    {
+      "record_id": "000981f93f1b04ff76c6cf40db7b34727e7cf07b962d7f3221013edc7c4cc5a0",
+      "translation_hash": "9bcff7370cbb1348cd7cf9b3928d5503f18babd2389b46dd27a2ddeeae74bc20",
+      "back_translation_hash": "769ef321ef3642fd11bfbe8198300bfdc5cde2bd0b186b317fd2785ebcdfc9df",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "820fdb8c0d38eb74bf1acc0170f983cdcd185df55c8a5d8296941898a28192ca",
+      "translation_hash": "a0967d41b01c431608856e2a7147b311767755de28c84b597f9a50cf132e68e4",
+      "back_translation_hash": "e9687d862dcec64ae1f4befb1400068f1e0fadead614a8a287c0475b02a8abeb",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "c8b4ee21337f7c1a76c7deacf3e55b8535073fa14733bb4f3e04c9b87daf18c0",
+      "translation_hash": "16a3e8961b1798d0853c0a64a95997171491c8be2a97dac03e73659b5b6a2d21",
+      "back_translation_hash": "96461853e4ebb95b4bf780baa841c51d5ac7fd4ea88be3a4d0852b13fde969eb",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "矩形区域 es menos preciso que 面积 para comprobar áreas del puzzle; defecto leve de claridad."
+        }
+      }
+    },
+    {
+      "record_id": "2f65dd6dcec0c2ad48242653f282993434572432eb95f6e405609631535c6917",
+      "translation_hash": "cd32b787612e3a113af0e3f85174855c09b4401d24dc29f967062005dba3468d",
+      "back_translation_hash": "c7b94045ee1ad4623931a29aa8c09b5ae4f5f21f4286314ba686cd1fc83096fb",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "900a8044b1c312ded529cdd8a27326ebcc621424f32e33f84d2a97d85e66f356",
+      "translation_hash": "f07645071973302b5aad23dbf41f052fa7b071cd20ee14e7584a3fc60ad5d62d",
+      "back_translation_hash": "13a6b22428cd17c402c4a0361b645ee0894bada3ee921a3faa3eb3f2dd110e0c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "ca58cbb7ae0cc93ad49acefff2006ee8a519b3af9f940c4ab1fc9af09f3bada5",
+      "translation_hash": "dfe055a2604e293c203f53361270c7c894ebc59d7f3e8672aafdf4e20fefab16",
+      "back_translation_hash": "8135205da5c68aec506414fdc639a2eba4b9849021fd56db2d21be1198993b1c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Area of an area pierde exactamente una región de la fuente."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Area of an area pierde exactamente una región de la fuente."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Area of an area pierde exactamente una región de la fuente."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Area of an area pierde exactamente una región de la fuente."
+        }
+      }
+    },
+    {
+      "record_id": "9627bd84661ef212ef2e41aba4b7316ac476069fb65b5df80e80fadc1086304c",
+      "translation_hash": "9f6fee1aba17a56586bf16a77b07b1a76d8c4e867430c6ee6abfa3128b55fa98",
+      "back_translation_hash": "318655cea4bd2096fbfad433d7c019bac40750d1a456fc34d366df41fcc77197",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "cc45e5802c28db5a45eb5add26a399d0d09acf70ec9572479019bc51e8909660",
+      "translation_hash": "7fedfb89e1fbec0a2a8c6f1d4bbe7f707b85cef656a28edb7c23b37059cf0798",
+      "back_translation_hash": "0a068d492f03ac67f91ec1e4c7e28e7ef29ab326a59fa88abb976c9c364e274c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "4a30d0a37a46157ae8ab4410b6daccfbb0d2a99d7d5669738b723c2ce8a311cb",
+      "translation_hash": "df6d8f75d5e3ab041494835b3f1683f39247d2ae85f5a9564c5f463e2aacd0aa",
+      "back_translation_hash": "5bec15dcf9064f77e758fd1db9f37a724d8038dc30b11a8043a44f5079fb6e59",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "cbd5d54916480f2ae95f0d52f8b7f65bb8926df7ba82dbeb2739f8278f77fcd8",
+      "translation_hash": "4c86cdf266945a97200a2f3d33b9be0b769337672c7a83fa99d6d3be692a1dbb",
+      "back_translation_hash": "23305cdafa3f1f0923e97b797a4304cec312b8494939ddbf084c44fa81760216",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "鹿角 vuelve a sustituir el nombre Shikaku por cuerno de ciervo."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Deer horn rectangular puzzle conserva el nombre equivocado de la ida."
+        }
+      }
+    },
+    {
+      "record_id": "b51105bc3775bd2446c084e06e4fe368720e0751186d3eda867b30c44e8dc36f",
+      "translation_hash": "6e85497e2d70b1b147386ff3f9ddd85833bf30e90be318ad0b09742df3afcf52",
+      "back_translation_hash": "04462277031fe7e856f628b651082697835f49bea3f0e2e9b54d9f7dab4899e7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "702989f75937085eec5d3af7f4c3d1dcc953e819ec9681b477978e5151f9b857",
+      "translation_hash": "d670954aa9e72c7a03e9c29cd1f48591232a8f11a1be596e856a25dc7737d89a",
+      "back_translation_hash": "ac611f323eb0278f314a8d645943ad2b529c24de4b6aca9fcb76fcf52ecb25e2",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "7ac36b442d4e957e23288ba19cec95dd59c8320b763ab46e9748b56402ffc094",
+      "translation_hash": "0f97fb3807027e1a870d9b0ca30a8720d4f4c86bbf73f652d1bdc764bcd28051",
+      "back_translation_hash": "b0d8a9189eb8dc740a0b3c9051ca4bc5ad9e96cceb69f27fc75096e2c6dd86f3",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Puzzle Online queda en inglés en un título del destino chino; Shikaku sí puede conservarse como nombre."
+        }
+      }
+    },
+    {
+      "record_id": "906066083abb3e496f5f9dc0b14eb2a2826369f6bfe57983213f07581ab66ea6",
+      "translation_hash": "2bcd4521231120906974f28bae2c0f49d762ed5679069052f1a95c8af76dbd1c",
+      "back_translation_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "e33d8a72cabd23d4e672d8d5bbf4d1d2638f5a3113fcfdb9edfe741480c1b50c",
+      "translation_hash": "f018b74d9a7b8f9778dc9c343e884d281f0bb45e2022a396ee58413fd778ea1a",
+      "back_translation_hash": "99f2096aaeb187371f7a5832f5568c1d3967dd709cf255804a5efe7b5e34c475",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "3f115b80a014ac2b0b983e14e7ac9fb4c4bc44176f90902dbef0578141e48879",
+      "translation_hash": "642ab7c7da6e4f06783baf737b3efd4adbc819eb42e96a6812dc8f46222c1a3b",
+      "back_translation_hash": "386a3eadd2f4119fe15feaad83256d3f49ed7ff5107c06c290ddc35fb9c2e62c",
+      "warnings": {
+        "software_identifiers": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Contrato de ida roto o defecto confirmado; rúbrica negativa/fixture exacta bloquean."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "网络音频 traduce Web Audio como audio de red, en vez de mantener el nombre de la API local."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Network audio filters sustituye la API Web Audio."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Contrato de ida roto o defecto confirmado; rúbrica negativa/fixture exacta bloquean."
+        }
+      }
+    },
+    {
+      "record_id": "a0bc7a34a093ab59f1d5e393be317b39d575bcea4c901b59ab0fd79b42fb4ac0",
+      "translation_hash": "262805d93902b19ff8b12ff2dc0293c3a3a8a79dcedc439a0e41abf313e6abbe",
+      "back_translation_hash": "454f47b18921b0e7c654cba6f2ea40320e2ae44c820115fba1f6dddb4e745a05",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "尝试录音 sugiere la acción de grabar; para probar un archivo ya existente conviene una frase inequívoca. Solo ambigüedad leve."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Try to record pide grabar en vez de probar una grabación; no determina por sí solo la nota de ida."
+        }
+      }
+    },
+    {
+      "record_id": "d8852aff43ece4c08a9e6ec80a1e1e15dbbf5083ec5886ecd94b24a0effe0c9c",
+      "translation_hash": "0d53f08678d8101b0c7e5053b30224fc671c55051770ba18207435ead7ad37bd",
+      "back_translation_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "48772026f34f56b1fe832db95b5f9aaddc19f04b84c91eb5d4a78b3f52faca54",
+      "translation_hash": "a44bf40188dd795e99b703bd9cf19c4acdafed302c1ba0c1d878c2c1b4815fb6",
+      "back_translation_hash": "a7352ff677e280e05650ae7cce45f470416f9875fb7c32b7e78725c4652f23ef",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "编号 convierte No. en numeración. La segunda negación sobre recepción sigue presente, pero se pierde la respuesta inicial."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Numbers your browser y does not accept pierden la negativa inicial y cambian recibir por aceptar."
+        }
+      }
+    },
+    {
+      "record_id": "d3685ff44f375fe6616781dfa842631483bf322b67524663b28fda5463394331",
+      "translation_hash": "bad8be97c24306b6e19d7b076bd083bf40287b46757473be46bb3cd674f25067",
+      "back_translation_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "a77ed27e5c446b80e7703f63c9d3adb6b55e423d6b563d001eea9d99da78eae7",
+      "translation_hash": "251bdd95b36d64c101b046b38289422dafb65468967ff9d635692df834502bcb",
+      "back_translation_hash": "0ef3e0cce5b901b92e753b5995fbe39bc387e5c3917506aa9c8cdd5a97f7cf2c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "编号 reemplaza No. y se pierde la respuesta negativa sobre mantener duración; relación tono/velocidad conservada."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se omite la respuesta negativa explícita inicial."
+        }
+      }
+    },
+    {
+      "record_id": "fe1ccf22f5402cbd0d8bc7fe2c2f7f612e66d4bef4ceca8c9c118b885c1d6cdb",
+      "translation_hash": "92c40454c000b35b0b894d0cd734106f33449106e2cce7798995da8e1bac5b69",
+      "back_translation_hash": "6b21d44a05d19424728b9aa3a3a084ca7c392a462f4657e4a8e86d987597498e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "22b7cc9152276251574f9268930395783806cbece8a89d9df5efb4e0b94dd3e2",
+      "translation_hash": "6d1d05bda278f676bc8c46c8fc21b4336c7753b662c40e62bd042369bb0e6cc8",
+      "back_translation_hash": "09b590e0a19635e1d55fdebdff2f0ac18d6937089635818356b26988d3e0ce23",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "编号 reemplaza No.; además 将一个声音变成另一个真人 convierte sonido en persona. Negativas restantes presentes."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial."
+        }
+      }
+    },
+    {
+      "record_id": "6562207d25f7d00efe6b5da254e24774ec143af433122f413beb13bf9509f7c5",
+      "translation_hash": "06e015f2100b5d4b0a1915b46344704581672df9abe51a35d919ae74894a3e5b",
+      "back_translation_hash": "14d7c90cdec8bcf7fcb504f3aaa3eb3245e50e8f1fe52e6c62b4ce00d23214e4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "单独的人声 es un sintagma nominal de voces individuales, no el verbo separar/aislar voces."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Individual voices es nombre de voces individuales, no separar voces."
+        }
+      }
+    },
+    {
+      "record_id": "2cd6f5d5182f04db82e1e54e987e91d12dc7bd5054574f2b2a6b981a855ab5a6",
+      "translation_hash": "25cdbb274dd1798d88869fd22c5abe7075cb6961ebb70585762e89684f4ded1d",
+      "back_translation_hash": "0e8cfa1549b67f26b86ef804b8b053d9bc2eb6e46f7ef8992392bcd355e4a0f6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "3577269433c761dbe2d14da8f22aa0b6fd24d1b5c4a58866d474ac1c28570f8b",
+      "translation_hash": "3ef493b9ec5a8fb10185bdc752eeeab317ce378982e9931949058deae5600d87",
+      "back_translation_hash": "a12bdf63a97633e625d38108b5fbfb8b888c1096874ead58200efda7cbe89d75",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "6ae5ad622808080f229df65679e61dbdeb3f648b12a04bca3f6bf24afdd46340",
+      "translation_hash": "83bdde377ad78018a04e73d070763d9a60bc50b98f869c94d15dacec93bb5948",
+      "back_translation_hash": "f349ed7649812588a42bcb0d137fd10be18af94ada4494f4a71a81cc0e01aed0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La comparación de clips cortos y ordenador frente a clips largos en móvil queda mal organizada, aunque el consejo se entiende."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+        }
+      }
+    },
+    {
+      "record_id": "31dbf9367a75cc51af99dd1f066fddddaa6ed45f2003d3c2ca2182dd84123511",
+      "translation_hash": "92867358fbd9d18e4977f7792a94ec17efa1fc79e8a7a510b9c8db535b2c20d9",
+      "back_translation_hash": "4e9f9e6c0e8a33541dcc1895025f7a90b729f9c3622702167ad9d1ba4e63ab30",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "9d50a7ac46f9c02b1de9ddec520507a569e0f54009c8d2d598f8e32d80c64917",
+      "translation_hash": "70a833e79412cf5beec00d18327eff9e9641b06a76c43d21959341f8fb2de58a",
+      "back_translation_hash": "a3d458e1bd1eda066018d8db2dd5537c9e742f02f68401457c01553e77f57403",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "2c35231e06029c1987d0b174cc07b624bf6de3c16c087f25b17f49f5b7afe2ec",
+      "translation_hash": "b0dedf02fafb645ee9d9bfbb5d252cb469d240ef4ceedd4404e8dc147d6a5bae",
+      "back_translation_hash": "4b99b05733a0732de83fcb5a2dccd89a1afdb67bddc0355cad93576e1d2554dc",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "A bright sound pierde la referencia concreta a voz del preset."
+        }
+      }
+    },
+    {
+      "record_id": "4006e9a7fec73527c5a33ece99d1e34d9fddd06775aa1c8b651b816930ee8fe6",
+      "translation_hash": "d5a8d6bcf268a9777534eb9e9205861bd06e2f633b8160c590be42c87c80ac00",
+      "back_translation_hash": "019f34ed2b1963f41817f326ac4a06d6fc93ed5cad0305b701ed27359c6d9b70",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "清洁 es limpiar físicamente, no preset neutral/sin efectos."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Cleaning refleja limpieza en lugar del preset neutral."
+        }
+      }
+    },
+    {
+      "record_id": "c737f0f926e54f2201fc69b66e313a2c6380b2dbe55582457f566688d7ec93da",
+      "translation_hash": "c2c99b3bbe12e1f679e3210077065858f34c0b875711933d997ff344c3001b69",
+      "back_translation_hash": "68c15b302f301a1c0474f84d4ba35a4843f753e2b09e0de2140de38aca320efb",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "621ba236adf8ad0d38ec7c402204716f50a3f7e38bbaf6864d4017888a66aa80",
+      "translation_hash": "4963524494dced5c049e185417b5b2423da190f7bfa685f437853e6873d9dfa4",
+      "back_translation_hash": "298263b397f8dd9ca668ad38b802bf90c818fe086caa7ea36897de216eaa9add",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "c40da2db45d698b1c114c24ad30fddffe2179a9cf7030265fb14d672227bf46e",
+      "translation_hash": "b9b3b1cf9c6882912985371ab219923fbddd74e667f4afde1e2186b3db7d6c3d",
+      "back_translation_hash": "d145efdaa5bda1915c4a55e3652322e59d73b39ab25eaa3531fab2e9e68f1ad7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "a1b1300ccd163853b173e7933e93a393f086f8a95590672deb4ec66282fd4e0a",
+      "translation_hash": "bad8be97c24306b6e19d7b076bd083bf40287b46757473be46bb3cd674f25067",
+      "back_translation_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "1584556976415c49b7d394be6dc1b4c5104060449914d7f4529a745f01ba753f",
+      "translation_hash": "92c40454c000b35b0b894d0cd734106f33449106e2cce7798995da8e1bac5b69",
+      "back_translation_hash": "6b21d44a05d19424728b9aa3a3a084ca7c392a462f4657e4a8e86d987597498e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "2e9d4abb4abf74db6b020e5cbcd4e2a8be9ec616737c1a4ce18bdadcff459528",
+      "translation_hash": "6d1d05bda278f676bc8c46c8fc21b4336c7753b662c40e62bd042369bb0e6cc8",
+      "back_translation_hash": "09b590e0a19635e1d55fdebdff2f0ac18d6937089635818356b26988d3e0ce23",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Mismo No.→编号 y sonido→persona en la FAQ de interfaz; clave fuente distinta preservada."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna."
+        }
+      }
+    },
+    {
+      "record_id": "677366264e82b36d507dd904ac50cde976de43f24f1f5a7b30e1c24274345657",
+      "translation_hash": "06e015f2100b5d4b0a1915b46344704581672df9abe51a35d919ae74894a3e5b",
+      "back_translation_hash": "14d7c90cdec8bcf7fcb504f3aaa3eb3245e50e8f1fe52e6c62b4ce00d23214e4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "单独的人声 vuelve a nominalizar separar voces y cambia la pregunta funcional."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Individual voices no es separar voces, clave de interfaz."
+        }
+      }
+    },
+    {
+      "record_id": "5932264b366cea3d32f2fe762d642c77462e091e93712aa6cb66d08650e043aa",
+      "translation_hash": "25cdbb274dd1798d88869fd22c5abe7075cb6961ebb70585762e89684f4ded1d",
+      "back_translation_hash": "0e8cfa1549b67f26b86ef804b8b053d9bc2eb6e46f7ef8992392bcd355e4a0f6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "ca9aac5608fe1ca49a056e74d535cf64fb997db345c50b06568fca4e0388d360",
+      "translation_hash": "3ef493b9ec5a8fb10185bdc752eeeab317ce378982e9931949058deae5600d87",
+      "back_translation_hash": "a12bdf63a97633e625d38108b5fbfb8b888c1096874ead58200efda7cbe89d75",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "d1de7b0fd8343c246b8963a52ee53d2ff72a801812c04ef8fe44a196f5409ca3",
+      "translation_hash": "83bdde377ad78018a04e73d070763d9a60bc50b98f869c94d15dacec93bb5948",
+      "back_translation_hash": "f349ed7649812588a42bcb0d137fd10be18af94ada4494f4a71a81cc0e01aed0",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Relectura v25 de la familia duplicada: la FAQ interna legacy tiene la misma fuente/ida que voice-changer.faq.4.a, cuya naturalidad ya era2. Se retira su nota perfecta inconsistente sin cambiar los bytes de la revisión ni su gate rechazado; no se copia este defecto a la memoria nueva."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+        }
+      }
+    },
+    {
+      "record_id": "6fef81d66de98a0c8533420925aeb33bc696175c0f438d1d60a3c71023ef6bf8",
+      "translation_hash": "92867358fbd9d18e4977f7792a94ec17efa1fc79e8a7a510b9c8db535b2c20d9",
+      "back_translation_hash": "4e9f9e6c0e8a33541dcc1895025f7a90b729f9c3622702167ad9d1ba4e63ab30",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "a8478b3cef20ee1ff2b60c3850165cbbebbfc7ab49fdbee1ad6f76455390d057",
+      "translation_hash": "352ba0280ce03886d35ae53570bbc3206211915f85d40317340bb4031319cd63",
+      "back_translation_hash": "8043a346a2f9e8d77e2105e2f05dc8edeeffb90021170cef59c04d4be931f580",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Use the browser to decode the format altera elegir un formato que el navegador pueda decodificar."
+        }
+      }
+    },
+    {
+      "record_id": "8fc4928c777ae32f0b7e72237e252f7cf7a474c144a226668f8a60ebeba04b82",
+      "translation_hash": "2ecd89671e679bdfea9947fcc85069772f0cbead3c615d2672ce2bb87906ad6a",
+      "back_translation_hash": "65a5c312f069b0e8b32f53d3b04ff7de9ea4988c9ca1ea50ac77fa0bc1207d5e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "bd64d7cb6ba5b066e6ae4554a3e19ab5d39a9813e9d57701ae8677c8e7b3c0d0",
+      "translation_hash": "a3b7aa3131c7f4331dae7f5c35a454f67402ebc7bb49fdecf9e0976874dc5818",
+      "back_translation_hash": "6e8cd9c44aa9a0768e76fb88fd1d29d539f5d0e1b601aed303819cdb54746cfe",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "891a6aaf2b0f590a33b08af0e47bba8bb9494226fe91b1c974449ab9d122d951",
+      "translation_hash": "7f38469c5a6d99cf14155ff0523b4ad592a91307610f488664af2d4e41bdca31",
+      "back_translation_hash": "c1d39deef90e90d26dd9ca5ef37a8f38ff97a9ba0c042d6dbc3106c47975331e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Variations no identifica desplazamiento del tono en semitonos."
+        }
+      }
+    },
+    {
+      "record_id": "55eae96e45df6a101d300f9da9d18c7111db5e32639a0392558cb1f41d5b5613",
+      "translation_hash": "6ae6d509180cb546607e4876af1afb7aa78f6462bdf15bd8265306c2c2d57071",
+      "back_translation_hash": "faeaf2ea0ddae44ba2e54a946bcc1db1a0cff790a14b46b0a6b3c860ccc5a0a7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "e089852124ddd3dde417948620c0630b46366b70ea47179d46d02a07bbb2cae9",
+      "translation_hash": "0c77dcadd357427d1783b734ab55cd459272c2c9037a986e2acf8d0f693b2b56",
+      "back_translation_hash": "f808ad55240c578f326f522a3eb279d8172d4a484fea272f1f4cd030581afa0a",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "0baa0d124f5b10a74f5647d20b95b29858aa193b1f8312c93aa1271e14acf71f",
+      "translation_hash": "a96607cd79f89cb09bb33c7e4fefc9e96e08c679bec55d49b9fa7fef6846b625",
+      "back_translation_hash": "00ed40e36e4f2dc409a7e8642bffd8be8319c7bdf6eba8af29425456264e6e10",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Transducer state cambia el cambiador de voz por un transductor."
+        }
+      }
+    },
+    {
+      "record_id": "844592f20c958cf47b6814c7846f1c89ba27605f65745e03a842f026649e731c",
+      "translation_hash": "fbf6ec670ff610034e99f15e9db4d46a0c6cb2fb4d576c7a1fbbd27eb7a2dac1",
+      "back_translation_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "9d8f9269e1ae79eff5688695923f6fdc066a00d3651c5e94696c76f3339c4c46",
+      "translation_hash": "e8d6f43bf9e5ae810d8d2d2658270c1ada55bdc95c353c69b7fac7c7b2d6a014",
+      "back_translation_hash": "39de5de5cbcbba779c4ddee8f1e126af1b14c95827f40fe332d0ec6c93988230",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Working principle of the transducer cambia el nombre de la herramienta."
+        }
+      }
+    },
+    {
+      "record_id": "7d1c13806fb6dbd14bf91a8049eb674342e75ae0900be81c57782b3113ac3cce",
+      "translation_hash": "73097242434e1559f0b98875c62c1d7b7dfbaf9d3fd3f187c0b4ad3525a2a0d1",
+      "back_translation_hash": "04a66c8a651d1ef175291b88cb3a4be785f302cd23b78d0d524decbacc5f6b0f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    },
+    {
+      "record_id": "6686293d0e7981793c0cba784f79240aac1bd41753756a6732394b3df424d814",
+      "translation_hash": "b5f5a9c49d319686c788f3e22def41d3494b559ee9597aeb08a12acbc8ff3e47",
+      "back_translation_hash": "2d898a846571c38e70bdf165e8e4041aa8f353bed299bcf97716e3e171bc8500",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "单独的声音 es voces aisladas como objeto de crear, no capacidad de separar voces; la última frase queda mal coordinada."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Omite toda la última oración: límites de identidad natural, separación de voces y resultado no garantizado en todos los navegadores."
+        }
+      }
+    },
+    {
+      "record_id": "114b9fee9c7cd62c92a984d0d1d41bd14b8e6ec6c1c7e89d814141b70f29a8ad",
+      "translation_hash": "54b41f57de1c1255657ca4439b2bcbce0e296d7ab62596cf681760a33bfe757a",
+      "back_translation_hash": "aa632da1cbb2b77e9b1a998ff501e4618d153d948e9fd63652237857555c9895",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "影响 significa impacto, no efectos de audio."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Impact sustituye efectos de audio."
+        }
+      }
+    },
+    {
+      "record_id": "99168b02a163d952d0fbd5e6e6bd5c33149d3eb04a3b6f442e068d731f856e04",
+      "translation_hash": "fbc346b64f572a37d2566bbc87d307f8506256ba21177ef311d7671f32536ee4",
+      "back_translation_hash": "54a5a70e27f8e78bd0740420e0b669ef3aa6c35b2f732925e19dd7e669fa74ac",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Transducers sustituye cambiador de voz."
+        }
+      }
+    },
+    {
+      "record_id": "596f8d38990d357697548cdfc928f1030b3d3d63685ffd69cee746de5237a7ea",
+      "translation_hash": "cfa061c91f5507813f1c01fec4caff3e795030dcfbc2a9e67759e11440363bb3",
+      "back_translation_hash": "e74adc954c9ccb938853383bae944ba2c67ee7dacced1ef5b98360803d93c6a6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Compresión normal en escritura china; contenido leído y defectos de ida registrados aparte."
+        }
+      }
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "3ff9b4ad3b1d9554744a1de14bfe87c61f873a8dd6ef39611d1ac8ea5c8523cd",
+      "back_translation_hash": "cb0b41bb3df4ed647b04d468db7c346f31257b2ddf3c8821c0f283071ae2e3f0",
+      "notes": [
+        "The number of which puede indicar cantidad de pistas, ambigüedad inducida por 其数量."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "dff9962bea3f51b676e316c1afc1f40d2814321eab3af83578f0723ab72eb425",
+      "back_translation_hash": "3b824a72121b71c147987194c3c66c58d44fbd49682c009d941347b1323f205d",
+      "notes": [
+        "Two diagonals pide líneas en vez de esquinas y Tab selecciona antes de Enter."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "7e65f767ed07218580aa9fbc866e6061b9ed0451fc5ed03f289317a27ca3e062",
+      "back_translation_hash": "73d39e0a59ecdf66fc1d6c2ff5cd8eb02a6cadffdf5a6cd6ea1f8b90d69d5266",
+      "notes": [
+        "Digital jigsaw cambia el tipo de juego y around a line sustituye pistas por línea; ida 数字拼图/线索 correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "222d2c818e390291c4b6303317cbb36fe9b6bdb5854d01fc1773e4cb2d901904",
+      "back_translation_hash": "b49f3bedf359969204e1021f1c5a33b5216ab21e2812e0f0f6bb169d9cb458e8",
+      "notes": [
+        "Deer horn sustituye Shikaku."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "83154f89cf43761c8d3f2155c4f93fd5ca9dbdc704b49a46f4d09be9072e7755",
+      "back_translation_hash": "85747b2a7181074aa2e8370629161d209f9c55865b618eca6186294667581957",
+      "notes": [
+        "Progress of the numbering refleja No.→编号 y altera el sujeto del progreso."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "9b08178fac655948790446232991ff156518af6f8e85437af26a8e02b534cc20",
+      "back_translation_hash": "2197e79ac6d8c75a21f06680893cf61ac85f9087d89995c994538a9026cfdf33",
+      "notes": [
+        "Jigsaw restringe el puzzle numérico a piezas de imagen; la ida se entiende en contexto."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "548a642f0f75ccee75bc0528f5ba364f40183c61d306641cb0c1faa9113ddb24",
+      "back_translation_hash": "94b3252791e8f3704dcce8f127aa3a74ace5209372b2bd0da51d70afa00140f6",
+      "notes": [
+        "Deer horn rule no es reglas de Shikaku."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "b5a843b589a846b93f81cb19a380981e77c6245e9afeb0b171088781b25f38b1",
+      "back_translation_hash": "8ba4a1333e7cdc3ecb2e493eb61391680c14b2aaeb46b71370de9e5f89d1c062",
+      "notes": [
+        "Overlaps another clue sustituye otro rectángulo por otra pista."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "1fe1cac88b4e73f8d4c2309759fde4227729c68ad5b52eb7356dcfede08eb67d",
+      "back_translation_hash": "745d7c6013b306780989cbbf04b8c04e89ac76ee41509a220e87310bb79acac4",
+      "notes": [
+        "Shown solution es un fragmento invertido artificial, inducido por 所示解决方案."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "ca58cbb7ae0cc93ad49acefff2006ee8a519b3af9f940c4ab1fc9af09f3bada5",
+      "back_translation_hash": "8135205da5c68aec506414fdc639a2eba4b9849021fd56db2d21be1198993b1c",
+      "notes": [
+        "Area of an area pierde exactamente una región de la fuente."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "cbd5d54916480f2ae95f0d52f8b7f65bb8926df7ba82dbeb2739f8278f77fcd8",
+      "back_translation_hash": "23305cdafa3f1f0923e97b797a4304cec312b8494939ddbf084c44fa81760216",
+      "notes": [
+        "Deer horn rectangular puzzle conserva el nombre equivocado de la ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "3f115b80a014ac2b0b983e14e7ac9fb4c4bc44176f90902dbef0578141e48879",
+      "back_translation_hash": "386a3eadd2f4119fe15feaad83256d3f49ed7ff5107c06c290ddc35fb9c2e62c",
+      "notes": [
+        "Network audio filters sustituye la API Web Audio."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "a0bc7a34a093ab59f1d5e393be317b39d575bcea4c901b59ab0fd79b42fb4ac0",
+      "back_translation_hash": "454f47b18921b0e7c654cba6f2ea40320e2ae44c820115fba1f6dddb4e745a05",
+      "notes": [
+        "Try to record pide grabar en vez de probar una grabación; no determina por sí solo la nota de ida."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "48772026f34f56b1fe832db95b5f9aaddc19f04b84c91eb5d4a78b3f52faca54",
+      "back_translation_hash": "a7352ff677e280e05650ae7cce45f470416f9875fb7c32b7e78725c4652f23ef",
+      "notes": [
+        "Numbers your browser y does not accept pierden la negativa inicial y cambian recibir por aceptar."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "a77ed27e5c446b80e7703f63c9d3adb6b55e423d6b563d001eea9d99da78eae7",
+      "back_translation_hash": "0ef3e0cce5b901b92e753b5995fbe39bc387e5c3917506aa9c8cdd5a97f7cf2c",
+      "notes": [
+        "Se omite la respuesta negativa explícita inicial."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "22b7cc9152276251574f9268930395783806cbece8a89d9df5efb4e0b94dd3e2",
+      "back_translation_hash": "09b590e0a19635e1d55fdebdff2f0ac18d6937089635818356b26988d3e0ce23",
+      "notes": [
+        "Se omite la frase de aplicar efectos simples, además de la respuesta negativa explícita inicial."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "6562207d25f7d00efe6b5da254e24774ec143af433122f413beb13bf9509f7c5",
+      "back_translation_hash": "14d7c90cdec8bcf7fcb504f3aaa3eb3245e50e8f1fe52e6c62b4ce00d23214e4",
+      "notes": [
+        "Individual voices es nombre de voces individuales, no separar voces."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "6ae5ad622808080f229df65679e61dbdeb3f648b12a04bca3f6bf24afdd46340",
+      "back_translation_hash": "f349ed7649812588a42bcb0d137fd10be18af94ada4494f4a71a81cc0e01aed0",
+      "notes": [
+        "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "2c35231e06029c1987d0b174cc07b624bf6de3c16c087f25b17f49f5b7afe2ec",
+      "back_translation_hash": "4b99b05733a0732de83fcb5a2dccd89a1afdb67bddc0355cad93576e1d2554dc",
+      "notes": [
+        "A bright sound pierde la referencia concreta a voz del preset."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "4006e9a7fec73527c5a33ece99d1e34d9fddd06775aa1c8b651b816930ee8fe6",
+      "back_translation_hash": "019f34ed2b1963f41817f326ac4a06d6fc93ed5cad0305b701ed27359c6d9b70",
+      "notes": [
+        "Cleaning refleja limpieza en lugar del preset neutral."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "2e9d4abb4abf74db6b020e5cbcd4e2a8be9ec616737c1a4ce18bdadcff459528",
+      "back_translation_hash": "09b590e0a19635e1d55fdebdff2f0ac18d6937089635818356b26988d3e0ce23",
+      "notes": [
+        "Se repite la omisión de aplicar efectos simples y No. en la FAQ interna."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "677366264e82b36d507dd904ac50cde976de43f24f1f5a7b30e1c24274345657",
+      "back_translation_hash": "14d7c90cdec8bcf7fcb504f3aaa3eb3245e50e8f1fe52e6c62b4ce00d23214e4",
+      "notes": [
+        "Individual voices no es separar voces, clave de interfaz."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "d1de7b0fd8343c246b8963a52ee53d2ff72a801812c04ef8fe44a196f5409ca3",
+      "back_translation_hash": "f349ed7649812588a42bcb0d137fd10be18af94ada4494f4a71a81cc0e01aed0",
+      "notes": [
+        "Sitúa clips cortos y ordenadores funcionando en el teléfono y une processor.Short; inducido/agravado por comparación de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "a8478b3cef20ee1ff2b60c3850165cbbebbfc7ab49fdbee1ad6f76455390d057",
+      "back_translation_hash": "8043a346a2f9e8d77e2105e2f05dc8edeeffb90021170cef59c04d4be931f580",
+      "notes": [
+        "Use the browser to decode the format altera elegir un formato que el navegador pueda decodificar."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "891a6aaf2b0f590a33b08af0e47bba8bb9494226fe91b1c974449ab9d122d951",
+      "back_translation_hash": "c1d39deef90e90d26dd9ca5ef37a8f38ff97a9ba0c042d6dbc3106c47975331e",
+      "notes": [
+        "Variations no identifica desplazamiento del tono en semitonos."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "0baa0d124f5b10a74f5647d20b95b29858aa193b1f8312c93aa1271e14acf71f",
+      "back_translation_hash": "00ed40e36e4f2dc409a7e8642bffd8be8319c7bdf6eba8af29425456264e6e10",
+      "notes": [
+        "Transducer state cambia el cambiador de voz por un transductor."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "9d8f9269e1ae79eff5688695923f6fdc066a00d3651c5e94696c76f3339c4c46",
+      "back_translation_hash": "39de5de5cbcbba779c4ddee8f1e126af1b14c95827f40fe332d0ec6c93988230",
+      "notes": [
+        "Working principle of the transducer cambia el nombre de la herramienta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "6686293d0e7981793c0cba784f79240aac1bd41753756a6732394b3df424d814",
+      "back_translation_hash": "2d898a846571c38e70bdf165e8e4041aa8f353bed299bcf97716e3e171bc8500",
+      "notes": [
+        "Omite toda la última oración: límites de identidad natural, separación de voces y resultado no garantizado en todos los navegadores."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "114b9fee9c7cd62c92a984d0d1d41bd14b8e6ec6c1c7e89d814141b70f29a8ad",
+      "back_translation_hash": "aa632da1cbb2b77e9b1a998ff501e4618d153d948e9fd63652237857555c9895",
+      "notes": [
+        "Impact sustituye efectos de audio."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "99168b02a163d952d0fbd5e6e6bd5c33149d3eb04a3b6f442e068d731f856e04",
+      "back_translation_hash": "54a5a70e27f8e78bd0740420e0b669ef3aa6c35b2f732925e19dd7e669fa74ac",
+      "notes": [
+        "Transducers sustituye cambiador de voz."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "full_gate": {
+    "zh-CN": {
+      "rows": 92,
+      "sample": 92,
+      "points": 778,
+      "maximum": 828,
+      "button_errors": 1,
+      "number_negation_errors": 6,
+      "major_rows": 17,
+      "minor_rows": 8,
+      "unproved_data_rows": 0,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Gate bloqueado por defectos observados o datos sin prueba; memoria conocida declarada. Sin aprobación nativa/ciega/de idioma."
+    }
+  },
+  "evidence_sources": {
+    "inference_source_commit": "e22836da35dc653704c92c429078e684c2cf153f",
+    "checkpoint_capture_commit": "e265796ba891b064624ab850f1ab23d4d5d4fa45",
+    "checkpoint_sha256": "d034af8b9480cf5a066f54f1b5b57349185eb4d7404bc415f8d0e9b1cc3274e3",
+    "run_id": 40153243412
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "toolId": "spider-solitaire",
+  "sourceCopy": {
+    "name": "Spider Solitaire",
+    "title": "Spider Solitaire Online Free | UsefulVerse",
+    "description": "Play Spider Solitaire in 1, 2 or 4 suits with undo, hints and fresh deals. Free in your browser, no account or download.",
+    "category": "Games & practice",
+    "intro": "Build descending sequences in the same card suit from King to Ace, reveal face-down cards and complete all eight sequences. Choose one, two or four card suits.",
+    "summary": "Play Spider Solitaire with one, two or four card suits, legal sequence moves, stock cards, automatic sequence removal, undo, hints and fresh shuffled games.",
+    "howQuestion": "How do you play Spider Solitaire?",
+    "howAnswer": "Move face-up descending sequences of the same card suit onto the next higher rank or an empty column. Reveal hidden cards, draw ten cards from the stock pile when every column is occupied, and complete eight same-suit King-to-Ace sequences to win.",
+    "privacyQuestion": "Does Spider Solitaire save my game?",
+    "privacyAnswer": "No. The game runs in this tab and does not save a game, use an account, upload moves or send them to a server. Starting a new deal replaces the current game.",
+    "fields": {
+      "suitCount": "Card suits per game",
+      "oneSuit": "1 card suit · relaxed",
+      "twoSuits": "2 card suits · standard",
+      "fourSuits": "4 card suits · challenge",
+      "seed": "Optional replay seed",
+      "seedHint": "Leave blank for a fresh random game. Reuse the same seed to reproduce the same shuffled deal; it stays only in this page.",
+      "board": "Spider Solitaire tableau",
+      "column": "Column",
+      "dropHere": "Select this column as the move destination.",
+      "stock": "Draw 10 cards from the stock pile",
+      "stockCount": "cards remaining",
+      "completed": "Completed sequences",
+      "moves": "Moves",
+      "faceDown": "Face-down card",
+      "faceUp": "Face-up card",
+      "selectCard": "Select this card and its same-suit descending run.",
+      "ace": "Ace",
+      "jack": "Jack",
+      "queen": "Queen",
+      "king": "King",
+      "spades": "Spades",
+      "hearts": "Hearts",
+      "clubs": "Clubs",
+      "diamonds": "Diamonds",
+      "emptySelection": "Choose a face-up card, then select a legal destination column.",
+      "selected": "Selected {count} card(s) from column number {column}. Choose a destination column number.",
+      "hintText": "Move {count} card(s) from column number {from} to column number {to}.",
+      "note": "Only face-up descending groups in the same card suit can move together. A single face-up card can move by itself. Face-down cards turn over when exposed.",
+      "completionNote": "Completed runs are removed automatically. Empty columns accept any face-up card or valid run.",
+      "noGame": "Start a new deal to play."
+    },
+    "actions": {
+      "newDeal": "New shuffled game",
+      "drawStock": "Draw stock cards",
+      "undo": "Undo",
+      "hint": "Hint",
+      "cancelSelection": "Clear selection"
+    },
+    "messages": {
+      "ready": "A fresh shuffled card game is ready.",
+      "selected": "Selected {count} card(s) from column number {column}. Choose a destination column number.",
+      "moved": "Move made.",
+      "invalidMove": "That move is not legal. Choose a same-suit descending sequence and a destination one rank higher or an empty column.",
+      "stockDealt": "Ten cards dealt from the stock pile.",
+      "stockUnavailable": "No stock cards remain.",
+      "emptyColumn": "Fill every empty column before drawing stock cards.",
+      "undone": "Previous move restored.",
+      "nothingToUndo": "There is no move to undo.",
+      "hint": "Move {count} card(s) from column number {from} to column number {to}.",
+      "noHint": "No legal tableau move is available; draw from the stock pile if possible.",
+      "newDeal": "A fresh shuffled deal is ready.",
+      "won": "You completed all eight sequences. You win!"
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between one, two and four card suits?",
+        "answer": "One card suit is the most relaxed mode, two card suits add another suit, and four card suits require matching the suit across a mixed-suit tableau."
+      },
+      {
+        "question": "When can I draw cards from the stock pile?",
+        "answer": "Draw ten cards, one to each column, while stock remains. Every tableau column must contain at least one card before drawing from the stock pile."
+      },
+      {
+        "question": "How does undo work?",
+        "answer": "Undo restores the exact previous game state for a move, stock deal or completed-run removal. Up to 100 recent actions are kept only in this tab."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/spider-solitaire/index.html",
+    "htmlSha256": "f097b8a871f4a60fd312afcf8891bdb667c68ca6044c79d5740dd7dc6b418ecd",
+    "payloadSha256": "5fc8471c93f5eef253d77a1ba1de49001888c68a6cd4e512c8d3e13676d1513b",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/spider-solitaire.js",
+    "controllerSha256": "2ba3daf3842e9f2e212dd49872d82de8cba2fb41989a954e0dbc60ebc61854ae",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

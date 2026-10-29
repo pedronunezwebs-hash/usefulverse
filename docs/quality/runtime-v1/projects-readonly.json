@@ -1,0 +1,30 @@
+[
+  {
+    "name": "usefulverse",
+    "sourceType": null,
+    "gitAutoBuildConfigured": false,
+    "latestDeployment": {
+      "createdOn": "2026-10-18T14:40:43.2856Z",
+      "environment": "production",
+      "status": "success"
+    },
+    "productionDeployment": {
+      "createdOn": "2026-10-18T14:40:43.2856Z",
+      "status": "success"
+    }
+  },
+  {
+    "name": "usefulverse-tools",
+    "sourceType": null,
+    "gitAutoBuildConfigured": false,
+    "latestDeployment": {
+      "createdOn": "2026-10-20T05:37:11.344215Z",
+      "environment": "preview",
+      "status": "success"
+    },
+    "productionDeployment": {
+      "createdOn": "2026-10-18T20:38:58.280016Z",
+      "status": "success"
+    }
+  }
+]

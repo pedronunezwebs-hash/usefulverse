@@ -1,0 +1,82 @@
+{
+  "toolId": "bcrypt-generator",
+  "sourceCopy": {
+    "name": "Bcrypt Generator",
+    "title": "Bcrypt Generator Free | UsefulVerse",
+    "description": "Create and verify bcrypt password hashes locally with a fresh random salt and adjustable cost. Free browser tool; no upload or account.",
+    "intro": "Generate a standard bcrypt hash or check a password against an existing bcrypt hash. Work runs in a local browser worker, and the password is cleared after each check.",
+    "howQuestion": "What does a bcrypt hash do?",
+    "howAnswer": "Bcrypt is a password-hashing function, not encryption. It combines a one-way hash with a random salt and a configurable work factor. A hash can be checked against a candidate password but cannot be decrypted to reveal the original.",
+    "privacyQuestion": "Are my password or hash uploaded or saved?",
+    "privacyAnswer": "No. Hashing and verification run in this browser. The page does not send the entered password or hash to a server or save them; the password field is cleared when the operation finishes. For safety, use a test password rather than a real account password.",
+    "fields": {
+      "password": "Test password",
+      "cost": "Hash cost (rounds)",
+      "hashToVerify": "Bcrypt hash to verify",
+      "accuracyNote": "Bcrypt uses only the first 72 UTF-8 bytes. This tool rejects longer values rather than silently truncating them. Cost 8–14 increases work exponentially; higher costs can take longer, especially on phones. A local worker keeps the page responsive, but your device performs the work.",
+      "privacyNote": "Use a test password, not a real login password. The result is for learning and compatibility checks; do not use this browser page as a production account-storage system.",
+      "verifyHint": "Paste a standard 60-character bcrypt hash. Verification supports bcrypt costs 4–14; unusually high-cost hashes are declined to avoid unbounded work on your device.",
+      "progress": "Working locally…",
+      "progressValue": "Hashing progress",
+      "resultTitle": "Result",
+      "hashOutput": "Bcrypt hash",
+      "demoOnly": "Example password — not a secret"
+    },
+    "actions": {
+      "generate": "Generate hash",
+      "verify": "Verify password",
+      "example": "Run safe example",
+      "cancel": "Cancel",
+      "reset": "Clear",
+      "copyHash": "Copy hash",
+      "result": "Result"
+    },
+    "messages": {
+      "hashing": "Creating the hash on this device…",
+      "verifying": "Checking the password on this device…",
+      "matched": "The password matches this hash.",
+      "mismatch": "The password does not match this hash.",
+      "hashReady": "Hash created. The password field was cleared.",
+      "copied": "Hash copied.",
+      "copyFailed": "Could not copy. Select and copy the hash manually.",
+      "cancelled": "Operation cancelled; the password field was cleared.",
+      "password-empty": "Enter a test password first.",
+      "password-too-long": "This password exceeds bcrypt’s 72-byte UTF-8 limit. It was not truncated.",
+      "invalid-cost": "Choose a hash cost from 8 through 14.",
+      "invalid-hash": "Enter a valid standard bcrypt hash.",
+      "unsupported-hash-cost": "This hash cost is outside the supported verification range of 4 through 14.",
+      "secure-random-unavailable": "This browser does not provide cryptographic randomness, so a salt cannot be created safely.",
+      "hash-failed": "The bcrypt operation failed on this device.",
+      "invalid-action": "Choose a hash or verification action.",
+      "worker-unavailable": "This browser could not start the local hashing worker."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does bcrypt encrypt my password?",
+        "answer": "No. Bcrypt is a one-way password hash, not reversible encryption. It is designed to let software check a candidate password without storing the original password."
+      },
+      {
+        "question": "Why does bcrypt have a 72-byte limit?",
+        "answer": "The bcrypt format processes at most 72 UTF-8 bytes. This tool refuses longer input so different passwords are never silently treated as the same truncated value."
+      },
+      {
+        "question": "Should I store this hash for a real account?",
+        "answer": "Do not use this page as a production credential system. Real services should hash passwords on their trusted server with maintained authentication libraries, suitable parameters, rate limits and account protections."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/bcrypt-generator/index.html",
+    "htmlSha256": "63763289e393b8b7ae775320b3e65e7685c0d0ed3556409371f41e55e42882ba",
+    "payloadSha256": "c7e39d187ed88003152f3a103652cc95ad35cd713dfa6f138af7d29cfdfdc525",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/bcrypt-generator.js",
+    "controllerSha256": "379cc499852625c6d2cc2a9311a6039a3eff37a4c6ea13570652c8a375354799",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

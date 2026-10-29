@@ -1,0 +1,10 @@
+{
+  "run_id": 40245562940,
+  "source": "f6b6dad818aeb8ae7109a94bb704c39a94da30ab",
+  "conclusion": "failure",
+  "node_tests": 3045,
+  "python_tests": 308,
+  "python_seconds": 601.495,
+  "error": "KeyError: observed_candidate in historical fixture-schema test",
+  "fix": "Add candidate provenance metadata to all183 new cases; no grading, warning, source, translation or runtime change. Historical test retained."
+}

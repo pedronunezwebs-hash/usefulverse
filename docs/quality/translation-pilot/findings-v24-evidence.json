@@ -1,0 +1,25 @@
+{
+  "test": "test_translation_chinese_current_review_v24.py",
+  "red_log_sha256": "d565eca28f5d44455ed1c36c335a59245b50e12d838e9318c21bb9290b822a46",
+  "red_tests": 1,
+  "red_failures": 152,
+  "observed_nonreference_forward_findings": 74,
+  "observed_nonreference_back_findings": 78,
+  "new_unique_fixtures": 149,
+  "fixture_total": 1120,
+  "original_fixture_prefix": 971,
+  "old_records_checked": 14377,
+  "historical_records_matched_by_new_fixtures": [],
+  "approved_locales": [],
+  "recovered_review": true,
+  "green_log_sha256": "c3a83593d26384c7ba197fc59d784f63c97d392d7d404bd5e99e5f1e4a48395d",
+  "green_test_result": "OK",
+  "full_local_suite": {
+    "total": 206,
+    "passed": 204,
+    "skipped_dependencies": 2,
+    "result": "OK",
+    "seconds": 92.167,
+    "log_sha256": "3214ec8c3b1fca62ca1d2cbcbb6f234d6bde4cfff8a6d626912b303ef6ad7e03"
+  }
+}

@@ -1,7 +1,8 @@
 import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 import { dirname, join, relative, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = resolve(new URL('..', import.meta.url).pathname);
+const root = fileURLToPath(new URL('..', import.meta.url));
 const target = resolve(process.env.GROWTH600_DIST ?? 'dist-growth600');
 const manifestPath = resolve(root, 'src/growth600/live-only-106.manifest.json');
 const sourceDir = resolve(root, 'src/growth600/live-only-106-source');

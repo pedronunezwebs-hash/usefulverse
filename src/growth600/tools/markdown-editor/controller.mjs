@@ -70,7 +70,7 @@ if (root) {
 
   async function renderPreview() {
     try {
-      previewLibraries ??= Promise.all([loadLibrary('marked-18.0.14.umd.js', 'marked'), loadLibrary('purify-3.4.16.min.js', 'DOMPurify')]);
+      previewLibraries ??= Promise.all([loadLibrary('marked-18.0.14.umd.js', 'marked'), loadLibrary('purify-3.4.17.min.js', 'DOMPurify')]);
       const [marked, purifier] = await previewLibraries;
       const rendered = marked.parse(editor.value, { async: false, gfm: true, breaks: false });
       const clean = purifier.sanitize(rendered, {

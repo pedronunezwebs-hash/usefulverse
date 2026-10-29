@@ -1,0 +1,9 @@
+{
+  "version": "1.7.12",
+  "archive_sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+  "official_release": "https://github.com/rhysd/actionlint/releases/tag/v1.7.12",
+  "exit_code": 0,
+  "shellcheck": false,
+  "pyflakes": false,
+  "workflow_sha256": "b9876101a9a10ee1992ca9f4bcf3b4276445ed7a314a59a0c2aad516e743635d"
+}

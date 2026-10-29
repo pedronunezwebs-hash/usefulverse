@@ -1,0 +1,7 @@
+{
+  "source_commit": "4c3c76e1775416c327c79cebff104365134f06e1",
+  "source_sha256": "cea2c85ba610bf6a87a8bf30ad8ce6d1a8ae0ce4ac7c9296836c801613cedcd1",
+  "original_module_ast_sha256": "59f9596f9d1393965c398e9130f84708af6464dfa8039c75eadf081c00abff3c",
+  "bootstrap_ast_sha256": "5ad6488e1e801fd40be723308d53e030c12a8ded4db681db7cf3707e05350220",
+  "cache_module_sha256": "ebeb069e1a06c8661b9c5c1555bb911c53730f6f0750525516089a002f0ee309"
+}

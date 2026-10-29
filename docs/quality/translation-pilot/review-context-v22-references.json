@@ -1,0 +1,1887 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2 y RUNBOOK §8: significado, cifras/negaciones y naturalidad0–3. Todas las fuentes/idas/vueltas actuales leídas; datos no probados bloquean el gate sin inventar un error lingüístico.",
+  "expected_rows": 40,
+  "inference_policy": "context-v22",
+  "reviewed_at_utc": "2026-10-24T11:27:33.942467+00:00",
+  "scope": "All current reference source/forward/back directly read; zero Chinese memory corrections. Existing263 memory targets preserved. No native/blind/unseen-text or locale approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": true,
+  "rows": [
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "785288d4c2fea4ac430f1e00267cf4da783dcffa76ef43df5902703a4504a726",
+      "record_ids": [
+        "2103e4254d3db2101caa231b53a0dc2d835564715785df9d6810095b2dab3179"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选取音频文件 conserva la acción de elegir y el objeto audio; la compresión de caracteres es normal en chino."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "e6ebe07d305704767ba6a0b229eb7f55ac5a1a1eb884948fead61214161cb488",
+      "record_ids": [
+        "41b77a6669c178ea0820635a8be766b2772342074e5b1bbf1f232fa5ad62c1a2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "音频保留在此浏览器中 y 没有音频被发送到或保存到UsefulVerse conservan ubicación y negación de envío/guardado."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "bc53baf03335a243634374b6e2cdb1142655000c87eecb81bd912e5966ef0623",
+      "record_ids": [
+        "3c5e7d8c21d0c4903c8c3941010a68cf6e2a4e50b8b5512384091c8cfb0ffc10"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "本地加载音频 es el imperativo correcto de carga local; la vuelta lo convierte en estado cargado."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "f88319f600c62990b579ac8c43498e6eeee41bd93f1c7ade54d59f0767ff3813",
+      "record_ids": [
+        "0d92ca3fa9f844161dbea73b1aea94214f07639e0c8cf15615a3a09387a1ac50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "播放音频效果 expresa reproducir el efecto, desambiguación prevista de Preview; no es una vista de imagen."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "346e76111f3b2e54504970595c89b8530cdaf2f759ecaa6b6ed3d3ac47ee3f6b",
+      "record_ids": [
+        "2b7cb774452be04170bc1c0e866343578e962cc26c875d9421a80a7c3561fc7c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "停止播放音频效果 detiene la reproducción del efecto; acción y objeto correctos."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "496043608d9e6d72d7c4f204da058fc2f5ed6f4a351c3daa6b373eb9a9a7af6d",
+      "record_ids": [
+        "fc72ceea5e98efcd1fcaedc2b62c631d00ac091bfaec17973c27d3865a734ef6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除加载的音频 elimina el audio cargado, sin confundir clear con calidad acústica."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "f0a1ed209bbc9a3a111e35a5be9c46a824023db7adc3457dfbd0022c9e3a536d",
+      "record_ids": [
+        "cf0b3652b1301774d7d2b6fe582f5226822e8718b451de5f459b476665fd9a0a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "导出处理过的WAV conserva exportar, procesamiento y formato WAV."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "record_ids": [
+        "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "920f26e1b77ee9ea05c2ec5bf9226c0af490213bf1d4e918a5c1f7cbf66c84c3",
+      "record_ids": [
+        "ae6c24121e994d12fbc74cbfa185e19bf8659ec3b406d530832213fd6f7b59a8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 0,
+        "naturalness": 3
+      },
+      "notes": [
+        "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "96f3083d691d6cddecf2c231e55c37fa8112079da3fbe223ead08d46a4fe962a",
+      "record_ids": [
+        "87dbb7a721f290dafdaa8fffe037169448a6074bee7e2769f0b885362c695051"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 1,
+        "naturalness": 3
+      },
+      "notes": [
+        "如果您的浏览器没有自动跳转,请点击这里 inventa redirección y clic; desaparece el error de no poder decodificar el formato. WAV/MP3 no reparan ese cambio."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "record_ids": [
+        "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "0fbd5facafd474063abd66058c7b03d02d99c537b1982dcc0c25b539ef51a494",
+      "record_ids": [
+        "385215ca583e674ce28326f9467a0898396dc5ca3ebbe3388893029dd653d36e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "此工具支持长达30秒的剪辑 y 修剪文件并重试 conservan duración máxima, recortar y reintentar."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "ec1a1c1f79c4ae9d15687184bc31b1f626d2e3f1f01b08587c8d21073b8d0490",
+      "record_ids": [
+        "9be4c3ee81339b5dd8d0fb11928bda82b06b9054de1bb4b0e4178a850c077df3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La negación de subida y recepción se conserva, pero 处理录制 usa el proceso grabar como objeto donde corresponde procesar el audio/录音; leve de naturalidad."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "f548a6b6c2e9759d839c60bec55b679ccc748dcb727a53a1979634e1a26fca60",
+      "record_ids": [
+        "c8cd077539b655c7d3ed6454345750edd4f314197b6a2b20d3143af5030ae2ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La relación menor tono/más lento y mayor tono/más rápido es correcta; 高音高 es una construcción torpe frente a 较高的音高, leve de naturalidad."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "record_ids": [
+        "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "7850b89452b52ce71cff503a44719a1fff26c802d5b864c936773f1af6a85998",
+      "record_ids": [
+        "107fe50537e4e92bd7d14e870e9b8dc74c09652271b179c39e8a5708eca8e530"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "新谜题 es una acción de nuevo acertijo adecuada para este juego."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "86bcb9162947a204ec1b039b6e7e86bfb23ec5d12c59aecf7275fd3080475dcf",
+      "record_ids": [
+        "93faa0bca096a40e13ec63726d8831e1bb26e6d4876bbeb6bab04c9d8a4d83b2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "日常拼圖 resulta poco natural para el reto de cada día (每日谜题); además 圖 pertenece a tradicional, no a zh-CN. El contexto mantiene puzzle, sin atribuir automáticamente un error de juego a 拼图."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "ea8e1a1cc815c8ec32be1961d2f0fb0eec82f486a4e06772fb2be9e5ab449cef",
+      "record_ids": [
+        "1c7c4d31f3ab94820362153d99472d14bd29c95bf2a65a9d541b11a54b507a04"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "继续保存的游戏 permite leer continuar la partida guardada: 的 marca la relativa. La vuelta lo lee como continuar guardando; no se rebaja la ida solo por esa vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "3fa0bc3ddd33a4e264b25436c859f9c3c205b1598b5e0382cb3a72e9f8df1090",
+      "record_ids": [
+        "dc6b034b1f4675a43be437e6f604ad464276c9336860c036e2bb3229dba053f4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除已保存的游戏 conserva eliminar la partida guardada, no borrar el tablero actual."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "record_ids": [
+        "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "686a6dca8cfd62af40b89ef7eb9b565e83f718392fc841ab832a987b28625954",
+      "record_ids": [
+        "6843d330e2142e58f0972a57659c260a49f7b87a905611895472530814762469"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "现在选择相反的角落 pide la esquina opuesta; se entiende en la selección de un rectángulo."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "a3fe35ee24292b4339cf4d462dcfe118069bc0441efa44db631005bef06072e1",
+      "record_ids": [
+        "e5f1df95565362329fbc871f795d9f2d4a5abffe40eeb7ff2e8d8dc42653e932"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "检查谜题 conserva comprobar el puzzle."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "b2101414fb98d92b6cd835bce6dc38ac0793aec5182c214cb3c06a2fe5d6f64d",
+      "record_ids": [
+        "c602c149950df1ec5331f094fc888e795eb4be3f4ffcf21935e8ed1620b91471"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "显示提示 es mostrar una pista en el contexto del juego; prompt en la vuelta puede ser una indicación y no demuestra por sí solo un defecto."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "6f4f897b7d7269d1f173ab2cf0d8e13f57f98302bca7d29f2097958321658c61",
+      "record_ids": [
+        "3b732773a33e0f58e66424c0f896820742dceaa9016e1e555ee04f9c6caf8c12"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "显示解 es una etiqueta matemática breve para mostrar la solución; no se cambia la acción."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "record_ids": [
+        "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "93743184452d24de08bb0a5cb006c8df1e85ad488d8d4b88f403030b5a5aa1ac",
+      "record_ids": [
+        "05abd5a39b387067f3d068ff615d6bd6b8b10bdf16711debef93ad0645cd721f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "删除所有矩形 elimina todos los rectángulos, alcance previsto de Clear rectangles."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "record_ids": [
+        "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "c2720b35f19207979457356b52f91d4bb243ab1181f6d71d0460db9599839f06",
+      "record_ids": [
+        "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "100b75119157a370b10da8f36d44f32a6bea21b760821d2f8bc430b5a9b02511",
+      "record_ids": [
+        "e6bdaddf720d24cf97b55af075481a88f688928f78dddaa3d5237cff5f51cfa8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Unidad declarada y milímetros se conservan; 标记测量值作为绘图单位 es un calco torpe de etiquetar resultados como unidades de dibujo, leve de naturalidad."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "10944bfc81908ece0e97dd4a2f9c3b4c02e7aae8ec07b9530a351185487cbf7a",
+      "record_ids": [
+        "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "47402380923a9e156f334ae32b6aa0d72a54f9136b89fde454d882b82e2f05e5",
+      "record_ids": [
+        "39c35f6b31a14c2ba35876e51307f33f9a555fbe2ad0e41aaa1494ae467f1f9a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "取消加载 cancela la carga; acción exacta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "81bb76c2a3704c72b75c8236a64965e11831c13e589c3a5f7f28bf6f45e82bcb",
+      "record_ids": [
+        "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "ASCII.dxf junta ASCII y extensión como si fuera nombre de archivo, en lugar de separar formato ASCII y extensión .dxf. La primera oración de error es correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "record_ids": [
+        "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "ff7614613139c837ae974a9e5c3a7e6ac77936ed92bb2156ea05f4cfb419d8cb",
+      "record_ids": [
+        "600123f155a21919b0bacde562b11a1ce7d83b3f95e21f84ef4faf180c58384d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "測量距離 conserva medir distancia, pero usa tres caracteres tradicionales donde zh-CN requiere 测量距离; defecto regional en control."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "record_ids": [
+        "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "1e13ee178f21ce7f13716473fa704e7d6fbd647fe37d72133b30f4d4198ae87c",
+      "record_ids": [
+        "ac57d735c100d9ce9ed864e6ef9ed39d99224c86bf3aaf3941bbee11b14129dd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "下载SVG文件 conserva descarga y tipoSVG."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "0f34f762bdf67fa11c2c4baac8e8e518b4756776ec79f64af6f260024e315c6b",
+      "record_ids": [
+        "b73c6aaa3eedae2e8af17b75493237cd04f4a6e671be4a4420d3515ef338c164"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "下载PNG conserva descarga y tipoPNG."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "32853db129bd186ba78d71e149f4176d12561ea82267df4a32af3a9a422a6fe4",
+      "record_ids": [
+        "8d9d69559191044d0cff49acac14c5e45b8a527ac560de3114c8e6e39c53340d"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "在查看器中调整图纸 pide ajustar el dibujo en el visor, pero no expresa encajar todo el dibujo ni ajustar la vista. La orden queda ambigua y puede sugerir modificar el dibujo."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "80f8fbcfa01176339340176adcd440f3e7a8643f2d00acb7117feca389a845ca",
+      "record_ids": [
+        "ad384295c1a9cd65861dfc1801cbf635ffa676991a0c1a52c3e8d7abf8caf4cd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "放大 es el comando chino correcto de ampliar la vista; la vuelta inventa un objeto lupa."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "locale": "zh-CN",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+zh-CN-decimal-v1",
+      "translation_hash": "290f68030501cd9c82b1d3c59a3359d4ba572595fb3fc773fb8ffccb453ffb49",
+      "record_ids": [
+        "62c25cd68bc5a7c978e49a9c820ac2572469a8078caa290e82b88d961db09fb7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "缩小 es el comando correcto de reducir la vista, no una reducción de archivo."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review",
+      "data_contract_unproved": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "3c5e7d8c21d0c4903c8c3941010a68cf6e2a4e50b8b5512384091c8cfb0ffc10",
+      "back_translation_hash": "24492194d9b21960bfa4176f757e5d2547e88fa8c97910dd8e08de661149f2b4",
+      "notes": [
+        "Locally loaded audio convierte la acción de cargar en un estado/participio."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ae6c24121e994d12fbc74cbfa185e19bf8659ec3b406d530832213fd6f7b59a8",
+      "back_translation_hash": "630fc97caaeae53711bdb2b2f170701d2e79107b349c55b34482acd316b21949",
+      "notes": [
+        "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "87dbb7a721f290dafdaa8fffe037169448a6074bee7e2769f0b885362c695051",
+      "back_translation_hash": "10a59fe0be2d2af066ac1bc4b0b18da233120ddc43bcd5dde8773d8d034472ef",
+      "notes": [
+        "La vuelta conserva el mensaje inventado de redirección/clic, en lugar del error de decodificación."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "9be4c3ee81339b5dd8d0fb11928bda82b06b9054de1bb4b0e4178a850c077df3",
+      "back_translation_hash": "e61284cf123f86af9ae91a83a289531e6c7c653743636666a27b4418ce637edf",
+      "notes": [
+        "Does not accept recordings sustituye no recibir por no aceptar; la ida 不接收 conserva la afirmación sobre recepción."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "93faa0bca096a40e13ec63726d8831e1bb26e6d4876bbeb6bab04c9d8a4d83b2",
+      "back_translation_hash": "8cfd071380f5891c8114f0b633f553112f0d51ea5da01b62f544c78895850739",
+      "notes": [
+        "Daily Jigsaw Puzzle elige explícitamente el subtipo jigsaw de imagen, distinto del puzzle lógico Shikaku. La ida se entiende en su contexto como puzzle; no se infiere su nota de esta vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "1c7c4d31f3ab94820362153d99472d14bd29c95bf2a65a9d541b11a54b507a04",
+      "back_translation_hash": "b724da56e90e95fa3e85f107a5afae4cc876b0dbc1c6a2602cc0e5e3c6ae036f",
+      "notes": [
+        "Continue to save games cambia continuar la partida guardada por continuar guardando partidas; 保存的游戏 es la partida guardada."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "e6bdaddf720d24cf97b55af075481a88f688928f78dddaa3d5237cff5f51cfa8",
+      "back_translation_hash": "467773bf8c7906c57fd66b1f72ceba156bb622c268ce16a3258b55c250111aa9",
+      "notes": [
+        "Marked measurement value as the drawing unit convierte etiquetar resultados en unidades de dibujo en usar una medición marcada como unidad. Calco de ida agravado en la vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+      "back_translation_hash": "13b0874b523c7be04faaae3fe044398fbe19f1ebaa4365cb15729c2425412d67",
+      "notes": [
+        "La vuelta conserva ASCII.dxf como nombre unido, inducido por la ida; formato y extensión debían permanecer separados."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "600123f155a21919b0bacde562b11a1ce7d83b3f95e21f84ef4faf180c58384d",
+      "back_translation_hash": "d2b746efc3bfa7722603a721983255cf1869088c78e82567c8b9912d1b01ae7b",
+      "notes": [
+        "Measurement distance pierde el verbo de acción medir y forma un sintagma nominal defectuoso; el tradicional de ida sí expresa la acción."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "8d9d69559191044d0cff49acac14c5e45b8a527ac560de3114c8e6e39c53340d",
+      "back_translation_hash": "41c9d613e69515069210d35db00707846d0b0060f6916d3bc45f349ad3182db6",
+      "notes": [
+        "Adjust the drawing in the viewer conserva la pérdida de encajar todo el dibujo, inducida por la orden ambigua de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "ad384295c1a9cd65861dfc1801cbf635ffa676991a0c1a52c3e8d7abf8caf4cd",
+      "back_translation_hash": "ea23d3eb6ae3cfdbc6f8f1ed93c2ecbcecde06c2a1a6e4ff49621016f677101f",
+      "notes": [
+        "Magnifying glass es un objeto lupa, no el comando ampliar la vista; 放大 es correcto."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "62c25cd68bc5a7c978e49a9c820ac2572469a8078caa290e82b88d961db09fb7",
+      "back_translation_hash": "0b92322328a27838f252136c3fd9e00bd56328e08676b77a30fab57e265397c6",
+      "notes": [
+        "Reduction es un sustantivo genérico y pierde la orden concreta de reducir la vista; 缩小 es correcto en el botón."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "2103e4254d3db2101caa231b53a0dc2d835564715785df9d6810095b2dab3179",
+      "translation_hash": "785288d4c2fea4ac430f1e00267cf4da783dcffa76ef43df5902703a4504a726",
+      "back_translation_hash": "cd221ce104815eee7ae96bca99c7d2f8c3469ffb4a24e5b9683f5e35fcb533fd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 选取音频文件 conserva la acción de elegir y el objeto audio; la compresión de caracteres es normal en chino."
+        }
+      }
+    },
+    {
+      "record_id": "3c5e7d8c21d0c4903c8c3941010a68cf6e2a4e50b8b5512384091c8cfb0ffc10",
+      "translation_hash": "bc53baf03335a243634374b6e2cdb1142655000c87eecb81bd912e5966ef0623",
+      "back_translation_hash": "24492194d9b21960bfa4176f757e5d2547e88fa8c97910dd8e08de661149f2b4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 本地加载音频 es el imperativo correcto de carga local; la vuelta lo convierte en estado cargado."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Locally loaded audio convierte la acción de cargar en un estado/participio."
+        }
+      }
+    },
+    {
+      "record_id": "0d92ca3fa9f844161dbea73b1aea94214f07639e0c8cf15615a3a09387a1ac50",
+      "translation_hash": "f88319f600c62990b579ac8c43498e6eeee41bd93f1c7ade54d59f0767ff3813",
+      "back_translation_hash": "d47d83b97dfdca170a30b22453979a75256f9039380ffc59043fde6578f46051",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 播放音频效果 expresa reproducir el efecto, desambiguación prevista de Preview; no es una vista de imagen."
+        }
+      }
+    },
+    {
+      "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "back_translation_hash": "5374166b66b0077f94c1f1602d59d7a6839a0c6837c9fc34175ef6af527706b1",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 首先选择一个音频文件 pide primero elegir un archivo. 一个 es artículo/clasificador legítimo; la gramática decimal no lo prueba."
+        }
+      }
+    },
+    {
+      "record_id": "ae6c24121e994d12fbc74cbfa185e19bf8659ec3b406d530832213fd6f7b59a8",
+      "translation_hash": "920f26e1b77ee9ea05c2ec5bf9226c0af490213bf1d4e918a5c1f7cbf66c84c3",
+      "back_translation_hash": "630fc97caaeae53711bdb2b2f170701d2e79107b349c55b34482acd316b21949",
+      "warnings": {
+        "protected_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "marker_restore": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+        },
+        "back_protected_tokens": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La ida cambia el marcador literal {duration} por {持续时间}. El estado y la unidad segundos se entienden, pero el dato interpolado deja de funcionar."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta devuelve {Duration} con mayúscula, distinto del marcador {duration}; procede de la traducción previa del marcador."
+        }
+      }
+    },
+    {
+      "record_id": "87dbb7a721f290dafdaa8fffe037169448a6074bee7e2769f0b885362c695051",
+      "translation_hash": "96f3083d691d6cddecf2c231e55c37fa8112079da3fbe223ead08d46a4fe962a",
+      "back_translation_hash": "10a59fe0be2d2af066ac1bc4b0b18da233120ddc43bcd5dde8773d8d034472ef",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "如果您的浏览器没有自动跳转,请点击这里 inventa redirección y clic; desaparece el error de no poder decodificar el formato. WAV/MP3 no reparan ese cambio."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta conserva el mensaje inventado de redirección/clic, en lugar del error de decodificación."
+        }
+      }
+    },
+    {
+      "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+      "translation_hash": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "back_translation_hash": "8e03e948027cbbe9e75c82bb07e30aca850e7222a7a630f6f5771dae7c5ed28e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个大小不超过25 MB的音频文件 conserva elegir, límite inclusivo25MB y archivo. 一个 es clasificador, no un cambio del límite."
+        }
+      }
+    },
+    {
+      "record_id": "385215ca583e674ce28326f9467a0898396dc5ca3ebbe3388893029dd653d36e",
+      "translation_hash": "0fbd5facafd474063abd66058c7b03d02d99c537b1982dcc0c25b539ef51a494",
+      "back_translation_hash": "c0d187c355fb78dbdb44104c4d910d57d0e35b1791c538ebf6fa12caab078e70",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 此工具支持长达30秒的剪辑 y 修剪文件并重试 conservan duración máxima, recortar y reintentar."
+        }
+      }
+    },
+    {
+      "record_id": "9be4c3ee81339b5dd8d0fb11928bda82b06b9054de1bb4b0e4178a850c077df3",
+      "translation_hash": "ec1a1c1f79c4ae9d15687184bc31b1f626d2e3f1f01b08587c8d21073b8d0490",
+      "back_translation_hash": "e61284cf123f86af9ae91a83a289531e6c7c653743636666a27b4418ce637edf",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. La negación de subida y recepción se conserva, pero 处理录制 usa el proceso grabar como objeto donde corresponde procesar el audio/录音; leve de naturalidad."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La negación de subida y recepción se conserva, pero 处理录制 usa el proceso grabar como objeto donde corresponde procesar el audio/录音; leve de naturalidad."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Does not accept recordings sustituye no recibir por no aceptar; la ida 不接收 conserva la afirmación sobre recepción."
+        }
+      }
+    },
+    {
+      "record_id": "c8cd077539b655c7d3ed6454345750edd4f314197b6a2b20d3143af5030ae2ae",
+      "translation_hash": "f548a6b6c2e9759d839c60bec55b679ccc748dcb727a53a1979634e1a26fca60",
+      "back_translation_hash": "6c02e50ed84bf0d75949651bb2d201d1a5313d8aa3778413d0a26244470fe1e8",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. La relación menor tono/más lento y mayor tono/más rápido es correcta; 高音高 es una construcción torpe frente a 较高的音高, leve de naturalidad."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "La relación menor tono/más lento y mayor tono/más rápido es correcta; 高音高 es una construcción torpe frente a 较高的音高, leve de naturalidad."
+        }
+      }
+    },
+    {
+      "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+      "translation_hash": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "back_translation_hash": "9bc0695c103f64d72f8bfe09790779ddfc66c363ac79e2a90722c3e544c486de",
+      "warnings": {
+        "back_numeric_values": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "protected_tokens": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_protected_tokens": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 线索6、一个矩形、正好6个方格 conservan pista6, un rectángulo y exactamente seis casillas. El parser no conoce one/six escritos; no es una cifra cambiada."
+        }
+      }
+    },
+    {
+      "record_id": "107fe50537e4e92bd7d14e870e9b8dc74c09652271b179c39e8a5708eca8e530",
+      "translation_hash": "7850b89452b52ce71cff503a44719a1fff26c802d5b864c936773f1af6a85998",
+      "back_translation_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 新谜题 es una acción de nuevo acertijo adecuada para este juego."
+        }
+      }
+    },
+    {
+      "record_id": "93faa0bca096a40e13ec63726d8831e1bb26e6d4876bbeb6bab04c9d8a4d83b2",
+      "translation_hash": "86bcb9162947a204ec1b039b6e7e86bfb23ec5d12c59aecf7275fd3080475dcf",
+      "back_translation_hash": "8cfd071380f5891c8114f0b633f553112f0d51ea5da01b62f544c78895850739",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 日常拼圖 resulta poco natural para el reto de cada día (每日谜题); además 圖 pertenece a tradicional, no a zh-CN. El contexto mantiene puzzle, sin atribuir automáticamente un error de juego a 拼图."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "日常拼圖 resulta poco natural para el reto de cada día (每日谜题); además 圖 pertenece a tradicional, no a zh-CN. El contexto mantiene puzzle, sin atribuir automáticamente un error de juego a 拼图."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Daily Jigsaw Puzzle elige explícitamente el subtipo jigsaw de imagen, distinto del puzzle lógico Shikaku. La ida se entiende en su contexto como puzzle; no se infiere su nota de esta vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "1c7c4d31f3ab94820362153d99472d14bd29c95bf2a65a9d541b11a54b507a04",
+      "translation_hash": "ea8e1a1cc815c8ec32be1961d2f0fb0eec82f486a4e06772fb2be9e5ab449cef",
+      "back_translation_hash": "b724da56e90e95fa3e85f107a5afae4cc876b0dbc1c6a2602cc0e5e3c6ae036f",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Continue to save games cambia continuar la partida guardada por continuar guardando partidas; 保存的游戏 es la partida guardada."
+        }
+      }
+    },
+    {
+      "record_id": "dc6b034b1f4675a43be437e6f604ad464276c9336860c036e2bb3229dba053f4",
+      "translation_hash": "3fa0bc3ddd33a4e264b25436c859f9c3c205b1598b5e0382cb3a72e9f8df1090",
+      "back_translation_hash": "c4e9ca47628ba41dd342c84305f0126931c4c042b4d1c30b13367bac183f0c70",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 删除已保存的游戏 conserva eliminar la partida guardada, no borrar el tablero actual."
+        }
+      }
+    },
+    {
+      "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+      "translation_hash": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "back_translation_hash": "cf465c9861202e949494b174654b61fc4209199ba03389e888324b4f69620ef6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个起始方格 conserva elegir casilla inicial; 一个 es el clasificador del objeto, no un valor alterado."
+        }
+      }
+    },
+    {
+      "record_id": "6843d330e2142e58f0972a57659c260a49f7b87a905611895472530814762469",
+      "translation_hash": "686a6dca8cfd62af40b89ef7eb9b565e83f718392fc841ab832a987b28625954",
+      "back_translation_hash": "fda5a4194e93254f85a73ce3cba9226dd42cc8a896a830260603c7ffb417478a",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 现在选择相反的角落 pide la esquina opuesta; se entiende en la selección de un rectángulo."
+        }
+      }
+    },
+    {
+      "record_id": "e5f1df95565362329fbc871f795d9f2d4a5abffe40eeb7ff2e8d8dc42653e932",
+      "translation_hash": "a3fe35ee24292b4339cf4d462dcfe118069bc0441efa44db631005bef06072e1",
+      "back_translation_hash": "25eb84288d7593c6e79de857e3196b2659426e6df945cfc5a9bcf8ae272bd4c4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 检查谜题 conserva comprobar el puzzle."
+        }
+      }
+    },
+    {
+      "record_id": "c602c149950df1ec5331f094fc888e795eb4be3f4ffcf21935e8ed1620b91471",
+      "translation_hash": "b2101414fb98d92b6cd835bce6dc38ac0793aec5182c214cb3c06a2fe5d6f64d",
+      "back_translation_hash": "7977bea9fbd6fd89b23656f56306649723df2ca1e13e4be3b1ddd6bcd4dec2de",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 显示提示 es mostrar una pista en el contexto del juego; prompt en la vuelta puede ser una indicación y no demuestra por sí solo un defecto."
+        }
+      }
+    },
+    {
+      "record_id": "3b732773a33e0f58e66424c0f896820742dceaa9016e1e555ee04f9c6caf8c12",
+      "translation_hash": "6f4f897b7d7269d1f173ab2cf0d8e13f57f98302bca7d29f2097958321658c61",
+      "back_translation_hash": "ca2c68404a5c2bec4c72e84a6d4249672be06ed36bb28cb642f18ec17443bace",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 显示解 es una etiqueta matemática breve para mostrar la solución; no se cambia la acción."
+        }
+      }
+    },
+    {
+      "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+      "translation_hash": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "back_translation_hash": "08de0268fddd51894ba30cffac35ea1193f8e92e36c05c0c8842496ddd370b12",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 撤销最后一个矩形 revierte el último rectángulo; el uso léxico de 一 no es una cifra dañada."
+        }
+      }
+    },
+    {
+      "record_id": "05abd5a39b387067f3d068ff615d6bd6b8b10bdf16711debef93ad0645cd721f",
+      "translation_hash": "93743184452d24de08bb0a5cb006c8df1e85ad488d8d4b88f403030b5a5aa1ac",
+      "back_translation_hash": "b0f74bc4b53749a4cde0d1e35e2167f834b6279a2b2c0ed55c09d983f4084608",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 删除所有矩形 elimina todos los rectángulos, alcance previsto de Clear rectangles."
+        }
+      }
+    },
+    {
+      "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+      "translation_hash": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "back_translation_hash": "2a60c6eea7ca17b55298849bf2ab73c0210efc525d9c1f0305ac0cbb987e4a11",
+      "warnings": {
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不能包含多个 y 必须包含一个 expresan máximo uno y mínimo uno, por tanto exactamente una pista por rectángulo; la gramática no prueba Han."
+        }
+      }
+    },
+    {
+      "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+      "translation_hash": "c2720b35f19207979457356b52f91d4bb243ab1181f6d71d0460db9599839f06",
+      "back_translation_hash": "09166e3b304cd47f54843757ee518b4827a2d0479eb35f3d5b0852e7cd98ccdd",
+      "warnings": {
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 无法打开DWG或二进制DXF y 只能打开ASCIIDXF conservan exclusión y único formato. 二 forma parte del término binario, no es una cantidad nueva."
+        }
+      }
+    },
+    {
+      "record_id": "e6bdaddf720d24cf97b55af075481a88f688928f78dddaa3d5237cff5f51cfa8",
+      "translation_hash": "100b75119157a370b10da8f36d44f32a6bea21b760821d2f8bc430b5a9b02511",
+      "back_translation_hash": "467773bf8c7906c57fd66b1f72ceba156bb622c268ce16a3258b55c250111aa9",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. Unidad declarada y milímetros se conservan; 标记测量值作为绘图单位 es un calco torpe de etiquetar resultados como unidades de dibujo, leve de naturalidad."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Unidad declarada y milímetros se conservan; 标记测量值作为绘图单位 es un calco torpe de etiquetar resultados como unidades de dibujo, leve de naturalidad."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Marked measurement value as the drawing unit convierte etiquetar resultados en unidades de dibujo en usar una medición marcada como unidad. Calco de ida agravado en la vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+      "translation_hash": "10944bfc81908ece0e97dd4a2f9c3b4c02e7aae8ec07b9530a351185487cbf7a",
+      "back_translation_hash": "2e197683ac595b8920b8e30caf2b42e047b6bb0931248b992715043aba8017f9",
+      "warnings": {
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 选择一个ASCIIDXF文件 conserva elegir el formato ASCII DXF. 一个 es clasificador no soportado por el subconjunto decimal."
+        }
+      }
+    },
+    {
+      "record_id": "39c35f6b31a14c2ba35876e51307f33f9a555fbe2ad0e41aaa1494ae467f1f9a",
+      "translation_hash": "47402380923a9e156f334ae32b6aa0d72a54f9136b89fde454d882b82e2f05e5",
+      "back_translation_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 取消加载 cancela la carga; acción exacta."
+        }
+      }
+    },
+    {
+      "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+      "translation_hash": "81bb76c2a3704c72b75c8236a64965e11831c13e589c3a5f7f28bf6f45e82bcb",
+      "back_translation_hash": "13b0874b523c7be04faaae3fe044398fbe19f1ebaa4365cb15729c2425412d67",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "ASCII.dxf junta ASCII y extensión como si fuera nombre de archivo, en lugar de separar formato ASCII y extensión .dxf. La primera oración de error es correcta."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "ASCII.dxf junta ASCII y extensión como si fuera nombre de archivo, en lugar de separar formato ASCII y extensión .dxf. La primera oración de error es correcta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La vuelta conserva ASCII.dxf como nombre unido, inducido por la ida; formato y extensión debían permanecer separados."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. La vuelta conserva ASCII.dxf como nombre unido, inducido por la ida; formato y extensión debían permanecer separados."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "ASCII.dxf junta ASCII y extensión como si fuera nombre de archivo, en lugar de separar formato ASCII y extensión .dxf. La primera oración de error es correcta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. La vuelta conserva ASCII.dxf como nombre unido, inducido por la ida; formato y extensión debían permanecer separados."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "ASCII.dxf junta ASCII y extensión como si fuera nombre de archivo, en lugar de separar formato ASCII y extensión .dxf. La primera oración de error es correcta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. La vuelta conserva ASCII.dxf como nombre unido, inducido por la ida; formato y extensión debían permanecer separados."
+        }
+      }
+    },
+    {
+      "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+      "translation_hash": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "back_translation_hash": "020795786bf51456874169422ae128df404e9e45b8f699b26f1a50c98fd02037",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 不支持二进制DXF y 将工程图保存或导出为ASCIIDXF conservan binario no soportado y alternativa guardar/exportar. 二 es parte del término binario."
+        }
+      }
+    },
+    {
+      "record_id": "600123f155a21919b0bacde562b11a1ce7d83b3f95e21f84ef4faf180c58384d",
+      "translation_hash": "ff7614613139c837ae974a9e5c3a7e6ac77936ed92bb2156ea05f4cfb419d8cb",
+      "back_translation_hash": "d2b746efc3bfa7722603a721983255cf1869088c78e82567c8b9912d1b01ae7b",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 測量距離 conserva medir distancia, pero usa tres caracteres tradicionales donde zh-CN requiere 测量距离; defecto regional en control."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "測量距離 conserva medir distancia, pero usa tres caracteres tradicionales donde zh-CN requiere 测量距离; defecto regional en control."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Measurement distance pierde el verbo de acción medir y forma un sintagma nominal defectuoso; el tradicional de ida sí expresa la acción."
+        }
+      }
+    },
+    {
+      "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+      "translation_hash": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "back_translation_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+        },
+        "marker_restore": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+        },
+        "forward_typed_data": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+        },
+        "forward_sentence_evidence": {
+          "disposition": "unproved-data",
+          "blocks_gate": true,
+          "note": "输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta. Contrato decimal excluye Han; estado de datos no probado, bloqueo explícito sin inventar un defecto lingüístico."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La gramática decimal no prueba el numeral/clasificador/término Han de entrada ni six/6; no es por sí solo un defecto de la vuelta. Fuente/ida/vuelta leídas. 输入四个有效坐标 conserva los cuatro valores de coordenadas requeridos; 四 está excluido por la gramática decimal, sin evidencia de cifra incorrecta."
+        }
+      }
+    },
+    {
+      "record_id": "8d9d69559191044d0cff49acac14c5e45b8a527ac560de3114c8e6e39c53340d",
+      "translation_hash": "32853db129bd186ba78d71e149f4176d12561ea82267df4a32af3a9a422a6fe4",
+      "back_translation_hash": "41c9d613e69515069210d35db00707846d0b0060f6916d3bc45f349ad3182db6",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "在查看器中调整图纸 pide ajustar el dibujo en el visor, pero no expresa encajar todo el dibujo ni ajustar la vista. La orden queda ambigua y puede sugerir modificar el dibujo."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Adjust the drawing in the viewer conserva la pérdida de encajar todo el dibujo, inducida por la orden ambigua de ida."
+        }
+      }
+    },
+    {
+      "record_id": "ad384295c1a9cd65861dfc1801cbf635ffa676991a0c1a52c3e8d7abf8caf4cd",
+      "translation_hash": "80f8fbcfa01176339340176adcd440f3e7a8643f2d00acb7117feca389a845ca",
+      "back_translation_hash": "ea23d3eb6ae3cfdbc6f8f1ed93c2ecbcecde06c2a1a6e4ff49621016f677101f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 放大 es el comando chino correcto de ampliar la vista; la vuelta inventa un objeto lupa."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Magnifying glass es un objeto lupa, no el comando ampliar la vista; 放大 es correcto."
+        }
+      }
+    },
+    {
+      "record_id": "62c25cd68bc5a7c978e49a9c820ac2572469a8078caa290e82b88d961db09fb7",
+      "translation_hash": "290f68030501cd9c82b1d3c59a3359d4ba572595fb3fc773fb8ffccb453ffb49",
+      "back_translation_hash": "0b92322328a27838f252136c3fd9e00bd56328e08676b77a30fab57e265397c6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La menor longitud se debe a escritura china; no demuestra omisión. 缩小 es el comando correcto de reducir la vista, no una reducción de archivo."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Reduction es un sustantivo genérico y pierde la orden concreta de reducir la vista; 缩小 es correcto en el botón."
+        }
+      }
+    }
+  ],
+  "evidence_sources": {
+    "inference_source_commit": "cfa913c230680f3b77e275baed50f79b6ebad50b",
+    "checkpoint_capture_commit": "f032499117d91e5b438b410393a6100ff57ee785",
+    "checkpoint_sha256_at_capture": "e0cd3f66e4a96f22d40e7fa2ff40b6f6229f1694f449410d34b0ba6500c34d06",
+    "run_id": 40089099175
+  },
+  "reference_gate": {
+    "zh-CN": {
+      "rows": 40,
+      "sample": 40,
+      "points": 344,
+      "maximum": 360,
+      "button_errors": 3,
+      "number_negation_errors": 2,
+      "major_rows": 4,
+      "minor_rows": 5,
+      "unproved_data_rows": 11,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current agent reading. Real forward defects and unsupported data proof both block, with separate counts; unproved Han is not a fabricated linguistic defect. No native/blind/unseen-text or locale approval."
+    }
+  },
+  "decision": "Rejected; full not dispatched. Real defects and unproved contract are reported separately.",
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 232,
+    "legacy_points": 223,
+    "maximum": 243,
+    "frozen_engine": false
+  }
+}

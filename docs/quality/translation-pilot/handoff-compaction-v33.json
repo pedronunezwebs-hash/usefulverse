@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "files": {
+    "ESTADO.md": {
+      "before": 39372,
+      "after": 13084
+    },
+    "MAPA-REPO.md": {
+      "before": 35663,
+      "after": 5567
+    }
+  },
+  "before_bytes": 75035,
+  "after_bytes": 18651,
+  "reduction_percent": 75.14,
+  "pending_human_and_future_checkboxes_preserved": true,
+  "historical_data_retained_online": true,
+  "no_measured_token_or_global_ci_speedup_claim": true
+}

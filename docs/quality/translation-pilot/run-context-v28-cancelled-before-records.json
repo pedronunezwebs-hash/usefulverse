@@ -1,0 +1,25 @@
+{
+  "run_id": 40250574315,
+  "source": "f9a40ae550d237e4bd3b5899c8f7013bdfac39fb",
+  "reason": "Separate historical data validity from future semantic findings before freezing the first actual references",
+  "step_at_cancel": "model step just entered; verify zero records and actual cleanup from final logs",
+  "conclusion": "cancelled",
+  "raw_record_occurrences": 0,
+  "artifacts": 0,
+  "cleanup_steps": [
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "conclusion": "success"
+    }
+  ],
+  "precheck_tests": [
+    [
+      "322",
+      "328.716"
+    ],
+    [
+      "322",
+      "328.716"
+    ]
+  ]
+}

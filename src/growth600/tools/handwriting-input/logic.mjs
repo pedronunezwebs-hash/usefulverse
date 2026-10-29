@@ -1,0 +1,1 @@
+export function normalizeStrokePoints(points,width,height){const w=Number(width),h=Number(height);if(!Number.isFinite(w)||!Number.isFinite(h)||w<=0||h<=0)throw new Error('invalid-canvas');return Object.freeze(points.map(p=>Object.freeze({x:Math.max(0,Math.min(1,Number(p.x)/w)),y:Math.max(0,Math.min(1,Number(p.y)/h))})));}

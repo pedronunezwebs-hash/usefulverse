@@ -1,0 +1,96 @@
+{
+  "toolId": "xml-to-csv-converter",
+  "sourceCopy": {
+    "name": "XML to CSV Converter",
+    "title": "XML to CSV Converter Free | UsefulVerse",
+    "description": "Convert simple XML records to CSV or CSV rows to XML in your browser. Free, local, no upload and no account.",
+    "intro": "Turn a simple XML record list into a CSV table, or build XML records from a CSV file’s text. Choose the direction, paste your data, then copy or download the result. Nothing is uploaded.",
+    "howQuestion": "How do I convert XML to CSV?",
+    "howAnswer": "Choose XML to CSV and paste XML with a simple record list. Repeated direct record elements become rows. Element names become columns; attributes use @name. Choose CSV to XML to create simple XML records from headers and rows.",
+    "privacyQuestion": "Is my XML or CSV uploaded?",
+    "privacyAnswer": "No. Parsing and conversion run in this browser. Input is limited to 200,000 characters, 5,000 rows, 64 columns and 20,000 cells. DTD and entity declarations are blocked, and external resources are not fetched.",
+    "fields": {
+      "mode": "Conversion direction",
+      "xmlToCsv": "XML to CSV",
+      "csvToXml": "CSV to XML",
+      "xmlInput": "XML input",
+      "xmlHint": "Supports a simple list of same-name record elements, or one flat record. Element children must be scalar values; nested and repeated fields are not flattened.",
+      "csvInput": "CSV input",
+      "csvHint": "Use the first row for column names. A header such as @id becomes an XML attribute. Use #text for record text.",
+      "rootName": "XML root element",
+      "recordName": "XML record element",
+      "accuracyNote": "This is a simple table conversion, not a lossless XML format conversion. Namespaces, nested structures, mixed content, comments and XML formatting are not preserved. Text is not type-aware. Spreadsheet formula-like CSV values are prefixed with an apostrophe for safety.",
+      "output": "Converted output",
+      "result": "Result",
+      "copyHint": "Check the output before importing it into another application."
+    },
+    "actions": {
+      "convert": "Convert",
+      "example": "Load example",
+      "reset": "Clear",
+      "copy": "Copy output",
+      "download": "Download output"
+    },
+    "messages": {
+      "converted": "Conversion complete in your browser.",
+      "empty-input": "Paste XML or CSV data first.",
+      "too-large": "Input exceeds the 200,000-character limit.",
+      "invalid-xml": "The XML is not well-formed. Check its tags and quotes.",
+      "invalid-xml-name": "Use simple XML names with letters, numbers, underscore, dot or hyphen; names cannot start with a number.",
+      "too-deep": "XML exceeds the 64-level depth limit.",
+      "too-many-nodes": "XML exceeds the 20,000-element limit.",
+      "doctype-blocked": "DTD and entity declarations are blocked for safety.",
+      "xml-parser-unavailable": "XML parsing is not available in this browser.",
+      "xml-ambiguous-records": "The XML structure is ambiguous. Add one wrapper and use same-name elements for records.",
+      "xml-root-metadata-unsupported": "Root attributes or root text cannot be represented in the row table. Move that data into each record.",
+      "nested-xml-structure": "Nested elements or attributes on a field are not supported. Use flat scalar fields; nested data is not silently dropped.",
+      "mixed-xml-content": "Text mixed with child elements is not supported. Put text in a flat field or use #text for a CSV record.",
+      "repeated-fields-unsupported": "A record repeats a field name. Use a different table layout because repeated values cannot fit one cell safely.",
+      "too-many-columns": "XML has more than 64 columns.",
+      "too-many-cells": "The result would exceed 20,000 cells.",
+      "too-many-rows": "The data exceeds the 5,000-row limit.",
+      "no-columns": "No flat columns were found. Add attributes or simple child elements.",
+      "invalid-csv": "Check CSV quotes, commas and line breaks.",
+      "invalid-headers": "Use unique simple XML names as CSV headers. Prefix attribute headers with @ or use #text for record text.",
+      "duplicate-headers": "CSV headers must be unique.",
+      "row-width": "Each CSV row must have the same number of cells as the header.",
+      "invalid-xml-character": "A value contains a character XML cannot represent.",
+      "output-too-large": "The generated XML exceeds the safe output size.",
+      "invalid": "Conversion failed. Check the input and supported structure.",
+      "copied": "Output copied.",
+      "copyUnavailable": "Clipboard is unavailable in this browser.",
+      "downloaded": "Output downloaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "How are XML attributes shown in CSV?",
+        "answer": "An attribute such as id=\"101\" becomes a column named @id. When converting back, a CSV header that starts with @ becomes an XML attribute."
+      },
+      {
+        "question": "Can it convert nested XML into a flat table?",
+        "answer": "No. Nested child structures, repeated fields inside a record and mixed text are rejected instead of being flattened or silently lost. Use a dedicated XML-to-JSON workflow for nested data."
+      },
+      {
+        "question": "Will the CSV preserve XML types and formatting?",
+        "answer": "No. CSV stores cell text, not XML types, namespaces or formatting. Formula-like cell values get an apostrophe prefix when exported to reduce spreadsheet formula execution risk."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "exampleXml": "<?xml version=\"1.0\"?>\n<products>\n  <product id=\"101\"><name>Notebook</name><price>4.50</price></product>\n  <product id=\"102\"><name>Pen</name><price>1.25</price></product>\n</products>",
+    "exampleCsv": "@id,name,price\n101,Notebook,4.50\n102,Pen,1.25"
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/xml-to-csv-converter/index.html",
+    "htmlSha256": "d93e095d210c819f999a60a4304a84149c2d61ae2a2f5f4c940d76178d415282",
+    "payloadSha256": "04c367d0ba5048655da5d38f52196e9e1245e6b683f5830350bc50e1d6464aaf",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/xml-to-csv-converter.js",
+    "controllerSha256": "1824118d4907a0fa3ec96a4fca45881cb7e9b2abd104a887f06679ba23a95b0a",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

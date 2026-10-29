@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "approved_locales": [],
+  "native_review": false,
+  "cases": [
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "inference_policy": "context-v31",
+      "forward_digest": "de169c6239dc392641d786899fdadd3c053941c14497d56378b77cda3ed79534",
+      "back_translation": "Cancel Download",
+      "back_translation_hash": "c0c05b34c0b1ed98474b99e3b68f3e3d9a58be2fe838cf21afc61128f94c4472",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "5403953e3abf681c043a58461508ee15a5d6a2e671482a1fbecbe03910432ea8"
+      ],
+      "issue": "Cancel local loading becomes Cancel Download;the forward Russian loading verb is valid in local-file context."
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "inference_policy": "context-v31",
+      "forward_digest": "2814d4dc4c380c4d7e6d0d6f90062eac414a566e51481206689e06acb3e0822d",
+      "back_translation": "Insert drawing",
+      "back_translation_hash": "677e4851a0c047ed61e9fadcffd14677b6613ab07dba09780c82654ef2540af6",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "40a68013f02c58919e00464db88bb7f3545847e3e279f4452c94bc0247b74113"
+      ],
+      "issue": "Fit the drawing to the viewport becomes Insert drawing;view framing changes into adding content."
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "inference_policy": "context-v31",
+      "forward_digest": "fa7794e80b925a8983b5e21a5ab7cde9f7d2f4e0af377adb2595a4f36400e2bb",
+      "back_translation": "The audio remains in this browser. UsefulVerse does not load or save it.",
+      "back_translation_hash": "6cd056e2109159adaf4968fdcb8879e50432756d20a136e0e1d7ee177c36f10d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "578124288ad2c4fb5c31e010900f566165ec6fb535b6e7d089e25110dcd9f627",
+        "77c793fbe226a5fd272afe3164dc617ac41b6198f723fae7275abf21f80e8553"
+      ],
+      "issue": "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+    },
+    {
+      "key": "dxf-viewer.fields.cancelled",
+      "locale": "ru",
+      "source_hash": "54c69a2d32a0deefe7942d596ae015a43b475cf92cd346421f1b5eb8b2e7a7d6",
+      "inference_policy": "context-v31",
+      "forward_digest": "e64123c1c77fdd3aff019f268883652176ad081df953f58a23f76e9667968afe",
+      "back_translation": "Upload canceled.",
+      "back_translation_hash": "b0ac4715557c36f323f2622e6b268220c2554914dd4550bb22ae43a8cae5e1f2",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "b9432fb42701f73f05712c53109e65dffcccf514ae4b4ce7e7af91aeaffa1f38"
+      ],
+      "issue": "Local loading becomes Upload in the back,an incorrect network direction."
+    },
+    {
+      "key": "dxf-viewer.fields.clear",
+      "locale": "ru",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "inference_policy": "context-v31",
+      "forward_digest": "826a5419f415cde75e1a3ccc978cb6267b37de58bdda51aa95385d12cbdde0c3",
+      "back_translation": "Delete uploaded drawing",
+      "back_translation_hash": "25fcdc5fee36c3c29c59c6f61df33e5a28c1fb9d0dccacfcb1310771aa4ed70b",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2a9b408bcecf177af67087b22497d8ecc65a42ee714350842ae977c1f0007c2c"
+      ],
+      "issue": "Loaded local drawing becomes uploaded drawing in the back."
+    },
+    {
+      "key": "dxf-viewer.fields.units.0",
+      "locale": "ru",
+      "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+      "inference_policy": "context-v31",
+      "forward_digest": "d2f905236351cca33c1f88ad1c347f8a6abd7402e4f1f015e1a8d5217929a29d",
+      "back_translation": "Non-singular",
+      "back_translation_hash": "5a4fa745c0030c7a20ada9ccab0597e07e143d075bbb91ff7cee4bd59115c53d",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "66a09e19d8cee81dc2400078398df7afd37cc732511c8877ddd512b0ecead716"
+      ],
+      "issue": "Unitless becomes Non-singular,a different mathematical concept."
+    },
+    {
+      "key": "shikaku.fields.solution",
+      "locale": "ru",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "inference_policy": "context-v31",
+      "forward_digest": "312d82d6e2c3e9a2c3ba1bfd5101b2f428abcabe6d57204fed4b77f680eb18de",
+      "back_translation": "Decision",
+      "back_translation_hash": "640ae4baf96061fee1798e9181e2b7a5145585233df2c27a501623afb0096ec1",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "1e1318df821f7831986c709f9bdd77b10a9970502c545b17a09285afe44662f8",
+        "a421b353975ae1cbe217d6b295cd521539e37daea0a731ddd0dfe7057ca1d190"
+      ],
+      "issue": "Puzzle solution becomes Decision,wrong sense of Russian решение."
+    },
+    {
+      "key": "shikaku.limits",
+      "locale": "ru",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "inference_policy": "context-v31",
+      "forward_digest": "5006ca2f54be46f016d389083bf028a1a3795b9b5b63dd94d378b892d162b560",
+      "back_translation": "This browser creates puzzles. Large grids can take some time on slow devices. No account required. No need to download files.",
+      "back_translation_hash": "e18a04dbaf7ec8843500b9127680b7d5ca0168037db8ea2e16a7db279109c0e5",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "35ee2850c7157c342b60fc4584ad4428c348f2e26b9af34694bf3cbee577bf49"
+      ],
+      "issue": "No file upload needed becomes no need to download files."
+    },
+    {
+      "key": "voice-changer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "inference_policy": "context-v31",
+      "forward_digest": "174d7aac2a731293608e01184583571833bd3d7d02e5aeb0053440a95ad83248",
+      "back_translation": "The selected record is never loaded. This browser decrypts and processes the record locally. UsefulVerse is not receiving a record.",
+      "back_translation_hash": "43c3634dfcde47e229e6bc1ac1f22845760c03fff82db57e08adc73748db3bce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "97b9d152fcf3937cd2847e45b244ef557db321a79b03f1cb5e54895009bb78b4"
+      ],
+      "issue": "No upload becomes never loaded,and generic audio decoding is narrowed to decryption."
+    },
+    {
+      "key": "voice-changer.fields.fileHelp",
+      "locale": "ru",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "inference_policy": "context-v31",
+      "forward_digest": "4d54a6c10d9028ef894069592a619c7346731a4c8791424cbab5b17a1f9ff37d",
+      "back_translation": "Use a format that your browser can decrypt. Maximum 25 MB and 30 seconds.",
+      "back_translation_hash": "a87dd6adf3d7866648ff2c909ca954d4ea45702a2eaaf440223b3eb85a16c336",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "42164a4f5e363702d40fb44009906ef11e88203ddacb70db293a4663c3d8dc1b"
+      ],
+      "issue": "Generic format decoding is narrowed to decryption;the Russian broad decoding verb does not require encryption."
+    },
+    {
+      "key": "voice-changer.fields.noAudio",
+      "locale": "ru",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "inference_policy": "context-v31",
+      "forward_digest": "c0e32b4b0ac651f76a3258c48560d73e76b8d60d67a63c760683fff4fe91385c",
+      "back_translation": "Upload the audio clip before preview or export.",
+      "back_translation_hash": "f8a22d68b337667d4e34aad9b6750fb5202c60329c8e02e43ca9db228931c487",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "7a1768ebe44823a7a30aa5f8a70ce6ff7a1bb4e0ffbd2ff09071194e5ec5ef37"
+      ],
+      "issue": "Local audio loading becomes upload in the back."
+    },
+    {
+      "key": "voice-changer.fields.pitch",
+      "locale": "ru",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "inference_policy": "context-v31",
+      "forward_digest": "13bedd184962cee7eda00084d43f796fdbd495b9e957f05bc17643f38c1208b3",
+      "back_translation": "Sound pitch shift (polonium)",
+      "back_translation_hash": "995c72b915b18da2e850ad36241a470a724704521edbbdfa6db90708dfe85f61",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "003b8c065f9f4a6a4495dbcbdcb1a7ddaefa27c4a96afa3ee33a2dc2185d4a26"
+      ],
+      "issue": "Semitones become polonium/poloniums;the model back also changes audio pitch to altitude."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "inference_policy": "context-v31",
+      "forward_digest": "6fd4c0d1a007adab9c4a57e6731fc55b14a8fbdc0fd19b34720dd108115da24b",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "249a96868bc4b9ec92b639fa104861109164c2aaf7ad1d30fbc694d456a62e31"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
+    },
+    {
+      "key": "voice-changer.fields.exportReady",
+      "locale": "ru",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "inference_policy": "context-v31",
+      "forward_digest": "c2b471055962fde10721d321413fdda546d29e6678636f666c6ac8862fc618f5",
+      "back_translation": "The processed WAV is ready for upload.",
+      "back_translation_hash": "6bc1d443990dff82f67872917f8eaf12dddcdc239fcfd5e3a173482c840c1fce",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "f0c38e898e65227d5691b3e8617032ba9ab43149cdf336ba8c85dd69015be73b"
+      ],
+      "issue": "Ready to download becomes ready for upload,opposite transfer direction."
+    },
+    {
+      "key": "dxf-viewer.fields.units.15",
+      "locale": "ru",
+      "source_hash": "063fc974f9f9dedd3ac0c56b669ca14a74a1eb707447cb5497fb513acbad6e93",
+      "inference_policy": "context-v31",
+      "forward_digest": "f27089e0b9afebc9c91af50f59c2298763dbcd90a9677a29ce34db9e75cb4e1d",
+      "back_translation": "Decimeters",
+      "back_translation_hash": "c710dab22ab5254ab6e2b53c0f972f706f89925307946f0dcb31ba5a9ea655ef",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "58dc1f9607a020eb0225217dd28cf8202ee50d548f75447ded904224ea8bc3dd"
+      ],
+      "issue": "Russian Декаметры(decametres) becomes Decimeters,a different length unit."
+    },
+    {
+      "key": "dxf-viewer.fields.units.9",
+      "locale": "ru",
+      "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+      "inference_policy": "context-v31",
+      "forward_digest": "5d9bb988e78a25b4ec1f80b1bd84543e89aaa1edada321e4feaa1c5659a3c40a",
+      "back_translation": "Miles",
+      "back_translation_hash": "a1161f6445c68707092f5c86b611b6ed8660aedeb846638c4b37fb1c88b33817",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2427e5aa9092663dbfbefbc553af4ce02c4e98a9d6864b3e6d5dfc4b3f5c8797"
+      ],
+      "issue": "Russian Милы is the technical mil unit(Autodesk INSUNITS9),but back says Miles;the forward is correct."
+    },
+    {
+      "key": "shikaku.description",
+      "locale": "ru",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "inference_policy": "context-v31",
+      "forward_digest": "e7f9c752397663c5c2302c1d8b49572d88ab2a03dda10e170da48a265743772d",
+      "back_translation": "Play Shikaku online for free. Divide the grid into rectangles with the area given by the numbers. A daily puzzle, hints, and new playgrounds are available. Your game is stored on this device.",
+      "back_translation_hash": "dc111f2c39a09bf29ac981acc18aa8d6c8244d4ab2ab948fc8147d831453d628",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "ad757c630bc8593bd28f9a86c68dc62dc8eaf09dc0ee63ad015cc64d6153cb1e"
+      ],
+      "issue": "Digital game boards become playgrounds,a physical-playground sense;Russian игровые поля is correct in puzzle context."
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "ru",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "inference_policy": "context-v31",
+      "forward_digest": "d8081950032c5b6a78d688734f89ee5e24c2cb1d7560503d4dcf0fc6339abb40",
+      "back_translation": "Coated cells",
+      "back_translation_hash": "104d612d3f80220022c0abe697bd26aa87628b4bfdf7d5b86d305ab516fedd3e",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "4635a1117a64d860626be2ad316f581797988e5d47423d5593101fbb9771f662"
+      ],
+      "issue": "Puzzle grid coverage becomes physical coating(Coated cells);the forward covered-cell label is correct."
+    },
+    {
+      "key": "shikaku.fields.statusHint",
+      "locale": "ru",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "inference_policy": "context-v31",
+      "forward_digest": "b1f233c4038ff19c9d02c00b53243c687b132b805964e895a870568d13c14819",
+      "back_translation": "Hint: A regular rectangle is circled.",
+      "back_translation_hash": "8069d1a7ed92542453277b96bb9450655ee776a145c2a75c7fb42c32012d80a0",
+      "direction": "back",
+      "blocks_gate": false,
+      "observed_record_ids": [
+        "2b12f7f98e11d7775f6ec812b7ebeb86b651e6380a917329eb0641ec8ce00e42"
+      ],
+      "issue": "Correct candidate rectangle becomes merely regular rectangle,losing the clue-validity criterion;no claim that every regular rectangle is a square."
+    }
+  ]
+}

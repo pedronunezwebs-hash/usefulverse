@@ -1,0 +1,30 @@
+{
+  "at_utc": "2026-10-24T01:29:46.315992+00:00",
+  "binaries": [
+    {
+      "name": "actionlint",
+      "version": "1.7.12",
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_darwin_arm64.tar.gz",
+      "sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f"
+    },
+    {
+      "name": "gitleaks",
+      "version": "8.30.1",
+      "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz",
+      "sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5"
+    }
+  ],
+  "actionlint": "passed",
+  "gitleaks_findings": 0,
+  "single_exact_false_positive": {
+    "fingerprint": "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+    "verified_git_blob": "f6a3f4442df98f17083d5dedeaa397682babfdbc",
+    "historical_commit": "260d87a39690c23829f5c32e8cd5fc3161176f18"
+  },
+  "global_billing_audit": false,
+  "pre_ci_scan_at_utc": "2026-10-24T05:50:36.053039+00:00",
+  "final_scan_at_utc": "2026-10-24T05:58:29.210076+00:00",
+  "final_findings": 0,
+  "remote_proof_scan_findings": 0,
+  "remote_proof_scan_at_utc": "2026-10-24T05:59:05.425870+00:00"
+}

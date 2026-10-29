@@ -1,0 +1,77 @@
+{
+  "at_utc": "2026-10-20T16:44:59.915755+00:00",
+  "remote_commit": "c8931a653f3705cf9e37ecec1005c45f873c4a02",
+  "method": "GitHub Contents API at immutable commit: Git blob SHA and byte count equal local files before cleanup",
+  "files": [
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl",
+      "git_blob_sha": "ec4c0053759989be590d9ec0983f9d6c721b80b9",
+      "bytes": 312568
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v2/madlad.jsonl",
+      "git_blob_sha": "eaabc2413a0228ebb3071965a525d14bc80caa05",
+      "bytes": 313317
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v3/madlad.jsonl",
+      "git_blob_sha": "0ae87625355bea180e7aa935c8c9d14cca79c45e",
+      "bytes": 302222
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl",
+      "git_blob_sha": "a77bf96bca5a052ffcd7f181076180ea3bd36e82",
+      "bytes": 1732304
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v5/madlad.jsonl",
+      "git_blob_sha": "d431bab0fb34ae9653411c6dda123a79ac146d55",
+      "bytes": 347746
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl",
+      "git_blob_sha": "b3a43d02be9ea0b3773dbfed9a6f126f0546531b",
+      "bytes": 1935425
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/m2m100.jsonl",
+      "git_blob_sha": "46c1f0622b37ac246bcb0b4b240e9c06eb3a3aa2",
+      "bytes": 3012736
+    },
+    {
+      "path": "docs/quality/translation-pilot/checkpoints/madlad.jsonl",
+      "git_blob_sha": "22e6748a00d11910fccad5d09d95ce349adee740",
+      "bytes": 3110828
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v5-references.json",
+      "git_blob_sha": "8d5466c12548cea66bea9f3b8cb27174b1a8a675",
+      "bytes": 54650
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-references.json",
+      "git_blob_sha": "5423447728e5cd6a2854b9448017197d2cc988bf",
+      "bytes": 58096
+    },
+    {
+      "path": "docs/quality/translation-pilot/review-context-v6-full.json",
+      "git_blob_sha": "911f5d98412096ffbbf0f24f645d6ba25dc4ecbc",
+      "bytes": 163062
+    },
+    {
+      "path": "scripts/localization/pilot-coverage-policy.json",
+      "git_blob_sha": "fbb3f29ad4bae575014e4cb2be2fc6e3aac41c95",
+      "bytes": 32876
+    },
+    {
+      "path": "scripts/localization/pilot-privacy-policy.json",
+      "git_blob_sha": "c50fd19754586dd92fb58813ddc418eec4de642c",
+      "bytes": 34095
+    },
+    {
+      "path": "scripts/localization/pilot-semantic-regressions.json",
+      "git_blob_sha": "d6017e95200ab33e0feeb84fd07906507fa0a340",
+      "bytes": 193290
+    }
+  ]
+}

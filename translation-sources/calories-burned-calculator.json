@@ -1,0 +1,105 @@
+{
+  "toolId": "calories-burned-calculator",
+  "sourceCopy": {
+    "name": "Calories Burned Calculator",
+    "title": "Calories Burned Calculator Free | UsefulVerse",
+    "description": "Estimate exercise calories from your weight, activity and workout time. Free MET-based calculator with no sign-up; results are estimates.",
+    "intro": "Choose an activity, enter your body weight and workout duration, and see an estimate based on published MET values. Compare gross calories with active calories above resting energy.",
+    "howQuestion": "How does this calories burned calculator work?",
+    "howAnswer": "It estimates gross calories as MET × weight in kilograms × minutes ÷ 60, using the conventional approximation of 1 kcal/kg/hour for 1 MET. The activity values are examples from the 2024 Adult Compendium of Physical Activities. A MET estimate is not a measurement of your personal calorie use.",
+    "privacyQuestion": "Are my weight and activity uploaded?",
+    "privacyAnswer": "No. The estimate runs in your browser. Your inputs are not uploaded or saved by this tool.",
+    "howTo": [
+      "Choose the activity that most closely matches your effort, or enter a custom MET value.",
+      "Enter body weight and whole workout minutes. Pounds convert to kilograms for the equation.",
+      "Compare gross calories with active calories. Both are estimates, not a fitness-device reading."
+    ],
+    "example": {
+      "label": "Load a walking example"
+    },
+    "additionalFaqs": [
+      {
+        "question": "What is the difference between gross and active calories?",
+        "answer": "Gross calories include the conventional resting-energy amount for the workout time. Active calories subtract that 1-MET reference. Neither is an individualized measurement."
+      },
+      {
+        "question": "Why can this estimate differ from my watch?",
+        "answer": "MET values describe population-level activity intensity. Personal effort, fitness, body composition, terrain and measurement method can change actual energy use."
+      },
+      {
+        "question": "Can I use this to plan weight loss or decide how much to eat?",
+        "answer": "No. The estimate is not a diet, weight-loss or medical recommendation. Do not use it to set food intake or replace advice from a qualified health professional."
+      }
+    ],
+    "fields": {
+      "weight": "Body weight",
+      "weightUnit": "Weight unit",
+      "kilograms": "Kilograms (kg)",
+      "pounds": "Pounds (lb)",
+      "activity": "Activity",
+      "customActivity": "Custom MET value",
+      "duration": "Workout duration (whole minutes)",
+      "customMet": "MET value",
+      "customMetHint": "Enter a value from 1 to 20. Use a published MET source when possible.",
+      "activityHint": "Choose the closest listed effort. MET values are reference averages, not personal measurements.",
+      "accuracyNote": "Estimate only for adults. Actual energy use varies by person and conditions. Do not use this result as medical, nutrition or weight-loss advice.",
+      "resultSummary": "Estimated workout energy",
+      "grossCalories": "Gross calories",
+      "activeCalories": "Active calories above rest",
+      "restingCalories": "1-MET resting reference",
+      "selectedActivity": "Selected activity",
+      "selectedMet": "MET value",
+      "formula": "Formula",
+      "formulaText": "MET × weight (kg) × minutes ÷ 60",
+      "sourceLinkText": "2024 Adult Compendium activity values",
+      "sourceNote": "MET values listed here are drawn from the 2024 Adult Compendium. The standard 1-MET convention is an approximation and can differ from an individual’s resting metabolism.",
+      "walkSlow": "Slow walk, 2.0–2.4 mph",
+      "walkNormal": "Walk, 2.5 mph on level ground",
+      "walkModerate": "Moderate walk, 2.8–3.4 mph",
+      "walkBrisk": "Brisk walk, 3.5–3.9 mph",
+      "jogGeneral": "Jogging, self-selected pace",
+      "run5mph": "Run, about 5 mph",
+      "run6mph": "Run, about 6 mph",
+      "cycleLeisure": "Leisure cycling, under 10 mph",
+      "cycleModerate": "Cycling, 12–13.9 mph",
+      "stationaryBike": "Stationary cycling, general",
+      "aerobicGeneral": "Aerobics, general",
+      "weightsGeneral": "Resistance training, multiple exercises",
+      "yogaHatha": "Hatha yoga",
+      "jumpRope": "Jump rope, general",
+      "customMetOption": "Custom MET (1–20)"
+    },
+    "messages": {
+      "calculated": "Estimate calculated.",
+      "checkInputs": "Check your weight, activity and duration.",
+      "exampleLoaded": "Walking example loaded.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is unavailable in this browser."
+    },
+    "actions": {
+      "calculate": "Estimate calories",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "example": "Example",
+      "result": "Estimate"
+    }
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/calories-burned-calculator/index.html",
+    "htmlSha256": "3fec1e38bee4e4b5b0779047eea5ac8f272d02b5ecfcc9013f3d06b41684ca19",
+    "payloadSha256": "67daf43f5728d72322d8d043652cfa67e817747d35907be6c98647329e77b233",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/calories-burned-calculator.js",
+    "controllerSha256": "e111d43f44738573b975a6281a462b6f8dbadd60bd8f4895ce601225d62872a6",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

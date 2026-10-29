@@ -1,0 +1,25 @@
+{
+  "run_ids": [
+    40050138164,
+    40050727169,
+    40067902344
+  ],
+  "external_removed": [],
+  "external_remaining": 0,
+  "internal_to_delete_with_owned_root": [
+    {
+      "path_relative_to_owned_root": "cache/gh/run-log-40050138164-1792805452.zip",
+      "bytes": 98306
+    },
+    {
+      "path_relative_to_owned_root": "cache/gh/run-log-40050727169-1792805919.zip",
+      "bytes": 151892
+    },
+    {
+      "path_relative_to_owned_root": "cache/gh/run-log-40067902344-1792821097.zip",
+      "bytes": 242259
+    }
+  ],
+  "effective_internal_cleanup_receipt": "ESTADO.md/LOG.md/lotes/2026-10-24-piloto-v20.md after actual root deletion",
+  "other_caches_untouched": true
+}

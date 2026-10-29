@@ -1,0 +1,81 @@
+{
+  "toolId": "ics-viewer",
+  "sourceCopy": {
+    "name": "ICS Calendar Viewer",
+    "title": "ICS Viewer: Open Calendar Files Free | UsefulVerse",
+    "description": "Open and filter .ics calendar files in your browser. View recurring events and EXDATE exceptions locally, then export a CSV list.",
+    "intro": "View an iCalendar .ics file without connecting an online calendar. Filter events by date and text, expand supported recurring events and export the visible list as CSV.",
+    "howQuestion": "How do I open an ICS calendar file?",
+    "howAnswer": "Choose a local .ics file or paste its text, select a date range and view the matching events. The viewer expands supported daily, weekly, monthly and yearly rules and applies EXDATE exceptions.",
+    "privacyQuestion": "Is my calendar uploaded?",
+    "privacyAnswer": "No. The calendar is read in this browser only. UsefulVerse does not connect to your calendar account, upload the file or save your events.",
+    "fields": {
+      "calendarFile": "Choose an ICS calendar file",
+      "paste": "Or paste ICS text",
+      "pasteHint": "If both are provided, the selected file is used. The example shows a recurring event with an excluded date.",
+      "fromDate": "From date",
+      "toDate": "Through date",
+      "search": "Filter events",
+      "searchHint": "Search event title or location",
+      "timeZone": "Calendar time zone",
+      "privacy": "No calendar account connection or network lookup. Floating times use your device’s local time; TZID times use their stated time zone.",
+      "limits": "Local limits: 5 MiB, 2,000 events, 10,000 displayed occurrences and a date range of up to 366 days. Complex files may use device memory; a computer is recommended.",
+      "scope": "Read-only ICS viewer. This is not a calendar editor or sync service. Unsupported recurrence options are reported rather than guessed.",
+      "resultsHeading": "Calendar events",
+      "event": "Event",
+      "starts": "Starts",
+      "ends": "Ends",
+      "location": "Location",
+      "empty": "No events match these dates and filters."
+    },
+    "actions": {
+      "view": "View events",
+      "example": "Load example",
+      "clear": "Clear",
+      "export": "Export filtered CSV",
+      "result": "Calendar event list"
+    },
+    "messages": {
+      "fileReady": "ICS file selected",
+      "noCalendar": "Choose an ICS file or paste calendar text.",
+      "invalid": "Could not read this ICS calendar. Check its format and supported recurrence rules.",
+      "tooLarge": "The calendar exceeds the local 5 MiB limit.",
+      "tooMany": "This calendar exceeds the supported event or occurrence limit. Choose a smaller date range or file.",
+      "loading": "Reading this calendar locally…",
+      "success": "Showing {visible} of {events} calendar events in {zone}.",
+      "noResults": "No matching events in this date range.",
+      "example": "Example calendar loaded. Its excluded weekly occurrence will not appear.",
+      "exported": "Filtered event list exported as CSV.",
+      "exportEmpty": "There are no visible events to export.",
+      "cleared": "Calendar and results cleared."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does the ICS viewer show recurring events?",
+        "answer": "It expands daily, weekly, monthly and yearly rules in the selected date range and applies EXDATE exclusions. Unsupported recurrence options are rejected rather than guessed."
+      },
+      {
+        "question": "Can it connect to Google Calendar or Outlook?",
+        "answer": "No. It reads a file you choose or text you paste. It does not sign in, fetch an online calendar or sync changes."
+      },
+      {
+        "question": "Which time zone does it use?",
+        "answer": "A TZID on an event is interpreted with that zone. UTC timestamps stay UTC; floating event times use your device time zone. The list is formatted in your browser’s local zone."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/ics-viewer/index.html",
+    "htmlSha256": "eafde51b7e4badf7a0358feb893d5b47a7d61046852972920cd6456c2c575059",
+    "payloadSha256": "b7ef8d30c9219a9bc6600c3a8a280aee8e402d37a275c6dd238cde6c887fceae",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/ics-viewer.js",
+    "controllerSha256": "de82ba11bb0a72f25096ca1dd1fe7d11e908f624a004a35aba651575387f255c",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

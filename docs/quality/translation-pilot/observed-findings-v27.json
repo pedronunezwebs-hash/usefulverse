@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "review_kind": "agent",
+  "native_review": false,
+  "approved_locales": [],
+  "source_checkpoint": "checkpoints/context-v27/madlad.jsonl",
+  "source_checkpoint_sha256": "3fe10a3e3d4fc051feff6f3c6c4aa865890d12b463975cbe116851ad636188cb",
+  "findings": [
+    {
+      "key": "shikaku.fields.faq.0.a",
+      "direction": "back",
+      "candidate": "both",
+      "issue": "La vuelta convierte number puzzle en digital jigsaw y las pistas en una línea; el chino de ida conserva el juego numérico y las pistas. Nueva variante exacta con grid pieces, no defecto de ida.",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "translation": "Shikaku is a digital jigsaw puzzle. A rectangle is drawn around a line. Each rectangle has the area shown by its clue, and all grid pieces must be used once.",
+      "record_ids": [
+        "5f3e2d7c3fbae7f1e504e255c4f0e1b9968c90d6d09648d677650eb751b00ac9",
+        "6693624f21d1de5a37a8e2efd40764720e19640a434478f8cd8af0f73179d967"
+      ]
+    },
+    {
+      "key": "voice-changer.howItWorks",
+      "direction": "back",
+      "candidate": "both",
+      "issue": "La vuelta sustituye voice changer por transducer, dispositivo físico; el chino变声器 conserva el cambiador de voz de software. Nueva variante exacta, sin defecto de ida.",
+      "source_hash": "de3eaa7ed04dee6b7107ac85941500cae480e29ede1e055980f63bfcfb32f70d",
+      "translation": "The working principle of the transducer",
+      "record_ids": [
+        "285e702d252da2877f7a0cb60e14f1b9a304d89f64b27cae7a0fcf0fc6ef9787",
+        "b25362ab4c0f8bc041606ab09149cbd2ee42431b46c9d18e05014d273a58fde8"
+      ]
+    },
+    {
+      "key": "dxf-viewer.limits",
+      "direction": "back",
+      "candidate": "model",
+      "issue": "La vuelta traduce splines/样条曲线 como bar curves, y group-code records/组码记录 como batch code records. La ida conserva entidades, límites y exclusiones; defecto técnico de vuelta.",
+      "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+      "translation": "Preview and export supports LINE, CIRCLE, ARC and straight line segments LWPOLYLINE/POLYLINE in the XY plane. Curves, text, blocks, annotations, bar curves, 3D entities, and other types with convexity are listed as not supported, not counted for measurements, and are not exported. Files up to 10 MB; batch code records up to 200,000 records.",
+      "record_ids": [
+        "33d43e13478102bb7d418a2a0a20b9a919955675e32696bdbc217856c0d7b3b2"
+      ]
+    },
+    {
+      "key": "shikaku.fields.dragHelp",
+      "direction": "back",
+      "candidate": "model",
+      "issue": "La vuelta mueve el foco a la cuadrícula (grid) en vez de una casilla (square); la ida方格 conserva la casilla y la distinción foco/selección. Defecto de alcance en la vuelta.",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "translation": "Click on the two opposite corners, or drag to draw a rectangle. Keyboard action: Press Tab to move the focus to the grid, then press Enter to select.",
+      "record_ids": [
+        "6a06bbf231cf3cb68eeed5726323099cdfb3cb2323364125fd922ca4f8a4ff3d"
+      ]
+    },
+    {
+      "key": "shikaku.fields.faq.2.a",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "direction": "back",
+      "candidate": "legacy",
+      "translation": "The game only accepts boards with a verified solution.",
+      "record_ids": [
+        "5d9afb8320aa459d5645675775975862af961689b0bc1e65f12570e09b7f3c1e"
+      ],
+      "forward_known_defect": true,
+      "issue": "La vuelta omite la condición generated boards: tableros generados no se infiere de boards with a verified solution. El artículo a no se usa por sí solo para afirmar un error numérico. La ida legacy ya está rechazada por un defecto conocido; este diagnóstico de vuelta no cambia su rúbrica."
+    }
+  ]
+}

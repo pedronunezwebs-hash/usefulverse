@@ -1,0 +1,7 @@
+export const PLATFORM_GAME_SIZE = Object.freeze({ width: 800, height: 460 });
+const START = Object.freeze({ x: 36, y: 370, vx: 0, vy: 0, grounded: false });
+const PLATFORMS = Object.freeze([[0,420,170,40],[210,372,110,16],[365,320,110,16],[510,365,105,16],[650,300,95,16],[745,345,55,16]]);
+export function newPlatformGame(){return{player:{...START},platforms:PLATFORMS.map(([x,y,w,h])=>({x,y,w,h})),keys:{left:false,right:false},falls:0,won:false,frames:0};}
+export function setPlatformGameInput(state,key,pressed){if(!['left','right'].includes(key))return state;return{...state,keys:{...state.keys,[key]:Boolean(pressed)}};}
+export function jumpPlatformGame(state){if(state.won||!state.player.grounded)return state;return{...state,player:{...state.player,vy:-10.8,grounded:false}};}
+export function stepPlatformGame(state){if(state.won)return state;const p={...state.player};const oldBottom=p.y+30;p.vx=(state.keys.right?3.8:0)-(state.keys.left?3.8:0);p.x=Math.max(0,Math.min(PLATFORM_GAME_SIZE.width-24,p.x+p.vx));p.vy=Math.min(12,p.vy+0.48);p.y+=p.vy;p.grounded=false;if(p.vy>=0){for(const platform of state.platforms){const nextBottom=p.y+30;if(oldBottom<=platform.y&&nextBottom>=platform.y&&p.x+24>platform.x&&p.x<platform.x+platform.w){p.y=platform.y-30;p.vy=0;p.grounded=true;break;}}}let falls=state.falls;if(p.y>PLATFORM_GAME_SIZE.height+10){Object.assign(p,START);falls++;}const won=p.x>770&&p.y+30<345;return{...state,player:p,falls,won,frames:state.frames+1};}

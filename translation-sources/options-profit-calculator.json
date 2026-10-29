@@ -1,0 +1,95 @@
+{
+  "toolId": "options-profit-calculator",
+  "sourceCopy": {
+    "name": "Options Profit Calculator",
+    "title": "Options Profit Calculator Free | UsefulVerse",
+    "description": "Estimate a single call or put position at expiration. See profit, break-even and risk with a free local options payoff calculator.",
+    "intro": "Estimate the expiration result for one call option (a right to buy) or put option (a right to sell). Compare buying and selling, adjust contract size, and see the break-even price without market data.",
+    "howQuestion": "How do I estimate an option profit at expiration?",
+    "howAnswer": "Choose a call option (a right to buy) or put option (a right to sell), then choose buy (long) or sell (short). Enter the strike, option premium per underlying unit, underlying price at expiration, contract count and multiplier. The result uses intrinsic value and the option premium for one option leg only.",
+    "privacyQuestion": "Are my option inputs uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. It does not connect to a broker or market-data service, and it does not upload or save your entries.",
+    "howTo": [
+      "Choose a call option (right to buy) or put option (right to sell), then select buy (long) or sell (short).",
+      "Enter the strike, option premium per underlying unit, assumed underlying price at expiration, contract count and multiplier.",
+      "Calculate to view estimated profit or loss, break-even and risk boundaries."
+    ],
+    "example": {
+      "label": "Load example: buy 1 call, strike 100, premium 5, expiry price 120"
+    },
+    "actions": {
+      "calculate": "Calculate expiration result",
+      "example": "Load example",
+      "reset": "Reset",
+      "copy": "Copy result",
+      "result": "Expiration estimate"
+    },
+    "fields": {
+      "optionType": "Option type",
+      "call": "Call option (right to buy)",
+      "put": "Put option (right to sell)",
+      "position": "Position",
+      "long": "Buy (long)",
+      "short": "Sell (short)",
+      "strike": "Strike price",
+      "expirationPrice": "Underlying price at expiration",
+      "premium": "Option premium per underlying unit",
+      "contracts": "Number of contracts",
+      "multiplier": "Underlying units per contract",
+      "sourceNote": "A standard U.S. equity option often represents 100 shares, but contract terms vary. Check the actual contract and change the multiplier if needed.",
+      "riskNote": "This is a theoretical single-leg result at expiration—not an expected return, quote or trade recommendation. It excludes time value before expiration, commissions, bid/ask spread, taxes, margin, dividends, early exercise and assignment. A short call can have theoretically unlimited loss.",
+      "longCallLinkText": "Options Industry Council: long call",
+      "shortCallLinkText": "Options Industry Council: uncovered short call",
+      "resultSummary": "Estimated single-option result at expiration",
+      "totalProfit": "Total profit or loss",
+      "profitPerUnit": "Profit or loss per underlying unit",
+      "intrinsicValue": "Intrinsic value per unit at expiration",
+      "breakEven": "Break-even underlying price",
+      "maxProfit": "Maximum profit under this model",
+      "maxLoss": "Maximum loss under this model",
+      "unlimited": "Theoretically unlimited",
+      "noBreakEven": "No non-negative break-even price",
+      "shortCallRisk": "Warning: a short call can have theoretically unlimited loss if the underlying price rises.",
+      "riskBoundary": "The result is an expiration-only scenario. Short options can create large losses and may involve assignment or margin requirements."
+    },
+    "messages": {
+      "calculated": "Expiration estimate calculated. This is not investment advice.",
+      "checkInputs": "Check option type, position and numeric inputs.",
+      "exampleLoaded": "Example loaded: the estimated profit is 1,500 in the same currency as the premium.",
+      "copied": "Result copied.",
+      "copyUnavailable": "Copy is not available in this browser."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Does this predict the option price before expiration?",
+        "answer": "No. It calculates intrinsic value at expiration from the underlying price you enter. Before expiration, time value, implied volatility, interest rates and other factors affect an option price."
+      },
+      {
+        "question": "Why can selling a call have unlimited loss?",
+        "answer": "A short call may lose more as the underlying price rises, with no theoretical upper price limit. This calculator shows that risk boundary but does not assess whether a trade is suitable."
+      },
+      {
+        "question": "Does the multiplier always equal 100?",
+        "answer": "No. Many standard U.S. equity option contracts represent 100 shares, but adjusted and other contracts may differ. Check the contract details and enter its actual multiplier."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {
+    "example": {
+      "values": []
+    }
+  },
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/options-profit-calculator/index.html",
+    "htmlSha256": "86e0ab3b0b6ab0cb273f3864aba74cf0d1963416b216fa57a5da5015e3767ce8",
+    "payloadSha256": "7be8fd8314c860743ba7027f69345250758e8fba55120238c261691328886ce0",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/options-profit-calculator.js",
+    "controllerSha256": "c895bfac80c75fea164b4fb6439c4a43d340e88f69b29c4e385d4b69901dcabd",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

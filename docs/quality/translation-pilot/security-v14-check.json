@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-22T11:08:38.367240+00:00",
+  "tools": [
+    {
+      "repo": "rhysd/actionlint",
+      "version": "v1.7.12",
+      "asset": "actionlint_1.7.12_darwin_arm64.tar.gz",
+      "sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+      "official_checksum_verified": true
+    },
+    {
+      "repo": "gitleaks/gitleaks",
+      "version": "v8.30.1",
+      "asset": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+      "sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+      "official_checksum_verified": true
+    }
+  ],
+  "actionlint": {
+    "exit": 0,
+    "workflow": ".github/workflows/deploy-cloudflare.yml"
+  },
+  "gitleaks": {
+    "exit": 0,
+    "leaks": 0,
+    "scope": "whole feature checkout before first v14 push",
+    "log_sha256": "93cb89af96b89748a0566d7c26fdb5ed5d3df87d630c57ad898b45ad39849d10"
+  },
+  "full_data_scan": {
+    "at_utc": "2026-10-22T11:45:02.742287+00:00",
+    "gitleaks_exit": 0,
+    "leaks": 0,
+    "log_sha256": "2e31cf0e5baebfbf6144331234784c17f1db8fdfd01fb2d71bbe73f96b249ba0"
+  },
+  "closure_scan": {
+    "at_utc": "2026-10-22T11:59:29.309983+00:00",
+    "gitleaks_exit": 0,
+    "leaks": 0,
+    "log_sha256": "243792f7b2bbdd0ab3c8362c6595beefb64cad5bd9b27c76dd47e8c2a03b0097"
+  }
+}

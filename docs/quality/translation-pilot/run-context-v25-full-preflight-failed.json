@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "run_id": 40152812589,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40152812589",
+  "source_commit": "42be2fa0b790dea43e9b048e21a9938b1de5eca7",
+  "policy": "context-v25",
+  "engine": "madlad",
+  "scope": "full",
+  "locales": [
+    "zh-CN"
+  ],
+  "dispatches": 1,
+  "complete": true,
+  "model_inference_local": false,
+  "created_at": "2026-10-25T02:00:39Z",
+  "conclusion": "failure",
+  "job_id": 121047714724,
+  "model_inference_executed": false,
+  "emitted_records": 0,
+  "converted_models": 0,
+  "cleanup": "success",
+  "artifacts": 0,
+  "site_job": "skipped",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1,
+      "started_at": "2026-10-25T02:00:43Z",
+      "completed_at": "2026-10-25T02:00:44Z"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2,
+      "started_at": "2026-10-25T02:00:44Z",
+      "completed_at": "2026-10-25T02:00:52Z"
+    },
+    {
+      "name": "Set up Python",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3,
+      "started_at": "2026-10-25T02:00:52Z",
+      "completed_at": "2026-10-25T02:00:52Z"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4,
+      "started_at": "2026-10-25T02:00:52Z",
+      "completed_at": "2026-10-25T02:00:52Z"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5,
+      "started_at": "2026-10-25T02:00:52Z",
+      "completed_at": "2026-10-25T02:01:28Z"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "status": "completed",
+      "conclusion": "failure",
+      "number": 6,
+      "started_at": "2026-10-25T02:01:28Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 7,
+      "started_at": "2026-10-25T02:03:47Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8,
+      "started_at": "2026-10-25T02:03:47Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    },
+    {
+      "name": "Post Set up Python",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 15,
+      "started_at": "2026-10-25T02:03:47Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 16,
+      "started_at": "2026-10-25T02:03:47Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 17,
+      "started_at": "2026-10-25T02:03:47Z",
+      "completed_at": "2026-10-25T02:03:47Z"
+    }
+  ],
+  "log_sha256": "a906b28e16ba5eab0f692f846e359101f1ac62d20c4040b4e1b85e9305d2d2dc",
+  "reason": "230 tests detected stale checkpoint inventory and automatic-summary after adding the 67 reference rows. No inference/model conversion executed. Fix metadata and run full green suite before new dispatch."
+}

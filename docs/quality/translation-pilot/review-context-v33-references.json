@@ -1,0 +1,1031 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex(agent,no paid API)",
+  "native_review": false,
+  "approved_locales": [],
+  "engine_frozen": false,
+  "inference_policy": "context-v33",
+  "reviewed_at_utc": "2026-10-27T12:11:36.331213+00:00",
+  "scope": "references",
+  "expected_rows": 40,
+  "rows": [
+    {
+      "key": "dxf-viewer.faq.0.a",
+      "locale": "ru",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "c965611c24afc6096b9d4eb9e28c759f89f0cabdf547a1c13fd3278fa90b28e6",
+      "record_ids": [
+        "0e0a62e17a59f375e5a4d780f6359c282732c7bf81985d821c64fcf8eae5f4ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as b9c51d7ca8167fd241e9f2ca5313cf30292fb5bb102b1d0cc2d02dd672f592da. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.faq.2.a",
+      "locale": "ru",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "a944ed60b0cc06536c111d8ca76e126af082d97a00d4246a863fd94b468fd81c",
+      "record_ids": [
+        "081ba608b0f796dc552666479dd6e460808dba3e2affa86aaa6d7ce27ce1627d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 6ed61e709f7374f3550bbd06649c2b549b82f7f304cdb4c46b5232bf034894bb. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.binary",
+      "locale": "ru",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "f0665e1bcf61362851a9e9eb720445c14c0dd91c2c02f3a2201ed19013484eb0",
+      "record_ids": [
+        "1c9420934b6b61a6a20c19db8797b288402de7f9eadb16a95729aa52483e42f3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 3290a36885e3e4e99aa932802b710635d074f4c5e584daf329480dbc75db1d59. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.cancel",
+      "locale": "ru",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "d60ea58ec4dd9a80b5a69941601d129b7bb734bd1a6458bc37f24d8ad783954e",
+      "record_ids": [
+        "284f26491ad2ebf10eb95e9044901b2aea15273f259ed833f01ef0f16150c3ea"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 86b85e20b8752905f75ed29c9a48f6fd39c38e7f205dd0047780a4aeb0246247. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportPng",
+      "locale": "ru",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "285c21ce1a47eac446c450c7a7ecf7f555a5bba1a571fc5c33f70c22a7573a12",
+      "record_ids": [
+        "fff264a13bfd83dce2029a1197325c1ab5db2e71d2f96f325adb77d3f30f68e9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 76d8e56a55058223e2a4198e734cdb466e650ac037e9ea3d66206dff2e877a94. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.exportSvg",
+      "locale": "ru",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "45bf70d6a4218906e0a93f6f828c17e0184e541d1ac0b5096b5a99bf8c78f26e",
+      "record_ids": [
+        "f8c1fc0ae402f83ee4bd43ead6af1cb9bfbabfb453aadc3a9bd5bce9fed4be9a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 07ae294d83d5ae9959be10198958de351dedfb2523f957ff20d8a29f75f76c15. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.file",
+      "locale": "ru",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "dfa3336886a57b64140fa0cfc8c388cf5b309b6fd4e3c3f1a41b61a4a556a08a",
+      "record_ids": [
+        "2bdafde214f98c52f4a1b0334e5003deee0a549ec099c09198816f066a1bc018"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 71f34f0016834e9fd4a8f009785a0d1383eabb0ff97bd15a58742d69ded604b2. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "locale": "ru",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "2e38334003cb9635ae88ee2346edc953502f8b89c6a5ca9c5e0175fc6b1ef645",
+      "record_ids": [
+        "b46eb5ba61ac19127bb6109d32ce64761d569ae161611a00e30d3ec5ec0b4f59"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 897d7c722ef5868eac218064e71cb13402605858c06115700497d5613d0512a0. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.measurement",
+      "locale": "ru",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "8d26ad052ce3011a3c902fc5ada5fd6be7d1e4770aed0cce01deeb2d492fb07e",
+      "record_ids": [
+        "11d60f84588d6c1b250a9b96f5b5083466b65dfe1228e1b315e2e3ac3627aa10"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 1c8bacf097abff1c34170de48eee35ffc7e67a4dac4e3794d1e6195713d62439. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.resetView",
+      "locale": "ru",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "27b250b132fbe7ce7c36753823e342a487b774c025bfe3172367e133aea9b6f1",
+      "record_ids": [
+        "cffcf891ab7a887c87f2044fa81f68c2ab3b549b74496170ca95d6620a14b853"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 9b6e30eb0ce6a1c0ca777f7ae77499f2eb2410539ea68abf2989e8abadde7bc9. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.unsupported",
+      "locale": "ru",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "5010d3145e733a2be9d803660e6b6e9bf3c4b3e66bd7629d3044c2ba7bc7eac3",
+      "record_ids": [
+        "a6db5892df1594f51ba17db4f70c92643114e753d02fa85cb8e1f350eb44493b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as dbbee7e80b3a4ac1d10d6069c97c233a41d3adbe27121ddd46f15b6d794b05d6. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomIn",
+      "locale": "ru",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "3acc44d6a1b1941c5d0c64a09637fd4332ea3d5b5504572fdaf9b771d24b672a",
+      "record_ids": [
+        "6393164589d0a326fe497d46db41379f59e367917fac69ae67ce681e7432ace1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as b6120e3b6b81f9c09436a263881ed36dc695438792ec134866f43e4dbabf994d. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "dxf-viewer.fields.zoomOut",
+      "locale": "ru",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "0b9ff60343ea45e1859aef2389c8afea31aedb975536be898a3b90f735e0c26f",
+      "record_ids": [
+        "833bc73d465b24c91fd07b2d47ee04b885bad0c0822be36c87fd2e00bd13af2e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 15f4f737b677e8ac761fbcd7ab0977f9904219a6e9562fa566b938846c9224d9. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.example",
+      "locale": "ru",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+      "record_ids": [
+        "5af06d1ff27e48549058f379b3c15a8da55f9e9ba73ac67a88d8b6127e5b04c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 2d1ff77e190db6d51202004c07bca4fa34709432d5a56b3f090e04bd64bfae8f. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "ru",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "7a621492ef995f230029b159272ea991d2550780992a9520d8385420987c5d26",
+      "record_ids": [
+        "63b346c8ca7519b7b83144069a6a2c56f7b103971677fffc153692cbe582300a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 0d74ace121d4d6e520afa3b01c1463eecc796adfc9cc93bb976320b6036169e5. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "ru",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "27df399ecca1aa4e11ab8cdd89ae78588db673e3718b5acf1d6e5a928d344420",
+      "record_ids": [
+        "70e8042bd612e22b681c62e121ce52723231d538034a9ce3b2bc27058498790f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 4a14a0568672b2886ea15233c46fe3bcfa242e7e5d7b3ed1c80116806bf99060. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "ru",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "455846dbd91fdc541336890e84d5d160ab9c3e003825fab56f5d6ce3c1538e7b",
+      "record_ids": [
+        "fca8b220b2a3c209299544d883e7e151aa0c7d57263967574858c495ab87b1f6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as fe453db889f17f34208ab455fdc1289b438a2902591c9d51d11b3cc655610272. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "ru",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "33d9c9808e02c2f3360461a0b9a862c722509dbcc06f69f65e4020d1d3db4d59",
+      "record_ids": [
+        "e4150fb7fb4522d8d31c69aa9dafaeeb4f27c6839561317595828efc20cb4d65"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 03def87690a116a34863bdca93af215c85d6b01b651bb00a48c7163d61d038bd. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "ru",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "f8fcc8c6ce1294ea7bfe39fc3a0755e65d31aae619b416173e9d84173671942a",
+      "record_ids": [
+        "3369510982b5f7255c325827bfb8291800c8198189cafc517495454cd8e83cb6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 266cc93fff61ce275d427406792592a2e6e673f702664071ac3070f0e781f3c3. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "ru",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+      "record_ids": [
+        "5666f7a92cdc79ffabe2c2c35116734d4d19893df95880534ab867f649e23b6f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as b42e168bf3566ccb7d5fa5a00df78dc86b4de0837584f765a411835b782fd460. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "ru",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "1667e6ed1048a896aed50e88e6442cb7b3bcb2651f2404882dfd6c13f0671c0c",
+      "record_ids": [
+        "324912a3e60ef40c39a4ed817db36de874c046d4a7d3a5b1fca85627b944d393"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as f0b6f4c731fdd9e78b974b71fd3fa7b705e1bb12e32b4fdfce81ad6d360a2b8b. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "ru",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "07c7b8b8142d494fe76a69062c3f5194b7ad0eaa46d603cff431322c387c5676",
+      "record_ids": [
+        "604bb9d83057b019064ada0a8ece26dd26824fde95b91e0d6288e339cc1693a6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 440f2d9b05995819afab8472f8d6410de985971a66c577328ec780b118e698c0. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "ru",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "ce029a0abbcd2ae2ecc416f02e6eae2f7925f06b84fdd812ac95c8359b47241e",
+      "record_ids": [
+        "016588f12afca297e205839a1d624d01f55dc60b0405f44169ce3e6133033e3c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as c0a79e79d7835352ee41da56e2ab61296a8060766377e10119024a2e60d5ca90. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "ru",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "91094be3c40d496da0ee8fa432fb21175c9019be0376a82af928bfa484b68872",
+      "record_ids": [
+        "84c217b83ec685e634d13503959049e256403e6e21f5ca1c54842e2c5b8c38ce"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as fd82dc7345f3f2e7702dcf528ba755200ae27157221073ac57d53377df168177. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "ru",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "98f1d7d660dc6fee828aa209c97adae8512b9fedec358d75f96e3571b4fcb4b9",
+      "record_ids": [
+        "e0eca1fcc849f14fa773ea3b9fe16aa710788c00576b3ac46f7e9de4852c5fa9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as d07de17a7fb74f051be908f4115d18bac038bf17927db962b46b9d650f9331b4. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "ru",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "b675b12a80f21713685e56735dac89017f5d7263b35ae4a30ce90fbb990b3e8d",
+      "record_ids": [
+        "8378dad6d87c87c2fc89049f42c5325fe50c0fdb7f7a3d541ab513a38e60025b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as f85cd76b32c940f875712e81902fdabfd21447e173f009da84a6e990477cf50c. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "ru",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "5429ab1b9cb873179fce353402ba785d8fc46f282dd9ea641c525356cc65160d",
+      "record_ids": [
+        "739825cfdc4d3e1105a5de9d37169196038f15007abae94b67e3a21b4e4e8990"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as bc3c4ca6a81304c9f025afb3a661e07263ac430d52b2e1cfe67815af290557e1. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "ru",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "54ff4589dd1241cd6e4dab5c8ee40b8a4e636d4c677f32c4fa7adafe42bb3376",
+      "record_ids": [
+        "5e344e89b0d515311e64fabd08da1f5f1997d37efc18d65e1938441054bf231c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as b8a80e1c9b8dad905b657a9eeadd66842fc93feb3b1c7d8bca444e5a65e5af80. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "ru",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "be48473b0eaf465312192060ab60f24e9d6eccb6d365ab9d36cd5c2247c5bc92",
+      "record_ids": [
+        "8442536b6326f63482fb1deb790a44426bae1839aac675f58e6def0cb2c5a872"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 99fa2f725f14bb058da6d8f54dedd3c280724b2a2c6f31febbd36a9a147ea336. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "ru",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "73c6209f7c56933c255a0255e7736a4be9494842dbd13cabf947ca67c2588e40",
+      "record_ids": [
+        "ac35f141979c992c6314f35ac373c8ad5741e57efcd20541de090e3056d46d2f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 4b3b0e01ee2e5441287cac83b448939af00426c1cc6056eb2e7d9e977c5b3d1c. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "ru",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "c9f2485825b56283cd0731fb217e538b21717491f915f39b706bb19db738bdca",
+      "record_ids": [
+        "6930722f48471f62f896b3a6465f020c7c3ee3d4a37c4b85bbaa43160ab1aedd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 9cae4e4edfa6b8809dbf4f3c8e6e10700e533b3c85d6a3ed1349ca43181314e3. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "ru",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "8e0bd7ec9f26a3763eea5719e821998126641d4ffcb00a3b5f4c3512109ff97f",
+      "record_ids": [
+        "6c4176f4a022e2963c9839d8593024106c7f96f36ec06d01ce0173535d7902ac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 9f0b74756709577a9535dd79c1eded8b420c725829b00300071e1dcf7334340d. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "ru",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "b503c5536934af55b390d0e1cb273c460efba847c6e08bc22b37a790238cfce7",
+      "record_ids": [
+        "339ab59e23dd10334e373a15a5bd4857985ab1c2fdba98d3dfaf1928f1608ea5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 675ebfa5cbcebc8e16d1e0c39220ef8118fe7c09bd1f19aebd4fa416cf35dc97. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "ru",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "c94b89afe94fc08f70aa922419dc1dec940310acb5303d48d8b610ec59dca60a",
+      "record_ids": [
+        "2b829bd027a23cb554dcb6a1c867e6374db73a83643d71bf4b7b83c94b435e86"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as be597dbcf522b4ba67e5233f9fe330966965d0fe08686afd0ca706dc1840ec88. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "ru",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "6fd21e63d20c19adc595fb71d96576fb722cc0023d28a0f52a605c647e630613",
+      "record_ids": [
+        "5cf3d5d7e1c9a9aa217a8314eae3999e0e3d31a0baa4ec8caf2639626b46d8fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 1cf3cec4e0310704a258722615cc99cd0a81c94bac52f0fe2c3d16bf11a882a9. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "ru",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "fe2ccec36969800a9db127f534050d414b0da1fd588b52173bb20571bd573f6e",
+      "record_ids": [
+        "10ba613e192eaf73ff53074b2cf840017dff740294016cb15fae67934539dd80"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as d490018ad77c20c7e82af07ec5c6934a344fc8c328fa8844ccafc0ed5cbc8c18. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "ru",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "be07fa25a02573e39bed01372f8139c29536279329490bb573e9d78e280de2cf",
+      "record_ids": [
+        "7b97fe4bc5e533900a933c4a7870e83c59223c58b073a92579734eebe7a93571"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 7849bea6f46d74eb5c0e2d74d59aa58b53e2931e858d574ecf62717948e339e4. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "ru",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "6467d4af32b4c0bde936d48b58d2d3c1a974e64c575e83931cf6baf91b492d39",
+      "record_ids": [
+        "053df6ddb55377e43354cc8130ffcdfa9328da316dc68364f35f7f89289c9a27"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as eb3a68b7a4fa07d995695dee9f2975e397e37e4eaad2c6db6799330625bba36d. No independent rereview claimed."
+      ],
+      "critical_control": true,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "ru",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "9ef534aa35e19fffaf7567a03e264e13a92f1eb265a8821298e23556854aa9e7",
+      "record_ids": [
+        "230319a447ed10d6d9015b6c2322dbd33de398bd58eac76175a531ef1c66eb2b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 8a924e3c7d9aba8cf417a5df14f2669477e5ef71d56bbccdec6d077865ab98ec. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "ru",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+typed-ru-v33",
+      "translation_hash": "047841d070adaee0b88f6f06b60901a00cc54efdee137759c85c3864f16f9cc6",
+      "record_ids": [
+        "72da73e5b63f9bd6c23e0b44acb1f16c3705b0c227ef3030a2b2ebe1d2ca3a8d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Exact key/locale/candidate/source/hash/context/forward/back already directly read in this same turn as 4d5e7f4773757fe1d4baa65e34e81061c0cf76d80eab1f96b4bb85e03703ff08. No independent rereview claimed."
+      ],
+      "critical_control": false,
+      "score_origin": "same-turn-exact-SFB-review-reuse",
+      "translation_origin": "reviewed-memory",
+      "data_contract_unproved": false,
+      "in_fixed88": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "5666f7a92cdc79ffabe2c2c35116734d4d19893df95880534ab867f649e23b6f",
+      "key": "shikaku.fields.hint",
+      "locale": "ru",
+      "back_translation_hash": "704a4ae053516107693b2f500c8092f4b8b2789ad18f4b1aef5b1d3807a5fa99",
+      "notes": [
+        "tooltip cambia la pista del juego por un componente de interfaz."
+      ]
+    }
+  ],
+  "scoped_back_findings": [
+    {
+      "record_id": "284f26491ad2ebf10eb95e9044901b2aea15273f259ed833f01ef0f16150c3ea",
+      "key": "dxf-viewer.fields.cancel",
+      "forward_digest": "de169c6239dc392641d786899fdadd3c053941c14497d56378b77cda3ed79534",
+      "back_translation_hash": "c0c05b34c0b1ed98474b99e3b68f3e3d9a58be2fe838cf21afc61128f94c4472",
+      "notes": [
+        "Cancel local loading becomes Cancel Download;the forward Russian loading verb is valid in local-file context."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "cffcf891ab7a887c87f2044fa81f68c2ab3b549b74496170ca95d6620a14b853",
+      "key": "dxf-viewer.fields.resetView",
+      "forward_digest": "2814d4dc4c380c4d7e6d0d6f90062eac414a566e51481206689e06acb3e0822d",
+      "back_translation_hash": "677e4851a0c047ed61e9fadcffd14677b6613ab07dba09780c82654ef2540af6",
+      "notes": [
+        "Fit the drawing to the viewport becomes Insert drawing;view framing changes into adding content."
+      ],
+      "blocks_gate": false
+    },
+    {
+      "record_id": "7b97fe4bc5e533900a933c4a7870e83c59223c58b073a92579734eebe7a93571",
+      "key": "voice-changer.fields.privacy",
+      "forward_digest": "fa7794e80b925a8983b5e21a5ab7cde9f7d2f4e0af377adb2595a4f36400e2bb",
+      "back_translation_hash": "6cd056e2109159adaf4968fdcb8879e50432756d20a136e0e1d7ee177c36f10d",
+      "notes": [
+        "Not uploaded becomes does not load;the back denies local loading instead of stating that audio is not uploaded."
+      ],
+      "blocks_gate": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "5af06d1ff27e48549058f379b3c15a8da55f9e9ba73ac67a88d8b6127e5b04c5",
+      "translation_hash": "6e11b8dcfff5471d30d4a860396c71f73bb45fb62cec8e43b4284a6c10481e42",
+      "back_translation_hash": "c8c9971e5d8f449e8acc0c7ef07cce7dbe92193f4f69f8ab2d1c050e04ecb2c0",
+      "warnings": {
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;parser/heuristic warning separated from meaning. Independent back errors have exact forward-bound findings."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;parser/heuristic warning separated from meaning. Independent back errors have exact forward-bound findings."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Actual back read;parser/heuristic warning separated from meaning. Independent back errors have exact forward-bound findings."
+        }
+      }
+    },
+    {
+      "record_id": "5666f7a92cdc79ffabe2c2c35116734d4d19893df95880534ab867f649e23b6f",
+      "translation_hash": "c2331a9b075f53f09c7cdaa497b75a9755cf7bc0cbda6c658817af2db60ea140",
+      "back_translation_hash": "704a4ae053516107693b2f500c8092f4b8b2789ad18f4b1aef5b1d3807a5fa99",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Actual current back independently read;back defect does not grade forward meaning."
+        }
+      }
+    }
+  ],
+  "requires_complete_model_warning_coverage": false,
+  "warning_coverage_supplemental_reviews": [],
+  "rubric": "Current S/F/B either byte-identical to already read v32 S/F/B this same turn,or newly directly read. Exact provenance in same-turn-read-reuse-v33.json.Same fixed88;backs do not grade forward.No independent/native/release approval.",
+  "reference_gate": {
+    "ru": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "unproved_data_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Known sample only;zero open forward defects/data required.No native/blind/unseen/general-engine/release approval."
+    }
+  }
+}

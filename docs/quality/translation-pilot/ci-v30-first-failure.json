@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "run_id": 40321408895,
+  "source": "5677ce21b751a4679fd2eda632be8644adf4ef9b",
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40321408895",
+  "conclusion": "failure",
+  "python": {
+    "tests": 362,
+    "failures": 33,
+    "errors": 0,
+    "skipped": 2,
+    "inventory_sha256": "b0f230aee52897d5f2d8c6f4f978791440653a41222470348a064fd32ecc8289",
+    "workers": 4,
+    "seconds": 1140.637
+  },
+  "failed_method": "TranslationPilotTest.test_observed_semantic_errors_are_rejected_even_when_tokens_survive",
+  "cause": "33 current model negatives had exact scoped fixtures but the common explicit review semantic API did not expose them.",
+  "fix": "Review-only proxy exposes exact scoped forward findings through the common review API;original module dictionary/inference functions and historical raw flags unchanged. Original generic class/assertions untouched.",
+  "new_regression_red": {
+    "tests": 1,
+    "failures": 47,
+    "seconds": 0.043,
+    "log_sha256": "1245e5c9cdf30e14707835855038c17523c896f79ebebf4f012892e4c2a4b66d"
+  },
+  "focused_green": {
+    "tests": 9,
+    "seconds": 44.62,
+    "log_sha256": "e11b163916262000aca40e7aad285986e434cc2f8f06b3bc964056da9fb3c078"
+  },
+  "failed_log_sha256": "591543ec6b2da9190a2237c3ebf6be08237e1dd6f95fd9427f95bd610529ce5f",
+  "model_runs_repeated": 0,
+  "approved_locales": []
+}

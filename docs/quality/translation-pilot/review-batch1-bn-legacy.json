@@ -1,0 +1,990 @@
+{
+  "schema_version": 1,
+  "review_type": "baseline-negative-review-batch-v1",
+  "reviewer": "Codex (agent review, no paid API)",
+  "native_review": false,
+  "approved_locales": [],
+  "engine_frozen": false,
+  "typed_profile_verified": false,
+  "new_inference_calls": 0,
+  "inference_policy": "baseline",
+  "locale": "bn",
+  "candidate": "legacy",
+  "expected_rows": 27,
+  "reviewed_at_utc": "2026-10-25T23:32:41.992782+00:00",
+  "checkpoint_sha256": {
+    "madlad": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643",
+    "m2m100": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a"
+  },
+  "source_snapshot_sha256": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+  "rubric": "Meaning, numbers/negations and naturalness 0–3. All existing S/F/B read directly. No native/blind review, generation, general engine choice, or release approval.",
+  "rows": [
+    {
+      "key": "shikaku.example",
+      "locale": "bn",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "legacy",
+      "translation_hash": "72eb2ed87c2a9eea435e12d3bbd630cfcd01e1f6e85fd5cf92122ed93a2bd17f",
+      "canonical_context": "example",
+      "record_ids": [
+        "65dcfaef814d6d357aa9b73bffad74e8e88d41c08ccdb152e4ab5dec6386e4ea",
+        "67559ecc5d34c14a9452b393daad3a1402e92aa20199432a8b001e18e7c2caca"
+      ],
+      "record_sha256": {
+        "67559ecc5d34c14a9452b393daad3a1402e92aa20199432a8b001e18e7c2caca": "1cd048a2ae4f017c775064db455290f4dd90fdabaab6589b07f37c43706e47b0",
+        "65dcfaef814d6d357aa9b73bffad74e8e88d41c08ccdb152e4ab5dec6386e4ea": "dbee77d4afe7eacaeb64cf9a6390014327509af1b7c351a1950d2f7f8d62597f"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «6 চিহ্নিত একটি ক্লু একটি আয়তক্ষেত্রের মধ্যে রয়েছে যা ঠিক ছয়টি বর্গক্ষেত্র কভার করে।» conserva en este contexto la acción o afirmación de «A clue marked 6 belongs inside one rectangle that covers exactly six squares.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta.",
+        "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "key": "shikaku.fields.check",
+      "locale": "bn",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "legacy",
+      "translation_hash": "5bc6c8f8bf219a2ec20230cd8243cf94516d8338e7d8cefd1d679feefc2b2ece",
+      "canonical_context": "fields.check",
+      "record_ids": [
+        "192477fabbbe483fe1b68b436b19a6c8576ba690ac4b4162190b11967fc7914c",
+        "910085482481a45ade118b79fd1ff0b02a8738230eacff64d95b358f5bb7bc79"
+      ],
+      "record_sha256": {
+        "192477fabbbe483fe1b68b436b19a6c8576ba690ac4b4162190b11967fc7914c": "c1ce36269818cad78c8a3ffd2f70e5b879a7d00b39c6f8bd0e1b326d6b2df9ad",
+        "910085482481a45ade118b79fd1ff0b02a8738230eacff64d95b358f5bb7bc79": "c0a969ecd424b398d097d650ae86dffb828ac61de5c606e9eaec3540f217e0ee"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "চেক পাজল conserva el sentido, pero mantiene el orden inglés en vez de ধাঁধা পরীক্ষা করুন."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.clear",
+      "locale": "bn",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "legacy",
+      "translation_hash": "3a208eee9c38c074e318eaefbc3299de30cc3f7628c5436018870535c2424a0f",
+      "canonical_context": "fields.clear",
+      "record_ids": [
+        "3641bb511c1821c4d0dd036d44bcd831d10d8ef69a36fb0152df66d0378b3934",
+        "68937939274dbb35cf50c01ff12838df48479c53a1127bd3bbd90b4eea6f5d1d"
+      ],
+      "record_sha256": {
+        "3641bb511c1821c4d0dd036d44bcd831d10d8ef69a36fb0152df66d0378b3934": "143d84ffdc128d1cf387ffa88f9e780ec0eaf48a1b3aabda1b412fca5443d467",
+        "68937939274dbb35cf50c01ff12838df48479c53a1127bd3bbd90b4eea6f5d1d": "b38b050a70275218be2f8afb16f86cc6692d4999b0f0a79785b7a50991c078a2"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «আয়তক্ষেত্রগুলি পরিষ্কার করুন» conserva en este contexto la acción o afirmación de «Clear rectangles», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.daily",
+      "locale": "bn",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "legacy",
+      "translation_hash": "30f286a8779b15c2551a7253f933a4969d4fa5a1bb134c46f9d9b3cb60f12c1d",
+      "canonical_context": "fields.daily",
+      "record_ids": [
+        "9ece3c794c43f3f6d1cf6c55d3d9b6c245077cc13e6cf69e85a4fbb89e521bed",
+        "f7f21cae73071670ab5f62c3cdc58ecc08c2ec845bf52f3b5207111e09840d15"
+      ],
+      "record_sha256": {
+        "f7f21cae73071670ab5f62c3cdc58ecc08c2ec845bf52f3b5207111e09840d15": "071e314b50ba821ec793a93aa368b52ab48959a750639edb23e2cd28bcc5827b",
+        "9ece3c794c43f3f6d1cf6c55d3d9b6c245077cc13e6cf69e85a4fbb89e521bed": "a7fe77a50ddc34c6b33cd85441a430659bbbc5d49dddfd6e327c94d4db6aed3c"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «দৈনিক ধাঁধা» conserva en este contexto la acción o afirmación de «Daily puzzle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.deleteSave",
+      "locale": "bn",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "legacy",
+      "translation_hash": "ab07ccd6afaa9e29546bbc8dd0fcaebec04b0f71a51c24d01c0578c15962c97b",
+      "canonical_context": "fields.deleteSave",
+      "record_ids": [
+        "357fb792bbc15a8ecab253f291b7ae40994f0644f7192b2f0aaa67cab96ff154",
+        "80d195c71887555de0c537e16e503642ce19d46af0f60b86d5b2864e765fd104"
+      ],
+      "record_sha256": {
+        "357fb792bbc15a8ecab253f291b7ae40994f0644f7192b2f0aaa67cab96ff154": "6ed9aead5c8a8ab403ddb96eeb53c51a622c4e6236ae768768d7cd473e952ea8",
+        "80d195c71887555de0c537e16e503642ce19d46af0f60b86d5b2864e765fd104": "54767c7b126156b83b98240eff638fe1eb319a556aca555acfaf14b9b8cda6db"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «সংরক্ষিত গেম মুছুন» conserva en este contexto la acción o afirmación de «Delete saved game», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.faq.1.a",
+      "locale": "bn",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "legacy",
+      "translation_hash": "999eb615e90bcc25c379af512598e30a2d67ee04a228caf67ce4062b3e597131",
+      "canonical_context": "fields.faq.1.a",
+      "record_ids": [
+        "4b0f4c628937d7912c83f5f8de5c65cc8d3bc2e7093d4fceace3e121ca35f808",
+        "d8341bc95ed3c861cf8cbfe1d06e1e2bcdb047f79f162b562771dd2afc1d351e"
+      ],
+      "record_sha256": {
+        "4b0f4c628937d7912c83f5f8de5c65cc8d3bc2e7093d4fceace3e121ca35f808": "38a583a0d90dba864bf1585ae70438d7b2cafa0fc0f85744f6837bd877d8e3a3",
+        "d8341bc95ed3c861cf8cbfe1d06e1e2bcdb047f79f162b562771dd2afc1d351e": "4b8816a939a0674f9974c27e0e3d31ea997ea2369d38679acda4218c94c76f8a"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «না। প্রতিটি আয়তক্ষেত্রে অবশ্যই একটি সংখ্যার সূত্র থাকতে হবে।» conserva en este contexto la acción o afirmación de «No. Each rectangle must contain exactly one number clue.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta.",
+        "Sin contrato tipado ni prueba localizada para esta ida: bloquea. La nota lingüística no certifica datos. Los numerales escritos con palabras requieren prueba propia, aunque no disparen el parser baseline."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": true
+    },
+    {
+      "key": "shikaku.fields.hint",
+      "locale": "bn",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "legacy",
+      "translation_hash": "344e3cd1811b72e18789d51cecab6b5b126184d1a6ab57a9a36597aecb2526b7",
+      "canonical_context": "fields.hint",
+      "record_ids": [
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65"
+      ],
+      "record_sha256": {
+        "2d49cd4d1ff39687c1f9c8f638d957b34e654996b27cca93dbf60b89d1248878": "c59973c5ba4b53475fce716f4bcfedc5ad58785463002587a49afeef5788631a",
+        "a2cff4eee3147c1ad5e4052cb1eb0e647a90ef55062c2d1430c25dc680b45a65": "ea14b5284a5f9bd807971158ddde89af23ba8aa6a8d96018013c139a6c4019b7"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «একটি ইঙ্গিত দেখান৷» conserva en este contexto la acción o afirmación de «Show a hint», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.newPuzzle",
+      "locale": "bn",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "legacy",
+      "translation_hash": "c8ffa2710cdf1df43db10bdd63678126e974cd28f72eabc0ec68133a6fb70d7d",
+      "canonical_context": "fields.newPuzzle",
+      "record_ids": [
+        "7f4d3551565f4bc8f5203fca75b60fec4ee835cd0ff6e2b67447edef9bddace1",
+        "a630c10133d6fe18e66228aa4262fd56e7aadf2d7f61298ab0a8375995baae52"
+      ],
+      "record_sha256": {
+        "7f4d3551565f4bc8f5203fca75b60fec4ee835cd0ff6e2b67447edef9bddace1": "64935e67188fa8f6d1e323073d36768d8d89594257fc0cd376295df513bd5bce",
+        "a630c10133d6fe18e66228aa4262fd56e7aadf2d7f61298ab0a8375995baae52": "6d8a7f2134c69113dcf0453bbbfcc7124f4ddfa0b005b90bd0857cbb330c42eb"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «নতুন ধাঁধা» conserva en este contexto la acción o afirmación de «New puzzle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.resume",
+      "locale": "bn",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "legacy",
+      "translation_hash": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "canonical_context": "fields.resume",
+      "record_ids": [
+        "15b76fbf92ee1966c19cbd9998551aa6851b55245afb532867275ac2814af04a",
+        "1e2d56ac7aa359341de39954dec30756ac9e7c7ca14c3f8154b464653e04b31c"
+      ],
+      "record_sha256": {
+        "1e2d56ac7aa359341de39954dec30756ac9e7c7ca14c3f8154b464653e04b31c": "7c4e6eb8ac58abff2f9a9a06a126692940b04ceb959689a3202beb911e42faa2",
+        "15b76fbf92ee1966c19cbd9998551aa6851b55245afb532867275ac2814af04a": "18057111908184c48c50ead29c13298b77736695ef1f1f3a0da3838775dc3c26"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «পুনরায় শুরু করুন» conserva en este contexto la acción o afirmación de «Resume», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. Volver a comenzar expresa reanudación en contexto de partida guardada; no afirma borrar el progreso."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.reveal",
+      "locale": "bn",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "legacy",
+      "translation_hash": "b7c1c31159d5d2e76fd12472e11776e8a4da44e63ab49259770fe3847c44c1d2",
+      "canonical_context": "fields.reveal",
+      "record_ids": [
+        "1697d9e7d376d8355cc48c039344f11203f90b501c0da39df46dca07a5491b61",
+        "543c77bdb66d2bb9a9575bd8a2a8b5119d06786865b8ba09cfa56bb5d3aa521f"
+      ],
+      "record_sha256": {
+        "543c77bdb66d2bb9a9575bd8a2a8b5119d06786865b8ba09cfa56bb5d3aa521f": "f2c0a28d59014742510f512496932c9cdc7a801a41462d345ee9920687762ce4",
+        "1697d9e7d376d8355cc48c039344f11203f90b501c0da39df46dca07a5491b61": "1f7e5322693dd019b5378d2bd1a69648fdbf1aa699a2bdfd193076af84136d11"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «সমাধান দেখান» conserva en este contexto la acción o afirmación de «Show solution», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectEnd",
+      "locale": "bn",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "legacy",
+      "translation_hash": "35babb8655b94669761c2553a06dc40b586c68489f912d0b4052d53e4a429d2c",
+      "canonical_context": "fields.selectEnd",
+      "record_ids": [
+        "1ccdc139994dce4695626a80b70e71a2772be2e5ed4f349bc33f422df073181a",
+        "1e1f56f6ebf586dadf4cbee4cac7655d18e8993885f32bd46a3bcba1ab6007fb"
+      ],
+      "record_sha256": {
+        "1e1f56f6ebf586dadf4cbee4cac7655d18e8993885f32bd46a3bcba1ab6007fb": "f8e33904cf7401394ecd5181fa6556903440275a8e74675495f608c0bc1bc769",
+        "1ccdc139994dce4695626a80b70e71a2772be2e5ed4f349bc33f422df073181a": "7272c87eb79ee2b370c8753785c31c4fcf58a60a39c77a8196dbf71a030b7a35"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «এখন বিপরীত কোণটি বেছে নিন।» conserva en este contexto la acción o afirmación de «Now choose the opposite corner.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.selectStart",
+      "locale": "bn",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "legacy",
+      "translation_hash": "0edee41d130e9e115e672a16187542c877892e2f0faa1987f9653324cba0ad63",
+      "canonical_context": "fields.selectStart",
+      "record_ids": [
+        "17f97c61263aad020a00404c8e487778d62ad7cf96f1291e3f415fa761ed5b37",
+        "e0feffce3df2fd1c38e161887196b27ea428f1380d9126e895858b4305f86db5"
+      ],
+      "record_sha256": {
+        "e0feffce3df2fd1c38e161887196b27ea428f1380d9126e895858b4305f86db5": "cb4d4edb9578a313c95d1c985e45b943b4d10e7aa9797b5fe68d5918385b2206",
+        "17f97c61263aad020a00404c8e487778d62ad7cf96f1291e3f415fa761ed5b37": "1e4ae319f21087c45c7c2e383dff0ef87b614d65847004e666f7f2abad4422c8"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «একটি স্টার্ট স্কোয়ার বেছে নিন।» conserva en este contexto la acción o afirmación de «Choose a start square.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "shikaku.fields.undo",
+      "locale": "bn",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "legacy",
+      "translation_hash": "28e1e8277e593004233a7bbbd9a862bf68ee724cff98e86d0518e5e917067b69",
+      "canonical_context": "fields.undo",
+      "record_ids": [
+        "faa24f7bc5aa5bb3af779c155f64672d0232adc60ad35b7b076761626f94e4de",
+        "fc2050e8c1838c092e646eb0e05d7ede57a159588dfb83b43a0592a06a5b05d0"
+      ],
+      "record_sha256": {
+        "faa24f7bc5aa5bb3af779c155f64672d0232adc60ad35b7b076761626f94e4de": "b6f91e02a0d858b2fc0de51ff2a9d6ff70fe8dd07cc117c86298709f94c78551",
+        "fc2050e8c1838c092e646eb0e05d7ede57a159588dfb83b43a0592a06a5b05d0": "37c931b7b77009b0da6122fb90454b1337d132deddd040adfa130f8ed0471fc9"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «শেষ আয়তক্ষেত্র পূর্বাবস্থায় ফেরান» conserva en este contexto la acción o afirmación de «Undo last rectangle», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFile",
+      "locale": "bn",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "legacy",
+      "translation_hash": "436d88a0b970a6af0c81ea0a308921a22eaa5be2d74c6b062e8b45fdcb3002eb",
+      "canonical_context": "fields.chooseFile",
+      "record_ids": [
+        "45d6081d4aaa2a9f65892688ef1a23a0a840ecbf452e5a64acb672f96ebd2a08",
+        "d362056c866a81b2485f46727ff95e74fa6d2f3349863d16b1d31f1393a421ca"
+      ],
+      "record_sha256": {
+        "d362056c866a81b2485f46727ff95e74fa6d2f3349863d16b1d31f1393a421ca": "8f921945d61c7aa04e9548554613530491c4fff577c5ed91212db7176b5f529e",
+        "45d6081d4aaa2a9f65892688ef1a23a0a840ecbf452e5a64acb672f96ebd2a08": "97803ad5cd81717775f037b1edf3e2c8a1b4319c075927f73ca24370a5e88b1e"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «একটি অডিও ফাইল বেছে নিন» conserva en este contexto la acción o afirmación de «Choose an audio file», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.chooseFirst",
+      "locale": "bn",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "legacy",
+      "translation_hash": "05d3ba9d563d5b3244b3a9777c8de91794a8585a80c87e4469419201c5d7e2f6",
+      "canonical_context": "fields.chooseFirst",
+      "record_ids": [
+        "07da66607dc86724375e051bcdebc4a0a4389db87038281909dae092e6aedb64",
+        "4ed3113596c3fc62d8146d324ebb974c5db3f44c693af22dc01d697fd4fbf054"
+      ],
+      "record_sha256": {
+        "07da66607dc86724375e051bcdebc4a0a4389db87038281909dae092e6aedb64": "413a47c42217e4aaa403c65468c11a2e8a693554fa9b4739b47b2b95d4f622a9",
+        "4ed3113596c3fc62d8146d324ebb974c5db3f44c693af22dc01d697fd4fbf054": "02a679c60c9a354261a3785d3bf81c0e3ef394a95772dd3b773f6e60fa73b419"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «প্রথমে একটি অডিও ফাইল নির্বাচন করুন।» conserva en este contexto la acción o afirmación de «Choose an audio file first.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.clear",
+      "locale": "bn",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "legacy",
+      "translation_hash": "bc30058d8db9d39cd61509cd58ca0bb5bd990e9d6c603b21788ac2cd67d7deff",
+      "canonical_context": "fields.clear",
+      "record_ids": [
+        "4dc27a3f53c0b8bcdcbf1e4110ec01a981b130e0333e38bab3fa6ca60f904bb7",
+        "5f701f6bf67924d27ce13a897ddafea5d0c8eb0dbf1fbf222fd9f70b8e2dc0f0"
+      ],
+      "record_sha256": {
+        "4dc27a3f53c0b8bcdcbf1e4110ec01a981b130e0333e38bab3fa6ca60f904bb7": "7335b094088a9e362298c5294844dfa1b8047e2c1c6c8dd9f276bb6094625755",
+        "5f701f6bf67924d27ce13a897ddafea5d0c8eb0dbf1fbf222fd9f70b8e2dc0f0": "7f81f6d3b8336074e0d431ae2ca09b188454d32de0311527672b32c7341b9883"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «অডিও সাফ করুন» conserva en este contexto la acción o afirmación de «Clear audio», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.decodeFailed",
+      "locale": "bn",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "legacy",
+      "translation_hash": "10719c106a525f244cd3ba992fa04c32495b8eeb4050337ea19571a0cff7c0ec",
+      "canonical_context": "fields.decodeFailed",
+      "record_ids": [
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303"
+      ],
+      "record_sha256": {
+        "6b01137db40f006756905e988e702e3246b00eea8f351a2fdf897696a0888b5f": "67ce15ebc6bf47d9ba4bf6c6d0191f0038a7ac9672829b2e79a3d8dbc3461f0d",
+        "ddc171ffd452453ed30e2e9fa56850baaf627c3964a0513c5761a42df1861303": "d71116f611c5cdad1805fbca0d0ba982a07786f76a900f901e71f99270509928"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «এই ব্রাউজারটি সেই অডিও ফর্ম্যাটটি ডিকোড করতে পারেনি৷ WAV বা MP3 ব্যবহার করে দেখুন।» conserva en este contexto la acción o afirmación de «This browser could not decode that audio format. Try WAV or MP3.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.export",
+      "locale": "bn",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "legacy",
+      "translation_hash": "97907110351e4c2da8b22d864ea66ec4e2e171412e834bade4097f95abb724e7",
+      "canonical_context": "fields.export",
+      "record_ids": [
+        "6c9c26d62b36ce4ffc80ef27c50f3637e52c14c2173d706ea9ade8aa84a4e74a",
+        "ecbb0c5f0842432a65e848bfb368a8f1d12e20801813daf734ae96c86955152b"
+      ],
+      "record_sha256": {
+        "ecbb0c5f0842432a65e848bfb368a8f1d12e20801813daf734ae96c86955152b": "187cc2ff99a10a926974146e8d16dadc06eb16462b459fdb33092d493443b163",
+        "6c9c26d62b36ce4ffc80ef27c50f3637e52c14c2173d706ea9ade8aa84a4e74a": "a790829849aa276daf989d7eccd9c01216b7e4e6d6a6725299542622edb1cb50"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «প্রক্রিয়াকৃত WAV রপ্তানি করুন» conserva en este contexto la acción o afirmación de «Export processed WAV», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq1a",
+      "locale": "bn",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "canonical_context": "fields.faq1a",
+      "record_ids": [
+        "03bb73d05dc7912361d3200e4697bd5f2c87f95b14d2d26fe3873bb5f8e98657",
+        "cf8a98bcbcd7dea2eb27f46929ce3b46a42bd55706e6b6dc6a54281a1105ef21"
+      ],
+      "record_sha256": {
+        "03bb73d05dc7912361d3200e4697bd5f2c87f95b14d2d26fe3873bb5f8e98657": "31132c2b6f3872acad671abd3833c2a850ba79e4f248a3dc43d8d79b6b219d6e",
+        "cf8a98bcbcd7dea2eb27f46929ce3b46a42bd55706e6b6dc6a54281a1105ef21": "c58a8e9babed891d9b1d741939876456f2649b5efe646da59b6e9a9b75f60b44"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «না। আপনার ব্রাউজার স্থানীয়ভাবে নির্বাচিত অডিও ডিকোড করে এবং প্রক্রিয়া করে। UsefulVerse রেকর্ডিং পায় না.» conserva en este contexto la acción o afirmación de «No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.faq2a",
+      "locale": "bn",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "9f3724c89a327212d9e875660b07f509e96d25fc95af4a725f10da65f0c288c0",
+      "canonical_context": "fields.faq2a",
+      "record_ids": [
+        "84391fd0f0414ad036ce874d92defdf06c78180fd406c16d6d81bfc14ecaa1aa",
+        "a79501a84e385586571acbaa1043d1cc70e74f627e0fb033dca573c365f47bf4"
+      ],
+      "record_sha256": {
+        "a79501a84e385586571acbaa1043d1cc70e74f627e0fb033dca573c365f47bf4": "469088935a81b08e923a41b0664f26c1e9837085fd3fff498495d21a86c6b826",
+        "84391fd0f0414ad036ce874d92defdf06c78180fd406c16d6d81bfc14ecaa1aa": "46077f33965fe7a59fdf769a44e9d76c78832bd5852875ea3d937afaa4168c6f"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «না। এই লাইটওয়েট পিচ কন্ট্রোল প্লেব্যাক রেট পরিবর্তন করে, তাই একটি নিম্ন পিচ ধীর বাজায় এবং একটি উচ্চ পিচ দ্রুত বাজায়।» conserva en este contexto la acción o afirmación de «No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.load",
+      "locale": "bn",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "legacy",
+      "translation_hash": "dc7f0673fdf475715e621537f3e457cc6d8bff27b5e6d4c0622afceb8bbe6112",
+      "canonical_context": "fields.load",
+      "record_ids": [
+        "0851a450cf022dcf98717495b1d1a8b7bacc82f1cb16b852c8374a8220fd610d",
+        "deeefd39fcf86087488f18f564e31f93d65639f543b14f5a1a5d1948589c593a"
+      ],
+      "record_sha256": {
+        "0851a450cf022dcf98717495b1d1a8b7bacc82f1cb16b852c8374a8220fd610d": "8126e34024f8b6a74f577120c514d9a57b3adb66dcc7b55c1096ef6a3009dcf5",
+        "deeefd39fcf86087488f18f564e31f93d65639f543b14f5a1a5d1948589c593a": "617cee3a9e9972bd25d52162001f792ef4b762481df40e605da4adcb5db22e5e"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «স্থানীয়ভাবে অডিও লোড করুন» conserva en este contexto la acción o afirmación de «Load audio locally», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.loaded",
+      "locale": "bn",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "legacy",
+      "translation_hash": "f36d313758349621f2273fd49c7bbdd171ea6a037f9af4506eac45a6683b912f",
+      "canonical_context": "fields.loaded",
+      "record_ids": [
+        "1572286ce2bba9c0d451c68d8fc042d84e6375a32a1c93afbdcb576e2972340d",
+        "4ddec0a40167334f4fcc9925e481bc262addb7e073ce0dc969ec59a7543d885b"
+      ],
+      "record_sha256": {
+        "1572286ce2bba9c0d451c68d8fc042d84e6375a32a1c93afbdcb576e2972340d": "cbabfd67a85027ebc37d0130e33950d749a2f27b2c58c091cc76af91685aa5ea",
+        "4ddec0a40167334f4fcc9925e481bc262addb7e073ce0dc969ec59a7543d885b": "9012b9e7211cc96c30d0fc959c7719894d4c301ad9ed1e6078a71fc9dd8979a9"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «স্থানীয়ভাবে অডিও ডিকোড করা হয়েছে। সময়কাল: {duration} সেকেন্ড।» conserva en este contexto la acción o afirmación de «Audio decoded locally. Duration: {duration} seconds.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.preview",
+      "locale": "bn",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "legacy",
+      "translation_hash": "9a2be144a43c32d73f40b5af05946a88d37afd9b5ef4d6967d4f13ae34c21158",
+      "canonical_context": "fields.preview",
+      "record_ids": [
+        "8f5ab041338a1af1d80f4e01cd32d5d2e55f3958ed9e7083dc2a64e0243e3ce7",
+        "fa5d99ca55fe45f857e3dae871e18522e7146eecf7b224fe60ad719c03d22f47"
+      ],
+      "record_sha256": {
+        "8f5ab041338a1af1d80f4e01cd32d5d2e55f3958ed9e7083dc2a64e0243e3ce7": "a3fe5e53a3f5876ee0220a6521413beacd4f7bca41b4775e706601f6f28666f5",
+        "fa5d99ca55fe45f857e3dae871e18522e7146eecf7b224fe60ad719c03d22f47": "f4effd86c39e868b79d25cbb3c39f6acae1161a17e02daf0c1fdaec53438e952"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "প্রিভিউ প্রভাব conserva preview/efecto con orden inglés; en bengalí se espera প্রভাবের প্রিভিউ."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.privacy",
+      "locale": "bn",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "legacy",
+      "translation_hash": "4cb4fbbd5d577783de81ada8f862dfe78dbc30de08cc90bb4a369d766a9377ee",
+      "canonical_context": "fields.privacy",
+      "record_ids": [
+        "08fae6584847185e88d09c3ee7ae1026589c222ff21cda3f43ef905f62dc01ee",
+        "70668b1a3cc5b84eecc6e24b5664cc1444f27962792cdcc8a57f2ca0195abd44"
+      ],
+      "record_sha256": {
+        "70668b1a3cc5b84eecc6e24b5664cc1444f27962792cdcc8a57f2ca0195abd44": "20f25ac9692ee3585adfd7ae3493898b1430e42af49a5a1988e83a3d0b6f2113",
+        "08fae6584847185e88d09c3ee7ae1026589c222ff21cda3f43ef905f62dc01ee": "640ac68646afcad28babcc86bac62d18a8863239b8b546fcd9f93ae2f1fd5137"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «অডিও এই ব্রাউজারে থাকে। এটি UsefulVerse দ্বারা আপলোড বা সংরক্ষণ করা হয় না।» conserva en este contexto la acción o afirmación de «Audio stays in this browser. It is not uploaded or saved by UsefulVerse.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta. MADLAD y legacy mantienen almacenamiento en el navegador y no subir/guardar por UsefulVerse; no se infiere persistencia del mero verbo conservar."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.stop",
+      "locale": "bn",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "legacy",
+      "translation_hash": "67bd87983ea87a451084108775eb9e0cfde8b291e049f3e0d23a99ddfde59684",
+      "canonical_context": "fields.stop",
+      "record_ids": [
+        "46c9a99362071a56f9384ed3144ff8a1eb3519271feb3fc4c9cb7d2c1f2e9eb2",
+        "b5c66cf85a73453dab1aa6e1ec7693933c9fa0a085cb8e3d9343ca2472128fb6"
+      ],
+      "record_sha256": {
+        "46c9a99362071a56f9384ed3144ff8a1eb3519271feb3fc4c9cb7d2c1f2e9eb2": "e107c99c9389c7703f04314aa4321b3693a6fa1f8bde499cf32d4fc6311b4e50",
+        "b5c66cf85a73453dab1aa6e1ec7693933c9fa0a085cb8e3d9343ca2472128fb6": "e60d50c2cbcc13f80135a234a4dac458a986c402e92f7027a8a040eddad8c07e"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «স্টপ প্রিভিউ» conserva en este contexto la acción o afirmación de «Stop preview», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": true,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLarge",
+      "locale": "bn",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "legacy",
+      "translation_hash": "8865751ce099f4dd7178a13fdc2d92000a15ae9fa8c5fe0802e7e66d7fb0e8af",
+      "canonical_context": "fields.tooLarge",
+      "record_ids": [
+        "cb83dfc4aa327ed26d5b76fc70d0be5dacda7ce285d370653dde296b6fc79697",
+        "eccb821de14187520396c5f6e1b82c95cf5bc1309997be591ce1b5396508eb54"
+      ],
+      "record_sha256": {
+        "eccb821de14187520396c5f6e1b82c95cf5bc1309997be591ce1b5396508eb54": "212f02413ad24a362d33324351bfe7cf79f5103c832eddbb7262476d75aeffc2",
+        "cb83dfc4aa327ed26d5b76fc70d0be5dacda7ce285d370653dde296b6fc79697": "cfe4462c57b4889e7029e3f3441f068b89316f29aa4a6dc130f648744b1a7001"
+      },
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 0,
+        "naturalness": 3
+      },
+      "notes": [
+        "Elimina no: pide un archivo mayor de25MB en vez de no mayor."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    },
+    {
+      "key": "voice-changer.fields.tooLong",
+      "locale": "bn",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "legacy",
+      "translation_hash": "83169b2eeb8e8d03988e1dc15d01215986684bfb2eb91bbaf06c58b2b19f00d7",
+      "canonical_context": "fields.tooLong",
+      "record_ids": [
+        "329b187c942db76b2b5e07cc3daa8b3af4846f57fc8cd869fcb976697e3426d5",
+        "6395d2a558e402d995a1d34b2b6cdb88656752112a5f390aa29784bb899a22f9"
+      ],
+      "record_sha256": {
+        "6395d2a558e402d995a1d34b2b6cdb88656752112a5f390aa29784bb899a22f9": "bd89ebf843030f6cb900f6383738bea75152fcea0ba54959320cd3534eb37a26",
+        "329b187c942db76b2b5e07cc3daa8b3af4846f57fc8cd869fcb976697e3426d5": "f47f4706018b06590d603d0e2fae6df74b97084d925d0f943e7b4db1b1901ec2"
+      },
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa: «এই টুল 30 সেকেন্ড পর্যন্ত ক্লিপ সমর্থন করে। ফাইলটি ট্রিম করুন এবং আবার চেষ্টা করুন।» conserva en este contexto la acción o afirmación de «This tool supports clips up to 30 seconds. Trim the file and try again.», incluidas las negaciones y cantidades expresadas; no se deduce la nota de ida de la vuelta."
+      ],
+      "critical_control": false,
+      "score_origin": "direct-existing-source-forward-back-agent-review",
+      "data_contract_unproved": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "65dcfaef814d6d357aa9b73bffad74e8e88d41c08ccdb152e4ab5dec6386e4ea",
+      "record_sha256": "dbee77d4afe7eacaeb64cf9a6390014327509af1b7c351a1950d2f7f8d62597f",
+      "translation_hash": "72eb2ed87c2a9eea435e12d3bbd630cfcd01e1f6e85fd5cf92122ed93a2bd17f",
+      "back_translation_hash": "93264dc4ab1a4e601ea13ed09720c545a862ed2a4543e90521b2eca2c909e382",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Sustituye rectángulo por range y degrada la estructura de la pista; la ida legacy conserva la regla. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "192477fabbbe483fe1b68b436b19a6c8576ba690ac4b4162190b11967fc7914c",
+      "record_sha256": "c1ce36269818cad78c8a3ffd2f70e5b879a7d00b39c6f8bd0e1b326d6b2df9ad",
+      "translation_hash": "5bc6c8f8bf219a2ec20230cd8243cf94516d8338e7d8cefd1d679feefc2b2ece",
+      "back_translation_hash": "d3c79b8caf90a5b444f038c94c59a62987e434b951c7837a6c9d816368dbd232",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "চেক পাজল conserva el sentido, pero mantiene el orden inglés en vez de ধাঁধা পরীক্ষা করুন."
+        }
+      }
+    },
+    {
+      "record_id": "910085482481a45ade118b79fd1ff0b02a8738230eacff64d95b358f5bb7bc79",
+      "record_sha256": "c0a969ecd424b398d097d650ae86dffb828ac61de5c606e9eaec3540f217e0ee",
+      "translation_hash": "5bc6c8f8bf219a2ec20230cd8243cf94516d8338e7d8cefd1d679feefc2b2ece",
+      "back_translation_hash": "91e2dc60175abb0561e90b16be61e324f3610db48bf2cd6efbb186d25461d1e8",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "চেক পাজল conserva el sentido, pero mantiene el orden inglés en vez de ধাঁধা পরীক্ষা করুন."
+        }
+      }
+    },
+    {
+      "record_id": "68937939274dbb35cf50c01ff12838df48479c53a1127bd3bbd90b4eea6f5d1d",
+      "record_sha256": "b38b050a70275218be2f8afb16f86cc6692d4999b0f0a79785b7a50991c078a2",
+      "translation_hash": "3a208eee9c38c074e318eaefbc3299de30cc3f7628c5436018870535c2424a0f",
+      "back_translation_hash": "d8b6b2a8046b16dafeae644a17eba6346854dc14f914a298b696edb46edc7759",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Sustituye rectángulos por spots en la vuelta; la ida sí dice আয়তক্ষেত্রগুলি. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "9ece3c794c43f3f6d1cf6c55d3d9b6c245077cc13e6cf69e85a4fbb89e521bed",
+      "record_sha256": "a7fe77a50ddc34c6b33cd85441a430659bbbc5d49dddfd6e327c94d4db6aed3c",
+      "translation_hash": "30f286a8779b15c2551a7253f933a4969d4fa5a1bb134c46f9d9b3cb60f12c1d",
+      "back_translation_hash": "a740d8ea39864310c551a9e82a14e8061d62d518a209ce6068eeb89b353ee919",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Convierte ধাঁধা en Mistakes; la ida sí significa puzzle diario. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "4b0f4c628937d7912c83f5f8de5c65cc8d3bc2e7093d4fceace3e121ca35f808",
+      "record_sha256": "38a583a0d90dba864bf1585ae70438d7b2cafa0fc0f85744f6837bd877d8e3a3",
+      "translation_hash": "999eb615e90bcc25c379af512598e30a2d67ee04a228caf67ce4062b3e597131",
+      "back_translation_hash": "6c7f0c99f66493d5215a4916ddf58361eed6ffc53c9606a61782bc3d286bbc08",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "সূত্র en contexto de puzzle es pista; la vuelta la convierte en formula y omite número. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "d8341bc95ed3c861cf8cbfe1d06e1e2bcdb047f79f162b562771dd2afc1d351e",
+      "record_sha256": "4b8816a939a0674f9974c27e0e3d31ea997ea2369d38679acda4218c94c76f8a",
+      "translation_hash": "999eb615e90bcc25c379af512598e30a2d67ee04a228caf67ce4062b3e597131",
+      "back_translation_hash": "b2d553ba25a068b95b040e99a76ac815ca4413680869bc5341ba19c82723e498",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Rectángulo/pista numérica pasan a field/form of a number; defecto de vuelta independiente de la ida. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "1e2d56ac7aa359341de39954dec30756ac9e7c7ca14c3f8154b464653e04b31c",
+      "record_sha256": "7c4e6eb8ac58abff2f9a9a06a126692940b04ceb959689a3202beb911e42faa2",
+      "translation_hash": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "back_translation_hash": "6b983a81e5e8099e4e23a368e72636e31f029f2e691e5be714106b8cf59d70a7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Proporción de longitud/escritura leída con fuente e ida: etiqueta breve, texto técnico latino o expansión localizada. El defecto lingüístico, si existe, consta por separado en known_semantic_errors; esta heurística no sustituye la rúbrica."
+        }
+      }
+    },
+    {
+      "record_id": "15b76fbf92ee1966c19cbd9998551aa6851b55245afb532867275ac2814af04a",
+      "record_sha256": "18057111908184c48c50ead29c13298b77736695ef1f1f3a0da3838775dc3c26",
+      "translation_hash": "54a8e32fd1ce5f39c96b4267f5a78319845cb3ca842a92aa1d763d40e513a49f",
+      "back_translation_hash": "6356a7431d8f3662b3ab3598cb8bba9fbc17c00b4dcc135a5ff809aed7487f49",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Proporción de longitud/escritura leída con fuente e ida: etiqueta breve, texto técnico latino o expansión localizada. El defecto lingüístico, si existe, consta por separado en known_semantic_errors; esta heurística no sustituye la rúbrica."
+        }
+      }
+    },
+    {
+      "record_id": "fc2050e8c1838c092e646eb0e05d7ede57a159588dfb83b43a0592a06a5b05d0",
+      "record_sha256": "37c931b7b77009b0da6122fb90454b1337d132deddd040adfa130f8ed0471fc9",
+      "translation_hash": "28e1e8277e593004233a7bbbd9a862bf68ee724cff98e86d0518e5e917067b69",
+      "back_translation_hash": "9a5290c6874ec5517122359bc97ab665e4f692fea7c810b2b13d5b5e20e5a9cd",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Return to the last stage pierde deshacer el último rectángulo que conserva la ida. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "03bb73d05dc7912361d3200e4697bd5f2c87f95b14d2d26fe3873bb5f8e98657",
+      "record_sha256": "31132c2b6f3872acad671abd3833c2a850ba79e4f248a3dc43d8d79b6b219d6e",
+      "translation_hash": "87def710c40fdba53244f9e723db9d9662edc8caf1062e7f80d138589ab43acd",
+      "back_translation_hash": "9388904ba5795e8eb1adfebe3dccbeedc180489157881be3b9024f8180b6a167",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No recibir la grabación pasa a cannot find the recording, otra afirmación de privacidad. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "84391fd0f0414ad036ce874d92defdf06c78180fd406c16d6d81bfc14ecaa1aa",
+      "record_sha256": "46077f33965fe7a59fdf769a44e9d76c78832bd5852875ea3d937afaa4168c6f",
+      "translation_hash": "9f3724c89a327212d9e875660b07f509e96d25fc95af4a725f10da65f0c288c0",
+      "back_translation_hash": "7d4549196f98d3aa3f4440547c12b797377a583a72f802a973aa14ef5fccdef5",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "La ida conserva tono alto/reproducción rápida, pero high pitch slows fast introduce ralentización. Se juzga la ida por separado."
+        }
+      }
+    },
+    {
+      "record_id": "8f5ab041338a1af1d80f4e01cd32d5d2e55f3958ed9e7083dc2a64e0243e3ce7",
+      "record_sha256": "a3fe5e53a3f5876ee0220a6521413beacd4f7bca41b4775e706601f6f28666f5",
+      "translation_hash": "9a2be144a43c32d73f40b5af05946a88d37afd9b5ef4d6967d4f13ae34c21158",
+      "back_translation_hash": "67c435a04660ed45f2a05b2382819f9873fbaea884abfb1a37c9108541cda13f",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "প্রিভিউ প্রভাব conserva preview/efecto con orden inglés; en bengalí se espera প্রভাবের প্রিভিউ."
+        }
+      }
+    },
+    {
+      "record_id": "fa5d99ca55fe45f857e3dae871e18522e7146eecf7b224fe60ad719c03d22f47",
+      "record_sha256": "f4effd86c39e868b79d25cbb3c39f6acae1161a17e02daf0c1fdaec53438e952",
+      "translation_hash": "9a2be144a43c32d73f40b5af05946a88d37afd9b5ef4d6967d4f13ae34c21158",
+      "back_translation_hash": "67c435a04660ed45f2a05b2382819f9873fbaea884abfb1a37c9108541cda13f",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "প্রিভিউ প্রভাব conserva preview/efecto con orden inglés; en bengalí se espera প্রভাবের প্রিভিউ."
+        }
+      }
+    },
+    {
+      "record_id": "eccb821de14187520396c5f6e1b82c95cf5bc1309997be591ce1b5396508eb54",
+      "record_sha256": "212f02413ad24a362d33324351bfe7cf79f5103c832eddbb7262476d75aeffc2",
+      "translation_hash": "8865751ce099f4dd7178a13fdc2d92000a15ae9fa8c5fe0802e7e66d7fb0e8af",
+      "back_translation_hash": "3bcdc9d95e04fcc54a39f0e012ff1af72c966acea03e18348b062b4ee807060c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Elimina no: pide un archivo mayor de25MB en vez de no mayor."
+        }
+      }
+    },
+    {
+      "record_id": "cb83dfc4aa327ed26d5b76fc70d0be5dacda7ce285d370653dde296b6fc79697",
+      "record_sha256": "cfe4462c57b4889e7029e3f3441f068b89316f29aa4a6dc130f648744b1a7001",
+      "translation_hash": "8865751ce099f4dd7178a13fdc2d92000a15ae9fa8c5fe0802e7e66d7fb0e8af",
+      "back_translation_hash": "358c6158567320b75987b4d51884de4005836f451a90e63df2fee3ced08b496c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Elimina no: pide un archivo mayor de25MB en vez de no mayor."
+        }
+      }
+    },
+    {
+      "record_id": "329b187c942db76b2b5e07cc3daa8b3af4846f57fc8cd869fcb976697e3426d5",
+      "record_sha256": "f47f4706018b06590d603d0e2fae6df74b97084d925d0f943e7b4db1b1901ec2",
+      "translation_hash": "83169b2eeb8e8d03988e1dc15d01215986684bfb2eb91bbaf06c58b2b19f00d7",
+      "back_translation_hash": "11645dc3c1c07f80cbcb8d62ccaed8fb8a21951cd87f292085058438397a2e55",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Traduce recortar como remove the file, que manda eliminar el archivo. Se juzga la ida por separado."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "rows": 27,
+    "points": 236,
+    "maximum": 243,
+    "button_errors": 2,
+    "number_negation_errors": 1,
+    "major_rows": 1,
+    "minor_rows": 2,
+    "unproved_data_rows": 2,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Negative existing baseline: observed linguistic defects and no locale-specific typed profile. Do not run full sample, freeze an engine, import memory or approve release."
+  }
+}

@@ -1,0 +1,2723 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2, RUNBOOK §8: significado, cifras/negaciones, naturalidad0–3; cero errores botones/cifras, máximo1leve/20, contratos válidos. Back judged separately.",
+  "expected_rows": 92,
+  "inference_policy": "context-v17",
+  "reviewed_at_utc": "2026-10-23T11:52:14.582762+00:00",
+  "scope": "Direct reading of each listed current source/forward/back; no automatic score or backtranslation-only approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": false,
+  "rows": [
+    {
+      "locale": "ko",
+      "key": "shikaku.description",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "candidate": "legacy",
+      "translation_hash": "beccefe6da191e0fb18422f6d0e73d8a16220675adfaa5c9c76fd0b5a051798f",
+      "record_ids": [
+        "10086a8dccb7c911e44bfb0f6e1a330fbfc20a55e10b2ba55ae0f16032971282"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "JugarShikaku gratis, dividir según áreas numeradas, diario/pistas/nuevo tablero y dispositivo; significado y gramática correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.details",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "candidate": "legacy",
+      "translation_hash": "0c63fcb250e010901086817005d9b0869810f1928f96ff1a2a0530f420ea5945",
+      "record_ids": [
+        "f9537109994c2dc32aec79a553840a1e41016fcf666b1cae0fdfa2fda791cb95"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Celdas inicial/final, arrastrar y una pista cuyo número iguala área 면적; reglas conservadas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.exampleHeading",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "2eb73fba696e2fe4ea0a206ed3d21758e35c7594905d6181d9c34ff19556b17a",
+      "record_ids": [
+        "a2e746546eecf68ae329383a36311d3bc3d0d7d333206507fc40941df61df89b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "예 es un encabezado coreano válido de ejemplo; no es una afirmación en este contexto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.faqHeading",
+      "source_hash": "9a72221a27476f3e907767bc2614ae6aaa0a45c60543a23f89786b571897bb75",
+      "candidate": "legacy",
+      "translation_hash": "32729cc3f7b6d44a6210628f89b099dc4a3be32ebbf0eb55b675a02b9989ebc3",
+      "record_ids": [
+        "821a238de61a006867b7c5e393a2e313029c6a2bbebef5e97b025581195c9d31"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "질문 como encabezado colectivo de preguntas, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.covered",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "candidate": "legacy",
+      "translation_hash": "4c95ac63757921af0815f5c9849f9694e010920f419d546599061338437dbbd6",
+      "record_ids": [
+        "e33b1114ada3bc9baf1d0494c9e6935f9d2bc325ce49465c52f935a498516ae6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "덮힌 es falta ortográfica por 덮인, de 덮이다. Las casillas cubiertas se entienden en el contador; corregir grafía."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.dragHelp",
+      "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+      "candidate": "legacy",
+      "translation_hash": "0c8eb75508a18d7a1c44c8d4a012b3a2921f1b26468456bafa1f608f0e211695",
+      "record_ids": [
+        "e5bdc62641d78429d3fa66aaa62bd740f4539f5f810bb4249e2d65a6061483e4"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "정사각형을 탭한 cambia navegar con la teclaTab por tocar/tapear la casilla, pese a indicar teclado. Debe preservar Tab como tecla y el paso de enfocar la casilla antes deEnter."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.0.a",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "candidate": "legacy",
+      "translation_hash": "719d69d95328ed7edb910d6209e6b63800cdd986c29e10ee7f491d0b930655ac",
+      "record_ids": [
+        "d8c47a1e597b7552f5e40bdaf00348be6a0021e60b22df5367e74d300ff816e4"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "영역 nombra región y 단서로 표시되는 영역 no expresa el área numérica 면적 indicada por la pista; se pierde la relación de valor aunque uso único de casillas sí se conserva."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.0.q",
+      "source_hash": "034b4f79cdf40c346b5bfea1d81f216c16da62f5ae09859b43f3d62bbb7c5688",
+      "candidate": "legacy",
+      "translation_hash": "dd017f7e06612b5c4e9cf8b384d867663eb1c48eadd7ae4aa9bc5ae3e78de957",
+      "record_ids": [
+        "fdd5e4cdb9b95c31e90bed6a998e0922b03c2fa0435723eaac2d3b9e1972c722"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta qué esShikaku, correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.1.q",
+      "source_hash": "dc646ae35f171c689c5bd84aa36c5ff86d6a33121f65cbb139d36241a4811b4b",
+      "candidate": "legacy",
+      "translation_hash": "56a568339694ac1438f11545c05012bc8fe28b9638a92ec8f6f7fc45b1f648dd",
+      "record_ids": [
+        "6ca959c020710064f537b6b0eccd8da306dfc1cb507e8c2dd284f2101f18b766"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por dos números en un rectángulo, cantidad y objeto conservados."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.2.a",
+      "source_hash": "e01898e5383426f968340db8d364c53870aad97a57697af5088675526f0eff7d",
+      "candidate": "legacy",
+      "translation_hash": "eaf50dddee822cf6eba9caeae52fbb683c249d17b325b5c42a91a3fa005d7e90",
+      "record_ids": [
+        "712d602f914b91e4d2f9df4d1fcdbdaa8d598014c7c1ee2abf6403020051367a"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "하나의 검증된 솔루션으로 생성된 expresa creado con una solución, no un tablero comprobado con solución única. Misma ambigüedad de garantía que la ida del modelo; necesita relación de unicidad verificada."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.2.q",
+      "source_hash": "061b9172bbad7c11f22631f93f77ae0a15fd38ba2967a367865dcecef1eecd47",
+      "candidate": "legacy",
+      "translation_hash": "9e43bffa520505bb9d59ec76962c2bc7d47d1d28d487881ad886096bd9ee579b",
+      "record_ids": [
+        "997f4565fff5aca16d720f983bd5c649fdac9ed8a457a11edbdfd781b42049c7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Todos los rompecabezas pueden resolverse, pregunta correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.3.a",
+      "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+      "candidate": "legacy",
+      "translation_hash": "c8ddc4478ad2b2db7dcc07ac0d4b473a236a951fe39f1271459d7c09069dde73",
+      "record_ids": [
+        "bc5d117d4517a67232d9394695d4bdc909e22e466ddd9a9aa984594aba31f160"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No; progreso solo en navegador salvo borrar datos del sitio. Objeto y condición correctos, sin cookie inventada."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.3.q",
+      "source_hash": "b368ec1d3c4b28a8345e45c54c667ae625be3816aa9b4efda42f6b018ca7f5a5",
+      "candidate": "legacy",
+      "translation_hash": "b0c50d8dfc4a908b3b517368b9692bd47ed0f0fd7edc7fed993cd92b8dcec113",
+      "record_ids": [
+        "a2e5cc306b3a1e47c53774160ad516fe22d80a1b5065bb0dd2f3dad61b347ea7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta si el progreso sale del dispositivo, sentido correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.puzzle",
+      "source_hash": "2509a26877403b3ffa4f242a266f7843bc3327829ddf8f325fb6dca399b7c2ac",
+      "candidate": "legacy",
+      "translation_hash": "587c4114b77766f5829f93f595e45bcd717390dcb6db26c8b6498b637fb446e6",
+      "record_ids": [
+        "48fb5a3ab9db600b19428d11016228fa027b60becdc6a2bc42f0504c53914f7d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "퍼즐 nombra rompecabezas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.ready",
+      "source_hash": "df6e45fe2a00defc65aeff5434d873d5f89e77c6f6bf0e58c0d3faff0218d7a8",
+      "candidate": "legacy",
+      "translation_hash": "da056f6fd22e24a30cca1a315b0c13cf38c5cd3a8b5974277766f0e9217fd959",
+      "record_ids": [
+        "54a4186e4c99b1ff3c6bb92b44b7d6ec1be9a2c7274e5e9ac483a7b231ceb030"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tamaño de cuadrícula y empezar, instrucción correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.regions",
+      "source_hash": "183bc1aabbc9b333ab7faeaf5ee9f024cb5ef279777a51c70be866049d87aea5",
+      "candidate": "legacy",
+      "translation_hash": "8970e5b35c80af32ebd40c18cd03f8f105dec77ef7752a1d9692fd4f33f684b2",
+      "record_ids": [
+        "4809dcdb44c892bae0b731fa5906a6f88920e9d83bd2f9c65f15c4e2d928b41d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "직사각형 nombra con precisión los rectángulos del contador."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.ruleReference",
+      "source_hash": "c52a28e3876b46a8bf98b8b60ad089168d859655b5a98b19e25e8cb4462050e0",
+      "candidate": "legacy",
+      "translation_hash": "98aca63f6f024f1612da8298613f258b4279e172e62ed81aef5dca04bb6b1fdb",
+      "record_ids": [
+        "d7b90dcd85a1ef5057da73124370d329258a6ee4fc9303f7b5383ddd7ab1bb90"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Reglas del rompecabezas, término 규칙 correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.seed",
+      "source_hash": "9a37c639fc9f5132c1813e6a00ad8b1e4d3af6669cb55823b6b93a93a4267a6c",
+      "candidate": "legacy",
+      "translation_hash": "f9266f1a4c17ab631ab40908ae043eb2db57923e4c899391f5fdaf22df18244e",
+      "record_ids": [
+        "e2acf46e4c653622bd47c4b1df05de5c2904be9d18dba3b0f0de492746521a37"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Número de rompecabezas, identificador correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.size",
+      "source_hash": "3fd344ffd82464420f12a2ee86afd43dddc79c87e7b556845e4bc7c8cb34ebe8",
+      "candidate": "legacy",
+      "translation_hash": "cb3a1776a86eff73d226067fc219bcad82a69a89bab30adb0c11ef9d825e44a8",
+      "record_ids": [
+        "2f124f7bfc241406a6e340169e2a7cbd1318d91f001ef0466f9a0e8f40427f4f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tamaño de cuadrícula, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.solution",
+      "source_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "candidate": "legacy",
+      "translation_hash": "dcaa5a07dc538383a36cd5b16f63486ea3caffde18d3d10e01e48aa3c25929e9",
+      "record_ids": [
+        "0db455a13735f7ad3e3f227ef96a15b5c4c4dfc0cf8726cb3d94fba9b1adbefa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "솔루션 expresa solución en contexto de juego."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.sourceTitle",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "candidate": "legacy",
+      "translation_hash": "f51a8d3aeb9df01e488e0799a3b4d45f4a8606268be1fa6f3b45f1011c20a01d",
+      "record_ids": [
+        "0e0d1034235a7f2eb5564970e5c632f4866d66f1f03ae9abc830e8da06c7c793"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "ReglasShikaku, nombre y objeto correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusDaily",
+      "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+      "candidate": "legacy",
+      "translation_hash": "969431ddd93074bc0eb58845fa6285cd52fcf14347cc02f6ef862a40268e39b8",
+      "record_ids": [
+        "c1aed4771310e5a7bcd6c2f6252945c5d2759467a75d7fdffcd241ffd2a05d3d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Rompecabezas de hoy listo, estado correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusDeleted",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "candidate": "legacy",
+      "translation_hash": "77329d6b7be0cb70afe7a4de34a4a349bca51a88b95884e0271d6d77491d532e",
+      "record_ids": [
+        "33bb4595719e19f7619a8e79c8e5f01fb5408adf9da386b459b9b9fedfb0a4a7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Progreso guardado borrado, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusGenerated",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "candidate": "legacy",
+      "translation_hash": "8a92d69472d2b08d3b68e5effb0e9e2db5ca890bd20e47935ecdd53bbf4f643c",
+      "record_ids": [
+        "fe31de02f5aee8c2cf327664f492f92a9385d95d8e80cf7c1ef64b01868a28ca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Nuevo rompecabezas listo, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusHint",
+      "source_hash": "faa26edaf882eb0b0ceb814ad1e7350c38083fc6bcc71e358113cc99fe78ce2c",
+      "candidate": "legacy",
+      "translation_hash": "cbebc80ac90f098db380cef29340d081612526a5879cb63705aa99e8b013421b",
+      "record_ids": [
+        "d8458be0e64904806a6921d7567e191ef6545e3b57b78fda568d6c6f4cf684db"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pista: contorno de un rectángulo correcto, objeto y estado correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusIncomplete",
+      "source_hash": "8d10609ff52aae309bf7e11e35149f7740322a671da31f8b3ecbea7f891a8955",
+      "candidate": "legacy",
+      "translation_hash": "ec537869cf44e77eb846515444993603912b42f51ab3c0bf192cf6873f206c28",
+      "record_ids": [
+        "8e478abfe6e0e3b9d43142fbdab8100aaf22311de84bf76ae9b1d3ad4edec7ff"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Algunas casillas siguen vacías, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusInvalid",
+      "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+      "candidate": "legacy",
+      "translation_hash": "677bb609f8bacea622be30514b3ad6d536cbfd0af1be3b121fa8861ca8f8dee2",
+      "record_ids": [
+        "e41b88fb57a173091ff7b22be8ee27e42c78a50dd8bd08137c3b0477e5498578"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Rectángulo no coincide con pista o solapa otro, negación y alternativa correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusNeedStart",
+      "source_hash": "17e2fa514c38464d01ff155a1b975d9036d93571ae07aa2a5d92b1b7377a658f",
+      "candidate": "legacy",
+      "translation_hash": "614e00ccf7209627a0fdce5df55369ddce27020e105d4e889c61f8408132f5a6",
+      "record_ids": [
+        "2b76ab271cab9a7b8a5fe318ea0a376a8e85dfc15f67b0945817aa198b347350"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Elegir casilla inicial antes, secuencia correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusNoHint",
+      "source_hash": "5f73bb19199ff39a117346245696341080defb739fb4aa96d4dc30a22a130302",
+      "candidate": "legacy",
+      "translation_hash": "2b8613fff523df22f23b71236af561efe98662428fe98fdf4d1427cab83ba1d5",
+      "record_ids": [
+        "562f0733bac231d574ce8c8b8b8f161c693498fe8237ec46e0d173313aa457ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No hay pista disponible, negación correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusPlaced",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "candidate": "legacy",
+      "translation_hash": "ec3a30a11b872c297b7b956790ff61e77192dc096e4e4cc1412e768789f41376",
+      "record_ids": [
+        "d633f2c9495a4bf4f7edeafd78d9d410e75c29c939f538311a310815b2cc92b4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Rectángulo añadido, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusRemoved",
+      "source_hash": "df2cea3d3735d58d384b4ec5756e0fd1b0e8a360dbd52da2743c1ea549c55eb5",
+      "candidate": "legacy",
+      "translation_hash": "eb38d0ba3509ad6f05f3812af565b7ae29fc746db6da33895509b6ad6b0a15ee",
+      "record_ids": [
+        "ebfa01ecb9d1442ef55e3e742fb10a4c1874f30d928ecc200eb3c9f1091b9026"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Rectángulo eliminado, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusRevealed",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "candidate": "legacy",
+      "translation_hash": "fe4fe6035b4a6b49332d47677eea5cd9daf39b472287a5482a0db4c1be9f732a",
+      "record_ids": [
+        "5fa042aafac019ab2ae967530801fa7b4fe2246799eb3f68f5319128e09eb02f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Solución mostrada y nuevo rompecabezas para repetir, estado y secuencia correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusSaved",
+      "source_hash": "c834d5befcb40b515a790e5fe0c223a1383438a0302d4952463d635a8543cab9",
+      "candidate": "legacy",
+      "translation_hash": "d540bef957c6aaf96b69fe2c2d9d78e3e614258bfd1a0475ada6bc14b1cdda62",
+      "record_ids": [
+        "2030eceec522d9b95491d33a27615c81f6303cfb59f2cf5d50b9a9bc88f67d29"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Progreso guardado en dispositivo, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusWon",
+      "source_hash": "6be09835314bbdf76630f2754d8607ee2b3cda0836f3ea8a55f4be02f1210744",
+      "candidate": "legacy",
+      "translation_hash": "9b6fc16704f8c55d8a3a007b391d416f29720c07a0c3ff2cb7709bdc87ee669c",
+      "record_ids": [
+        "9379240c02499ca0de358656805d39406aaf118d2483e0185a1b98e8fcde21ed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Resuelto y todas las casillas cubiertas correctamente; exclamación formal coherente."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.statusWrong",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "candidate": "legacy",
+      "translation_hash": "3f07793f8f42bdec6dc8d4c898a94a66813d166af7b26fbd330000cc810761c0",
+      "record_ids": [
+        "03d3359a2251d7e6ccf0eee33eb689d0c7caa6fa50210996df1d87cb577085c0"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "직사각형 영역 indica regiones, no áreas numéricas 면적/넓이 que deben igualar pistas. Mismo error de propiedad que en el modelo, con distinta terminación."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.freeBadge",
+      "source_hash": "c7b94045ee1ad4623931a29aa8c09b5ae4f5f21f4286314ba686cd1fc83096fb",
+      "candidate": "legacy",
+      "translation_hash": "19aa0bf1e3b6d95a300034e99aff279910a91cad0ee33d8b12164352b42ce129",
+      "record_ids": [
+        "f84db9d01e25184966b2abbf33e83b8b6097407944f18937e023766fa4357dd9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Gratis/sin cuenta/en dispositivo, tres afirmaciones correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.home",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "candidate": "legacy",
+      "translation_hash": "034999faab0545b390f07d637f374c256031d13657c3bd951d07f7cfbbd38ec3",
+      "record_ids": [
+        "18bdcff195f17233009b3202fcf69e1a6f49b0d4ee7b1e797fee23e5ab9866ef"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "홈 es inicio en navegación, forma corta válida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.howItWorks",
+      "source_hash": "13a6b22428cd17c402c4a0361b645ee0894bada3ee921a3faa3eb3f2dd110e0c",
+      "candidate": "legacy",
+      "translation_hash": "00e90ebdb6986d76463e6eb16fc33e0e0a6b54b4d9fd36a046d411e6fd193aee",
+      "record_ids": [
+        "0d4795b2748b6b728c816b87f828f30d692102d2c4a5e5b8799804c10fa6391b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Cómo jugar, 플레이 방법 natural."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.intro",
+      "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+      "candidate": "legacy",
+      "translation_hash": "8dd1d6ccdf22b6487b1b4df7f86a44a19fa21663253a1270fc520e8cdd682bc9",
+      "record_ids": [
+        "10192fe687a5d01a43fd7ae0254d99a32ef2862829a4494c7ade1b2e39f59c5a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "지역 sugiere región geográfica y 모든 숫자가 한 지역 es elíptico para cada número en su región; precisar 각 숫자/영역 en regla del tablero. No se inventa cambio de un dígito."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.language",
+      "source_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "candidate": "legacy",
+      "translation_hash": "d870406c5d15f996b16737726445bd00d5a310d3a366264b530672be770513bf",
+      "record_ids": [
+        "75af2c86bb963df160d5a978b8e6d52c739265f14b8e54f85bf67baeeae4644a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Idioma, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.limits",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "candidate": "legacy",
+      "translation_hash": "553d0dbc1928d3360e2c3a443584ca8f3076b28a32c8fe55ae18873d8ba2ac07",
+      "record_ids": [
+        "fa9b36972dfaf4f4fc7fbc2fded1f2d79f78330f4d183acc3f1cf44da37352a4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Generación en navegador, más grande/lento puede tardar ysin cuenta/subida; condiciones conservadas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.limitsHeading",
+      "source_hash": "5bec15dcf9064f77e758fd1db9f37a724d8038dc30b11a8043a44f5079fb6e59",
+      "candidate": "legacy",
+      "translation_hash": "7acbf99de85a56e2a6bf0bccf45cec389f4c12d635836e995c33385caf1f7d28",
+      "record_ids": [
+        "8b4a6b241e3603504b83c08954c21f60a1dc4de71b5d37ed09c93f3bd15d8553"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Acerca del juego, encabezado natural."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.name",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "candidate": "legacy",
+      "translation_hash": "998af21085f3f2499654c29ac4344216532413d5e86cc8c8809696c403316c60",
+      "record_ids": [
+        "8643e09d01c660012ac91bc349624e560a3d408e925f46181d37989605043a0b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "NombreShikaku con rectángulos, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.privacy",
+      "source_hash": "6e1eec3cceb3260523ac5004e36aba6150bb58d19ea82378cc6ac78acce2a0c9",
+      "candidate": "legacy",
+      "translation_hash": "b9ca6ec719d6de288cb066dc66c18b300eaf6c85dfc3d43d63eabf554dc46519",
+      "record_ids": [
+        "5cc2d5897ac97e0a23860538f1e1cacb7088d43110ea5022f3b35c8e6b10fc2b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Gratis, puzle y progreso quedan en navegador; privacidad correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.related",
+      "source_hash": "ac611f323eb0278f314a8d645943ad2b529c24de4b6aca9fcb76fcf52ecb25e2",
+      "candidate": "legacy",
+      "translation_hash": "f0334fd0d9e0a9ed15860dd8cd81a691f551b931c29c97c912371cede6dc944c",
+      "record_ids": [
+        "0d2873533b42ccafe1f8c9aa2339b5ccb9b2d64acdea9a825ecbd5da8e9b1b01"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Más herramientas gratuitas, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.title",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "candidate": "legacy",
+      "translation_hash": "21926e3398a67cc0cbff951f9397a47c96e816b04971460d741bbd9ab1987b0f",
+      "record_ids": [
+        "b8122472ae2ae6c78887e0aae501d5b89eb9156e2d9ea44ce71666a1c067757a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Título online/gratuito/diario/rectángulos, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.useTool",
+      "source_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+      "candidate": "legacy",
+      "translation_hash": "9ea339b8d4f0e4f9a4b09dc398c5ca97201f23e017914bd991ef82279d94d9d6",
+      "record_ids": [
+        "7ad89d7e6ad4d1b460499aaea117afc75a3e06769555a4421dd6eb6d01a4a3d8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "퍼즐 플레이 expresa jugar al puzle, sin reproducir medio."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.description",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "candidate": "legacy",
+      "translation_hash": "a07eacdbf81d691aad490fcd2e916fd59698a8de9371ae60ec461f169b0ee813",
+      "record_ids": [
+        "dc51b93713fb8f4fa47a2f8880b432cdeb087c8d198f89302db476eedecb69d7"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "라디오 형태 interpreta shape radio como forma de radio; shape era verbo para dar efecto de radio, no una forma física. Resto de acciones y privacidad/no subir conservados."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.details",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "candidate": "legacy",
+      "translation_hash": "0780991e6e2c2643d67fbc13eb0716bdfa5d600b941e4921b1b52e7ada3a0a92",
+      "record_ids": [
+        "d8dadc2668542ebb2870a1670c0886a6997fafbe67e05af46b6f8a4d6c5f32ee"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Web Audio pasa a 웹 오디오 y pierde identificador exacto deAPI. Ganancia/tono/eco, WAV y no servidor conservados, pero el contrato de software debe bloquear."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.example",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "candidate": "legacy",
+      "translation_hash": "fd0a8315446d3e9f894b9170a1eec6d00c6808c502adbaff73919e4294ea035a",
+      "record_ids": [
+        "38653d39b0de6c16089f93a75da6e1dc18da1275207d7aeff0b11e023daa7bf8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Grabación, original frente aradio/tono bajo, velocidad cambia y no clonación/corrección estudio; 사전 설정 de preset correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.exampleHeading",
+      "source_hash": "d029f87e3d80f8fd9b1be67c7426b4cc1ff47b4a9d0a8461c826a59d8c5eb6cd",
+      "candidate": "legacy",
+      "translation_hash": "2eb73fba696e2fe4ea0a206ed3d21758e35c7594905d6181d9c34ff19556b17a",
+      "record_ids": [
+        "802c0986208f27db53c537df0c6f534d76b5f1636ee2f37be04c8abf557212be"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "예 como encabezado es ejemplo, correcto por contexto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.0.a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "2a6392621324d1e6d481acea1ee282f98761dc8549eaa0fcd9322cc92b28784a",
+      "record_ids": [
+        "ef1199d31d63b8ef32e0229d941543032031c04c21a228ea3e4d8b30e6970d9f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No; audio procesado localmente y UsefulVerse no recibe grabación, sin vídeo. Texto/hashes iguales aFAQ equivalente y releído aquí."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.0.q",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "ea69cef63f025bebb3d5f1d6d3e983f82464214152913c1ba6ecc8369a4df5cd",
+      "record_ids": [
+        "3512983f9c7d04fc8bc47b0622260cb322db44e99c5657979c082e0272f533fe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta si se ha subido grabación, objeto y privacidad conservados."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.1.a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "811b279e84fb0682f57bc8fc02f7ee4f616728694929634accc197f7bf17b516",
+      "record_ids": [
+        "21c9bb3a81b91ac41d6a43ff00daa96692b63146a0f0bfe04db698629a9009f6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No, tono modifica velocidad, bajo lento/alto rápido, todas las relaciones correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.1.q",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "91fc40f7cec52e863e42d0d923d4f05b6998683743ec7e9852749c1856e60d18",
+      "record_ids": [
+        "3f1f7d0577a0c986bf1b76ab123075c9cba839562cedd4f9b6ba46379403e789"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "피치 이동 y duración original conservados, pregunta correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.2.a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "098d3fc8d5b7b3e41abebe6e347823461ecf6390e55b90e00ccb2a8eed9a99ae",
+      "record_ids": [
+        "f97acbea1675c62419147edf828cb0db5aefa32d5159e54f26555c1430349b15"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No clonación de persona/separación de vocales/identidad real; efectos simples. Negaciones correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.2.q",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "3ea821202e809b2a4e5695378437eace26492bb00fca87d32c5365122c26bfc5",
+      "record_ids": [
+        "0c5e9a4a8f369a029954aa808a8f8542cec603c90ab6354e0ab5992f73232014"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta si puedeclonar voz o separar vocales; dos capacidades correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.3.a",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "b9b8ac154158cff52f4eee362ac6b58cc113a8add04316fc896a6385922ddd7b",
+      "record_ids": [
+        "7f91763ad227ac490dbd298c412692a659af8a40625251586b42ac55f0707047"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "WAV estándar sin compresión en navegador y entrada segúndecodificación del navegador; límites correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.3.q",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "9bf7e4b39477f712b34efe5261b0b0d7b28d475114498bb74a78336cdebd7a08",
+      "record_ids": [
+        "906cd4a045698b76554d02345dea088ac01fb5cecbe9099f815f7ad1f2d752fe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta qué formato se crea, singular contextual correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.4.a",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "1e08aacee9222a583229c55c7c32b9fb7406ab20572dbacffbfc88377fd9af16",
+      "record_ids": [
+        "8dae8ad773cb8701b00c565a9e4731d67bfbb7d24e5f9c55e63ec19aafb61491"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Memoria/procesador, clips cortos ycomputador frente a largos/teléfono; fluidez원활하게 correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faq.4.q",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "afe950b5903dc4189e7dd09bb338915d71d3fe76a2c1336a9116432c7d95e633",
+      "record_ids": [
+        "125b11546be678f633b6d6aba10edddccd712e511c18fda7354fd02e3e629052"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por causa posible de lentitud, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.faqHeading",
+      "source_hash": "e956a9404b467e6b372e082d28cb9d4710af764c2fa5e56a415211e12166be0e",
+      "candidate": "legacy",
+      "translation_hash": "bbba9886c4201ac16fdd7b6bad696f8e182840d3c08414f4c83a38bfd618399d",
+      "record_ids": [
+        "f765f56c5d117c6bc6c8fdcab29e955ea683aab23b6e9eee929908c8350af49e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Preguntas frecuentes, encabezado natural."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.bright",
+      "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+      "candidate": "legacy",
+      "translation_hash": "ce58bde696c3ca3be50e716168f2cb632bec4ade8ecc469ae2ff881383898caf",
+      "record_ids": [
+        "df1a8feaef3f5f8e699dd7a6e18a770aa61bdc938acd87604d41980aadb6535f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Preset de voz brillante, correcto."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.clean",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "candidate": "legacy",
+      "translation_hash": "8049e4b9139d36bf5db4ea2f44066b61bcf21340bc1026b2db32ffaa2cc8f703",
+      "record_ids": [
+        "f8f4f3554bfd163035b7ee3862c3e74739d83b3f5e7402a27770b930d3683431"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "청소 significa limpieza de una cosa/lugar, no preset Clean neutro sin efectos. Cambio de sentido del control; la vuelta Clean es ambigua y oculta el error."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.deep",
+      "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+      "candidate": "legacy",
+      "translation_hash": "581c9f1f6376986944f595cde54077f94b42edbb9e8592b5dc01800dad7d567a",
+      "record_ids": [
+        "e607e554832e7176e5231f7b466d36e243a5dc1f285d9b94d782768024927ae4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Preset de voz grave/profunda, correcto."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.device",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "candidate": "legacy",
+      "translation_hash": "db3525cfdd9c8a356e641bb9775bae5f20a4a7c42e9d11bd12520741815362cd",
+      "record_ids": [
+        "3f10abaf220b1aaa264301524ad22de7c11905b3c789c02e7b5acbb3407f6dba"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "원활한 처리 expresa fluidez informática yrecomienda computador; velocidad/memoria dependen de dispositivo, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.echo",
+      "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+      "candidate": "legacy",
+      "translation_hash": "2da4aed71d00321a2582af283ad2b0b9f92e0db3e7ab50dd4f41d2e2c4ac2023",
+      "record_ids": [
+        "cdb047e0bf2f2281198683c9fa6007e949028bf45c87c8e8d2036cec6fe010be"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "에코 conserva preset eco."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.effect",
+      "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+      "candidate": "legacy",
+      "translation_hash": "f8db7277020a2f37bfb2c1dfe2eeee537191ad3d0b18f845b3e8ab6858632937",
+      "record_ids": [
+        "3b6389ef6bfd0bb79b5ed7e49f47a17b32d42bc1241b0d6108bb63037f638f8a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "효과 사전 설정 es el rótulo correcto del preset, claro."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.exportReady",
+      "source_hash": "12f413a191e8e81f099b9b32f939c9b6685d8b5076075d75ae43195df11b84ed",
+      "candidate": "legacy",
+      "translation_hash": "ebf26b50b2ece6f0941301896bb0fb816a39de34f817fb6bf576f4b8ae1a9f0b",
+      "record_ids": [
+        "52ce41b12c12f7d071cd4f53aa2d96e1df29c6caa22be15108e32df29aa79f82"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "WAV procesado disponible para descarga, estado correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq1q",
+      "source_hash": "49fc0bf3de7feed93b98af50ac2e7143c3c49a41e4c32537fbf6747e9d5a98f0",
+      "candidate": "legacy",
+      "translation_hash": "ea69cef63f025bebb3d5f1d6d3e983f82464214152913c1ba6ecc8369a4df5cd",
+      "record_ids": [
+        "e610ddef98ba163f88e670cbc11105e5763e1029f9b8214cc95ecebeab315003"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por subida de grabación, igual texto fuente/ida deFAQ equivalente y revisado."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq2q",
+      "source_hash": "d298672a2c7915954f8321762b90a14682ad14c6767ae2d5d1c253b8d9f240e1",
+      "candidate": "legacy",
+      "translation_hash": "91fc40f7cec52e863e42d0d923d4f05b6998683743ec7e9852749c1856e60d18",
+      "record_ids": [
+        "16db80743fb390bcf8c4bfc802560ae8900de44826fa5de7573b9fdb157731e4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por duración original tras cambio de tono, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq3a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "candidate": "legacy",
+      "translation_hash": "098d3fc8d5b7b3e41abebe6e347823461ecf6390e55b90e00ccb2a8eed9a99ae",
+      "record_ids": [
+        "b8014474b8570ab9d7b2f351a2a7a2e5caf48524f45795989952b6cc69a48812"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No clona/separa/transforma identidad; solo efectos simples, igual contenido queFAQ equivalente leído."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq3q",
+      "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+      "candidate": "legacy",
+      "translation_hash": "3ea821202e809b2a4e5695378437eace26492bb00fca87d32c5365122c26bfc5",
+      "record_ids": [
+        "22ecd1294d82571becb437671845f1c6bc3a93920996d36b06db41af45418035"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por clonación y separación vocal, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq4a",
+      "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+      "candidate": "legacy",
+      "translation_hash": "b9b8ac154158cff52f4eee362ac6b58cc113a8add04316fc896a6385922ddd7b",
+      "record_ids": [
+        "60db29863c7bf46b5d0c6f6a4f6aae6ef82bc53789a2ca11682218618cc1f0eb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "WAV sin compresión y entrada dependiente de navegador, condiciones y formato correctos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq4q",
+      "source_hash": "69c423e6d531506d21f505df7a2f7bd0f8a61e16e5ca26cbf7e0f46eabc7c74a",
+      "candidate": "legacy",
+      "translation_hash": "9bf7e4b39477f712b34efe5261b0b0d7b28d475114498bb74a78336cdebd7a08",
+      "record_ids": [
+        "382029fdb1014e8ca32b134c8df628eab83926d6aba7e300d752212c5e79f550"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pregunta por formato de exportación, singular contextual válido."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq5a",
+      "source_hash": "8e137b897ab5662ed60a6cd5e3a8197e40040508cf5becbad56f41f71e8f0052",
+      "candidate": "legacy",
+      "translation_hash": "1e08aacee9222a583229c55c7c32b9fb7406ab20572dbacffbfc88377fd9af16",
+      "record_ids": [
+        "b370194695fdd8e20b4a1944f2bbc2b3df8167a90daeb7a94430a927f2cf7f1f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Recursos de dispositivo ycombinación clips cortos/computador versus largos/teléfono, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq5q",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "candidate": "legacy",
+      "translation_hash": "afe950b5903dc4189e7dd09bb338915d71d3fe76a2c1336a9116432c7d95e633",
+      "record_ids": [
+        "9c298619ed896fd269acd4ffa1329f9f540f62c07a1c01155d4c0024dff45d7d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Por qué puede ir lento, pregunta correcta."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.fileHelp",
+      "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+      "candidate": "legacy",
+      "translation_hash": "ebfbd9e866d59f376711484d6ee9f33d4a12a2d45d2610e093b38ff3e3b0551f",
+      "record_ids": [
+        "1ac4c4ed7832ca85d4a23813f99322604a53052ccf565a15cbaa41d4af197449"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.loading",
+      "source_hash": "d20218d43c5baad32d4b8080beec0bea5273de91138f25c3899aa78f69a1ccda",
+      "candidate": "legacy",
+      "translation_hash": "a3395d8e9e87ddbf25a2c255f9942d8bb1c6f3a10cee3b687a513c893bc29085",
+      "record_ids": [
+        "46f3683a7f693d5119341f5c38dd3296351cd921f3af79b42dbf15275e302e9b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "로컬에서 liga local a decodificar audio, alcance correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.noAudio",
+      "source_hash": "d2cf509615d814713ef63edba02120bcbd97b8451fd3fd53c1330d4dadde86bc",
+      "candidate": "legacy",
+      "translation_hash": "d64b5a9fb7168a783c67d603e3376de11f513fe7bdc8c2fb0e882b19e86136ec",
+      "record_ids": [
+        "0b0cde25a994a68055d5328a9c3d7f07d7d16b932e77dea4b34847b442d4473d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Cargar audio antes de previsualizar/exportar, orden y ambas acciones correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.pitch",
+      "source_hash": "7e7c1967b4667825b3b8a4d4893a82f95323783e9b214bfee390fbc61e74be87",
+      "candidate": "legacy",
+      "translation_hash": "064015ee0f7a875c97b364e71b601809d97357f2c7fefb195942afc99c1e986e",
+      "record_ids": [
+        "99793228db9cae33c557be8fe89554d38f7ddafb7bd928aec1598cc02c6e2201"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "피치 이동(반음) indica cambio de tono en semitonos, unidad musical correcta."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.playbackRateNote",
+      "source_hash": "03f4e3f331c890be8134aa6d9b648ca437a864fed42753cb6f253ac072ce00d9",
+      "candidate": "legacy",
+      "translation_hash": "c3145d5f8c8772a0f9ced64f1168411d2180673e43cc2d0487b95cb6f8a88029",
+      "record_ids": [
+        "626b1229742845b93bd6f957dc13ee211a6b128a2821814e879115e48149961e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Controles de tono cambian velocidad y duración del clip, ambas consecuencias conservadas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.processing",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "candidate": "legacy",
+      "translation_hash": "649c47958ea2ccf3d170c743d86a3e3e8e6a0914e181dbd5527bd6ed1629b78d",
+      "record_ids": [
+        "cc3529441887daecab3e4535d0ba96d1402ecc6522aaa9216be915d0feb8a959"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Renderiza audio procesado, estado correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.radio",
+      "source_hash": "2a7dfeb2f2b018e5dae04497c0a281e7b22403057b91679046c9da52433894e1",
+      "candidate": "legacy",
+      "translation_hash": "6314a358f4e72c51b9cc9bef07857ea1bbf0ec6ce94542bda0c9b0fa05d5f0d9",
+      "record_ids": [
+        "70137d4a131855cf4fda51f4b92dd6660c5ec408c795853960951efdded16fa6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "라디오 conserva preset radio."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.status",
+      "source_hash": "a440312eb6fbe9b96663e34b9175649b89bf00ec0ff5952e7d44eeec97db95e8",
+      "candidate": "legacy",
+      "translation_hash": "d8f3ecfe49e998b118859827a2ce0c1f8ddfd615db9f2637c26a97dea74afdb6",
+      "record_ids": [
+        "6988cb6c8a82f0046ca97b51bd01379e8900523a393c3e3c711e97c75be6223b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Estado del cambiador de voz, préstamo habitual 보이스 체인저 correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.volume",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "candidate": "legacy",
+      "translation_hash": "026bce26a162d9552f76015e2ebfc4055ec17e7dd648d5955b297b1d97ab6fc5",
+      "record_ids": [
+        "f2c94e8122a3c0e17e155c11343a322708edbf2545226cfce74a13223fe89a8c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Nivel de salida, control correcto."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.howItWorks",
+      "source_hash": "de3eaa7ed04dee6b7107ac85941500cae480e29ede1e055980f63bfcfb32f70d",
+      "candidate": "legacy",
+      "translation_hash": "3560ab0f8c490be441e2e78cf3d019a3de76bacdbe9de1782d3eda0946a4bbfc",
+      "record_ids": [
+        "82218719418937471246426d0fbcbc20535830b1d61f5a97e08b8b886a114d00"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Cómo funciona el cambiador, encabezado claro."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "candidate": "legacy",
+      "translation_hash": "c2701d99caa411581db8044ed12515c3710f2d35b96c5fb9f183d0415880cef2",
+      "record_ids": [
+        "585f3a45ead9b41399ab950370ef66ee426a67edaaf3ad0901fdcdf2296d0d37"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lista efectos más bajo/alto/radio/brillante/eco, previsualizar/ajustar/exportarWAV local; objeto y pasos conservados."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.limits",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "candidate": "legacy",
+      "translation_hash": "4f37c72e01d59e088e97b01c90e4f9be7b17aa62de2a227afa3b0c593a38427e",
+      "record_ids": [
+        "1503f3d7de753650a4eece830a46cc453f1b64ecccd7c070fda89e334f6a5ac3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Clips cortos, velocidad/longitud/tono juntos y no identidad/separación/garantía entre navegadores; condiciones correctas."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.limitsHeading",
+      "source_hash": "bc61bb1773421fa4169bf316547e75bd986011cc52148df819cb6503694c599a",
+      "candidate": "legacy",
+      "translation_hash": "c46b613c76562f5db80d08e4b233d12c55563106fd1a2ab3a8835bfbbdb72daf",
+      "record_ids": [
+        "c0149e1e9bd8ee7e7f8337af35ce558984c00866343ad884f34003db1ff6fce4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Efectos y limitaciones, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.name",
+      "source_hash": "d1518eabcadd5528e9274833eaad6891cb0eeeb91ff4dfb6d24a4bffe2b1f72c",
+      "candidate": "legacy",
+      "translation_hash": "aa05a2820fee0ceb665677de9e35099afc4218152bd27737bcde53ed194ca440",
+      "record_ids": [
+        "bb7480e1c17b756685db96ab6cf4639ef7f92ee51dbc6a99a4d0358469e3bd42"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Cambiador de voz y efectos de audio, nombre correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.title",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "candidate": "legacy",
+      "translation_hash": "5095645f5c4bac7125adf131f3a81ba8f78cd3bacf3a6409817394e216aa5db3",
+      "record_ids": [
+        "8c8ff27373395cc68eb4d0177f91176ee93ea40b8dad1b7fa1ce4632af2c2ae6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Título online, gratis y en navegador, correcto."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "f9537109994c2dc32aec79a553840a1e41016fcf666b1cae0fdfa2fda791cb95",
+      "back_translation_hash": "48aac6ce0129de76bdc929b33eae6b4477a9f5c9e001c126f02d4a108fd708d7",
+      "notes": [
+        "Starting rectangle y ending rectangle cambian las celdas por regiones ya formadas; ida 사각형 contextual correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "a2e746546eecf68ae329383a36311d3bc3d0d7d333206507fc40941df61df89b",
+      "back_translation_hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+      "notes": [
+        "Yeah, yeah. interpreta 예 como sí y repite, en vez de Example. La ida es correcta por contexto, no se penaliza por esta vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "e33b1114ada3bc9baf1d0494c9e6935f9d2bc325ce49465c52f935a498516ae6",
+      "back_translation_hash": "e92009eef70ec3d98fa39b8f896f30e68b1192c1c83c474d00e0c285697c92a8",
+      "notes": [
+        "Covered Rectangle cambia casillas cubiertas por rectángulo; vuelta con objeto distinto, independiente del error ortográfico de la ida."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "e5bdc62641d78429d3fa66aaa62bd740f4539f5f810bb4249e2d65a6061483e4",
+      "back_translation_hash": "e6bd695c2d87cbe46518c7fe5bb7eb6acd102698960c3b0ce76b154238ffda5f",
+      "notes": [
+        "Tap the square cambia la teclaTab por un toque sobre la casilla; eco del error de método de entrada de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "d8c47a1e597b7552f5e40bdaf00348be6a0021e60b22df5367e74d300ff816e4",
+      "back_translation_hash": "8bc1b76cbf95c172f42cf179091309df5a26c81ae0a7db8bca7bbd71e163ac77",
+      "notes": [
+        "An area marked as a clue convierte el área en algo marcado como pista en vez de área mostrada por el valor de la pista; eco de la relación alterada en ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "712d602f914b91e4d2f9df4d1fcdbdaa8d598014c7c1ee2abf6403020051367a",
+      "back_translation_hash": "6a329108d8f85410243ebe588dc7143451a9554fab4c9f3d8de0709bfccb2790",
+      "notes": [
+        "Boards created with one proven solution conserva la ambigüedad de construcción con una solución, sin garantía de solución única del tablero."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "bc5d117d4517a67232d9394695d4bdc909e22e466ddd9a9aa984594aba31f160",
+      "back_translation_hash": "8bacf82a206a37b4e4d7b357d60428841980fd7233228e95afc0711c538f5ec2",
+      "notes": [
+        "No, no, no. añade repetición enfática a un único 아니요. Condición de borrar datos del sitio y progreso sí se conservan."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "10192fe687a5d01a43fd7ae0254d99a32ef2862829a4494c7ade1b2e39f59c5a",
+      "back_translation_hash": "9c9c90d2d7c65deed6c0dea2da6b39ad0abb099ef9ed3c076a818be270f0a6fc",
+      "notes": [
+        "All the numbers are the exact area of one area permite una sola región común a todos los números, en lugar de cada número con su región. Eco de ambigüedad distributiva de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "dc51b93713fb8f4fa47a2f8880b432cdeb087c8d198f89302db476eedecb69d7",
+      "back_translation_hash": "6f93093cefef779477f2baff63a5833935db439ab6a3167635a87f8366ca315c",
+      "notes": [
+        "Radio shape repite la interpretación nominal de forma de radio, en vez de aplicar/configurar su efecto de sonido."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "802c0986208f27db53c537df0c6f534d76b5f1636ee2f37be04c8abf557212be",
+      "back_translation_hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+      "notes": [
+        "Yeah, yeah. interpreta 예 como afirmación repetida en lugar del ejemplo; ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ef1199d31d63b8ef32e0229d941543032031c04c21a228ea3e4d8b30e6970d9f",
+      "back_translation_hash": "1e84505ace69259d58a89f303bcad448963a5f012444b2a669f7b7389baa4510",
+      "notes": [
+        "No, no, no. repite la negación de un único 아니요. Localidad y no recepción correctas."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "21c9bb3a81b91ac41d6a43ff00daa96692b63146a0f0bfe04db698629a9009f6",
+      "back_translation_hash": "fff46309f287297d6324116019243b4bd3668e9a6438e865d083608da198a0a7",
+      "notes": [
+        "No, no, no. añade repetición enfática a un único 아니요; resto de relación tono/velocidad correcto."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "f97acbea1675c62419147edf828cb0db5aefa32d5159e54f26555c1430349b15",
+      "back_translation_hash": "26bfba52c3f5758200e93a4d77028ce1ef0962691acf6025a1a9502c5b8745b4",
+      "notes": [
+        "No, no, no. repite un único 아니요 y Apply convierte descripción en imperativo; la ida explica capacidades del instrumento."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "906cd4a045698b76554d02345dea088ac01fb5cecbe9099f815f7ad1f2d752fe",
+      "back_translation_hash": "ab868f06d1c11205637329dfe7887a6af0232a49db518595fc78d53aee2747aa",
+      "notes": [
+        "What export formats are created pluraliza el único formato preguntado; ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "b8014474b8570ab9d7b2f351a2a7a2e5caf48524f45795989952b6cc69a48812",
+      "back_translation_hash": "26bfba52c3f5758200e93a4d77028ce1ef0962691acf6025a1a9502c5b8745b4",
+      "notes": [
+        "No, no, no. repite la respuesta negativa y Apply vuelve imperativa la descripción; ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "382029fdb1014e8ca32b134c8df628eab83926d6aba7e300d752212c5e79f550",
+      "back_translation_hash": "ab868f06d1c11205637329dfe7887a6af0232a49db518595fc78d53aee2747aa",
+      "notes": [
+        "What export formats are created pluraliza el formato único de salida preguntado; ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "1ac4c4ed7832ca85d4a23813f99322604a53052ccf565a15cbaa41d4af197449",
+      "back_translation_hash": "399240ddbe368374ae2aa62dcd4ca5ba53306a3612d477b105ffcef0b25afaf1",
+      "notes": [
+        "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "99793228db9cae33c557be8fe89554d38f7ddafb7bd928aec1598cc02c6e2201",
+      "back_translation_hash": "7355e6e034d1600d2fb6b650b64e0750f8b53068af93213099d5c10b576f30d5",
+      "notes": [
+        "Harmonic cambia semitonos/반음 por armónico. Error independiente de vuelta con ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "585f3a45ead9b41399ab950370ef66ee426a67edaaf3ad0901fdcdf2296d0d37",
+      "back_translation_hash": "ecb7c450c761d68bcd276bca3b9641d63ce4f0062abfc7de1dcf3805da968cc1",
+      "notes": [
+        "More bass, treble permite leer ecualización en vez de altura de voz más baja/alta. La ida 낮음/높음 es válida en contexto de cambio de tono; ambigüedad independiente de vuelta."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "f9537109994c2dc32aec79a553840a1e41016fcf666b1cae0fdfa2fda791cb95",
+      "translation_hash": "0c63fcb250e010901086817005d9b0869810f1928f96ff1a2a0530f420ea5945",
+      "back_translation_hash": "48aac6ce0129de76bdc929b33eae6b4477a9f5c9e001c126f02d4a108fd708d7",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Starting rectangle y ending rectangle cambian las celdas por regiones ya formadas; ida 사각형 contextual correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "a2e746546eecf68ae329383a36311d3bc3d0d7d333206507fc40941df61df89b",
+      "translation_hash": "2eb73fba696e2fe4ea0a206ed3d21758e35c7594905d6181d9c34ff19556b17a",
+      "back_translation_hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 예 es un encabezado coreano válido de ejemplo; no es una afirmación en este contexto."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Yeah, yeah. interpreta 예 como sí y repite, en vez de Example. La ida es correcta por contexto, no se penaliza por esta vuelta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "821a238de61a006867b7c5e393a2e313029c6a2bbebef5e97b025581195c9d31",
+      "translation_hash": "32729cc3f7b6d44a6210628f89b099dc4a3be32ebbf0eb55b675a02b9989ebc3",
+      "back_translation_hash": "b6b43dec7dad1408e758144d478f820da08d72d59f19762a81d56302b4cee3ef",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 질문 como encabezado colectivo de preguntas, correcto."
+        }
+      }
+    },
+    {
+      "record_id": "e33b1114ada3bc9baf1d0494c9e6935f9d2bc325ce49465c52f935a498516ae6",
+      "translation_hash": "4c95ac63757921af0815f5c9849f9694e010920f419d546599061338437dbbd6",
+      "back_translation_hash": "e92009eef70ec3d98fa39b8f896f30e68b1192c1c83c474d00e0c285697c92a8",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 덮힌 es falta ortográfica por 덮인, de 덮이다. Las casillas cubiertas se entienden en el contador; corregir grafía."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "덮힌 es falta ortográfica por 덮인, de 덮이다. Las casillas cubiertas se entienden en el contador; corregir grafía. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Covered Rectangle cambia casillas cubiertas por rectángulo; vuelta con objeto distinto, independiente del error ortográfico de la ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "e5bdc62641d78429d3fa66aaa62bd740f4539f5f810bb4249e2d65a6061483e4",
+      "translation_hash": "0c8eb75508a18d7a1c44c8d4a012b3a2921f1b26468456bafa1f608f0e211695",
+      "back_translation_hash": "e6bd695c2d87cbe46518c7fe5bb7eb6acd102698960c3b0ce76b154238ffda5f",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "정사각형을 탭한 cambia navegar con la teclaTab por tocar/tapear la casilla, pese a indicar teclado. Debe preservar Tab como tecla y el paso de enfocar la casilla antes deEnter. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Tap the square cambia la teclaTab por un toque sobre la casilla; eco del error de método de entrada de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "d8c47a1e597b7552f5e40bdaf00348be6a0021e60b22df5367e74d300ff816e4",
+      "translation_hash": "719d69d95328ed7edb910d6209e6b63800cdd986c29e10ee7f491d0b930655ac",
+      "back_translation_hash": "8bc1b76cbf95c172f42cf179091309df5a26c81ae0a7db8bca7bbd71e163ac77",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "영역 nombra región y 단서로 표시되는 영역 no expresa el área numérica 면적 indicada por la pista; se pierde la relación de valor aunque uso único de casillas sí se conserva. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "An area marked as a clue convierte el área en algo marcado como pista en vez de área mostrada por el valor de la pista; eco de la relación alterada en ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "712d602f914b91e4d2f9df4d1fcdbdaa8d598014c7c1ee2abf6403020051367a",
+      "translation_hash": "eaf50dddee822cf6eba9caeae52fbb683c249d17b325b5c42a91a3fa005d7e90",
+      "back_translation_hash": "6a329108d8f85410243ebe588dc7143451a9554fab4c9f3d8de0709bfccb2790",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "하나의 검증된 솔루션으로 생성된 expresa creado con una solución, no un tablero comprobado con solución única. Misma ambigüedad de garantía que la ida del modelo; necesita relación de unicidad verificada. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Boards created with one proven solution conserva la ambigüedad de construcción con una solución, sin garantía de solución única del tablero. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "bc5d117d4517a67232d9394695d4bdc909e22e466ddd9a9aa984594aba31f160",
+      "translation_hash": "c8ddc4478ad2b2db7dcc07ac0d4b473a236a951fe39f1271459d7c09069dde73",
+      "back_translation_hash": "8bacf82a206a37b4e4d7b357d60428841980fd7233228e95afc0711c538f5ec2",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade repetición enfática a un único 아니요. Condición de borrar datos del sitio y progreso sí se conservan. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "48fb5a3ab9db600b19428d11016228fa027b60becdc6a2bc42f0504c53914f7d",
+      "translation_hash": "587c4114b77766f5829f93f595e45bcd717390dcb6db26c8b6498b637fb446e6",
+      "back_translation_hash": "2509a26877403b3ffa4f242a266f7843bc3327829ddf8f325fb6dca399b7c2ac",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 퍼즐 nombra rompecabezas."
+        }
+      }
+    },
+    {
+      "record_id": "4809dcdb44c892bae0b731fa5906a6f88920e9d83bd2f9c65f15c4e2d928b41d",
+      "translation_hash": "8970e5b35c80af32ebd40c18cd03f8f105dec77ef7752a1d9692fd4f33f684b2",
+      "back_translation_hash": "0306996228eb0b748da44b48ce0d392b557fea59fc6eca397caef02aabdbc6ed",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 직사각형 nombra con precisión los rectángulos del contador."
+        }
+      }
+    },
+    {
+      "record_id": "d7b90dcd85a1ef5057da73124370d329258a6ee4fc9303f7b5383ddd7ab1bb90",
+      "translation_hash": "98aca63f6f024f1612da8298613f258b4279e172e62ed81aef5dca04bb6b1fdb",
+      "back_translation_hash": "cd622e4e910c626cd6580535e19d4a73286fb3b2f8e1bf7df0950d16e6dfd77c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Reglas del rompecabezas, término 규칙 correcto."
+        }
+      }
+    },
+    {
+      "record_id": "e2acf46e4c653622bd47c4b1df05de5c2904be9d18dba3b0f0de492746521a37",
+      "translation_hash": "f9266f1a4c17ab631ab40908ae043eb2db57923e4c899391f5fdaf22df18244e",
+      "back_translation_hash": "23d79bad4d2c7b73a58adf293a77a95e7eb33a13064655513c7607b8130a4c30",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Número de rompecabezas, identificador correcto."
+        }
+      }
+    },
+    {
+      "record_id": "0db455a13735f7ad3e3f227ef96a15b5c4c4dfc0cf8726cb3d94fba9b1adbefa",
+      "translation_hash": "dcaa5a07dc538383a36cd5b16f63486ea3caffde18d3d10e01e48aa3c25929e9",
+      "back_translation_hash": "22927695994eab589c7601a6b15df4d9dc67c5aceb9a74cdb965444b9b8362a6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 솔루션 expresa solución en contexto de juego."
+        }
+      }
+    },
+    {
+      "record_id": "0e0d1034235a7f2eb5564970e5c632f4866d66f1f03ae9abc830e8da06c7c793",
+      "translation_hash": "f51a8d3aeb9df01e488e0799a3b4d45f4a8606268be1fa6f3b45f1011c20a01d",
+      "back_translation_hash": "f4fd96e2b336dab1b7c8e6b8772b7e4b5e1076a0b545da1580d96366d0d5d7dd",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. ReglasShikaku, nombre y objeto correctos."
+        }
+      }
+    },
+    {
+      "record_id": "03d3359a2251d7e6ccf0eee33eb689d0c7caa6fa50210996df1d87cb577085c0",
+      "translation_hash": "3f07793f8f42bdec6dc8d4c898a94a66813d166af7b26fbd330000cc810761c0",
+      "back_translation_hash": "a598624fc65b4781b737dc2847e463cb97d4fa77c383615799c815f2488d18a7",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "직사각형 영역 indica regiones, no áreas numéricas 면적/넓이 que deben igualar pistas. Mismo error de propiedad que en el modelo, con distinta terminación. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    },
+    {
+      "record_id": "18bdcff195f17233009b3202fcf69e1a6f49b0d4ee7b1e797fee23e5ab9866ef",
+      "translation_hash": "034999faab0545b390f07d637f374c256031d13657c3bd951d07f7cfbbd38ec3",
+      "back_translation_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 홈 es inicio en navegación, forma corta válida."
+        }
+      }
+    },
+    {
+      "record_id": "10192fe687a5d01a43fd7ae0254d99a32ef2862829a4494c7ade1b2e39f59c5a",
+      "translation_hash": "8dd1d6ccdf22b6487b1b4df7f86a44a19fa21663253a1270fc520e8cdd682bc9",
+      "back_translation_hash": "9c9c90d2d7c65deed6c0dea2da6b39ad0abb099ef9ed3c076a818be270f0a6fc",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "지역 sugiere región geográfica y 모든 숫자가 한 지역 es elíptico para cada número en su región; precisar 각 숫자/영역 en regla del tablero. No se inventa cambio de un dígito. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "All the numbers are the exact area of one area permite una sola región común a todos los números, en lugar de cada número con su región. Eco de ambigüedad distributiva de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "75af2c86bb963df160d5a978b8e6d52c739265f14b8e54f85bf67baeeae4644a",
+      "translation_hash": "d870406c5d15f996b16737726445bd00d5a310d3a366264b530672be770513bf",
+      "back_translation_hash": "a4fe65264ef7dbb38d104b1e81eb3350f3142f3d16f32bdec39b1d9b42c1b8d1",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Idioma, correcto."
+        }
+      }
+    },
+    {
+      "record_id": "8643e09d01c660012ac91bc349624e560a3d408e925f46181d37989605043a0b",
+      "translation_hash": "998af21085f3f2499654c29ac4344216532413d5e86cc8c8809696c403316c60",
+      "back_translation_hash": "9d826369eb53054b66d027167729cfcc81c84cb312ce0bf1518e24d9f12f2f21",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. NombreShikaku con rectángulos, correcto."
+        }
+      }
+    },
+    {
+      "record_id": "7ad89d7e6ad4d1b460499aaea117afc75a3e06769555a4421dd6eb6d01a4a3d8",
+      "translation_hash": "9ea339b8d4f0e4f9a4b09dc398c5ca97201f23e017914bd991ef82279d94d9d6",
+      "back_translation_hash": "4486373da7ea65a6cde3a4da1bfbbccd23ac7cbcac0703295907d7d9362881f4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 퍼즐 플레이 expresa jugar al puzle, sin reproducir medio."
+        }
+      }
+    },
+    {
+      "record_id": "dc51b93713fb8f4fa47a2f8880b432cdeb087c8d198f89302db476eedecb69d7",
+      "translation_hash": "a07eacdbf81d691aad490fcd2e916fd59698a8de9371ae60ec461f169b0ee813",
+      "back_translation_hash": "6f93093cefef779477f2baff63a5833935db439ab6a3167635a87f8366ca315c",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "라디오 형태 interpreta shape radio como forma de radio; shape era verbo para dar efecto de radio, no una forma física. Resto de acciones y privacidad/no subir conservados. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Radio shape repite la interpretación nominal de forma de radio, en vez de aplicar/configurar su efecto de sonido. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "d8dadc2668542ebb2870a1670c0886a6997fafbe67e05af46b6f8a4d6c5f32ee",
+      "translation_hash": "0780991e6e2c2643d67fbc13eb0716bdfa5d600b941e4921b1b52e7ada3a0a92",
+      "back_translation_hash": "91090631080a728259d9ea25724ecf5bbfd1238df20afb207885455d5ec7240f",
+      "warnings": {
+        "software_identifiers": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Web Audio pasa a 웹 오디오 y pierde identificador exacto deAPI. Ganancia/tono/eco, WAV y no servidor conservados, pero el contrato de software debe bloquear. Contrato/señal de ida software_identifiers; salida cruda intacta."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Web Audio pasa a 웹 오디오 y pierde identificador exacto deAPI. Ganancia/tono/eco, WAV y no servidor conservados, pero el contrato de software debe bloquear. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta vuelve a escribir web audio, equivalente a Web Audio por el contrato insensible a mayúsculas; conserva el significado tecnológico. El contrato de vuelta compara con la ida que perdió el identificador al transliterarlo como 웹 오디오 y la rechaza por añadir de nuevo el nombre. No es un defecto semántico nuevo de vuelta; la ida ya bloquea por identificador perdido."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Web Audio pasa a 웹 오디오 y pierde identificador exacto deAPI. Ganancia/tono/eco, WAV y no servidor conservados, pero el contrato de software debe bloquear. Contrato/señal de ida forward_typed_data; salida cruda intacta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta vuelve a escribir web audio, equivalente a Web Audio por el contrato insensible a mayúsculas; conserva el significado tecnológico. El contrato de vuelta compara con la ida que perdió el identificador al transliterarlo como 웹 오디오 y la rechaza por añadir de nuevo el nombre. No es un defecto semántico nuevo de vuelta; la ida ya bloquea por identificador perdido."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta vuelve a escribir web audio, equivalente a Web Audio por el contrato insensible a mayúsculas; conserva el significado tecnológico. El contrato de vuelta compara con la ida que perdió el identificador al transliterarlo como 웹 오디오 y la rechaza por añadir de nuevo el nombre. No es un defecto semántico nuevo de vuelta; la ida ya bloquea por identificador perdido."
+        }
+      }
+    },
+    {
+      "record_id": "802c0986208f27db53c537df0c6f534d76b5f1636ee2f37be04c8abf557212be",
+      "translation_hash": "2eb73fba696e2fe4ea0a206ed3d21758e35c7594905d6181d9c34ff19556b17a",
+      "back_translation_hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 예 como encabezado es ejemplo, correcto por contexto."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Yeah, yeah. interpreta 예 como afirmación repetida en lugar del ejemplo; ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "ef1199d31d63b8ef32e0229d941543032031c04c21a228ea3e4d8b30e6970d9f",
+      "translation_hash": "2a6392621324d1e6d481acea1ee282f98761dc8549eaa0fcd9322cc92b28784a",
+      "back_translation_hash": "1e84505ace69259d58a89f303bcad448963a5f012444b2a669f7b7389baa4510",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. repite la negación de un único 아니요. Localidad y no recepción correctas. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "21c9bb3a81b91ac41d6a43ff00daa96692b63146a0f0bfe04db698629a9009f6",
+      "translation_hash": "811b279e84fb0682f57bc8fc02f7ee4f616728694929634accc197f7bf17b516",
+      "back_translation_hash": "fff46309f287297d6324116019243b4bd3668e9a6438e865d083608da198a0a7",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade repetición enfática a un único 아니요; resto de relación tono/velocidad correcto. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "f97acbea1675c62419147edf828cb0db5aefa32d5159e54f26555c1430349b15",
+      "translation_hash": "098d3fc8d5b7b3e41abebe6e347823461ecf6390e55b90e00ccb2a8eed9a99ae",
+      "back_translation_hash": "26bfba52c3f5758200e93a4d77028ce1ef0962691acf6025a1a9502c5b8745b4",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. repite un único 아니요 y Apply convierte descripción en imperativo; la ida explica capacidades del instrumento. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "906cd4a045698b76554d02345dea088ac01fb5cecbe9099f815f7ad1f2d752fe",
+      "translation_hash": "9bf7e4b39477f712b34efe5261b0b0d7b28d475114498bb74a78336cdebd7a08",
+      "back_translation_hash": "ab868f06d1c11205637329dfe7887a6af0232a49db518595fc78d53aee2747aa",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "What export formats are created pluraliza el único formato preguntado; ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "f765f56c5d117c6bc6c8fdcab29e955ea683aab23b6e9eee929908c8350af49e",
+      "translation_hash": "bbba9886c4201ac16fdd7b6bad696f8e182840d3c08414f4c83a38bfd618399d",
+      "back_translation_hash": "a3d458e1bd1eda066018d8db2dd5537c9e742f02f68401457c01553e77f57403",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Preguntas frecuentes, encabezado natural."
+        }
+      }
+    },
+    {
+      "record_id": "f8f4f3554bfd163035b7ee3862c3e74739d83b3f5e7402a27770b930d3683431",
+      "translation_hash": "8049e4b9139d36bf5db4ea2f44066b61bcf21340bc1026b2db32ffaa2cc8f703",
+      "back_translation_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 청소 significa limpieza de una cosa/lugar, no preset Clean neutro sin efectos. Cambio de sentido del control; la vuelta Clean es ambigua y oculta el error."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "청소 significa limpieza de una cosa/lugar, no preset Clean neutro sin efectos. Cambio de sentido del control; la vuelta Clean es ambigua y oculta el error. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    },
+    {
+      "record_id": "b8014474b8570ab9d7b2f351a2a7a2e5caf48524f45795989952b6cc69a48812",
+      "translation_hash": "098d3fc8d5b7b3e41abebe6e347823461ecf6390e55b90e00ccb2a8eed9a99ae",
+      "back_translation_hash": "26bfba52c3f5758200e93a4d77028ce1ef0962691acf6025a1a9502c5b8745b4",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. repite la respuesta negativa y Apply vuelve imperativa la descripción; ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "382029fdb1014e8ca32b134c8df628eab83926d6aba7e300d752212c5e79f550",
+      "translation_hash": "9bf7e4b39477f712b34efe5261b0b0d7b28d475114498bb74a78336cdebd7a08",
+      "back_translation_hash": "ab868f06d1c11205637329dfe7887a6af0232a49db518595fc78d53aee2747aa",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "What export formats are created pluraliza el formato único de salida preguntado; ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "1ac4c4ed7832ca85d4a23813f99322604a53052ccf565a15cbaa41d4af197449",
+      "translation_hash": "ebfbd9e866d59f376711484d6ee9f33d4a12a2d45d2610e093b38ff3e3b0551f",
+      "back_translation_hash": "399240ddbe368374ae2aa62dcd4ca5ba53306a3612d477b105ffcef0b25afaf1",
+      "warnings": {
+        "numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo. Contrato/señal de ida numeric_values; salida cruda intacta."
+        },
+        "localized_numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo. Contrato/señal de ida localized_numeric_values; salida cruda intacta."
+        },
+        "back_numeric_values": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "technical_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo. Contrato/señal de ida technical_tokens; salida cruda intacta."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_technical_tokens": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Valores25 y30 y máximos semánticamente correctos, pero25MB pegado rompe el contrato conservador de números/tokens de unidad. Separar25 MB; limitación de notación, no corrupción de valor ni inversión de máximo. Contrato/señal de ida forward_typed_data; salida cruda intacta."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Up to25MB conserva valor y máximo, pero25MB pegado rompe el contrato de token/unidad en inglés. Es formato no soportado de vuelta, no un valor cambiado; eco del formato de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "99793228db9cae33c557be8fe89554d38f7ddafb7bd928aec1598cc02c6e2201",
+      "translation_hash": "064015ee0f7a875c97b364e71b601809d97357f2c7fefb195942afc99c1e986e",
+      "back_translation_hash": "7355e6e034d1600d2fb6b650b64e0750f8b53068af93213099d5c10b576f30d5",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 피치 이동(반음) indica cambio de tono en semitonos, unidad musical correcta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Harmonic cambia semitonos/반음 por armónico. Error independiente de vuelta con ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "626b1229742845b93bd6f957dc13ee211a6b128a2821814e879115e48149961e",
+      "translation_hash": "c3145d5f8c8772a0f9ced64f1168411d2180673e43cc2d0487b95cb6f8a88029",
+      "back_translation_hash": "a94e2d635093493511143082617cd1965e9635d378a4d0b2c77211771e68258b",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Controles de tono cambian velocidad y duración del clip, ambas consecuencias conservadas."
+        }
+      }
+    },
+    {
+      "record_id": "f2c94e8122a3c0e17e155c11343a322708edbf2545226cfce74a13223fe89a8c",
+      "translation_hash": "026bce26a162d9552f76015e2ebfc4055ec17e7dd648d5955b297b1d97ab6fc5",
+      "back_translation_hash": "f89ba505fdffe19eaf297dc9621bab5f3a40d1f622fa0a0ffc1aff602e72e136",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Nivel de salida, control correcto."
+        }
+      }
+    },
+    {
+      "record_id": "82218719418937471246426d0fbcbc20535830b1d61f5a97e08b8b886a114d00",
+      "translation_hash": "3560ab0f8c490be441e2e78cf3d019a3de76bacdbe9de1782d3eda0946a4bbfc",
+      "back_translation_hash": "1ea2d505bb6919efcaed4f32f2517c2d56ec9311a253e72a1a0d28f369c61a9c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Cómo funciona el cambiador, encabezado claro."
+        }
+      }
+    },
+    {
+      "record_id": "585f3a45ead9b41399ab950370ef66ee426a67edaaf3ad0901fdcdf2296d0d37",
+      "translation_hash": "c2701d99caa411581db8044ed12515c3710f2d35b96c5fb9f183d0415880cef2",
+      "back_translation_hash": "ecb7c450c761d68bcd276bca3b9641d63ce4f0062abfc7de1dcf3805da968cc1",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "More bass, treble permite leer ecualización en vez de altura de voz más baja/alta. La ida 낮음/높음 es válida en contexto de cambio de tono; ambigüedad independiente de vuelta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "c0149e1e9bd8ee7e7f8337af35ce558984c00866343ad884f34003db1ff6fce4",
+      "translation_hash": "c46b613c76562f5db80d08e4b233d12c55563106fd1a2ab3a8835bfbbdb72daf",
+      "back_translation_hash": "d4c6786c02d916b9601a615b15f7e1bb011978a12d6bdb0db9eed54ffbafa40c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Efectos y limitaciones, correcto."
+        }
+      }
+    }
+  ],
+  "full_gate": {
+    "ko": {
+      "rows": 92,
+      "sample": 92,
+      "points": 812,
+      "maximum": 828,
+      "button_errors": 1,
+      "number_negation_errors": 1,
+      "major_rows": 2,
+      "minor_rows": 8,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current source/forward/back reading by agent; known exact memory declared, not a blind/native/generalization or locale approval."
+    }
+  },
+  "decision": "sample-rejected",
+  "evidence_sources": [
+    {
+      "url": "https://help.autodesk.com/cloudhelp/2026/KOR/AutoCAD-LT/files/GUID-A58A87BB-482B-4042-A00A-EEF55A2B4FD8.htm",
+      "use": "Official CAD 도면 and unit labels; terminology preferences distinguished from actual different-unit errors."
+    },
+    {
+      "url": "https://www.bipm.org/en/measurement-units/si-prefixes",
+      "use": "deca=10, deci=0.1, distinct units; factor100 difference, not a literal digit corruption."
+    },
+    {
+      "path": "src/markets-no-ch/shikaku.mjs:134",
+      "use": "Generator requires solved.count===1 and validation; confirms intended unique-solution guarantee. Read only; no source change."
+    }
+  ],
+  "notes": [
+    "Every current source/forward/back in declared scope read directly, including no-warning records. Only one full model row is known exact memory; no native/blind/generalization claim.",
+    "A fluent English back can hide a poor Korean forward. Correct Korean 반음 returns Harmonic and a CAD preview returns an audio-element error; judge directions separately.",
+    "Source unchanged. Current policy/grammar/raw outputs remain immutable after inference; corrections belong to an independent later policy."
+  ]
+}

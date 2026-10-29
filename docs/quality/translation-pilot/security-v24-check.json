@@ -1,0 +1,28 @@
+{
+  "checked_at_utc": "2026-10-24T16:55:22.600578+00:00",
+  "actionlint_version": "1.7.12",
+  "gitleaks_version": "8.30.1",
+  "official_release_archive_checksums_verified": true,
+  "actionlint_passed": true,
+  "secret_findings": 0,
+  "exact_external_ignore": "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+  "excluded_object_verified": "Historical workflow Git blob; original bytes verified online and fingerprint exact. No repository ignore change.",
+  "source_scan_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "billing_global_audit": false,
+  "bounded_cost_scope": "Public repository, standard ubuntu-latest only. No paid APIs, Cloudflare mutation, artifacts, persistent model/cache storage, Packages, LFS or Codespaces. Public workflow triggers/publish skips inspected; no deployment.",
+  "primary_cost_source": "https://docs.github.com/en/billing/concepts/product-billing/github-actions",
+  "recovery_scan_at_utc": "2026-10-25T00:52:00.429061+00:00",
+  "recovery_actionlint_passed": true,
+  "recovery_secret_findings": 0,
+  "recovery_scan_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+  "recovery_external_exact_ignores": [
+    {
+      "fingerprint": "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+      "proof": "Exact Git workflow blob bytes and SHA verified online; not a credential."
+    },
+    {
+      "fingerprint": "docs/quality/translation-pilot/full-sample-v24-plan.json:generic-api-key:511",
+      "proof": "SHA256 of the public fixed88 sorted key list recomputed and equal; not a credential."
+    }
+  ]
+}

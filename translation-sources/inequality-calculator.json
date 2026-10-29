@@ -1,0 +1,81 @@
+{
+  "toolId": "inequality-calculator",
+  "sourceCopy": {
+    "name": "Inequality Calculator",
+    "title": "Inequality Calculator Free | UsefulVerse",
+    "description": "Solve linear and quadratic inequalities. Get interval notation, critical points and a number-line view with this free inequality calculator.",
+    "intro": "Solve real linear or quadratic inequalities in the form ax² + bx + c compared with zero. See critical points, interval notation and a number-line summary.",
+    "howQuestion": "How do you solve a quadratic inequality?",
+    "howAnswer": "Find the real zeros of the polynomial, then determine its sign between and outside those zeros. This tool returns the real solution intervals and whether each finite endpoint is included.",
+    "privacyQuestion": "Are my coefficients uploaded?",
+    "privacyAnswer": "No. The inequality is calculated in this browser and is not uploaded or saved by this tool.",
+    "fields": {
+      "coefficientA": "Coefficient a",
+      "coefficientB": "Coefficient b",
+      "coefficientC": "Coefficient c",
+      "relation": "Inequality sign",
+      "lessThan": "Less than (<)",
+      "lessOrEqual": "Less than or equal (≤)",
+      "greaterThan": "Greater than (>)",
+      "greaterOrEqual": "Greater than or equal (≥)",
+      "accuracyNote": "Supports only constant, linear and quadratic real inequalities ax² + bx + c <, ≤, > or ≥ 0. Coefficients must be finite, with absolute values at most 10⁹. Roots are approximate because calculations use floating-point numbers. A scale-based tolerance is used near repeated roots.",
+      "resultSummary": "Solution",
+      "resultSolution": "Solution set",
+      "resultDegree": "Polynomial degree",
+      "resultCriticalPoints": "Real critical points",
+      "resultInterval": "Solution in interval notation",
+      "resultNumberLine": "Number-line summary",
+      "allRealNumbers": "All real numbers",
+      "noRealSolution": "No real solution",
+      "none": "None",
+      "negativeInfinity": "−∞",
+      "positiveInfinity": "+∞",
+      "leftArrow": "←",
+      "rightArrow": "→",
+      "pointIncluded": "included",
+      "pointExcluded": "excluded"
+    },
+    "actions": {
+      "calculate": "Solve inequality",
+      "reset": "Reset",
+      "example": "Load an example",
+      "result": "Results",
+      "copy": "Copy results"
+    },
+    "messages": {
+      "calculated": "Inequality solved.",
+      "checkInputs": "Check the coefficients and choose a supported inequality sign.",
+      "copied": "Results copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded."
+    },
+    "additionalFaqs": [
+      {
+        "question": "What does interval notation show?",
+        "answer": "Parentheses mean an endpoint is excluded, while square brackets mean it is included. Infinity always uses parentheses because infinity is not a real endpoint."
+      },
+      {
+        "question": "Can I solve cubic or rational inequalities?",
+        "answer": "No. This calculator is limited to real polynomials of degree zero, one or two. It does not solve cubic, rational, absolute-value or compound inequalities."
+      },
+      {
+        "question": "Are the roots exact?",
+        "answer": "No. Coefficients and roots use floating-point arithmetic. Results near repeated roots or with very different coefficient sizes can be sensitive to rounding."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/inequality-calculator/index.html",
+    "htmlSha256": "fe6037249c70b9bc966a94b40d3999f1d7a16058ee4a656c4106e9a49e3a8efc",
+    "payloadSha256": "8610caccd92aa515ae0981f2b341f95a936007a811a9012571931ee60e3e7be9",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/inequality-calculator.js",
+    "controllerSha256": "95b454c81d1159a4ef1f800d60394089ea38e05af1d215f238f0d66f579cf64f",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

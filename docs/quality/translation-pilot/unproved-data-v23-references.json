@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "gate_blocked": true,
+  "approved_locales": [],
+  "rows": [
+    {
+      "record_id": "44232533fd023e05d28567421c34a7ff007a94db45e8f257e2db0cc29548c3bd",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "model_input_hash": "802680d71e74378707834c4aec9a30d691c9ee8029a08ad4d617a5ec04c11c29",
+      "translation_hash": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "marker_restore_ok": false,
+      "reason": "Canonical source and each sentence have bound proofs; the complete controlled inference input does not. Actual acceptance remains false. Correct linguistic scores cannot waive this contract gap."
+    }
+  ],
+  "test_red_sha256": "b2e09a61c444e0a81743ab49a816afdc24b11ddfc60bfcc6c255e4714c62805b",
+  "test_green_sha256": "7d5c9ab002d7c614c71e0655c1f64ea23d420dec69d8e37bf300ce249ba786bc"
+}

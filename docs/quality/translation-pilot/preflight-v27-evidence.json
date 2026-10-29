@@ -1,0 +1,81 @@
+{
+  "at_utc": "2026-10-25T13:05:23.347393+00:00",
+  "actual_model_records": 254,
+  "source_input_fragment_checks": 1190,
+  "memory_targets": 477,
+  "zh_memory_targets": 214,
+  "preserved_targets": 334,
+  "new_imports": 143,
+  "legacy_tie_choices": 13,
+  "finite_new_texts": 3,
+  "initial_red_tests": 4,
+  "full_suite_complete": true,
+  "expected_tests_before_model": 273,
+  "model_inference_local": false,
+  "approved_locales": [],
+  "python_tests": 273,
+  "python_skipped": 2,
+  "python_seconds": 337.419,
+  "python_log_sha256": "b0609a1d04a740d9bae5df9cdef6bc8f3f1488bee5b5addb215f13c0625df8f8",
+  "node_tests": 2,
+  "node_log_sha256": "ffea92e57ffc8c859649be9a9d9f0fa8441be286db93d2bfbc1dc25300c8256e",
+  "strengthened_memory_semantic_assertion": {
+    "tests": 1,
+    "seconds": 18.494,
+    "log_sha256": "f09443f7c64f920832ded94d108e87e6ef14e28e5cffe0d0acf8f4aa5fc68877"
+  },
+  "focused_logs": [
+    {
+      "name": "test_translation_shikaku_v27",
+      "sha256": "812cf05fd99e7ed93f5f71a0d8e1965427b8f8ee943c05182366df1eb13aa008"
+    },
+    {
+      "name": "test_translation_preflight_v27",
+      "sha256": "13a5c034062e0a412b13b383d617c00f614e6aa51ec6c9f1307c5a79cc92bc70"
+    },
+    {
+      "name": "test_translation_finite_v27",
+      "sha256": "9cb065f8f94ed85fafc978beb327eb1a9646ca1a52d74577f4f3ef623e0eb055"
+    },
+    {
+      "name": "test_translation_runtime_cache_v27",
+      "sha256": "1c310ace959da2c0e5adf9de93a5a9ecc4ce3d9b0201b43244cf0f032673a27b"
+    },
+    {
+      "name": "test_translation_v26_history",
+      "sha256": "e83121eecff872645e823a593724d040a780ea69f3802633e96b18b1b23151a9"
+    },
+    {
+      "name": "test_translation_v25_history",
+      "sha256": "948e56eb5739db96dcff971dcf551f21d65928665b3ff3146a1c091fd2c8b1f2"
+    }
+  ],
+  "post_reference_checks": {
+    "tests": 35,
+    "reviewed_source_forward_back_records": 67,
+    "model_warning_records": 31,
+    "legacy_warning_records": 26,
+    "new_semantic_fixtures": 0,
+    "reference_gate_passed": true,
+    "logs": [
+      {
+        "name": "test_translation_current_review_v27",
+        "sha256": "aec84f02d46d42bc791abca52ec86114f365e331c6fea62dfea9dc68eb14092a"
+      },
+      {
+        "name": "test_translation_pilot",
+        "sha256": "9f55ca9a05cfe98a5a08f12a555843093444754042c80d6ee5444ded9ab723c7"
+      }
+    ]
+  },
+  "final_expected_python_tests": 276,
+  "new_back_variants": 5,
+  "new_back_fixture_records": 7,
+  "historical_non_gating_back_addenda": 2,
+  "post_full_audit": {
+    "tests": 1,
+    "seconds": 282.684,
+    "all_current_and_historical_reviews_passed": true,
+    "log_sha256": "d8967d0e5b2d4f22226e2ef7e07141d0751d4a7782270d66b62634a61a1cc894"
+  }
+}

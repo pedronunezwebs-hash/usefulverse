@@ -1,0 +1,83 @@
+{
+  "toolId": "push-up-test",
+  "sourceCopy": {
+    "name": "Push-Up Test & Set Tracker",
+    "title": "Push-Up Test & Set Tracker Free | UsefulVerse",
+    "description": "Log manually counted push-up sets, rest and progress. Free, private and optional local history; no camera needed.",
+    "intro": "Record a single set as a simple test or log several sets with the rest between them. You count and enter repetitions; this tool does not use your camera or rank your strength.",
+    "howQuestion": "How does the push-up test tracker total repetitions?",
+    "howAnswer": "It adds the whole-number repetitions entered for each non-empty set. Blank lines are ignored, a set of zero remains zero, and the rest estimate is rest per break multiplied by the number of breaks.",
+    "privacyQuestion": "Are my push-up sets uploaded?",
+    "privacyAnswer": "No. The calculation runs in this browser. Session history is written to this device only after you opt in; you can delete it here.",
+    "fields": {
+      "repsInput": "Repetitions for each set, one number per line",
+      "repsHint": "Enter up to 20 whole-number counts from 0 to 500. Blank lines are ignored and do not count as sets. Count only repetitions you completed with your chosen form.",
+      "restSeconds": "Rest between sets (seconds)",
+      "date": "Test date",
+      "notes": "Optional notes",
+      "notesHint": "Keep notes general; this is not a medical record.",
+      "safetyNote": "Choose a comfortable range of motion and stop if you feel pain, dizziness or unusual shortness of breath. Rep counts depend on form, pace and test conditions; this tool does not provide a fitness rating, diagnosis or exercise prescription.",
+      "saveConsent": "Save this session and recent history on this device",
+      "privacyNote": "Saving is optional and uses this browser only. Uncheck to calculate without saving, or clear the saved history below.",
+      "totalReps": "Total repetitions",
+      "setCount": "Sets entered",
+      "bestSet": "Most repetitions in one set",
+      "average": "Average per set",
+      "totalRest": "Estimated rest between sets",
+      "set": "Set",
+      "reps": "Repetitions",
+      "rest": "Rest before next set",
+      "history": "Recent saved sessions",
+      "historyDate": "Date",
+      "historyTotal": "Total repetitions",
+      "historyEmpty": "No saved sessions yet.",
+      "chartDescription": "Total manually counted push-ups in recent saved sessions"
+    },
+    "actions": {
+      "calculate": "Calculate test",
+      "reset": "Clear form",
+      "example": "Load example",
+      "result": "Your session",
+      "copy": "Copy summary",
+      "clearSaved": "Delete saved history"
+    },
+    "messages": {
+      "calculated": "Push-up session calculated.",
+      "checkInputs": "Check the set counts, date and rest value.",
+      "copied": "Summary copied.",
+      "copyUnavailable": "Copy is not available in this browser.",
+      "exampleLoaded": "Example loaded.",
+      "saved": "Session saved on this device.",
+      "saveUnavailable": "This browser could not access local storage.",
+      "deleted": "Saved session history deleted from this device."
+    },
+    "additionalFaqs": [
+      {
+        "question": "Do blank lines count as a set or repetition?",
+        "answer": "No. Empty lines are ignored. A line with 0 records a zero-repetition set and adds no repetitions to the total."
+      },
+      {
+        "question": "Can I use this for one maximum set or for several sets?",
+        "answer": "Yes. Enter one line for a single manually counted set, or multiple lines to summarize sets and the rest between them. Test conditions are up to you; results are not compared with population norms."
+      },
+      {
+        "question": "Is my training history uploaded?",
+        "answer": "No. History is optional and stays in this browser on this device. Clear it with the delete button whenever you want."
+      }
+    ]
+  },
+  "nonTranslatableCopy": {},
+  "provenance": {
+    "status": "recovered-ui-not-quality-approved",
+    "sourceLocale": "en",
+    "htmlPath": "src/growth600/live-only-106-source/pages/tools/push-up-test/index.html",
+    "htmlSha256": "93c8a938c260ddeed943067c70cb2ca2b50bad5b6759c72451e5b39cba7b5fbf",
+    "payloadSha256": "41cff6a271a9f562285bbc4e99312e8b7c271aeca94d3d88a7216ad5c8485bf1",
+    "controllerPath": "src/growth600/live-only-106-source/assets/recovered-live-only-106/controllers/push-up-test.controller.js",
+    "controllerSha256": "099f0e82122f7e235bb6f328998751794e7626f5de79c4dfc596528ba17443eb",
+    "discardedMetadata": [
+      "copyLanguage",
+      "localizationStatus"
+    ]
+  }
+}

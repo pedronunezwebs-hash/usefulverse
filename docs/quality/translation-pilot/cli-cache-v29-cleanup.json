@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-26T08:25:00.945469+00:00",
+  "root": "/Users/pedronunez/Desktop/agencia de desarrollo web/.usefulverse-v29-bn-20261026",
+  "root_removed_and_absent": true,
+  "removed_before_lock_free": true,
+  "versioned_files_matched_to_remote_tree": 7864,
+  "backed_up_feature_source": "3c4a327e18182a7d785f7f832e8b15d4d031464c",
+  "backed_up_main_source": "9ffec6e469c6c5fa5f899e36da150dd79aa9cd05",
+  "ci_source": "66fc8069997e97d6c385ef690d501d7523d93597",
+  "ci_run": 40289374472,
+  "internal_run_log_zips_removed": 3,
+  "external_own_run_cache_files_removed": 0,
+  "external_own_run_cache_files_remaining": 0,
+  "local_models_or_dependencies_installed": false,
+  "bytes_removed": 185007272,
+  "bytes_free_before": 44437741568,
+  "bytes_free_after": 44627566592,
+  "git_histories_deleted_to_solve_codespaces": false
+}
