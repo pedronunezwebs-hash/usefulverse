@@ -1,0 +1,48 @@
+{
+  "fullNode": {
+    "passed": 3382,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 49784.160375
+  },
+  "focused": {
+    "passed": 23,
+    "failed": 0
+  },
+  "references": {
+    "GS1AlgorithmIndependentPythonCases": 12,
+    "printedGS1Example": 1
+  },
+  "properties": {
+    "retailBodies": 5000,
+    "distinctBarcodes": 1000,
+    "longCode128Characters": 1000
+  },
+  "browser": {
+    "engines": [
+      "Chrome installed",
+      "Firefox",
+      "WebKit"
+    ],
+    "functionalChecks": 48,
+    "axeGeometries": 54,
+    "landscapeGeometries": 12,
+    "independentDownloadedImageDecodes": 30,
+    "archiveImagesPerEngine": 1000,
+    "cancelFixtureLines": 10000,
+    "fixtures": [
+      "RTL synthetic",
+      "doubled text",
+      "text200"
+    ],
+    "clipboard": "mocked success/denied fallback; OS clipboard unchanged"
+  },
+  "independentDecoder": {
+    "name": "@zxing/library",
+    "version": "0.21.3",
+    "nodeRows": 1016,
+    "scope": "QA-only dependency, never shipped to visitors"
+  },
+  "nativeBuild": "Not repeated; builders/runtime/indexability and shared source unchanged. Integrated check, CSP/cache and actual translated UI remain pending.",
+  "localeReleaseCheck": "20 existing expanded locales; not approval of the new source or translations"
+}
