@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** LIBRE · Codex · 2026-10-29T08:00:14.927Z · PR145 preparada sobre PR144, aviso142 verificado, respaldo/retirada completos
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-29T08:09:34.354304+00:00 · Roman Numeral Converter nivelA, rama propia sobre PR145, sin publicar
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
