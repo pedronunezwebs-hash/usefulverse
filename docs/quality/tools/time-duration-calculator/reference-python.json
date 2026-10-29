@@ -1,0 +1,104 @@
+{
+  "source": "https://docs.python.org/3/library/zoneinfo.html",
+  "method": "Convert each endpoint to UTC before subtracting; Python same-zone aware subtraction alone uses wall time",
+  "cases": [
+    {
+      "start": "2026-10-29T09:00:00",
+      "end": "2026-10-29T17:30:00",
+      "startZone": "UTC",
+      "endZone": "UTC",
+      "seconds": 30600
+    },
+    {
+      "start": "2024-02-28T12:00:00",
+      "end": "2024-03-01T12:00:00",
+      "startZone": "UTC",
+      "endZone": "UTC",
+      "seconds": 172800
+    },
+    {
+      "start": "2026-10-29T12:00:00",
+      "end": "2026-10-29T12:01:30",
+      "startZone": "UTC",
+      "endZone": "UTC",
+      "seconds": 90
+    },
+    {
+      "start": "2026-10-29T12:00:00",
+      "end": "2026-10-29T12:00:00",
+      "startZone": "UTC",
+      "endZone": "UTC",
+      "seconds": 0
+    },
+    {
+      "start": "2024-03-10T00:00:00",
+      "end": "2024-03-10T04:00:00",
+      "startZone": "America/New_York",
+      "endZone": "America/New_York",
+      "seconds": 10800
+    },
+    {
+      "start": "2024-03-09T12:00:00",
+      "end": "2024-03-10T12:00:00",
+      "startZone": "America/New_York",
+      "endZone": "America/New_York",
+      "seconds": 82800
+    },
+    {
+      "start": "2024-11-03T00:00:00",
+      "end": "2024-11-03T04:00:00",
+      "startZone": "America/New_York",
+      "endZone": "America/New_York",
+      "seconds": 18000
+    },
+    {
+      "start": "2024-11-02T12:00:00",
+      "end": "2024-11-03T12:00:00",
+      "startZone": "America/New_York",
+      "endZone": "America/New_York",
+      "seconds": 90000
+    },
+    {
+      "start": "2026-03-29T00:00:00",
+      "end": "2026-03-29T04:00:00",
+      "startZone": "Europe/Madrid",
+      "endZone": "Europe/Madrid",
+      "seconds": 10800
+    },
+    {
+      "start": "2024-10-06T01:30:00",
+      "end": "2024-10-06T03:00:00",
+      "startZone": "Australia/Lord_Howe",
+      "endZone": "Australia/Lord_Howe",
+      "seconds": 3600
+    },
+    {
+      "start": "2024-04-07T01:00:00",
+      "end": "2024-04-07T03:00:00",
+      "startZone": "Australia/Lord_Howe",
+      "endZone": "Australia/Lord_Howe",
+      "seconds": 9000
+    },
+    {
+      "start": "2024-01-01T09:00:00",
+      "end": "2024-01-01T09:00:00",
+      "startZone": "Asia/Kathmandu",
+      "endZone": "Asia/Kolkata",
+      "seconds": 900
+    },
+    {
+      "start": "2024-01-01T12:00:00",
+      "end": "2024-01-01T12:00:00",
+      "startZone": "America/New_York",
+      "endZone": "Europe/London",
+      "seconds": 18000
+    },
+    {
+      "start": "0001-01-01T00:00:00",
+      "end": "0001-01-02T00:00:00",
+      "startZone": "UTC",
+      "endZone": "UTC",
+      "seconds": 86400
+    }
+  ]
+}

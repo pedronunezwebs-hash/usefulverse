@@ -1,0 +1,792 @@
+{
+  "scope": "unpublished-time-duration-calculator",
+  "startedAt": "2026-10-29T07:45:37.721Z",
+  "physicalDevices": false,
+  "clipboard": "mocked success and permission-denied fallback; OS clipboard not modified",
+  "browsers": [
+    {
+      "name": "chromium",
+      "checks": [
+        "default 8h30; existing canonical and draft noindex",
+        "clock overnight and break; too-long break removes stale result",
+        "all four executable examples match their published seconds",
+        "Madrid missing hour rejected; real time succeeds",
+        "repeated New York labels need separate occurrence choices",
+        "swap preserves explicit zones and reversed result note",
+        "empty date and incomplete numeric input are focused/rejected",
+        "mocked clipboard and denied-permission share restore explicit zones",
+        "malformed share URL cannot inject HTML",
+        "FAQ structured data matches ten visible questions/answers",
+        "keyboard skip link and calculation radios",
+        "calculation still works offline after initial load",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    },
+    {
+      "name": "firefox",
+      "checks": [
+        "default 8h30; existing canonical and draft noindex",
+        "clock overnight and break; too-long break removes stale result",
+        "all four executable examples match their published seconds",
+        "Madrid missing hour rejected; real time succeeds",
+        "repeated New York labels need separate occurrence choices",
+        "swap preserves explicit zones and reversed result note",
+        "empty date and incomplete numeric input are focused/rejected",
+        "mocked clipboard and denied-permission share restore explicit zones",
+        "malformed share URL cannot inject HTML",
+        "FAQ structured data matches ten visible questions/answers",
+        "keyboard skip link and calculation radios",
+        "calculation still works offline after initial load",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    },
+    {
+      "name": "webkit",
+      "checks": [
+        "default 8h30; existing canonical and draft noindex",
+        "clock overnight and break; too-long break removes stale result",
+        "all four executable examples match their published seconds",
+        "Madrid missing hour rejected; real time succeeds",
+        "repeated New York labels need separate occurrence choices",
+        "swap preserves explicit zones and reversed result note",
+        "empty date and incomplete numeric input are focused/rejected",
+        "mocked clipboard and denied-permission share restore explicit zones",
+        "malformed share URL cannot inject HTML",
+        "FAQ structured data matches ten visible questions/answers",
+        "keyboard skip link and calculation radios",
+        "calculation still works offline after initial load",
+        "input boundaries meet WCAG non-text contrast 3:1"
+      ],
+      "geometries": [
+        {
+          "theme": "light",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "light",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 320,
+          "scrollWidth": 320,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 244,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 360,
+          "scrollWidth": 360,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 284,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 390,
+          "scrollWidth": 390,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 314,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 414,
+          "scrollWidth": 414,
+          "margins": [
+            16,
+            16
+          ],
+          "nativeTimeMin": 338,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 768,
+          "scrollWidth": 768,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 309,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1024,
+          "scrollWidth": 1024,
+          "margins": [
+            24,
+            24
+          ],
+          "nativeTimeMin": 214,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "margins": [
+            84,
+            84
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "margins": [
+            164,
+            164
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        },
+        {
+          "theme": "dark",
+          "width": 1920,
+          "scrollWidth": 1920,
+          "margins": [
+            404,
+            404
+          ],
+          "nativeTimeMin": 249,
+          "axeViolations": 0
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "thirdPartyRequests": [],
+      "stressLayouts": [
+        {
+          "fixture": "rtl",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "long-text",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "text-size-200",
+          "width": 390,
+          "scrollWidth": 390,
+          "note": "Synthetic layout fixture, not a translated-language approval or actual browser zoom"
+        },
+        {
+          "fixture": "landscape",
+          "width": 568,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 844,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1024,
+          "height": 390
+        },
+        {
+          "fixture": "landscape",
+          "width": 1920,
+          "height": 390
+        }
+      ]
+    }
+  ],
+  "completedAt": "2026-10-29T07:45:53.738Z"
+}

@@ -3,7 +3,7 @@
 > Relevo operativo. Un solo resumen actual; historial y evidencias en LOG, informes de lotes y Git.
 
 **Última actualización:** 2026-10-29 · **por:** Codex
-**Turno actual (candado):** LIBRE · Codex · 2026-10-29T07:11:49.523Z · PR144 preparada; respaldo/retirada verificados, publicación de fase0 pendiente
+**Turno actual (candado):** LIBRE · Codex · 2026-10-29T08:00:14.927Z · PR145 preparada sobre PR144, aviso142 verificado, respaldo/retirada completos
 
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -30,15 +30,18 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 **Seguridad:** main ya contiene DOMPurify 3.4.17 y URL vendor corregida; GitHub devuelve cero alertas abiertas tras actualizar el grafo. Los sitios existentes conservan la versión anterior hasta el próximo despliegue verificado. PR #135 permanece abierta, sin cierre manual. GitHub ejecutó automáticamente update-graph 40792857131 al merge: 0 ms facturables; no fue un build/test/deploy de web ni una ejecución manual. Los tres workflows web siguen deshabilitados.
 
-**Traductor:** la campaña 40565692987 terminó correctamente; 40658885003 continúa automáticamente (último sondeo 29-oct: cuatro jobs en vuelta 3). El aviso #141 de 28-oct 21:28 Asia/Saigon corresponde a esa segunda tanda mientras esperaba; coincide con lo comunicado por Pedro. Siete workflows activos conservan exactamente sus bytes; modelos/política/memoria/campañas no reconfigurados ni cancelados. source_ref sigue apuntando a feat/new-tools-batch-1: conservar esa rama y mantenerla alineada sin force mientras sea fuente; no borrarla al integrar PRs. Fuentes inglesas de las 1.000 (48.403 unidades/0 solo metadatos) ya están en main; 0 destinos de traducción aprobados para publicar. Sin servicio 24/7/SLA garantizado. [Operación](translation-drafts/README.md).
+**Traductor:** aviso [#142](https://github.com/pedronunezwebs-hash/usefulverse/issues/142) confirmado: la campaña40565692987 terminó `success` el29-oct01:52 Asia/Saigon, con pendientes/cuarentena, sin publicación. La siguiente40658885003 sigue automáticamente: tres vueltas entregadas `success`, cuatro jobs en vuelta4. Último informe:104.487 entradas exportadas, aprobación nativa/publicación=false; los objetivos cambian y contadores pueden solaparse. [Evidencia del aviso y estado](tools/time-duration-calculator/translation-notification-142.json). El aviso #141 de 28-oct 21:28 Asia/Saigon corresponde a esa segunda tanda mientras esperaba; coincide con lo comunicado por Pedro. Siete workflows activos conservan exactamente sus bytes; modelos/política/memoria/campañas no reconfigurados ni cancelados. source_ref sigue apuntando a feat/new-tools-batch-1: conservar esa rama y mantenerla alineada sin force mientras sea fuente; no borrarla al integrar PRs. Fuentes inglesas de las 1.000 (48.403 unidades/0 solo metadatos) ya están en main; 0 destinos de traducción aprobados para publicar. Sin servicio 24/7/SLA garantizado. [Operación](translation-drafts/README.md).
 
-**Pedro:** nueve pruebas pendientes: P-001–P-008 sobre producción y P-010 bloqueada hasta URL candidata del nuevo diseño; 0 FALLA. P-009 correo OK/push sin comprobar. Un ID nuevo, sin tareas de cámara/micrófono para la calculadora. Solo hardware aplicable. Todo el catálogo conserva siete capas/18 controles; subida-noindex no equivale a herramienta terminada.
+**Pedro:** nueve pruebas pendientes: P-001–P-008 sobre producción y P-010 compartida Date/Time, bloqueada hasta URL candidata del nuevo diseño; 0 FALLA. P-009 correo OK/push sin comprobar. Un ID nuevo, sin tareas de cámara/micrófono para la calculadora. Solo hardware aplicable. Todo el catálogo conserva siete capas/18 controles; subida-noindex no equivale a herramienta terminada.
 
 **Orden posterior:** verificar fase 0 + G1 → fase 0b (26 errores, test antes del arreglo) → unificar dominio §4b → Planeta Infinito y bucle por herramienta según progress.csv.
 
 **Decisión vigente de Pedro (29-oct): avanzar con inteligencia durante la espera.** El límite diario frena publicaciones, no preparar y probar mejoras visuales, funciones, contenido y cobertura de búsquedas en ramas separadas. Se autoriza adelantar ese trabajo sin plataformas SEO/API de pago ni aumento de URLs. Mantener pruebas, noindex de las 300, aprobación del diseño y puertas antes de publicar/cerrar. No convertir la espera de fase 0 en inactividad ni repetir QA ya válido sin cambios.
 
 **Preparación lista para revisión, sin publicar:** `date-calculator`, prioridad 1/nivel A, rama `feat/date-calculator-planeta` ([PR144](https://github.com/pedronunezwebs-hash/usefulverse/pull/144), fuente e9e93b5). Planeta Infinito; diferencias y suma/resta años/meses/semanas/días; cuatro ejemplos, diez FAQ, privacidad y 24 intenciones dentro de la URL existente. Suite3.302/30 propias/10.000 casos aleatorios, tres motores/54 geometrías/axe0, Lighthouse100/100/100 LCP944ms y traza Slow4G CPU×4 LCP885ms/CLS0. Peso56.676B estimado; ninguna URL nueva/ninguna aprobación. [Fuente, capturas, 18 controles y pendientes](tools/date-calculator/README.md). Faltan integración/check/CSP del sitio, traducciones reales, zoom real200/lector de pantalla, aprobación visual y P-010 tras URL candidata. No repetir las pruebas de cálculo ni traducir manualmente. Mientras se espera fase0 se puede preparar la siguiente prioridad en otra rama; no publicar esta rama como candidato de fase0.
+
+
+**Segunda preparación lista, sin publicar:** `time-duration-calculator`, prioridad2/nivelA, [PR145](https://github.com/pedronunezwebs-hash/usefulverse/pull/145), dependiente de PR144. Dos modos, zonas independientes, DST/horas repetidas explícitos, pausas, cuatro ejemplos/diez FAQ y20 intenciones; total74.989B. Plantilla/estilos/fuente/build compartidos y sonda Lighthouse reutilizable para todo el catálogo. Suite3.330 +58 focalizadas finales; Time39 controles/54 geometrías axe0, Date36/54 en tres motores; Lighthouse100/100/100 LCP1.255ms, traza910ms/CLS0. [Capturas/18 controles/pendientes](tools/time-duration-calculator/README.md). Ninguna herramienta/idioma terminada; queda la misma puerta de integración/idiomas/dispositivos. P-010 común, ningún ID físico nuevo. Siguiente preparación: prioridad3 `roman-numeral-converter`; después lotes por familia, reutilizando base/pruebas comunes y contenido específico. Antes de exigir traducciones, incorporar inglés revisado al corpus activo en un lote separado que preserve UI pública; el traductor no ve estas ramas por sí solo. No alterar sus workflows/modelos/políticas ni traducir manualmente.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
@@ -148,6 +151,7 @@ que exigían Actions para la web; no modifica la excepción del traductor ni las
 
 | Fecha | Lote | Resultado | Evidencia |
 |---|---|---|---|
+| 29-oct | Time Duration y base compartida | Node3.330, dos calculadoras/tres motores/axe108, LH100; aviso142 comprobado; sin publicar | [PR145/evidencia](tools/time-duration-calculator/README.md) |
 | 29-oct | Preparación Date Calculator nivel A | Planeta Infinito/24 intenciones; Node3.302, tres motores/axe54, Lighthouse100; sin publicar | [Prototipo](tools/date-calculator/README.md) |
 | 29-oct | Entrega inicial del Paso A | PR #136 integrada; preview 300×37 noindex verificada; 3.255 Node/93 HTTP/axe32/Lighthouse5; 0 activaciones | [Lote](lotes/2026-10-29-entrega-inicial-paso-a.md) |
 | 29-oct | Construcción secuencial completa | 36.400 rutas; 3.251 Node; 189 geometrías; sin publicar | [Lote](lotes/2026-10-29-construccion-secuencial-paso-a.md) |
@@ -186,6 +190,6 @@ Todos los lotes anteriores, sus CI, retiradas y limitaciones siguen en LOG.md, l
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
 
-**Retirada actual:** Cierre 2026-10-29T07:11:49.523Z: [PR144](https://github.com/pedronunezwebs-hash/usefulverse/pull/144), fuente e9e93b5/árbol remoto verificados; clon, builds, dependencias, navegadores, descargas y cachés propios eliminados antes de LIBRE. 43.2 GiB libres; servidor detenido y pestaña QA en blanco. Prototipo no publicado, 0 activaciones/aprobaciones. [Recibo](tools/date-calculator/closure.json).
+**Retirada actual:** Cierre 2026-10-29T08:00:14.927Z: PR145/fuente196c73b y árbol remoto verificados; clon, builds, dependencias, navegadores, perfiles, descargas y cachés propios eliminados antes de LIBRE. 43.2 GiB libres; dos servidores detenidos y pestaña QA en blanco. Prototipos no publicados, 0 activaciones/aprobaciones; traductor intacto en vuelta4. [Recibo](tools/time-duration-calculator/closure.json).
 
 Antes de CI del traductor, si se recogen checkpoints: `python3 scripts/localization/pilot-checkpoint-inventory.py --write` y después el mismo comando sin `--write`. Actualiza solo inventario/total derivados; no crudos, juicios ni procedencia. No hace falta ejecutarlo para un lote de web sin recolección.

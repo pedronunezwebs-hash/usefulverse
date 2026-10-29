@@ -1,0 +1,30 @@
+{
+  "scope": "prototype only; no fixes deployed",
+  "cases": [
+    {
+      "id": "legacy-gap",
+      "source": "src/app.js setupDuration accepts new Date(text) normalization; TZ=Europe/Madrid reproduction",
+      "before": {
+        "input": "2026-03-29T02:30",
+        "acceptedAs": "03:30"
+      },
+      "after": "TIME_GAP for all occurrence choices",
+      "test": "logic.test.mjs and three-browser Madrid test"
+    },
+    {
+      "id": "missing-unit-labels",
+      "before": "8 undefined, 30 undefined",
+      "after": "8 hours, 30 minutes",
+      "test": "content.test.mjs unit keys and exact default visible text in three browsers"
+    },
+    {
+      "id": "native-field-clipping",
+      "before": "Combined date/time clipped at desktop form width; split time field still clipped in tablet two-column form",
+      "after": "Separate native date/time fields; responsive minimum time-control width180px, checked at all9 widths in3 engines",
+      "test": "time-quality-browser.mjs geometry nativeTimeMin>=180, screenshots native-320/tablet"
+    }
+  ],
+  "environmentCorrections": [
+    "Sparse checkout originally omitted implementation-progress.json; restored docs/planning path and reran entire suite:3330 pass."
+  ]
+}
