@@ -115,4 +115,4 @@ node scripts/security/quality-lighthouse.mjs http://127.0.0.1:54839/tools/roman-
 ```
 
 Los perfiles propios se retiran al cerrar. Builds, modelos y cachés no se guardan en Git.
-El cierre y retirada se documentarán aquí al terminar el respaldo remoto.
+[Recibo de respaldo y retirada](closure.json). Candado LIBRE; consultar ESTADO antes de retomar.
