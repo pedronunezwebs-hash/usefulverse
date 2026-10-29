@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "toolId": "barcode-generator",
+  "sourceCopy": {
+    "title": "Barcode Generator — SVG & PNG, Free | UsefulVerse",
+    "description": "Create Code 128, EAN-13, UPC-A, EAN-8 and Code 39 barcodes. Download SVG or PNG, or a batch ZIP. Your data stays in your browser. No sign-up.",
+    "heading": "Barcode Generator",
+    "intro": "Turn a product number or reference into a clear barcode. Save one image or a whole list in your browser.",
+    "category": "Design & labels",
+    "eyebrow": "A small mark. The right information.",
+    "ui": {
+      "themeDark": "Switch to dark theme",
+      "themeLight": "Switch to light theme",
+      "copy": "Copy result",
+      "share": "Copy a link",
+      "copied": "Copied to your clipboard.",
+      "copyFallback": "Select and copy the text below.",
+      "reset": "Reset",
+      "featuresLabel": "Tool features",
+      "shareNotice": "This link includes your entry. Share it only when you want others to see it.",
+      "trust": [
+        "Free to use",
+        "No sign-up",
+        "Generated in your browser"
+      ],
+      "single": "One barcode",
+      "batch": "A list",
+      "calculation": "Choose one barcode or a list",
+      "formatLabel": "Barcode format",
+      "inputLabel": "Text or product digits",
+      "batchLabel": "One value per line",
+      "inputHint": "Code 128 uses printable ASCII. Spaces are kept. Retail formats use digits and keep leading zeroes.",
+      "batchHint": "Blank lines are skipped. Every valid line gets an SVG; the manifest lists any errors.",
+      "moduleLabel": "Bar width (pixels)",
+      "heightLabel": "Bar height (pixels)",
+      "showValue": "Show the value below the bars",
+      "calculate": "Generate",
+      "cancel": "Cancel",
+      "result": "Ready for your next label",
+      "empty": "Your barcode will appear here.",
+      "valueLabel": "Encoded value",
+      "addedDigit": "The missing check digit was added.",
+      "previewHint": "Scroll the preview to see wide codes. Downloads keep the original size.",
+      "printNotice": "Keep the white margins. Test the exported image before printing a full batch.",
+      "svg": "Download SVG",
+      "png": "Download PNG",
+      "zip": "Download ZIP",
+      "working": "Generating in the background…",
+      "processed": "Processed {done} of {total} lines.",
+      "completed": "{count} rows processed. {errors} errors. Check manifest.csv before using the images.",
+      "cancelled": "Stopped. No complete download was saved.",
+      "previewNote": "Preview: first five valid images. The ZIP contains every valid image and a CSV manifest.",
+      "errorHeading": "Check your entry",
+      "noScript": "Turn on JavaScript to generate barcodes. The examples and guidance remain available.",
+      "pythonSource": "GS1 New Zealand: check digits, quiet zones and print quality",
+      "temporalSource": "JsBarcode: supported encodings and source code",
+      "errors": {
+        "OPTIONS": "Check the format and size options. Use whole numbers within the displayed ranges.",
+        "ASCII": "Code 128 needs printable ASCII text. Use letters A–Z, digits, spaces or common punctuation.",
+        "CODE39": "Code 39 uses uppercase letters, digits, spaces and - . $ / + %. Do not add * markers.",
+        "LENGTH": "Use 12 or 13 digits for EAN-13, 11 or 12 for UPC-A, or 7 or 8 for EAN-8.",
+        "CHECK_DIGIT": "The supplied check digit is wrong. Check the product number; do not silently replace it.",
+        "DIGITS": "Enter digits 0–9.",
+        "EMPTY_BATCH": "Enter at least one value.",
+        "LINK": "This link has invalid values. Enter your data again.",
+        "WORKER_FAILED": "Background generation could not start. Reload in a current browser.",
+        "PNG": "This browser could not save this image as PNG. Use the SVG download, which keeps every bar."
+      }
+    },
+    "navigation": {
+      "skip": "Skip to generator",
+      "home": "Home",
+      "allTools": "All tools",
+      "how": "How it works",
+      "brandHome": "UsefulVerse home",
+      "mainLabel": "Main navigation",
+      "breadcrumbLabel": "Breadcrumb",
+      "onPageLabel": "On this page",
+      "onPage": "Make the most of it",
+      "examples": "Worked examples",
+      "method": "Formats & printing",
+      "faq": "Questions & answers",
+      "viewSource": "View the source"
+    },
+    "labels": {
+      "examples": "A useful starting point",
+      "how": "One simple task",
+      "method": "The details that matter",
+      "privacy": "Good to know",
+      "faq": "The useful details",
+      "related": "Your next small win"
+    },
+    "examplesHeading": "Four labels, four useful starting points",
+    "examplesAction": "Use this example",
+    "examples": [
+      {
+        "id": "stock",
+        "heading": "An internal stock label",
+        "text": "UV-2026-001 stays UV-2026-001 in Code 128. Letters, digits and hyphens can share one reference."
+      },
+      {
+        "id": "ean",
+        "heading": "Add a missing check digit",
+        "text": "The documented example 941234554321 becomes 9412345543219 in EAN-13. Its final digit is 9."
+      },
+      {
+        "id": "upc",
+        "heading": "Keep the leading zero",
+        "text": "UPC-A input 01234567890 becomes 012345678905. The first zero remains part of the encoded identifier."
+      },
+      {
+        "id": "short",
+        "heading": "A shorter retail symbol",
+        "text": "EAN-8 input 1234567 becomes 12345670. A shorter format does not grant a valid product allocation."
+      }
+    ],
+    "how": {
+      "heading": "From a reference to an image",
+      "steps": [
+        {
+          "heading": "Choose the format",
+          "text": "Use Code 128 for an internal reference, or the retail format requested by your trading partner."
+        },
+        {
+          "heading": "Enter your value",
+          "text": "Paste one value or choose A list. Check the format, bar width and height before generating."
+        },
+        {
+          "heading": "Save and test",
+          "text": "Download SVG or PNG. For a list, download the ZIP and read its manifest before printing."
+        }
+      ]
+    },
+    "method": {
+      "heading": "A readable barcode starts with the right data",
+      "paragraphs": [
+        "A barcode represents an identifier. It does not register a product, create ownership or prove that a retailer accepts the number. Use an allocated identifier when your retailer requires one. The sample numbers demonstrate arithmetic; they are not offered for commercial allocation.",
+        "EAN-13, UPC-A and EAN-8 use a final check digit. Starting at the rightmost data digit, multiply alternate digits by three. Add the remaining digits. Choose the smallest final digit that brings that sum to a multiple of ten. A sum already divisible by ten needs zero.",
+        "Enter the data digits alone to calculate the final digit. Enter a complete number to validate it. The generator rejects a wrong supplied digit. It never repairs a complete product number without telling you. Leading zeroes remain strings throughout the calculation.",
+        "Code 128 accepts printable ASCII characters. It can switch between character sets to encode a reference efficiently. This page generates ordinary Code 128, not GS1-128 with application identifiers or FNC1. Code 39 accepts its smaller uppercase alphabet. Its optional Modulo-43 checksum is not added here.",
+        "Bars remain black on a solid white background in both themes. The image reserves twelve narrow-bar widths of clear space at each side. Do not crop those margins, stretch only one dimension or place text across the bars. Colour choices that reduce contrast are deliberately absent.",
+        "SVG keeps exact bar positions at any scale. PNG is a raster image at the selected pixel size. Printed dimensions, ink spread, paper, scanner settings and print quality still affect reading. Our pixel controls do not certify compliance with a physical retail specification. Test the final label at its intended size."
+      ]
+    },
+    "uses": {
+      "heading": "One label or a repeatable list",
+      "paragraphs": [
+        "Use Code 128 for stock references, order numbers or shelf labels in your own system. Confirm the receiving scanner supports the selected format. Use EAN or UPC when an allocated retail number and the receiving system require that format.",
+        "A list uses one format and size for every line. Empty lines are skipped; spaces in Code 128 remain meaningful data. The ZIP gives each valid row a numbered SVG filename. The CSV manifest preserves the original line, input, encoded value and any error. Duplicate input lines intentionally produce matching barcodes.",
+        "The list runs in a background worker. You can cancel it before the complete archive is ready. The page shows only five valid previews to keep the interface light. That display choice does not remove other valid images from the ZIP.",
+        "There is no daily generation quota or eighty-character cap. Long Code 128 values create wide images. Your browser and device memory determine what fits. If PNG cannot handle a very wide canvas, download SVG or use shorter identifiers that suit your real scanner."
+      ]
+    },
+    "privacy": {
+      "heading": "Your identifiers stay with you",
+      "paragraphs": [
+        "Generation, check digits, SVG, PNG and ZIP creation happen on your device. No barcode service receives the input. Calculations work without a network after the page has loaded.",
+        "The page does not save your input in browser storage. A copied share link contains the value and size options. Share it only when the identifier may be seen by others. Batch inputs are excluded from share links.",
+        "Downloads contain your identifiers. Check the destination folder before sharing an archive. CSV values that look like spreadsheet formulas receive a leading apostrophe for safer opening. This changes the manifest cell, not the actual encoded identifier."
+      ]
+    },
+    "faqHeading": "Before you print your labels",
+    "faq": [
+      {
+        "question": "Is this barcode generator free?",
+        "answer": "Yes. There is no account, daily quota or payment step. Generation and downloads run in your browser."
+      },
+      {
+        "question": "Which barcode formats can I create?",
+        "answer": "Code 128, EAN-13, UPC-A, EAN-8 and Code 39. Choose the format required by the system that reads the label."
+      },
+      {
+        "question": "Can this assign a retail product number?",
+        "answer": "No. It draws an identifier that you supply. A valid check digit does not prove a number is allocated to you."
+      },
+      {
+        "question": "Why is my check digit rejected?",
+        "answer": "The final digit does not match the preceding digits. Check the original identifier. Entering data digits alone calculates a missing digit."
+      },
+      {
+        "question": "Will leading zeroes disappear?",
+        "answer": "No. Retail inputs stay as strings, and each leading zero remains in the normalized value and barcode."
+      },
+      {
+        "question": "Is Code 128 the same as GS1-128?",
+        "answer": "No. This page makes ordinary Code 128. It does not insert FNC1 or validate GS1 application identifiers."
+      },
+      {
+        "question": "Should I download SVG or PNG?",
+        "answer": "Choose SVG for scaling and label design. PNG is convenient for image software. Preserve the white margins and test the final print."
+      },
+      {
+        "question": "Can I create a batch without a row limit?",
+        "answer": "Yes, within your device memory. Each valid line gets an SVG in the ZIP. The CSV manifest lists every processed line and error."
+      },
+      {
+        "question": "Why is a long barcode wider than the preview?",
+        "answer": "Every character needs bars and spaces. The preview scrolls to preserve the bar width. The downloaded SVG keeps the full image."
+      },
+      {
+        "question": "Does a successful screen scan certify a printed label?",
+        "answer": "No. Paper, printer, size and scanner conditions affect reading. Test your actual label and obtain formal verification when required."
+      }
+    ],
+    "relatedHeading": "Keep your next task simple",
+    "related": [
+      {
+        "id": "qr-code-generator",
+        "title": "QR Code Generator",
+        "text": "Put a link or longer text into a square code."
+      },
+      {
+        "id": "qr-code-reader",
+        "title": "QR Code Reader",
+        "text": "Read an existing QR image. This reader is for QR, not these linear barcodes."
+      },
+      {
+        "id": "image-resizer-compressor",
+        "title": "Image Resizer & Compressor",
+        "text": "Prepare other label images. Keep barcode SVGs sharp and their margins intact."
+      }
+    ],
+    "sourcesHeading": "Where the rules come from",
+    "sourcesText": "Read the format and check-digit references. A generated image is not a certified retail label.",
+    "footer": "Useful tools. Clear results. Made for your browser."
+  },
+  "nonTranslatableCopy": {
+    "examples": [
+      {
+        "id": "stock",
+        "format": "CODE128",
+        "input": "UV-2026-001",
+        "expected": "UV-2026-001"
+      },
+      {
+        "id": "ean",
+        "format": "EAN13",
+        "input": "941234554321",
+        "expected": "9412345543219"
+      },
+      {
+        "id": "upc",
+        "format": "UPC",
+        "input": "01234567890",
+        "expected": "012345678905"
+      },
+      {
+        "id": "short",
+        "format": "EAN8",
+        "input": "1234567",
+        "expected": "12345670"
+      }
+    ]
+  }
+}

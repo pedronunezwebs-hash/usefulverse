@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-29T11:28:19.117Z",
+  "method": "Fresh Chrome navigations, document HTTP status and three local-only tasks in public legacy widget. urllib returned403; Chrome succeeded.",
+  "reads": [
+    {
+      "slug": "barcode-generator",
+      "url": "https://usefulverse.com/tools/barcode-generator/",
+      "title": "Barcode Generator – Code 128, EAN-13 & UPC-A — Free | UsefulVerse",
+      "h1": "Barcode Generator",
+      "status": 200
+    },
+    {
+      "slug": "qr-code-generator",
+      "url": "https://usefulverse.com/tools/qr-code-generator/",
+      "title": "QR Code Generator – Create QR Codes — Free | UsefulVerse",
+      "h1": "QR Code Generator",
+      "status": 200
+    },
+    {
+      "slug": "qr-code-reader",
+      "url": "https://usefulverse.com/tools/qr-code-reader/",
+      "title": "QR Code Reader – Scan an Image or Camera — Free | UsefulVerse",
+      "h1": "QR Code Reader",
+      "status": 200
+    },
+    {
+      "slug": "image-resizer-compressor",
+      "url": "https://usefulverse.com/tools/image-resizer-compressor/",
+      "title": "Image Compressor Online & Image Resizer — Free | UsefulVerse",
+      "h1": "Image Compressor & Resizer",
+      "status": 200
+    }
+  ],
+  "publicTasks": [
+    {
+      "format": "CODE128",
+      "input": "UV-2026-001",
+      "svgText": "UV-2026-001"
+    },
+    {
+      "format": "EAN13",
+      "input": "941234554321",
+      "svgText": "9412345543219"
+    },
+    {
+      "format": "UPC",
+      "input": "01234567890",
+      "svgText": "012345678905"
+    }
+  ],
+  "legacyLimit": {
+    "input": "A repeated81 times",
+    "message": "Code128 accepts1–80 printable ASCII characters.",
+    "previewHidden": true
+  },
+  "prototypePublished": false
+}

@@ -1,0 +1,100 @@
+{
+  "toolId": "barcode-generator",
+  "newIndexableURLs": 0,
+  "provenance": {
+    "paidSEOTools": false,
+    "observedDemand": {
+      "impressions": 1942,
+      "clicks": 0,
+      "period": "2026-10-01/15"
+    },
+    "phraseEvidence": "Inferred implemented tasks and first-party TEC-IT, Orca Scan and bwip-js products; no SERP positions, suggestions/PAA or current query volumes measured.",
+    "products": [
+      "https://barcode.tec-it.com/en",
+      "https://orcascan.com/tools/barcode-generator",
+      "https://bwip-js.metafloor.com/"
+    ]
+  },
+  "intents": [
+    {
+      "phrase": "barcode generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Code 128 generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "EAN-13 generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "UPC-A generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "EAN-8 generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "Code 39 generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "barcode SVG download",
+      "section": "calculator"
+    },
+    {
+      "phrase": "barcode PNG download",
+      "section": "calculator"
+    },
+    {
+      "phrase": "batch barcode generator",
+      "section": "calculator"
+    },
+    {
+      "phrase": "barcode ZIP download",
+      "section": "calculator"
+    },
+    {
+      "phrase": "calculate barcode check digit",
+      "section": "method"
+    },
+    {
+      "phrase": "validate EAN check digit",
+      "section": "method"
+    },
+    {
+      "phrase": "barcode leading zeroes",
+      "section": "method"
+    },
+    {
+      "phrase": "barcode without upload",
+      "section": "method"
+    },
+    {
+      "phrase": "barcode printable ASCII",
+      "section": "method"
+    },
+    {
+      "phrase": "barcode quiet zone",
+      "section": "method"
+    },
+    {
+      "phrase": "SVG barcode for labels",
+      "section": "method"
+    },
+    {
+      "phrase": "barcode wrong checksum",
+      "section": "method"
+    },
+    {
+      "phrase": "long barcode generator",
+      "section": "method"
+    },
+    {
+      "phrase": "Code 128 versus GS1-128",
+      "section": "method"
+    }
+  ]
+}

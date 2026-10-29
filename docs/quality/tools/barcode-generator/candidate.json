@@ -1,0 +1,15 @@
+{
+  "scope": "unpublished-existing-url-prototype",
+  "tool": "barcode-generator",
+  "releaseApproved": false,
+  "indexableURLs": 0,
+  "canonical": "https://usefulverse.com/tools/barcode-generator/",
+  "bytes": {
+    "criticalCSS": 13506,
+    "html": 38839,
+    "htmlBrotli": 9328,
+    "cssBrotli": 3912,
+    "jsBrotli": 19068,
+    "font": 40784
+  }
+}
